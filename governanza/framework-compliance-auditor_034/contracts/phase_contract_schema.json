@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PhaseContract",
+  "type": "object",
+  "required": ["phase_id", "phase_name"],
+  "properties": {
+    "phase_id": { "type": "string" },
+    "phase_name": { "type": "string" },
+    "principle_statements": { "type": "array", "items": { "type": "string" } },
+    "allowed_output_families": { "type": "array", "items": { "type": "string" } },
+    "forbidden_output_families": { "type": "array", "items": { "type": "string" } },
+    "escalation_boundaries": { "type": "array", "items": { "type": "string" } },
+    "semantic_overreach_rules": { "type": "array", "items": { "type": "string" } },
+    "certainty_constraints": { "type": "array", "items": { "type": "string" } },
+    "validation_verification_boundaries": { "type": "array", "items": { "type": "string" } },
+    "reporting_constraints": { "type": "array", "items": { "type": "string" } },
+    "evidence_traceability_expectations": { "type": "array", "items": { "type": "string" } },
+    "examples": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "kind"],
+        "properties": {
+          "rule_id": { "type": "string" },
+          "text": { "type": "string" },
+          "kind": { "type": "string" },
+          "category": { "type": "string" },
+          "severity_default": { "type": "string" },
+          "keywords": { "type": "array", "items": { "type": "string" } },
+          "conditions": { "type": "array", "items": { "type": "string" } },
+          "examples": { "type": "array", "items": { "type": "string" } },
+          "notes": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}
+

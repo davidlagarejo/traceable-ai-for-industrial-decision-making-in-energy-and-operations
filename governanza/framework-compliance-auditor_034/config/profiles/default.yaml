@@ -1,0 +1,6 @@
+thresholds:
+  compliance_min_score: 80
+  quality_min_score: 70
+  allow_critical_findings: false
+  max_reaudit_iterations: 3
+

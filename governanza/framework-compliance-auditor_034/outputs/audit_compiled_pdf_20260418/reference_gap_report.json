@@ -1,0 +1,10 @@
+[
+  {
+    "current_state": "No reference anchors were supplied.",
+    "dimension_name": "senior_report_feel",
+    "gap_description": "Reference comparison was skipped. This does not affect normative phase compliance.",
+    "reference_anchor_expectation": "Provide curated reference documents to calibrate quality.",
+    "severity": "low",
+    "targeted_improvement_suggestion": "Add reference reports when quality benchmarking is required."
+  }
+]

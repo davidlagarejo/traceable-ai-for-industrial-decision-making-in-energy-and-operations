@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CompiledContract",
+  "type": "object",
+  "required": ["contract_id", "phases", "compiled_at", "rule_index", "keyword_index", "source_hashes"],
+  "properties": {
+    "contract_id": { "type": "string" },
+    "compiled_at": { "type": "string" },
+    "phases": { "type": "array" },
+    "rule_index": { "type": "object" },
+    "keyword_index": {
+      "type": "object",
+      "additionalProperties": { "type": "array", "items": { "type": "string" } }
+    },
+    "source_hashes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}
+

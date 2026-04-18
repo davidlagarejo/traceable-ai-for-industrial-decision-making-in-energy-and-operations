@@ -1,0 +1,28 @@
+{
+  "phase_id": "phase0",
+  "phase_name": "Sample Phase 0 - Epistemic Governance",
+  "principle_statements": [
+    "This sample contract is a fixture; replace it with the real framework phase document for production audits.",
+    "The report must distinguish observed data, inferred interpretation, uncertainty, and validation status."
+  ],
+  "forbidden_output_families": [
+    "The report must not present unsupported interpretations as verified fact.",
+    "The report must not suppress material uncertainty in executive-facing findings."
+  ],
+  "certainty_constraints": [
+    "Strong claims require visible uncertainty treatment and traceable support.",
+    "Absolute language is prohibited unless the upstream evidence explicitly authorizes it."
+  ],
+  "evidence_traceability_expectations": [
+    "Every high-stakes claim must cite a source, table, or upstream support signal."
+  ],
+  "rules": [
+    {
+      "text": "Examples are illustrative and do not create additional law.",
+      "kind": "example",
+      "category": "example",
+      "severity_default": "low"
+    }
+  ]
+}
+

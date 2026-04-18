@@ -1,0 +1,46 @@
+{
+  "phase_id": "phase0",
+  "phase_name": "Phase 0 — Operational Truth and Epistemic Governance",
+  "source_of_authority": "governanza/automation-base/master_context.md",
+  "principle_statements": [
+    "Ningun modelo unico es soberano.",
+    "La verdad emerge de acuerdo restringido entre capas.",
+    "El sistema restringe hipotesis mas de lo que sabe.",
+    "El LLM no es soberano; solo participa downstream y subordinado.",
+    "Benchmark no es evidencia local.",
+    "El output no puede exceder el soporte real.",
+    "La incertidumbre material debe preservarse.",
+    "El conflicto material no debe borrarse narrativamente.",
+    "Decision-grade y Verification-grade son distintos.",
+    "Las fases cerradas no deben reabrirse silenciosamente."
+  ],
+  "forbidden_output_families": [
+    "Los motores no pueden redefinir la epistemologia.",
+    "Los motores no pueden cambiar reglas base por intuicion.",
+    "Los motores no pueden convertir una excepcion local en cambio global sin gobernanza.",
+    "Los motores no pueden usar narrativa como sustituto de soporte real.",
+    "Benchmark, fuente publica o narrativa no pueden actuar como evidencia local o verificacion."
+  ],
+  "certainty_constraints": [
+    "Todo output visible debe ser semanticamente proporcional al soporte real.",
+    "La incertidumbre material debe ser visible y no puede borrarse por estilo, resumen o decision pressure.",
+    "Los claims fuertes requieren trazabilidad suficiente y estatus epistemico explicito."
+  ],
+  "validation_verification_boundaries": [
+    "Decision-grade y Verification-grade son distintos y no pueden colapsarse por lenguaje de reporte.",
+    "Un claim no puede presentarse como verificado, validado, compliance-grade o cerrado sin evidencia local o ruta explicita de hardening."
+  ],
+  "evidence_traceability_expectations": [
+    "Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+    "Los outputs deben permitir reconstruir por que una conclusion fue alcanzada y que soporte real la limita."
+  ],
+  "reporting_constraints": [
+    "El output no puede exceder el soporte real.",
+    "La narrativa no puede sustituir soporte real ni elevar el estatus de un claim."
+  ],
+  "notes": [
+    "Adapter estructurado para cargar Phase 0 desde master_context.md hasta que exista un documento Phase 0 canonico separado en la repo.",
+    "No crea reglas nuevas: solo normaliza principios explicitamente listados en master_context.md seccion 6."
+  ]
+}
+

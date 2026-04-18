@@ -1,0 +1,18 @@
+{
+  "phase_id": "phase4",
+  "phase_name": "Sample Phase 4 - Verification Bridge",
+  "validation_verification_boundaries": [
+    "Verification-grade language requires explicit hardening evidence or a stated verification route.",
+    "The report must not imply field validation when only public-data analysis exists."
+  ],
+  "escalation_boundaries": [
+    "No claim upgrade is allowed without identifying the verification work required."
+  ],
+  "reporting_constraints": [
+    "If a claim needs hardening, the report must state the hardening path rather than hiding the limitation."
+  ],
+  "forbidden_output_families": [
+    "Compliance closure, validated savings, and certified performance claims are forbidden unless hardening is complete."
+  ]
+}
+

@@ -1,0 +1,6 @@
+default_profile: default
+outputs:
+  save_intermediates: true
+  include_normalized_report: true
+  include_compiled_contract: true
+

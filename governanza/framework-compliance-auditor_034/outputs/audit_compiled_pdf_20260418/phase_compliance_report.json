@@ -1,0 +1,1667 @@
+{
+  "audit_run_id": "audit-20260418T211601Z-90981a49",
+  "overall_contract_compliance_summary": {
+    "gate": "fail",
+    "recommended_next_action": "Revise blocked phase violations before quality polishing. Finding distribution: {'high': 49, 'critical': 15}."
+  },
+  "pass_fail_thresholds": {
+    "allow_critical_findings": false,
+    "compliance_min_score": 90,
+    "quality_min_score": 82
+  },
+  "per_phase_verdict": [
+    {
+      "phase_id": "phase1",
+      "phase_name": "Phase 1 \u2014 Public Data Engine",
+      "severity_distribution": {
+        "critical": 4,
+        "high": 12
+      },
+      "summary": "phase1 is non_compliant; findings by severity: critical: 4, high: 12.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase3",
+      "phase_name": "3A \u2014 Scope, Primary Material Unit, and MVP Scope of Phase 3",
+      "severity_distribution": {
+        "critical": 4,
+        "high": 13
+      },
+      "summary": "phase3 is non_compliant; findings by severity: critical: 4, high: 13.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase4",
+      "phase_name": "4A \u2014 Constitution of the Verification Bridge",
+      "severity_distribution": {
+        "critical": 3,
+        "high": 12
+      },
+      "summary": "phase4 is non_compliant; findings by severity: critical: 3, high: 12.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase0",
+      "phase_name": "Phase 0 \u2014 Operational Truth and Epistemic Governance",
+      "severity_distribution": {
+        "critical": 4,
+        "high": 12
+      },
+      "summary": "phase0 is non_compliant; findings by severity: critical: 4, high: 12.",
+      "verdict": "non_compliant"
+    }
+  ],
+  "report_id": "compiled-1dc910665c",
+  "representative_evidence_excerpts": [
+    {
+      "claim_id": "claim-00005",
+      "excerpt": "Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00008",
+      "excerpt": "Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00009",
+      "excerpt": "Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00010",
+      "excerpt": "2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00016",
+      "excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00016",
+      "excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00016",
+      "excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00016",
+      "excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00020",
+      "excerpt": "Revenue Scale: \\$766.8M annual revenue confirms operational scale.",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00021",
+      "excerpt": "Leverage: Total debt \\$608.6M vs assets \\$4.47B (LTV approx.",
+      "phase_id": "phase1",
+      "severity": "high"
+    }
+  ],
+  "severity_distribution": {
+    "critical": 15,
+    "high": 49
+  },
+  "violations_grouped_by_phase": {
+    "phase0": [
+      {
+        "claim_id": "claim-00005",
+        "evidence_excerpt": "Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+        "finding_id": "phase0:claim-00005:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 5,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 22
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00008",
+        "evidence_excerpt": "Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+        "finding_id": "phase0:claim-00008:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 12,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 53
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00009",
+        "evidence_excerpt": "Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+        "finding_id": "phase0:claim-00009:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 14,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 59
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00010",
+        "evidence_excerpt": "2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+        "finding_id": "phase0:claim-00010:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 16,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 65
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase0:claim-00016:semantic_overreach:phase0.rule.011",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase0.rule.011",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase0.rule.011."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase0:claim-00016:verification_language_without_authorization:phase0.rule.019",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase0.rule.019",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase0.rule.019."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase0:claim-00016:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase0:claim-00016:suppression_of_uncertainty:phase0.rule.016",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase0.rule.016",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase0.rule.016."
+      },
+      {
+        "claim_id": "claim-00020",
+        "evidence_excerpt": "Revenue Scale: \\$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase0:claim-00020:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 35,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00021",
+        "evidence_excerpt": "Leverage: Total debt \\$608.6M vs assets \\$4.47B (LTV approx.",
+        "finding_id": "phase0:claim-00021:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 36,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 136
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase0:claim-00022:verification_language_without_authorization:phase0.rule.019",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase0.rule.019",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase0.rule.019."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase0:claim-00022:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase0:claim-00024:verification_language_without_authorization:phase0.rule.019",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase0.rule.019",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase0.rule.019."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase0:claim-00024:semantic_overreach:phase0.rule.016",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase0.rule.016",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase0.rule.016."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase0:claim-00024:suppression_of_uncertainty:phase0.rule.016",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase0.rule.016",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase0.rule.016."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "DATOS VERIFICADO",
+        "finding_id": "phase0:unit-00006:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 6,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 28
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase1": [
+      {
+        "claim_id": "claim-00005",
+        "evidence_excerpt": "Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+        "finding_id": "phase1:claim-00005:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 5,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 22
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00008",
+        "evidence_excerpt": "Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+        "finding_id": "phase1:claim-00008:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 12,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 53
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00009",
+        "evidence_excerpt": "Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+        "finding_id": "phase1:claim-00009:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 14,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 59
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00010",
+        "evidence_excerpt": "2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+        "finding_id": "phase1:claim-00010:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 16,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 65
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase1:claim-00016:semantic_overreach:phase1.rule.053",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase1.rule.053",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase1.rule.053."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase1:claim-00016:verification_language_without_authorization:phase1.rule.098",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase1.rule.098",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase1.rule.098."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase1:claim-00016:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase1:claim-00016:suppression_of_uncertainty:phase1.rule.019",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase1.rule.019",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase1.rule.019."
+      },
+      {
+        "claim_id": "claim-00020",
+        "evidence_excerpt": "Revenue Scale: \\$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase1:claim-00020:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 35,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00021",
+        "evidence_excerpt": "Leverage: Total debt \\$608.6M vs assets \\$4.47B (LTV approx.",
+        "finding_id": "phase1:claim-00021:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 36,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 136
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase1:claim-00022:verification_language_without_authorization:phase1.rule.098",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase1.rule.098",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase1.rule.098."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase1:claim-00022:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase1:claim-00024:verification_language_without_authorization:phase1.rule.098",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase1.rule.098",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase1.rule.098."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase1:claim-00024:semantic_overreach:phase1.rule.053",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase1.rule.053",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase1.rule.053."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase1:claim-00024:suppression_of_uncertainty:phase1.rule.019",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase1.rule.019",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase1.rule.019."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "DATOS VERIFICADO",
+        "finding_id": "phase1:unit-00006:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 6,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 28
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase3": [
+      {
+        "claim_id": "claim-00002",
+        "evidence_excerpt": "Case ID: ZLab-NYC-ESB-2026-001 Subject: Empire State Building Address: 350 Fifth Avenue, New York, NY 10118 Owner: Empire State Realty Trust, Inc. (ESRT \u2014 NYSE) Evaluation Type: Class A Office Tower + Observatory Analyst: Autonomous Decision System v2.0 Analysis Date: 2026-04-18",
+        "finding_id": "phase3:claim-00002:contract_rule_match:phase3.rule.040",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase3.rule.040",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 2,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 8
+        },
+        "verdict": "non_compliant",
+        "violation_type": "contract_rule_match",
+        "why_flagged": "Claim triggered contract_rule_match against phase3.rule.040."
+      },
+      {
+        "claim_id": "claim-00005",
+        "evidence_excerpt": "Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+        "finding_id": "phase3:claim-00005:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 5,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 22
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00008",
+        "evidence_excerpt": "Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+        "finding_id": "phase3:claim-00008:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 12,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 53
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00009",
+        "evidence_excerpt": "Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+        "finding_id": "phase3:claim-00009:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 14,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 59
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00010",
+        "evidence_excerpt": "2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+        "finding_id": "phase3:claim-00010:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 16,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 65
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase3:claim-00016:semantic_overreach:phase3.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase3.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase3.rule.002."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase3:claim-00016:verification_language_without_authorization:phase3.rule.039",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase3.rule.039",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase3.rule.039."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase3:claim-00016:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase3:claim-00016:suppression_of_uncertainty:phase3.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase3.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase3.rule.002."
+      },
+      {
+        "claim_id": "claim-00020",
+        "evidence_excerpt": "Revenue Scale: \\$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase3:claim-00020:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 35,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00021",
+        "evidence_excerpt": "Leverage: Total debt \\$608.6M vs assets \\$4.47B (LTV approx.",
+        "finding_id": "phase3:claim-00021:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 36,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 136
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase3:claim-00022:verification_language_without_authorization:phase3.rule.039",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase3.rule.039",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase3.rule.039."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase3:claim-00022:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase3:claim-00024:verification_language_without_authorization:phase3.rule.039",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase3.rule.039",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase3.rule.039."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase3:claim-00024:semantic_overreach:phase3.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase3.rule.002",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase3.rule.002."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase3:claim-00024:suppression_of_uncertainty:phase3.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase3.rule.002",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase3.rule.002."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "DATOS VERIFICADO",
+        "finding_id": "phase3:unit-00006:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 6,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 28
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase4": [
+      {
+        "claim_id": "claim-00005",
+        "evidence_excerpt": "Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+        "finding_id": "phase4:claim-00005:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 5,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 22
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00008",
+        "evidence_excerpt": "Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+        "finding_id": "phase4:claim-00008:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 12,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 53
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00009",
+        "evidence_excerpt": "Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+        "finding_id": "phase4:claim-00009:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 14,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 59
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00010",
+        "evidence_excerpt": "2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+        "finding_id": "phase4:claim-00010:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 16,
+          "section_path": [
+            "Financial Analysis"
+          ],
+          "start_offset": 65
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase4:claim-00016:semantic_overreach:phase4.rule.379",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "qualify",
+        "rewrite_guidance": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "rule_id": "phase4.rule.379",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "semantic_overreach",
+        "why_flagged": "Claim triggered semantic_overreach against phase4.rule.379."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase4:claim-00016:verification_language_without_authorization:phase4.rule.379",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase4.rule.379",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase4.rule.379."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase4:claim-00016:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "finding_id": "phase4:claim-00016:suppression_of_uncertainty:phase4.rule.014",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase4.rule.014",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 27,
+          "section_path": [
+            "Pipeline Quality Assessment"
+          ],
+          "start_offset": 104
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase4.rule.014."
+      },
+      {
+        "claim_id": "claim-00020",
+        "evidence_excerpt": "Revenue Scale: \\$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase4:claim-00020:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 35,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00021",
+        "evidence_excerpt": "Leverage: Total debt \\$608.6M vs assets \\$4.47B (LTV approx.",
+        "finding_id": "phase4:claim-00021:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 36,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 136
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase4:claim-00022:verification_language_without_authorization:phase4.rule.207",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase4.rule.207",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase4.rule.207."
+      },
+      {
+        "claim_id": "claim-00022",
+        "evidence_excerpt": "Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "finding_id": "phase4:claim-00022:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 37,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 137
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase4:claim-00024:verification_language_without_authorization:phase4.rule.008",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "rule_id": "phase4.rule.008",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Claim triggered verification_language_without_authorization against phase4.rule.008."
+      },
+      {
+        "claim_id": "claim-00024",
+        "evidence_excerpt": "Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "finding_id": "phase4:claim-00024:suppression_of_uncertainty:phase4.rule.014",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_caveat",
+        "rewrite_guidance": "Add visible uncertainty and public-data limitation language near the claim.",
+        "rule_id": "phase4.rule.014",
+        "severity": "critical",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 41,
+          "section_path": [
+            "Investment Decision"
+          ],
+          "start_offset": 145
+        },
+        "verdict": "non_compliant",
+        "violation_type": "suppression_of_uncertainty",
+        "why_flagged": "Claim triggered suppression_of_uncertainty against phase4.rule.014."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "DATOS VERIFICADO",
+        "finding_id": "phase4:unit-00006:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 6,
+          "section_path": [
+            "Executive Summary"
+          ],
+          "start_offset": 28
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ]
+  }
+}

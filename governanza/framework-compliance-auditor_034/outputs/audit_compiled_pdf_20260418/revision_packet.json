@@ -1,0 +1,913 @@
+{
+  "audit_run_id": "audit-20260418T211601Z-90981a49",
+  "generated_at": "2026-04-18T21:16:01.530424+00:00",
+  "grouped_fixes_by_section": {
+    "Executive Summary": [
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00005",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": null,
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "normative_source": "phase1",
+        "problem_description": "Short visible callout implies verification, approval, certification, or compliance closure.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00002",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase3.rule.040: The boundary must remain hard. Phase 3 may show conflict, organize preliminary priorities, make a validation agenda visible, and articulate a powerful internal reading of the case. It may not close verification, certify compliance, or turn a candidate opportunity into a terminal decision.",
+        "problem_description": "Claim triggered contract_rule_match against phase3.rule.040.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00005",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": null,
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "normative_source": "phase3",
+        "problem_description": "Short visible callout implies verification, approval, certification, or compliance closure.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00005",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": null,
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "normative_source": "phase4",
+        "problem_description": "Short visible callout implies verification, approval, certification, or compliance closure.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00005",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": null,
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "normative_source": "phase0",
+        "problem_description": "Short visible callout implies verification, approval, certification, or compliance closure.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Executive Summary",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      }
+    ],
+    "Financial Analysis": [
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00008",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00009",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00010",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00008",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00009",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00010",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00008",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00009",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00010",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00008",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00009",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00010",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Financial Analysis",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      }
+    ],
+    "Investment Decision": [
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00020",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00021",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase1.rule.098: `verified_performance_claim`",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase1.rule.098.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase1.rule.098: `verified_performance_claim`",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase1.rule.098.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase1.rule.053: Subphase 1A does not build the data lake, physical tables, or production ingestion pipelines. It defines the admissible perimeter. It exists to prevent dataset sprawl, semantic overreach, silent migration of Verification-grade language into a Decision-grade layer, and hidden dependence on the LLM as primary analyst.",
+        "problem_description": "Claim triggered semantic_overreach against phase1.rule.053.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase1.rule.019: What is unknown about the site is not invented; it is represented as plausible hypothesis, comparable benchmark, explicit assumption, or uncertainty marker.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase1.rule.019.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00020",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00021",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase3.rule.039: Phase 3 ends when admissible upstream content has been converted into governed, readable, and exportable visible outputs. If a Phase 4 later exists, that phase may handle outputs of greater terminal weight. By definition, Phase 3 may not behave as a verification bridge, compliance engine, or final recommendation layer.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase3.rule.039.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase3.rule.039: Phase 3 ends when admissible upstream content has been converted into governed, readable, and exportable visible outputs. If a Phase 4 later exists, that phase may handle outputs of greater terminal weight. By definition, Phase 3 may not behave as a verification bridge, compliance engine, or final recommendation layer.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase3.rule.039.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase3.rule.002: Without this subphase, the system faces two opposite risks: that reporting becomes confused with terminal reasoning, or that out of fear of overreaching it collapses into a poor mechanics of summaries and tables. Phase 3 must block both errors.",
+        "problem_description": "Claim triggered semantic_overreach against phase3.rule.002.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase3.rule.002: Without this subphase, the system faces two opposite risks: that reporting becomes confused with terminal reasoning, or that out of fear of overreaching it collapses into a poor mechanics of summaries and tables. Phase 3 must block both errors.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase3.rule.002.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00020",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00021",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase4.rule.207: Contains baseline hardening needs wherever the claim depends on operating or quantitative reference. It must make visible which baseline matters, why the current baseline is insufficient, and what would need to harden before upgrade can be attempted.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase4.rule.207.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase4.rule.008: selection and prioritization of `claim_upgrade_candidate` from claims, tensions, candidate opportunities, uncertainties, and evidence gaps already structured upstream;",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase4.rule.008.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase4.rule.014: delimitation of the domain of validity within which the claim could elevate its status.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase4.rule.014.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00020",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00021",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase0.rule.019: Decision-grade y Verification-grade son distintos y no pueden colapsarse por lenguaje de reporte.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase0.rule.019.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00022",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase0.rule.019: Decision-grade y Verification-grade son distintos y no pueden colapsarse por lenguaje de reporte.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase0.rule.019.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase0.rule.016: Todo output visible debe ser semanticamente proporcional al soporte real.",
+        "problem_description": "Claim triggered semantic_overreach against phase0.rule.016.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00024",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase0.rule.016: Todo output visible debe ser semanticamente proporcional al soporte real.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase0.rule.016.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Investment Decision",
+        "why_it_matters": "The issue can mislead executive readers or create false phase-boundary closure."
+      }
+    ],
+    "Pipeline Quality Assessment": [
+      {
+        "action": "qualify",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase1.rule.053: Subphase 1A does not build the data lake, physical tables, or production ingestion pipelines. It defines the admissible perimeter. It exists to prevent dataset sprawl, semantic overreach, silent migration of Verification-grade language into a Decision-grade layer, and hidden dependence on the LLM as primary analyst.",
+        "problem_description": "Claim triggered semantic_overreach against phase1.rule.053.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase1.rule.098: `verified_performance_claim`",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase1.rule.098.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase1.rule.001: Phase 1 establishes the public observation layer of the ZLab framework. Its function is to construct the minimum structured external base required to support later constrained inference without granting sovereign epistemic status to any single source, benchmark, dataset, score, or LLM narrative.",
+        "problem_description": "Claim triggered traceability_weakening against phase1.rule.001.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase1.rule.019: What is unknown about the site is not invented; it is represented as plausible hypothesis, comparable benchmark, explicit assumption, or uncertainty marker.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase1.rule.019.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase3.rule.002: Without this subphase, the system faces two opposite risks: that reporting becomes confused with terminal reasoning, or that out of fear of overreaching it collapses into a poor mechanics of summaries and tables. Phase 3 must block both errors.",
+        "problem_description": "Claim triggered semantic_overreach against phase3.rule.002.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase3.rule.039: Phase 3 ends when admissible upstream content has been converted into governed, readable, and exportable visible outputs. If a Phase 4 later exists, that phase may handle outputs of greater terminal weight. By definition, Phase 3 may not behave as a verification bridge, compliance engine, or final recommendation layer.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase3.rule.039.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase3.rule.009: The correct primary material unit of Phase 3 is the **`Output Block`**. It should be understood as the minimum visible unit that can be traced back to upstream objects, assembled into more than one view, audited, degraded, reassigned, or blocked without losing material identity or breaking the report as a whole.",
+        "problem_description": "Claim triggered traceability_weakening against phase3.rule.009.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase3.rule.002: Without this subphase, the system faces two opposite risks: that reporting becomes confused with terminal reasoning, or that out of fear of overreaching it collapses into a poor mechanics of summaries and tables. Phase 3 must block both errors.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase3.rule.002.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase4.rule.379: `upgrade` does not mean total verification, confirmed savings, final compliance, closed causality, or terminal recommendation.",
+        "problem_description": "Claim triggered semantic_overreach against phase4.rule.379.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase4.rule.379: `upgrade` does not mean total verification, confirmed savings, final compliance, closed causality, or terminal recommendation.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase4.rule.379.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase4.rule.002: Without Phase 4 the framework is exposed to two symmetrical failures. The first is to raise claims on the basis of plausibility, benchmark, or pressure for closure without a real hardening architecture. The second is to leave the case trapped in indefinite provisionality, with relevant claims, dominant tensions, and visible candidate opportunities, but without an explicit structure saying what is missing, which evidence actually matters, and under what conditions a claim could legitimately elevate its status.",
+        "problem_description": "Claim triggered traceability_weakening against phase4.rule.002.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase4.rule.014: delimitation of the domain of validity within which the claim could elevate its status.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase4.rule.014.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "qualify",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Constrain the statement to what the cited upstream support actually authorizes.",
+        "normative_source": "phase0.rule.011: Los motores no pueden redefinir la epistemologia.",
+        "problem_description": "Claim triggered semantic_overreach against phase0.rule.011.",
+        "safer_language_examples": [
+          "Treat this as a candidate finding pending validation.",
+          "Frame this as an option, not a mandated action."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "soften",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Remove verification/compliance closure language unless the report cites an explicit hardening route and verified evidence.",
+        "normative_source": "phase0.rule.019: Decision-grade y Verification-grade son distintos y no pueden colapsarse por lenguaje de reporte.",
+        "problem_description": "Claim triggered verification_language_without_authorization against phase0.rule.019.",
+        "safer_language_examples": [
+          "Public-data indicators suggest this risk may be present.",
+          "This remains Decision-grade and has not been field-verified."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_traceability",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "normative_source": "phase0.rule.023: Todo claim material debe preservar provenance, lineage, versionado y posibilidad de rebuild.",
+        "problem_description": "Claim triggered traceability_weakening against phase0.rule.023.",
+        "safer_language_examples": [
+          "According to [source/table], the observed indicator is...",
+          "The claim is supported by the cited public-data signal, not by site verification."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      },
+      {
+        "action": "add_caveat",
+        "claim_id": "claim-00016",
+        "comparative_source": null,
+        "explicit_rewrite_instruction": "Add visible uncertainty and public-data limitation language near the claim.",
+        "normative_source": "phase0.rule.016: Todo output visible debe ser semanticamente proporcional al soporte real.",
+        "problem_description": "Claim triggered suppression_of_uncertainty against phase0.rule.016.",
+        "safer_language_examples": [
+          "This conclusion is preliminary and subject to validation.",
+          "The available evidence supports prioritization, not verification-grade closure."
+        ],
+        "section_id": "Pipeline Quality Assessment",
+        "why_it_matters": "The issue can contaminate recommendations or imply unsupported verification."
+      }
+    ]
+  },
+  "report_id": "compiled-1dc910665c",
+  "revision_batch_id": "revision-5cb3cc6d1add",
+  "unresolved_critical_count": 15
+}

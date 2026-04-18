@@ -1,0 +1,19 @@
+{
+  "phase_id": "phase3",
+  "phase_name": "Sample Phase 3 - Reporting Discipline",
+  "reporting_constraints": [
+    "Visible report outputs cannot exceed upstream support.",
+    "Executive summaries must not use narrative force to strengthen claims beyond support."
+  ],
+  "forbidden_output_families": [
+    "The report must not package preliminary findings as verified conclusions.",
+    "Tables do not become evidence by default unless source and relevance are clear."
+  ],
+  "certainty_constraints": [
+    "Recommendations must remain scoped to the evidence grade that supports them."
+  ],
+  "evidence_traceability_expectations": [
+    "Reports must preserve enough source context for a reviewer to inspect each major claim."
+  ]
+}
+

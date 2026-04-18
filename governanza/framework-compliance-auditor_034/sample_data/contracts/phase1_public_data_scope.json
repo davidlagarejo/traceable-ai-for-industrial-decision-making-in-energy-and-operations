@@ -1,0 +1,21 @@
+{
+  "phase_id": "phase1",
+  "phase_name": "Sample Phase 1 - Public Data Scope / Decision-Grade Only",
+  "allowed_output_families": [
+    "Phase 1 may produce Decision-grade public-data findings, prioritization candidates, and validation questions."
+  ],
+  "forbidden_output_families": [
+    "Phase 1 must not claim site verification, regulatory compliance closure, or validated savings.",
+    "Public-data proxy signals must not be converted into hard site claims."
+  ],
+  "escalation_boundaries": [
+    "No claim may be upgraded from Decision-grade to Verification-grade without an explicit hardening route."
+  ],
+  "semantic_overreach_rules": [
+    "Benchmark evidence must not be rewritten as site-specific proof."
+  ],
+  "evidence_traceability_expectations": [
+    "Claims derived from public data must preserve visible source lineage."
+  ]
+}
+

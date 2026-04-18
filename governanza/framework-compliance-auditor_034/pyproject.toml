@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "framework-compliance-auditor"
+version = "0.1.0"
+description = "Local-first audit system for framework phase compliance and reference-grade report quality comparison."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "ZLab" }]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4.0.0"]
+yaml = ["PyYAML>=6.0.0"]
+dev = ["pytest>=8.0.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["contracts*", "engines*", "models*", "parsers*"]
+exclude = ["tests*", "sample_data*", "outputs*", "skills*", "mcp*", "config*", "prompts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

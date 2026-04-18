@@ -1,0 +1,163 @@
+{
+  "audit_run_id": "audit-20260418T211601Z-90981a49",
+  "dimensions": [
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered semantic_overreach against phase0.rule.011."
+      ],
+      "key_strengths": [],
+      "name": "phase0_epistemic_compliance",
+      "rationale": "phase0 is non_compliant; findings by severity: critical: 4, high: 12.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered semantic_overreach against phase1.rule.053."
+      ],
+      "key_strengths": [],
+      "name": "phase1_scope_compliance",
+      "rationale": "phase1 is non_compliant; findings by severity: critical: 4, high: 12.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered contract_rule_match against phase3.rule.040.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009."
+      ],
+      "key_strengths": [],
+      "name": "phase3_reporting_compliance",
+      "rationale": "phase3 is non_compliant; findings by severity: critical: 4, high: 13.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered semantic_overreach against phase4.rule.379."
+      ],
+      "key_strengths": [],
+      "name": "phase4_upgrade_compliance",
+      "rationale": "phase4 is non_compliant; findings by severity: critical: 3, high: 12.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "technical_density",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "methodological_rigor",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "uncertainty_handling",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "financial_seriousness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "regulatory_seriousness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "market_comparison_sharpness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "medium",
+      "key_failures": [
+        "Add reference reports when quality benchmarking is required."
+      ],
+      "key_strengths": [],
+      "name": "senior_report_quality",
+      "rationale": "Reference comparison was skipped. This does not affect normative phase compliance.",
+      "score": 84
+    },
+    {
+      "improvement_priority": "high",
+      "key_failures": [
+        "phase1: Total Revenue (most recent annual): \\$766.8M Total Assets: \\$4.47B Total Debt: \\$608.6M Net Income: \\$-210,000 Most Recent 10-K Filing: 2025-12-31",
+        "phase1: Revenue (Annual): \\$766.8M Operating Income: \\$135.6M Net Income: \\$-210,000",
+        "phase1: Total Assets: \\$4.47B Total Debt: \\$608.6M Shares Outstanding: N/A",
+        "phase1: 2022: \\$725.7M 2023: \\$738.2M 2023: \\$738.2M 2024: \\$766.8M 2024: \\$766.8M 2025: \\$766.8M",
+        "phase1: Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5"
+      ],
+      "key_strengths": [],
+      "name": "traceability_clarity",
+      "rationale": "High-stakes evidence coverage is 20%.",
+      "score": 20
+    },
+    {
+      "improvement_priority": "high",
+      "key_failures": [
+        "phase1: Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5",
+        "phase1: Regulatory Compliance: Company maintains current SEC filings (10-K filed 2026-03-02).",
+        "phase1: Data Quality Gate Passed: YES Discovery Sources Validated: 2 Entity Fitness Rate: 0\\ Coverage Gaps: 1 (0 high-severity)",
+        "phase1: DATOS VERIFICADO",
+        "phase3: Total Entities Evaluated: 5 Fit Entities: 0 Fitness Rate: 0\\ Phase Contracts Validated: 5"
+      ],
+      "key_strengths": [],
+      "name": "validation_honesty",
+      "rationale": "Measures whether validation and verification language stays within support.",
+      "score": 0
+    }
+  ],
+  "overall_compliance_gate": "fail",
+  "overall_quality_gate": "fail",
+  "recommended_next_action": "Revise blocked phase violations before quality polishing. Finding distribution: {'high': 49, 'critical': 15}.",
+  "report_id": "compiled-1dc910665c"
+}

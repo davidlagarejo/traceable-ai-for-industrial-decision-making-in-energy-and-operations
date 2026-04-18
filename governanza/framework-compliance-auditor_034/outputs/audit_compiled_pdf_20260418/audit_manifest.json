@@ -1,0 +1,33 @@
+{
+  "audit_run_id": "audit-20260418T211601Z-90981a49",
+  "completed_at": "2026-04-18T21:16:01.768724+00:00",
+  "contract_file_hashes": {
+    "../../Phases/phase-1/specs/phase-1-public-data-engine.md": "839a527fbd31f8122c99a06eaf8861a71d86346f52f531390339eff882eea9a0",
+    "../../Phases/phase-3/docs/en/3_Phase_3_Master_Document.md": "1a2d6f6ccd2cd756f890f3ffcbba314d5aa73b24d1e5f8ce48b1971fd61dd74c",
+    "../../Phases/phase-4/docs/en/4_Phase_4_Master_Document.md": "b8f0f1289b4b124eea1eb6f1c56ec4504f625e556f82779ccb2f5dfaf0f27202",
+    "config/contracts/phase0_zlab_master_context.json": "5cad43495e9252f58063404db24b26800cdd786c6d81dcdf53683ffa72cc5475"
+  },
+  "input_file_hashes": {
+    "../../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf": "1dc910665c6431b4bfe0d8e8b431cccd95d145adf0e284c0e07bbb7bf090169d"
+  },
+  "output_artifact_locations": {
+    "audit_manifest.json": "outputs/audit_compiled_pdf_20260418/audit_manifest.json",
+    "audit_scorecard.json": "outputs/audit_compiled_pdf_20260418/audit_scorecard.json",
+    "audit_summary.md": "outputs/audit_compiled_pdf_20260418/audit_summary.md",
+    "claim_violation_register.json": "outputs/audit_compiled_pdf_20260418/claim_violation_register.json",
+    "compiled_contract.json": "outputs/audit_compiled_pdf_20260418/compiled_contract.json",
+    "normalized_report.json": "outputs/audit_compiled_pdf_20260418/normalized_report.json",
+    "phase_compliance_report.json": "outputs/audit_compiled_pdf_20260418/phase_compliance_report.json",
+    "reference_gap_report.json": "outputs/audit_compiled_pdf_20260418/reference_gap_report.json",
+    "revision_packet.json": "outputs/audit_compiled_pdf_20260418/revision_packet.json"
+  },
+  "reference_file_hashes": {},
+  "report_id": "compiled-1dc910665c",
+  "settings": {
+    "allow_critical_findings": false,
+    "compliance_min_score": 90,
+    "max_reaudit_iterations": 5,
+    "quality_min_score": 82
+  },
+  "started_at": "2026-04-18T21:16:01.431559+00:00"
+}
