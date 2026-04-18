@@ -1,0 +1,26 @@
+[
+  {
+    "current_state": "Measured local signal: 0.00",
+    "dimension_name": "methodological_explicitness",
+    "gap_description": "The report is thinner than reference anchors for methodological_explicitness; local signal is 0% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf). This is a quality gap, not a phase violation.",
+    "reference_anchor_expectation": "Dimension-specific anchor signal: 5.28; strongest anchors: 74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf",
+    "severity": "high",
+    "targeted_improvement_suggestion": "Make assumptions, data sources, proxy limits, and method steps explicit."
+  },
+  {
+    "current_state": "Measured local signal: 8.00",
+    "dimension_name": "structure_quality",
+    "gap_description": "The report is thinner than reference anchors for structure_quality; local signal is 72% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, 73509.pdf). This is a quality gap, not a phase violation.",
+    "reference_anchor_expectation": "Dimension-specific anchor signal: 11.19; strongest anchors: 74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, 73509.pdf",
+    "severity": "medium",
+    "targeted_improvement_suggestion": "Improve sectioning so findings, methods, evidence, and recommendations are easy to audit."
+  },
+  {
+    "current_state": "Measured local signal: 0.00",
+    "dimension_name": "recommendation_maturity",
+    "gap_description": "The report is thinner than reference anchors for recommendation_maturity; local signal is 0% of the dimension-specific reference anchor (74983.pdf, sustainable-buildings-finance-reference-guide.pdf, 73509.pdf). This is a quality gap, not a phase violation.",
+    "reference_anchor_expectation": "Dimension-specific anchor signal: 2.13; strongest anchors: 74983.pdf, sustainable-buildings-finance-reference-guide.pdf, 73509.pdf",
+    "severity": "high",
+    "targeted_improvement_suggestion": "Tie recommendations to prerequisites, owners, sequencing, and verification conditions."
+  }
+]

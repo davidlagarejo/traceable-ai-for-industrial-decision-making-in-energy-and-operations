@@ -1,0 +1,894 @@
+{
+  "audit_run_id": "audit-20260418T220049Z-1b98a416",
+  "overall_contract_compliance_summary": {
+    "gate": "fail",
+    "recommended_next_action": "Revise blocked phase violations before quality polishing. Finding distribution: {'high': 32}."
+  },
+  "pass_fail_thresholds": {
+    "allow_critical_findings": false,
+    "compliance_min_score": 90,
+    "quality_min_score": 82
+  },
+  "per_phase_verdict": [
+    {
+      "phase_id": "phase1",
+      "phase_name": "Phase 1 \u2014 Public Data Engine",
+      "severity_distribution": {
+        "high": 8
+      },
+      "summary": "phase1 is non_compliant; findings by severity: high: 8.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase3",
+      "phase_name": "3A \u2014 Scope, Primary Material Unit, and MVP Scope of Phase 3",
+      "severity_distribution": {
+        "high": 8
+      },
+      "summary": "phase3 is non_compliant; findings by severity: high: 8.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase4",
+      "phase_name": "4A \u2014 Constitution of the Verification Bridge",
+      "severity_distribution": {
+        "high": 8
+      },
+      "summary": "phase4 is non_compliant; findings by severity: high: 8.",
+      "verdict": "non_compliant"
+    },
+    {
+      "phase_id": "phase0",
+      "phase_name": "Phase 0 \u2014 Operational Truth and Epistemic Governance",
+      "severity_distribution": {
+        "high": 8
+      },
+      "summary": "phase0 is non_compliant; findings by severity: high: 8.",
+      "verdict": "non_compliant"
+    }
+  ],
+  "report_id": "compiled-1dc910665c",
+  "representative_evidence_excerpts": [
+    {
+      "claim_id": "claim-00004",
+      "excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00006",
+      "excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00016",
+      "excerpt": "$766.8M annual revenue confirms operational scale.",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00017",
+      "excerpt": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": null,
+      "excerpt": "Phase Contracts Validated: 5",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": null,
+      "excerpt": "Discovery Sources Validated: 2",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": null,
+      "excerpt": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": null,
+      "excerpt": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+      "phase_id": "phase1",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00004",
+      "excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+      "phase_id": "phase3",
+      "severity": "high"
+    },
+    {
+      "claim_id": "claim-00006",
+      "excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+      "phase_id": "phase3",
+      "severity": "high"
+    }
+  ],
+  "severity_distribution": {
+    "high": 32
+  },
+  "violations_grouped_by_phase": {
+    "phase0": [
+      {
+        "claim_id": "claim-00004",
+        "evidence_excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+        "finding_id": "phase0:claim-00004:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 17,
+          "section_path": [
+            "Coverage Gaps:"
+          ],
+          "start_offset": 66
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00006",
+        "evidence_excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+        "finding_id": "phase0:claim-00006:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 39,
+          "section_path": [
+            "HISTORICAL REVENUE TREND"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase0:claim-00016:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 85,
+          "section_path": [
+            "1. Revenue Scale:"
+          ],
+          "start_offset": 305
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": "claim-00017",
+        "evidence_excerpt": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+        "finding_id": "phase0:claim-00017:traceability_weakening:phase0.rule.023",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase0.rule.023",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 86,
+          "section_path": [
+            "2. Leverage:"
+          ],
+          "start_offset": 307
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase0.rule.023."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Phase Contracts Validated: 5",
+        "finding_id": "phase0:section-0099:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Phase Contracts Validated: 5"
+          ],
+          "start_offset": 203
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Discovery Sources Validated: 2",
+        "finding_id": "phase0:section-0131:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Discovery Sources Validated: 2"
+          ],
+          "start_offset": 316
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "finding_id": "phase0:unit-00002:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 2,
+          "section_path": [
+            "York City"
+          ],
+          "start_offset": 10
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "finding_id": "phase0:unit-00021:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase0",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 21,
+          "section_path": [
+            "Most Recent 10-K Filing:"
+          ],
+          "start_offset": 75
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase1": [
+      {
+        "claim_id": "claim-00004",
+        "evidence_excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+        "finding_id": "phase1:claim-00004:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 17,
+          "section_path": [
+            "Coverage Gaps:"
+          ],
+          "start_offset": 66
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00006",
+        "evidence_excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+        "finding_id": "phase1:claim-00006:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 39,
+          "section_path": [
+            "HISTORICAL REVENUE TREND"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase1:claim-00016:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 85,
+          "section_path": [
+            "1. Revenue Scale:"
+          ],
+          "start_offset": 305
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": "claim-00017",
+        "evidence_excerpt": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+        "finding_id": "phase1:claim-00017:traceability_weakening:phase1.rule.001",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase1.rule.001",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 86,
+          "section_path": [
+            "2. Leverage:"
+          ],
+          "start_offset": 307
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase1.rule.001."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Phase Contracts Validated: 5",
+        "finding_id": "phase1:section-0099:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Phase Contracts Validated: 5"
+          ],
+          "start_offset": 203
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Discovery Sources Validated: 2",
+        "finding_id": "phase1:section-0131:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Discovery Sources Validated: 2"
+          ],
+          "start_offset": 316
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "finding_id": "phase1:unit-00002:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 2,
+          "section_path": [
+            "York City"
+          ],
+          "start_offset": 10
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "finding_id": "phase1:unit-00021:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase1",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 21,
+          "section_path": [
+            "Most Recent 10-K Filing:"
+          ],
+          "start_offset": 75
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase3": [
+      {
+        "claim_id": "claim-00004",
+        "evidence_excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+        "finding_id": "phase3:claim-00004:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 17,
+          "section_path": [
+            "Coverage Gaps:"
+          ],
+          "start_offset": 66
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00006",
+        "evidence_excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+        "finding_id": "phase3:claim-00006:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 39,
+          "section_path": [
+            "HISTORICAL REVENUE TREND"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase3:claim-00016:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 85,
+          "section_path": [
+            "1. Revenue Scale:"
+          ],
+          "start_offset": 305
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": "claim-00017",
+        "evidence_excerpt": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+        "finding_id": "phase3:claim-00017:traceability_weakening:phase3.rule.009",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase3.rule.009",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 86,
+          "section_path": [
+            "2. Leverage:"
+          ],
+          "start_offset": 307
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase3.rule.009."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Phase Contracts Validated: 5",
+        "finding_id": "phase3:section-0099:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Phase Contracts Validated: 5"
+          ],
+          "start_offset": 203
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Discovery Sources Validated: 2",
+        "finding_id": "phase3:section-0131:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Discovery Sources Validated: 2"
+          ],
+          "start_offset": 316
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "finding_id": "phase3:unit-00002:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 2,
+          "section_path": [
+            "York City"
+          ],
+          "start_offset": 10
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "finding_id": "phase3:unit-00021:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase3",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 21,
+          "section_path": [
+            "Most Recent 10-K Filing:"
+          ],
+          "start_offset": 75
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ],
+    "phase4": [
+      {
+        "claim_id": "claim-00004",
+        "evidence_excerpt": "1 identified Total Revenue (most recent annual): $766.8M",
+        "finding_id": "phase4:claim-00004:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 17,
+          "section_path": [
+            "Coverage Gaps:"
+          ],
+          "start_offset": 66
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00006",
+        "evidence_excerpt": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+        "finding_id": "phase4:claim-00006:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 39,
+          "section_path": [
+            "HISTORICAL REVENUE TREND"
+          ],
+          "start_offset": 135
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00016",
+        "evidence_excerpt": "$766.8M annual revenue confirms operational scale.",
+        "finding_id": "phase4:claim-00016:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 85,
+          "section_path": [
+            "1. Revenue Scale:"
+          ],
+          "start_offset": 305
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": "claim-00017",
+        "evidence_excerpt": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+        "finding_id": "phase4:claim-00017:traceability_weakening:phase4.rule.002",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "add_traceability",
+        "rewrite_guidance": "Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.",
+        "rule_id": "phase4.rule.002",
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 86,
+          "section_path": [
+            "2. Leverage:"
+          ],
+          "start_offset": 307
+        },
+        "verdict": "non_compliant",
+        "violation_type": "traceability_weakening",
+        "why_flagged": "Claim triggered traceability_weakening against phase4.rule.002."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Phase Contracts Validated: 5",
+        "finding_id": "phase4:section-0099:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Phase Contracts Validated: 5"
+          ],
+          "start_offset": 203
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Discovery Sources Validated: 2",
+        "finding_id": "phase4:section-0131:report_package_inflation",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "relocate",
+        "rewrite_guidance": "Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": null,
+          "section_path": [
+            "Discovery Sources Validated: 2"
+          ],
+          "start_offset": 316
+        },
+        "verdict": "non_compliant",
+        "violation_type": "report_package_inflation",
+        "why_flagged": "Section title presents package-level closure that can exceed upstream support."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "finding_id": "phase4:unit-00002:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 2,
+          "section_path": [
+            "York City"
+          ],
+          "start_offset": 10
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      },
+      {
+        "claim_id": null,
+        "evidence_excerpt": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "finding_id": "phase4:unit-00021:visible_verification_callout",
+        "human_review_recommended": true,
+        "phase_id": "phase4",
+        "recommended_fix_type": "soften",
+        "rewrite_guidance": "Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.",
+        "rule_id": null,
+        "severity": "high",
+        "source_location": {
+          "end_offset": null,
+          "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+          "page_number": null,
+          "paragraph_index": 21,
+          "section_path": [
+            "Most Recent 10-K Filing:"
+          ],
+          "start_offset": 75
+        },
+        "verdict": "non_compliant",
+        "violation_type": "verification_language_without_authorization",
+        "why_flagged": "Short visible callout implies verification, approval, certification, or compliance closure."
+      }
+    ]
+  }
+}

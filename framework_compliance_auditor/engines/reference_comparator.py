@@ -3,8 +3,9 @@ from __future__ import annotations
 import statistics
 from pathlib import Path
 
+from contracts.loader import hash_file
 from engines.report_normalizer import SUPPORTED_REPORT_EXTENSIONS, normalize_report
-from models.datatypes import NormalizedReport, ReferenceGap
+from models.datatypes import NormalizedReport, ReferenceAnchorProfile, ReferenceGap
 from models.enums import DocumentRole, ReferenceDimension, Severity
 
 
@@ -111,9 +112,10 @@ TERM_SETS = {
 def compare_report_to_references(
     report: NormalizedReport,
     reference_paths: list[str | Path],
+    reference_profiles: list[ReferenceAnchorProfile] | None = None,
 ) -> list[ReferenceGap]:
     reference_files = discover_reference_files(reference_paths)
-    if not reference_files:
+    if not reference_files and not reference_profiles:
         return [
             ReferenceGap(
                 dimension_name=ReferenceDimension.SENIOR_REPORT_FEEL,
@@ -129,15 +131,12 @@ def compare_report_to_references(
             )
         ]
 
-    reference_reports = [
-        normalize_report(path, role=DocumentRole.REFERENCE_ANCHOR, phase_ids=[]) for path in reference_files
-    ]
     report_metrics = compute_quality_metrics(report)
-    reference_metrics = [compute_quality_metrics(reference) for reference in reference_reports]
+    profiles = reference_profiles if reference_profiles is not None else build_reference_anchor_profiles(reference_files)
     gaps: list[ReferenceGap] = []
     for dimension in ReferenceDimension:
         current = report_metrics[dimension.value]
-        anchor = statistics.median(metrics[dimension.value] for metrics in reference_metrics)
+        anchor, anchor_docs = _dimension_specific_anchor(dimension, profiles)
         severity = _severity_from_ratio(current, anchor)
         if severity == Severity.LOW and current >= anchor * 0.85:
             continue
@@ -145,13 +144,48 @@ def compare_report_to_references(
             ReferenceGap(
                 dimension_name=dimension,
                 current_state=f"Measured local signal: {current:.2f}",
-                reference_anchor_expectation=f"Reference median signal: {anchor:.2f}",
-                gap_description=_gap_description(dimension, current, anchor),
+                reference_anchor_expectation=(
+                    f"Dimension-specific anchor signal: {anchor:.2f}; strongest anchors: "
+                    f"{', '.join(anchor_docs) or 'none'}"
+                ),
+                gap_description=_gap_description(dimension, current, anchor, anchor_docs),
                 severity=severity,
                 targeted_improvement_suggestion=_improvement_suggestion(dimension),
             )
         )
     return gaps
+
+
+def build_reference_anchor_profiles(reference_paths: list[str | Path]) -> list[ReferenceAnchorProfile]:
+    reference_files = discover_reference_files(reference_paths)
+    profiles: list[ReferenceAnchorProfile] = []
+    for path in reference_files:
+        try:
+            reference = normalize_report(path, role=DocumentRole.REFERENCE_ANCHOR, phase_ids=[])
+            metrics = compute_quality_metrics(reference)
+            strongest = _strongest_dimensions(metrics)
+            profiles.append(
+                ReferenceAnchorProfile(
+                    document_id=f"{Path(path).stem}-{hash_file(path)[:10]}",
+                    source_path=str(path),
+                    strongest_dimensions=strongest,
+                    dimension_scores=metrics,
+                    useful_as=[_useful_as(ReferenceDimension(name)) for name in strongest],
+                    limitations=_reference_limitations(reference, metrics),
+                )
+            )
+        except Exception as exc:
+            profiles.append(
+                ReferenceAnchorProfile(
+                    document_id=f"{Path(path).stem}-unreadable",
+                    source_path=str(path),
+                    strongest_dimensions=[],
+                    dimension_scores={},
+                    useful_as=[],
+                    limitations=[f"Could not parse reference document: {exc}"],
+                )
+            )
+    return profiles
 
 
 def compute_quality_metrics(report: NormalizedReport) -> dict[str, float]:
@@ -198,6 +232,43 @@ def discover_reference_files(paths: list[str | Path]) -> list[Path]:
     return sorted(dict.fromkeys(files))
 
 
+def _dimension_specific_anchor(
+    dimension: ReferenceDimension,
+    profiles: list[ReferenceAnchorProfile],
+) -> tuple[float, list[str]]:
+    scored = [
+        (profile.dimension_scores.get(dimension.value, 0.0), Path(profile.source_path).name)
+        for profile in profiles
+        if profile.dimension_scores
+    ]
+    positive = sorted((item for item in scored if item[0] > 0), reverse=True)
+    if not positive:
+        return 0.0, []
+    selected = positive[: min(3, len(positive))]
+    return statistics.median(score for score, _ in selected), [name for _, name in selected]
+
+
+def _strongest_dimensions(metrics: dict[str, float]) -> list[str]:
+    positive = [(name, score) for name, score in metrics.items() if score > 0]
+    if not positive:
+        return []
+    top = sorted(positive, key=lambda item: item[1], reverse=True)[:4]
+    return [name for name, _ in top]
+
+
+def _reference_limitations(reference: NormalizedReport, metrics: dict[str, float]) -> list[str]:
+    limitations: list[str] = []
+    if not reference.claims:
+        limitations.append("No auditable claims were extracted; reference may be image-heavy or extraction-poor.")
+    if not reference.citations:
+        limitations.append("No citations detected by deterministic extraction.")
+    if metrics.get(ReferenceDimension.FINANCIAL_SERIOUSNESS.value, 0.0) == 0:
+        limitations.append("Weak financial-seriousness signal.")
+    if metrics.get(ReferenceDimension.REGULATORY_SERIOUSNESS.value, 0.0) == 0:
+        limitations.append("Weak regulatory-seriousness signal.")
+    return limitations
+
+
 def _number_density(text: str) -> float:
     words = max(len(text.split()), 1)
     digits = sum(1 for token in text.split() if any(char.isdigit() for char in token))
@@ -215,13 +286,19 @@ def _severity_from_ratio(current: float, anchor: float) -> Severity:
     return Severity.LOW
 
 
-def _gap_description(dimension: ReferenceDimension, current: float, anchor: float) -> str:
+def _gap_description(
+    dimension: ReferenceDimension,
+    current: float,
+    anchor: float,
+    anchor_docs: list[str],
+) -> str:
     if anchor <= 0:
         return f"The report has weak {dimension.value} signals, but reference anchors are also sparse."
     ratio = current / anchor
     return (
         f"The report is thinner than reference anchors for {dimension.value}; "
-        f"local signal is {ratio:.0%} of the reference median. This is a quality gap, not a phase violation."
+        f"local signal is {ratio:.0%} of the dimension-specific reference anchor "
+        f"({', '.join(anchor_docs)}). This is a quality gap, not a phase violation."
     )
 
 
@@ -259,3 +336,19 @@ def _improvement_suggestion(dimension: ReferenceDimension) -> str:
         ),
     }
     return suggestions[dimension]
+
+
+def _useful_as(dimension: ReferenceDimension) -> str:
+    labels = {
+        ReferenceDimension.TECHNICAL_DENSITY: "technical density anchor",
+        ReferenceDimension.METHODOLOGICAL_EXPLICITNESS: "methodology and assumptions anchor",
+        ReferenceDimension.UNCERTAINTY_HANDLING_MATURITY: "uncertainty-treatment anchor",
+        ReferenceDimension.FINANCIAL_SERIOUSNESS: "financial analysis anchor",
+        ReferenceDimension.REGULATORY_SERIOUSNESS: "regulatory seriousness anchor",
+        ReferenceDimension.MARKET_COMPARISON_SHARPNESS: "market comparison anchor",
+        ReferenceDimension.STRUCTURE_QUALITY: "report structure anchor",
+        ReferenceDimension.RECOMMENDATION_MATURITY: "recommendation maturity anchor",
+        ReferenceDimension.EVIDENCE_DISCUSSION_DEPTH: "evidence discussion anchor",
+        ReferenceDimension.SENIOR_REPORT_FEEL: "senior-report quality anchor",
+    }
+    return labels[dimension]

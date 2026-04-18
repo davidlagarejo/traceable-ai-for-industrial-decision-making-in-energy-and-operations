@@ -10,6 +10,7 @@ from models.datatypes import (
     AuditScorecard,
     CompiledContract,
     NormalizedReport,
+    ReferenceAnchorProfile,
     PhaseEvaluation,
     ReferenceGap,
     RevisionPacket,
@@ -26,6 +27,7 @@ def write_audit_artifacts(
     report: NormalizedReport,
     phase_evaluations: list[PhaseEvaluation],
     reference_gaps: list[ReferenceGap],
+    reference_profiles: list[ReferenceAnchorProfile] | None = None,
     revision_packet: RevisionPacket,
     scorecard: AuditScorecard,
     settings: dict[str, Any],
@@ -40,6 +42,7 @@ def write_audit_artifacts(
         ),
         "claim_violation_register.json": _claim_register_payload(findings),
         "reference_gap_report.json": [to_jsonable(gap) for gap in reference_gaps],
+        "reference_anchor_profiles.json": [to_jsonable(profile) for profile in reference_profiles or []],
         "revision_packet.json": to_jsonable(revision_packet),
         "audit_scorecard.json": to_jsonable(scorecard),
         "normalized_report.json": to_jsonable(report),
@@ -59,6 +62,7 @@ def write_audit_artifacts(
             report=report,
             phase_evaluations=phase_evaluations,
             reference_gaps=reference_gaps,
+            reference_profiles=reference_profiles or [],
             scorecard=scorecard,
             revision_packet=revision_packet,
         ),
@@ -162,6 +166,7 @@ def build_audit_summary_markdown(
     report: NormalizedReport,
     phase_evaluations: list[PhaseEvaluation],
     reference_gaps: list[ReferenceGap],
+    reference_profiles: list[ReferenceAnchorProfile],
     scorecard: AuditScorecard,
     revision_packet: RevisionPacket,
 ) -> str:
@@ -182,6 +187,10 @@ def build_audit_summary_markdown(
     top_gaps = "\n".join(
         f"- {gap.severity.value}: {gap.dimension_name.value} - {gap.gap_description}"
         for gap in reference_gaps[:8]
+    )
+    profile_lines = "\n".join(
+        f"- {Path(profile.source_path).name}: {', '.join(profile.strongest_dimensions) or 'no strong extracted dimension'}"
+        for profile in reference_profiles[:12]
     )
     return f"""# Audit Summary
 
@@ -211,6 +220,10 @@ Recommended next action: {scorecard.recommended_next_action}
 
 {top_gaps or "- No material reference-anchor gaps detected."}
 
+## Reference Anchor Profiles
+
+{profile_lines or "- No reference anchors were profiled."}
+
 ## Scorecard
 
 {score_lines}
@@ -230,4 +243,3 @@ def _severity_order(severity: Severity) -> int:
         Severity.HIGH: 3,
         Severity.CRITICAL: 4,
     }[severity]
-

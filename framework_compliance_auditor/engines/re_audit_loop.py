@@ -10,7 +10,11 @@ from contracts.loader import hash_file
 from engines.critique_packet_builder import build_revision_packet
 from engines.phase_compliance_engine import evaluate_phase_compliance
 from engines.phase_contract_loader import load_compiled_phase_contract
-from engines.reference_comparator import compare_report_to_references, discover_reference_files
+from engines.reference_comparator import (
+    build_reference_anchor_profiles,
+    compare_report_to_references,
+    discover_reference_files,
+)
 from engines.report_assembler import write_audit_artifacts, write_json, write_manifest
 from engines.report_normalizer import normalize_report
 from engines.scoring_engine import build_scorecard
@@ -46,7 +50,12 @@ def run_audit(
     )
 
     phase_evaluations = evaluate_phase_compliance(report, compiled_contract.phases)
-    reference_gaps = compare_report_to_references(report, list(reference_paths or []))
+    reference_profiles = build_reference_anchor_profiles(list(reference_paths or []))
+    reference_gaps = compare_report_to_references(
+        report,
+        list(reference_paths or []),
+        reference_profiles=reference_profiles,
+    )
     findings = [finding for evaluation in phase_evaluations for finding in evaluation.findings]
     scorecard = build_scorecard(report, audit_run_id, phase_evaluations, reference_gaps, settings)
     revision_packet = build_revision_packet(
@@ -64,6 +73,7 @@ def run_audit(
         report=report,
         phase_evaluations=phase_evaluations,
         reference_gaps=reference_gaps,
+        reference_profiles=reference_profiles,
         revision_packet=revision_packet,
         scorecard=scorecard,
         settings=settings,
@@ -179,4 +189,3 @@ def _load_run_outputs(output_dir: str | Path) -> dict[str, Any]:
 
 def _score_map(scorecard: dict[str, Any]) -> dict[str, int]:
     return {item["name"]: int(item["score"]) for item in scorecard.get("dimensions", [])}
-

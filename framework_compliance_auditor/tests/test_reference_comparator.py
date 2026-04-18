@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from engines.reference_comparator import compare_report_to_references
+from engines.reference_comparator import build_reference_anchor_profiles, compare_report_to_references
 from engines.report_normalizer import normalize_report
 
 
@@ -14,3 +14,11 @@ def test_reference_comparator_reports_quality_gaps_not_normative_violations():
     assert gaps
     assert all("not a phase violation" in gap.gap_description for gap in gaps)
 
+
+def test_reference_anchor_profiles_preserve_each_document_strengths():
+    profiles = build_reference_anchor_profiles([ROOT / "sample_data/references"])
+
+    assert len(profiles) == 1
+    assert profiles[0].document_id.startswith("reference_anchor-")
+    assert profiles[0].strongest_dimensions
+    assert profiles[0].useful_as

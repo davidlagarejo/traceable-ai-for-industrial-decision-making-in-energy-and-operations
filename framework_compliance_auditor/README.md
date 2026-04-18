@@ -48,6 +48,7 @@ PDF parsing is optional:
 python3 -m pip install -e '.[pdf,dev]'
 ```
 
+The PDF parser first tries `pypdf`, then PyMuPDF, then local text extraction fallbacks where available.
 The core sample flow works without optional dependencies.
 
 ## Run A Sample Audit
@@ -135,6 +136,30 @@ Reference documents are quality anchors only. The comparator evaluates:
 
 The comparator never turns reference behavior into framework law.
 
+Reference-backed audit runs also write `reference_anchor_profiles.json`, which records each
+reference document's strongest extracted dimensions and how it should be used as a quality anchor.
+
+## Build A PDF Comparison Report
+
+After an audit run has produced JSON artifacts, build a human-readable Markdown and LaTeX report:
+
+```bash
+python3 scripts/build_reference_comparison_pdf.py \
+  --audit-dir outputs/audit_compiled_pdf_with_references_20260418 \
+  --out reports/reporte_comparacion_referencias_2026-04-18
+```
+
+Compile the PDF when `pdflatex` is available:
+
+```bash
+pdflatex -interaction=nonstopmode -halt-on-error \
+  -output-directory reports \
+  reports/reporte_comparacion_referencias_2026-04-18.tex
+```
+
+The PDF is a presentation layer over the structured artifacts. The JSON outputs remain the
+auditable source of truth.
+
 ## Scoring
 
 The scorecard includes:
@@ -217,7 +242,7 @@ Current tests cover contract loading, claim segmentation, phase compliance, refe
 
 ## Limitations
 
-- PDF support depends on optional `pypdf` and works best for text PDFs.
+- PDF support depends on optional `pypdf` or PyMuPDF and works best for text PDFs.
 - Deterministic checks are intentionally conservative and should be augmented with human or LLM-assisted review for high-stakes audits.
 - The sample contracts are not your real framework governance.
 - Reference comparison uses transparent lexical metrics as a baseline, not hidden quality judgment.
@@ -229,4 +254,3 @@ Current tests cover contract loading, claim segmentation, phase compliance, refe
 - Add OCR support for scanned PDFs if needed.
 - Add model-assisted review behind the existing structured prompt and Skills boundaries.
 - Expand fixtures with known-good and known-bad historical reports.
-

@@ -1,0 +1,163 @@
+{
+  "audit_run_id": "audit-20260418T220049Z-1b98a416",
+  "dimensions": [
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Claim triggered traceability_weakening against phase0.rule.023.",
+        "Section title presents package-level closure that can exceed upstream support."
+      ],
+      "key_strengths": [],
+      "name": "phase0_epistemic_compliance",
+      "rationale": "phase0 is non_compliant; findings by severity: high: 8.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Claim triggered traceability_weakening against phase1.rule.001.",
+        "Section title presents package-level closure that can exceed upstream support."
+      ],
+      "key_strengths": [],
+      "name": "phase1_scope_compliance",
+      "rationale": "phase1 is non_compliant; findings by severity: high: 8.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Claim triggered traceability_weakening against phase3.rule.009.",
+        "Section title presents package-level closure that can exceed upstream support."
+      ],
+      "key_strengths": [],
+      "name": "phase3_reporting_compliance",
+      "rationale": "phase3 is non_compliant; findings by severity: high: 8.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "critical",
+      "key_failures": [
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Claim triggered traceability_weakening against phase4.rule.002.",
+        "Section title presents package-level closure that can exceed upstream support."
+      ],
+      "key_strengths": [],
+      "name": "phase4_upgrade_compliance",
+      "rationale": "phase4 is non_compliant; findings by severity: high: 8.",
+      "score": 0
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "technical_density",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "high",
+      "key_failures": [
+        "Make assumptions, data sources, proxy limits, and method steps explicit."
+      ],
+      "key_strengths": [],
+      "name": "methodological_rigor",
+      "rationale": "The report is thinner than reference anchors for methodological_explicitness; local signal is 0% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf). This is a quality gap, not a phase violation.",
+      "score": 55
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "uncertainty_handling",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "financial_seriousness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "regulatory_seriousness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "market_comparison_sharpness",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "low",
+      "key_failures": [],
+      "key_strengths": [
+        "At or near reference anchor level under deterministic metrics."
+      ],
+      "name": "senior_report_quality",
+      "rationale": "No material reference-anchor gap detected for this dimension.",
+      "score": 90
+    },
+    {
+      "improvement_priority": "high",
+      "key_failures": [
+        "phase1: 1 identified Total Revenue (most recent annual): $766.8M",
+        "phase1: 2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+        "phase1: $766.8M annual revenue confirms operational scale.",
+        "phase1: Total debt $608.6M vs assets $4.47B (LTV approx.",
+        "phase3: 1 identified Total Revenue (most recent annual): $766.8M"
+      ],
+      "key_strengths": [],
+      "name": "traceability_clarity",
+      "rationale": "High-stakes evidence coverage is 20%.",
+      "score": 20
+    },
+    {
+      "improvement_priority": "high",
+      "key_failures": [
+        "phase1: Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "phase1: 2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "phase3: Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+        "phase3: 2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+        "phase4: Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED"
+      ],
+      "key_strengths": [],
+      "name": "validation_honesty",
+      "rationale": "Measures whether validation and verification language stays within support.",
+      "score": 0
+    }
+  ],
+  "overall_compliance_gate": "fail",
+  "overall_quality_gate": "fail",
+  "recommended_next_action": "Revise blocked phase violations before quality polishing. Finding distribution: {'high': 32}.",
+  "report_id": "compiled-1dc910665c"
+}

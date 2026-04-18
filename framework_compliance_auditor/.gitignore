@@ -9,7 +9,12 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+*.aux
+*.log
+*.out
 outputs/*
 !outputs/.gitkeep
 !outputs/audit_compiled_pdf_20260418/
 !outputs/audit_compiled_pdf_20260418/**
+!outputs/audit_compiled_pdf_with_references_20260418/
+!outputs/audit_compiled_pdf_with_references_20260418/**

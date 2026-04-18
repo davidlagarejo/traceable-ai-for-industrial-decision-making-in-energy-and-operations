@@ -44,6 +44,13 @@ def _parse_pdf_without_pypdf(
     source: Path,
     original_error: Exception,
 ) -> tuple[list[ReportSection], list[ReportUnit], list[Table], list[Citation]]:
+    extracted = _try_pymupdf(source)
+    if extracted:
+        sections, units = segment_text(extracted, source, markdown=False)
+        tables = extract_markdown_tables(extracted, source)
+        citations = extract_citations_from_text(extracted, source)
+        return sections, units, tables, citations
+
     extracted = _try_pdftotext(source)
     if extracted:
         sections, units = segment_text(extracted, source, markdown=False)
@@ -64,6 +71,24 @@ def _parse_pdf_without_pypdf(
         "PDF parsing requires optional dependency pypdf, a pdftotext binary, "
         "or a sibling main.tex fallback next to the PDF"
     ) from original_error
+
+
+def _try_pymupdf(source: Path) -> str | None:
+    try:
+        import fitz  # type: ignore
+    except Exception:
+        return None
+    try:
+        parts: list[str] = []
+        with fitz.open(str(source)) as document:
+            for page_index, page in enumerate(document, start=1):
+                text = page.get_text("text") or ""
+                if text.strip():
+                    parts.append(f"\n\nPage {page_index}\n{text}")
+        extracted = "\n\n".join(parts)
+    except Exception:
+        return None
+    return extracted if extracted.strip() else None
 
 
 def _try_pdftotext(source: Path) -> str | None:

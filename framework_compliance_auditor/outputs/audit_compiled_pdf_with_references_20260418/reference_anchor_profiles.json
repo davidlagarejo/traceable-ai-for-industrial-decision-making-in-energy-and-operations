@@ -1,0 +1,267 @@
+[
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 6.630648330058939,
+      "financial_seriousness": 7.12180746561886,
+      "market_comparison_sharpness": 2.701375245579568,
+      "methodological_explicitness": 0.9823182711198428,
+      "recommendation_maturity": 0.36836935166994106,
+      "regulatory_seriousness": 0.36836935166994106,
+      "senior_report_feel": 2.6891944265307846,
+      "structure_quality": 8.613948919449902,
+      "technical_density": 5.464636179805199,
+      "uncertainty_handling_maturity": 0.0
+    },
+    "document_id": "2022 Better Plants Progress Update_0-c247675e14",
+    "limitations": [],
+    "source_path": "../Recursos genericos/2022 Better Plants Progress Update_0.pdf",
+    "strongest_dimensions": [
+      "structure_quality",
+      "financial_seriousness",
+      "evidence_discussion_depth",
+      "technical_density"
+    ],
+    "useful_as": [
+      "report structure anchor",
+      "financial analysis anchor",
+      "evidence discussion anchor",
+      "technical density anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 10.504465970562336,
+      "financial_seriousness": 5.094980500691911,
+      "market_comparison_sharpness": 0.2516039753428104,
+      "methodological_explicitness": 1.6354258397282677,
+      "recommendation_maturity": 1.44672285822116,
+      "regulatory_seriousness": 3.333752673292238,
+      "senior_report_feel": 3.3023806045656934,
+      "structure_quality": 10.012831802742483,
+      "technical_density": 2.8623873604810006,
+      "uncertainty_handling_maturity": 0.0629009938357026
+    },
+    "document_id": "73509-d3fd2ea356",
+    "limitations": [],
+    "source_path": "../Recursos genericos/73509.pdf",
+    "strongest_dimensions": [
+      "evidence_discussion_depth",
+      "structure_quality",
+      "financial_seriousness",
+      "regulatory_seriousness"
+    ],
+    "useful_as": [
+      "evidence discussion anchor",
+      "report structure anchor",
+      "financial analysis anchor",
+      "regulatory seriousness anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 12.45136186770428,
+      "financial_seriousness": 8.249027237354086,
+      "market_comparison_sharpness": 0.311284046692607,
+      "methodological_explicitness": 7.782101167315175,
+      "recommendation_maturity": 4.5136186770428015,
+      "regulatory_seriousness": 0.311284046692607,
+      "senior_report_feel": 5.468967296761657,
+      "structure_quality": 12.04669260700389,
+      "technical_density": 2.59775477174603,
+      "uncertainty_handling_maturity": 0.0
+    },
+    "document_id": "74983-5b89f61bf3",
+    "limitations": [],
+    "source_path": "../Recursos genericos/74983.pdf",
+    "strongest_dimensions": [
+      "evidence_discussion_depth",
+      "structure_quality",
+      "financial_seriousness",
+      "methodological_explicitness"
+    ],
+    "useful_as": [
+      "evidence discussion anchor",
+      "report structure anchor",
+      "financial analysis anchor",
+      "methodology and assumptions anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 4.357698217930782,
+      "financial_seriousness": 11.719914680855943,
+      "market_comparison_sharpness": 1.3302447191578175,
+      "methodological_explicitness": 5.275108369074104,
+      "recommendation_maturity": 0.7568633746932409,
+      "regulatory_seriousness": 2.706359945872801,
+      "senior_report_feel": 5.736436209822472,
+      "structure_quality": 11.188000275223045,
+      "technical_density": 16.641172815356253,
+      "uncertainty_handling_maturity": 1.6513382720579803
+    },
+    "document_id": "Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects-ede6b59f05",
+    "limitations": [],
+    "source_path": "../Recursos genericos/Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf",
+    "strongest_dimensions": [
+      "technical_density",
+      "financial_seriousness",
+      "structure_quality",
+      "senior_report_feel"
+    ],
+    "useful_as": [
+      "technical density anchor",
+      "financial analysis anchor",
+      "report structure anchor",
+      "senior-report quality anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 0.2609603340292276,
+      "financial_seriousness": 0.0,
+      "market_comparison_sharpness": 0.0,
+      "methodological_explicitness": 0.0,
+      "recommendation_maturity": 0.0,
+      "regulatory_seriousness": 0.0,
+      "senior_report_feel": 0.09603340292275575,
+      "structure_quality": 1.3569937369519833,
+      "technical_density": 0.21920668058455117,
+      "uncertainty_handling_maturity": 0.0
+    },
+    "document_id": "IPMVP-2012-I-21183e4d74",
+    "limitations": [
+      "No citations detected by deterministic extraction.",
+      "Weak financial-seriousness signal.",
+      "Weak regulatory-seriousness signal."
+    ],
+    "source_path": "../Recursos genericos/IPMVP-2012-I.pdf",
+    "strongest_dimensions": [
+      "structure_quality",
+      "evidence_discussion_depth",
+      "technical_density",
+      "senior_report_feel"
+    ],
+    "useful_as": [
+      "report structure anchor",
+      "evidence discussion anchor",
+      "technical density anchor",
+      "senior-report quality anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 9.640330188679245,
+      "financial_seriousness": 12.588443396226415,
+      "market_comparison_sharpness": 0.7370283018867925,
+      "methodological_explicitness": 0.5601415094339622,
+      "recommendation_maturity": 0.5601415094339622,
+      "regulatory_seriousness": 1.2087264150943395,
+      "senior_report_feel": 3.6608763236825754,
+      "structure_quality": 8.972877358490566,
+      "technical_density": 7.425843882563821,
+      "uncertainty_handling_maturity": 0.11792452830188678
+    },
+    "document_id": "LBNL-50939-e4fdef811f",
+    "limitations": [],
+    "source_path": "../Recursos genericos/LBNL-50939.pdf",
+    "strongest_dimensions": [
+      "financial_seriousness",
+      "evidence_discussion_depth",
+      "structure_quality",
+      "technical_density"
+    ],
+    "useful_as": [
+      "financial analysis anchor",
+      "evidence discussion anchor",
+      "report structure anchor",
+      "technical density anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 7.472540228384046,
+      "financial_seriousness": 8.096461062986984,
+      "market_comparison_sharpness": 4.048230531493492,
+      "methodological_explicitness": 2.9890160913536183,
+      "recommendation_maturity": 0.7109795557103267,
+      "regulatory_seriousness": 4.715680726650126,
+      "senior_report_feel": 3.2764511237946103,
+      "structure_quality": 9.552547193081734,
+      "technical_density": 4.9485435802029,
+      "uncertainty_handling_maturity": 0.2611761633221608
+    },
+    "document_id": "P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46-2-72d491b9c7",
+    "limitations": [],
+    "source_path": "../Recursos genericos/P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46-2.pdf",
+    "strongest_dimensions": [
+      "structure_quality",
+      "financial_seriousness",
+      "evidence_discussion_depth",
+      "technical_density"
+    ],
+    "useful_as": [
+      "report structure anchor",
+      "financial analysis anchor",
+      "evidence discussion anchor",
+      "technical density anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 7.472540228384046,
+      "financial_seriousness": 8.096461062986984,
+      "market_comparison_sharpness": 4.048230531493492,
+      "methodological_explicitness": 2.9890160913536183,
+      "recommendation_maturity": 0.7109795557103267,
+      "regulatory_seriousness": 4.715680726650126,
+      "senior_report_feel": 3.2764511237946103,
+      "structure_quality": 9.552547193081734,
+      "technical_density": 4.9485435802029,
+      "uncertainty_handling_maturity": 0.2611761633221608
+    },
+    "document_id": "P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46-72d491b9c7",
+    "limitations": [],
+    "source_path": "../Recursos genericos/P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf",
+    "strongest_dimensions": [
+      "structure_quality",
+      "financial_seriousness",
+      "evidence_discussion_depth",
+      "technical_density"
+    ],
+    "useful_as": [
+      "report structure anchor",
+      "financial analysis anchor",
+      "evidence discussion anchor",
+      "technical density anchor"
+    ]
+  },
+  {
+    "dimension_scores": {
+      "evidence_discussion_depth": 3.44543708266,
+      "financial_seriousness": 8.110497911394335,
+      "market_comparison_sharpness": 6.7994023843644245,
+      "methodological_explicitness": 1.5550202762447787,
+      "recommendation_maturity": 2.134341555630088,
+      "regulatory_seriousness": 4.116230143000885,
+      "senior_report_feel": 2.114067862870091,
+      "structure_quality": 8.518340092081592,
+      "technical_density": 3.1611250569488627,
+      "uncertainty_handling_maturity": 0.27441534286672564
+    },
+    "document_id": "sustainable-buildings-finance-reference-guide-de5cfb9188",
+    "limitations": [],
+    "source_path": "../Recursos genericos/sustainable-buildings-finance-reference-guide.pdf",
+    "strongest_dimensions": [
+      "structure_quality",
+      "financial_seriousness",
+      "market_comparison_sharpness",
+      "regulatory_seriousness"
+    ],
+    "useful_as": [
+      "report structure anchor",
+      "financial analysis anchor",
+      "market comparison anchor",
+      "regulatory seriousness anchor"
+    ]
+  }
+]

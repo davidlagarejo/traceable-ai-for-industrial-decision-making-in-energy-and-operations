@@ -204,6 +204,16 @@ class ReferenceGap:
 
 
 @dataclass
+class ReferenceAnchorProfile:
+    document_id: str
+    source_path: str
+    strongest_dimensions: list[str]
+    dimension_scores: dict[str, float]
+    useful_as: list[str]
+    limitations: list[str] = field(default_factory=list)
+
+
+@dataclass
 class ScoreDimension:
     name: str
     score: int
@@ -268,4 +278,3 @@ class ReAuditComparison:
     newly_introduced_findings: list[str]
     score_delta: dict[str, int]
     threshold_met: bool
-

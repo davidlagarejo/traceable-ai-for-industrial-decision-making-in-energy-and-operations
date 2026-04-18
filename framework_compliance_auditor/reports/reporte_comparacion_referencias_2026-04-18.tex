@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\sloppy
+\begin{document}
+\begin{center}
+{\Large \textbf{Reporte de comparacion y cumplimiento del framework}}\\
+\vspace{4pt}
+Generado: 2026-04-18 22:02 UTC
+\end{center}
+\section*{Identificacion de la corrida}
+\textbf{Audit run}: audit-20260418T220049Z-1b98a416\\
+\textbf{Objeto auditado}: ../runtime-orchestrator/output/motor\_017\_render\_job\_rp-5dd87342/compiled.pdf\\
+\textbf{Hash del PDF auditado}: 1dc910665c6431b4bfe0d8e8b431cccd95d145adf0e284c0e07bbb7bf090169d\\
+\textbf{Compliance gate}: fail\\
+\textbf{Quality gate}: fail\\
+\textbf{Accion recomendada}: Revise blocked phase violations before quality polishing. Finding distribution: \{'high': 32\}.\\
+\section*{Lectura ejecutiva}
+El reporte no pasa el gate normativo ni el gate de calidad. La razon principal no es estilo de redaccion: el auditor detecta claims y rotulos visibles que debilitan la trazabilidad, sugieren validacion/cierre y empujan el texto fuera de los limites Decision-grade autorizados por las fases.
+
+La comparacion uso 9 documentos de Recursos genericos como anclas de calidad, no como ley normativa. Esas referencias calibran densidad, metodo, estructura, tratamiento financiero/regulatorio y madurez de recomendaciones.
+\section*{Resultado normativo}
+\textbf{Distribucion de severidad}: \{'high': 32\}\\
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.42\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}}
+\textbf{Fase} & \textbf{Nombre} & \textbf{Veredicto} & \textbf{Severidad}\\ \hline
+phase1 & Phase 1 - Public Data Engine & non\_compliant & \{'high': 8\}\\
+phase3 & 3A - Scope, Primary Material Unit, and MVP Scope of Phase 3 & non\_compliant & \{'high': 8\}\\
+phase4 & 4A - Constitution of the Verification Bridge & non\_compliant & \{'high': 8\}\\
+phase0 & Phase 0 - Operational Truth and Epistemic Governance & non\_compliant & \{'high': 8\}\\
+\end{longtable}
+\section*{Brechas comparativas contra referencias}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.31\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}}
+\textbf{Dimension} & \textbf{Severidad} & \textbf{Brecha} & \textbf{Mejora dirigida}\\ \hline
+methodological\_explicitness & high & The report is thinner than reference anchors for methodological\_explicitness; local signal is 0\% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf). This is a quality gap, not a phase violation. & Make assumptions, data sources, proxy limits, and method steps explicit.\\
+structure\_quality & medium & The report is thinner than reference anchors for structure\_quality; local signal is 72\% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, 73509.pdf). This is a quality gap, not a phase violation. & Improve sectioning so findings, methods, evidence, and recommendations are easy to audit.\\
+recommendation\_maturity & high & The report is thinner than reference anchors for recommendation\_maturity; local signal is 0\% of the dimension-specific reference anchor (74983.pdf, sustainable-buildings-finance-reference-guide.pdf, 73509.pdf). This is a quality gap, not a phase violation. & Tie recommendations to prerequisites, owners, sequencing, and verification conditions.\\
+\end{longtable}
+\section*{Perfil de anclas usadas}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}}
+\textbf{Documento} & \textbf{Fuerte en} & \textbf{Usar como}\\ \hline
+2022 Better Plants Progress Update\_0.pdf & structure\_quality, financial\_seriousness, evidence\_discussion\_depth, technical\_density & report structure anchor, financial analysis anchor, evidence discussion anchor, technical density anchor\\
+73509.pdf & evidence\_discussion\_depth, structure\_quality, financial\_seriousness, regulatory\_seriousness & evidence discussion anchor, report structure anchor, financial analysis anchor, regulatory seriousness anchor\\
+74983.pdf & evidence\_discussion\_depth, structure\_quality, financial\_seriousness, methodological\_explicitness & evidence discussion anchor, report structure anchor, financial analysis anchor, methodology and assumptions anchor\\
+Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf & technical\_density, financial\_seriousness, structure\_quality, senior\_report\_feel & technical density anchor, financial analysis anchor, report structure anchor, senior-report quality anchor\\
+IPMVP-2012-I.pdf & structure\_quality, evidence\_discussion\_depth, technical\_density, senior\_report\_feel & report structure anchor, evidence discussion anchor, technical density anchor, senior-report quality anchor\\
+LBNL-50939.pdf & financial\_seriousness, evidence\_discussion\_depth, structure\_quality, technical\_density & financial analysis anchor, evidence discussion anchor, report structure anchor, technical density anchor\\
+P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46-2.pdf & structure\_quality, financial\_seriousness, evidence\_discussion\_depth, technical\_density & report structure anchor, financial analysis anchor, evidence discussion anchor, technical density anchor\\
+P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf & structure\_quality, financial\_seriousness, evidence\_discussion\_depth, technical\_density & report structure anchor, financial analysis anchor, evidence discussion anchor, technical density anchor\\
+sustainable-buildings-finance-reference-guide.pdf & structure\_quality, financial\_seriousness, market\_comparison\_sharpness, regulatory\_seriousness & report structure anchor, financial analysis anchor, market comparison anchor, regulatory seriousness anchor\\
+\end{longtable}
+\section*{Scorecard}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.41\linewidth}}
+\textbf{Dimension} & \textbf{Score} & \textbf{Prioridad} & \textbf{Racional}\\ \hline
+phase0\_epistemic\_compliance & 0 & critical & phase0 is non\_compliant; findings by severity: high: 8.\\
+phase1\_scope\_compliance & 0 & critical & phase1 is non\_compliant; findings by severity: high: 8.\\
+phase3\_reporting\_compliance & 0 & critical & phase3 is non\_compliant; findings by severity: high: 8.\\
+phase4\_upgrade\_compliance & 0 & critical & phase4 is non\_compliant; findings by severity: high: 8.\\
+technical\_density & 90 & low & No material reference-anchor gap detected for this dimension.\\
+methodological\_rigor & 55 & high & The report is thinner than reference anchors for methodological\_explicitness; local signal is 0\% of the dimension-specific reference anchor (74983.pdf, Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf, P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf). This is a quality gap, not a phase violation.\\
+uncertainty\_handling & 90 & low & No material reference-anchor gap detected for this dimension.\\
+financial\_seriousness & 90 & low & No material reference-anchor gap detected for this dimension.\\
+regulatory\_seriousness & 90 & low & No material reference-anchor gap detected for this dimension.\\
+market\_comparison\_sharpness & 90 & low & No material reference-anchor gap detected for this dimension.\\
+senior\_report\_quality & 90 & low & No material reference-anchor gap detected for this dimension.\\
+traceability\_clarity & 20 & high & High-stakes evidence coverage is 20\%.\\
+validation\_honesty & 0 & high & Measures whether validation and verification language stays within support.\\
+\end{longtable}
+\section*{Evidencia representativa de hallazgos}
+\begin{itemize}
+\item phase1 / high: 1 identified Total Revenue (most recent annual): \$766.8M
+\item phase1 / high: 2022: \$725.7M 2023: \$738.2M 2023: \$738.2M 2024: \$766.8M 2024: \$766.8M 2025: \$766.8M
+\item phase1 / high: \$766.8M annual revenue confirms operational scale.
+\item phase1 / high: Total debt \$608.6M vs assets \$4.47B (LTV approx.
+\item phase1 / high: Phase Contracts Validated: 5
+\item phase1 / high: Discovery Sources Validated: 2
+\item phase1 / high: Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED
+\item phase1 / high: 2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data
+\item phase3 / high: 1 identified Total Revenue (most recent annual): \$766.8M
+\item phase3 / high: 2022: \$725.7M 2023: \$738.2M 2023: \$738.2M 2024: \$766.8M 2024: \$766.8M 2025: \$766.8M
+\end{itemize}
+\section*{Paquete de revision}
+\textbf{Revision batch}: revision-56244107e593\\
+\textbf{Secciones con fixes}: 9\\
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.5\linewidth}}
+\textbf{Seccion} & \textbf{Accion} & \textbf{Instruccion}\\ \hline
+1. Revenue Scale: & add\_traceability & Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.\\
+2. Leverage: & add\_traceability & Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.\\
+Coverage Gaps: & add\_traceability & Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.\\
+Discovery Sources Validated: 2 & relocate & Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.\\
+GLOBAL\_REFERENCE\_GAPS & qualify & Make assumptions, data sources, proxy limits, and method steps explicit.\\
+HISTORICAL REVENUE TREND & add\_traceability & Attach a specific source, table, citation, or upstream support note; otherwise soften or remove the claim.\\
+Most Recent 10-K Filing: & soften & Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.\\
+Phase Contracts Validated: 5 & relocate & Rename or relocate the section so it does not imply verification, certification, or compliance closure unless the phase contract authorizes it.\\
+York City & soften & Replace the callout with bounded status language such as 'public-data support only', 'source data present', or 'requires validation'.\\
+\end{longtable}
+\section*{Archivos estructurados}
+\begin{itemize}
+\item audit\_manifest.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/audit\_manifest.json
+\item audit\_scorecard.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/audit\_scorecard.json
+\item audit\_summary.md: outputs/audit\_compiled\_pdf\_with\_references\_20260418/audit\_summary.md
+\item claim\_violation\_register.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/claim\_violation\_register.json
+\item compiled\_contract.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/compiled\_contract.json
+\item normalized\_report.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/normalized\_report.json
+\item phase\_compliance\_report.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/phase\_compliance\_report.json
+\item reference\_anchor\_profiles.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/reference\_anchor\_profiles.json
+\item reference\_gap\_report.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/reference\_gap\_report.json
+\item revision\_packet.json: outputs/audit\_compiled\_pdf\_with\_references\_20260418/revision\_packet.json
+\end{itemize}
+\section*{Nota de rol}
+Las fases cargadas son el contrato normativo. Las referencias son anclas comparativas de calidad y no generan violaciones por si mismas. El PDF auditado es el objeto bajo revision.
+\end{document}

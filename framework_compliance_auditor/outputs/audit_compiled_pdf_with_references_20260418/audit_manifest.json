@@ -1,0 +1,44 @@
+{
+  "audit_run_id": "audit-20260418T220049Z-1b98a416",
+  "completed_at": "2026-04-18T22:00:53.413692+00:00",
+  "contract_file_hashes": {
+    "../Phases/phase-1/specs/phase-1-public-data-engine.md": "839a527fbd31f8122c99a06eaf8861a71d86346f52f531390339eff882eea9a0",
+    "../Phases/phase-3/docs/en/3_Phase_3_Master_Document.md": "1a2d6f6ccd2cd756f890f3ffcbba314d5aa73b24d1e5f8ce48b1971fd61dd74c",
+    "../Phases/phase-4/docs/en/4_Phase_4_Master_Document.md": "b8f0f1289b4b124eea1eb6f1c56ec4504f625e556f82779ccb2f5dfaf0f27202",
+    "config/contracts/phase0_zlab_master_context.json": "5cad43495e9252f58063404db24b26800cdd786c6d81dcdf53683ffa72cc5475"
+  },
+  "input_file_hashes": {
+    "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf": "1dc910665c6431b4bfe0d8e8b431cccd95d145adf0e284c0e07bbb7bf090169d"
+  },
+  "output_artifact_locations": {
+    "audit_manifest.json": "outputs/audit_compiled_pdf_with_references_20260418/audit_manifest.json",
+    "audit_scorecard.json": "outputs/audit_compiled_pdf_with_references_20260418/audit_scorecard.json",
+    "audit_summary.md": "outputs/audit_compiled_pdf_with_references_20260418/audit_summary.md",
+    "claim_violation_register.json": "outputs/audit_compiled_pdf_with_references_20260418/claim_violation_register.json",
+    "compiled_contract.json": "outputs/audit_compiled_pdf_with_references_20260418/compiled_contract.json",
+    "normalized_report.json": "outputs/audit_compiled_pdf_with_references_20260418/normalized_report.json",
+    "phase_compliance_report.json": "outputs/audit_compiled_pdf_with_references_20260418/phase_compliance_report.json",
+    "reference_anchor_profiles.json": "outputs/audit_compiled_pdf_with_references_20260418/reference_anchor_profiles.json",
+    "reference_gap_report.json": "outputs/audit_compiled_pdf_with_references_20260418/reference_gap_report.json",
+    "revision_packet.json": "outputs/audit_compiled_pdf_with_references_20260418/revision_packet.json"
+  },
+  "reference_file_hashes": {
+    "../Recursos genericos/2022 Better Plants Progress Update_0.pdf": "c247675e1466309d809e2f7c114872b9130d3df58563ef1f4aa82b46f420e097",
+    "../Recursos genericos/73509.pdf": "d3fd2ea356d944c793887fde047d3a5be333055ac5a2cbaf690b4008dcb5ed1d",
+    "../Recursos genericos/74983.pdf": "5b89f61bf35779ce2610ca1492f973b5a71e55d939a900dc7d20216a3d42e343",
+    "../Recursos genericos/Assessing-and-Measuring-the-Performance-of-Energy-Efficiency-Projects.pdf": "ede6b59f051e2badaace595a6b3f681431f617422c2ee7e283c2981b59ae00e1",
+    "../Recursos genericos/IPMVP-2012-I.pdf": "21183e4d746c907da10983cb18b637fd62c79c11e1f4d2704ef47cdb2817a88c",
+    "../Recursos genericos/LBNL-50939.pdf": "e4fdef811f02db1d3edf0875d85a904cf3779a1ff7c33153ea340933b623d755",
+    "../Recursos genericos/P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46-2.pdf": "72d491b9c7df446081f9dd2b58af00ba14584e7d77f2ec16f19c27afb897461c",
+    "../Recursos genericos/P176829-f9622d64-7bc7-46fa-bd45-b7cb4c26fe46.pdf": "72d491b9c7df446081f9dd2b58af00ba14584e7d77f2ec16f19c27afb897461c",
+    "../Recursos genericos/sustainable-buildings-finance-reference-guide.pdf": "de5cfb9188eacf48f2937bd75b57f4a41e1b4a54b02f3e8c263cb8f54c4833a3"
+  },
+  "report_id": "compiled-1dc910665c",
+  "settings": {
+    "allow_critical_findings": false,
+    "compliance_min_score": 90,
+    "max_reaudit_iterations": 5,
+    "quality_min_score": 82
+  },
+  "started_at": "2026-04-18T22:00:49.951613+00:00"
+}

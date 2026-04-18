@@ -1,0 +1,6288 @@
+{
+  "citations": [
+    {
+      "citation_id": "citation-0001",
+      "location": {
+        "end_offset": 2668,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 2614
+      },
+      "normalized": "https://data.sec.gov/submissions/CIK0001541401.json...",
+      "raw_text": "https://data.sec.gov/submissions/CIK0001541401.json..."
+    },
+    {
+      "citation_id": "citation-0002",
+      "location": {
+        "end_offset": 2836,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 2772
+      },
+      "normalized": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001541401.json...",
+      "raw_text": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001541401.json..."
+    },
+    {
+      "citation_id": "citation-0003",
+      "location": {
+        "end_offset": 2932,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 2924
+      },
+      "normalized": "MEDIUM",
+      "raw_text": "[MEDIUM]"
+    },
+    {
+      "citation_id": "citation-0004",
+      "location": {
+        "end_offset": 3014,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 3000
+      },
+      "normalized": "quality_gate",
+      "raw_text": "[quality_gate]"
+    },
+    {
+      "citation_id": "citation-0005",
+      "location": {
+        "end_offset": 3116,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 3075
+      },
+      "normalized": "https://data.cityofnewyork.us/resource/yj",
+      "raw_text": "https://data.cityofnewyork.us/resource/yj"
+    },
+    {
+      "citation_id": "citation-0006",
+      "location": {
+        "end_offset": 5478,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 5458
+      },
+      "normalized": "phase_01_discovery",
+      "raw_text": "[phase_01_discovery]"
+    },
+    {
+      "citation_id": "citation-0007",
+      "location": {
+        "end_offset": 5798,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 5774
+      },
+      "normalized": "phase_02_normalization",
+      "raw_text": "[phase_02_normalization]"
+    },
+    {
+      "citation_id": "citation-0008",
+      "location": {
+        "end_offset": 6082,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 6054
+      },
+      "normalized": "phase_03_entity_resolution",
+      "raw_text": "[phase_03_entity_resolution]"
+    },
+    {
+      "citation_id": "citation-0009",
+      "location": {
+        "end_offset": 6372,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 6354
+      },
+      "normalized": "phase_04_quality",
+      "raw_text": "[phase_04_quality]"
+    },
+    {
+      "citation_id": "citation-0010",
+      "location": {
+        "end_offset": 6632,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 6613
+      },
+      "normalized": "phase_05_decision",
+      "raw_text": "[phase_05_decision]"
+    },
+    {
+      "citation_id": "citation-0011",
+      "location": {
+        "end_offset": 7410,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [],
+        "start_offset": 7402
+      },
+      "normalized": "MEDIUM",
+      "raw_text": "[MEDIUM]"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-00001",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Caso: ZLab-NYC-ESB-2026-001 | 2026-04-18",
+      "page_ref": null,
+      "raw_text": "Caso: ZLab-NYC-ESB-2026-001   |   2026-04-18",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0003",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 1,
+        "section_path": [
+          "ZLAB OPERATIONAL TRUTH FRAMEWORK"
+        ],
+        "start_offset": 5
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": [
+        "table"
+      ]
+    },
+    {
+      "claim_id": "claim-00002",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Analista: Autonomous Decision System v2.0 Version: 2.0.0 Estado: APPROVED",
+      "page_ref": null,
+      "raw_text": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0007",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 2,
+        "section_path": [
+          "York City"
+        ],
+        "start_offset": 10
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00003",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Autonomous Decision System v2.0",
+      "page_ref": null,
+      "raw_text": "Autonomous Decision System v2.0",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0027",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 14,
+        "section_path": [
+          "Analyst:"
+        ],
+        "start_offset": 57
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00004",
+      "claim_type": "savings",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "1 identified Total Revenue (most recent annual): $766.8M",
+      "page_ref": null,
+      "raw_text": "1 identified Total Revenue (most recent annual): $766.8M",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0033",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 17,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 66
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00005",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+      "page_ref": null,
+      "raw_text": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0037",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 21,
+        "section_path": [
+          "Most Recent 10-K Filing:"
+        ],
+        "start_offset": 75
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00006",
+      "claim_type": "savings",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+      "page_ref": null,
+      "raw_text": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0070",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 39,
+        "section_path": [
+          "HISTORICAL REVENUE TREND"
+        ],
+        "start_offset": 135
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00007",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "2026-04-18T17:05:53.695639+00:00",
+      "page_ref": null,
+      "raw_text": "2026-04-18T17:05:53.695639+00:00",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0084",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 49,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 172
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00008",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "2026-04-18T17:05:53.695639+00:00",
+      "page_ref": null,
+      "raw_text": "2026-04-18T17:05:53.695639+00:00",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0089",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 52,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 180
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00009",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "[quality_gate] src_003_nyc_property:400 Client Error: Bad Request for url: https://data.cityofnewyork.us/resource/yj",
+      "page_ref": null,
+      "raw_text": "[quality_gate] src_003_nyc_property:400 Client Error: Bad Request for url: https://data.cityofnewyork.us/resource/yj",
+      "related_citation_ids": [
+        "citation-0004",
+        "citation-0005"
+      ],
+      "related_table_ids": [],
+      "section_id": "section-0092",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 54,
+        "section_path": [
+          "REJECTED SOURCES"
+        ],
+        "start_offset": 186
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": [
+        "source"
+      ]
+    },
+    {
+      "claim_id": "claim-00010",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "src_001_esrt_submissions score=0.67 status=MARGINAL terms=[] src_002_esrt_facts score=0.67 status=MARGINAL terms=[] src_003_nyc_property score=0.67 status=MARGINAL terms=[] src_004_esrt_pressrelease score=0.67 status=MARGINAL terms=[] src_005_morningstar_results score=0.67 status=MARGINAL terms=[]",
+      "page_ref": null,
+      "raw_text": "src_001_esrt_submissions  score=0.67  status=MARGINAL  terms=[] src_002_esrt_facts  score=0.67  status=MARGINAL  terms=[] src_003_nyc_property  score=0.67  status=MARGINAL  terms=[] src_004_esrt_pressrelease  score=0.67  status=MARGINAL  terms=[] src_005_morningstar_results  score=0.67  status=MARGINAL  terms=[]",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0102",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 63,
+        "section_path": [
+          "ENTITY DETAIL"
+        ],
+        "start_offset": 239
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00011",
+      "claim_type": "savings",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "source_must_be_authoritative, no_fabricated_content, jurisdiction_metadata_required, fetch_timeout_30s, minimum_completeness_score_0.70 [phase_02_normalization] Financial and Property Normalization",
+      "page_ref": null,
+      "raw_text": "source_must_be_authoritative, no_fabricated_content, jurisdiction_metadata_required, fetch_timeout_30s, minimum_completeness_score_0.70 [phase_02_normalization]  Financial and Property Normalization",
+      "related_citation_ids": [
+        "citation-0007"
+      ],
+      "related_table_ids": [],
+      "section_id": "section-0108",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 69,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 259
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": [
+        "source"
+      ]
+    },
+    {
+      "claim_id": "claim-00012",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "taxonomy_validation_required, no_new_entities_without_canonical_term, domain_classification_mandatory, currency_must_be_USD [phase_03_entity_resolution] Property and Company Entity Resolution",
+      "page_ref": null,
+      "raw_text": "taxonomy_validation_required, no_new_entities_without_canonical_term, domain_classification_mandatory, currency_must_be_USD [phase_03_entity_resolution]  Property and Company Entity Resolution",
+      "related_citation_ids": [
+        "citation-0008"
+      ],
+      "related_table_ids": [],
+      "section_id": "section-0111",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 72,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 267
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00013",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "entity_id_must_be_deterministic, lineage_chain_must_be_preserved, duplicate_resolution_required, company_must_match_sec_registry [phase_04_quality] Data Quality and Fitness Assessment",
+      "page_ref": null,
+      "raw_text": "entity_id_must_be_deterministic, lineage_chain_must_be_preserved, duplicate_resolution_required, company_must_match_sec_registry [phase_04_quality]  Data Quality and Fitness Assessment",
+      "related_citation_ids": [
+        "citation-0009"
+      ],
+      "related_table_ids": [],
+      "section_id": "section-0114",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 75,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 275
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00014",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "fitness_score_range_0_to_1, all_entities_must_be_evaluated, marginal_entities_require_review, unfit_entities_block_decision [phase_05_decision] Investment Decision Synthesis",
+      "page_ref": null,
+      "raw_text": "fitness_score_range_0_to_1, all_entities_must_be_evaluated, marginal_entities_require_review, unfit_entities_block_decision [phase_05_decision]  Investment Decision Synthesis",
+      "related_citation_ids": [
+        "citation-0010"
+      ],
+      "related_table_ids": [],
+      "section_id": "section-0117",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 78,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 283
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00015",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": true,
+      "normalized_text": "decision_must_reference_all_fit_entities, traceability_to_sources_required, confidence_score_mandatory, incomplete_data_blocks_approval",
+      "page_ref": null,
+      "raw_text": "decision_must_reference_all_fit_entities, traceability_to_sources_required, confidence_score_mandatory, incomplete_data_blocks_approval",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0120",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 81,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 291
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": [
+        "source",
+        "trace"
+      ]
+    },
+    {
+      "claim_id": "claim-00016",
+      "claim_type": "savings",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "$766.8M annual revenue confirms operational scale.",
+      "page_ref": null,
+      "raw_text": "$766.8M annual revenue confirms operational scale.",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0125",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 85,
+        "section_path": [
+          "1. Revenue Scale:"
+        ],
+        "start_offset": 305
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00017",
+      "claim_type": "savings",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+      "page_ref": null,
+      "raw_text": "Total debt $608.6M vs assets $4.47B (LTV approx.",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0126",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 86,
+        "section_path": [
+          "2. Leverage:"
+        ],
+        "start_offset": 307
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00018",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Company maintains current SEC filings (10-K filed 2026-03-02).",
+      "page_ref": null,
+      "raw_text": "Company maintains current SEC filings (10-K filed 2026-03-02).",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0127",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 87,
+        "section_path": [
+          "3. Regulatory Compliance:"
+        ],
+        "start_offset": 309
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": []
+    },
+    {
+      "claim_id": "claim-00019",
+      "claim_type": "descriptive",
+      "confidence_language_level": "unknown",
+      "detected_phase_relevance": [],
+      "evidence_reference_presence": false,
+      "normalized_text": "Sistema Autonomo de Decision | Operational Truth Framework (c) 2026 Confidencial",
+      "page_ref": null,
+      "raw_text": "Sistema Autonomo de Decision  |  Operational Truth Framework (c) 2026   Confidencial",
+      "related_citation_ids": [],
+      "related_table_ids": [],
+      "section_id": "section-0135",
+      "source_location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 93,
+        "section_path": [
+          "ZLab Operational Truth Framework"
+        ],
+        "start_offset": 328
+      },
+      "suspected_violation_flags": [],
+      "upstream_support_signals": [
+        "table"
+      ]
+    }
+  ],
+  "file_hash": "1dc910665c6431b4bfe0d8e8b431cccd95d145adf0e284c0e07bbb7bf090169d",
+  "metadata": {
+    "citation_count": 11,
+    "claim_count": 19,
+    "section_count": 135,
+    "table_count": 0,
+    "unit_count": 93
+  },
+  "report_id": "compiled-1dc910665c",
+  "role": "object_under_review",
+  "sections": [
+    {
+      "level": 0,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Document"
+        ],
+        "start_offset": 1
+      },
+      "path": [
+        "Document"
+      ],
+      "section_id": "section-0001",
+      "title": "Document",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 1"
+        ],
+        "start_offset": 3
+      },
+      "path": [
+        "Page 1"
+      ],
+      "section_id": "section-0002",
+      "title": "Page 1",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ZLAB OPERATIONAL TRUTH FRAMEWORK"
+        ],
+        "start_offset": 4
+      },
+      "path": [
+        "ZLAB OPERATIONAL TRUTH FRAMEWORK"
+      ],
+      "section_id": "section-0003",
+      "title": "ZLAB OPERATIONAL TRUTH FRAMEWORK",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 1,
+            "section_path": [
+              "ZLAB OPERATIONAL TRUTH FRAMEWORK"
+            ],
+            "start_offset": 5
+          },
+          "parent_section_id": "section-0003",
+          "text": "Caso: ZLab-NYC-ESB-2026-001   |   2026-04-18",
+          "unit_id": "unit-00001",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Investment Due Diligence -- Empire State"
+        ],
+        "start_offset": 6
+      },
+      "path": [
+        "Investment Due Diligence -- Empire State"
+      ],
+      "section_id": "section-0004",
+      "title": "Investment Due Diligence -- Empire State",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Building"
+        ],
+        "start_offset": 7
+      },
+      "path": [
+        "Building"
+      ],
+      "section_id": "section-0005",
+      "title": "Building",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Commercial Real Estate Acquisition Feasibility Assessment, Midtown Manhattan, New"
+        ],
+        "start_offset": 8
+      },
+      "path": [
+        "Commercial Real Estate Acquisition Feasibility Assessment, Midtown Manhattan, New"
+      ],
+      "section_id": "section-0006",
+      "title": "Commercial Real Estate Acquisition Feasibility Assessment, Midtown Manhattan, New",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "York City"
+        ],
+        "start_offset": 9
+      },
+      "path": [
+        "York City"
+      ],
+      "section_id": "section-0007",
+      "title": "York City",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 2,
+            "section_path": [
+              "York City"
+            ],
+            "start_offset": 10
+          },
+          "parent_section_id": "section-0007",
+          "text": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+          "unit_id": "unit-00002",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 2"
+        ],
+        "start_offset": 16
+      },
+      "path": [
+        "Page 2"
+      ],
+      "section_id": "section-0008",
+      "title": "Page 2",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "INDICE DE CONTENIDOS"
+        ],
+        "start_offset": 17
+      },
+      "path": [
+        "INDICE DE CONTENIDOS"
+      ],
+      "section_id": "section-0009",
+      "title": "INDICE DE CONTENIDOS",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 3,
+            "section_path": [
+              "INDICE DE CONTENIDOS"
+            ],
+            "start_offset": 18
+          },
+          "parent_section_id": "section-0009",
+          "text": "01",
+          "unit_id": "unit-00003",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Executive Summary"
+        ],
+        "start_offset": 19
+      },
+      "path": [
+        "Executive Summary"
+      ],
+      "section_id": "section-0010",
+      "title": "Executive Summary",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 4,
+            "section_path": [
+              "Executive Summary"
+            ],
+            "start_offset": 20
+          },
+          "parent_section_id": "section-0010",
+          "text": "3 02",
+          "unit_id": "unit-00004",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Subject Profile"
+        ],
+        "start_offset": 22
+      },
+      "path": [
+        "Subject Profile"
+      ],
+      "section_id": "section-0011",
+      "title": "Subject Profile",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 5,
+            "section_path": [
+              "Subject Profile"
+            ],
+            "start_offset": 23
+          },
+          "parent_section_id": "section-0011",
+          "text": "4 03",
+          "unit_id": "unit-00005",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Financial Analysis"
+        ],
+        "start_offset": 25
+      },
+      "path": [
+        "Financial Analysis"
+      ],
+      "section_id": "section-0012",
+      "title": "Financial Analysis",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 6,
+            "section_path": [
+              "Financial Analysis"
+            ],
+            "start_offset": 26
+          },
+          "parent_section_id": "section-0012",
+          "text": "5 04",
+          "unit_id": "unit-00006",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Data Discovery Report"
+        ],
+        "start_offset": 28
+      },
+      "path": [
+        "Data Discovery Report"
+      ],
+      "section_id": "section-0013",
+      "title": "Data Discovery Report",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 7,
+            "section_path": [
+              "Data Discovery Report"
+            ],
+            "start_offset": 29
+          },
+          "parent_section_id": "section-0013",
+          "text": "6 05",
+          "unit_id": "unit-00007",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Pipeline Quality Assessment"
+        ],
+        "start_offset": 31
+      },
+      "path": [
+        "Pipeline Quality Assessment"
+      ],
+      "section_id": "section-0014",
+      "title": "Pipeline Quality Assessment",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 8,
+            "section_path": [
+              "Pipeline Quality Assessment"
+            ],
+            "start_offset": 32
+          },
+          "parent_section_id": "section-0014",
+          "text": "7 06",
+          "unit_id": "unit-00008",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Phase Contracts"
+        ],
+        "start_offset": 34
+      },
+      "path": [
+        "Phase Contracts"
+      ],
+      "section_id": "section-0015",
+      "title": "Phase Contracts",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 9,
+            "section_path": [
+              "Phase Contracts"
+            ],
+            "start_offset": 35
+          },
+          "parent_section_id": "section-0015",
+          "text": "8 07",
+          "unit_id": "unit-00009",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Investment Decision"
+        ],
+        "start_offset": 37
+      },
+      "path": [
+        "Investment Decision"
+      ],
+      "section_id": "section-0016",
+      "title": "Investment Decision",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 10,
+            "section_path": [
+              "Investment Decision"
+            ],
+            "start_offset": 38
+          },
+          "parent_section_id": "section-0016",
+          "text": "9",
+          "unit_id": "unit-00010",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 3"
+        ],
+        "start_offset": 43
+      },
+      "path": [
+        "Page 3"
+      ],
+      "section_id": "section-0017",
+      "title": "Page 3",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 11,
+            "section_path": [
+              "Page 3"
+            ],
+            "start_offset": 44
+          },
+          "parent_section_id": "section-0017",
+          "text": "01",
+          "unit_id": "unit-00011",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "EXECUTIVE SUMMARY"
+        ],
+        "start_offset": 45
+      },
+      "path": [
+        "EXECUTIVE SUMMARY"
+      ],
+      "section_id": "section-0018",
+      "title": "EXECUTIVE SUMMARY",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Case ID:"
+        ],
+        "start_offset": 46
+      },
+      "path": [
+        "Case ID:"
+      ],
+      "section_id": "section-0019",
+      "title": "Case ID:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ZLab-NYC-ESB-2026-001"
+        ],
+        "start_offset": 47
+      },
+      "path": [
+        "ZLab-NYC-ESB-2026-001"
+      ],
+      "section_id": "section-0020",
+      "title": "ZLab-NYC-ESB-2026-001",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Subject:"
+        ],
+        "start_offset": 48
+      },
+      "path": [
+        "Subject:"
+      ],
+      "section_id": "section-0021",
+      "title": "Subject:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Empire State Building"
+        ],
+        "start_offset": 49
+      },
+      "path": [
+        "Empire State Building"
+      ],
+      "section_id": "section-0022",
+      "title": "Empire State Building",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Address:"
+        ],
+        "start_offset": 50
+      },
+      "path": [
+        "Address:"
+      ],
+      "section_id": "section-0023",
+      "title": "Address:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "350 Fifth Avenue, New York, NY 10118"
+        ],
+        "start_offset": 51
+      },
+      "path": [
+        "350 Fifth Avenue, New York, NY 10118"
+      ],
+      "section_id": "section-0024",
+      "title": "350 Fifth Avenue, New York, NY 10118",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Owner:"
+        ],
+        "start_offset": 52
+      },
+      "path": [
+        "Owner:"
+      ],
+      "section_id": "section-0025",
+      "title": "Owner:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 12,
+            "section_path": [
+              "Owner:"
+            ],
+            "start_offset": 53
+          },
+          "parent_section_id": "section-0025",
+          "text": "Empire State Realty Trust, Inc. (ESRT -- NYSE)",
+          "unit_id": "unit-00012",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Evaluation Type:"
+        ],
+        "start_offset": 54
+      },
+      "path": [
+        "Evaluation Type:"
+      ],
+      "section_id": "section-0026",
+      "title": "Evaluation Type:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 13,
+            "section_path": [
+              "Evaluation Type:"
+            ],
+            "start_offset": 55
+          },
+          "parent_section_id": "section-0026",
+          "text": "Class A Office Tower + Observatory",
+          "unit_id": "unit-00013",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Analyst:"
+        ],
+        "start_offset": 56
+      },
+      "path": [
+        "Analyst:"
+      ],
+      "section_id": "section-0027",
+      "title": "Analyst:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 14,
+            "section_path": [
+              "Analyst:"
+            ],
+            "start_offset": 57
+          },
+          "parent_section_id": "section-0027",
+          "text": "Autonomous Decision System v2.0",
+          "unit_id": "unit-00014",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Analysis Date:"
+        ],
+        "start_offset": 58
+      },
+      "path": [
+        "Analysis Date:"
+      ],
+      "section_id": "section-0028",
+      "title": "Analysis Date:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 15,
+            "section_path": [
+              "Analysis Date:"
+            ],
+            "start_offset": 59
+          },
+          "parent_section_id": "section-0028",
+          "text": "2026-04-18",
+          "unit_id": "unit-00015",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "INVESTMENT THESIS: INVESTMENT REQUIRES FURTHER DILIGENCE"
+        ],
+        "start_offset": 60
+      },
+      "path": [
+        "INVESTMENT THESIS: INVESTMENT REQUIRES FURTHER DILIGENCE"
+      ],
+      "section_id": "section-0029",
+      "title": "INVESTMENT THESIS: INVESTMENT REQUIRES FURTHER DILIGENCE",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Data Sources Fetched:"
+        ],
+        "start_offset": 61
+      },
+      "path": [
+        "Data Sources Fetched:"
+      ],
+      "section_id": "section-0030",
+      "title": "Data Sources Fetched:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 16,
+            "section_path": [
+              "Data Sources Fetched:"
+            ],
+            "start_offset": 62
+          },
+          "parent_section_id": "section-0030",
+          "text": "2 authoritative sources",
+          "unit_id": "unit-00016",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Data Quality Gate:"
+        ],
+        "start_offset": 63
+      },
+      "path": [
+        "Data Quality Gate:"
+      ],
+      "section_id": "section-0031",
+      "title": "Data Quality Gate:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "PASSED"
+        ],
+        "start_offset": 64
+      },
+      "path": [
+        "PASSED"
+      ],
+      "section_id": "section-0032",
+      "title": "PASSED",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 65
+      },
+      "path": [
+        "Coverage Gaps:"
+      ],
+      "section_id": "section-0033",
+      "title": "Coverage Gaps:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 17,
+            "section_path": [
+              "Coverage Gaps:"
+            ],
+            "start_offset": 66
+          },
+          "parent_section_id": "section-0033",
+          "text": "1 identified Total Revenue (most recent annual): $766.8M",
+          "unit_id": "unit-00017",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Total Assets:"
+        ],
+        "start_offset": 68
+      },
+      "path": [
+        "Total Assets:"
+      ],
+      "section_id": "section-0034",
+      "title": "Total Assets:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 18,
+            "section_path": [
+              "Total Assets:"
+            ],
+            "start_offset": 69
+          },
+          "parent_section_id": "section-0034",
+          "text": "$4.47B",
+          "unit_id": "unit-00018",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Total Debt:"
+        ],
+        "start_offset": 70
+      },
+      "path": [
+        "Total Debt:"
+      ],
+      "section_id": "section-0035",
+      "title": "Total Debt:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 19,
+            "section_path": [
+              "Total Debt:"
+            ],
+            "start_offset": 71
+          },
+          "parent_section_id": "section-0035",
+          "text": "$608.6M",
+          "unit_id": "unit-00019",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Net Income:"
+        ],
+        "start_offset": 72
+      },
+      "path": [
+        "Net Income:"
+      ],
+      "section_id": "section-0036",
+      "title": "Net Income:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 20,
+            "section_path": [
+              "Net Income:"
+            ],
+            "start_offset": 73
+          },
+          "parent_section_id": "section-0036",
+          "text": "$-210,000",
+          "unit_id": "unit-00020",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Most Recent 10-K Filing:"
+        ],
+        "start_offset": 74
+      },
+      "path": [
+        "Most Recent 10-K Filing:"
+      ],
+      "section_id": "section-0037",
+      "title": "Most Recent 10-K Filing:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 21,
+            "section_path": [
+              "Most Recent 10-K Filing:"
+            ],
+            "start_offset": 75
+          },
+          "parent_section_id": "section-0037",
+          "text": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+          "unit_id": "unit-00021",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 22,
+            "section_path": [
+              "Most Recent 10-K Filing:"
+            ],
+            "start_offset": 77
+          },
+          "parent_section_id": "section-0037",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 2",
+          "unit_id": "unit-00022",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 4"
+        ],
+        "start_offset": 82
+      },
+      "path": [
+        "Page 4"
+      ],
+      "section_id": "section-0038",
+      "title": "Page 4",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 23,
+            "section_path": [
+              "Page 4"
+            ],
+            "start_offset": 83
+          },
+          "parent_section_id": "section-0038",
+          "text": "02",
+          "unit_id": "unit-00023",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SUBJECT PROFILE"
+        ],
+        "start_offset": 84
+      },
+      "path": [
+        "SUBJECT PROFILE"
+      ],
+      "section_id": "section-0039",
+      "title": "SUBJECT PROFILE",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SUBJECT ENTITY"
+        ],
+        "start_offset": 85
+      },
+      "path": [
+        "SUBJECT ENTITY"
+      ],
+      "section_id": "section-0040",
+      "title": "SUBJECT ENTITY",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Name:"
+        ],
+        "start_offset": 86
+      },
+      "path": [
+        "Name:"
+      ],
+      "section_id": "section-0041",
+      "title": "Name:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Empire State Building"
+        ],
+        "start_offset": 87
+      },
+      "path": [
+        "Empire State Building"
+      ],
+      "section_id": "section-0042",
+      "title": "Empire State Building",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Address:"
+        ],
+        "start_offset": 88
+      },
+      "path": [
+        "Address:"
+      ],
+      "section_id": "section-0043",
+      "title": "Address:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "350 Fifth Avenue, New York, NY 10118"
+        ],
+        "start_offset": 89
+      },
+      "path": [
+        "350 Fifth Avenue, New York, NY 10118"
+      ],
+      "section_id": "section-0044",
+      "title": "350 Fifth Avenue, New York, NY 10118",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Property Type:"
+        ],
+        "start_offset": 90
+      },
+      "path": [
+        "Property Type:"
+      ],
+      "section_id": "section-0045",
+      "title": "Property Type:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 24,
+            "section_path": [
+              "Property Type:"
+            ],
+            "start_offset": 91
+          },
+          "parent_section_id": "section-0045",
+          "text": "Class A Office Tower + Observatory",
+          "unit_id": "unit-00024",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Jurisdiction:"
+        ],
+        "start_offset": 92
+      },
+      "path": [
+        "Jurisdiction:"
+      ],
+      "section_id": "section-0046",
+      "title": "Jurisdiction:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "US-NY"
+        ],
+        "start_offset": 93
+      },
+      "path": [
+        "US-NY"
+      ],
+      "section_id": "section-0047",
+      "title": "US-NY",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "CORPORATE OWNER"
+        ],
+        "start_offset": 94
+      },
+      "path": [
+        "CORPORATE OWNER"
+      ],
+      "section_id": "section-0048",
+      "title": "CORPORATE OWNER",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Company:"
+        ],
+        "start_offset": 95
+      },
+      "path": [
+        "Company:"
+      ],
+      "section_id": "section-0049",
+      "title": "Company:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 25,
+            "section_path": [
+              "Company:"
+            ],
+            "start_offset": 96
+          },
+          "parent_section_id": "section-0049",
+          "text": "Empire State Realty Trust, Inc.",
+          "unit_id": "unit-00025",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Ticker / Exchange:"
+        ],
+        "start_offset": 97
+      },
+      "path": [
+        "Ticker / Exchange:"
+      ],
+      "section_id": "section-0050",
+      "title": "Ticker / Exchange:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ESRT -- NYSE"
+        ],
+        "start_offset": 98
+      },
+      "path": [
+        "ESRT -- NYSE"
+      ],
+      "section_id": "section-0051",
+      "title": "ESRT -- NYSE",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SEC CIK: 0001541401"
+        ],
+        "start_offset": 99
+      },
+      "path": [
+        "SEC CIK: 0001541401"
+      ],
+      "section_id": "section-0052",
+      "title": "SEC CIK: 0001541401",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SIC Classification:"
+        ],
+        "start_offset": 100
+      },
+      "path": [
+        "SIC Classification:"
+      ],
+      "section_id": "section-0053",
+      "title": "SIC Classification:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Real Estate Investment Trusts"
+        ],
+        "start_offset": 101
+      },
+      "path": [
+        "Real Estate Investment Trusts"
+      ],
+      "section_id": "section-0054",
+      "title": "Real Estate Investment Trusts",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "State of Incorporation:"
+        ],
+        "start_offset": 102
+      },
+      "path": [
+        "State of Incorporation:"
+      ],
+      "section_id": "section-0055",
+      "title": "State of Incorporation:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 26,
+            "section_path": [
+              "State of Incorporation:"
+            ],
+            "start_offset": 103
+          },
+          "parent_section_id": "section-0055",
+          "text": "MD",
+          "unit_id": "unit-00026",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Most Recent Annual Filing:"
+        ],
+        "start_offset": 104
+      },
+      "path": [
+        "Most Recent Annual Filing:"
+      ],
+      "section_id": "section-0056",
+      "title": "Most Recent Annual Filing:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 27,
+            "section_path": [
+              "Most Recent Annual Filing:"
+            ],
+            "start_offset": 105
+          },
+          "parent_section_id": "section-0056",
+          "text": "2025-12-31",
+          "unit_id": "unit-00027",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Form:"
+        ],
+        "start_offset": 106
+      },
+      "path": [
+        "Form:"
+      ],
+      "section_id": "section-0057",
+      "title": "Form:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 28,
+            "section_path": [
+              "Form:"
+            ],
+            "start_offset": 107
+          },
+          "parent_section_id": "section-0057",
+          "text": "10-K",
+          "unit_id": "unit-00028",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Date:"
+        ],
+        "start_offset": 108
+      },
+      "path": [
+        "Date:"
+      ],
+      "section_id": "section-0058",
+      "title": "Date:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 29,
+            "section_path": [
+              "Date:"
+            ],
+            "start_offset": 109
+          },
+          "parent_section_id": "section-0058",
+          "text": "2026-03-02",
+          "unit_id": "unit-00029",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Accession:"
+        ],
+        "start_offset": 110
+      },
+      "path": [
+        "Accession:"
+      ],
+      "section_id": "section-0059",
+      "title": "Accession:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 30,
+            "section_path": [
+              "Accession:"
+            ],
+            "start_offset": 111
+          },
+          "parent_section_id": "section-0059",
+          "text": "0001541401-26-000008",
+          "unit_id": "unit-00030",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 31,
+            "section_path": [
+              "Accession:"
+            ],
+            "start_offset": 112
+          },
+          "parent_section_id": "section-0059",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 3",
+          "unit_id": "unit-00031",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 5"
+        ],
+        "start_offset": 117
+      },
+      "path": [
+        "Page 5"
+      ],
+      "section_id": "section-0060",
+      "title": "Page 5",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 32,
+            "section_path": [
+              "Page 5"
+            ],
+            "start_offset": 118
+          },
+          "parent_section_id": "section-0060",
+          "text": "03",
+          "unit_id": "unit-00032",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "FINANCIAL ANALYSIS"
+        ],
+        "start_offset": 119
+      },
+      "path": [
+        "FINANCIAL ANALYSIS"
+      ],
+      "section_id": "section-0061",
+      "title": "FINANCIAL ANALYSIS",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 33,
+            "section_path": [
+              "FINANCIAL ANALYSIS"
+            ],
+            "start_offset": 120
+          },
+          "parent_section_id": "section-0061",
+          "text": "Chart type: line  |  Source: SEC EDGAR XBRL (us-gaap.Revenues)",
+          "unit_id": "unit-00033",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "INCOME STATEMENT HIGHLIGHTS"
+        ],
+        "start_offset": 121
+      },
+      "path": [
+        "INCOME STATEMENT HIGHLIGHTS"
+      ],
+      "section_id": "section-0062",
+      "title": "INCOME STATEMENT HIGHLIGHTS",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Revenue (Annual):"
+        ],
+        "start_offset": 122
+      },
+      "path": [
+        "Revenue (Annual):"
+      ],
+      "section_id": "section-0063",
+      "title": "Revenue (Annual):",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 34,
+            "section_path": [
+              "Revenue (Annual):"
+            ],
+            "start_offset": 123
+          },
+          "parent_section_id": "section-0063",
+          "text": "$766.8M",
+          "unit_id": "unit-00034",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Operating Income:"
+        ],
+        "start_offset": 124
+      },
+      "path": [
+        "Operating Income:"
+      ],
+      "section_id": "section-0064",
+      "title": "Operating Income:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 35,
+            "section_path": [
+              "Operating Income:"
+            ],
+            "start_offset": 125
+          },
+          "parent_section_id": "section-0064",
+          "text": "$135.6M",
+          "unit_id": "unit-00035",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Net Income:"
+        ],
+        "start_offset": 126
+      },
+      "path": [
+        "Net Income:"
+      ],
+      "section_id": "section-0065",
+      "title": "Net Income:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 36,
+            "section_path": [
+              "Net Income:"
+            ],
+            "start_offset": 127
+          },
+          "parent_section_id": "section-0065",
+          "text": "$-210,000",
+          "unit_id": "unit-00036",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "BALANCE SHEET HIGHLIGHTS"
+        ],
+        "start_offset": 128
+      },
+      "path": [
+        "BALANCE SHEET HIGHLIGHTS"
+      ],
+      "section_id": "section-0066",
+      "title": "BALANCE SHEET HIGHLIGHTS",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Total Assets:"
+        ],
+        "start_offset": 129
+      },
+      "path": [
+        "Total Assets:"
+      ],
+      "section_id": "section-0067",
+      "title": "Total Assets:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 37,
+            "section_path": [
+              "Total Assets:"
+            ],
+            "start_offset": 130
+          },
+          "parent_section_id": "section-0067",
+          "text": "$4.47B",
+          "unit_id": "unit-00037",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Total Debt:"
+        ],
+        "start_offset": 131
+      },
+      "path": [
+        "Total Debt:"
+      ],
+      "section_id": "section-0068",
+      "title": "Total Debt:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 38,
+            "section_path": [
+              "Total Debt:"
+            ],
+            "start_offset": 132
+          },
+          "parent_section_id": "section-0068",
+          "text": "$608.6M",
+          "unit_id": "unit-00038",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Shares Outstanding: N/A"
+        ],
+        "start_offset": 133
+      },
+      "path": [
+        "Shares Outstanding: N/A"
+      ],
+      "section_id": "section-0069",
+      "title": "Shares Outstanding: N/A",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "HISTORICAL REVENUE TREND"
+        ],
+        "start_offset": 134
+      },
+      "path": [
+        "HISTORICAL REVENUE TREND"
+      ],
+      "section_id": "section-0070",
+      "title": "HISTORICAL REVENUE TREND",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 39,
+            "section_path": [
+              "HISTORICAL REVENUE TREND"
+            ],
+            "start_offset": 135
+          },
+          "parent_section_id": "section-0070",
+          "text": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+          "unit_id": "unit-00039",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Data Source:"
+        ],
+        "start_offset": 141
+      },
+      "path": [
+        "Data Source:"
+      ],
+      "section_id": "section-0071",
+      "title": "Data Source:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SEC EDGAR XBRL (CIK 0001541401)"
+        ],
+        "start_offset": 142
+      },
+      "path": [
+        "SEC EDGAR XBRL (CIK 0001541401)"
+      ],
+      "section_id": "section-0072",
+      "title": "SEC EDGAR XBRL (CIK 0001541401)",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 40,
+            "section_path": [
+              "SEC EDGAR XBRL (CIK 0001541401)"
+            ],
+            "start_offset": 143
+          },
+          "parent_section_id": "section-0072",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 4",
+          "unit_id": "unit-00040",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 6"
+        ],
+        "start_offset": 148
+      },
+      "path": [
+        "Page 6"
+      ],
+      "section_id": "section-0073",
+      "title": "Page 6",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Filing Date Reference:"
+        ],
+        "start_offset": 149
+      },
+      "path": [
+        "Filing Date Reference:"
+      ],
+      "section_id": "section-0074",
+      "title": "Filing Date Reference:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 41,
+            "section_path": [
+              "Filing Date Reference:"
+            ],
+            "start_offset": 150
+          },
+          "parent_section_id": "section-0074",
+          "text": "2025-12-31",
+          "unit_id": "unit-00041",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 42,
+            "section_path": [
+              "Filing Date Reference:"
+            ],
+            "start_offset": 151
+          },
+          "parent_section_id": "section-0074",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 5",
+          "unit_id": "unit-00042",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 7"
+        ],
+        "start_offset": 156
+      },
+      "path": [
+        "Page 7"
+      ],
+      "section_id": "section-0075",
+      "title": "Page 7",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 43,
+            "section_path": [
+              "Page 7"
+            ],
+            "start_offset": 157
+          },
+          "parent_section_id": "section-0075",
+          "text": "04",
+          "unit_id": "unit-00043",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "DATA DISCOVERY REPORT"
+        ],
+        "start_offset": 158
+      },
+      "path": [
+        "DATA DISCOVERY REPORT"
+      ],
+      "section_id": "section-0076",
+      "title": "DATA DISCOVERY REPORT",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Discovery Status:"
+        ],
+        "start_offset": 159
+      },
+      "path": [
+        "Discovery Status:"
+      ],
+      "section_id": "section-0077",
+      "title": "Discovery Status:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 44,
+            "section_path": [
+              "Discovery Status:"
+            ],
+            "start_offset": 160
+          },
+          "parent_section_id": "section-0077",
+          "text": "COMPLETED_WITH_WARNINGS",
+          "unit_id": "unit-00044",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Sources Fetched: 2"
+        ],
+        "start_offset": 161
+      },
+      "path": [
+        "Sources Fetched: 2"
+      ],
+      "section_id": "section-0078",
+      "title": "Sources Fetched: 2",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Rejections:"
+        ],
+        "start_offset": 162
+      },
+      "path": [
+        "Rejections:"
+      ],
+      "section_id": "section-0079",
+      "title": "Rejections:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 45,
+            "section_path": [
+              "Rejections:"
+            ],
+            "start_offset": 163
+          },
+          "parent_section_id": "section-0079",
+          "text": "1",
+          "unit_id": "unit-00045",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 164
+      },
+      "path": [
+        "Coverage Gaps:"
+      ],
+      "section_id": "section-0080",
+      "title": "Coverage Gaps:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 46,
+            "section_path": [
+              "Coverage Gaps:"
+            ],
+            "start_offset": 165
+          },
+          "parent_section_id": "section-0080",
+          "text": "1",
+          "unit_id": "unit-00046",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "SOURCES FETCHED"
+        ],
+        "start_offset": 166
+      },
+      "path": [
+        "SOURCES FETCHED"
+      ],
+      "section_id": "section-0081",
+      "title": "SOURCES FETCHED",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Source:"
+        ],
+        "start_offset": 167
+      },
+      "path": [
+        "Source:"
+      ],
+      "section_id": "section-0082",
+      "title": "Source:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 47,
+            "section_path": [
+              "Source:"
+            ],
+            "start_offset": 168
+          },
+          "parent_section_id": "section-0082",
+          "text": "sec_edgar_submissions",
+          "unit_id": "unit-00047",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Locator:"
+        ],
+        "start_offset": 169
+      },
+      "path": [
+        "Locator:"
+      ],
+      "section_id": "section-0083",
+      "title": "Locator:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 48,
+            "section_path": [
+              "Locator:"
+            ],
+            "start_offset": 170
+          },
+          "parent_section_id": "section-0083",
+          "text": "https://data.sec.gov/submissions/CIK0001541401.json...",
+          "unit_id": "unit-00048",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 171
+      },
+      "path": [
+        "Fetched At:"
+      ],
+      "section_id": "section-0084",
+      "title": "Fetched At:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 49,
+            "section_path": [
+              "Fetched At:"
+            ],
+            "start_offset": 172
+          },
+          "parent_section_id": "section-0084",
+          "text": "2026-04-18T17:05:53.695639+00:00",
+          "unit_id": "unit-00049",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Matched Terms:"
+        ],
+        "start_offset": 173
+      },
+      "path": [
+        "Matched Terms:"
+      ],
+      "section_id": "section-0085",
+      "title": "Matched Terms:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "REIT"
+        ],
+        "start_offset": 174
+      },
+      "path": [
+        "REIT"
+      ],
+      "section_id": "section-0086",
+      "title": "REIT",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Source:"
+        ],
+        "start_offset": 175
+      },
+      "path": [
+        "Source:"
+      ],
+      "section_id": "section-0087",
+      "title": "Source:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 50,
+            "section_path": [
+              "Source:"
+            ],
+            "start_offset": 176
+          },
+          "parent_section_id": "section-0087",
+          "text": "sec_edgar_xbrl_facts",
+          "unit_id": "unit-00050",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Locator:"
+        ],
+        "start_offset": 177
+      },
+      "path": [
+        "Locator:"
+      ],
+      "section_id": "section-0088",
+      "title": "Locator:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 51,
+            "section_path": [
+              "Locator:"
+            ],
+            "start_offset": 178
+          },
+          "parent_section_id": "section-0088",
+          "text": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001541401.json...",
+          "unit_id": "unit-00051",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 179
+      },
+      "path": [
+        "Fetched At:"
+      ],
+      "section_id": "section-0089",
+      "title": "Fetched At:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 52,
+            "section_path": [
+              "Fetched At:"
+            ],
+            "start_offset": 180
+          },
+          "parent_section_id": "section-0089",
+          "text": "2026-04-18T17:05:53.695639+00:00",
+          "unit_id": "unit-00052",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Matched Terms:"
+        ],
+        "start_offset": 181
+      },
+      "path": [
+        "Matched Terms:"
+      ],
+      "section_id": "section-0090",
+      "title": "Matched Terms:",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "COVERAGE GAPS IDENTIFIED"
+        ],
+        "start_offset": 182
+      },
+      "path": [
+        "COVERAGE GAPS IDENTIFIED"
+      ],
+      "section_id": "section-0091",
+      "title": "COVERAGE GAPS IDENTIFIED",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 53,
+            "section_path": [
+              "COVERAGE GAPS IDENTIFIED"
+            ],
+            "start_offset": 183
+          },
+          "parent_section_id": "section-0091",
+          "text": "[MEDIUM] property_assessment: assessed_value, property_tax",
+          "unit_id": "unit-00053",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "REJECTED SOURCES"
+        ],
+        "start_offset": 185
+      },
+      "path": [
+        "REJECTED SOURCES"
+      ],
+      "section_id": "section-0092",
+      "title": "REJECTED SOURCES",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 54,
+            "section_path": [
+              "REJECTED SOURCES"
+            ],
+            "start_offset": 186
+          },
+          "parent_section_id": "section-0092",
+          "text": "[quality_gate] src_003_nyc_property:400 Client Error: Bad Request for url: https://data.cityofnewyork.us/resource/yj",
+          "unit_id": "unit-00054",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 55,
+            "section_path": [
+              "REJECTED SOURCES"
+            ],
+            "start_offset": 187
+          },
+          "parent_section_id": "section-0092",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 6",
+          "unit_id": "unit-00055",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 8"
+        ],
+        "start_offset": 192
+      },
+      "path": [
+        "Page 8"
+      ],
+      "section_id": "section-0093",
+      "title": "Page 8",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 56,
+            "section_path": [
+              "Page 8"
+            ],
+            "start_offset": 193
+          },
+          "parent_section_id": "section-0093",
+          "text": "05",
+          "unit_id": "unit-00056",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "PIPELINE QUALITY ASSESSMENT"
+        ],
+        "start_offset": 194
+      },
+      "path": [
+        "PIPELINE QUALITY ASSESSMENT"
+      ],
+      "section_id": "section-0094",
+      "title": "PIPELINE QUALITY ASSESSMENT",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 57,
+            "section_path": [
+              "PIPELINE QUALITY ASSESSMENT"
+            ],
+            "start_offset": 195
+          },
+          "parent_section_id": "section-0094",
+          "text": "Chart type: bar  |  Source: motor_007 Quality Evaluation Engine",
+          "unit_id": "unit-00057",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ENTITY QUALITY METRICS"
+        ],
+        "start_offset": 196
+      },
+      "path": [
+        "ENTITY QUALITY METRICS"
+      ],
+      "section_id": "section-0095",
+      "title": "ENTITY QUALITY METRICS",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Total Entities Evaluated:"
+        ],
+        "start_offset": 197
+      },
+      "path": [
+        "Total Entities Evaluated:"
+      ],
+      "section_id": "section-0096",
+      "title": "Total Entities Evaluated:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 58,
+            "section_path": [
+              "Total Entities Evaluated:"
+            ],
+            "start_offset": 198
+          },
+          "parent_section_id": "section-0096",
+          "text": "5",
+          "unit_id": "unit-00058",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Fit Entities:"
+        ],
+        "start_offset": 199
+      },
+      "path": [
+        "Fit Entities:"
+      ],
+      "section_id": "section-0097",
+      "title": "Fit Entities:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 59,
+            "section_path": [
+              "Fit Entities:"
+            ],
+            "start_offset": 200
+          },
+          "parent_section_id": "section-0097",
+          "text": "0",
+          "unit_id": "unit-00059",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Fitness Rate:"
+        ],
+        "start_offset": 201
+      },
+      "path": [
+        "Fitness Rate:"
+      ],
+      "section_id": "section-0098",
+      "title": "Fitness Rate:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 60,
+            "section_path": [
+              "Fitness Rate:"
+            ],
+            "start_offset": 202
+          },
+          "parent_section_id": "section-0098",
+          "text": "0%",
+          "unit_id": "unit-00060",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Phase Contracts Validated: 5"
+        ],
+        "start_offset": 203
+      },
+      "path": [
+        "Phase Contracts Validated: 5"
+      ],
+      "section_id": "section-0099",
+      "title": "Phase Contracts Validated: 5",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "CANONICAL TAXONOMY TERMS"
+        ],
+        "start_offset": 204
+      },
+      "path": [
+        "CANONICAL TAXONOMY TERMS"
+      ],
+      "section_id": "section-0100",
+      "title": "CANONICAL TAXONOMY TERMS",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 61,
+            "section_path": [
+              "CANONICAL TAXONOMY TERMS"
+            ],
+            "start_offset": 205
+          },
+          "parent_section_id": "section-0100",
+          "text": "cap_rate  [domain: finance]  aliases: capitalization_rate, cap rate, going-in cap, yield_pct NOI  [domain: finance]  aliases: net_operating_income, net operating income, net_income_opera FFO  [domain: finance]  aliases: funds_from_operations, funds from operations, core_FFO occupancy_rate  [domain: operations]  aliases: lease_rate, leased_pct, occupancy, percent_leased Class_A_office  [domain: property]  aliases: class A, Class A office, grade A office, trophy_office REIT  [domain: corporate]  aliases: real_estate_investment_trust, real estate investment trust, sq_ft  [domain: technical]  aliases: square_feet, RSF, rentable square feet, GFA, gross floor are asking_rent  [domain: market]  aliases: quoted_rent, rent_PSF, rent per sf, lease_rate_psf LEED_certified  [domain: regulatory]  aliases: LEED, LEED Gold, LEED Platinum, green_building debt_to_EBITDA  [domain: finance]  aliases: leverage_ratio, net debt to EBITDA, debt_coverage, net_lever market_cap  [domain: finance]  aliases: market capitalization, equity_value, market_value_equity assessed_value  [domain: regulatory]  aliases: property_value, tax_assessment, NYC_DOF_value, assessed_mark property_tax  [domain: regulatory]  aliases: real estate tax, NYC real property tax, annual_tax_bill observatory_revenue  [domain: operations]  aliases: observation_deck_revenue, tourism_revenue, ESB_Observatory tenant_mix  [domain: operations]  aliases: tenant_roster, major_tenants, anchor_tenant, tenant_profile",
+          "unit_id": "unit-00061",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 62,
+            "section_path": [
+              "CANONICAL TAXONOMY TERMS"
+            ],
+            "start_offset": 232
+          },
+          "parent_section_id": "section-0100",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 7",
+          "unit_id": "unit-00062",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 9"
+        ],
+        "start_offset": 237
+      },
+      "path": [
+        "Page 9"
+      ],
+      "section_id": "section-0101",
+      "title": "Page 9",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ENTITY DETAIL"
+        ],
+        "start_offset": 238
+      },
+      "path": [
+        "ENTITY DETAIL"
+      ],
+      "section_id": "section-0102",
+      "title": "ENTITY DETAIL",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 63,
+            "section_path": [
+              "ENTITY DETAIL"
+            ],
+            "start_offset": 239
+          },
+          "parent_section_id": "section-0102",
+          "text": "src_001_esrt_submissions  score=0.67  status=MARGINAL  terms=[] src_002_esrt_facts  score=0.67  status=MARGINAL  terms=[] src_003_nyc_property  score=0.67  status=MARGINAL  terms=[] src_004_esrt_pressrelease  score=0.67  status=MARGINAL  terms=[] src_005_morningstar_results  score=0.67  status=MARGINAL  terms=[]",
+          "unit_id": "unit-00063",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 64,
+            "section_path": [
+              "ENTITY DETAIL"
+            ],
+            "start_offset": 244
+          },
+          "parent_section_id": "section-0102",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 8",
+          "unit_id": "unit-00064",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 10"
+        ],
+        "start_offset": 249
+      },
+      "path": [
+        "Page 10"
+      ],
+      "section_id": "section-0103",
+      "title": "Page 10",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 65,
+            "section_path": [
+              "Page 10"
+            ],
+            "start_offset": 250
+          },
+          "parent_section_id": "section-0103",
+          "text": "06",
+          "unit_id": "unit-00065",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "PHASE CONTRACTS"
+        ],
+        "start_offset": 251
+      },
+      "path": [
+        "PHASE CONTRACTS"
+      ],
+      "section_id": "section-0104",
+      "title": "PHASE CONTRACTS",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "PIPELINE PHASE CONTRACTS"
+        ],
+        "start_offset": 252
+      },
+      "path": [
+        "PIPELINE PHASE CONTRACTS"
+      ],
+      "section_id": "section-0105",
+      "title": "PIPELINE PHASE CONTRACTS",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 66,
+            "section_path": [
+              "PIPELINE PHASE CONTRACTS"
+            ],
+            "start_offset": 253
+          },
+          "parent_section_id": "section-0105",
+          "text": "[phase_01_discovery]  Source Discovery and Capture",
+          "unit_id": "unit-00066",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 254
+      },
+      "path": [
+        "Inputs:"
+      ],
+      "section_id": "section-0106",
+      "title": "Inputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 67,
+            "section_path": [
+              "Inputs:"
+            ],
+            "start_offset": 255
+          },
+          "parent_section_id": "section-0106",
+          "text": "raw_reference, sec_filing, property_record, market_report",
+          "unit_id": "unit-00067",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 256
+      },
+      "path": [
+        "Outputs:"
+      ],
+      "section_id": "section-0107",
+      "title": "Outputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 68,
+            "section_path": [
+              "Outputs:"
+            ],
+            "start_offset": 257
+          },
+          "parent_section_id": "section-0107",
+          "text": "parsed_document_object, ingestion_record",
+          "unit_id": "unit-00068",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 258
+      },
+      "path": [
+        "Constraints:"
+      ],
+      "section_id": "section-0108",
+      "title": "Constraints:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 69,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 259
+          },
+          "parent_section_id": "section-0108",
+          "text": "source_must_be_authoritative, no_fabricated_content, jurisdiction_metadata_required, fetch_timeout_30s, minimum_completeness_score_0.70 [phase_02_normalization]  Financial and Property Normalization",
+          "unit_id": "unit-00069",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 262
+      },
+      "path": [
+        "Inputs:"
+      ],
+      "section_id": "section-0109",
+      "title": "Inputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 70,
+            "section_path": [
+              "Inputs:"
+            ],
+            "start_offset": 263
+          },
+          "parent_section_id": "section-0109",
+          "text": "parsed_document_object",
+          "unit_id": "unit-00070",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 264
+      },
+      "path": [
+        "Outputs:"
+      ],
+      "section_id": "section-0110",
+      "title": "Outputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 71,
+            "section_path": [
+              "Outputs:"
+            ],
+            "start_offset": 265
+          },
+          "parent_section_id": "section-0110",
+          "text": "normalized_object, normalization_report",
+          "unit_id": "unit-00071",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 266
+      },
+      "path": [
+        "Constraints:"
+      ],
+      "section_id": "section-0111",
+      "title": "Constraints:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 72,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 267
+          },
+          "parent_section_id": "section-0111",
+          "text": "taxonomy_validation_required, no_new_entities_without_canonical_term, domain_classification_mandatory, currency_must_be_USD [phase_03_entity_resolution]  Property and Company Entity Resolution",
+          "unit_id": "unit-00072",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 270
+      },
+      "path": [
+        "Inputs:"
+      ],
+      "section_id": "section-0112",
+      "title": "Inputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 73,
+            "section_path": [
+              "Inputs:"
+            ],
+            "start_offset": 271
+          },
+          "parent_section_id": "section-0112",
+          "text": "normalized_object, term_index",
+          "unit_id": "unit-00073",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 272
+      },
+      "path": [
+        "Outputs:"
+      ],
+      "section_id": "section-0113",
+      "title": "Outputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 74,
+            "section_path": [
+              "Outputs:"
+            ],
+            "start_offset": 273
+          },
+          "parent_section_id": "section-0113",
+          "text": "resolved_entity, entity_resolution_report",
+          "unit_id": "unit-00074",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 274
+      },
+      "path": [
+        "Constraints:"
+      ],
+      "section_id": "section-0114",
+      "title": "Constraints:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 75,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 275
+          },
+          "parent_section_id": "section-0114",
+          "text": "entity_id_must_be_deterministic, lineage_chain_must_be_preserved, duplicate_resolution_required, company_must_match_sec_registry [phase_04_quality]  Data Quality and Fitness Assessment",
+          "unit_id": "unit-00075",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 278
+      },
+      "path": [
+        "Inputs:"
+      ],
+      "section_id": "section-0115",
+      "title": "Inputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 76,
+            "section_path": [
+              "Inputs:"
+            ],
+            "start_offset": 279
+          },
+          "parent_section_id": "section-0115",
+          "text": "resolved_entity",
+          "unit_id": "unit-00076",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 280
+      },
+      "path": [
+        "Outputs:"
+      ],
+      "section_id": "section-0116",
+      "title": "Outputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 77,
+            "section_path": [
+              "Outputs:"
+            ],
+            "start_offset": 281
+          },
+          "parent_section_id": "section-0116",
+          "text": "evaluated_entity, quality_report",
+          "unit_id": "unit-00077",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 282
+      },
+      "path": [
+        "Constraints:"
+      ],
+      "section_id": "section-0117",
+      "title": "Constraints:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 78,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 283
+          },
+          "parent_section_id": "section-0117",
+          "text": "fitness_score_range_0_to_1, all_entities_must_be_evaluated, marginal_entities_require_review, unfit_entities_block_decision [phase_05_decision]  Investment Decision Synthesis",
+          "unit_id": "unit-00078",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 286
+      },
+      "path": [
+        "Inputs:"
+      ],
+      "section_id": "section-0118",
+      "title": "Inputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 79,
+            "section_path": [
+              "Inputs:"
+            ],
+            "start_offset": 287
+          },
+          "parent_section_id": "section-0118",
+          "text": "evaluated_entity, quality_report, discovery_candidates",
+          "unit_id": "unit-00079",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 288
+      },
+      "path": [
+        "Outputs:"
+      ],
+      "section_id": "section-0119",
+      "title": "Outputs:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 80,
+            "section_path": [
+              "Outputs:"
+            ],
+            "start_offset": 289
+          },
+          "parent_section_id": "section-0119",
+          "text": "decision_record, final_report",
+          "unit_id": "unit-00080",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 290
+      },
+      "path": [
+        "Constraints:"
+      ],
+      "section_id": "section-0120",
+      "title": "Constraints:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 81,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 291
+          },
+          "parent_section_id": "section-0120",
+          "text": "decision_must_reference_all_fit_entities, traceability_to_sources_required, confidence_score_mandatory, incomplete_data_blocks_approval",
+          "unit_id": "unit-00081",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 82,
+            "section_path": [
+              "Constraints:"
+            ],
+            "start_offset": 293
+          },
+          "parent_section_id": "section-0120",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 9",
+          "unit_id": "unit-00082",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 11"
+        ],
+        "start_offset": 298
+      },
+      "path": [
+        "Page 11"
+      ],
+      "section_id": "section-0121",
+      "title": "Page 11",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 83,
+            "section_path": [
+              "Page 11"
+            ],
+            "start_offset": 299
+          },
+          "parent_section_id": "section-0121",
+          "text": "07",
+          "unit_id": "unit-00083",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "INVESTMENT DECISION"
+        ],
+        "start_offset": 300
+      },
+      "path": [
+        "INVESTMENT DECISION"
+      ],
+      "section_id": "section-0122",
+      "title": "INVESTMENT DECISION",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 84,
+            "section_path": [
+              "INVESTMENT DECISION"
+            ],
+            "start_offset": 301
+          },
+          "parent_section_id": "section-0122",
+          "text": "Chart type: bar  |  Source: SEC EDGAR XBRL",
+          "unit_id": "unit-00084",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "DECISION: INVESTMENT REQUIRES FURTHER DILIGENCE"
+        ],
+        "start_offset": 302
+      },
+      "path": [
+        "DECISION: INVESTMENT REQUIRES FURTHER DILIGENCE"
+      ],
+      "section_id": "section-0123",
+      "title": "DECISION: INVESTMENT REQUIRES FURTHER DILIGENCE",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "BASIS FOR DECISION"
+        ],
+        "start_offset": 303
+      },
+      "path": [
+        "BASIS FOR DECISION"
+      ],
+      "section_id": "section-0124",
+      "title": "BASIS FOR DECISION",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "1. Revenue Scale:"
+        ],
+        "start_offset": 304
+      },
+      "path": [
+        "1. Revenue Scale:"
+      ],
+      "section_id": "section-0125",
+      "title": "1. Revenue Scale:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 85,
+            "section_path": [
+              "1. Revenue Scale:"
+            ],
+            "start_offset": 305
+          },
+          "parent_section_id": "section-0125",
+          "text": "$766.8M annual revenue confirms operational scale.",
+          "unit_id": "unit-00085",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "2. Leverage:"
+        ],
+        "start_offset": 306
+      },
+      "path": [
+        "2. Leverage:"
+      ],
+      "section_id": "section-0126",
+      "title": "2. Leverage:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 86,
+            "section_path": [
+              "2. Leverage:"
+            ],
+            "start_offset": 307
+          },
+          "parent_section_id": "section-0126",
+          "text": "Total debt $608.6M vs assets $4.47B (LTV approx. 14%).",
+          "unit_id": "unit-00086",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "3. Regulatory Compliance:"
+        ],
+        "start_offset": 308
+      },
+      "path": [
+        "3. Regulatory Compliance:"
+      ],
+      "section_id": "section-0127",
+      "title": "3. Regulatory Compliance:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 87,
+            "section_path": [
+              "3. Regulatory Compliance:"
+            ],
+            "start_offset": 309
+          },
+          "parent_section_id": "section-0127",
+          "text": "Company maintains current SEC filings (10-K filed 2026-03-02).",
+          "unit_id": "unit-00087",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "CONDITIONS BLOCKING FULL APPROVAL (1 gaps):"
+        ],
+        "start_offset": 310
+      },
+      "path": [
+        "CONDITIONS BLOCKING FULL APPROVAL (1 gaps):"
+      ],
+      "section_id": "section-0128",
+      "title": "CONDITIONS BLOCKING FULL APPROVAL (1 gaps):",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 88,
+            "section_path": [
+              "CONDITIONS BLOCKING FULL APPROVAL (1 gaps):"
+            ],
+            "start_offset": 311
+          },
+          "parent_section_id": "section-0128",
+          "text": "[MEDIUM] property_assessment: Missing data for assessed_value, property_tax",
+          "unit_id": "unit-00088",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "CONFIDENCE METRICS"
+        ],
+        "start_offset": 313
+      },
+      "path": [
+        "CONFIDENCE METRICS"
+      ],
+      "section_id": "section-0129",
+      "title": "CONFIDENCE METRICS",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Data Quality Gate Passed:"
+        ],
+        "start_offset": 314
+      },
+      "path": [
+        "Data Quality Gate Passed:"
+      ],
+      "section_id": "section-0130",
+      "title": "Data Quality Gate Passed:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 89,
+            "section_path": [
+              "Data Quality Gate Passed:"
+            ],
+            "start_offset": 315
+          },
+          "parent_section_id": "section-0130",
+          "text": "YES",
+          "unit_id": "unit-00089",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Discovery Sources Validated: 2"
+        ],
+        "start_offset": 316
+      },
+      "path": [
+        "Discovery Sources Validated: 2"
+      ],
+      "section_id": "section-0131",
+      "title": "Discovery Sources Validated: 2",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Entity Fitness Rate:"
+        ],
+        "start_offset": 317
+      },
+      "path": [
+        "Entity Fitness Rate:"
+      ],
+      "section_id": "section-0132",
+      "title": "Entity Fitness Rate:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 90,
+            "section_path": [
+              "Entity Fitness Rate:"
+            ],
+            "start_offset": 318
+          },
+          "parent_section_id": "section-0132",
+          "text": "0%",
+          "unit_id": "unit-00090",
+          "unit_type": "paragraph"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 319
+      },
+      "path": [
+        "Coverage Gaps:"
+      ],
+      "section_id": "section-0133",
+      "title": "Coverage Gaps:",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 91,
+            "section_path": [
+              "Coverage Gaps:"
+            ],
+            "start_offset": 320
+          },
+          "parent_section_id": "section-0133",
+          "text": "1 (0 high-severity)",
+          "unit_id": "unit-00091",
+          "unit_type": "paragraph"
+        },
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 92,
+            "section_path": [
+              "Coverage Gaps:"
+            ],
+            "start_offset": 321
+          },
+          "parent_section_id": "section-0133",
+          "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 10",
+          "unit_id": "unit-00092",
+          "unit_type": "table"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "Page 12"
+        ],
+        "start_offset": 326
+      },
+      "path": [
+        "Page 12"
+      ],
+      "section_id": "section-0134",
+      "title": "Page 12",
+      "units": []
+    },
+    {
+      "level": 1,
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": null,
+        "section_path": [
+          "ZLab Operational Truth Framework"
+        ],
+        "start_offset": 327
+      },
+      "path": [
+        "ZLab Operational Truth Framework"
+      ],
+      "section_id": "section-0135",
+      "title": "ZLab Operational Truth Framework",
+      "units": [
+        {
+          "location": {
+            "end_offset": null,
+            "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+            "page_number": null,
+            "paragraph_index": 93,
+            "section_path": [
+              "ZLab Operational Truth Framework"
+            ],
+            "start_offset": 328
+          },
+          "parent_section_id": "section-0135",
+          "text": "Sistema Autonomo de Decision  |  Operational Truth Framework (c) 2026   Confidencial",
+          "unit_id": "unit-00093",
+          "unit_type": "paragraph"
+        }
+      ]
+    }
+  ],
+  "source_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+  "tables": [],
+  "units": [
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 1,
+        "section_path": [
+          "ZLAB OPERATIONAL TRUTH FRAMEWORK"
+        ],
+        "start_offset": 5
+      },
+      "parent_section_id": "section-0003",
+      "text": "Caso: ZLab-NYC-ESB-2026-001   |   2026-04-18",
+      "unit_id": "unit-00001",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 2,
+        "section_path": [
+          "York City"
+        ],
+        "start_offset": 10
+      },
+      "parent_section_id": "section-0007",
+      "text": "Analista: Autonomous Decision System v2.0 Version: 2.0.0   Estado: APPROVED",
+      "unit_id": "unit-00002",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 3,
+        "section_path": [
+          "INDICE DE CONTENIDOS"
+        ],
+        "start_offset": 18
+      },
+      "parent_section_id": "section-0009",
+      "text": "01",
+      "unit_id": "unit-00003",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 4,
+        "section_path": [
+          "Executive Summary"
+        ],
+        "start_offset": 20
+      },
+      "parent_section_id": "section-0010",
+      "text": "3 02",
+      "unit_id": "unit-00004",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 5,
+        "section_path": [
+          "Subject Profile"
+        ],
+        "start_offset": 23
+      },
+      "parent_section_id": "section-0011",
+      "text": "4 03",
+      "unit_id": "unit-00005",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 6,
+        "section_path": [
+          "Financial Analysis"
+        ],
+        "start_offset": 26
+      },
+      "parent_section_id": "section-0012",
+      "text": "5 04",
+      "unit_id": "unit-00006",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 7,
+        "section_path": [
+          "Data Discovery Report"
+        ],
+        "start_offset": 29
+      },
+      "parent_section_id": "section-0013",
+      "text": "6 05",
+      "unit_id": "unit-00007",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 8,
+        "section_path": [
+          "Pipeline Quality Assessment"
+        ],
+        "start_offset": 32
+      },
+      "parent_section_id": "section-0014",
+      "text": "7 06",
+      "unit_id": "unit-00008",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 9,
+        "section_path": [
+          "Phase Contracts"
+        ],
+        "start_offset": 35
+      },
+      "parent_section_id": "section-0015",
+      "text": "8 07",
+      "unit_id": "unit-00009",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 10,
+        "section_path": [
+          "Investment Decision"
+        ],
+        "start_offset": 38
+      },
+      "parent_section_id": "section-0016",
+      "text": "9",
+      "unit_id": "unit-00010",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 11,
+        "section_path": [
+          "Page 3"
+        ],
+        "start_offset": 44
+      },
+      "parent_section_id": "section-0017",
+      "text": "01",
+      "unit_id": "unit-00011",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 12,
+        "section_path": [
+          "Owner:"
+        ],
+        "start_offset": 53
+      },
+      "parent_section_id": "section-0025",
+      "text": "Empire State Realty Trust, Inc. (ESRT -- NYSE)",
+      "unit_id": "unit-00012",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 13,
+        "section_path": [
+          "Evaluation Type:"
+        ],
+        "start_offset": 55
+      },
+      "parent_section_id": "section-0026",
+      "text": "Class A Office Tower + Observatory",
+      "unit_id": "unit-00013",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 14,
+        "section_path": [
+          "Analyst:"
+        ],
+        "start_offset": 57
+      },
+      "parent_section_id": "section-0027",
+      "text": "Autonomous Decision System v2.0",
+      "unit_id": "unit-00014",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 15,
+        "section_path": [
+          "Analysis Date:"
+        ],
+        "start_offset": 59
+      },
+      "parent_section_id": "section-0028",
+      "text": "2026-04-18",
+      "unit_id": "unit-00015",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 16,
+        "section_path": [
+          "Data Sources Fetched:"
+        ],
+        "start_offset": 62
+      },
+      "parent_section_id": "section-0030",
+      "text": "2 authoritative sources",
+      "unit_id": "unit-00016",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 17,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 66
+      },
+      "parent_section_id": "section-0033",
+      "text": "1 identified Total Revenue (most recent annual): $766.8M",
+      "unit_id": "unit-00017",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 18,
+        "section_path": [
+          "Total Assets:"
+        ],
+        "start_offset": 69
+      },
+      "parent_section_id": "section-0034",
+      "text": "$4.47B",
+      "unit_id": "unit-00018",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 19,
+        "section_path": [
+          "Total Debt:"
+        ],
+        "start_offset": 71
+      },
+      "parent_section_id": "section-0035",
+      "text": "$608.6M",
+      "unit_id": "unit-00019",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 20,
+        "section_path": [
+          "Net Income:"
+        ],
+        "start_offset": 73
+      },
+      "parent_section_id": "section-0036",
+      "text": "$-210,000",
+      "unit_id": "unit-00020",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 21,
+        "section_path": [
+          "Most Recent 10-K Filing:"
+        ],
+        "start_offset": 75
+      },
+      "parent_section_id": "section-0037",
+      "text": "2025-12-31 DATOS VERIFICADOS -- SEC EDGAR + NYC Open Data",
+      "unit_id": "unit-00021",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 22,
+        "section_path": [
+          "Most Recent 10-K Filing:"
+        ],
+        "start_offset": 77
+      },
+      "parent_section_id": "section-0037",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 2",
+      "unit_id": "unit-00022",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 23,
+        "section_path": [
+          "Page 4"
+        ],
+        "start_offset": 83
+      },
+      "parent_section_id": "section-0038",
+      "text": "02",
+      "unit_id": "unit-00023",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 24,
+        "section_path": [
+          "Property Type:"
+        ],
+        "start_offset": 91
+      },
+      "parent_section_id": "section-0045",
+      "text": "Class A Office Tower + Observatory",
+      "unit_id": "unit-00024",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 25,
+        "section_path": [
+          "Company:"
+        ],
+        "start_offset": 96
+      },
+      "parent_section_id": "section-0049",
+      "text": "Empire State Realty Trust, Inc.",
+      "unit_id": "unit-00025",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 26,
+        "section_path": [
+          "State of Incorporation:"
+        ],
+        "start_offset": 103
+      },
+      "parent_section_id": "section-0055",
+      "text": "MD",
+      "unit_id": "unit-00026",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 27,
+        "section_path": [
+          "Most Recent Annual Filing:"
+        ],
+        "start_offset": 105
+      },
+      "parent_section_id": "section-0056",
+      "text": "2025-12-31",
+      "unit_id": "unit-00027",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 28,
+        "section_path": [
+          "Form:"
+        ],
+        "start_offset": 107
+      },
+      "parent_section_id": "section-0057",
+      "text": "10-K",
+      "unit_id": "unit-00028",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 29,
+        "section_path": [
+          "Date:"
+        ],
+        "start_offset": 109
+      },
+      "parent_section_id": "section-0058",
+      "text": "2026-03-02",
+      "unit_id": "unit-00029",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 30,
+        "section_path": [
+          "Accession:"
+        ],
+        "start_offset": 111
+      },
+      "parent_section_id": "section-0059",
+      "text": "0001541401-26-000008",
+      "unit_id": "unit-00030",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 31,
+        "section_path": [
+          "Accession:"
+        ],
+        "start_offset": 112
+      },
+      "parent_section_id": "section-0059",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 3",
+      "unit_id": "unit-00031",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 32,
+        "section_path": [
+          "Page 5"
+        ],
+        "start_offset": 118
+      },
+      "parent_section_id": "section-0060",
+      "text": "03",
+      "unit_id": "unit-00032",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 33,
+        "section_path": [
+          "FINANCIAL ANALYSIS"
+        ],
+        "start_offset": 120
+      },
+      "parent_section_id": "section-0061",
+      "text": "Chart type: line  |  Source: SEC EDGAR XBRL (us-gaap.Revenues)",
+      "unit_id": "unit-00033",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 34,
+        "section_path": [
+          "Revenue (Annual):"
+        ],
+        "start_offset": 123
+      },
+      "parent_section_id": "section-0063",
+      "text": "$766.8M",
+      "unit_id": "unit-00034",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 35,
+        "section_path": [
+          "Operating Income:"
+        ],
+        "start_offset": 125
+      },
+      "parent_section_id": "section-0064",
+      "text": "$135.6M",
+      "unit_id": "unit-00035",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 36,
+        "section_path": [
+          "Net Income:"
+        ],
+        "start_offset": 127
+      },
+      "parent_section_id": "section-0065",
+      "text": "$-210,000",
+      "unit_id": "unit-00036",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 37,
+        "section_path": [
+          "Total Assets:"
+        ],
+        "start_offset": 130
+      },
+      "parent_section_id": "section-0067",
+      "text": "$4.47B",
+      "unit_id": "unit-00037",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 38,
+        "section_path": [
+          "Total Debt:"
+        ],
+        "start_offset": 132
+      },
+      "parent_section_id": "section-0068",
+      "text": "$608.6M",
+      "unit_id": "unit-00038",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 39,
+        "section_path": [
+          "HISTORICAL REVENUE TREND"
+        ],
+        "start_offset": 135
+      },
+      "parent_section_id": "section-0070",
+      "text": "2022: $725.7M 2023: $738.2M 2023: $738.2M 2024: $766.8M 2024: $766.8M 2025: $766.8M",
+      "unit_id": "unit-00039",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 40,
+        "section_path": [
+          "SEC EDGAR XBRL (CIK 0001541401)"
+        ],
+        "start_offset": 143
+      },
+      "parent_section_id": "section-0072",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 4",
+      "unit_id": "unit-00040",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 41,
+        "section_path": [
+          "Filing Date Reference:"
+        ],
+        "start_offset": 150
+      },
+      "parent_section_id": "section-0074",
+      "text": "2025-12-31",
+      "unit_id": "unit-00041",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 42,
+        "section_path": [
+          "Filing Date Reference:"
+        ],
+        "start_offset": 151
+      },
+      "parent_section_id": "section-0074",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 5",
+      "unit_id": "unit-00042",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 43,
+        "section_path": [
+          "Page 7"
+        ],
+        "start_offset": 157
+      },
+      "parent_section_id": "section-0075",
+      "text": "04",
+      "unit_id": "unit-00043",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 44,
+        "section_path": [
+          "Discovery Status:"
+        ],
+        "start_offset": 160
+      },
+      "parent_section_id": "section-0077",
+      "text": "COMPLETED_WITH_WARNINGS",
+      "unit_id": "unit-00044",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 45,
+        "section_path": [
+          "Rejections:"
+        ],
+        "start_offset": 163
+      },
+      "parent_section_id": "section-0079",
+      "text": "1",
+      "unit_id": "unit-00045",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 46,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 165
+      },
+      "parent_section_id": "section-0080",
+      "text": "1",
+      "unit_id": "unit-00046",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 47,
+        "section_path": [
+          "Source:"
+        ],
+        "start_offset": 168
+      },
+      "parent_section_id": "section-0082",
+      "text": "sec_edgar_submissions",
+      "unit_id": "unit-00047",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 48,
+        "section_path": [
+          "Locator:"
+        ],
+        "start_offset": 170
+      },
+      "parent_section_id": "section-0083",
+      "text": "https://data.sec.gov/submissions/CIK0001541401.json...",
+      "unit_id": "unit-00048",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 49,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 172
+      },
+      "parent_section_id": "section-0084",
+      "text": "2026-04-18T17:05:53.695639+00:00",
+      "unit_id": "unit-00049",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 50,
+        "section_path": [
+          "Source:"
+        ],
+        "start_offset": 176
+      },
+      "parent_section_id": "section-0087",
+      "text": "sec_edgar_xbrl_facts",
+      "unit_id": "unit-00050",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 51,
+        "section_path": [
+          "Locator:"
+        ],
+        "start_offset": 178
+      },
+      "parent_section_id": "section-0088",
+      "text": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001541401.json...",
+      "unit_id": "unit-00051",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 52,
+        "section_path": [
+          "Fetched At:"
+        ],
+        "start_offset": 180
+      },
+      "parent_section_id": "section-0089",
+      "text": "2026-04-18T17:05:53.695639+00:00",
+      "unit_id": "unit-00052",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 53,
+        "section_path": [
+          "COVERAGE GAPS IDENTIFIED"
+        ],
+        "start_offset": 183
+      },
+      "parent_section_id": "section-0091",
+      "text": "[MEDIUM] property_assessment: assessed_value, property_tax",
+      "unit_id": "unit-00053",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 54,
+        "section_path": [
+          "REJECTED SOURCES"
+        ],
+        "start_offset": 186
+      },
+      "parent_section_id": "section-0092",
+      "text": "[quality_gate] src_003_nyc_property:400 Client Error: Bad Request for url: https://data.cityofnewyork.us/resource/yj",
+      "unit_id": "unit-00054",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 55,
+        "section_path": [
+          "REJECTED SOURCES"
+        ],
+        "start_offset": 187
+      },
+      "parent_section_id": "section-0092",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 6",
+      "unit_id": "unit-00055",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 56,
+        "section_path": [
+          "Page 8"
+        ],
+        "start_offset": 193
+      },
+      "parent_section_id": "section-0093",
+      "text": "05",
+      "unit_id": "unit-00056",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 57,
+        "section_path": [
+          "PIPELINE QUALITY ASSESSMENT"
+        ],
+        "start_offset": 195
+      },
+      "parent_section_id": "section-0094",
+      "text": "Chart type: bar  |  Source: motor_007 Quality Evaluation Engine",
+      "unit_id": "unit-00057",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 58,
+        "section_path": [
+          "Total Entities Evaluated:"
+        ],
+        "start_offset": 198
+      },
+      "parent_section_id": "section-0096",
+      "text": "5",
+      "unit_id": "unit-00058",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 59,
+        "section_path": [
+          "Fit Entities:"
+        ],
+        "start_offset": 200
+      },
+      "parent_section_id": "section-0097",
+      "text": "0",
+      "unit_id": "unit-00059",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 60,
+        "section_path": [
+          "Fitness Rate:"
+        ],
+        "start_offset": 202
+      },
+      "parent_section_id": "section-0098",
+      "text": "0%",
+      "unit_id": "unit-00060",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 61,
+        "section_path": [
+          "CANONICAL TAXONOMY TERMS"
+        ],
+        "start_offset": 205
+      },
+      "parent_section_id": "section-0100",
+      "text": "cap_rate  [domain: finance]  aliases: capitalization_rate, cap rate, going-in cap, yield_pct NOI  [domain: finance]  aliases: net_operating_income, net operating income, net_income_opera FFO  [domain: finance]  aliases: funds_from_operations, funds from operations, core_FFO occupancy_rate  [domain: operations]  aliases: lease_rate, leased_pct, occupancy, percent_leased Class_A_office  [domain: property]  aliases: class A, Class A office, grade A office, trophy_office REIT  [domain: corporate]  aliases: real_estate_investment_trust, real estate investment trust, sq_ft  [domain: technical]  aliases: square_feet, RSF, rentable square feet, GFA, gross floor are asking_rent  [domain: market]  aliases: quoted_rent, rent_PSF, rent per sf, lease_rate_psf LEED_certified  [domain: regulatory]  aliases: LEED, LEED Gold, LEED Platinum, green_building debt_to_EBITDA  [domain: finance]  aliases: leverage_ratio, net debt to EBITDA, debt_coverage, net_lever market_cap  [domain: finance]  aliases: market capitalization, equity_value, market_value_equity assessed_value  [domain: regulatory]  aliases: property_value, tax_assessment, NYC_DOF_value, assessed_mark property_tax  [domain: regulatory]  aliases: real estate tax, NYC real property tax, annual_tax_bill observatory_revenue  [domain: operations]  aliases: observation_deck_revenue, tourism_revenue, ESB_Observatory tenant_mix  [domain: operations]  aliases: tenant_roster, major_tenants, anchor_tenant, tenant_profile",
+      "unit_id": "unit-00061",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 62,
+        "section_path": [
+          "CANONICAL TAXONOMY TERMS"
+        ],
+        "start_offset": 232
+      },
+      "parent_section_id": "section-0100",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 7",
+      "unit_id": "unit-00062",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 63,
+        "section_path": [
+          "ENTITY DETAIL"
+        ],
+        "start_offset": 239
+      },
+      "parent_section_id": "section-0102",
+      "text": "src_001_esrt_submissions  score=0.67  status=MARGINAL  terms=[] src_002_esrt_facts  score=0.67  status=MARGINAL  terms=[] src_003_nyc_property  score=0.67  status=MARGINAL  terms=[] src_004_esrt_pressrelease  score=0.67  status=MARGINAL  terms=[] src_005_morningstar_results  score=0.67  status=MARGINAL  terms=[]",
+      "unit_id": "unit-00063",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 64,
+        "section_path": [
+          "ENTITY DETAIL"
+        ],
+        "start_offset": 244
+      },
+      "parent_section_id": "section-0102",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 8",
+      "unit_id": "unit-00064",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 65,
+        "section_path": [
+          "Page 10"
+        ],
+        "start_offset": 250
+      },
+      "parent_section_id": "section-0103",
+      "text": "06",
+      "unit_id": "unit-00065",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 66,
+        "section_path": [
+          "PIPELINE PHASE CONTRACTS"
+        ],
+        "start_offset": 253
+      },
+      "parent_section_id": "section-0105",
+      "text": "[phase_01_discovery]  Source Discovery and Capture",
+      "unit_id": "unit-00066",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 67,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 255
+      },
+      "parent_section_id": "section-0106",
+      "text": "raw_reference, sec_filing, property_record, market_report",
+      "unit_id": "unit-00067",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 68,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 257
+      },
+      "parent_section_id": "section-0107",
+      "text": "parsed_document_object, ingestion_record",
+      "unit_id": "unit-00068",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 69,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 259
+      },
+      "parent_section_id": "section-0108",
+      "text": "source_must_be_authoritative, no_fabricated_content, jurisdiction_metadata_required, fetch_timeout_30s, minimum_completeness_score_0.70 [phase_02_normalization]  Financial and Property Normalization",
+      "unit_id": "unit-00069",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 70,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 263
+      },
+      "parent_section_id": "section-0109",
+      "text": "parsed_document_object",
+      "unit_id": "unit-00070",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 71,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 265
+      },
+      "parent_section_id": "section-0110",
+      "text": "normalized_object, normalization_report",
+      "unit_id": "unit-00071",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 72,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 267
+      },
+      "parent_section_id": "section-0111",
+      "text": "taxonomy_validation_required, no_new_entities_without_canonical_term, domain_classification_mandatory, currency_must_be_USD [phase_03_entity_resolution]  Property and Company Entity Resolution",
+      "unit_id": "unit-00072",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 73,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 271
+      },
+      "parent_section_id": "section-0112",
+      "text": "normalized_object, term_index",
+      "unit_id": "unit-00073",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 74,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 273
+      },
+      "parent_section_id": "section-0113",
+      "text": "resolved_entity, entity_resolution_report",
+      "unit_id": "unit-00074",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 75,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 275
+      },
+      "parent_section_id": "section-0114",
+      "text": "entity_id_must_be_deterministic, lineage_chain_must_be_preserved, duplicate_resolution_required, company_must_match_sec_registry [phase_04_quality]  Data Quality and Fitness Assessment",
+      "unit_id": "unit-00075",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 76,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 279
+      },
+      "parent_section_id": "section-0115",
+      "text": "resolved_entity",
+      "unit_id": "unit-00076",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 77,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 281
+      },
+      "parent_section_id": "section-0116",
+      "text": "evaluated_entity, quality_report",
+      "unit_id": "unit-00077",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 78,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 283
+      },
+      "parent_section_id": "section-0117",
+      "text": "fitness_score_range_0_to_1, all_entities_must_be_evaluated, marginal_entities_require_review, unfit_entities_block_decision [phase_05_decision]  Investment Decision Synthesis",
+      "unit_id": "unit-00078",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 79,
+        "section_path": [
+          "Inputs:"
+        ],
+        "start_offset": 287
+      },
+      "parent_section_id": "section-0118",
+      "text": "evaluated_entity, quality_report, discovery_candidates",
+      "unit_id": "unit-00079",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 80,
+        "section_path": [
+          "Outputs:"
+        ],
+        "start_offset": 289
+      },
+      "parent_section_id": "section-0119",
+      "text": "decision_record, final_report",
+      "unit_id": "unit-00080",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 81,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 291
+      },
+      "parent_section_id": "section-0120",
+      "text": "decision_must_reference_all_fit_entities, traceability_to_sources_required, confidence_score_mandatory, incomplete_data_blocks_approval",
+      "unit_id": "unit-00081",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 82,
+        "section_path": [
+          "Constraints:"
+        ],
+        "start_offset": 293
+      },
+      "parent_section_id": "section-0120",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 9",
+      "unit_id": "unit-00082",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 83,
+        "section_path": [
+          "Page 11"
+        ],
+        "start_offset": 299
+      },
+      "parent_section_id": "section-0121",
+      "text": "07",
+      "unit_id": "unit-00083",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 84,
+        "section_path": [
+          "INVESTMENT DECISION"
+        ],
+        "start_offset": 301
+      },
+      "parent_section_id": "section-0122",
+      "text": "Chart type: bar  |  Source: SEC EDGAR XBRL",
+      "unit_id": "unit-00084",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 85,
+        "section_path": [
+          "1. Revenue Scale:"
+        ],
+        "start_offset": 305
+      },
+      "parent_section_id": "section-0125",
+      "text": "$766.8M annual revenue confirms operational scale.",
+      "unit_id": "unit-00085",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 86,
+        "section_path": [
+          "2. Leverage:"
+        ],
+        "start_offset": 307
+      },
+      "parent_section_id": "section-0126",
+      "text": "Total debt $608.6M vs assets $4.47B (LTV approx. 14%).",
+      "unit_id": "unit-00086",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 87,
+        "section_path": [
+          "3. Regulatory Compliance:"
+        ],
+        "start_offset": 309
+      },
+      "parent_section_id": "section-0127",
+      "text": "Company maintains current SEC filings (10-K filed 2026-03-02).",
+      "unit_id": "unit-00087",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 88,
+        "section_path": [
+          "CONDITIONS BLOCKING FULL APPROVAL (1 gaps):"
+        ],
+        "start_offset": 311
+      },
+      "parent_section_id": "section-0128",
+      "text": "[MEDIUM] property_assessment: Missing data for assessed_value, property_tax",
+      "unit_id": "unit-00088",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 89,
+        "section_path": [
+          "Data Quality Gate Passed:"
+        ],
+        "start_offset": 315
+      },
+      "parent_section_id": "section-0130",
+      "text": "YES",
+      "unit_id": "unit-00089",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 90,
+        "section_path": [
+          "Entity Fitness Rate:"
+        ],
+        "start_offset": 318
+      },
+      "parent_section_id": "section-0132",
+      "text": "0%",
+      "unit_id": "unit-00090",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 91,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 320
+      },
+      "parent_section_id": "section-0133",
+      "text": "1 (0 high-severity)",
+      "unit_id": "unit-00091",
+      "unit_type": "paragraph"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 92,
+        "section_path": [
+          "Coverage Gaps:"
+        ],
+        "start_offset": 321
+      },
+      "parent_section_id": "section-0133",
+      "text": "ZLab Operational Truth Framework  |  ZLab-NYC-ESB-2026-001  |  Pagina 10",
+      "unit_id": "unit-00092",
+      "unit_type": "table"
+    },
+    {
+      "location": {
+        "end_offset": null,
+        "file_path": "../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf",
+        "page_number": null,
+        "paragraph_index": 93,
+        "section_path": [
+          "ZLab Operational Truth Framework"
+        ],
+        "start_offset": 328
+      },
+      "parent_section_id": "section-0135",
+      "text": "Sistema Autonomo de Decision  |  Operational Truth Framework (c) 2026   Confidencial",
+      "unit_id": "unit-00093",
+      "unit_type": "paragraph"
+    }
+  ]
+}
