@@ -2,6 +2,8 @@
 *.py[cod]
 *.egg-info/
 **/*.egg-info/
+.venv/
+**/.venv/
 
 .pytest_cache/
 **/__pycache__/
@@ -16,6 +18,11 @@ runtime-orchestrator/ingestion-learning-store/
 runtime-orchestrator/openclaw.log
 runtime-orchestrator/source_refresh.log
 runtime-orchestrator/run_result.json
+runtime-orchestrator/companies_db.json
+runtime-orchestrator/openclaw_companies.json
+runtime-orchestrator/openclaw_status.json
+runtime-orchestrator/source_refresh_companies.json
+runtime-orchestrator/source_refresh_status.json
 
 motor-creator/__pycache__/
 motor-creator/runtime/
