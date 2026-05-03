@@ -188,29 +188,27 @@ The project is:
 - behaviorally closed in the runtime lane
 - aligned in the governance lane
 - carrying preserved historical residue for legacy dirs only
-- ready for either a fresh full-suite rerun, cleanup/versioning, or optional hardening
+- already versioned in isolated framework commits
+- ready for either a fresh full-suite rerun, optional hardening, or unrelated repo cleanup outside the framework wave
 
 ## Legitimate next work
 
 The next valid work items are now:
 
-1. move to cleanup/versioning:
-   - clean and version the current state properly
-   - use the slice-aware helper first:
-     - `./stage_framework_closure_sources.sh --dry-run root`
-     - `./stage_framework_closure_sources.sh --dry-run governance`
-     - `./stage_framework_closure_sources.sh --dry-run motor-creator`
-     - `./stage_framework_closure_sources.sh --dry-run runtime`
-   - if unrelated staged work already exists in the index, validate path-limited commit isolation with:
-     - `./commit_framework_closure_slice.sh --dry-run root -m "framework: root controls"`
-     - `./commit_framework_closure_slice.sh --dry-run governance -m "framework: governance closure"`
-     - `./commit_framework_closure_slice.sh --dry-run motor-creator -m "framework: motor-creator closure"`
-     - `./commit_framework_closure_slice.sh --dry-run runtime -m "framework: runtime closure"`
-   - rely on the hardened `.gitignore` boundary for generated stores, `.vscode/` and `*.egg-info/`
-   - decide whether to keep or archive the preserved legacy dirs:
-     - `governanza/validation-data-bridge_018`
-     - `governanza/verification-bridge-engine_019`
+1. preserve the committed framework baseline:
+   - `478ce47` `framework: add root closure controls`
+   - `2ddec6e` `framework: add governance closure artifacts`
+   - `91798df` `framework: add motor-creator closure state`
+   - `2996acb` `framework: add runtime orchestrator closure`
+   - `6e6fa49` `framework: ignore local runtime noise`
 2. optional hardening remains allowed if explicitly desired
+3. unrelated repo cleanup remains allowed if explicitly desired:
+   - `framework_compliance_auditor/`
+   - `Phases/`
+   - `Recursos genericos/`
+   - `apply_adjustments.py`
+   - `apply_en_adjustments.py`
+   - `wiki-front-vault/`
 
 ## Reentry procedure
 
@@ -225,10 +223,9 @@ When resuming work:
 7. read `dynamic_congruence_phase2_execution_backlog_latest.md`
 8. rerun `pytest -q` under `runtime-orchestrator/`
 9. if green, treat the framework as runtime-and-governance closed
-10. if moving into versioning, run the slice dry-runs before staging anything
-11. if the index already carries other staged work, validate a path-limited slice commit before committing
-12. do not reopen `Phase 2` unless you want a brand-new capability wave
-13. if red, fix runtime first and only then revisit documents
+10. use the five framework commits as the committed baseline
+11. do not reopen `Phase 2` unless you want a brand-new capability wave
+12. if red, fix runtime first and only then revisit documents
 
 ## Do not do this
 

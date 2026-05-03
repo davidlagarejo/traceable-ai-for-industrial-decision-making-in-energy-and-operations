@@ -18,14 +18,14 @@ It exists to prevent the next session from:
 At the root repository level:
 
 - git toplevel: `/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework`
-- tracked file count: `153`
-- tracked files inside `governanza/`, `runtime-orchestrator/`, `motor-creator/`, `AGENTS.md` and `pytest.ini`: `0`
+- tracked file count: `1,752`
+- tracked files inside `governanza/`, `runtime-orchestrator/`, `motor-creator/`, `AGENTS.md`, `pytest.ini`, `.gitignore`, and the root staging helpers: `1,659`
 
 Interpretation:
 
-- the current executable framework closure exists locally;
-- but the main runtime/governance lanes are still effectively outside root version control;
-- therefore cleanup and versioning must be done intentionally, not by bulk-adding everything visible in `git status`.
+- the current executable framework closure exists locally and is now versioned in the root repository;
+- the main runtime/governance lanes are no longer outside root version control;
+- and future cleanup work should distinguish framework source-of-truth from unrelated repo work that still remains outside this versioning wave.
 
 Latest executable checkpoint:
 
@@ -37,15 +37,14 @@ Latest executable checkpoint:
 
 The root `git status --short` shows two different classes of change:
 
-1. unrelated tracked or staged work already present:
+1. unrelated tracked work already present:
    - modifications under `framework_compliance_auditor/`
-   - staged additions under `wiki-framework-vault/`
-2. framework-closure material currently untracked:
-   - `governanza/`
-   - `motor-creator/`
-   - `runtime-orchestrator/`
-   - `AGENTS.md`
-   - `pytest.ini`
+2. unrelated untracked local material outside the framework wave:
+   - `Phases/`
+   - `Recursos genericos/`
+   - `apply_adjustments.py`
+   - `apply_en_adjustments.py`
+   - `wiki-front-vault/`
 
 These two classes should not be mixed into the same commit by accident.
 
@@ -148,7 +147,7 @@ The curated staging helper was rechecked after the cleanup pass:
 - the helper now includes `stage_framework_closure_sources.sh` itself
 - slice dry-runs `root`, `governance`, `motor-creator` and `runtime` also succeed
 - generated runtime stores remain excluded
-- unrelated tracked/staged work under `framework_compliance_auditor/` and `wiki-framework-vault/` remains outside the curated helper scope
+- unrelated tracked work under `framework_compliance_auditor/` remains outside the curated helper scope
 - editor/build residue `governanza/.vscode/` and `*.egg-info/` no longer appear in the dry-run staging wave
 - slice dry-runs must be executed sequentially, not in parallel, because `git add -n` still uses the repo index lock
 
@@ -161,7 +160,7 @@ Interpretation:
 
 ## Index-isolation reality
 
-The repository currently already contains unrelated staged work under `wiki-framework-vault/`.
+The framework wave required path-limited slice commits because the repo was not globally clean.
 
 Interpretation:
 
@@ -179,7 +178,7 @@ Helper added at repo root:
 Purpose:
 
 - commit only the selected framework slice by explicit pathspec;
-- leave unrelated staged work such as `wiki-framework-vault/` untouched in the index;
+- leave unrelated non-framework work untouched in the index;
 - avoid needing to unstage somebody else's work just to commit the framework closure safely.
 
 Current validation:
@@ -191,11 +190,44 @@ Current validation:
   - `commit_framework_closure_slice.sh`
   - `pytest.ini`
   - `stage_framework_closure_sources.sh`
-- the pre-existing `wiki-framework-vault/` staged material is not included in that root slice commit dry-run
+- slice commits were then used to land the framework cleanly in separate commits
+
+Current closure commit chain:
+
+- `478ce47` `framework: add root closure controls`
+- `2ddec6e` `framework: add governance closure artifacts`
+- `91798df` `framework: add motor-creator closure state`
+- `2996acb` `framework: add runtime orchestrator closure`
+- `6e6fa49` `framework: ignore local runtime noise`
+
+Reading-layer cleanup:
+
+- `wiki-framework-vault/` was explicitly removed from both the index and the working tree
+- it should no longer be treated as pending repo work
+- if a future Obsidian reading layer is desired, it should be reintroduced deliberately as a separate workstream
+
+## Current versioning truth
+
+The framework source-of-truth versioning wave is complete.
+
+That wave landed in these isolated commits:
+
+- `478ce47` `framework: add root closure controls`
+- `2ddec6e` `framework: add governance closure artifacts`
+- `91798df` `framework: add motor-creator closure state`
+- `2996acb` `framework: add runtime orchestrator closure`
+- `6e6fa49` `framework: ignore local runtime noise`
+
+Interpretation:
+
+- the framework itself no longer needs a first versioning pass;
+- the remaining repo dirt is outside the framework wave;
+- and future commits should be treated as follow-up work, not initial closure ingestion.
 
 ## Recommended commit slicing
 
 If the framework is going to be versioned cleanly from here, the safe order is:
+If future framework follow-up changes are going to be versioned cleanly from here, the safe order remains:
 
 1. root control and reentry docs
 2. governance authority docs and per-motor governance closure
@@ -241,7 +273,8 @@ The LaTeX template directory should be treated as runtime source, not generated 
 - do not `git add .`
 - do not commit regenerated stores together with runtime source
 - do not delete the legacy `018` / `019` dirs without an explicit archival decision
-- do not mix `framework_compliance_auditor/` or staged `wiki-framework-vault/` changes into the framework-closure commit by accident
+- do not mix `framework_compliance_auditor/` changes into framework closure follow-up commits by accident
+- do not treat `Phases/` or `wiki-front-vault/` as if they were part of the committed framework wave unless that is an explicit new decision
 
 ## Reentry rule
 
