@@ -1,0 +1,246 @@
+{
+  "produced_at": "2026-05-01T16:45:00+00:00",
+  "case_id": "ZLab-asset-industrial-plant-prairie-central-utility-island-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Utility-Heavy Site",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "operator_declared_asset",
+    "asset_anchor_value": "prairie-central-utility-island",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "operator_bounded_asset_seed",
+    "owner_context_optional": "Prairie Utility Operations LLC",
+    "operator_context_optional": "Prairie Utility Operations LLC",
+    "declared_asset_name": "Prairie Central Utility Island",
+    "declared_asset_identifier": "prairie-central-utility-island",
+    "address_raw": "8200 Utility Corridor Drive, Corpus Christi, TX 78409",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "industrial_plant",
+    "target_identifier": "prairie-central-utility-island",
+    "target_name": "Prairie Central Utility Island",
+    "target_label": "Prairie Central Utility Island",
+    "target_slug": "prairie-central-utility-island",
+    "target_id": "asset-industrial-plant-prairie-central-utility-island",
+    "address_raw": "8200 Utility Corridor Drive, Corpus Christi, TX 78409",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX"
+    ],
+    "owner_entity": "Prairie Utility Operations LLC",
+    "operator_entity": "Prairie Utility Operations LLC",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "8200 Utility Corridor Drive, Corpus Christi, TX 78409",
+      "city": "Corpus Christi",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Industrial Utility Island",
+      "primary_classification": "Utility-Heavy Site",
+      "asset_category": "Central utility island",
+      "ownership_structure": "owner_operator_unified",
+      "issuer_sector_seed": "Industrial Utilities"
+    },
+    "input_03_sector": {
+      "sector": "Industrial Utilities",
+      "ownership_structure": "owner_operator_unified",
+      "owner_name": "Prairie Utility Operations LLC",
+      "operator_name": "Prairie Utility Operations LLC"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Compressed air generation",
+        "Cooling water circulation",
+        "Large-motor pumping and air handling",
+        "Utility distribution to process units"
+      ]
+    },
+    "input_05_size": {
+      "connected_hp": 18400,
+      "compressor_trains": 5,
+      "pump_trains": 8
+    },
+    "input_06_vintage": {
+      "year_built": 2017
+    },
+    "input_07_operating_schedule": {
+      "operating_pattern": "24/7 continuous support duty",
+      "peak_support_window": "weekday daytime process ramps and summer cooling season",
+      "utility_dispatch_logic": "support systems track three downstream process blocks with staggered starts"
+    },
+    "input_08_energy_fuel": {
+      "primary_energy": "electricity",
+      "support_fuel": "natural_gas standby boiler",
+      "material_tariff_question": "demand_pf_reactive_exposure"
+    },
+    "input_09_known_systems": {
+      "known_systems": [
+        "large motors and drives",
+        "compressor trains",
+        "cooling water pumps",
+        "motor control center lineup",
+        "distribution equipment"
+      ]
+    },
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    },
+    "input_11_congruence_diligence": {
+      "packs": {
+        "utility_bill_pack": {
+          "title": "Operator electricity statements",
+          "source_families": [
+            "utility_bill_record"
+          ],
+          "records": [
+            {
+              "source_id": "bill::prairie::2026-01-demand",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "demand_charge",
+              "charge_amount": "55240",
+              "demand_kw": "7420",
+              "billing_period": "2026-01"
+            },
+            {
+              "source_id": "bill::prairie::2026-01-pf",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "pf_charge",
+              "charge_amount": "9310",
+              "billing_period": "2026-01"
+            },
+            {
+              "source_id": "bill::prairie::2026-01-energy",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "energy_charge",
+              "charge_amount": "40180",
+              "billing_period": "2026-01"
+            }
+          ]
+        },
+        "utility_tariff_pack": {
+          "title": "Large power tariff summary",
+          "source_families": [
+            "utility_tariff_record"
+          ],
+          "records": [
+            {
+              "source_id": "tariff::prairie::lps",
+              "tariff_name": "Large Power Service",
+              "rate_class": "LPS",
+              "demand_component": "on-peak demand",
+              "pf_charge": "present",
+              "service_class": "primary voltage"
+            }
+          ]
+        },
+        "throughput_schedule_pack": {
+          "title": "Support-duty schedule and dispatch note",
+          "source_families": [
+            "schedule_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "support_duty_profile": "three downstream process blocks with staggered starts",
+              "peak_support_window": "07:00-11:00 / 16:00-20:00",
+              "dispatch_note": "compressor and pump sequencing tracks process-block demand ramps"
+            }
+          ]
+        },
+        "equipment_inventory_pack": {
+          "title": "Utility-heavy equipment inventory",
+          "source_families": [
+            "equipment_inventory_record"
+          ],
+          "records": [
+            {
+              "critical_system": "compressor trains and cooling water pumps",
+              "compressor_trains": "5",
+              "major_motor_count": "42",
+              "pump_trains": "8",
+              "capacitor_bank_evidence": "not locally evidenced"
+            }
+          ]
+        },
+        "metering_boundary_pack": {
+          "title": "Utility-island metering boundary",
+          "source_families": [
+            "submetering_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "metering_scope": "dedicated fiscal meter plus feeder-level meters to downstream process blocks",
+              "shared_loads": "standby boiler auxiliaries and MCC ventilation remain inside the utility-island boundary"
+            }
+          ]
+        },
+        "maintenance_proof_pack": {
+          "title": "Support-system maintenance proof",
+          "source_families": [
+            "maintenance_log_record",
+            "maintenance_contract_record"
+          ],
+          "records": [
+            {
+              "pm_program": "monthly vibration routes and quarterly compressor valve inspection",
+              "infrared_scan": "semiannual MCC and motor terminations",
+              "critical_spares": "compressor unloaders, VFD cards and pump bearings stocked"
+            }
+          ]
+        },
+        "cmms_or_workorder_pack": {
+          "title": "CMMS summary",
+          "source_families": [
+            "cmms_record"
+          ],
+          "records": [
+            {
+              "open_workorders": "11",
+              "repeat_failure_theme": "compressor unloader drift and cooling-water fan VFD faults",
+              "recent_peak_event_review": "completed"
+            }
+          ]
+        },
+        "permit_detail_pack": {
+          "title": "Support-utility permit context",
+          "source_families": [
+            "permit_record",
+            "regulatory_coverage_record"
+          ],
+          "records": [
+            {
+              "source_id": "permit::prairie::support-utility",
+              "permit_type": "support utility air and electrical service context",
+              "constraint": "standby boiler and electrical service conditions shape admissible correction paths"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

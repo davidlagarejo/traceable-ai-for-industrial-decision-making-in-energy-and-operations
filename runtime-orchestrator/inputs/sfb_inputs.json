@@ -1,0 +1,101 @@
+{
+  "produced_at": "2026-04-28T18:26:18+00:00",
+  "case_id": "ZLab-asset-commercial-building-980-howard-street-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Commercial Building",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "benchmark_record",
+    "asset_anchor_value": "sf_benchmarking::980-howard-street",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "multi-source_asset_bounded",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "980 Howard Street",
+    "declared_asset_identifier": "980-howard-street-sf",
+    "address_raw": "980 HOWARD STREET, SAN FRANCISCO, CA, 94103",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "commercial_building",
+    "target_identifier": "980-howard-street-sf",
+    "target_name": "980 Howard Street",
+    "target_label": "980 Howard Street",
+    "target_slug": "980-howard-street",
+    "target_id": "asset-commercial-building-980-howard-street",
+    "address_raw": "980 HOWARD STREET, SAN FRANCISCO, CA, 94103",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-CA-SF",
+      "US-CA"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "980 HOWARD STREET, SAN FRANCISCO, CA, 94103",
+      "city": "SAN FRANCISCO",
+      "state": "CA",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-CA-SF",
+        "US-CA"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Commercial Building",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Urban Office / San Francisco"
+    },
+    "input_03_sector": {
+      "sector": "Urban Office / San Francisco",
+      "ownership_structure": "unknown",
+      "owner_name": "",
+      "owner_ticker": "",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Office"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

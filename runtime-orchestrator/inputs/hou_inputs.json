@@ -1,0 +1,101 @@
+{
+  "produced_at": "2026-04-28T22:45:00+00:00",
+  "case_id": "ZLab-asset-commercial-building-700-louisiana-street-houston-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Commercial Building",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "property_route",
+    "asset_anchor_value": "hcad::700-louisiana-street",
+    "asset_anchor_confidence": "medium",
+    "asset_identity_evidence_class": "address_bounded_with_official_routing",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "700 Louisiana Street",
+    "declared_asset_identifier": "700-louisiana-street-houston",
+    "address_raw": "700 LOUISIANA STREET, HOUSTON, TX, 77002",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "commercial_building",
+    "target_identifier": "700-louisiana-street-houston",
+    "target_name": "700 Louisiana Street",
+    "target_label": "700 Louisiana Street",
+    "target_slug": "700-louisiana-street",
+    "target_id": "asset-commercial-building-700-louisiana-street",
+    "address_raw": "700 LOUISIANA STREET, HOUSTON, TX, 77002",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX-HOUSTON",
+      "US-TX"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "700 LOUISIANA STREET, HOUSTON, TX, 77002",
+      "city": "HOUSTON",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX-HOUSTON",
+        "US-TX"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Commercial Building",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Downtown Office / Houston"
+    },
+    "input_03_sector": {
+      "sector": "Downtown Office / Houston",
+      "ownership_structure": "unknown",
+      "owner_name": "",
+      "owner_ticker": "",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Office"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

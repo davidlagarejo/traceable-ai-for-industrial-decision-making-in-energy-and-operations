@@ -1,0 +1,220 @@
+{
+  "produced_at": "2026-05-01T12:15:00+00:00",
+  "case_id": "ZLab-asset-infrastructure-node-riverside-grid-substation-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Infrastructure Node",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "operator_declared_asset",
+    "asset_anchor_value": "riverside-grid-substation",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "operator_bounded_asset_seed",
+    "owner_context_optional": "Riverside Grid Operations LLC",
+    "operator_context_optional": "Riverside Grid Operations LLC",
+    "declared_asset_name": "Riverside Grid Substation",
+    "declared_asset_identifier": "riverside-grid-substation",
+    "address_raw": "4100 Power Corridor Road, Joliet, IL 60431",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "infrastructure_node",
+    "target_identifier": "riverside-grid-substation",
+    "target_name": "Riverside Grid Substation",
+    "target_label": "Riverside Grid Substation",
+    "target_slug": "riverside-grid-substation",
+    "target_id": "asset-infrastructure-node-riverside-grid-substation",
+    "address_raw": "4100 Power Corridor Road, Joliet, IL 60431",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "Riverside Grid Operations LLC",
+    "operator_entity": "Riverside Grid Operations LLC",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "4100 Power Corridor Road, Joliet, IL 60431",
+      "city": "Joliet",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Infrastructure Node",
+      "primary_classification": "Infrastructure Node",
+      "asset_category": "Grid substation",
+      "ownership_structure": "owner_operator_unified",
+      "issuer_sector_seed": "Energy / Infrastructure"
+    },
+    "input_03_sector": {
+      "sector": "Energy / Infrastructure",
+      "ownership_structure": "owner_operator_unified",
+      "owner_name": "Riverside Grid Operations LLC",
+      "operator_name": "Riverside Grid Operations LLC"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Power conversion and distribution",
+        "Continuity support",
+        "Dispatch and switching"
+      ]
+    },
+    "input_05_size": {
+      "transformer_mva": 180,
+      "feeders": 12,
+      "backup_transformer": 1
+    },
+    "input_06_vintage": {
+      "year_built": 2016
+    },
+    "input_07_operating_schedule": {
+      "operating_pattern": "24/7 continuous service",
+      "critical_window": "weekday summer peak plus contingency switching events"
+    },
+    "input_08_energy_fuel": {
+      "primary_energy": "electricity",
+      "material_tariff_question": "demand_and_pf_exposure"
+    },
+    "input_09_known_systems": {
+      "known_systems": [
+        "power transformers",
+        "capacitor bank",
+        "switchgear",
+        "SCADA / controls",
+        "backup transformer cooling"
+      ]
+    },
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    },
+    "input_11_congruence_diligence": {
+      "packs": {
+        "utility_bill_pack": {
+          "title": "Operator utility and service-burden records",
+          "source_families": [
+            "utility_bill_record"
+          ],
+          "records": [
+            {
+              "source_id": "bill::riverside::2026-01-demand",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "demand_charge",
+              "charge_amount": "48600",
+              "demand_kw": "6120",
+              "billing_period": "2026-01"
+            },
+            {
+              "source_id": "bill::riverside::2026-01-pf",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "pf_charge",
+              "charge_amount": "8200",
+              "billing_period": "2026-01"
+            }
+          ]
+        },
+        "utility_tariff_pack": {
+          "title": "Large power service tariff summary",
+          "source_families": [
+            "utility_tariff_record"
+          ],
+          "records": [
+            {
+              "source_id": "tariff::riverside::lps",
+              "tariff_name": "Large Power Service",
+              "rate_class": "LPS",
+              "demand_component": "coincident peak demand",
+              "pf_charge": "present"
+            }
+          ]
+        },
+        "throughput_schedule_pack": {
+          "title": "Continuity and dispatch profile",
+          "source_families": [
+            "schedule_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "service_continuity_target": "99.98%",
+              "dispatch_burden": "summer peak switching and feeder balancing",
+              "outage_window_policy": "planned outages only in low-load windows"
+            }
+          ]
+        },
+        "equipment_inventory_pack": {
+          "title": "Critical equipment inventory",
+          "source_families": [
+            "equipment_inventory_record"
+          ],
+          "records": [
+            {
+              "critical_system": "power transformer bank",
+              "transformer_count": "3",
+              "capacitor_bank": "installed",
+              "switchgear_lineup": "12 feeders"
+            }
+          ]
+        },
+        "maintenance_proof_pack": {
+          "title": "Maintenance evidence",
+          "source_families": [
+            "maintenance_log_record",
+            "maintenance_contract_record"
+          ],
+          "records": [
+            {
+              "pm_program": "quarterly infrared and breaker inspection",
+              "oil_analysis": "semiannual transformer oil testing",
+              "critical_spares": "relay and breaker components stocked"
+            }
+          ]
+        },
+        "cmms_or_workorder_pack": {
+          "title": "CMMS and outage follow-up summary",
+          "source_families": [
+            "cmms_record"
+          ],
+          "records": [
+            {
+              "open_workorders": "5",
+              "repeat_failure_theme": "cooling fan control relay",
+              "recent_outage_postmortem": "completed"
+            }
+          ]
+        },
+        "permit_detail_pack": {
+          "title": "Operating and safety context",
+          "source_families": [
+            "permit_record",
+            "regulatory_coverage_record"
+          ],
+          "records": [
+            {
+              "source_id": "permit::riverside::ops",
+              "permit_type": "electrical operating and safety inspection context",
+              "constraint": "continuity and switching safety obligations"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

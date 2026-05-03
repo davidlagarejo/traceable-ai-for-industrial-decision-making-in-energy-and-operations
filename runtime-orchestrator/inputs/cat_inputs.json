@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:48+00:00",
+  "case_id": "ZLab-addr-industrial-plant-5205-n-o-connor-boulevard-irving-tx-75039-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Industrial Plant",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+      "city": "IRVING",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Maquinaria / Construcción",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "Maquinaria / Construcción"
+    },
+    "input_03_sector": {
+      "sector": "Maquinaria / Construcción",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Caterpillar Inc",
+      "owner_ticker": "CAT",
+      "owner_cik": "0000018230",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Maquinaria / Construcción"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Caterpillar Inc",
+    "operator_context_optional": "Caterpillar Inc",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "industrial_plant",
+    "target_identifier": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "target_name": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "target_label": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "target_slug": "5205-n-o-connor-boulevard-irving-tx-75039",
+    "target_id": "addr-industrial-plant-5205-n-o-connor-boulevard-irving-tx-75039",
+    "address_raw": "5205 N. O'CONNOR BOULEVARD, IRVING, TX, 75039",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX"
+    ],
+    "owner_entity": "Caterpillar Inc",
+    "operator_entity": "Caterpillar Inc",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

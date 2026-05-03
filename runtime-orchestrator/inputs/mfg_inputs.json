@@ -1,0 +1,99 @@
+{
+  "produced_at": "2026-04-28T21:05:00+00:00",
+  "case_id": "ZLab-asset-manufacturing-facility-deer-park-manufacturing-campus-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Manufacturing Facility",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "regulatory_record",
+    "asset_anchor_value": "tceq::deer-park",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "multi-source_asset_bounded",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "Deer Park Manufacturing Campus",
+    "declared_asset_identifier": "deer-park-manufacturing-campus",
+    "address_raw": "5900 HIGHWAY 225, DEER PARK, TX, 77536",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "manufacturing_facility",
+    "target_identifier": "deer-park-manufacturing-campus",
+    "target_name": "Deer Park Manufacturing Campus",
+    "target_label": "Deer Park Manufacturing Campus",
+    "target_slug": "deer-park-manufacturing-campus",
+    "target_id": "asset-manufacturing-facility-deer-park-manufacturing-campus",
+    "address_raw": "5900 HIGHWAY 225, DEER PARK, TX, 77536",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "process_change",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "5900 HIGHWAY 225, DEER PARK, TX, 77536",
+      "city": "DEER PARK",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Manufacturing Facility",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Industrial / Advanced Manufacturing"
+    },
+    "input_03_sector": {
+      "sector": "Industrial / Advanced Manufacturing",
+      "ownership_structure": "unknown",
+      "owner_name": "",
+      "owner_ticker": "",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Manufacturing process"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "process_change",
+      "decision_type": "process_change"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

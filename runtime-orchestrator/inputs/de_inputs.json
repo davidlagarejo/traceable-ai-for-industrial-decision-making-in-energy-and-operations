@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:49+00:00",
+  "case_id": "ZLab-addr-industrial-plant-one-john-deere-place-moline-il-61265-8098-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Industrial Plant",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+      "city": "MOLINE",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Maquinaria / Agrícola",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "Maquinaria / Agrícola"
+    },
+    "input_03_sector": {
+      "sector": "Maquinaria / Agrícola",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Deere & Company",
+      "owner_ticker": "DE",
+      "owner_cik": "0000315189",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Maquinaria / Agrícola"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Deere & Company",
+    "operator_context_optional": "Deere & Company",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "industrial_plant",
+    "target_identifier": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "target_name": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "target_label": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "target_slug": "one-john-deere-place-moline-il-61265-8098",
+    "target_id": "addr-industrial-plant-one-john-deere-place-moline-il-61265-8098",
+    "address_raw": "ONE JOHN DEERE PLACE, MOLINE, IL, 61265-8098",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "Deere & Company",
+    "operator_entity": "Deere & Company",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

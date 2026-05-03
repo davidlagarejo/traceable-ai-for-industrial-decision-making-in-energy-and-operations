@@ -1,0 +1,115 @@
+{
+  "fixture_id": "manufacturing_dynamic_baseline",
+  "asset_family_research_profile": {
+    "asset_family": "industrial_manufacturing"
+  },
+  "target_definition": {
+    "target_name": "Gulf Process Works",
+    "target_identifier": "gulf-process-works-2026",
+    "address_raw": "2200 Industrial Drive, Houston, TX 77015",
+    "target_type": "manufacturing_facility",
+    "jurisdiction_scope": [
+      "US-TX"
+    ]
+  },
+  "coverage_gaps": [
+    {
+      "gap_type": "asset_primary_anchor_missing",
+      "severity": "high"
+    },
+    {
+      "gap_type": "asset_energy_behavior_reference",
+      "severity": "high"
+    }
+  ],
+  "requestable_evidence_items": [
+    {
+      "evidence_item": "Throughput by shift, process map, thermal systems, compressed air uses, and maintenance evidence",
+      "source": "Operator, production, maintenance, and EHS records",
+      "why_needed": "Required to distinguish structural process load from support-system waste and to build a fair peer frame.",
+      "related_clusters": [
+        "operating_regime_cluster",
+        "regulatory_cluster",
+        "process_cluster"
+      ]
+    }
+  ],
+  "attempts": [],
+  "search_budget_register": [
+    {
+      "budget_scope": "total_public_discovery",
+      "budget_state": "bounded",
+      "budget_class": "bounded_public_discovery"
+    }
+  ],
+  "operational_intake_pack": {
+    "maintenance_maturity_pack": {
+      "current_state": "not_yet_evidenced"
+    },
+    "diligence_pack_register": [
+      {
+        "pack_name": "equipment_inventory_pack",
+        "current_state": "requested_but_absent"
+      },
+      {
+        "pack_name": "throughput_schedule_pack",
+        "current_state": "requested_but_absent"
+      },
+      {
+        "pack_name": "maintenance_proof_pack",
+        "current_state": "requested_but_absent"
+      },
+      {
+        "pack_name": "cmms_or_workorder_pack",
+        "current_state": "requested_but_absent"
+      },
+      {
+        "pack_name": "permit_detail_pack",
+        "current_state": "requested_but_absent"
+      }
+    ]
+  },
+  "pack_stop_conditions": [
+    {
+      "path_id": "equipment_inventory_pack",
+      "minimum_sufficient_evidence": "equipment inventory covering process and support systems",
+      "stop_condition": "equipment inventory pack received or explicitly unavailable",
+      "downgrade_condition": "no equipment inventory available through engineering route",
+      "escalation_condition": "ask maintenance / facility engineer for equipment inventory"
+    },
+    {
+      "path_id": "throughput_schedule_pack",
+      "minimum_sufficient_evidence": "throughput by shift, duty cycle, and product mix",
+      "stop_condition": "throughput schedule pack received or explicitly unavailable",
+      "downgrade_condition": "no throughput schedule pack available through production route",
+      "escalation_condition": "ask operator for throughput by shift, duty cycle, and product mix"
+    },
+    {
+      "path_id": "maintenance_proof_pack",
+      "minimum_sufficient_evidence": "PM proof and downtime history",
+      "stop_condition": "maintenance proof pack received or explicitly unavailable",
+      "downgrade_condition": "no maintenance proof available through maintenance route",
+      "escalation_condition": "ask maintenance manager for PM proof and downtime history"
+    },
+    {
+      "path_id": "cmms_or_workorder_pack",
+      "minimum_sufficient_evidence": "CMMS or work orders",
+      "stop_condition": "CMMS or workorder pack received or explicitly unavailable",
+      "downgrade_condition": "no CMMS extract available through maintenance route",
+      "escalation_condition": "ask maintenance manager for CMMS or work orders"
+    },
+    {
+      "path_id": "permit_detail_pack",
+      "minimum_sufficient_evidence": "permit detail pack covering regulated equipment",
+      "stop_condition": "permit detail pack received or explicitly unavailable",
+      "downgrade_condition": "no permit detail pack available through operator or EHS route",
+      "escalation_condition": "ask owner / operator / EHS lead for permit detail pack"
+    }
+  ],
+  "fair_comparison_profile": {
+    "asset_family": "industrial_manufacturing",
+    "climate_context_state": "public_context_seeded",
+    "operating_schedule_state": "not_yet_evidenced",
+    "control_boundary_state": "not_yet_evidenced"
+  }
+}

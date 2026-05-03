@@ -1,0 +1,93 @@
+{
+  "produced_at": "2026-04-27T12:05:00+00:00",
+  "case_id": "ZLab-addr-cold-chain-facility-2500-south-damen-avenue-chicago-il-60608-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Cold-Chain Facility",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "declared_subject_contract",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "asset_anchor_confidence": "declared",
+    "asset_identity_evidence_class": "declared_only",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "cold_chain_facility",
+    "target_identifier": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "target_name": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "target_label": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "target_slug": "2500-south-damen-avenue-chicago-il-60608",
+    "target_id": "addr-cold-chain-facility-2500-south-damen-avenue-chicago-il-60608",
+    "address_raw": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "decision_admissibility_brief",
+    "decision_intent": "asset_screening",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "2500 SOUTH DAMEN AVENUE, CHICAGO, IL, 60608",
+      "city": "CHICAGO",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Cold Chain Facility",
+      "primary_classification": "Cold Chain Facility",
+      "asset_category": "Industrial Cold Storage",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Cold Chain Logistics"
+    },
+    "input_03_sector": {
+      "sector": "Cold Chain Logistics",
+      "ownership_structure": "unknown"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Cold storage",
+        "Temperature-controlled warehousing",
+        "Dock operations"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_asset_first_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

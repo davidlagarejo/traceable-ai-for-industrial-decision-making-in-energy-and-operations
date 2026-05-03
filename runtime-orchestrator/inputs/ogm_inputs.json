@@ -1,0 +1,93 @@
+{
+  "produced_at": "2026-04-27T12:05:00+00:00",
+  "case_id": "ZLab-addr-oil-gas-midstream-facility-10777-clay-road-houston-tx-77041-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Oil & Gas Midstream Facility",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "declared_subject_contract",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "asset_anchor_confidence": "declared",
+    "asset_identity_evidence_class": "declared_only",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "oil_gas_midstream_facility",
+    "target_identifier": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "target_name": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "target_label": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "target_slug": "10777-clay-road-houston-tx-77041",
+    "target_id": "addr-oil-gas-midstream-facility-10777-clay-road-houston-tx-77041",
+    "address_raw": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "decision_admissibility_brief",
+    "decision_intent": "asset_screening",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "10777 CLAY ROAD, HOUSTON, TX, 77041",
+      "city": "HOUSTON",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Oil & Gas Midstream Facility",
+      "primary_classification": "Oil & Gas Midstream Facility",
+      "asset_category": "Compression / Transport",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Oil & Gas Midstream"
+    },
+    "input_03_sector": {
+      "sector": "Oil & Gas Midstream",
+      "ownership_structure": "unknown"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Compression",
+        "Pumping",
+        "Transport and linepack management"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_asset_first_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

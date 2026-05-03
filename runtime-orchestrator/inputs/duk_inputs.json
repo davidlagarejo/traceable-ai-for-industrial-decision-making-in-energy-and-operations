@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:43+00:00",
+  "case_id": "ZLab-addr-infrastructure-node-525-south-tryon-street-charlotte-nc-28202-1803-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Infrastructure Node",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+      "city": "CHARLOTTE",
+      "state": "NC",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-NC"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Energía / Utilities",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "Energía / Utilities"
+    },
+    "input_03_sector": {
+      "sector": "Energía / Utilities",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Duke Energy Corp",
+      "owner_ticker": "DUK",
+      "owner_cik": "0001326160",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Energía / Utilities"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Duke Energy Corp",
+    "operator_context_optional": "Duke Energy Corp",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "infrastructure_node",
+    "target_identifier": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "target_name": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "target_label": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "target_slug": "525-south-tryon-street-charlotte-nc-28202-1803",
+    "target_id": "addr-infrastructure-node-525-south-tryon-street-charlotte-nc-28202-1803",
+    "address_raw": "525 SOUTH TRYON STREET, CHARLOTTE, NC, 28202-1803",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-NC"
+    ],
+    "owner_entity": "Duke Energy Corp",
+    "operator_entity": "Duke Energy Corp",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

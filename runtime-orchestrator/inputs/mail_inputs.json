@@ -1,0 +1,99 @@
+{
+  "produced_at": "2026-04-27T18:36:57+00:00",
+  "case_id": "ZLab-addr-commercial-building-p-o-box-123-wilmington-de-19801-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Commercial Building",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "address_first_manual_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "asset_anchor_confidence": "declared",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Example Holdco",
+    "operator_context_optional": "Example Holdco",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "commercial_building",
+    "target_identifier": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "target_name": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "target_label": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "target_slug": "p-o-box-123-wilmington-de-19801",
+    "target_id": "addr-commercial-building-p-o-box-123-wilmington-de-19801",
+    "address_raw": "P.O. BOX 123, WILMINGTON, DE, 19801",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-DE"
+    ],
+    "owner_entity": "Example Holdco",
+    "operator_entity": "Example Holdco",
+    "report_intent": "decision_admissibility_brief",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "P.O. BOX 123, WILMINGTON, DE, 19801",
+      "city": "",
+      "state": "DE",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-DE"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Commercial Building",
+      "ownership_structure": "context_only",
+      "issuer_sector_seed": "Commercial Building"
+    },
+    "input_03_sector": {
+      "sector": "Commercial Building",
+      "ownership_structure": "context_only",
+      "owner_name": "Example Holdco",
+      "owner_ticker": "EXH",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Commercial Building"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

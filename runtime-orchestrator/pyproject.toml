@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "runtime-orchestrator"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31",
+    "matplotlib>=3.8",
+    "pdfplumber>=0.11",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+monitor = ["rich>=13.0"]
+browser = ["playwright>=1.54"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/runtime_orchestrator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

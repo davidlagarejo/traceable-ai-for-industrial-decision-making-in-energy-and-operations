@@ -1,0 +1,589 @@
+{
+  "produced_at": "2026-04-18T00:00:00Z",
+  "case_id": "ZLab-NYC-ESB-2026-001",
+  "case_title": "Operational Decision Intelligence -- Empire State Building",
+  "case_subtitle": "Technical Decision Intelligence Report | Phases 1-2 | Decision-grade",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Decision System v2.0",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "350 Fifth Avenue, New York, NY 10118",
+      "city": "New York City",
+      "borough": "Manhattan",
+      "state": "NY",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-NY-NYC"
+      ],
+      "climate_zone_ASHRAE": "4A",
+      "county": "New York County",
+      "micro_climate_note": "Urban heat island effect significant; coastal influence moderate"
+    },
+    "input_02_facility_type": {
+      "primary_classification": "Class A Commercial Office Tower",
+      "secondary_classification": "Observatory / Tourism Attraction",
+      "asset_category": "trophy_office_mixed_use",
+      "building_class": "Class A",
+      "construction_type": "steel_frame_Art_Deco",
+      "landmark_status": "NYC_designated_landmark, National_Historic_Landmark"
+    },
+    "input_03_sector": {
+      "sector": "commercial_real_estate",
+      "subsector": "office_building",
+      "naic_code": "531120",
+      "secondary_sector": "tourism_entertainment",
+      "ownership_structure": "publicly_traded_REIT",
+      "owner_ticker": "ESRT",
+      "owner_exchange": "NYSE",
+      "owner_cik": "0001541401"
+    },
+    "input_04_primary_use": {
+      "use_1": "Multi-tenant Class A office space rental",
+      "use_1_approx_pct": 75,
+      "use_2": "Observatory and tourism operations (floors 86, 102)",
+      "use_2_approx_pct": 17,
+      "use_3": "Retail and amenity space",
+      "use_3_approx_pct": 8,
+      "major_tenants_known": [
+        "LinkedIn (Microsoft)",
+        "Workday Inc.",
+        "Shutterstock",
+        "COTY"
+      ],
+      "anchor_tenant": "LinkedIn",
+      "anchor_tenant_approx_sqft": 453500
+    },
+    "input_05_size": {
+      "GFA_sqft": 2800118,
+      "GFA_sqft_note": "Gross floor area per public records",
+      "floors_total": 102,
+      "floors_office": "2 to 80",
+      "floors_observatory": "86 and 102",
+      "height_ft": 1454,
+      "rentable_office_sqft_approx": 1870000
+    },
+    "input_06_vintage": {
+      "year_built": 1931,
+      "years_old": 95,
+      "major_renovations_known": [
+        {
+          "period": "2011-2019",
+          "scope": "energy_retrofit_LED_HVAC_windows_elevators",
+          "certification": "LEED_Gold"
+        },
+        {
+          "period": "2023-2025",
+          "scope": "lobby_modernization_amenity_expansion",
+          "sqft_amenity_added": 65000
+        }
+      ],
+      "vintage_category": "pre_war_landmark",
+      "structural_note": "Original 1931 steel frame with multiple system renewals"
+    },
+    "input_07_operating_schedule": {
+      "office_schedule": "Monday-Friday 05:00-23:00; Saturday-Sunday limited",
+      "observatory_schedule": "7 days/week 08:00-02:00 (last entry 01:15)",
+      "hvac_schedule_note": "Central plant operates extended hours due to observatory",
+      "24_7_components": [
+        "observatory",
+        "security",
+        "elevator_service",
+        "critical_tenant_data_centers"
+      ],
+      "peak_occupancy_note": "Office peak hours 09:00-18:00 weekdays; Observatory peak tourist season May-October"
+    },
+    "input_08_energy_fuel": {
+      "primary_fuel": "electricity",
+      "primary_fuel_use": "HVAC cooling, lighting, elevators, observatory, tenant equipment",
+      "secondary_fuel": "natural_gas",
+      "secondary_fuel_use": "heating, domestic hot water",
+      "utility_electricity": "Consolidated Edison (Con Edison), NYCW subregion",
+      "utility_gas": "Con Edison Gas",
+      "LEED_Gold_certified": true,
+      "recent_EUI_note": "LEED Gold achieved 2011; actual current EUI not confirmed available"
+    },
+    "input_09_known_systems": {
+      "HVAC": {
+        "type": "central_plant_plus_tenant_controlled",
+        "retrofit_status": "upgraded_2011_2019",
+        "chiller_towers": "present",
+        "note": "Original ductwork partially retained; major mechanical rooms in basement levels"
+      },
+      "elevators": {
+        "count": 73,
+        "type_mix": "passenger_and_freight",
+        "status": "modernized_per_ESRT_disclosures"
+      },
+      "lighting": {
+        "type": "LED_throughout",
+        "retrofit_year": "completed_by_2019",
+        "controls": "occupancy_sensors_daylight_harvesting"
+      },
+      "BMS": {
+        "present": true,
+        "integration_level": "moderate_per_LEED_documentation",
+        "historian_available": "unknown"
+      },
+      "data_center": {
+        "tenant_operated": true,
+        "known_occupant": "LinkedIn (Microsoft)",
+        "power_density_class": "high",
+        "IT_load_approx_MW": "unknown"
+      },
+      "observatory_systems": {
+        "ticketing_platform": "proprietary_ESRT",
+        "visitor_management": "timed_entry",
+        "lighting_show": "LED_facade_programmable"
+      }
+    },
+    "input_10_main_concern": {
+      "primary_concern": "Operational decision intelligence under partial information conditions — characterize the asset's operational state, normative exposure, and epistemic gaps before any decision is warranted",
+      "sub_concerns": [
+        "Revenue structure and ceiling — is $766M annual revenue a stabilized operational plateau or does the asset have expansion capacity?",
+        "Debt structure clarification — XBRL shows $608M but market reports cite ~$2.1B; conflict blocks leverage-dependent analysis",
+        "NYC Local Law 97 normative exposure — LEED Gold does not confirm LL97 compliance; penalty exposure unquantified",
+        "Tenant concentration and continuity risk — LinkedIn at ~24% of office GFA creates binary operational revenue event on lease renewal",
+        "Building age and capital requirements — 95 years of operation; capital reserve adequacy unknown",
+        "Observatory revenue sustainability — $128M annually from tourism; volatility and competitive risk not bounded"
+      ],
+      "decision_type": "technical_decision_intelligence_preliminary",
+      "assessment_frame": "operational_truth_framework"
+    }
+  },
+  "phase_contracts": [
+    {
+      "phase_id": "phase_01_public_data",
+      "phase_name": "Public Data Capture and Facility Prior Construction",
+      "allowed_inputs": [
+        "facility_inputs",
+        "public_source_reference",
+        "sec_filing",
+        "benchmark_database"
+      ],
+      "allowed_outputs": [
+        "facility_prior",
+        "contextual_bundle",
+        "prior_assumptions_pack",
+        "uncertainty_markers"
+      ],
+      "constraints": [
+        "no_diagnosis_permitted",
+        "no_verification_permitted",
+        "benchmark_is_not_local_evidence",
+        "all_assumptions_must_be_explicit",
+        "uncertainty_markers_mandatory",
+        "minimum_10_inputs_required",
+        "LLM_is_not_structural_dependency"
+      ]
+    },
+    {
+      "phase_id": "phase_02_decision_core",
+      "phase_name": "Governed Inferential Expansion and Decision Core",
+      "allowed_inputs": [
+        "facility_prior",
+        "contextual_bundle",
+        "library_objects"
+      ],
+      "allowed_outputs": [
+        "inference_case",
+        "inference_record",
+        "tension_record",
+        "conflict_record",
+        "opportunity_candidate",
+        "uncertainty_record",
+        "evidence_gap",
+        "validation_agenda",
+        "next_best_questions"
+      ],
+      "constraints": [
+        "no_recommendation_language",
+        "no_diagnosis_language",
+        "no_closed_causal_claims",
+        "no_savings_claims",
+        "all_cases_must_have_validation_requirement",
+        "composition_does_not_inflate_certainty",
+        "explicit_uncertainty_mandatory",
+        "three_admissible_scores_only"
+      ]
+    },
+    {
+      "phase_id": "phase_03_reporting",
+      "phase_name": "Governed Output Block Composition and TDIR Assembly",
+      "allowed_inputs": [
+        "inference_records",
+        "tension_records",
+        "conflict_records",
+        "opportunity_candidates",
+        "uncertainty_records",
+        "evidence_gaps",
+        "validation_agenda"
+      ],
+      "allowed_outputs": [
+        "output_block",
+        "report_package",
+        "technical_view",
+        "executive_view"
+      ],
+      "constraints": [
+        "no_visible_output_may_exceed_upstream_support",
+        "epistemic_inheritance_mandatory",
+        "compaction_must_preserve_critical_limits",
+        "no_new_content_generation",
+        "traceability_to_inference_records_required",
+        "document_type_must_be_TDIR",
+        "no_parallel_llm_narrative_view",
+        "financial_section_must_be_last_body_chapter",
+        "energy_and_normative_must_be_C5_or_earlier",
+        "blocking_conflicts_must_be_C3_or_earlier"
+      ],
+      "output_document_contract": {
+        "document_type": "Technical Decision Intelligence Report (TDIR)",
+        "organizing_axis": "operational_reality",
+        "financial_position": "subordinated_context_only",
+        "section_order": [
+          "C1_framework_brief",
+          "C2_operational_identity",
+          "C3_blocking_conflicts",
+          "C4_inference_case_map",
+          "C5_energy_normative",
+          "C6_tension_map",
+          "C7_validation_architecture",
+          "C8_conditional_opportunities",
+          "C9_financial_context"
+        ],
+        "appendices": [
+          "A1_evidence_traceability",
+          "A2_facility_prior",
+          "A3_priority_questions"
+        ],
+        "epistemic_markers_required": true,
+        "llm_text_embedded_per_section": true,
+        "no_duplicate_views": true
+      }
+    },
+    {
+      "phase_id": "phase_04_verification_bridge",
+      "phase_name": "Claim Upgrade Candidate Selection and Hardening Route Design",
+      "allowed_inputs": [
+        "inference_records",
+        "validation_data",
+        "phase_contracts"
+      ],
+      "allowed_outputs": [
+        "claim_upgrade_candidate",
+        "verification_pathway",
+        "required_evidence",
+        "baseline_hardening",
+        "instrumentation_gap",
+        "claim_upgrade_decision"
+      ],
+      "constraints": [
+        "no_automatic_claim_upgrade",
+        "hardening_route_must_be_explicit",
+        "boundary_must_be_delimited",
+        "baseline_required_when_claim_depends_on_reference",
+        "do_not_upgrade_flags_mandatory_when_applicable"
+      ]
+    },
+    {
+      "phase_id": "phase_05_governance",
+      "phase_name": "Conformance, Epistemic Governance, and Delivery",
+      "allowed_inputs": [
+        "report_package",
+        "conformance_records",
+        "governance_events"
+      ],
+      "allowed_outputs": [
+        "conformance_record",
+        "epistemic_tension_signal",
+        "delivery_manifest",
+        "machine_export_bundle"
+      ],
+      "constraints": [
+        "no_modification_of_analytical_objects",
+        "only_detect_and_signal",
+        "delivery_requires_approved_report_package"
+      ]
+    }
+  ],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "domain": "commercial_real_estate_investment_due_diligence",
+    "terms": [
+      {
+        "term": "facility_prior",
+        "aliases": [
+          "prior",
+          "facility prior",
+          "structured prior",
+          "phase1_output"
+        ],
+        "domain": "framework"
+      },
+      {
+        "term": "inference_case",
+        "aliases": [
+          "inference case",
+          "activated_case",
+          "analytical_case"
+        ],
+        "domain": "framework"
+      },
+      {
+        "term": "Class_A_trophy",
+        "aliases": [
+          "trophy office",
+          "Class A office",
+          "class A",
+          "Class A building"
+        ],
+        "domain": "property"
+      },
+      {
+        "term": "REIT",
+        "aliases": [
+          "real estate investment trust",
+          "publicly_traded_REIT",
+          "investment trust"
+        ],
+        "domain": "corporate"
+      },
+      {
+        "term": "NOI",
+        "aliases": [
+          "net operating income",
+          "net_operating_income",
+          "property NOI"
+        ],
+        "domain": "finance"
+      },
+      {
+        "term": "cap_rate",
+        "aliases": [
+          "capitalization rate",
+          "cap rate",
+          "going-in yield",
+          "entry yield"
+        ],
+        "domain": "finance"
+      },
+      {
+        "term": "FFO",
+        "aliases": [
+          "funds from operations",
+          "funds_from_operations",
+          "core FFO"
+        ],
+        "domain": "finance"
+      },
+      {
+        "term": "LTV",
+        "aliases": [
+          "loan to value",
+          "loan-to-value",
+          "leverage ratio",
+          "LTV ratio"
+        ],
+        "domain": "finance"
+      },
+      {
+        "term": "occupancy_rate",
+        "aliases": [
+          "occupancy",
+          "leased percentage",
+          "percent leased",
+          "lease rate"
+        ],
+        "domain": "operations"
+      },
+      {
+        "term": "tenant_concentration",
+        "aliases": [
+          "single tenant risk",
+          "anchor tenant exposure",
+          "tenant concentration"
+        ],
+        "domain": "risk"
+      },
+      {
+        "term": "LL97_compliance",
+        "aliases": [
+          "Local Law 97",
+          "NYC LL97",
+          "carbon emissions cap",
+          "building emissions limit"
+        ],
+        "domain": "regulatory"
+      },
+      {
+        "term": "LEED_Gold",
+        "aliases": [
+          "LEED Gold",
+          "LEED certification",
+          "green building certification"
+        ],
+        "domain": "regulatory"
+      },
+      {
+        "term": "vintage_risk",
+        "aliases": [
+          "building age",
+          "capital requirement",
+          "deferred maintenance",
+          "CapEx risk"
+        ],
+        "domain": "risk"
+      },
+      {
+        "term": "observatory_revenue",
+        "aliases": [
+          "observation deck",
+          "tourism revenue",
+          "observatory income",
+          "ESB Observatory"
+        ],
+        "domain": "operations"
+      },
+      {
+        "term": "ASHRAE_4A",
+        "aliases": [
+          "climate zone 4A",
+          "mixed humid",
+          "ASHRAE zone 4A",
+          "NYC climate"
+        ],
+        "domain": "technical"
+      },
+      {
+        "term": "sq_ft",
+        "aliases": [
+          "square feet",
+          "RSF",
+          "GFA",
+          "gross floor area",
+          "rentable square feet",
+          "SF"
+        ],
+        "domain": "technical"
+      },
+      {
+        "term": "SEC_EDGAR",
+        "aliases": [
+          "SEC filing",
+          "10-K",
+          "XBRL",
+          "annual report",
+          "SEC EDGAR"
+        ],
+        "domain": "regulatory"
+      },
+      {
+        "term": "validation_urgency",
+        "aliases": [
+          "hardening priority",
+          "validation priority",
+          "evidence urgency"
+        ],
+        "domain": "framework"
+      },
+      {
+        "term": "evidence_gap",
+        "aliases": [
+          "data gap",
+          "missing evidence",
+          "information gap",
+          "gap"
+        ],
+        "domain": "framework"
+      },
+      {
+        "term": "CapEx",
+        "aliases": [
+          "capital expenditure",
+          "capital investment",
+          "CAPEX",
+          "capital reserve"
+        ],
+        "domain": "finance"
+      }
+    ]
+  },
+  "source_declarations": [
+    {
+      "source_id": "src_001_esrt_submissions",
+      "content_type": "reference",
+      "authority_class": "regulatory_filing",
+      "metadata": {
+        "publisher": "SEC EDGAR",
+        "document_type": "company_submissions",
+        "jurisdiction": "US",
+        "authoritative": true,
+        "fetch_url": "https://data.sec.gov/submissions/CIK0001541401.json",
+        "fetch_type": "sec_edgar_submissions",
+        "refresh_period_days": 1
+      },
+      "content": ""
+    },
+    {
+      "source_id": "src_002_esrt_xbrl_facts",
+      "content_type": "reference",
+      "authority_class": "regulatory_filing",
+      "metadata": {
+        "publisher": "SEC EDGAR XBRL",
+        "document_type": "xbrl_company_facts",
+        "jurisdiction": "US",
+        "authoritative": true,
+        "fetch_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001541401.json",
+        "fetch_type": "sec_edgar_facts",
+        "refresh_period_days": 1
+      },
+      "content": ""
+    },
+    {
+      "source_id": "src_003_eia_cbecs_2018",
+      "content_type": "reference",
+      "authority_class": "public_benchmark",
+      "metadata": {
+        "publisher": "U.S. Energy Information Administration",
+        "document_type": "benchmark_database",
+        "year": 2018,
+        "jurisdiction": "US",
+        "authoritative": true,
+        "note": "Commercial Buildings Energy Consumption Survey 2018 — sectoral benchmark only, NOT local evidence",
+        "fetch_url": "https://www.eia.gov/consumption/commercial/data/2018/bc/xls/b4.xlsx",
+        "fetch_type": "reference_only"
+      },
+      "content": ""
+    },
+    {
+      "source_id": "src_004_nyc_ll97_text",
+      "content_type": "reference",
+      "authority_class": "regulatory_text",
+      "metadata": {
+        "publisher": "NYC Department of Buildings",
+        "document_type": "local_law",
+        "year": 2019,
+        "jurisdiction": "US-NY-NYC",
+        "authoritative": true,
+        "note": "NYC Local Law 97 of 2019 — establishes building emission limits"
+      },
+      "content": ""
+    },
+    {
+      "source_id": "src_005_nyc_property_record",
+      "content_type": "reference",
+      "authority_class": "municipal_record",
+      "metadata": {
+        "publisher": "NYC Department of Finance",
+        "document_type": "property_assessment",
+        "jurisdiction": "US-NY-NYC",
+        "authoritative": true,
+        "fetch_url": "https://data.cityofnewyork.us/resource/yjxr-fw8i.json?parid=1008470023&$limit=5",
+        "fetch_type": "nyc_open_data"
+      },
+      "content": ""
+    }
+  ],
+  "sources": []
+}

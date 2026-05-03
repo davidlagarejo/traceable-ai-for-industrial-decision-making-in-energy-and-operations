@@ -1,0 +1,99 @@
+{
+  "produced_at": "2026-04-28T21:30:00+00:00",
+  "case_id": "ZLab-asset-manufacturing-facility-wilsonart-temple-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Manufacturing Facility",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "regulatory_record",
+    "asset_anchor_value": "tceq::wilsonart-temple",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "multi-source_asset_bounded",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "Wilsonart Temple North Laminate Facility",
+    "declared_asset_identifier": "wilsonart-temple-north-laminate-facility",
+    "address_raw": "10501 N HK DODGEN LOOP, TEMPLE, TX",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "manufacturing_facility",
+    "target_identifier": "wilsonart-temple-north-laminate-facility",
+    "target_name": "Wilsonart Temple North Laminate Facility",
+    "target_label": "Wilsonart Temple North Laminate Facility",
+    "target_slug": "wilsonart-temple-north-laminate-facility",
+    "target_id": "asset-manufacturing-facility-wilsonart-temple-north-laminate-facility",
+    "address_raw": "10501 N HK DODGEN LOOP, TEMPLE, TX",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-TX"
+    ],
+    "owner_entity": "Wilsonart LLC",
+    "operator_entity": "Wilsonart LLC",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "process_change",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "10501 N HK DODGEN LOOP, TEMPLE, TX",
+      "city": "TEMPLE",
+      "state": "TX",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-TX"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Manufacturing Facility",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Industrial / Laminates"
+    },
+    "input_03_sector": {
+      "sector": "Industrial / Laminates",
+      "ownership_structure": "unknown",
+      "owner_name": "Wilsonart LLC",
+      "owner_ticker": "",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Laminate manufacturing"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "process_change",
+      "decision_type": "process_change"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

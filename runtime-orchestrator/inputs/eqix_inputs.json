@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:52+00:00",
+  "case_id": "ZLab-addr-data-center-one-lagoon-drive-redwood-city-ca-94065-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Data Center",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+      "city": "REDWOOD CITY",
+      "state": "CA",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-CA"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "REIT / Data Centers",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "REIT / Data Centers"
+    },
+    "input_03_sector": {
+      "sector": "REIT / Data Centers",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Equinix Inc",
+      "owner_ticker": "EQIX",
+      "owner_cik": "0001101239",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "REIT / Data Centers"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Equinix Inc",
+    "operator_context_optional": "Equinix Inc",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "data_center",
+    "target_identifier": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "target_name": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "target_label": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "target_slug": "one-lagoon-drive-redwood-city-ca-94065",
+    "target_id": "addr-data-center-one-lagoon-drive-redwood-city-ca-94065",
+    "address_raw": "ONE LAGOON DRIVE, REDWOOD CITY, CA, 94065",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-CA"
+    ],
+    "owner_entity": "Equinix Inc",
+    "operator_entity": "Equinix Inc",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

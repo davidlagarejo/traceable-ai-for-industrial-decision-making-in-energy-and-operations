@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:42+00:00",
+  "case_id": "ZLab-addr-multifamily-building-equity-residential-chicago-il-60606-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Multifamily Building",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+      "city": "CHICAGO",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "REIT / Residencial",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "REIT / Residencial"
+    },
+    "input_03_sector": {
+      "sector": "REIT / Residencial",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Equity Residential",
+      "owner_ticker": "EQR",
+      "owner_cik": "0000906107",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "REIT / Residencial"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Equity Residential",
+    "operator_context_optional": "Equity Residential",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "multifamily_building",
+    "target_identifier": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "target_name": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "target_label": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "target_slug": "equity-residential-chicago-il-60606",
+    "target_id": "addr-multifamily-building-equity-residential-chicago-il-60606",
+    "address_raw": "EQUITY RESIDENTIAL, CHICAGO, IL, 60606",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "Equity Residential",
+    "operator_entity": "Equity Residential",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

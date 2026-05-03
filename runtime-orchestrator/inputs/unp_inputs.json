@@ -1,0 +1,98 @@
+{
+  "produced_at": "2026-04-25T13:46:50+00:00",
+  "case_id": "ZLab-addr-infrastructure-node-1400-douglas-street-omaha-ne-68179-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Infrastructure Node",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+      "city": "OMAHA",
+      "state": "NE",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-NE"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Transporte / Ferrocarril",
+      "ownership_structure": "publicly_traded",
+      "issuer_sector_seed": "Transporte / Ferrocarril"
+    },
+    "input_03_sector": {
+      "sector": "Transporte / Ferrocarril",
+      "ownership_structure": "publicly_traded",
+      "owner_name": "Union Pacific Corp",
+      "owner_ticker": "UNP",
+      "owner_cik": "0000100885",
+      "exchange": "NYSE"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Transporte / Ferrocarril"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "issuer_plus_address_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "asset_anchor_confidence": "low",
+    "asset_identity_evidence_class": "issuer_address_only",
+    "owner_context_optional": "Union Pacific Corp",
+    "operator_context_optional": "Union Pacific Corp",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "contract_status": "inferred"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "infrastructure_node",
+    "target_identifier": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "target_name": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "target_label": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "target_slug": "1400-douglas-street-omaha-ne-68179",
+    "target_id": "addr-infrastructure-node-1400-douglas-street-omaha-ne-68179",
+    "address_raw": "1400 DOUGLAS STREET, OMAHA, NE, 68179",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-NE"
+    ],
+    "owner_entity": "Union Pacific Corp",
+    "operator_entity": "Union Pacific Corp",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "subject_kind:address_candidate",
+    "contract_status": "inferred"
+  }
+}

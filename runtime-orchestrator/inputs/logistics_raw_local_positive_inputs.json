@@ -1,0 +1,187 @@
+{
+  "produced_at": "2026-05-01T15:10:00+00:00",
+  "case_id": "ZLab-asset-warehouse-distribution-sunrise-logistics-hub-raw-local-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Logistics Warehouse | Raw local evidence ingestion",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "operator_declared_asset",
+    "asset_anchor_value": "sunrise-logistics-hub",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "operator_bounded_asset_seed",
+    "owner_context_optional": "Sunrise Logistics Properties LLC",
+    "operator_context_optional": "Sunrise Distribution Services LLC",
+    "declared_asset_name": "Sunrise Logistics Hub",
+    "declared_asset_identifier": "sunrise-logistics-hub",
+    "address_raw": "1450 Logistics Parkway, Joliet, IL 60436",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "warehouse_distribution",
+    "target_identifier": "sunrise-logistics-hub",
+    "target_name": "Sunrise Logistics Hub",
+    "target_label": "Sunrise Logistics Hub",
+    "target_slug": "sunrise-logistics-hub",
+    "target_id": "asset-warehouse-distribution-sunrise-logistics-hub",
+    "address_raw": "1450 Logistics Parkway, Joliet, IL 60436",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "Sunrise Logistics Properties LLC",
+    "operator_entity": "Sunrise Distribution Services LLC",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "1450 Logistics Parkway, Joliet, IL 60436",
+      "city": "Joliet",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Warehouse / Distribution",
+      "primary_classification": "Warehouse / Distribution",
+      "asset_category": "Regional distribution hub",
+      "ownership_structure": "owner_operator_split",
+      "issuer_sector_seed": "Logistics / Distribution"
+    },
+    "input_03_sector": {
+      "sector": "Logistics / Distribution",
+      "ownership_structure": "owner_operator_split",
+      "owner_name": "Sunrise Logistics Properties LLC",
+      "operator_name": "Sunrise Distribution Services LLC"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Regional distribution",
+        "Cross-dock operations",
+        "Forklift charging",
+        "High-bay storage"
+      ]
+    },
+    "input_05_size": {
+      "gross_sqft": 612000,
+      "dock_doors": 116,
+      "clear_height_ft": 40
+    },
+    "input_06_vintage": {
+      "year_built": 2018
+    },
+    "input_07_operating_schedule": {
+      "operating_pattern": "24/6 with Sunday partial operations",
+      "shifts": 3,
+      "peak_loading_window": "04:00-09:00 and 16:00-21:00"
+    },
+    "input_08_energy_fuel": {
+      "primary_energy": "electricity",
+      "heating_fuel": "natural_gas",
+      "material_tariff_question": "demand_and_tou_exposure"
+    },
+    "input_09_known_systems": {
+      "known_systems": [
+        "dock equipment",
+        "forklift charging",
+        "high-bay lighting",
+        "RTUs / ventilation",
+        "sortation conveyor"
+      ]
+    },
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    },
+    "input_12_raw_local_evidence": {
+      "documents": [
+        {
+          "document_id": "bill-jan",
+          "document_type": "utility bill pdf",
+          "title": "January utility statement",
+          "extracted_records": [
+            {
+              "source_id": "bill::logistics::jan",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "demand_charge",
+              "charge_amount": "12000",
+              "demand_kw": "780"
+            }
+          ]
+        },
+        {
+          "document_id": "dock-schedule",
+          "document_type": "throughput and schedule worksheet",
+          "title": "Dock turns and operating schedule",
+          "extracted_fields": {
+            "dock_turns_per_day": "250",
+            "operating_pattern": "24/6"
+          }
+        },
+        {
+          "document_id": "equipment-list",
+          "document_type": "equipment inventory",
+          "title": "Handling equipment inventory",
+          "extracted_records": [
+            {
+              "critical_system": "forklift charging",
+              "fleet_count": "80"
+            }
+          ]
+        },
+        {
+          "document_id": "submeter-map",
+          "document_type": "metering boundary map",
+          "title": "Charging and dock load submeters",
+          "extracted_fields": {
+            "metering_scope": "charging submeter and dock-door panel split",
+            "shared_loads": "house lighting remains shared"
+          }
+        },
+        {
+          "document_id": "permit-packet",
+          "document_type": "permit summary",
+          "title": "Fire and equipment permit summary",
+          "extracted_records": [
+            {
+              "permit_id": "permit::warehouse::1",
+              "permit_type": "warehouse equipment permit"
+            }
+          ]
+        },
+        {
+          "document_id": "maintenance-program",
+          "document_type": "maintenance contract",
+          "title": "Dock and charging PM agreement",
+          "extracted_fields": {
+            "pm_program": "quarterly dock and charging PM",
+            "system_scope": "dock equipment and charging rooms"
+          }
+        },
+        {
+          "document_id": "cmms-export",
+          "document_type": "cmms export",
+          "title": "Open workorder export",
+          "extracted_fields": {
+            "open_workorders": "8",
+            "program_signal": "weekly reliability review"
+          }
+        }
+      ]
+    }
+  }
+}

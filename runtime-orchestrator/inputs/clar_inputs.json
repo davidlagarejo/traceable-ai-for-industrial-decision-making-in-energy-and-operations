@@ -1,0 +1,99 @@
+{
+  "produced_at": "2026-04-27T18:36:56+00:00",
+  "case_id": "ZLab-addr-industrial-plant-123-test-access-road-elko-nv-89801-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Address-first seed | Industrial Plant",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "address_candidate",
+    "subject_scope": "asset",
+    "subject_origin": "address_first_manual_seed",
+    "seed_state": "address_seeded",
+    "asset_anchor_type": "postal_address",
+    "asset_anchor_value": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "asset_anchor_confidence": "declared",
+    "asset_identity_evidence_class": "declared_only",
+    "owner_context_optional": "",
+    "operator_context_optional": "",
+    "declared_asset_name": "",
+    "declared_asset_identifier": "",
+    "address_raw": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "industrial_plant",
+    "target_identifier": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "target_name": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "target_label": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "target_slug": "123-test-access-road-elko-nv-89801",
+    "target_id": "addr-industrial-plant-123-test-access-road-elko-nv-89801",
+    "address_raw": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-NV"
+    ],
+    "owner_entity": "",
+    "operator_entity": "",
+    "report_intent": "decision_admissibility_brief",
+    "decision_intent": "target_identification_required",
+    "case_mode": "address_first",
+    "subject_kind": "address_candidate",
+    "subject_seed_state": "address_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "123 TEST ACCESS ROAD, ELKO, NV, 89801",
+      "city": "",
+      "state": "NV",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-NV"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Industrial Plant",
+      "ownership_structure": "unknown",
+      "issuer_sector_seed": "Industrial Plant"
+    },
+    "input_03_sector": {
+      "sector": "Industrial Plant",
+      "ownership_structure": "unknown",
+      "owner_name": "",
+      "owner_ticker": "",
+      "owner_cik": "",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Industrial Plant"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "target_identification_required"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}

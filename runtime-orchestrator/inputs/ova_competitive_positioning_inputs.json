@@ -1,0 +1,102 @@
+{
+  "produced_at": "2026-04-30T15:30:00+00:00",
+  "case_id": "ZLab-asset-commercial-building-one-vanderbilt-competitive-2026",
+  "case_title": "Competitive Positioning Prior",
+  "case_subtitle": "Bounded asset seed | Competitive Positioning",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "benchmark_record",
+    "asset_anchor_value": "nyc_ll84::one-vanderbilt",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "multi-source_asset_bounded",
+    "owner_context_optional": "SL Green Realty Corp",
+    "operator_context_optional": "SL Green Realty Corp",
+    "declared_asset_name": "One Vanderbilt",
+    "declared_asset_identifier": "one-vanderbilt-nyc",
+    "address_raw": "ONE VANDERBILT AVENUE, NEW YORK, NY, 10017",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "commercial_building",
+    "target_identifier": "one-vanderbilt-nyc",
+    "target_name": "One Vanderbilt",
+    "target_label": "One Vanderbilt",
+    "target_slug": "one-vanderbilt",
+    "target_id": "asset-commercial-building-one-vanderbilt",
+    "address_raw": "ONE VANDERBILT AVENUE, NEW YORK, NY, 10017",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-NY-NYC",
+      "US-NY"
+    ],
+    "owner_entity": "SL Green Realty Corp",
+    "operator_entity": "SL Green Realty Corp",
+    "report_intent": "competitive_positioning_brief",
+    "decision_intent": "competitive_positioning",
+    "structural_output_mode_request": "Competitive Positioning Brief",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "ONE VANDERBILT AVENUE, NEW YORK, NY, 10017",
+      "city": "NEW YORK",
+      "state": "NY",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-NY-NYC",
+        "US-NY"
+      ],
+      "bbl": "",
+      "bin": "",
+      "boro": "",
+      "block": "",
+      "lot": ""
+    },
+    "input_02_facility_type": {
+      "classification": "Commercial Building",
+      "ownership_structure": "context_only",
+      "issuer_sector_seed": "REIT / Oficinas NYC"
+    },
+    "input_03_sector": {
+      "sector": "REIT / Oficinas NYC",
+      "ownership_structure": "context_only",
+      "owner_name": "SL Green Realty Corp",
+      "owner_ticker": "SLG",
+      "owner_cik": "0001040971",
+      "sic": "",
+      "exchange": ""
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Office"
+      ]
+    },
+    "input_05_size": {},
+    "input_06_vintage": {},
+    "input_07_operating_schedule": {},
+    "input_08_energy_fuel": {},
+    "input_09_known_systems": {},
+    "input_10_main_concern": {
+      "primary_concern": "competitive_positioning",
+      "decision_type": "competitive_positioning"
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_us_realestate_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": []
+}
