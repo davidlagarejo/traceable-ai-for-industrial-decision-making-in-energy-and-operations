@@ -1,0 +1,39 @@
+{
+  "motor_id": "motor_006",
+  "motor_name": "Entity Identity / Resolution Engine",
+  "reviewed_at": "2026-04-17T12:24:50Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "functional_contract",
+    "operational_rules",
+    "acceptance_tests",
+    "failure_modes",
+    "technical_schema",
+    "test_spec",
+    "failure_modes_spec",
+    "codebase",
+    "usage_example"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the Entity Identity / Resolution Engine contract: it consumes normalized records and canonical entities, applies deterministic resolution policy rules, emits identity resolution records, entity clusters, ambiguity flags, resolution conflicts and candidate matches, and preserves provenance, lineage, rule versioning and input immutability. No material contract, boundary, metadata or responsibility-separation violations were found."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": []
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": []
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 3,
+    "failed": 0,
+    "coverage_assessment": "Conformance smoke checks exercised the documented happy path, malformed missing-provenance rejection and candidate-tie ambiguity behavior. The declared test specification also covers sparse valid inputs, malformed normalized records, unnormalized raw input, invalid canonical entities, missing policy version, identifier collisions, missing canonical references and taxonomy mismatch cases.",
+    "notes": "Reviewed functional_contract.md, operational_rules.md, technical_schema.md, test_spec.md, failure_modes_spec.md, usage_example.md and the Python codebase. The engine validates required normalized record, canonical entity and policy fields before emitting outputs; rejects missing provenance with structured IdentityResolutionError output collections left empty; emits same_entity decisions and confirmed clusters only from deterministic candidate matches; emits ambiguous decisions with AmbiguityFlag for candidate ties or missing canonical references; emits ResolutionConflict for incompatible evidence; carries source_ref, lineage_refs, evidence_refs, rule_version, produced_by_motor and version hashes; and guards against silent mutation of normalized_records or canonical_entities. It does not normalize raw text, create canonical entities, mutate motor_003 entities or perform document deduplication reserved for motor_010."
+  },
+  "open_items": []
+}

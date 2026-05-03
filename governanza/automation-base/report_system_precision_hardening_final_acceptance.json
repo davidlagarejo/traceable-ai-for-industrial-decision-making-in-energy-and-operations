@@ -1,0 +1,93 @@
+{
+  "artifact": "report_system_precision_hardening_final_acceptance",
+  "generated_on": "2026-04-29",
+  "status": "accepted_with_known_limitations",
+  "system_diagnosis": {
+    "overblocking_good_public_cases": "resolved",
+    "report_type_graduation": "resolved",
+    "source_coverage_table": "resolved",
+    "claim_contract_consistency": "resolved",
+    "tad_graduation": "resolved",
+    "minimum_evidence_deduplication": "resolved",
+    "financial_exposure_translation": "resolved",
+    "scenario_contracts": "resolved",
+    "report_preflight": "resolved",
+    "template_contamination_detection": "resolved",
+    "self_evaluation": "resolved"
+  },
+  "real_runs": [
+    {
+      "case_key": "one_vanderbilt_nyc",
+      "run_id": "run:87a60ef55e9a5759",
+      "before_report_type": "Decision-Blocked Asset Brief",
+      "after_report_type": "Compliance / Investment Screening Brief",
+      "status": "completed"
+    },
+    {
+      "case_key": "wilsonart_temple_manufacturing",
+      "run_id": "run:0832a58b672af2ac",
+      "before_report_type": "Decision-Blocked Asset Brief",
+      "after_report_type": "Decision-Blocked Asset Brief",
+      "status": "completed"
+    },
+    {
+      "case_key": "corporate_hq_or_mailing_address",
+      "run_id": "run:eb1597ca013b28bd",
+      "before_report_type": "Entity Address Classification Brief",
+      "after_report_type": "Entity Address Classification Brief",
+      "status": "completed"
+    }
+  ],
+  "certification_summary": {
+    "total_cases": 3,
+    "passed_cases": 3,
+    "failed_cases": 0,
+    "one_vanderbilt_vs_wilsonart_diverge": true,
+    "overall_pass": true
+  },
+  "files_modified": [
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_007.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_012.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_014.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_015.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_016.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_024.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_025.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_027.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_028.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_033.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_034.py",
+    "runtime-orchestrator/src/runtime_orchestrator/pipeline_orchestrator.py",
+    "runtime-orchestrator/src/runtime_orchestrator/models.py",
+    "runtime-orchestrator/dashboard.py",
+    "runtime-orchestrator/src/runtime_orchestrator/evidence_maturity/cluster_scoring.py",
+    "runtime-orchestrator/src/runtime_orchestrator/evidence_maturity/claim_templates.py",
+    "runtime-orchestrator/src/runtime_orchestrator/evidence_maturity/dependency_rules.py"
+  ],
+  "tests_strengthened": [
+    "test_report_precision_hardening_baseline.py",
+    "test_field_support_semantics.py",
+    "test_tad_graduation.py",
+    "test_report_conformance.py",
+    "test_evidence_maturity_engine.py",
+    "test_evidence_maturity_wiring.py",
+    "test_self_evaluation_register_is_present.py",
+    "test_precision_hardening_certification.py"
+  ],
+  "remaining_limitations": [
+    "Industry-specific deepening is incomplete for manufacturing and office-tower detail.",
+    "phase_self_evaluation_summary is visible in run manifests and API/dashboard, but not embedded into motor_027 delivery manifests because of DAG order.",
+    "The framework remains intentionally conservative when public evidence is insufficient."
+  ],
+  "must_not_be_weakened": [
+    "No hallucinated certainty",
+    "No ROI without evidence",
+    "No compliance closure without official filing or verified baseline",
+    "No savings claim without utility/system/control evidence",
+    "No benchmark as local truth",
+    "No LLM-generated certainty",
+    "No final recommendation when evidence is missing",
+    "No over-auditing before minimum evidence request",
+    "No template output by superficial variable substitution"
+  ]
+}

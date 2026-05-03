@@ -1,0 +1,376 @@
+{
+  "motor_id": "motor_008",
+  "motor_name": "Source Registry + Rights Engine",
+  "purpose": "",
+  "current_stage": "closed",
+  "stage_sequence": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "completed_stages": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "artifacts": {
+    "documentation_base": {
+      "exists": false,
+      "items": [
+        "master_concept_doc",
+        "functional_contract",
+        "conceptual_schema",
+        "operational_rules",
+        "acceptance_tests",
+        "failure_modes",
+        "design_done_criteria"
+      ]
+    },
+    "schema_technical": {
+      "exists": false,
+      "items": [
+        "technical_schema"
+      ]
+    },
+    "tests": {
+      "exists": false,
+      "items": [
+        "test_spec"
+      ]
+    },
+    "failure_modes": {
+      "exists": false,
+      "items": [
+        "failure_modes_spec"
+      ]
+    },
+    "implementation": {
+      "exists": false,
+      "items": [
+        "codebase",
+        "usage_example"
+      ]
+    },
+    "conformance_review": {
+      "exists": false,
+      "items": [
+        "conformance_review_report"
+      ]
+    }
+  },
+  "missing_artifacts": [],
+  "validations": [
+    {
+      "validation_id": "val_bc2de0ec",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_cc03e1ee",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_9f168d3c",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_19e83c46",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_173a66b3",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_3b8ee378",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_59226475",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_5e8cfe44",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_1f7e4202",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_197cba31",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_8eab7a98",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_7dd99a22",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_78470d2e",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_8575e2d5",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_7681a45c",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_73664de6",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_960385a8",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_3a67a650",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_a28aced8",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_12df6c82",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_5822084e",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_0b464c4c",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_767fa6f1",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_d9ad3288",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_ebe9718a",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_a1206bdc",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_96f93424",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_b79b708a",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "fail",
+      "notes": "no_markers(technical_schema)"
+    },
+    {
+      "validation_id": "val_6b81b265",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "fail",
+      "notes": "no_markers(technical_schema)"
+    },
+    {
+      "validation_id": "val_28110383",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_faccf68b",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "fail",
+      "notes": "no_markers(test_spec)"
+    },
+    {
+      "validation_id": "val_c54825ec",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "fail",
+      "notes": "no_markers(test_spec)"
+    },
+    {
+      "validation_id": "val_c5185f72",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_37069df4",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "fail",
+      "notes": "no_markers(failure_modes_spec)"
+    },
+    {
+      "validation_id": "val_0758e683",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "fail",
+      "notes": "no_markers(failure_modes_spec)"
+    },
+    {
+      "validation_id": "val_594c5670",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_c93bb164",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "fail",
+      "notes": "no_markers(usage_example)"
+    },
+    {
+      "validation_id": "val_8f432aac",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "fail",
+      "notes": "no_markers(usage_example)"
+    },
+    {
+      "validation_id": "val_e231d7f9",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_1b5a5a58",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_ab623317",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_bb7971c1",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "pass",
+      "notes": "all conditions met"
+    }
+  ],
+  "corrections": [],
+  "status": "closed",
+  "blocked": false,
+  "paused": false,
+  "waiting_on": null,
+  "closure": {
+    "is_closed": true,
+    "closed_at": "2026-04-17T00:46:23.516002+00:00",
+    "closure_notes": "All 6 gates passed. Conformance review approved."
+  },
+  "notes": "Dependencies satisfied. Motor activated.",
+  "updated_at": "2026-04-17T00:46:23.516002+00:00"
+}

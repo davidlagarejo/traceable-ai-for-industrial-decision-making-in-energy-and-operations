@@ -1,0 +1,121 @@
+{
+  "artifact": "system_integrity_consistency_certification_latest",
+  "generated_on": "2026-04-29",
+  "status": "accepted",
+  "prompt_status": "closed_at_system_level",
+  "latest_real_validation_run": {
+    "case_key": "one_vanderbilt_nyc",
+    "run_id": "run:0845281269af4561",
+    "pipeline_id": "ova-2026",
+    "status": "completed",
+    "final_visible_report_type": "Compliance / Investment Screening Brief",
+    "render_job_id": "motor_017_render_job_rp:d05d691d",
+    "pdf_path": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/output/motor_017_render_job_rp:d05d691d/zlab-asset-commercial-building-one-vanderbilt-2026_compliance_investment_screening_brief_en.pdf"
+  },
+  "chapter_inventory": {
+    "planned": [
+      "00-Brief.tex",
+      "C1.tex",
+      "C5.tex",
+      "C3.tex",
+      "C4.tex",
+      "C2.tex",
+      "C6.tex",
+      "C7.tex",
+      "C8.tex",
+      "A4.tex",
+      "A0.tex",
+      "A0A.tex",
+      "A1.tex",
+      "A2.tex",
+      "A3.tex",
+      "A5.tex",
+      "A6.tex",
+      "A7.tex",
+      "A8.tex"
+    ],
+    "written": [
+      "00-Brief.tex",
+      "A0.tex",
+      "A0A.tex",
+      "A1.tex",
+      "A2.tex",
+      "A3.tex",
+      "A4.tex",
+      "A5.tex",
+      "A6.tex",
+      "A7.tex",
+      "A8.tex",
+      "C1.tex",
+      "C2.tex",
+      "C3.tex",
+      "C4.tex",
+      "C5.tex",
+      "C6.tex",
+      "C7.tex",
+      "C8.tex"
+    ],
+    "forbidden_template_artifacts_absent": true
+  },
+  "validator": {
+    "motor": "motor_036",
+    "critical_checks": [
+      "claim_summary_vs_matrix",
+      "governance_summary_vs_matrix",
+      "report_type_vs_executive_brief",
+      "tad_vs_executive_brief",
+      "tad_section_vs_decision_front_actions",
+      "asset_field_gfa_vs_operational_identity",
+      "asset_field_year_built_vs_operational_identity",
+      "asset_field_floor_count_vs_operational_identity",
+      "asset_field_parcel_id_vs_operational_identity",
+      "asset_field_current_eui_vs_operational_identity",
+      "geometry_cluster_vs_operational_identity",
+      "classifier_vs_visible_document_type",
+      "scenario_vs_evidence_contract",
+      "scenario_section_vs_evidence_register",
+      "source_scope_vs_support_note",
+      "planned_chapter_inventory_matches_sections",
+      "planned_chapter_inventory_excludes_template_scaffolding"
+    ],
+    "blocks_pdf_on_failure": true
+  },
+  "tests": {
+    "focused_bundle": {
+      "command": "pytest -q test_system_consistency_validator.py test_report_conformance.py -k \"motor_036 or motor_017 or screening_report_uses_canonical_context\"",
+      "result": "8 passed, 29 deselected"
+    },
+    "validator_suite": {
+      "file": "test_system_consistency_validator.py",
+      "result": "7 passed"
+    }
+  },
+  "files_hardened": [
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_012.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_013.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_014.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_016.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_017.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_024.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_033.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_034.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_036.py"
+  ],
+  "final_determination": {
+    "system_integrity_prompt_complete": true,
+    "notes": [
+      "This certifies internal structural coherence, not universal public-data completeness.",
+      "The runtime now blocks structurally contradictory reports before PDF publication."
+    ]
+  },
+  "must_not_be_weakened": [
+    "No hallucinated certainty",
+    "No ROI without evidence",
+    "No compliance closure without official filing or verified baseline",
+    "No savings claim without utility/system/control-boundary evidence",
+    "No benchmark as local truth",
+    "No LLM override of structured governance",
+    "No render publication after critical consistency failure",
+    "No template chapter contamination in governed report artifacts"
+  ]
+}

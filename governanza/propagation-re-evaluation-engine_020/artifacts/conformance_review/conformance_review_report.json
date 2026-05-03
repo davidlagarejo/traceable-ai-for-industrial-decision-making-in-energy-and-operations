@@ -1,0 +1,39 @@
+{
+  "motor_id": "motor_020",
+  "motor_name": "Propagation / Re-evaluation Engine",
+  "reviewed_at": "2026-04-17T12:00:00-04:00",
+  "reviewer": "automated",
+  "inputs_used": [
+    "documentation_base/functional_contract.md",
+    "documentation_base/operational_rules.md",
+    "documentation_base/acceptance_tests.md",
+    "documentation_base/failure_modes.md",
+    "schema_technical/technical_schema.md",
+    "tests/test_spec.md",
+    "failure_modes/failure_modes_spec.md",
+    "implementation/codebase/",
+    "implementation/usage_example.md"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the declared signal-only propagation contract: it accepts version, quality, and change inputs, emits queueable re-evaluation jobs, stale markers, and propagation audit records, and does not mutate upstream or downstream authority objects."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": []
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": []
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 1,
+    "failed": 0,
+    "coverage_assessment": "Executable smoke coverage confirms the documented happy path: one source-change trigger linked to a version record and quality record produced two queued ReEvaluationJob records, two StaleObject records, and one PropagationRecord with decision jobs_emitted. Static conformance review also checked sparse, malformed, deduplication, untraceable-path, and unsafe-job scenarios against the implemented validation and branching logic.",
+    "notes": "The reviewed code is deterministic, uses stable hash-derived identifiers, preserves input references and dependency paths in outputs, records structured rejections, and keeps motor_020 within enqueue-and-signal responsibilities."
+  },
+  "open_items": []
+}

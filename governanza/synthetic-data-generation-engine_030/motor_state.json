@@ -1,0 +1,208 @@
+{
+  "motor_id": "motor_030",
+  "motor_name": "Synthetic Data Generation Engine",
+  "purpose": "",
+  "current_stage": "closed",
+  "stage_sequence": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "completed_stages": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "artifacts": {
+    "documentation_base": {
+      "exists": false,
+      "items": [
+        "master_concept_doc",
+        "functional_contract",
+        "conceptual_schema",
+        "operational_rules",
+        "acceptance_tests",
+        "failure_modes",
+        "design_done_criteria"
+      ]
+    },
+    "schema_technical": {
+      "exists": false,
+      "items": [
+        "technical_schema"
+      ]
+    },
+    "tests": {
+      "exists": false,
+      "items": [
+        "test_spec"
+      ]
+    },
+    "failure_modes": {
+      "exists": false,
+      "items": [
+        "failure_modes_spec"
+      ]
+    },
+    "implementation": {
+      "exists": false,
+      "items": [
+        "codebase",
+        "usage_example"
+      ]
+    },
+    "conformance_review": {
+      "exists": false,
+      "items": [
+        "conformance_review_report"
+      ]
+    }
+  },
+  "missing_artifacts": [],
+  "validations": [
+    {
+      "validation_id": "val_ddce6d0e",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_603e2f47",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "no_markers(functional_contract); no_markers(conceptual_schema); no_markers(operational_rules)"
+    },
+    {
+      "validation_id": "val_cbdd8a45",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_b96f0728",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "fail",
+      "notes": "no_markers(technical_schema)"
+    },
+    {
+      "validation_id": "val_ad900d27",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "fail",
+      "notes": "no_markers(technical_schema)"
+    },
+    {
+      "validation_id": "val_5b3819c0",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_13421a47",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "fail",
+      "notes": "no_markers(test_spec)"
+    },
+    {
+      "validation_id": "val_28caf776",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "fail",
+      "notes": "no_markers(test_spec)"
+    },
+    {
+      "validation_id": "val_c2d8bf8d",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_a015e9c4",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "fail",
+      "notes": "no_markers(failure_modes_spec)"
+    },
+    {
+      "validation_id": "val_71b526db",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "fail",
+      "notes": "no_markers(failure_modes_spec)"
+    },
+    {
+      "validation_id": "val_c1fb62c1",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_e4dcbced",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "fail",
+      "notes": "no_markers(usage_example)"
+    },
+    {
+      "validation_id": "val_23eb4f77",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "fail",
+      "notes": "no_markers(usage_example)"
+    },
+    {
+      "validation_id": "val_695ae7de",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_f94edebf",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_4edc3617",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_362f2a46",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "pass",
+      "notes": "all conditions met"
+    }
+  ],
+  "corrections": [],
+  "status": "closed",
+  "blocked": false,
+  "paused": false,
+  "waiting_on": null,
+  "closure": {
+    "is_closed": true,
+    "closed_at": "2026-04-17T23:53:14.331890+00:00",
+    "closure_notes": "All 6 gates passed. Conformance review approved."
+  },
+  "notes": "Dependencies satisfied. Motor activated.",
+  "updated_at": "2026-04-17T23:53:14.331890+00:00"
+}

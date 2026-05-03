@@ -1,0 +1,102 @@
+{
+  "motor_id": "motor_028",
+  "motor_name": "Search / Discovery Intelligence Layer",
+  "reviewed_at": "2026-04-18T13:10:42Z",
+  "reviewer": "codex_automated_conformance_review",
+  "inputs_used": [
+    {
+      "artifact": "functional_contract",
+      "path": "artifacts/documentation_base/functional_contract.md",
+      "use": "contract authority for inputs, outputs, limits, and validation requirements"
+    },
+    {
+      "artifact": "acceptance_tests",
+      "path": "artifacts/documentation_base/acceptance_tests.md",
+      "use": "expected behavior for normal discovery runs, edge cases, and rejection criteria"
+    },
+    {
+      "artifact": "implementation_codebase",
+      "path": "artifacts/implementation/codebase/",
+      "use": "review target for deterministic planning, candidate emission, metadata preservation, and boundary enforcement"
+    },
+    {
+      "artifact": "usage_example",
+      "path": "artifacts/implementation/usage_example.md",
+      "use": "smoke-test scenario and expected output shape"
+    }
+  ],
+  "summary": {
+    "status": "CONDITIONAL_PASS",
+    "verdict": "The implementation conforms to the motor_028 runtime boundary for deterministic, metadata-only discovery planning and candidate proposal. It preserves lineage/version fields, rejects invalid inputs through structured errors, avoids source approval or ingestion responsibilities, and produced the expected smoke-test shape. The pass is conditional because earlier stage specification artifacts still contain placeholder content outside the allowed edit scope for this task; that remediation is deferred rather than silently rewritten in conformance review."
+  },
+  "contract_compliance": {
+    "status": "CONDITIONAL_PASS",
+    "findings": [
+      {
+        "id": "contract-input-validation",
+        "status": "PASS",
+        "detail": "The engine requires structured source registry, taxonomy, refresh signals, discovery request, and prior log inputs with producer and version or timestamp metadata."
+      },
+      {
+        "id": "contract-output-scope",
+        "status": "PASS",
+        "detail": "The code emits DiscoveryPlan, SourceCandidateRecord, CoverageGapRecord, DiscoveryRunManifest, rejection records, and degradation signals without registering sources or approving rights."
+      },
+      {
+        "id": "contract-boundary-enforcement",
+        "status": "PASS",
+        "detail": "Candidate payloads containing raw content fields are rejected, and candidates remain candidate_status=proposed for downstream review."
+      },
+      {
+        "id": "specification-artifact-completeness",
+        "status": "DEFERRED",
+        "detail": "Schema, test, and failure-mode stage artifacts still require documentation cleanup outside this task's permitted write scope."
+      }
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      {
+        "id": "lineage-fields-present",
+        "status": "PASS",
+        "detail": "Primary output dataclasses carry source_ref, produced_by_motor, produced_at, parent_id, version_id, and version_hash where applicable."
+      },
+      {
+        "id": "input-version-capture",
+        "status": "PASS",
+        "detail": "Discovery plans and run manifests retain input_versions for source registry, taxonomy, refresh signals, discovery request, and prior discovery log."
+      },
+      {
+        "id": "deterministic-identifiers",
+        "status": "PASS",
+        "detail": "Plan, run, candidate, gap, rejection, and manifest identifiers are derived from stable hashes of structured inputs rather than random values."
+      }
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 1,
+    "failed": 0,
+    "coverage_assessment": "Minimal smoke coverage only. The usage-example path was executed with python -B and returned one discovery plan, one proposed candidate, two coverage gaps, no error, and run_status=PASS. Formal automated tests are not present in the allowed conformance_review scope.",
+    "notes": "Smoke command imported codebase.SearchDiscoveryIntelligenceLayer from artifacts/implementation, used versioned motor_008, motor_003, motor_009, discovery request, and prior log inputs, and verified the expected top-level output counts."
+  },
+  "open_items": [
+    {
+      "id": "deferred-stage-artifact-cleanup",
+      "description": "artifacts/schema_technical/technical_schema.md, artifacts/tests/test_spec.md, and artifacts/failure_modes/failure_modes_spec.md still contain placeholder specification text even though the current task permits writes only under artifacts/conformance_review/.",
+      "impact": "Documentation completeness risk; runtime implementation and conformance report can be reviewed, but earlier stage documents should be reconciled before relying on them as final authority.",
+      "resolution": "deferred",
+      "deferred_to": "authorized documentation remediation task with write scope for schema_technical, tests, and failure_modes"
+    },
+    {
+      "id": "group-c-autonomy-note",
+      "description": "Authority metadata classifies this motor as an ambiguous Group C search/discovery capability; the current orchestrator task nevertheless requested Gate 6 conformance review for motor_028.",
+      "impact": "Governance scope should remain explicit so this layer does not absorb Source Registry or Refresh Intelligence responsibilities.",
+      "resolution": "accepted_risk",
+      "accepted_by": "current orchestrator task context"
+    }
+  ]
+}

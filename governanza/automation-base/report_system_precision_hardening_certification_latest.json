@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-04-29T16:27:42.206155+00:00",
+  "cases": [
+    {
+      "case_key": "one_vanderbilt_nyc",
+      "before_report_type": "Decision-Blocked Asset Brief",
+      "after_report_type": "Compliance / Investment Screening Brief",
+      "claim_permissions": {
+        "numeric_eui_claim": "allowed",
+        "ll97_penalty_screening_claim": "allowed",
+        "energy_savings_claim": "prohibited",
+        "roi_range_claim": "prohibited",
+        "compliance_closure_claim": "prohibited"
+      },
+      "tad_states": {
+        "compliance_investment": "VALIDATE FIRST",
+        "seller_or_operator_evidence_request": "ACT NOW"
+      },
+      "financial_exposure_rows": 3,
+      "minimum_evidence_pack_count": 3,
+      "strong_public_screening_possible": true,
+      "status": "passed"
+    },
+    {
+      "case_key": "wilsonart_temple_manufacturing",
+      "before_report_type": "Decision-Blocked Asset Brief",
+      "after_report_type": "Decision-Blocked Asset Brief",
+      "claim_permissions": {
+        "process_change_hypothesis_claim": "allowed",
+        "process_redesign_recommendation_claim": "prohibited",
+        "roi_range_claim": "prohibited",
+        "compliance_screening_claim": "allowed"
+      },
+      "tad_states": {
+        "environmental_or_permit_driven_investment": "VALIDATE FIRST",
+        "process_efficiency_or_utility_support_capex": "DEFER",
+        "process_redesign": "NO-GO",
+        "operator_evidence_request": "ACT NOW"
+      },
+      "financial_exposure_rows": 3,
+      "minimum_evidence_pack_count": 5,
+      "status": "passed"
+    },
+    {
+      "case_key": "corporate_hq_or_mailing_address",
+      "before_report_type": "Entity Address Classification Brief",
+      "after_report_type": "Entity Address Classification Brief",
+      "technical_report_prohibited": true,
+      "status": "passed"
+    }
+  ],
+  "self_evaluation": {
+    "rows": [
+      {
+        "phase": "report_type_graduation",
+        "change_implemented": "Multidimensional report-type classification now distinguishes classification-only, blocked, exploratory, and screening-grade states.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "field_support_semantics",
+        "change_implemented": "Field rows now separate identity support from physical, operating, and regulatory substrate support.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "public_source_routing",
+        "change_implemented": "Routing is now jurisdiction-, asset-, and decision-sensitive, with executor compliance tracked against mandatory sources.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "claim_permission_consistency",
+        "change_implemented": "Governance summary, claim matrix, and downstream publication now share a hard consistency gate.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "tad_graduation",
+        "change_implemented": "TAD now uses differentiated admissibility states with explicit prohibited actions and variable bottlenecks.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "minimum_evidence_pack",
+        "change_implemented": "Minimum Evidence Pack now deduplicates by semantic unlock-equivalence and prioritizes by decision value.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "financial_exposure_translation",
+        "change_implemented": "Financial uncertainty is translated into downside exposure without manufacturing unsupported ROI.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "scenario_contracts",
+        "change_implemented": "Scenario rows are now linked to decisions and evidence, with falsification and financial meaning required.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "resolved",
+        "remaining_gap": ""
+      },
+      {
+        "phase": "preflight_and_case_adaptation",
+        "change_implemented": "The pipeline now blocks PDF publication on critical lint, coherence, or template-contamination failures.",
+        "test_run": "ZLab-self-eval-snapshot",
+        "result": "partially_resolved",
+        "remaining_gap": "Critical preflight failure or template contamination still prevents safe publication."
+      }
+    ],
+    "summary": {
+      "total_phases": 9,
+      "resolved": 8,
+      "partially_resolved": 1,
+      "unresolved": 0,
+      "overall_result": "partially_resolved",
+      "recommended_report_type": "Compliance / Investment Screening Brief",
+      "target_type": "OPERATING_ASSET",
+      "case_id": "ZLab-self-eval-snapshot",
+      "target_name": "One Vanderbilt"
+    }
+  },
+  "summary": {
+    "total_cases": 3,
+    "passed_cases": 3,
+    "failed_cases": 0,
+    "one_vanderbilt_vs_wilsonart_diverge": true,
+    "self_evaluation_artifact_present": true,
+    "overall_pass": true
+  }
+}

@@ -1,0 +1,718 @@
+{
+  "_meta": {
+    "description": "Dependencias operativas entre motores del framework. Define el orden de construcción que el orquestador debe respetar. Incluye motores 029-034, con motor_034 como capa transversal de madurez de evidencia y permisos de claim.",
+    "authority": "Este archivo es la fuente de verdad operativa para dependencias entre motores. En caso de conflicto con cualquier otro documento del framework, este archivo prevalece exclusivamente en materia de dependencias de construcción. Los demás archivos (motor_registry.md, master_context.md, workflow_rules.md) sirven como contexto de propósito y diseño, no como override de las dependencias aquí definidas. Cambios posteriores requieren edición manual controlada con revisión explícita.",
+    "status_note": "Dependencias congeladas para uso operativo del orquestador. Revisadas manualmente en conversación y alineadas con motor_registry.md, master_context.md, workflow_rules.md y framework_manifest.md. Cambios posteriores requieren proceso formal de edición: no deben inferirse automáticamente ni modificarse por herramientas de automatización.",
+    "validation_status": "confirmed",
+    "last_updated": "2026-04-30",
+    "motor_count": 50
+  },
+  "_rules": {
+    "requires_semantics": "TODOS los motores listados en 'requires' DEBEN tener status=closed en su motor_schema antes de que el motor dependiente pueda transicionar de not_started a in_progress. Esta condición es estricta, sin excepciones automáticas. Solo puede omitirse mediante comando explícito --force que queda registrado en el audit trail.",
+    "empty_requires": "Un motor con 'requires': [] puede iniciarse en cualquier momento siempre que el orquestador esté activo.",
+    "group_c_rule": "Los motores del Grupo C (motor_026, motor_027, motor_028) NO DEBEN ser procesados por el orquestador bajo ninguna circunstancia mientras su orchestrator_eligible sea false. La promoción de un motor del Grupo C requiere edición manual de este archivo: cambiar catalog_status a 'planned' y orchestrator_eligible a true. El orquestador no puede realizar esta promoción automáticamente.",
+    "cycle_detection": "El orquestador DEBE verificar ausencia de ciclos en este grafo al arrancar. Si detecta un ciclo, DEBE abortar con error explícito antes de procesar cualquier motor.",
+    "freeze_policy": "Este archivo está congelado como fuente de verdad operativa. No debe modificarse durante un run activo del orquestador. Modificaciones fuera de un run requieren: (1) detener el orquestador, (2) editar manualmente, (3) ejecutar validación de ciclos, (4) reiniciar.",
+    "notes_semantics": "El campo 'notes' por motor es informativo y no operativo. El orquestador no lee ni ejecuta lógica basada en 'notes'. La única fuente de verdad para decisiones de orden de construcción es el campo 'requires'."
+  },
+  "motors": {
+    "motor_001": {
+      "name": "Phase Contract Registry",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [],
+      "notes": "Fundacional. Sin dependencias. Primer motor en construirse."
+    },
+    "motor_002": {
+      "name": "Versioning + Lineage Engine",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_001"
+      ],
+      "notes": "Los contratos de fase deben existir antes de versionar objetos."
+    },
+    "motor_003": {
+      "name": "Taxonomy + Canonical Entity Service",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_001"
+      ],
+      "notes": "Los contratos de fase anclan la definición de entidades canónicas."
+    },
+    "motor_004": {
+      "name": "Ingestion + Parsing Engine",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_001",
+        "motor_002"
+      ],
+      "notes": "Requiere contratos y versionado para registrar lineage de ingestión."
+    },
+    "motor_005": {
+      "name": "Canonical Normalization Engine",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_004",
+        "motor_003"
+      ],
+      "notes": "Normaliza contra taxonomía canónica sobre datos ingestados."
+    },
+    "motor_006": {
+      "name": "Entity Identity / Resolution Engine",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_005",
+        "motor_003",
+        "motor_001"
+      ],
+      "notes": "Resuelve identidad sobre entidades normalizadas y canónicas."
+    },
+    "motor_007": {
+      "name": "Quality / Fitness Evaluation Engine",
+      "group": "A",
+      "catalog_status": "documented",
+      "requires": [
+        "motor_006"
+      ],
+      "notes": "Evalúa calidad sobre entidades con identidad resuelta."
+    },
+    "motor_008": {
+      "name": "Source Registry + Rights Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001"
+      ],
+      "notes": "Registra fuentes y derechos. Puede construirse temprano, independiente del pipeline de normalización."
+    },
+    "motor_009": {
+      "name": "Source Change Detection / Refresh Intelligence",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_008",
+        "motor_004",
+        "motor_002"
+      ],
+      "notes": "Detecta cambios en fuentes registradas. Requiere registro de fuentes, ingestión y versionado."
+    },
+    "motor_010": {
+      "name": "Duplicate / Similarity Control Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_004",
+        "motor_005",
+        "motor_002"
+      ],
+      "notes": "Opera sobre datos ingestados y normalizados antes de resolución de identidad."
+    },
+    "motor_011": {
+      "name": "Library Curation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_003",
+        "motor_005",
+        "motor_006",
+        "motor_007",
+        "motor_010"
+      ],
+      "notes": "Curación requiere taxonomía, normalización, identidad, quality y control de duplicados."
+    },
+    "motor_012": {
+      "name": "Public Data Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_008",
+        "motor_004",
+        "motor_005",
+        "motor_007",
+        "motor_011",
+        "motor_028",
+        "motor_001"
+      ],
+      "notes": "Materializa datos públicos desde fuentes registradas con normalización, quality y curación. Consume discovery asset-first de motor_028 y contratos base de motor_001."
+    },
+    "motor_013": {
+      "name": "Inference Case Activation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_011",
+        "motor_007"
+      ],
+      "notes": "Activa casos de inferencia sobre objetos aptos de Fase 1."
+    },
+    "motor_014": {
+      "name": "Decision Core / Inference Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_013",
+        "motor_012",
+        "motor_034",
+        "motor_007",
+        "motor_001"
+      ],
+      "notes": "Núcleo de decisión sobre casos activados. Requiere contratos explícitos, prior público ya materializado, gate soberano de admisibilidad del sujeto y la capa transversal de madurez/permisos."
+    },
+    "motor_015": {
+      "name": "Output Block Composition Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_014",
+        "motor_001",
+        "motor_002"
+      ],
+      "notes": "Compone bloques de salida desde decisiones, respetando contratos y lineage."
+    },
+    "motor_016": {
+      "name": "Report Package Assembly Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_015",
+        "motor_014",
+        "motor_034",
+        "motor_035",
+        "motor_012",
+        "motor_018",
+        "motor_028",
+        "motor_033",
+        "motor_001",
+        "motor_019",
+        "motor_037",
+        "motor_038",
+        "motor_039",
+        "motor_040",
+        "motor_041",
+        "motor_042",
+        "motor_043",
+        "motor_044",
+        "motor_045",
+        "motor_046",
+        "motor_047",
+        "motor_048"
+      ],
+      "notes": "Ensambla paquetes de reporte desde bloques trazables, tesis ejecutiva, outline comprimido, priors, charts, discovery asset-first y capa TAD."
+    },
+    "motor_017": {
+      "name": "Document Rendering / LaTeX Compilation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_016",
+        "motor_036"
+      ],
+      "notes": "Renderiza documentos desde paquetes ensamblados."
+    },
+    "motor_018": {
+      "name": "Chart Generation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_008",
+        "motor_004",
+        "motor_005",
+        "motor_006",
+        "motor_007",
+        "motor_012",
+        "motor_028",
+        "motor_014",
+        "motor_047",
+        "motor_049",
+        "motor_051",
+        "motor_052",
+        "motor_053"
+      ],
+      "notes": "Genera charts asset-first a partir de priors físicos, routing de fuentes y casos de inferencia; la capa financiera queda subordinada."
+    },
+    "motor_019": {
+      "name": "LLM Writing Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_014",
+        "motor_034",
+        "motor_012",
+        "motor_028",
+        "motor_033",
+        "motor_001"
+      ],
+      "notes": "Genera narrativa del reporte usando LLM local. Lee contexto de motor_014, motor_034, motor_012, motor_028 y la capa TAD de motor_033."
+    },
+    "motor_020": {
+      "name": "Propagation / Re-evaluation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_002",
+        "motor_007",
+        "motor_009",
+        "motor_013",
+        "motor_015",
+        "motor_016"
+      ],
+      "notes": "Re-evalúa cuando cambia lineage, quality o estado de fuentes y propaga consecuencias a bloques y secciones visibles."
+    },
+    "motor_021": {
+      "name": "Dataset / Object Test Harness Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_002",
+        "motor_003",
+        "motor_005",
+        "motor_006",
+        "motor_007"
+      ],
+      "notes": "Harness transversal. Prueba objetos contra contratos, lineage, taxonomía, normalización, identidad y quality."
+    },
+    "motor_022": {
+      "name": "Evaluation / Conformance Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_002",
+        "motor_007",
+        "motor_021"
+      ],
+      "notes": "Evaluación formal de conformidad del sistema sobre contratos, lineage, quality y harness."
+    },
+    "motor_023": {
+      "name": "Pipeline Orchestration + Observability Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001"
+      ],
+      "notes": "Observabilidad del pipeline. Puede construirse temprano con el contrato como ancla."
+    },
+    "motor_024": {
+      "name": "Governance Event & Exception Registry",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_002",
+        "motor_007",
+        "motor_009",
+        "motor_012",
+        "motor_034",
+        "motor_013",
+        "motor_014",
+        "motor_020",
+        "motor_015",
+        "motor_016",
+        "motor_019",
+        "motor_017",
+        "motor_027",
+        "motor_033"
+      ],
+      "notes": "Registra eventos de gobernanza, postura regulatoria y consecuencias de propagación con trazabilidad mínima."
+    },
+    "motor_025": {
+      "name": "Epistemic Governance Layer",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_034",
+        "motor_022",
+        "motor_024"
+      ],
+      "notes": "Capa de gobernanza epistémica sobre contratos, conformance y registro de eventos."
+    },
+    "motor_026": {
+      "name": "Access Control / Execution Policy Layer",
+      "group": "C",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_008",
+        "motor_023"
+      ],
+      "orchestrator_eligible": true,
+      "notes": "Grupo C. Promovido manualmente 2026-04-18: todas las dependencias cerradas."
+    },
+    "motor_027": {
+      "name": "Artifact Export / Delivery Engine",
+      "group": "C",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_016",
+        "motor_017"
+      ],
+      "orchestrator_eligible": true,
+      "notes": "Grupo C. Promovido manualmente 2026-04-18: todas las dependencias cerradas."
+    },
+    "motor_028": {
+      "name": "Search / Discovery Intelligence Layer",
+      "group": "C",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_008",
+        "motor_003",
+        "motor_009",
+        "motor_035"
+      ],
+      "orchestrator_eligible": true,
+      "notes": "Grupo C. Promovido manualmente 2026-04-18: todas las dependencias cerradas."
+    },
+    "motor_029": {
+      "name": "Problem Formalization / Expert Problem Spec Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_002",
+        "motor_003",
+        "motor_013"
+      ],
+      "notes": "Formaliza inference cases activos en expert_problem_spec estructurados. Prerequisito de toda la cadena sintética. No genera datos ni modelos."
+    },
+    "motor_030": {
+      "name": "Synthetic Data Generation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_029",
+        "motor_002"
+      ],
+      "notes": "Genera datasets sintéticos condicionados por expert_problem_spec aprobado. Todo output lleva synthetic_data_flag=true y non_evidentiary_flag=true."
+    },
+    "motor_031": {
+      "name": "ML Experiment / Model Training & Evaluation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_030",
+        "motor_029",
+        "motor_002"
+      ],
+      "notes": "Entrena y evalúa modelos sobre datasets sintéticos. Produce capability_demonstration_report, no modelos de producción. Output siempre no evidentiary."
+    },
+    "motor_032": {
+      "name": "Synthetic ML Decision Support Integration",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_031",
+        "motor_014",
+        "motor_001",
+        "motor_002"
+      ],
+      "notes": "Integra capability_demonstration_report al Decision Core como señal subordinada etiquetada. No puede elevar claims ni sustituir evidencia real."
+    },
+    "motor_033": {
+      "name": "TAD Preliminary Prioritization Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_014",
+        "motor_015",
+        "motor_034",
+        "motor_012",
+        "motor_038",
+        "motor_040",
+        "motor_041",
+        "motor_042",
+        "motor_043",
+        "motor_044",
+        "motor_045",
+        "motor_046",
+        "motor_049",
+        "motor_051"
+      ],
+      "notes": "Construye la capa TAD / decision-admissibility desde el decision core, los output blocks, el prior público trazable y la matriz de madurez/permisos."
+    },
+    "motor_034": {
+      "name": "Evidence Maturity & Claim Permission Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_007",
+        "motor_008",
+        "motor_010",
+        "motor_011",
+        "motor_012",
+        "motor_028",
+        "motor_035",
+        "motor_037",
+        "motor_038",
+        "motor_039",
+        "motor_040",
+        "motor_041",
+        "motor_042",
+        "motor_043",
+        "motor_044",
+        "motor_045",
+        "motor_046"
+      ],
+      "notes": "Asigna madurez 0-4 por variable, determina permisos de claims y decisiones, y recomienda readiness de reporte antes de que finanzas, compliance, TAD o reporting eleven el caso."
+    },
+    "motor_035": {
+      "name": "Global Public Data Routing Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_001",
+        "motor_006",
+        "motor_007"
+      ],
+      "notes": "Sintetiza clasificación del target, resolución jurisdiccional USA, route por tipo de activo, fuentes obligatorias y switching de reporte antes del discovery técnico."
+    },
+    "motor_036": {
+      "name": "System Consistency Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_014",
+        "motor_016",
+        "motor_028",
+        "motor_033",
+        "motor_034",
+        "motor_037",
+        "motor_043",
+        "motor_044",
+        "motor_045",
+        "motor_046",
+        "motor_049",
+        "motor_051",
+        "motor_052",
+        "motor_053",
+        "motor_054"
+      ],
+      "notes": "Valida coherencia estructural entre contexto canónico, claims, TAD, escenarios, lane estructural y paquete de reporte antes de permitir render final."
+    },
+    "motor_037": {
+      "name": "System Abstraction Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_039"
+      ],
+      "notes": "Construye una abstracción estructural mínima usando contexto canónico y arquetipos, sin sustituir claims ni decisiones soberanas."
+    },
+    "motor_038": {
+      "name": "Dominant Variable Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_037",
+        "motor_039"
+      ],
+      "notes": "Separa variables dominantes observadas, condicionales o arquetípicas sin cerrar comportamiento del activo."
+    },
+    "motor_039": {
+      "name": "Industrial / Building Archetype Library Resolver",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012"
+      ],
+      "notes": "Selecciona un arquetipo estructural conservador después del prior público. Todo output queda etiquetado como ARCHETYPAL_PRIOR o INADMISSIBLE_CLAIM; no cierra decisiones ni claims."
+    },
+    "motor_040": {
+      "name": "Cross-Layer Conflict Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_037",
+        "motor_038",
+        "motor_051"
+      ],
+      "notes": "Detecta contradicciones entre física, operación, finanzas, regulación y control como hipótesis estructurales, sin emitir recomendaciones finales."
+    },
+    "motor_041": {
+      "name": "Problem Framing Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_037",
+        "motor_038",
+        "motor_040",
+        "motor_051"
+      ],
+      "notes": "Reformula el problema cuando la pregunta del cliente es prematura o incompleta, usando contradicciones estructurales y variables dominantes."
+    },
+    "motor_042": {
+      "name": "Structural Benchmarking Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_037",
+        "motor_038",
+        "motor_039"
+      ],
+      "notes": "Compara estructuralmente contra peers o benchmarks sin tratar benchmarks genéricos como verdad local."
+    },
+    "motor_043": {
+      "name": "Competitive Comparison Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_039",
+        "motor_042"
+      ],
+      "notes": "Detecta ventajas competitivas observadas, reportadas, arquetípicas o condicionales sin afirmar superioridad no soportada."
+    },
+    "motor_044": {
+      "name": "Conditional Redesign Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_038",
+        "motor_040",
+        "motor_041",
+        "motor_043"
+      ],
+      "notes": "Propone rutas de rediseño solo como hipótesis condicionadas por evidencia, nunca como recomendación final."
+    },
+    "motor_045": {
+      "name": "Financial Exposure Under Uncertainty Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_037",
+        "motor_038",
+        "motor_040",
+        "motor_041",
+        "motor_043",
+        "motor_044"
+      ],
+      "notes": "Traduce incertidumbre estructural a exposición financiera sin permitir ROI, IRR o payback no soportados."
+    },
+    "motor_046": {
+      "name": "Minimum Evidence for Discrimination Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_038",
+        "motor_040",
+        "motor_041",
+        "motor_044"
+      ],
+      "notes": "Pide la mínima evidencia que discrimina entre hipótesis rivales en vez de producir checklists genéricos."
+    },
+    "motor_047": {
+      "name": "Executive Synthesis / Thesis Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_014",
+        "motor_033",
+        "motor_034",
+        "motor_037",
+        "motor_038",
+        "motor_040",
+        "motor_041",
+        "motor_043",
+        "motor_044",
+        "motor_045",
+        "motor_046",
+        "motor_051",
+        "motor_052",
+        "motor_053",
+        "motor_054"
+      ],
+      "notes": "Sintetiza una sola tesis ejecutiva desde la lane estructural, TAD, claims y exposición financiera antes del assembly del reporte."
+    },
+    "motor_048": {
+      "name": "Report Compression Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_034",
+        "motor_047",
+        "motor_054"
+      ],
+      "notes": "Convierte la tesis ejecutiva en outline cliente-facing, appendix map y TAD comprimido, evitando que el reporte final se comporte como suma de motores."
+    },
+    "motor_049": {
+      "name": "Research Router & Congruence Intake Normalization",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_012",
+        "motor_028"
+      ],
+      "notes": "Selecciona la familia de activo, la ruta de investigación autorizada, la jerarquía de fuentes y el binding local mínimo antes de construir la capa de congruencia."
+    },
+    "motor_050": {
+      "name": "Asset Operational Logic Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_049"
+      ],
+      "notes": "Convierte la ruta de investigación y el intake operativo en un mapa de proceso, subsistemas, límites de control y dependencias de mantenimiento sin simular el activo ni presentar verdad local no evidenciada."
+    },
+    "motor_051": {
+      "name": "Fair Comparison and Congruence Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_049",
+        "motor_050"
+      ],
+      "notes": "Valida comparabilidad, define normalización mínima y conecta correlaciones estructurales con incongruencias cross-layer antes de cualquier tesis o peer logic fuerte."
+    },
+    "motor_052": {
+      "name": "Loss Pattern and Maintenance Reality Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_049",
+        "motor_050",
+        "motor_051"
+      ],
+      "notes": "Emite hipótesis de pérdidas recurrentes, realidad de mantenimiento, estrategia de medición mínima, hardware minimality, power-quality y leakage logic como substrate gobernado, sin convertir patrones arquetípicos en diagnóstico local ni saltar a hardware o CAPEX."
+    },
+    "motor_053": {
+      "name": "Regulatory, Finance and Context Translation Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_012",
+        "motor_028",
+        "motor_049",
+        "motor_050",
+        "motor_051",
+        "motor_052"
+      ],
+      "notes": "Traduce regulación, permisos, clima, tarifa, cultura y supuestos financieros a dependencias físicas y restricciones estratégicas sin convertir contexto público en verdad local cerrada."
+    },
+    "motor_054": {
+      "name": "Congruence Strategic Insight and Claim Governor",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_049",
+        "motor_051",
+        "motor_052",
+        "motor_053"
+      ],
+      "notes": "Produce gold nuggets, prioridades de acción y contratos de claim de la lane de congruencia, dejándolos listos para puentearse a tesis y validator sin romper la gobernanza epistemológica."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "motor_id": "motor_004",
+  "motor_name": "Ingestion + Parsing Engine",
+  "reviewed_at": "2026-04-16T00:00:00Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/documentation_base/failure_modes.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/implementation/codebase/engine.py",
+    "artifacts/implementation/codebase/models.py",
+    "tests/test_basic_ingestion_parsing.py",
+    "tests/test_basic_ingestion_validator.py"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "Motor motor_004 cumple con su contrato funcional. La implementación preserva el raw payload antes de emitir cualquier salida procesada, mantiene trazabilidad completa mediante raw_record_id/parsed_record_id/ingestion_event_id, rechaza correctamente entradas inválidas con códigos estructurados, y no invade responsabilidades de motores downstream (normalización, resolución de duplicados, scoring de calidad). Los 23 tests pasan sin errores."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "El motor acepta raw_source_file, api_response y structured_feed como entradas declaradas.",
+      "Los outputs raw_record, parsed_record e ingestion_lineage están presentes y correctamente enlazados.",
+      "El motor no normaliza, no resuelve duplicados y no evalúa calidad — conforme con los límites del contrato.",
+      "Los códigos de rechazo (INGESTION_MISSING_SOURCE_REF, INGESTION_EMPTY_PAYLOAD, INGESTION_MISSING_CONTENT_TYPE, INGESTION_MISSING_LINEAGE_CONTEXT, INGESTION_PHASE_CONTRACT_DENIED) están implementados y coinciden con las validaciones del contrato.",
+      "La inmutabilidad del raw_payload_ref está garantizada: RawPreservationError se lanza si se intenta sobrescribir con bytes distintos.",
+      "Cada parsed_record referencia exactamente un raw_record mediante raw_record_id — no existe parsed_record desacoplado."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "Todos los objetos (RawRecord, ParsedRecord, IngestionEvent, IngestionRejection) incluyen version_id, version_hash, created_at, updated_at, produced_by_motor y produced_at.",
+      "El content_hash se calcula con SHA-256 sobre el payload en bytes antes de preservarlo.",
+      "El lineage_id está propagado desde lineage_context_ref a todos los objetos de salida.",
+      "El raw_payload_ref incluye motor_id, lineage_segment, raw_record_id y content_hash — suficiente para reconstrucción completa.",
+      "Los IDs estables se generan con SHA-256 sobre los campos semánticos relevantes, garantizando determinismo."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 23,
+    "failed": 0,
+    "coverage_assessment": "Los tests cubren ingesta exitosa (JSON, CSV, NDJSON), rechazos por cada código de error válido, preservación inmutable del raw payload, emisión de parse_warnings en campos anidados o vacíos, e ingesta vía los tres métodos de entrada especializados (ingest_api_response, ingest_raw_source_file, ingest_structured_feed).",
+    "notes": "Suite ejecutada con pytest. 23 tests pasan en 0.07s. No hay tests pendientes ni marcados como xfail. La cobertura funcional de los caminos de rechazo y de aceptación es adecuada para la etapa actual."
+  },
+  "open_items": []
+}

@@ -1,0 +1,236 @@
+{
+  "motor_id": "motor_028",
+  "motor_name": "Search / Discovery Intelligence Layer",
+  "purpose": "",
+  "current_stage": "closed",
+  "stage_sequence": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "completed_stages": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "artifacts": {
+    "documentation_base": {
+      "exists": false,
+      "items": [
+        "master_concept_doc",
+        "functional_contract",
+        "conceptual_schema",
+        "operational_rules",
+        "acceptance_tests",
+        "failure_modes",
+        "design_done_criteria"
+      ]
+    },
+    "schema_technical": {
+      "exists": false,
+      "items": [
+        "technical_schema"
+      ]
+    },
+    "tests": {
+      "exists": false,
+      "items": [
+        "test_spec"
+      ]
+    },
+    "failure_modes": {
+      "exists": false,
+      "items": [
+        "failure_modes_spec"
+      ]
+    },
+    "implementation": {
+      "exists": false,
+      "items": [
+        "codebase",
+        "usage_example"
+      ]
+    },
+    "conformance_review": {
+      "exists": false,
+      "items": [
+        "conformance_review_report"
+      ]
+    }
+  },
+  "missing_artifacts": [],
+  "validations": [
+    {
+      "validation_id": "val_0fb13ecd",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_83444fd4",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_e7289a87",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_93cdbb8a",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_32c36941",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_eef7e671",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_99b990c0",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_086ff35a",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_721706b0",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_a764b0b3",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_761f43a8",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_35947d0b",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_0ad7ccdb",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "fail",
+      "notes": "file_exists(conceptual_schema); file_exists(operational_rules); file_exists(acceptance_tests); file_exists(failure_modes); file_exists(design_done_criteria)"
+    },
+    {
+      "validation_id": "val_e286c48c",
+      "stage": "documentation_base",
+      "type": "gate_1",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_768dfe36",
+      "stage": "schema_technical",
+      "type": "gate_2",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_2e8bfb5b",
+      "stage": "tests",
+      "type": "gate_3",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_f1fac59f",
+      "stage": "failure_modes",
+      "type": "gate_4",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_3d5ffbf2",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "fail",
+      "notes": "file_exists(usage_example)"
+    },
+    {
+      "validation_id": "val_749aae5c",
+      "stage": "implementation",
+      "type": "gate_5",
+      "result": "pass",
+      "notes": "all conditions met"
+    },
+    {
+      "validation_id": "val_8000b044",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_ea1a7e86",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "fail",
+      "notes": "field_value_in(summary.status, [PASS, CONDITIONAL_PASS])"
+    },
+    {
+      "validation_id": "val_5cf822d9",
+      "stage": "conformance_review",
+      "type": "gate_6",
+      "result": "pass",
+      "notes": "all conditions met"
+    }
+  ],
+  "corrections": [],
+  "status": "closed",
+  "blocked": false,
+  "paused": false,
+  "waiting_on": null,
+  "closure": {
+    "is_closed": true,
+    "closed_at": "2026-04-18T13:11:33.486574+00:00",
+    "closure_notes": "All 6 gates passed. Conformance review approved."
+  },
+  "notes": "Dependencies satisfied. Motor activated.",
+  "updated_at": "2026-04-18T13:11:33.486574+00:00"
+}

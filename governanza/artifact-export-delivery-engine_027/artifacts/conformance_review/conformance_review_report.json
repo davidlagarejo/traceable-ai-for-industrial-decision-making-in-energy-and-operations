@@ -1,0 +1,63 @@
+{
+  "motor_id": "motor_027",
+  "motor_name": "Artifact Export / Delivery Engine",
+  "reviewed_at": "2026-04-18T12:42:05Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "documentation_base/functional_contract.md",
+    "documentation_base/conceptual_schema.md",
+    "documentation_base/operational_rules.md",
+    "documentation_base/acceptance_tests.md",
+    "documentation_base/failure_modes.md",
+    "schema_technical/technical_schema.md",
+    "tests/test_spec.md",
+    "failure_modes/failure_modes_spec.md",
+    "implementation/codebase/engine.py",
+    "implementation/codebase/models.py",
+    "implementation/codebase/errors.py",
+    "implementation/usage_example.md",
+    "manual conformance smoke test executed in /tmp"
+  ],
+  "summary": {
+    "status": "CONDITIONAL_PASS",
+    "verdict": "The implementation conforms to the motor_027 functional boundary for deterministic local artifact export and delivery: it validates export requests, destination profiles, policies and exportable artifact metadata, emits bundle, manifest, receipt or rejection outputs, and preserves lineage and integrity metadata. The pass is conditional only because some prior-stage specification artifacts still contain draft placeholder content outside this task's writable scope; that cleanup is deferred and does not change the reviewed code behavior."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": [
+      "The public run interface accepts export_request, artifact_set, destination_profile and delivery_policy, matching the functional contract inputs.",
+      "Successful execution emits DeliveryBundle, DeliveryManifest and DeliveryReceipt with bundle path, manifest path, file count, checksum algorithm, status and included file metadata.",
+      "Rejected execution emits DeliveryReceipt.status FAIL and a RejectionReport instead of producing a partial delivery.",
+      "The implementation rejects missing requester, missing lineage, non-exportable artifacts, destination mismatch, unsupported formats, unsupported checksum algorithms, checksum mismatch and bundle size overflow.",
+      "No code path renders, rewrites, summarizes, authorizes access to, reclassifies or edits upstream artifact content."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": [
+      "Manifest file entries preserve artifact_id, artifact_type, format, producer_motor_id, version, lineage_ref, destination_id, source checksum and copied-file checksum.",
+      "DeliveryBundle, DeliveryManifest and DeliveryReceipt include version_id, version_hash, source_ref, produced_by_motor, produced_at and parent_id fields.",
+      "The bundle verifier rejects manifest drift, missing copied files and checksum mismatch before returning a successful result.",
+      "Stable hashes are derived from canonical JSON payloads, supporting deterministic identifiers for bundle, manifest, receipt and version fields."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 2,
+    "failed": 0,
+    "coverage_assessment": "A conformance smoke test executed the happy path for one exportable local JSON artifact and the blocking rejection path for missing lineage. The test verified PASS delivery with manifest checksum preservation, file_count=1 and FAIL rejection with field-level diagnostics.",
+    "notes": "The smoke test was run with PYTHONDONTWRITEBYTECODE=1 and temporary files under /tmp so the implementation directory was not modified. No dedicated repository test suite was added during this conformance-only task."
+  },
+  "open_items": [
+    {
+      "id": "motor_027_deferred_prior_stage_cleanup",
+      "step": "tests",
+      "severity": "minor",
+      "description": "Some prior-stage specification artifacts retain draft placeholder prose even though motor_state.json records their gates as passed. The current task's strict writable scope permits edits only under artifacts/conformance_review, so the cleanup cannot be performed here.",
+      "resolution": "deferred",
+      "resolution_notes": "Deferred for a separate authorized documentation cleanup pass. The reviewed implementation and usage example provide enough deterministic behavior to assess conformance of this stage."
+    }
+  ]
+}

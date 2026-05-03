@@ -1,0 +1,53 @@
+{
+  "motor_id": "motor_032",
+  "motor_name": "Synthetic ML Decision Support Integration",
+  "reviewed_at": "2026-04-18T03:47:36Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "documentation_base/functional_contract.md",
+    "documentation_base/operational_rules.md",
+    "documentation_base/acceptance_tests.md",
+    "documentation_base/failure_modes.md",
+    "schema_technical/technical_schema.md",
+    "tests/test_spec.md",
+    "failure_modes/failure_modes_spec.md",
+    "implementation/codebase/",
+    "implementation/usage_example.md",
+    "governanza/automation-base/synthetic_epistemology_rules.md",
+    "governanza/automation-base/stage_gates.md"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_032 contract: it accepts motor_031 capability demonstration reports only as subordinate synthetic support for existing Decision Core inference records, preserves required synthetic-chain labels and lineage, emits the register, hypothesis signal and labeled support record atomically, and rejects missing flags, missing lineage, phase-contract denial, target mismatches and promotion requests without mutating upstream objects."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": [
+      "The public entry point consumes capability_demonstration_report, inference_records, phase_contracts and version_records, matching the declared functional contract for motor_032.",
+      "Successful runs emit SyntheticMLSupportRegister, HypothesisSignal and LabeledSupportRecord objects with shared source_report_id, source_problem_ref, expert_spec_ref, target_inference_record_id, phase_contract_ref, source_ref and lineage_id.",
+      "The implementation enforces subordinate Decision Core use: HypothesisSignal uses signal_role=subordinate, evidence_level=synthetic_support and decision_grade_change_allowed=false.",
+      "Phase contract authorization is mandatory because processing rejects input bundles whose phase contract does not list synthetic_support as an allowed subordinate signal class.",
+      "The implementation rejects malformed or overreaching inputs with structured error codes for missing epistemic flags, invalid field types, missing target inference records, ambiguous targets, missing lineage references, phase-contract denial and forbidden promotion requests."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": [
+      "All successful motor_032 output objects include synthetic_support_flag=true, non_evidentiary_flag=true, intended_use=preliminary_support, produced_by_motor=motor_032, source_problem_ref, expert_spec_ref, domain_validity_limits and limitations_note.",
+      "Output objects include version_id, version_hash, created_at, updated_at, parent_id and motor_002-derived version references for upstream capability report, inference record and phase contract lineage.",
+      "SyntheticMLSupportRegister.cannot_substitute explicitly blocks replacement of Validation Data Bridge, Verification Bridge, field_evidence, validation_data, claim_closure and final_TAD_output.",
+      "LabeledSupportRecord includes synthetic_support, non_evidentiary, subordinate_signal and preliminary_support labels plus rejection boundaries for decision-grade promotion, claim closure, field validation, validation bridge replacement and verification bridge replacement.",
+      "Capability report limitation fields are propagated rather than broadened: domain_validity_limits, limitations_note, gap_to_real_validation, gap_to_deployment and known_failure_modes remain part of the emitted support bundle."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 2,
+    "failed": 0,
+    "coverage_assessment": "Executable no-bytecode smoke checks covered the documented happy path and a malformed input rejection. The accepted case verified atomic emission of synthetic_ml_support_register, hypothesis_signal and labeled_support_record; subordinate synthetic evidence labeling; decision_grade_change_allowed=false; synthetic_support_flag=true; and non_evidentiary_flag=true. The rejection case verified that a missing non_evidentiary_flag is rejected with MISSING_EPISTEMIC_FLAGS.",
+    "notes": "Checks were run through implementation/codebase using .venv/bin/python3 and PYTHONDONTWRITEBYTECODE=1 to avoid writing cache files outside the conformance review scope. There is no standalone pytest suite in the artifact scope, but the smoke cases exercise the core contract behaviors required by test_spec.md for Gate 6 closure."
+  },
+  "open_items": []
+}

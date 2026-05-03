@@ -1,0 +1,49 @@
+{
+  "motor_id": "motor_018",
+  "motor_name": "Validation Data Bridge",
+  "reviewed_at": "2026-04-18T00:00:00-04:00",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "artifacts/implementation/codebase/errors.py",
+    "artifacts/implementation/codebase/models.py"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the closed contract for motor_018. It builds validation_data outputs only from registered real upstream records, preserves rights and lineage metadata, rejects synthetic or malformed inputs, emits a reconstructible manifest, and does not cross into ingestion, normalization, identity resolution, quality scoring, field evidence, claim closure or verification decisions."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "Functional inputs from motor_008, motor_004, motor_005, motor_006 and motor_007 are represented explicitly in the implementation interface.",
+      "Required outputs ValidationDataSet, BridgeRecord, EvidentiaryLink, BridgeManifest and EvidentiaryRecord are modeled as dataclasses and returned as a single ValidationBridgeResult.",
+      "The engine enforces registered source, validation rights, ingestion lineage, normalization trace, quality record and fixed evidence_level=validation_data before producing included bridge records.",
+      "Exclusions for unregistered source, denied rights, restriction conflict, missing ingestion lineage, missing normalization trace, missing quality record, synthetic input, quality disqualification and low-fitness exclusion are represented with explicit reason codes in BridgeManifest."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "Every emitted object carries version_id, created_at, updated_at, version_hash, source_ref, produced_by_motor, produced_at and parent_id.",
+      "Content hashes are computed from canonicalized payloads and stable ids derive from those hashes, supporting deterministic rebuild and version comparison.",
+      "BridgeManifest included_record_ids are checked against ValidationDataSet bridge_record_ids, and excluded_record_refs are checked against exclusion_reasons before output is returned.",
+      "Rights, license, access and destination-policy restrictions from the source registry are propagated into dataset, bridge records, source-rights links, manifest and evidentiary record."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 3,
+    "failed": 0,
+    "coverage_assessment": "Focused executable smoke checks covered the documented happy path, deterministic hash repeat, unregistered source exclusion and synthetic input exclusion. The broader required behavior is specified in artifacts/tests/test_spec.md and reflected in implementation validations.",
+    "notes": "The inline smoke run emitted one eligible bridge record for the valid example, reproduced the same dataset hash on repeat, excluded a missing source as SOURCE_NOT_REGISTERED, and excluded synthetic input as SYNTHETIC_INPUT_NOT_ALLOWED."
+  },
+  "open_items": []
+}

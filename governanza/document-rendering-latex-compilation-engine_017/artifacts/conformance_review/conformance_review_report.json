@@ -1,0 +1,53 @@
+{
+  "motor_id": "motor_017",
+  "motor_name": "Document Rendering / LaTeX Compilation Engine",
+  "reviewed_at": "2026-04-17T23:05:57Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/documentation_base/acceptance_tests.md",
+    "artifacts/documentation_base/failure_modes.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/models.py",
+    "artifacts/implementation/codebase/engine.py",
+    "artifacts/implementation/codebase/errors.py",
+    "artifacts/implementation/codebase/__init__.py",
+    "read_only_smoke_check: happy_path, deterministic_rebuild, unapproved_package_rejection, forced_compilation_failure"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_017 contract: it accepts one approved report_package from motor_016, emits deterministic LaTeX source, a compiled PDF artifact and a render manifest, preserves upstream lineage and rebuild metadata, and rejects unapproved or failed render attempts without publishing a successful document."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The code accepts the declared report_package input and validates package_id, version, approval_status, lineage_refs, approved technical view content, render_profile_id and template_version before successful rendering.",
+      "The implementation emits the declared output families RenderJob, LaTeXSource, CompiledDocument and RenderManifest, including source paths, PDF paths, artifact hashes, template metadata, compiler metadata, status and structured error codes.",
+      "Successful renders preserve section and block order from the approved package, escape LaTeX-reserved characters deterministically for rendering, and mark package_order_preserved as true with content_mutation_check equal to pass.",
+      "Failure paths reject draft or otherwise unapproved packages with ERR_REPORT_PACKAGE_NOT_APPROVED and record compiler failures with ERR_LATEX_COMPILATION_FAILED while keeping published false."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "RenderJob, LaTeXSource, CompiledDocument and RenderManifest include stable identifiers, version_id, version_hash, source_ref, produced_by_motor, produced_at and parent_id fields aligned with the technical schema.",
+      "The manifest preserves report_package lineage_refs without rewriting them and records input_hash, source_hash, pdf_hash on success, template_hash, compiler_identity, compiler_config_hash and rebuild_references.",
+      "CompiledDocument.source_hash matches LaTeXSource.source_hash on successful output, and manifest artifact_paths reference the emitted source and PDF files.",
+      "Repeated rendering of the same package with the same template and compiler configuration produced matching source and PDF hashes in the conformance smoke check."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 4,
+    "failed": 0,
+    "coverage_assessment": "Read-only executable smoke checks covered the documented happy path, deterministic rebuild behavior, unapproved package rejection and compilation failure handling. This is sufficient for conformance review because it exercises the core rendering contract, metadata preservation path and the highest-risk blocking failures described in test_spec.md and failure_modes_spec.md.",
+    "notes": "Executed with PYTHONDONTWRITEBYTECODE=1 and a temporary artifact root under /tmp so implementation files and repository artifacts were not modified. The reviewed code paths generated non-empty source and PDF artifacts for an approved package, preserved lineage in the manifest, returned ERR_REPORT_PACKAGE_NOT_APPROVED before source generation for a draft package, and returned ERR_LATEX_COMPILATION_FAILED with published false for a forced compiler failure."
+  },
+  "open_items": []
+}

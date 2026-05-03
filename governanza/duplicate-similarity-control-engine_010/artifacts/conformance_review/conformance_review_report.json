@@ -1,0 +1,39 @@
+{
+  "motor_id": "motor_010",
+  "motor_name": "Duplicate / Similarity Control Engine",
+  "reviewed_at": "2026-04-17T13:29:07Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "functional_contract",
+    "operational_rules",
+    "acceptance_tests",
+    "failure_modes",
+    "technical_schema",
+    "test_spec",
+    "failure_modes_spec",
+    "codebase",
+    "usage_example"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the Duplicate / Similarity Control Engine contract: it consumes parsed records, normalized records and version records, emits SimilarityRecord, DuplicateCluster and DeduplicationDecision outputs, preserves provenance, lineage, version context and stable identifiers, and keeps recommendations advisory-only. No material contract, boundary, metadata integrity or responsibility-separation violations were found."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": []
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": []
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 4,
+    "failed": 0,
+    "coverage_assessment": "Inline conformance smoke checks exercised the documented raw exact-duplicate happy path, source input immutability, deterministic identifier stability under input reordering, malformed missing-identifier rejection and version-successor downgrade to reviewable similarity without cluster or suppression recommendation. The declared test specification also covers sparse valid inputs, malformed fingerprint types, broken normalized references, invalid version context, unsupported identity-only payloads, normalized near-duplicate scoring, threshold boundary behavior, large duplicate batches and fail criteria for mutation or out-of-scope identity evidence.",
+    "notes": "Reviewed functional_contract.md, operational_rules.md, technical_schema.md, test_spec.md, failure_modes_spec.md, usage_example.md and the Python codebase. The engine validates parsed, normalized and version records before comparison; rejects missing traceability, invalid fingerprints, broken references, invalid version context and unsupported payload shapes with structured DuplicateInputError codes; computes raw, parsed and normalized similarity deterministically; clamps scores to the 0.0 to 1.0 range; builds stable clusters from accepted exact or near-duplicate evidence; emits DeduplicationDecision objects with decision_status = recommended_only; carries source_ref, version_context_refs, method_version, produced_by_motor, produced_at, parent_id and version hashes; and does not mutate upstream records, resolve entity identity, evaluate quality or perform final curation."
+  },
+  "open_items": []
+}

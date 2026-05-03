@@ -1,0 +1,66 @@
+{
+  "produced_at": "2026-05-01",
+  "certification_name": "congruence_intelligence_100_percent_closure_certification",
+  "status_in_spirit": true,
+  "status_literal": true,
+  "closure_model": "governed_compressed_mapping",
+  "primary_positive_runs": [
+    "run:ee7e34decd3edcd3",
+    "run:aa44331b0e2802e6",
+    "run:6d29e8479a2954ef",
+    "run:ca1506a9ee471080",
+    "run:d31f7e666ac9e037",
+    "run:7db37f8aecfceb4f"
+  ],
+  "semistructured_raw_local_closure_run": {
+    "run_id": "run:fd888cbd0037917a",
+    "input_seed": "logistics_semistructured_raw_local_positive_inputs.json",
+    "selected_asset_family": "logistics_warehouse",
+    "research_mode": "operator_integrated_congruence",
+    "evidence_mode_state": "operator_integrated_congruence",
+    "raw_local_source_count": 13,
+    "tariff_exposure_count": 2,
+    "control_boundary_evidence_count": 7,
+    "maintenance_proof_evidence_count": 4,
+    "can_render_pdf": true
+  },
+  "support_chart_visibility_closure_run": {
+    "run_id": "run:0ddcb84e4d14de16",
+    "policy_register": "chart_visibility_policy_register",
+    "appendix_chart_sections": [
+      "A2",
+      "A3",
+      "A5",
+      "A11",
+      "A14",
+      "A17"
+    ]
+  },
+  "negative_discipline_run": {
+    "run_id": "run:1a3d0880a43775f8",
+    "thesis_state": "inadmissible_thesis",
+    "can_render_pdf": false
+  },
+  "tests": {
+    "latest_closure_critical_bundle": [
+      "test_raw_local_evidence_source_ingestion.py",
+      "test_local_evidence_binding_upgrade.py",
+      "test_dependency_resolver.py"
+    ],
+    "latest_closure_critical_result": "17 passed"
+  },
+  "intentional_governed_divergences": [
+    "23 conceptual prompt blocks are delivered through prompt_block_mapping_register rather than a 23-section body",
+    "support charts are promoted to visible appendices when useful rather than blindly promoted into the body",
+    "claim taxonomy is implemented through compatible governed registers rather than a single enum rewrite"
+  ],
+  "residual_risk": [
+    "No prompt-blocking residual risk remains.",
+    "Further work is optional hardening only."
+  ],
+  "governing_references": [
+    "industrial_asset_congruence_prompt_closure_matrix.md",
+    "congruence_intelligence_multicase_certification_latest.md",
+    "congruence_output_structure_reconciliation.md"
+  ]
+}

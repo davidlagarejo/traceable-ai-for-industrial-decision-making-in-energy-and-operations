@@ -1,0 +1,167 @@
+{
+  "artifact": "canonical_output_modes_certification_latest",
+  "generated_on": "2026-04-30",
+  "status": "accepted",
+  "scope": [
+    "Structural-first reasoning is now the default interpretation path for operating cases",
+    "Statement-level claim traces are enforced for visible claim-bearing sections",
+    "Render contract is first-class by canonical output mode",
+    "All nine canonical output modes are certified"
+  ],
+  "runtime_refresh": {
+    "case": "One Vanderbilt",
+    "pipeline_id": "ova-2026-structural-final",
+    "run_id": "run:6781927334ea6d94",
+    "status": "partial",
+    "final_published_report_type": "Compliance / Investment Screening Brief",
+    "default_reasoning_path": "structural_first",
+    "structural_primary_promotion_state": "structural_first_default_active"
+  },
+  "canonical_output_modes": [
+    {
+      "canonical_output_mode": "Target Classification Brief",
+      "certification_basis": "synthetic_regression_fixture",
+      "evidence": [
+        "test_non_operating_address_case_does_not_overpromote_after_structural_sovereignty_shift"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Decision-Blocked Asset Brief",
+      "certification_basis": "synthetic_regression_fixture",
+      "evidence": [
+        "test_structural_lane_is_default_reasoning_path_for_manufacturing_case"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Exploratory Prior Brief",
+      "certification_basis": "synthetic_maturity_fixture",
+      "evidence": [
+        "test_partial_bounded_asset_can_resolve_to_exploratory_prior_brief"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Compliance / Investment Screening Brief",
+      "certification_basis": "real_runtime_plus_regression",
+      "evidence": [
+        "run:6781927334ea6d94",
+        "test_structural_lane_is_default_reasoning_path_for_nyc_screening_case",
+        "test_one_vanderbilt_expected_behavior_supports_screening_but_blocks_roi_and_closure"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Structural Contradiction Brief",
+      "certification_basis": "official_real_structural_fixture",
+      "evidence": [
+        "run:e7b00d86892eff7b"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "System Redesign Hypothesis Brief",
+      "certification_basis": "official_real_structural_fixture",
+      "evidence": [
+        "run:0f03dca923d6c0e8"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Competitive Positioning Brief",
+      "certification_basis": "official_real_structural_fixture",
+      "evidence": [
+        "run:78de69709ab66030"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "TAD Action Priority Brief",
+      "certification_basis": "official_real_structural_fixture",
+      "evidence": [
+        "run:edc92a97b3f0cbd3"
+      ],
+      "status": "PASS"
+    },
+    {
+      "canonical_output_mode": "Full Technical Decision Intelligence Report",
+      "certification_basis": "synthetic_maturity_fixture",
+      "evidence": [
+        "test_sufficient_technical_substrate_unlocks_full_technical_report"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "statement_level_claim_traceability": {
+    "closed_in": [
+      "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_016.py",
+      "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_036.py"
+    ],
+    "enforced_rules": [
+      "Visible claim-bearing sections must have statement-level traces",
+      "Traces must include claim_id, evidence_state, supporting_sources, assumptions, falsification_condition, minimum_evidence_required, allowed_use, and prohibited_use",
+      "Missing or incomplete statement traces block render"
+    ]
+  },
+  "structural_first_render_contract": {
+    "closed_in": [
+      "runtime-orchestrator/src/runtime_orchestrator/render_section_contract.py",
+      "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_016.py",
+      "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_017.py",
+      "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_036.py"
+    ],
+    "enforced_rules": [
+      "Each canonical output mode has explicit body/appendix policy",
+      "Hybrid operating modes render structural-first body sections in normal runtime",
+      "Structural-primary modes fail if required sections are missing or misplaced",
+      "Render inventory must match the contract exactly"
+    ]
+  },
+  "validation_bundles": [
+    {
+      "name": "core_structural_render_claim_validator_bundle",
+      "command": "pytest -q runtime-orchestrator/tests/test_system_consistency_validator.py runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py runtime-orchestrator/tests/test_report_conformance.py -k \"output_mode or structural or claim or render_section_contract or motor_016_exposes_structural_lane_as_governed_appendices or motor_036\"",
+      "result": "37 passed, 31 deselected"
+    },
+    {
+      "name": "exploratory_full_technical_bundle",
+      "command": "pytest -q runtime-orchestrator/tests/test_evidence_maturity_engine.py -k \"test_partial_bounded_asset_can_resolve_to_exploratory_prior_brief or test_sufficient_technical_substrate_unlocks_full_technical_report\"",
+      "result": "2 passed, 11 deselected"
+    },
+    {
+      "name": "default_bounded_mode_sovereignty_bundle",
+      "command": "pytest -q runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py -k \"test_non_operating_address_case_does_not_overpromote_after_structural_sovereignty_shift or test_structural_lane_is_default_reasoning_path_for_manufacturing_case or test_structural_lane_is_default_reasoning_path_for_nyc_screening_case or test_motor_025_can_elect_structural_primary_mode_when_explicitly_requested\"",
+      "result": "4 passed, 11 deselected"
+    },
+    {
+      "name": "screening_blocked_regression_bundle",
+      "command": "pytest -q runtime-orchestrator/tests/test_precision_hardening_certification.py -k \"test_one_vanderbilt_expected_behavior_supports_screening_but_blocks_roi_and_closure or test_wilsonart_expected_behavior_stays_blocked_but_graduates_tad_and_industrial_evidence_requests\"",
+      "result": "2 passed, 2 deselected"
+    }
+  ],
+  "files_hardened_in_final_closure": [
+    "runtime-orchestrator/src/runtime_orchestrator/render_section_contract.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_016.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_017.py",
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_036.py",
+    "runtime-orchestrator/tests/test_system_consistency_validator.py",
+    "runtime-orchestrator/tests/test_report_conformance.py"
+  ],
+  "final_determination": {
+    "structural_lane_sovereign_by_default_for_operating_cases": true,
+    "unified_canonical_output_mode_classifier": true,
+    "visible_output_taxonomy_canonical": true,
+    "report_body_obeys_structural_first_policy_by_mode": true,
+    "statement_level_claim_traceability_enforced": true,
+    "validator_blocks_missing_structural_sections_and_claim_traces": true,
+    "all_nine_canonical_output_modes_certified": true
+  },
+  "must_not_be_weakened": [
+    "No regression to legacy-only body architecture for normal operating screening modes",
+    "No visible claim-bearing section without statement-level traceability",
+    "No structural-primary render without required body sections",
+    "No accidental overpromotion of non-operating targets into structural-first visible outputs",
+    "No downgrade of the unified canonical output-mode classifier back into split legacy/structural decision paths"
+  ]
+}

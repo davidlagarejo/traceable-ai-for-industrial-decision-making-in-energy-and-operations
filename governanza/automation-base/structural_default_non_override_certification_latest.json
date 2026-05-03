@@ -1,0 +1,51 @@
+{
+  "generated_on": "2026-04-30",
+  "status": "accepted",
+  "scope": "Certify that structural sovereignty by default does not overpromote visible output modes in normal cases.",
+  "runtime_proof": {
+    "case": "One Vanderbilt normal",
+    "run_id": "run:964a10d6cb1bcdb1",
+    "pipeline_id": "ova-siec01-2026",
+    "default_reasoning_path": "structural_first",
+    "structural_sovereignty_state": "structural_first_default",
+    "final_published_report_type": "Compliance / Investment Screening Brief"
+  },
+  "non_regression_fix": {
+    "file": "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_034.py",
+    "change": "Canonical problem frame now vetoes structural-first activation when selected_archetype_id is target_not_yet_structurally_modelable."
+  },
+  "test_bundle": {
+    "command": "pytest -q runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py -k \"default_reasoning_path_for_nyc_screening_case or default_reasoning_path_for_manufacturing_case or non_operating_address_case_does_not_overpromote_after_structural_sovereignty_shift\"",
+    "result": "3 passed, 12 deselected"
+  },
+  "certified_cases": [
+    {
+      "case": "One Vanderbilt normal",
+      "evidence": "real runtime manifest",
+      "expected": "Compliance / Investment Screening Brief",
+      "result": "passed"
+    },
+    {
+      "case": "Wilsonart normal",
+      "evidence": "sovereign integration regression test",
+      "expected": "Decision-Blocked Asset Brief",
+      "result": "passed"
+    },
+    {
+      "case": "PLD / address-HQ non-operating target",
+      "evidence": "sovereign integration regression test",
+      "expected": "Target Classification Brief",
+      "result": "passed"
+    }
+  ],
+  "files_hardened": [
+    "runtime-orchestrator/src/runtime_orchestrator/adapters/motor_034.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py"
+  ],
+  "must_not_be_weakened": [
+    "do not allow target_not_yet_structurally_modelable cases to inherit structural_first_default",
+    "do not allow structural sovereignty to bypass the canonical output-mode classifier",
+    "do not allow normal manufacturing blocked cases to drift into redesign-primary without explicit eligible election",
+    "do not allow normal screening cases to drift into Full Technical Decision Intelligence Report"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "motor_id": "motor_041",
+  "motor_name": "Problem Framing Engine",
+  "reviewed_at": "2026-05-03T11:02:54Z",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_conflicts_and_framing.py",
+    "read_only_smoke_check: one_vanderbilt_problem_framing_register_via_governance_wrapper"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_041 contract. The governance-stage wrapper delegates directly to the runtime adapter, emits a bounded problem-framing register with synchronized counts, reformulates building and manufacturing cases around the real structural question, and preserves the documented congruence fallback when the legacy frame is inadmissible."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The implementation accepts the declared upstream inputs from system abstraction, dominant-variable analysis, cross-layer conflicts and optional congruence fallback context, with the wrapper enforcing mapping-shaped input before runtime delegation.",
+      "The adapter emits the expected outputs: problem_framing_register and problem_framing_count, with each row preserving the original problem, the reframed problem, evidence needs and linked layers.",
+      "Executable coverage confirms the documented building, manufacturing and logistics behaviors, including owner-vs-tenant/LL97 reframing, structural process-load and maintenance reframing, and invalid-frame fallback translation for logistics.",
+      "The implementation stays within boundary: it does not emit solution choice, competitive comparison, financial closure or claim permission."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "Each emitted framing row preserves the required fields stated_problem, reframed_problem, why_original_framing_may_be_wrong, evidence_needed, strategic_risk, evidence_state and linked_layers.",
+      "The count surface remains synchronized with the emitted register and the fallback path does not erase lineage to the invalid frame.",
+      "The read-only governance-wrapper smoke check for One Vanderbilt produced problem_framing_count=2 and the expected reframed owner-control and LL97 logic, with the full governed row shape intact."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 3,
+    "failed": 0,
+    "coverage_assessment": "Executable conformance evidence covered the direct problem-framing paths across building, manufacturing and logistics cases. This is sufficient for conformance review because it exercises structural reframing, fallback translation and count synchronization as described in test_spec.md and failure_modes_spec.md.",
+    "notes": "Ran pytest -q on runtime-orchestrator/tests/test_structural_intelligence_conflicts_and_framing.py -k motor_041 with 3 passing tests and 3 deselected. Also executed a read-only smoke invocation through artifacts/implementation/codebase/engine.py using the One Vanderbilt building fixture and confirmed the wrapper returns the runtime adapter surface without local logic drift."
+  },
+  "open_items": []
+}

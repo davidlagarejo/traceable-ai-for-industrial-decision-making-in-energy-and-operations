@@ -1,0 +1,163 @@
+{
+  "generated_on": "2026-04-30",
+  "status": "implemented_with_remaining_cleanup",
+  "objective": "Shift ZLab from pure decision gating toward structural intelligence while preserving anti-hallucination, claim gating, TAD sovereignty, and consistency blocking.",
+  "sovereign_motors_preserved": [
+    "motor_007",
+    "motor_012",
+    "motor_033",
+    "motor_034",
+    "motor_036",
+    "motor_017"
+  ],
+  "new_structural_motors": [
+    {"motor": "motor_039", "purpose": "archetype resolver"},
+    {"motor": "motor_037", "purpose": "system abstraction"},
+    {"motor": "motor_038", "purpose": "dominant variables"},
+    {"motor": "motor_040", "purpose": "cross-layer conflicts"},
+    {"motor": "motor_041", "purpose": "problem framing"},
+    {"motor": "motor_042", "purpose": "structural benchmarking"},
+    {"motor": "motor_043", "purpose": "competitive comparison"},
+    {"motor": "motor_044", "purpose": "conditional redesign"},
+    {"motor": "motor_045", "purpose": "structural financial exposure and evidence by layer"},
+    {"motor": "motor_046", "purpose": "minimum evidence for discrimination"}
+  ],
+  "existing_motor_changes": [
+    {"motor": "motor_016", "change": "structural summaries, sections, and governed surfaces"},
+    {"motor": "motor_017", "change": "canonical visible taxonomy at render/localization boundary"},
+    {"motor": "motor_024", "change": "structural preflight checks"},
+    {"motor": "motor_025", "change": "canonical output-mode consumption and trace"},
+    {"motor": "motor_027", "change": "manifest exposure for structural registers"},
+    {"motor": "motor_033", "change": "expanded structural TAD"},
+    {"motor": "motor_034", "change": "claim contracts and unified output-mode classifier"},
+    {"motor": "motor_036", "change": "structural literal consistency blocking"}
+  ],
+  "required_contracts": [
+    "system_abstraction",
+    "dominant_variable_register",
+    "cross_layer_conflict_register",
+    "problem_framing_register",
+    "structural_benchmarking_register",
+    "competitive_comparison_register",
+    "conditional_redesign_register",
+    "structural_financial_exposure_register",
+    "evidence_state_by_layer_register",
+    "minimum_evidence_for_discrimination_register",
+    "claim_contract_register",
+    "report_output_mode_classifier_table"
+  ],
+  "anti_hallucination_rules": [
+    "ARCHETYPAL_PRIOR may not be rendered as OBSERVED_FACT",
+    "every emitted claim must have a claim_contract_register row",
+    "every scenario with financial meaning must have evidence_needed and falsification_condition",
+    "no ROI, IRR, NPV, payback, bankability, or fake savings without maturity",
+    "benchmarking cannot act as local truth without control-boundary context",
+    "TAD cannot exceed claim-permission ceilings",
+    "structural sections cannot render when the validator finds missing required sections or unsupported claims"
+  ],
+  "canonical_output_modes": [
+    "Target Classification Brief",
+    "Decision-Blocked Asset Brief",
+    "Exploratory Prior Brief",
+    "Compliance / Investment Screening Brief",
+    "Structural Contradiction Brief",
+    "System Redesign Hypothesis Brief",
+    "Competitive Positioning Brief",
+    "TAD Action Priority Brief",
+    "Full Technical Decision Intelligence Report"
+  ],
+  "report_structure": [
+    "Executive Structural Brief",
+    "What the Client Thinks the Problem Is",
+    "What the System Thinks the Problem Might Actually Be",
+    "System Abstraction Map",
+    "Dominant Variables",
+    "Evidence State by Layer",
+    "Cross-Layer Contradictions",
+    "Scenario Space",
+    "Financial Exposure Under Uncertainty",
+    "Competitive / Peer Comparison",
+    "Conditional Redesign Pathways",
+    "Minimum Evidence for Discrimination",
+    "TAD - Action Priority",
+    "What Not To Do Yet",
+    "Claim Permission Matrix",
+    "Source Traceability",
+    "System Consistency Check"
+  ],
+  "real_runs": [
+    {
+      "case": "One Vanderbilt normal",
+      "run_id": "run:964a10d6cb1bcdb1",
+      "reasoning_path": "structural_first",
+      "final_published_report_type": "Compliance / Investment Screening Brief"
+    },
+    {
+      "case": "One Vanderbilt contradiction",
+      "run_id": "run:e7b00d86892eff7b",
+      "final_published_report_type": "Structural Contradiction Brief"
+    },
+    {
+      "case": "One Vanderbilt competitive",
+      "run_id": "run:78de69709ab66030",
+      "final_published_report_type": "Competitive Positioning Brief"
+    },
+    {
+      "case": "One Vanderbilt TAD",
+      "run_id": "run:edc92a97b3f0cbd3",
+      "final_published_report_type": "TAD Action Priority Brief"
+    },
+    {
+      "case": "Wilsonart redesign",
+      "run_id": "run:0f03dca923d6c0e8",
+      "final_published_report_type": "System Redesign Hypothesis Brief"
+    }
+  ],
+  "test_files": [
+    "runtime-orchestrator/tests/test_structural_intelligence_archetype_engine.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_system_lane.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_conflicts_and_framing.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_benchmarking_and_competition.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_redesign_finance_evidence.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py",
+    "runtime-orchestrator/tests/test_system_consistency_validator.py",
+    "runtime-orchestrator/tests/test_report_conformance.py",
+    "runtime-orchestrator/tests/test_target_seed_workflow.py"
+  ],
+  "implementation_phases_completed": [
+    "archetype lane creation",
+    "system abstraction and dominant variables",
+    "conflicts and problem framing",
+    "benchmarking and competition",
+    "redesign, financial exposure, and discrimination evidence",
+    "sovereignty integration",
+    "structural body promotion",
+    "claim-contract and evidence-by-layer hardening",
+    "literal structural validator checks",
+    "unified output-mode classification and visible taxonomy normalization"
+  ],
+  "remaining_cleanup": [
+    "SIEC-09: make structural sections first-class in the render contract",
+    "SIEC-10: certify default non-override behavior after sovereignty shift"
+  ],
+  "technical_risks": [
+    "render policy drift between structural-primary modes and appendix/body ordering",
+    "future regressions that reintroduce alias labels into visible surfaces",
+    "future overpromotion where structural reasoning is sovereign but output mode should remain bounded",
+    "semantic weakening of claim_contract_register"
+  ],
+  "must_not_change": [
+    "no hallucinated certainty",
+    "no fake ROI",
+    "no fake savings",
+    "no compliance closure without evidence",
+    "no benchmark as local truth",
+    "no technology-first recommendation",
+    "no digital-twin worship",
+    "no generic template output",
+    "no final recommendation with missing evidence",
+    "no claim without evidence state",
+    "no scenario without falsification condition",
+    "no TAD action disconnected from claim permission"
+  ]
+}

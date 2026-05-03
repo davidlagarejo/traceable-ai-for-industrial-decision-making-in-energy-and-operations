@@ -1,0 +1,39 @@
+{
+  "motor_id": "motor_008",
+  "motor_name": "Source Registry + Rights Engine",
+  "reviewed_at": "2026-04-17T00:45:53Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "functional_contract",
+    "operational_rules",
+    "acceptance_tests",
+    "failure_modes",
+    "technical_schema",
+    "test_spec",
+    "failure_modes_spec",
+    "codebase",
+    "usage_example"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_008 contract: it registers source metadata, rights profiles, access class and refresh schedule from documented source declarations and rights evidence. Review found no material contract, boundary, metadata integrity or responsibility-separation violations."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": []
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": []
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 8,
+    "failed": 0,
+    "coverage_assessment": "Executable smoke coverage exercised the documented happy path, sparse license-only manual-review path, malformed declaration and untraceable license rejection, and missing-rights-evidence rejection. Observed results matched the declared output families, blocking validation behavior, rights/access classification and refresh scheduling expectations in test_spec.md.",
+    "notes": "Inline conformance execution imported SourceRegistryRightsEngine from the implementation codebase and verified deterministic accepted outputs and blocking SourceRightsValidationError records without requiring writes outside the conformance_review artifact scope."
+  },
+  "open_items": []
+}

@@ -1,0 +1,47 @@
+{
+  "motor_id": "motor_009",
+  "motor_name": "Source Change Detection / Refresh Intelligence",
+  "reviewed_at": "2026-04-17T00:00:00Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/codebase/engine.py",
+    "artifacts/implementation/codebase/models.py",
+    "artifacts/implementation/usage_example.md"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The motor conforms to its documented contract: it detects source, schema, availability, access, fingerprint, freshness and advisory priority signals from motor_008, motor_004 and motor_002 evidence without downloading data, mutating upstream records or making executable recapture decisions."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "Implementation accepts the documented upstream inputs source_registry, ingestion_records and version_history and emits only change_detection_event, refresh_priority, staleness_signal and structured errors.",
+      "ChangeEvent, RefreshPriority and StalenessRecord fields match the technical schema, including stable ids, version_hash, source_ref, produced_by_motor, produced_at, parent_id, evidence_refs and lineage-preserving fields.",
+      "Priority output remains advisory: the implementation does not download data, authenticate to sources, enqueue recapture jobs, rewrite source registry entries, rewrite ingestion records or rewrite version history.",
+      "Validation paths cover INVALID_SOURCE_REFERENCE, MISSING_COMPARISON_EVIDENCE, INVALID_TEMPORAL_ORDER and UNTRACEABLE_CHANGE_EVENT without emitting partial outputs for rejected source batches."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "All persisted output models include version_id, created_at, updated_at, version_hash, source_ref, produced_by_motor and produced_at.",
+      "Identifiers and hashes are derived from canonical content and evidence references rather than random values or input list order.",
+      "Lineage references are preserved from version_history when present and fall back to reconstructible source or ingestion references when version lineage is unavailable.",
+      "Upstream inputs are deep-copied before processing, preserving motor_008, motor_004 and motor_002 records as read-only evidence."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 5,
+    "failed": 0,
+    "coverage_assessment": "Targeted in-process smoke execution covered the documented happy path and one mandatory malformed-input rejection. The check confirmed one schema ChangeEvent, one watch StalenessRecord, one high RefreshPriority, no happy-path errors and INVALID_SOURCE_REFERENCE rejection.",
+    "notes": "No standalone pytest suite is present in this artifact scope; conformance was assessed by reviewing the closed documentation, schema, test specification, failure modes and executable implementation, then running the documented engine behavior through .venv/bin/python with bytecode writes disabled."
+  },
+  "open_items": []
+}

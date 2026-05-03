@@ -1,0 +1,143 @@
+{
+  "baseline_name": "US Public Data Routing v1",
+  "frozen_on": "2026-04-28",
+  "generated_at": "2026-04-28T22:59:00+0000",
+  "allow_cache": false,
+  "refresh_mode": "manual_case_extension_refresh",
+  "cases": [
+    {
+      "case_key": "nyc_operating_asset",
+      "seed_path": "runtime-orchestrator/inputs/ova_inputs.json",
+      "validation_scope": "full_run",
+      "run_id": "run:ee5efc2210e0879f",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "technical_asset_route_allowed_with_downgrade_if_needed",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "NYC route active with DOF, PLUTO, LL84, LL97 and DOB path available.",
+        "Evidence maturity bundle remains bounded by real public-data bottlenecks."
+      ]
+    },
+    {
+      "case_key": "ca_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/sfb_inputs.json",
+      "validation_scope": "routing_evidence_subgraph",
+      "run_id": "run:ae58e49a97766f94",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "routing_path_active_with_ca_guidance_visible",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "San Francisco benchmarking, assessor, permits, CEC, Title 24, CALGreen and PG&E routing stay bounded to California.",
+        "No non-California contamination accepted into the evidence path."
+      ]
+    },
+    {
+      "case_key": "la_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/lab_inputs.json",
+      "validation_scope": "routing_evidence_subgraph",
+      "run_id": "run:f0ceb4e7c0f52faf",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "routing_path_active_with_la_assessor_and_benchmark_context",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "Los Angeles route now uses the official Assessor API as an asset-specific parcel anchor instead of only portal context.",
+        "LA benchmarking remained bounded by live public data while California code and utility layers stayed correctly in-jurisdiction."
+      ]
+    },
+    {
+      "case_key": "tx_industrial_facility",
+      "seed_path": "runtime-orchestrator/inputs/txi_inputs.json",
+      "validation_scope": "routing_evidence_subgraph",
+      "run_id": "run:d0acd67bf59ea49b",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "industrial_route_active_with_tceq_context",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "Industrial route remains explicit through TCEQ, ERCOT, county property routing and state environmental context.",
+        "Target classification stays in the runtime admissibility bucket while the asset route remains industrial."
+      ]
+    },
+    {
+      "case_key": "hou_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/hou_inputs.json",
+      "validation_scope": "routing_evidence_subgraph",
+      "run_id": "run:c06d085d8965f3cc",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "routing_path_active_with_hcad_public_data_and_houston_permits",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "Houston route now exposes the official HCAD public-data download channel, not just generic portal context.",
+        "HCAD, Houston permit routing, and CenterPoint/ERCOT context all executed while staying honest about the absence of hardened parcel-level extraction."
+      ]
+    },
+    {
+      "case_key": "tx_manufacturing_facility",
+      "seed_path": "runtime-orchestrator/inputs/mfg_wilsonart_inputs.json",
+      "validation_scope": "full_run",
+      "run_id": "run:fef257fb569c510d",
+      "status": "completed",
+      "expected_target_classification": "OPERATING_ASSET",
+      "observed_target_classification": "OPERATING_ASSET",
+      "expected_report_family": "manufacturing_route_active_with_process_context",
+      "recommended_report_type": "Decision-Blocked Asset Brief",
+      "passed": true,
+      "notes": [
+        "Manufacturing subtype stays bounded to the industrial route instead of collapsing into generic building logic.",
+        "Full run completed with 35/35 real motors, no leasing or subletting leakage, and TCEQ asset-level permit/emissions evidence promoted into the field register."
+      ]
+    },
+    {
+      "case_key": "hq_prologis_pier1_bay1",
+      "seed_path": "runtime-orchestrator/inputs/pld_inputs.json",
+      "validation_scope": "full_run",
+      "run_id": "run:95153bcf4a004bfd",
+      "status": "completed",
+      "expected_target_classification": "CORPORATE_HEADQUARTERS",
+      "observed_target_classification": "CORPORATE_HEADQUARTERS",
+      "expected_report_family": "target_classification_brief_only",
+      "recommended_report_type": "Entity Address Classification Brief",
+      "passed": true,
+      "notes": [
+        "HQ case correctly blocks technical discovery.",
+        "No LL84, LL97, energy, HVAC or retrofit leakage survives into the visible output."
+      ]
+    },
+    {
+      "case_key": "ambiguous_target",
+      "seed_path": "runtime-orchestrator/inputs/clar_inputs.json",
+      "validation_scope": "full_run",
+      "run_id": "run:797aeeb316bbd717",
+      "status": "completed",
+      "expected_target_classification": "AMBIGUOUS_TARGET",
+      "observed_target_classification": "AMBIGUOUS_TARGET",
+      "expected_report_family": "target_clarification_brief_only",
+      "recommended_report_type": "Target Clarification Brief",
+      "passed": true,
+      "notes": [
+        "False-positive LL97 contamination in non-NYC energy/normative content was removed.",
+        "Ambiguous cases now stay on clarification-only posture without foreign regulatory leakage."
+      ]
+    }
+  ],
+  "summary": {
+    "total_cases": 8,
+    "passed_cases": 8,
+    "failed_cases": 0,
+    "overall_pass": true
+  }
+}

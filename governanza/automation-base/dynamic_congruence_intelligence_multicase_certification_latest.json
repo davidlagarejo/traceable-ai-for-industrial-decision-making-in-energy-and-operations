@@ -1,0 +1,323 @@
+{
+  "produced_at": "2026-05-02",
+  "certification_name": "dynamic_congruence_intelligence_multicase_certification_latest",
+  "scope": [
+    "dynamic_evidence_seeking_orchestration",
+    "next_best_search_and_stop_conditions",
+    "dynamic_intake_and_hypothesis_discrimination",
+    "fair_peer_requirements_and_comparison_blockers",
+    "empty_section_replacement",
+    "artifact_and_claim_consistency_hardening"
+  ],
+  "runtime_case_basis": [
+    {
+      "label": "commercial_building",
+      "run_id": "run:ee7e34decd3edcd3"
+    },
+    {
+      "label": "industrial_manufacturing",
+      "run_id": "run:aa44331b0e2802e6"
+    },
+    {
+      "label": "logistics_semistructured_raw_local",
+      "run_id": "run:fd888cbd0037917a"
+    },
+    {
+      "label": "cold_chain",
+      "run_id": "run:ca1506a9ee471080"
+    },
+    {
+      "label": "infrastructure_node",
+      "run_id": "run:d31f7e666ac9e037"
+    },
+    {
+      "label": "utility_heavy_site",
+      "run_id": "run:7db37f8aecfceb4f"
+    },
+    {
+      "label": "weak_synthetic_warehouse_candidate",
+      "run_id": "run:1a3d0880a43775f8"
+    }
+  ],
+  "test_bundles": [
+    {
+      "label": "dynamic_orchestration_bundle",
+      "result": "65 passed",
+      "covers": [
+        "DCI-01",
+        "DCI-02",
+        "DCI-03",
+        "DCI-04",
+        "DCI-05",
+        "DCI-06",
+        "DCI-07",
+        "DCI-08",
+        "DCI-09",
+        "DCI-10",
+        "DCI-11",
+        "DCI-12",
+        "DCI-17",
+        "DCI-18",
+        "DCI-19"
+      ]
+    },
+    {
+      "label": "analytic_expansion_bundle",
+      "result": "9 passed",
+      "covers": [
+        "DCI-13",
+        "DCI-14",
+        "DCI-15",
+        "DCI-16"
+      ]
+    },
+    {
+      "label": "report_validator_packaging_bundle",
+      "result": "102 passed",
+      "covers": [
+        "blocked_report_ordering",
+        "report_conformance",
+        "system_consistency_validator",
+        "system_consistency_validator_congruence",
+        "gold_nugget_generator",
+        "empty_section_policy",
+        "artifact_consistency",
+        "claim_consistency",
+        "executive_thesis_congruence_bridge",
+        "dependency_resolver"
+      ]
+    }
+  ],
+  "required_certification_cases": [
+    {
+      "label": "dry_warehouse_semistructured",
+      "coverage_type": "runtime",
+      "evidence": "run:fd888cbd0037917a",
+      "status": "passed"
+    },
+    {
+      "label": "cold_chain",
+      "coverage_type": "runtime",
+      "evidence": "run:ca1506a9ee471080",
+      "status": "passed"
+    },
+    {
+      "label": "commercial_building_owner_tenant_boundary",
+      "coverage_type": "runtime",
+      "evidence": "run:ee7e34decd3edcd3",
+      "status": "passed"
+    },
+    {
+      "label": "manufacturing_compressed_air_thermal",
+      "coverage_type": "runtime",
+      "evidence": "run:aa44331b0e2802e6",
+      "status": "passed"
+    },
+    {
+      "label": "infrastructure_node",
+      "coverage_type": "runtime",
+      "evidence": "run:d31f7e666ac9e037",
+      "status": "passed"
+    },
+    {
+      "label": "utility_heavy_site",
+      "coverage_type": "runtime",
+      "evidence": "run:7db37f8aecfceb4f",
+      "status": "passed"
+    },
+    {
+      "label": "declared_input_only_negative",
+      "coverage_type": "validator_unit",
+      "evidence": [
+        "test_declared_input_downgrader.py",
+        "test_system_consistency_validator_declared_inputs.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "label": "contaminated_chart_negative",
+      "coverage_type": "validator_unit",
+      "evidence": [
+        "test_case_isolation_firewall.py",
+        "test_artifact_consistency_validator.py",
+        "test_congruence_chart_generation.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "label": "empty_peer_section_negative",
+      "coverage_type": "packaging_unit",
+      "evidence": [
+        "test_empty_section_policy_engine.py",
+        "test_report_conformance.py"
+      ],
+      "status": "passed"
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "id": 1,
+      "expectation": "must not render stale charts from office/building cases",
+      "runtime_objects": [
+        "case_namespace_register",
+        "cross_case_contamination_scan",
+        "chart_context"
+      ],
+      "coverage": [
+        "test_case_isolation_firewall.py",
+        "test_artifact_consistency_validator.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 2,
+      "expectation": "must not leave Peer Comparison empty without explanation",
+      "runtime_objects": [
+        "empty_section_policy_register",
+        "section_explanation_fallback_register"
+      ],
+      "coverage": [
+        "test_empty_section_policy_engine.py",
+        "test_report_conformance.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 3,
+      "expectation": "must build fair peer requirements",
+      "runtime_objects": [
+        "peer_requirement_register"
+      ],
+      "coverage": [
+        "test_fair_peer_set_builder.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 4,
+      "expectation": "must activate logistics loss patterns",
+      "runtime_objects": [
+        "loss_pattern_hypothesis_register"
+      ],
+      "coverage": [
+        "test_loss_pattern_library.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 5,
+      "expectation": "must create next search targets",
+      "runtime_objects": [
+        "next_best_search_register"
+      ],
+      "coverage": [
+        "test_next_best_search_engine.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 6,
+      "expectation": "must create dynamic intake questions",
+      "runtime_objects": [
+        "dynamic_intake_question_register"
+      ],
+      "coverage": [
+        "test_dynamic_intake_generator.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 7,
+      "expectation": "must distinguish declared input from verified evidence",
+      "runtime_objects": [
+        "declared_input_downgrade_register",
+        "confirmation_state"
+      ],
+      "coverage": [
+        "test_declared_input_downgrader.py",
+        "test_motor_012_declared_input_output.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 8,
+      "expectation": "must prohibit generic EUI interpretation",
+      "runtime_objects": [
+        "comparison_blocker_register",
+        "comparison_not_yet_valid_register",
+        "congruence_claim_contract_register"
+      ],
+      "coverage": [
+        "test_fair_peer_set_builder.py",
+        "test_system_consistency_validator_congruence.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 9,
+      "expectation": "must produce at least 3 gold nuggets",
+      "runtime_objects": [
+        "gold_nugget_register",
+        "gold_nugget_strength_register"
+      ],
+      "coverage": [
+        "test_gold_nugget_generator.py",
+        "test_congruence_gold_nuggets.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 10,
+      "expectation": "must expand TAD beyond three actions",
+      "runtime_objects": [
+        "congruence_action_priority_register"
+      ],
+      "coverage": [
+        "test_expanded_strategic_tad_engine.py"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 11,
+      "expectation": "must not recommend sensors before hypothesis discrimination",
+      "runtime_objects": [
+        "measurement_strategy_register",
+        "hardware_minimality_register",
+        "congruence_action_priority_register"
+      ],
+      "coverage": [
+        "test_measurement_and_hardware_minimality.py",
+        "motor_036"
+      ],
+      "status": "passed"
+    },
+    {
+      "id": 12,
+      "expectation": "must explain when to stop searching and when to ask the operator",
+      "runtime_objects": [
+        "discovery_stop_condition_register",
+        "stop_condition_register",
+        "search_failure_effect_register",
+        "dynamic_intake_question_register"
+      ],
+      "coverage": [
+        "test_next_best_search_engine.py",
+        "test_dynamic_intake_generator.py"
+      ],
+      "status": "passed"
+    }
+  ],
+  "result": {
+    "dynamic_search_behavior": true,
+    "dynamic_intake_behavior": true,
+    "rival_hypothesis_discrimination": true,
+    "fair_comparison_gate_with_explicit_blockers": true,
+    "empty_critical_sections_replaced_with_explanation": true,
+    "stale_chart_and_foreign_entity_blocking": true,
+    "declared_input_not_treated_as_verified_evidence": true,
+    "stronger_strategic_tad_and_gold_nuggets": true,
+    "cross_family_runtime_behavior_remains_certified": true,
+    "output_surface_policy": "governed_compressed_mapping",
+    "remaining_prompt_blockers": []
+  }
+}

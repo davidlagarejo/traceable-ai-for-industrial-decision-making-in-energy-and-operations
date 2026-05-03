@@ -1,0 +1,121 @@
+{
+  "baseline_name": "US Public Data Routing v1",
+  "frozen_on": "2026-04-28",
+  "classification": "A) robusto y listo para implementación",
+  "runtime_surface": {
+    "routing_package": "runtime-orchestrator/src/runtime_orchestrator/public_data_routing/",
+    "sovereign_motor": "motor_035",
+    "execution_motor": "motor_028",
+    "downstream_governance": [
+      "motor_012",
+      "motor_024",
+      "motor_025",
+      "motor_027"
+    ],
+    "visibility_surfaces": [
+      "dashboard.py",
+      "motor_016",
+      "motor_027"
+    ]
+  },
+  "golden_cases": [
+    {
+      "case_key": "nyc_operating_asset",
+      "seed_path": "runtime-orchestrator/inputs/ova_inputs.json",
+      "jurisdiction": "US-NY-NYC",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "full_run",
+      "expected_report_family": "technical_asset_route_allowed_with_downgrade_if_needed",
+      "validated_run_id": "run:cadb81a9f1a55a27"
+    },
+    {
+      "case_key": "ca_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/sfb_inputs.json",
+      "jurisdiction": "US-CA-SF",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "routing_evidence_subgraph",
+      "expected_report_family": "routing_path_active_with_ca_guidance_visible",
+      "validated_run_id": "run:c816bd67199380f8"
+    },
+    {
+      "case_key": "la_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/lab_inputs.json",
+      "jurisdiction": "US-CA-LA",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "routing_evidence_subgraph",
+      "expected_report_family": "routing_path_active_with_la_assessor_and_benchmark_context",
+      "validated_run_id": "run:f0ceb4e7c0f52faf"
+    },
+    {
+      "case_key": "tx_industrial_facility",
+      "seed_path": "runtime-orchestrator/inputs/txi_inputs.json",
+      "jurisdiction": "US-TX",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "routing_evidence_subgraph",
+      "expected_report_family": "industrial_route_active_with_tceq_context",
+      "validated_run_id": "run:d0c7836f4d4444a1"
+    },
+    {
+      "case_key": "hou_bounded_building",
+      "seed_path": "runtime-orchestrator/inputs/hou_inputs.json",
+      "jurisdiction": "US-TX-HOUSTON",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "routing_evidence_subgraph",
+      "expected_report_family": "routing_path_active_with_hcad_public_data_and_houston_permits",
+      "validated_run_id": "run:c06d085d8965f3cc"
+    },
+    {
+      "case_key": "tx_manufacturing_facility",
+      "seed_path": "runtime-orchestrator/inputs/mfg_wilsonart_inputs.json",
+      "jurisdiction": "US-TX",
+      "target_classification_expected": "OPERATING_ASSET",
+      "validation_scope": "full_run",
+      "expected_report_family": "manufacturing_route_active_with_process_context",
+      "validated_run_id": "run:fef257fb569c510d"
+    },
+    {
+      "case_key": "hq_prologis_pier1_bay1",
+      "seed_path": "runtime-orchestrator/inputs/pld_inputs.json",
+      "jurisdiction": "US-CA-SF",
+      "target_classification_expected": "CORPORATE_HEADQUARTERS",
+      "validation_scope": "full_run",
+      "expected_report_family": "target_classification_brief_only",
+      "validated_run_id": "run:6ec2b537806832ae"
+    },
+    {
+      "case_key": "ambiguous_target",
+      "seed_path": "runtime-orchestrator/inputs/clar_inputs.json",
+      "jurisdiction": "US-NV",
+      "target_classification_expected": "AMBIGUOUS_TARGET",
+      "validation_scope": "full_run",
+      "expected_report_family": "target_clarification_brief_only",
+      "validated_run_id": "run:979b11f2272cd1e2"
+    }
+  ],
+  "acceptance_contract": {
+    "required": [
+      "correct_target_type_classification",
+      "correct_report_type_switch_recommendation",
+      "no_disallowed_technical_scraping_for_hq_or_ambiguous",
+      "no_entity_or_benchmark_substitution_into_asset_critical_fields",
+      "routing_plan_compliance_visible_downstream",
+      "no_cross_jurisdiction_contamination_in_visible_report"
+    ]
+  },
+  "frozen_rules": [
+    "no technical scraping when target_type is not operating_asset or industrial_facility",
+    "sec_edgar never substitutes for asset-level truth",
+    "benchmark layers never substitute for mandatory local disclosure",
+    "classification briefs must not leak foreign regulatory language",
+    "downgrade before assuming missing substrate",
+    "routing-linked contamination blocks publication"
+  ],
+  "known_limitations": [
+    "california and texas remain case-match sensitive",
+    "ca industrial currently uses official regulatory context without guaranteed asset-level facility match",
+    "los angeles assessor routing is now asset-specific, but case coverage still depends on public AIN/address match quality",
+    "houston hcad route is stronger through official public-data downloads, but direct structured parcel search remains cloudflare-gated",
+    "county appraisal and city permit coverage varies by jurisdiction",
+    "epa, carb, and tceq routes are routing anchors, not universal proof of facility identity"
+  ]
+}

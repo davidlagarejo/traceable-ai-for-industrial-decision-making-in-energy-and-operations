@@ -1,0 +1,49 @@
+{
+  "motor_id": "motor_035",
+  "motor_name": "Global Public Data Routing Engine",
+  "reviewed_at": "2026-05-03T02:46:35Z",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "runtime-orchestrator/tests/test_public_data_routing_engine.py",
+    "read_only_smoke_check: nyc_operating_asset_route_via_governance_wrapper"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_035 contract. The governance-stage wrapper delegates directly to the runtime adapter, produces deterministic public-routing decisions for bounded operating assets, degrades headquarters or otherwise inadmissible targets before technical routing, and preserves report-type gating instead of fabricating technical admissibility."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The implementation accepts the declared upstream routing inputs from subject and target definition surfaces, intake observables and classification gating, with the wrapper enforcing a mapping-shaped input contract before delegation.",
+      "The adapter emits the contractually expected routing surface: routing readiness, jurisdiction resolution, mandatory, high-priority and optional source lists, evidence-gating outputs, report-type allowance and prohibition outputs, and critical-field summaries.",
+      "Executable coverage confirms the documented core behaviors: NYC operating-asset routing, San Francisco headquarters blocking, industrial-facility route promotion in Houston, and city-specific routing behavior for Oakland, Los Angeles and Houston building cases.",
+      "The implementation stays within boundary: it selects routing plans and report-surface degradation only; it does not scrape sources, assemble datasets or fabricate downstream technical conclusions."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "The output surface preserves structured routing metadata aligned with the technical schema, including jurisdiction_resolution, source_routing_plan, routing_eligibility, critical_field_contract, critical_field_summary, evidence_gating_plan and report_type_switch_recommendation.",
+      "Mandatory and high-priority source rows carry stable source descriptors such as source_key, source_name, layer, access_method, authority, priority, limitations and disallowed_as_substitute_for, which is sufficient to drive downstream discovery without lossy remapping.",
+      "The read-only governance-wrapper smoke check produced a New York route with routing_ready=true, report_type_allowed=Minimum Evidence Report, missing_critical_fields=0 and a jurisdiction_resolution consistent with the expected NYC regulatory stack."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 7,
+    "failed": 0,
+    "coverage_assessment": "Executable conformance evidence covered the routing contract for high-data building cases, headquarters degradation, industrial process routing and multiple city-specific public-data portal selections. This is sufficient for conformance review because it exercises the core admissibility, routing-plan and report-gating surfaces described in test_spec.md and failure_modes_spec.md.",
+    "notes": "Ran pytest -q on runtime-orchestrator/tests/test_public_data_routing_engine.py with 7 passing tests. Also executed a read-only smoke invocation through artifacts/implementation/codebase/engine.py using the documented NYC example shape and confirmed the wrapper returns the runtime adapter surface without local logic drift."
+  },
+  "open_items": []
+}

@@ -1,0 +1,100 @@
+{
+  "$schema_version": "1.0",
+  "motor_id": "string",
+  "motor_name": "string",
+  "purpose": "string",
+  "current_stage": "documentation_base | schema_technical | tests | failure_modes | implementation | conformance_review | closed",
+  "stage_sequence": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "completed_stages": [
+    "documentation_base",
+    "schema_technical",
+    "tests",
+    "failure_modes",
+    "implementation",
+    "conformance_review"
+  ],
+  "artifacts": {
+    "documentation_base": {
+      "exists": "boolean",
+      "items": [
+        "master_concept_doc",
+        "functional_contract",
+        "conceptual_schema",
+        "operational_rules",
+        "acceptance_tests",
+        "failure_modes",
+        "design_done_criteria"
+      ]
+    },
+    "schema_technical": {
+      "exists": "boolean",
+      "items": [
+        "technical_schema"
+      ]
+    },
+    "tests": {
+      "exists": "boolean",
+      "items": [
+        "test_spec"
+      ]
+    },
+    "failure_modes": {
+      "exists": "boolean",
+      "items": [
+        "failure_modes_spec"
+      ]
+    },
+    "implementation": {
+      "exists": "boolean",
+      "items": [
+        "codebase",
+        "usage_example"
+      ]
+    },
+    "conformance_review": {
+      "exists": "boolean",
+      "items": [
+        "conformance_review_report"
+      ]
+    }
+  },
+  "missing_artifacts": [
+    "string"
+  ],
+  "validations": [
+    {
+      "validation_id": "string",
+      "stage": "documentation_base | schema_technical | tests | failure_modes | implementation | conformance_review",
+      "type": "string",
+      "result": "pass | pass_with_warnings | fail",
+      "notes": "string"
+    }
+  ],
+  "corrections": [
+    {
+      "correction_id": "string",
+      "from_stage": "documentation_base | schema_technical | tests | failure_modes | implementation | conformance_review",
+      "to_stage": "documentation_base | schema_technical | tests | failure_modes | implementation | conformance_review",
+      "reason": "string",
+      "status": "open | resolved"
+    }
+  ],
+  "status": "not_started | in_progress | blocked | paused | waiting | ready_for_next_stage | closed",
+  "blocked": "boolean",
+  "paused": "boolean",
+  "waiting_on": "string | null",
+  "closure": {
+    "is_closed": "boolean",
+    "closed_at": "string | null",
+    "closure_notes": "string"
+  },
+  "notes": "string",
+  "updated_at": "string"
+}

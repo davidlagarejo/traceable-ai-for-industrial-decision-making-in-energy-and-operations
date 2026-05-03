@@ -1,0 +1,39 @@
+{
+  "motor_id": "motor_025",
+  "motor_name": "Epistemic Governance Layer",
+  "reviewed_at": "2026-04-18T09:38:33Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "functional_contract",
+    "operational_rules",
+    "acceptance_tests",
+    "failure_modes",
+    "technical_schema",
+    "test_spec",
+    "failure_modes_spec",
+    "codebase",
+    "usage_example"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the declared motor_025 contract: it reads structured conformance records, governance events, and phase contracts; emits only epistemic tensions, constitutional review signals, and governance health reports; preserves required lineage and version metadata; and does not mutate contracts, policies, taxonomies, governance events, conformance records, or motor state."
+  },
+  "contract_compliance": {
+    "status": "OK",
+    "findings": []
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "OK",
+    "findings": []
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 4,
+    "failed": 0,
+    "coverage_assessment": "Executable smoke coverage exercised the documented happy path, sparse case, missing phase contract rejection, and missing lineage rejection. Code review confirmed deterministic handling for unknown contract references, duplicate evidence IDs, invalid timestamps, taxonomy-gap tensions, structural and constitutional escalation thresholds, and prevention of partial output after blocking input rejection.",
+    "notes": "Executed with PYTHONDONTWRITEBYTECODE=1 against codebase.EpistemicGovernanceLayer. Happy path produced exception_inflation plus structural review signal and governance_status=escalate; sparse case produced governance_status=stable with zero tensions; malformed inputs returned PHASE_CONTRACTS_REQUIRED and PROVENANCE_REQUIRED."
+  },
+  "open_items": []
+}

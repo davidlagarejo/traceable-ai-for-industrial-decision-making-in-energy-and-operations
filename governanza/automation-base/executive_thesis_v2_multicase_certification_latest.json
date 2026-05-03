@@ -1,0 +1,56 @@
+{
+  "produced_at": "2026-04-30T17:23:18-04:00",
+  "certification_name": "executive_thesis_v2_multicase_certification",
+  "status": "accepted",
+  "cases": [
+    {
+      "label": "one_vanderbilt",
+      "run_id": "run:9794fa2675500ac1",
+      "report_identity_state": "Compliance / Investment Screening Brief",
+      "recommended_report_type_visible": "Compliance / Investment Screening Brief",
+      "default_reasoning_path": "structural_first",
+      "structural_primary_promotion_state": "structural_first_default_active",
+      "dominant_lens": "Regulation vs control boundary",
+      "dominant_contradiction": "Regulation vs control boundary",
+      "hidden_assumption_at_risk": "The working assumption is that the actor facing the burden also controls the loads and captures the economics that matter.",
+      "surprising_takeaway": "The unresolved issue is not whether the asset is visible, large, or regulated. It is a control-boundary problem: whether the actor facing the burden actually controls and captures the load economics.",
+      "can_render_pdf": true,
+      "critical_failure_count": 0,
+      "certification_result": "passed"
+    },
+    {
+      "label": "wilsonart_temple_north_laminate_facility",
+      "run_id": "run:27db48fdafb91a03",
+      "report_identity_state": "System Redesign Hypothesis Brief",
+      "recommended_report_type_visible": "System Redesign Hypothesis Brief",
+      "default_reasoning_path": "structural_first",
+      "structural_primary_promotion_state": "elected_primary_structural_mode",
+      "dominant_lens": "Energy-savings framing vs unresolved process load",
+      "dominant_contradiction": "Energy-savings framing vs unresolved process load",
+      "hidden_assumption_at_risk": "The working assumption is that visible intensity is operational waste rather than structural process load or uptime economics.",
+      "surprising_takeaway": "The most dangerous mistake may be funding energy CAPEX against a symptom that is actually structural process load or uptime economics.",
+      "can_render_pdf": true,
+      "critical_failure_count": 0,
+      "certification_result": "passed"
+    },
+    {
+      "label": "weak_address_first_warehouse_case",
+      "run_id": "run:32573b0e2c852732",
+      "report_identity_state": "Address Candidate Brief",
+      "recommended_report_type_visible": "Target Classification Brief",
+      "default_reasoning_path": "legacy_decision_gating_only",
+      "structural_primary_promotion_state": "not_requested",
+      "thesis_state": "inadmissible_thesis",
+      "inadmissibility_reason": "Structural thesis remains inadmissible until the case crosses the problem-framing threshold for structural interpretation.",
+      "dominant_lens": "",
+      "dominant_contradiction": "",
+      "hidden_assumption_at_risk": "",
+      "surprising_takeaway": "",
+      "pipeline_status": "completed",
+      "published_pdf": true,
+      "render_path": "inadmissible_bypass",
+      "certification_result": "correctly_degraded_and_published"
+    }
+  ],
+  "residual_risks": []
+}

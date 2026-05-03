@@ -1,0 +1,313 @@
+{
+  "_meta": {
+    "description": "Contexto semántico por motor para generación AI de artefactos. Fuente: motor_registry.md + motor_dependencies.json. Solo informativo — no opera sobre workflow ni dependencias.",
+    "authority": "motor_registry.md y motor_dependencies.json prevalecen en caso de conflicto."
+  },
+  "motors": {
+    "motor_001": {
+      "name": "Phase Contract Registry",
+      "purpose": "Definir y hacer cumplir contratos de fase: inputs, outputs, límites y handoffs entre motores.",
+      "why_it_exists": "Evita que los motores invadan fases o produzcan outputs indebidos sin contrato explícito.",
+      "key_inputs": ["phase definitions", "motor declarations", "contract schemas"],
+      "key_outputs": ["phase_contract records", "handoff definitions", "limit enforcement signals"],
+      "key_objects": ["PhaseContract", "Handoff", "ContractViolation"],
+      "design_notes": "Motor fundacional. No depende de ningún otro. Es el ancla de todo el sistema.",
+      "what_not_to_do": "No implementa lógica de negocio. No ejecuta motores. Solo registra y valida contratos."
+    },
+    "motor_002": {
+      "name": "Versioning + Lineage Engine",
+      "purpose": "Versionar objetos y registrar lineage, dependencias, impacto y reconstrucción.",
+      "why_it_exists": "Sin versionado no hay rebuild, stale detection ni auditoría seria.",
+      "key_inputs": ["object mutations", "source references", "transformation records"],
+      "key_outputs": ["version_record", "lineage_graph", "impact_set", "rebuild_manifest"],
+      "key_objects": ["VersionRecord", "LineageNode", "ImpactEdge"],
+      "design_notes": "Depende de motor_001 (phase contracts anclan el contexto de versión).",
+      "what_not_to_do": "No decide si un objeto es válido. Solo registra versiones y dependencias."
+    },
+    "motor_003": {
+      "name": "Taxonomy + Canonical Entity Service",
+      "purpose": "Gobernar taxonomías, términos canónicos, aliases y límites semánticos del sistema.",
+      "why_it_exists": "Evita drift semántico, dialectos paralelos y joins inestables entre fuentes.",
+      "key_inputs": ["raw terms", "aliases", "source vocabularies"],
+      "key_outputs": ["canonical_term", "alias_map", "taxonomy_tree", "boundary_definition"],
+      "key_objects": ["CanonicalEntity", "TaxonomyNode", "AliasMappings"],
+      "design_notes": "Depende de motor_001. Es la referencia semántica que todos los motores downstream consultan.",
+      "what_not_to_do": "No normaliza datos. No resuelve identidad de registros. Solo gobierna el vocabulario."
+    },
+    "motor_004": {
+      "name": "Ingestion + Parsing Engine",
+      "purpose": "Capturar fuentes, preservar raw y extraer estructura parcial trazable.",
+      "why_it_exists": "Permite que el mundo real entre al sistema sin contaminarlo.",
+      "key_inputs": ["raw source files", "API responses", "structured feeds"],
+      "key_outputs": ["raw_record (preserved)", "parsed_record", "ingestion_lineage"],
+      "key_objects": ["RawRecord", "ParsedRecord", "IngestionEvent"],
+      "design_notes": "Preserva siempre el raw. La extracción es parcial e inmutable. Depende de motor_001 y motor_002.",
+      "what_not_to_do": "No normaliza. No resuelve duplicados. No evalúa calidad. Solo ingesta y preserva."
+    },
+    "motor_005": {
+      "name": "Canonical Normalization Engine",
+      "purpose": "Convertir extracción heterogénea en forma canónica mínima preservando valores originales y reglas aplicadas.",
+      "why_it_exists": "Desacopla el sistema de la heterogeneidad de fuentes.",
+      "key_inputs": ["parsed_record", "canonical_taxonomy (motor_003)"],
+      "key_outputs": ["normalized_record", "normalization_rule_log", "field_mapping_trace"],
+      "key_objects": ["NormalizedRecord", "NormalizationRule", "FieldMapping"],
+      "design_notes": "Preserva el valor original junto al valor normalizado. Depende de motor_004 y motor_003.",
+      "what_not_to_do": "No resuelve identidad entre registros. No evalúa calidad. Solo transforma a forma canónica."
+    },
+    "motor_006": {
+      "name": "Entity Identity / Resolution Engine",
+      "purpose": "Resolver cuándo distintos registros apuntan a la misma entidad y cuándo la ambigüedad debe quedar abierta.",
+      "why_it_exists": "Evita merges erróneos, duplicación de entidades y pérdida de comparabilidad.",
+      "key_inputs": ["normalized_records", "canonical_entities (motor_003)"],
+      "key_outputs": ["identity_resolution_record", "entity_cluster", "ambiguity_flag"],
+      "key_objects": ["IdentityRecord", "EntityCluster", "ResolutionConflict"],
+      "design_notes": "Puede dejar ambigüedad abierta — esto es correcto. No fuerza resolución cuando no hay certeza. Depende de motor_005 y motor_003.",
+      "what_not_to_do": "No detecta duplicados documentales. Eso es motor_010. Solo resuelve identidad de entidades."
+    },
+    "motor_007": {
+      "name": "Quality / Fitness Evaluation Engine",
+      "purpose": "Evaluar calidad estructural, completitud, trazabilidad y aptitud de uso por fase u objeto.",
+      "why_it_exists": "Evita que objetos defectuosos o no aptos contaminen fases posteriores.",
+      "key_inputs": ["identity_resolved_records", "phase_contracts (motor_001)"],
+      "key_outputs": ["quality_record", "fitness_score", "quality_flags", "disqualification_reason"],
+      "key_objects": ["QualityRecord", "FitnessScore", "QualityFlag"],
+      "design_notes": "Motor evaluador, no transformador. Depende de motor_006.",
+      "what_not_to_do": "No modifica registros. No normaliza. Solo evalúa y emite señales de calidad."
+    },
+    "motor_008": {
+      "name": "Source Registry + Rights Engine",
+      "purpose": "Registrar fuentes, licencias, restricciones, clase de acceso, periodicidad y uso permitido.",
+      "why_it_exists": "Sin este motor no hay control serio de fuentes públicas, premium o restringidas.",
+      "key_inputs": ["source declarations", "license files", "access agreements"],
+      "key_outputs": ["source_registration", "rights_profile", "access_class", "refresh_schedule"],
+      "key_objects": ["SourceRecord", "RightsProfile", "AccessClass"],
+      "design_notes": "Depende de motor_001. Puede construirse temprano en paralelo con el pipeline de normalización.",
+      "what_not_to_do": "No ingesta datos. No evalúa calidad. Solo registra metadatos de fuentes y derechos."
+    },
+    "motor_009": {
+      "name": "Source Change Detection / Refresh Intelligence Engine",
+      "purpose": "Detectar cambios de fuente, metodología, estructura, disponibilidad y prioridad de recaptura.",
+      "why_it_exists": "Sin este motor los datasets quedan stale sin que el sistema lo sepa.",
+      "key_inputs": ["source_registry (motor_008)", "ingestion_records (motor_004)", "version_history (motor_002)"],
+      "key_outputs": ["change_detection_event", "refresh_priority", "staleness_signal"],
+      "key_objects": ["ChangeEvent", "RefreshPriority", "StalenessRecord"],
+      "design_notes": "Depende de motor_008, motor_004, motor_002.",
+      "what_not_to_do": "No descarga datos. No decide qué hacer con cambios. Solo detecta y señaliza."
+    },
+    "motor_010": {
+      "name": "Duplicate / Similarity Control Engine",
+      "purpose": "Detectar duplicados exactos y near-duplicates a nivel raw, parsed y otros niveles.",
+      "why_it_exists": "No es lo mismo que identity resolution; controla repetición documental y dataset inflation.",
+      "key_inputs": ["parsed_records (motor_004)", "normalized_records (motor_005)", "version_records (motor_002)"],
+      "key_outputs": ["duplicate_cluster", "similarity_score", "dedup_recommendation"],
+      "key_objects": ["DuplicateCluster", "SimilarityRecord", "DeduplicationDecision"],
+      "design_notes": "Opera antes de resolución de identidad. Controla repetición documental, no semántica.",
+      "what_not_to_do": "No resuelve identidad de entidades. No evalúa calidad. Solo detecta repetición."
+    },
+    "motor_011": {
+      "name": "Library Curation Engine",
+      "purpose": "Convertir objetos ya estructurados y evaluados en bibliotecas reutilizables del framework.",
+      "why_it_exists": "Evita que cada fase arme su propia pseudo-biblioteca local.",
+      "key_inputs": ["quality_records (motor_007)", "identity_records (motor_006)", "dedup_records (motor_010)"],
+      "key_outputs": ["library_object", "curated_bundle", "library_version"],
+      "key_objects": ["LibraryObject", "CuratedBundle", "LibraryVersion"],
+      "design_notes": "Requiere el pipeline completo de Fase 1.",
+      "what_not_to_do": "No ingesta datos nuevos. No evalúa calidad. Solo selecciona y organiza objetos aptos como biblioteca."
+    },
+    "motor_012": {
+      "name": "Public Data Engine",
+      "purpose": "Materializar Fase 1 y producir facility_prior y bundles contextuales listos para Fase 2.",
+      "why_it_exists": "Convierte infraestructura base en output útil de Fase 1.",
+      "key_inputs": ["library_objects (motor_011)", "source_registry (motor_008)", "quality_records (motor_007)"],
+      "key_outputs": ["facility_prior", "contextual_bundle", "phase1_package"],
+      "key_objects": ["FacilityPrior", "ContextualBundle", "Phase1Package"],
+      "design_notes": "Materialización final de Fase 1. Depende de toda la infraestructura base.",
+      "what_not_to_do": "No hace inferencias. No produce TADs. Solo empaqueta el prior de Fase 1."
+    },
+    "motor_013": {
+      "name": "Inference Case Activation Engine",
+      "purpose": "Activar casos inferenciales gobernados a partir de facility_prior, bundles y triggers.",
+      "why_it_exists": "Separa selección de casos del análisis del Decision Core.",
+      "key_inputs": ["facility_prior (motor_012)", "library_objects (motor_011)", "quality_records (motor_007)"],
+      "key_outputs": ["inference_case", "activation_record", "trigger_log"],
+      "key_objects": ["InferenceCase", "ActivationRecord", "TriggerCondition"],
+      "design_notes": "Crea los casos que alimentan al Decision Core. Sin este motor, motor_014 no tiene input.",
+      "what_not_to_do": "No analiza los casos. No produce conclusiones. Solo activa y registra."
+    },
+    "motor_014": {
+      "name": "Decision Core / Inference Engine",
+      "purpose": "Producir registros de inferencia, tensiones, conflictos, oportunidades, gaps y agenda de validación.",
+      "why_it_exists": "Es el corazón analítico de Fase 2.",
+      "key_inputs": ["inference_cases (motor_013)", "phase_contracts (motor_001)"],
+      "key_outputs": ["inference_record", "tension_record", "gap_agenda", "validation_agenda"],
+      "key_objects": ["InferenceRecord", "Tension", "ValidationAgenda"],
+      "design_notes": "Determinismo primero. La IA puede asistir pero no decide. Depende de motor_013 y motor_001.",
+      "what_not_to_do": "No produce reportes finales. No verifica claims. Solo infiere y registra con contratos explícitos."
+    },
+    "motor_015": {
+      "name": "Output Block Composition Engine",
+      "purpose": "Construir bloques visibles trazables para Fase 3 desde decisions e inferencias.",
+      "why_it_exists": "Separa contenido visible gobernado del ensamblaje documental final.",
+      "key_inputs": ["inference_records (motor_014)", "phase_contracts (motor_001)", "version_records (motor_002)"],
+      "key_outputs": ["output_block", "block_trace", "composition_log"],
+      "key_objects": ["OutputBlock", "BlockTrace", "CompositionRecord"],
+      "design_notes": "Cada bloque es trazable a su fuente inferencialmente.",
+      "what_not_to_do": "No ensambla reportes completos. No renderiza documentos. Solo construye bloques atómicos."
+    },
+    "motor_016": {
+      "name": "Report Package Assembly Engine",
+      "purpose": "Ensamblar Output Blocks en Report Package con vistas como technical_view y executive_view.",
+      "why_it_exists": "Un bloque no equivale a un reporte integrado.",
+      "key_inputs": ["output_blocks (motor_015)", "phase_contracts (motor_001)", "version_records (motor_002)"],
+      "key_outputs": ["report_package", "technical_view", "executive_view"],
+      "key_objects": ["ReportPackage", "TechnicalView", "ExecutiveView"],
+      "design_notes": "Ensambla sin transformar. Mantiene trazabilidad de bloques.",
+      "what_not_to_do": "No genera texto nuevo. No renderiza documentos finales. Solo ensambla paquetes desde bloques."
+    },
+    "motor_017": {
+      "name": "Document Rendering / LaTeX Compilation Engine",
+      "purpose": "Convertir Report Package aprobado en documento técnico formal reproducible.",
+      "why_it_exists": "El documento final no es accesorio; es parte del output serio del framework.",
+      "key_inputs": ["report_package (motor_016)"],
+      "key_outputs": ["compiled_pdf", "latex_source", "render_manifest"],
+      "key_objects": ["RenderJob", "LaTeXSource", "CompiledDocument"],
+      "design_notes": "Depende únicamente de motor_016. Output es reproducible y versionado.",
+      "what_not_to_do": "No genera contenido. No toma decisiones analíticas. Solo renderiza paquetes aprobados."
+    },
+    "motor_018": {
+      "name": "Chart Generation Engine",
+      "purpose": "Generar charts analíticos asset-first y publication-quality a partir de objetos ya gobernados del pipeline, sin crear claims nuevos.",
+      "why_it_exists": "El reporte necesita visuales que reduzcan carga de lectura y hagan visible la estructura analítica sin permitir que el chart se vuelva motor de verdad.",
+      "key_inputs": ["report_identity_state (motor_007)", "facility_prior (motor_012)", "enriched_data + discovery_summary (motor_028)", "inference_records + decision_front_register + minimum_evidence_unlock_map (motor_014)", "report_mode (motor_047)", "local_truth / gap / next_search registers (motor_049)", "comparison / congruence registers (motor_051)", "measurement / hardware minimality registers (motor_052)", "finance-physics dependency registers (motor_053)"],
+      "key_outputs": ["chart_assets", "chart_errors", "case_namespace_register"],
+      "key_objects": ["ChartAsset", "ChartGovernanceEnvelope", "CaseNamespaceRegister"],
+      "design_notes": "La capa chart es subordinada al body logic. Cambia copy y curation mode segun blocked / exploratory / structural state, y mantiene la capa financiera subordinada al contexto del activo.",
+      "what_not_to_do": "No infiere verdad nueva. No puede decorar vacios analíticos. No debe promover issuer context a asset truth ni degradar la soberanía del thesis."
+    },
+    "motor_019": {
+      "name": "LLM Writing Engine",
+      "purpose": "Traducir paquetes analíticos gobernados a prosa profesional y acotada para el reporte, sin introducir conocimiento externo ni nuevas conclusiones.",
+      "why_it_exists": "El framework necesita narrativa legible, pero esa narrativa debe quedar subordinada a objetos upstream y nunca convertirse en analista ni autoridad de decisión.",
+      "key_inputs": ["phase_contracts + subject_definition (motor_001)", "facility_prior + compliance / benchmark context (motor_012)", "inference_records + conflict / tension / validation objects (motor_014)", "enriched_data.financials + extended_sources (motor_028)", "tad_preliminary (motor_033)", "claim_permission / variable_maturity / report_readiness registers (motor_034)"],
+      "key_outputs": ["written_sections", "section_packets", "llm_governance_summary", "writing_runtime_profile"],
+      "key_objects": ["SectionPacket", "WrittenSection", "LLMGovernanceSummary", "WritingRuntimeProfile"],
+      "design_notes": "Usa Codex CLI como writer local con allowlist de secciones, lint epistemico, fallback y budget hardening. Lo no autorizado para LLM se resume en modo structured_summary.",
+      "what_not_to_do": "No introduce claims, facts, numbers ni conclusiones nuevas. No cierra incertidumbre. No puede hablar como due diligence, underwriting ni truth engine."
+    },
+    "motor_020": {
+      "name": "Propagation / Re-evaluation Engine",
+      "purpose": "Re-evaluar objetos downstream cuando cambian fuentes, reglas, taxonomías, contratos o bibliotecas.",
+      "why_it_exists": "Versioning registra cambios, pero este motor decide qué debe re-evaluarse.",
+      "key_inputs": ["version_records (motor_002)", "quality_records (motor_007)", "change_events (motor_009)"],
+      "key_outputs": ["re_evaluation_job", "stale_set", "propagation_log"],
+      "key_objects": ["ReEvaluationJob", "StaleObject", "PropagationRecord"],
+      "design_notes": "Corre en respuesta a cambios detectados. Crea cadenas de re-evaluación.",
+      "what_not_to_do": "No modifica objetos directamente. Encola y señaliza para re-evaluación."
+    },
+    "motor_021": {
+      "name": "Dataset / Object Test Harness Engine",
+      "purpose": "Correr pruebas sobre datasets, handoffs, contratos y objetos del sistema.",
+      "why_it_exists": "Los motores pueden pasar solos y aun así fallar juntos en integración.",
+      "key_inputs": ["phase_contracts (motor_001)", "version_records (motor_002)", "canonical_taxonomy (motor_003)", "normalized_records (motor_005)", "identity_records (motor_006)", "quality_records (motor_007)"],
+      "key_outputs": ["test_result", "harness_report", "integration_failure_log"],
+      "key_objects": ["TestResult", "HarnessReport", "IntegrationFailure"],
+      "design_notes": "Harness transversal. Prueba el sistema integrado, no motores individuales.",
+      "what_not_to_do": "No modifica datos. No produce outputs analíticos. Solo prueba y reporta."
+    },
+    "motor_022": {
+      "name": "Evaluation / Conformance Engine",
+      "purpose": "Verificar que motores, datasets y artefactos respetan contrato, límites y conformidad arquitectónica.",
+      "why_it_exists": "Evita degradación silenciosa del sistema con el tiempo.",
+      "key_inputs": ["phase_contracts (motor_001)", "version_records (motor_002)", "quality_records (motor_007)", "harness_results (motor_021)"],
+      "key_outputs": ["conformance_record", "violation_log", "architectural_drift_signal"],
+      "key_objects": ["ConformanceRecord", "ViolationRecord", "DriftSignal"],
+      "design_notes": "Evaluación formal de conformidad. Depende de motor_001, motor_002, motor_007 y motor_021.",
+      "what_not_to_do": "No corrige violaciones. No modifica el sistema. Solo detecta y registra conformidad."
+    },
+    "motor_023": {
+      "name": "Pipeline Orchestration + Observability Engine",
+      "purpose": "Orquestar ejecuciones, logs, retries, métricas, alertas y visibilidad operativa.",
+      "why_it_exists": "Si el sistema será automatizado, necesita operación continua y auditable.",
+      "key_inputs": ["phase_contracts (motor_001)", "all motor execution events"],
+      "key_outputs": ["execution_log", "metric_record", "alert_event", "retry_decision"],
+      "key_objects": ["ExecutionLog", "MetricRecord", "AlertEvent"],
+      "design_notes": "Puede construirse temprano. Depende solo de motor_001.",
+      "what_not_to_do": "No implementa lógica de negocio de ningún motor. Solo orquesta y observa."
+    },
+    "motor_024": {
+      "name": "Governance Event & Exception Registry",
+      "purpose": "Registrar anomalías, overrides, excepciones recurrentes y tensiones de gobernanza relevantes.",
+      "why_it_exists": "La gobernanza necesita señales explícitas y no solo intuición.",
+      "key_inputs": ["exception events from all motors", "override records"],
+      "key_outputs": ["governance_event", "exception_record", "tension_signal"],
+      "key_objects": ["GovernanceEvent", "ExceptionRecord", "TensionSignal"],
+      "design_notes": "Motor ligero (LIGHTWEIGHT_MOTOR). Solo requiere motor_001 y motor_002.",
+      "what_not_to_do": "No resuelve excepciones. No cambia políticas. Solo registra para revisión humana."
+    },
+    "motor_025": {
+      "name": "Epistemic Governance Layer",
+      "purpose": "Detectar tensiones estructurales, inflación de excepciones, insuficiencia taxonómica y distinguir cambio local, estructural o constitucional.",
+      "why_it_exists": "Evita que el framework crezca rompiendo su constitución en silencio.",
+      "key_inputs": ["conformance_records (motor_022)", "governance_events (motor_024)", "phase_contracts (motor_001)"],
+      "key_outputs": ["epistemic_tension_record", "constitutional_change_signal", "governance_health_report"],
+      "key_objects": ["EpistemicTension", "ConstitutionalSignal", "GovernanceHealthReport"],
+      "design_notes": "Motor ligero (LIGHTWEIGHT_MOTOR). Capa de gobernanza de más alto nivel.",
+      "what_not_to_do": "No modifica contratos ni políticas directamente. Solo detecta y señaliza tensiones estructurales."
+    },
+    "motor_029": {
+      "name": "Problem Formalization / Expert Problem Spec Engine",
+      "purpose": "Convertir inference cases activados en especificaciones formales del problema: conocimiento experto, restricciones reales y supuestos explícitos del dominio.",
+      "why_it_exists": "Un dataset sintético sin especificación formal es ruido estructurado. Este motor produce el contrato del que depende toda la cadena sintética.",
+      "key_inputs": ["inference_cases (motor_013)", "phase_contracts (motor_001)", "version_records (motor_002)", "canonical_taxonomy (motor_003)"],
+      "key_outputs": ["expert_problem_spec", "ambiguity_register", "parameter_constraints"],
+      "key_objects": ["ExpertProblemSpec", "AmbiguityRegister", "ParameterConstraint"],
+      "design_notes": "Prerequisito obligatorio de toda la cadena sintética. No genera datos. No diseña modelos. Su output es non_evidentiary_flag=true.",
+      "what_not_to_do": "No genera datos sintéticos. No corre ML. No puede ejecutarse sobre inference_cases con ambiguity_register crítico no resuelto.",
+      "epistemic_flags": ["non_evidentiary_flag=true", "intended_use=exploration"]
+    },
+    "motor_030": {
+      "name": "Synthetic Data Generation Engine",
+      "purpose": "Generar datasets sintéticos condicionados por expert_problem_spec aprobado.",
+      "why_it_exists": "El framework necesita datos para ML exploratoria sin comprometer la separación entre evidencia real y soporte sintético.",
+      "key_inputs": ["expert_problem_spec (motor_029)", "version_records (motor_002)"],
+      "key_outputs": ["synthetic_generation_run", "synthetic_dataset", "generation_manifest"],
+      "key_objects": ["SyntheticGenerationRun", "SyntheticDataset", "GenerationManifest"],
+      "design_notes": "Todo output lleva synthetic_data_flag=true y non_evidentiary_flag=true. No puede ejecutarse sobre specs en draft o con ambiguity_register crítico.",
+      "what_not_to_do": "No puede citarse como evidencia de campo. No sustituye evidencia real ni intake local gobernado.",
+      "epistemic_flags": ["synthetic_data_flag=true", "non_evidentiary_flag=true"]
+    },
+    "motor_031": {
+      "name": "ML Experiment / Model Training & Evaluation Engine",
+      "purpose": "Entrenar, comparar y documentar modelos de ML sobre datasets sintéticos, produciendo capability_demonstration_report.",
+      "why_it_exists": "Demuestra capacidades analíticas antes de que exista evidencia real.",
+      "key_inputs": ["synthetic_dataset (motor_030)", "expert_problem_spec (motor_029)", "version_records (motor_002)"],
+      "key_outputs": ["training_run_record", "model_eval_summary", "capability_demonstration_report"],
+      "key_objects": ["TrainingRunRecord", "ModelEvalSummary", "CapabilityDemonstrationReport"],
+      "design_notes": "No produce modelos de producción. La política de selección de modelos en synthetic_epistemology_rules.md es vinculante.",
+      "what_not_to_do": "No produce modelos listos para producción. No puede ser usado como evidencia de validación de campo.",
+      "epistemic_flags": ["synthetic_support_flag=true", "non_evidentiary_flag=true"]
+    },
+    "motor_032": {
+      "name": "Synthetic ML Decision Support Integration",
+      "purpose": "Integrar capability_demonstration_report al Decision Core como señal subordinada etiquetada.",
+      "why_it_exists": "El Decision Core necesita recibir soporte sintético de forma trazable, etiquetada y epistemológicamente limitada.",
+      "key_inputs": ["capability_demonstration_report (motor_031)", "inference_records (motor_014)", "phase_contracts (motor_001)", "version_records (motor_002)"],
+      "key_outputs": ["synthetic_ml_support_register", "hypothesis_signal", "labeled_support_record"],
+      "key_objects": ["SyntheticMLSupportRegister", "HypothesisSignal", "LabeledSupportRecord"],
+      "design_notes": "No puede elevar claims. No puede sustituir evidencia real. synthetic_support_flag=true en todo output.",
+      "what_not_to_do": "No puede convertir hypothesis_only inference_records a decision_grade. No sustituye evidencia real, gobernanza de claims ni decisiones terminales.",
+      "epistemic_flags": ["synthetic_support_flag=true", "non_evidentiary_flag=true"]
+    },
+    "motor_033": {
+      "name": "TAD Preliminary Prioritization Engine",
+      "purpose": "Ordenar preliminarmente inference cases activos usando señales sintéticas del motor_032.",
+      "why_it_exists": "Cuando hay múltiples inference cases activos compitiendo por recursos, se necesita una señal preliminar de orden de atención trazable y no arbitraria.",
+      "key_inputs": ["synthetic_ml_support_register (motor_032)", "inference_cases (motor_013)", "phase_contracts (motor_001)", "version_records (motor_002)"],
+      "key_outputs": ["preliminary_priority_register", "ranking_basis", "rank_uncertainty_record"],
+      "key_objects": ["PreliminaryPriorityRegister", "RankingBasis", "RankUncertaintyRecord"],
+      "design_notes": "Output es preliminary_priority_register, nunca TAD final. El ranking es exploratorio.",
+      "what_not_to_do": "No puede ser TAD final. No puede usarse como evidencia para cerrar inference cases. Siempre requiere revisión con evidencia real.",
+      "epistemic_flags": ["synthetic_support_flag=true", "non_evidentiary_flag=true", "rank_is_preliminary=true"]
+    }
+  }
+}

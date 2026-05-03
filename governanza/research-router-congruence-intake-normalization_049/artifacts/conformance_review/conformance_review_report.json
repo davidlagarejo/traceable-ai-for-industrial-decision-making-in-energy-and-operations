@@ -1,0 +1,53 @@
+{
+  "motor_id": "motor_049",
+  "motor_name": "Research Router & Congruence Intake Normalization",
+  "reviewed_at": "2026-05-03T02:46:35Z",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "runtime-orchestrator/tests/test_asset_family_research_router.py",
+    "runtime-orchestrator/tests/test_congruence_intake_schemas.py",
+    "runtime-orchestrator/tests/test_dynamic_intake_generator.py",
+    "runtime-orchestrator/tests/test_operational_bounding_scorecard.py",
+    "runtime-orchestrator/tests/test_local_evidence_binding_upgrade.py",
+    "read_only_smoke_check: manufacturing_hybrid_diligence_via_governance_wrapper"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_049 contract. The governance-stage wrapper delegates directly to the runtime adapter, emits the full congruence-intake routing surface with canonical diligence packs, dynamic intake questions, operational bounding and local-evidence binding registers, and preserves promotion discipline instead of overstating evidence sufficiency."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The implementation accepts the declared upstream target-definition, facility-prior, asset-field and local-source inputs, with the wrapper enforcing mapping-shaped input before delegating to the runtime adapter.",
+      "The adapter emits the contractually expected outputs: selected_asset_family, research_mode, evidence_mode_state, operational_intake_pack, operational_bounding_scorecard, dynamic_intake_question_register, local_evidence_binding_register, gap taxonomy, source conflict, entity resolution and promotion blocker surfaces.",
+      "Executable coverage confirms the key routing modes and pack-state behavior: public-only screening, hybrid diligence, operator-integrated congruence, canonical diligence-pack emission, partially evidenced pack states, dynamic-intake generation and local-binding upgrade behavior.",
+      "The implementation stays within boundary: it does not treat route hints as automatic closure, does not hide blockers to force promotion, and keeps unresolved evidence in explicit pack states, blocker registers and next-best-search surfaces."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "The operational_intake_pack preserves a structured case_fingerprint, diligence_pack_register, diligence_pack_state_summary, search and escalation registers, dynamic intake surfaces and the embedded operational_bounding_scorecard aligned with the technical schema.",
+      "Each diligence-pack row carries stable explanatory fields including pack_name, current_state, decision_relevance, expected_local_sources, present_source_families, binding_needed, family_specific_focus and allowed_without_local_binding.",
+      "The read-only governance-wrapper smoke check produced a manufacturing hybrid-diligence case with research_mode=hybrid_diligence, partially_evidenced_pack_count=5, next_promotable_mode=operator_integrated_congruence, local binding claims including industrial_process_duty and dynamic intake questions spanning process, maintenance and metering boundaries."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 16,
+    "failed": 0,
+    "coverage_assessment": "Executable conformance evidence covered canonical pack emission, hybrid and operator-integrated mode transitions, intake schema behavior, dynamic-intake generation, operational bounding and local-evidence binding upgrade paths. This is sufficient for conformance review because it exercises the core congruence-intake routing, evidence-state and promotion-control surfaces described in test_spec.md and failure_modes_spec.md.",
+    "notes": "Ran pytest -q on runtime-orchestrator/tests/test_asset_family_research_router.py, test_congruence_intake_schemas.py, test_dynamic_intake_generator.py, test_operational_bounding_scorecard.py and test_local_evidence_binding_upgrade.py with 16 passing tests. Also executed a read-only smoke invocation through artifacts/implementation/codebase/engine.py using the documented manufacturing example shape and confirmed the wrapper returns the runtime adapter surface without local logic drift."
+  },
+  "open_items": []
+}

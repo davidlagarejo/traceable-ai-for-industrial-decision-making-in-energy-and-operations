@@ -1,0 +1,177 @@
+{
+  "produced_at": "2026-05-02",
+  "certification_name": "congruence_intelligence_multicase_certification_latest",
+  "scope": [
+    "strong_public_building_case",
+    "manufacturing_process_case",
+    "logistics_warehouse_bounded_exploratory_case",
+    "cold_chain_bounded_exploratory_case",
+    "infrastructure_node_bounded_exploratory_case",
+    "utility_heavy_bounded_exploratory_case",
+    "weak_synthetic_warehouse_candidate"
+  ],
+  "cases": [
+    {
+      "label": "One Vanderbilt",
+      "run_id": "run:ee7e34decd3edcd3",
+      "pipeline_status": "completed",
+      "report_identity_state": "Compliance / Investment Screening Brief",
+      "recommended_report_type": "Compliance / Investment Screening Brief",
+      "selected_asset_family": "commercial_building",
+      "research_mode": "public_only_screening",
+      "route_state": "operational_asset_candidate",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Regulation vs control boundary",
+      "dominant_contradiction": "Regulation vs control boundary",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Wilsonart Temple North Laminate Facility",
+      "run_id": "run:aa44331b0e2802e6",
+      "pipeline_status": "completed",
+      "report_identity_state": "System Redesign Hypothesis Brief",
+      "recommended_report_type": "System Redesign Hypothesis Brief",
+      "selected_asset_family": "industrial_manufacturing",
+      "research_mode": "public_only_screening",
+      "route_state": "operational_asset_candidate",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Energy-savings framing vs unresolved process load",
+      "dominant_contradiction": "Energy-savings framing vs unresolved process load",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Logistics / Warehouse Bounded Exploratory Case",
+      "run_id": "run:6d29e8479a2954ef",
+      "pipeline_status": "completed",
+      "report_identity_state": "Exploratory Prior Brief",
+      "recommended_report_type": "Exploratory Prior Brief",
+      "selected_asset_family": "logistics_warehouse",
+      "research_mode": "operator_integrated_congruence",
+      "route_state": "operational_asset_candidate",
+      "evidence_mode_state": "operator_integrated_congruence",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Area benchmark vs service-level complexity",
+      "dominant_contradiction": "Area benchmark vs service-level complexity",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Cold-Chain Bounded Exploratory Case",
+      "run_id": "run:ca1506a9ee471080",
+      "pipeline_status": "completed",
+      "report_identity_state": "Exploratory Prior Brief",
+      "recommended_report_type": "Exploratory Prior Brief",
+      "selected_asset_family": "cold_chain",
+      "research_mode": "operator_integrated_congruence",
+      "route_state": "operational_asset_candidate",
+      "evidence_mode_state": "operator_integrated_congruence",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Area benchmark vs service-level complexity",
+      "dominant_contradiction": "Area benchmark vs service-level complexity",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Infrastructure Node Bounded Exploratory Case",
+      "run_id": "run:d31f7e666ac9e037",
+      "pipeline_status": "completed",
+      "report_identity_state": "Exploratory Prior Brief",
+      "recommended_report_type": "Exploratory Prior Brief",
+      "selected_asset_family": "infrastructure_node",
+      "research_mode": "operator_integrated_congruence",
+      "route_state": "operational_asset_candidate",
+      "evidence_mode_state": "operator_integrated_congruence",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Energy average vs service continuity burden",
+      "dominant_contradiction": "Energy average vs service continuity burden",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Utility-Heavy Bounded Exploratory Case",
+      "run_id": "run:7db37f8aecfceb4f",
+      "pipeline_status": "completed",
+      "report_identity_state": "Exploratory Prior Brief",
+      "recommended_report_type": "Exploratory Prior Brief",
+      "selected_asset_family": "utility_heavy_site",
+      "research_mode": "operator_integrated_congruence",
+      "route_state": "operational_asset_candidate",
+      "evidence_mode_state": "operator_integrated_congruence",
+      "thesis_state": "admissible_structural_thesis",
+      "dominant_lens": "Consumption framing vs demand-structure reality",
+      "dominant_contradiction": "Consumption framing vs demand-structure reality",
+      "can_render_pdf": true,
+      "critical_failure_count": 0
+    },
+    {
+      "label": "Weak Synthetic Warehouse Candidate",
+      "run_id": "run:1a3d0880a43775f8",
+      "pipeline_status": "partial",
+      "report_identity_state": "Address Candidate Brief",
+      "recommended_report_type": "Entity Address Classification Brief",
+      "selected_asset_family": "logistics_warehouse",
+      "research_mode": "public_only_screening",
+      "route_state": "target_not_yet_operationally_bounded",
+      "thesis_state": "inadmissible_thesis",
+      "can_render_pdf": false,
+      "critical_failure_count": 1
+    }
+  ],
+  "result": {
+    "positive_cases_produce_stronger_thesis": true,
+    "bounded_exploratory_logistics_and_cold_chain_publication_now_work": true,
+    "logistics_and_cold_chain_now_have_admissible_structural_thesis": true,
+    "infrastructure_node_now_has_admissible_structural_thesis": true,
+    "utility_heavy_site_now_has_admissible_structural_thesis": true,
+    "candidate_only_cases_do_not_receive_false_operational_authority": true,
+    "report_compression_remains_intact": true,
+    "family_routing_is_active_before_thesis_promotion": true,
+    "raw_local_evidence_normalization_exists": true,
+    "prompt_block_mapping_register_exists": true,
+    "support_chart_appendix_promotion_exists": true,
+    "semistructured_raw_local_absorption_certified": true
+  },
+  "support_chart_visibility_certification": {
+    "run_id": "run:0ddcb84e4d14de16",
+    "output_dir": "motor_017_render_job_rp:988b751d",
+    "body_chart_sections": [
+      "C3",
+      "C7",
+      "C8",
+      "C10"
+    ],
+    "appendix_chart_sections": [
+      "A2",
+      "A3",
+      "A5",
+      "A11",
+      "A14",
+      "A17"
+    ],
+    "policy_register": "chart_visibility_policy_register"
+  },
+  "semistructured_raw_local_certification": {
+    "run_id": "run:fd888cbd0037917a",
+    "input_seed": "logistics_semistructured_raw_local_positive_inputs.json",
+    "selected_asset_family": "logistics_warehouse",
+    "research_mode": "operator_integrated_congruence",
+    "evidence_mode_state": "operator_integrated_congruence",
+    "raw_local_source_count": 13,
+    "tariff_exposure_count": 2,
+    "control_boundary_evidence_count": 7,
+    "maintenance_proof_evidence_count": 4,
+    "can_render_pdf": true
+  },
+  "dynamic_overlay_certification": {
+    "artifact": "dynamic_congruence_intelligence_multicase_certification_latest",
+    "dynamic_orchestration_bundle": "65 passed",
+    "analytic_expansion_bundle": "9 passed",
+    "report_validator_packaging_bundle": "102 passed"
+  },
+  "remaining_residual_risk": [
+    "No prompt-blocking residual risk remains.",
+    "Remaining opportunities are future hardening only: broader document-class extraction depth and richer optional technical surfaces."
+  ]
+}

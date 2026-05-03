@@ -1,0 +1,49 @@
+{
+  "motor_id": "motor_014",
+  "motor_name": "Decision Core / Inference Engine",
+  "reviewed_at": "2026-04-17T18:23:50Z",
+  "reviewer": "automated",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/codebase/models.py",
+    "artifacts/implementation/codebase/engine.py",
+    "artifacts/implementation/codebase/errors.py",
+    "artifacts/implementation/usage_example.md"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the Decision Core / Inference Engine contract. It consumes activated inference cases and phase contracts, emits only inference records, tension records, gap agendas and validation agendas, preserves provenance, lineage and version metadata, handles synthetic-only and conflicting evidence conservatively, and does not verify claims or produce final reports."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "Inputs match the functional contract: inference_cases must be structured lists of activated motor_013 cases, and phase_contracts must authorize inference_cases plus all four motor_014 output classes.",
+      "Outputs match the contract: each accepted case produces one InferenceRecord, zero or more Tension records, one GapAgenda and one ValidationAgenda with phase contract references and rule version metadata.",
+      "The implementation rejects non-activated cases, missing or contradictory phase contracts, missing required output authorization, malformed list inputs, duplicate or empty case identifiers, and evidence references without provenance or lineage.",
+      "Synthetic-only support remains hypothesis_only and creates downstream validation needs instead of being promoted to evidence. Conflicting evidence creates an explicit conflict tension, unresolved-conflict gap and validation item rather than silently selecting a winner.",
+      "The output contract guard rejects forbidden report, verification, field evidence and decision-grade fields, keeping the motor inside its inferential handoff responsibility."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "Top-level emitted records include motor_id, case_id, phase_contract_ref, contract_version, lineage_refs, rule_version, created_at, updated_at, version_id, version_hash, source_ref, produced_by_motor, produced_at and parent_id.",
+      "EvidenceRef objects preserve evidence_id, source_class, evidence_level, provenance_ref and lineage_ref; missing identity, provenance or lineage blocks emission with PROVENANCE_REQUIRED.",
+      "Stable identifiers and version hashes are derived from canonical content, contract version, rule version, lineage and parent context, with runtime timestamp fields excluded from hash comparison.",
+      "Lineage refs include case lineage plus activation record, trigger log and phase contract references, supporting downstream reconstruction without mutating upstream records."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 7,
+    "failed": 0,
+    "coverage_assessment": "The documented test specification covers happy path, sparse case, malformed input, edge cases, pass criteria and fail criteria. A no-bytecode executable smoke exercise ran seven assertions against the implementation: bounded inference happy path, missing-validation gap creation, deterministic version hash repeatability, sparse contextual evidence blocked_by_gap behavior, synthetic-only hypothesis_only behavior, conflict tension creation and provenance rejection.",
+    "notes": "No standalone test runner was added or modified during conformance review. The smoke exercise imported the implementation with PYTHONDONTWRITEBYTECODE=1 to avoid writing cache files and used the documented phase contract and case shapes from the artifacts."
+  },
+  "open_items": []
+}

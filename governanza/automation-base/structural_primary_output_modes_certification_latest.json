@@ -1,0 +1,90 @@
+{
+  "artifact": "structural_primary_output_modes_certification_latest",
+  "generated_on": "2026-04-30",
+  "status": "accepted",
+  "scope": "Certifies sovereign primary promotion of structural output modes from official persisted input fixtures.",
+  "runtime_fix_closed": {
+    "issue": "Structural Contradiction Brief was promotable in synthetic tests but not in real runtime because motor_040 executed before downstream financial and claim-permission motors.",
+    "resolution": "cross_layer_conflicts.py now derives finance and benchmark contradiction signals directly from system abstraction and dominant variables, without requiring future-motor outputs."
+  },
+  "official_input_fixtures": [
+    "runtime-orchestrator/inputs/ova_structural_contradiction_inputs.json",
+    "runtime-orchestrator/inputs/ova_competitive_positioning_inputs.json",
+    "runtime-orchestrator/inputs/ova_tad_action_priority_inputs.json",
+    "runtime-orchestrator/inputs/mfg_wilsonart_system_redesign_inputs.json"
+  ],
+  "real_validation_runs": [
+    {
+      "fixture": "ova_structural_contradiction_inputs.json",
+      "pipeline_id": "ova-contradiction-2026",
+      "run_id": "run:e7b00d86892eff7b",
+      "status": "partial",
+      "completed_motors": 46,
+      "requested_structural_primary_mode": "Structural Contradiction Brief",
+      "structural_primary_promotion_state": "elected_primary_structural_mode",
+      "final_published_report_type": "Structural Contradiction Brief"
+    },
+    {
+      "fixture": "ova_competitive_positioning_inputs.json",
+      "pipeline_id": "ova-competitive-official-2026",
+      "run_id": "run:78de69709ab66030",
+      "status": "partial",
+      "completed_motors": 46,
+      "requested_structural_primary_mode": "Competitive Positioning Brief",
+      "structural_primary_promotion_state": "elected_primary_structural_mode",
+      "final_published_report_type": "Competitive Positioning Brief"
+    },
+    {
+      "fixture": "ova_tad_action_priority_inputs.json",
+      "pipeline_id": "ova-tad-2026",
+      "run_id": "run:edc92a97b3f0cbd3",
+      "status": "partial",
+      "completed_motors": 46,
+      "requested_structural_primary_mode": "TAD Action Priority Brief",
+      "structural_primary_promotion_state": "elected_primary_structural_mode",
+      "final_published_report_type": "TAD Action Priority Brief"
+    },
+    {
+      "fixture": "mfg_wilsonart_system_redesign_inputs.json",
+      "pipeline_id": "wilsonart-redesign-2026",
+      "run_id": "run:0f03dca923d6c0e8",
+      "status": "partial",
+      "completed_motors": 46,
+      "requested_structural_primary_mode": "System Redesign Hypothesis Brief",
+      "structural_primary_promotion_state": "elected_primary_structural_mode",
+      "final_published_report_type": "System Redesign Hypothesis Brief"
+    }
+  ],
+  "tests": {
+    "fixture_contract_bundle": {
+      "command": "pytest -q runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py -k \"official_structural_primary_input_fixtures_encode_explicit_requests or official_ova_competitive_fixture_promotes_competitive_positioning_brief or official_ova_tad_fixture_promotes_tad_action_priority_brief or official_ova_structural_contradiction_fixture_promotes_structural_contradiction_brief\"",
+      "result": "4 passed, 6 deselected"
+    },
+    "contradiction_runtime_fix_bundle": {
+      "command": "pytest -q runtime-orchestrator/tests/test_structural_intelligence_conflicts_and_framing.py runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py -k \"contradiction or official_ova_structural_contradiction_fixture_promotes_structural_contradiction_brief or official_structural_primary_input_fixtures_encode_explicit_requests\"",
+      "result": "2 passed, 12 deselected"
+    }
+  },
+  "files_hardened": [
+    "runtime-orchestrator/src/runtime_orchestrator/structural_intelligence/cross_layer_conflicts.py",
+    "runtime-orchestrator/tests/test_structural_intelligence_sovereign_integration.py",
+    "runtime-orchestrator/inputs/ova_structural_contradiction_inputs.json",
+    "runtime-orchestrator/inputs/ova_competitive_positioning_inputs.json",
+    "runtime-orchestrator/inputs/ova_tad_action_priority_inputs.json",
+    "runtime-orchestrator/inputs/mfg_wilsonart_system_redesign_inputs.json"
+  ],
+  "final_determination": {
+    "all_four_structural_primary_modes_certified_from_official_fixtures": true,
+    "notes": [
+      "The sovereign promotion gate remains opt-in. Default report identity does not change unless a requested structural mode is both eligible and elected.",
+      "Run status remains partial because broader report preflight behavior still applies, but all 46 motors completed and the promotion contract executed end-to-end."
+    ]
+  },
+  "must_not_be_weakened": [
+    "No accidental structural primary override without explicit request",
+    "No structural primary promotion when the requested mode is not eligible",
+    "No dependence on downstream future-motor outputs for contradiction activation inside motor_040",
+    "No structural mode override of claim-permission ceilings",
+    "No loss of canonical trace fields for requested mode, promotion state, and final published type"
+  ]
+}

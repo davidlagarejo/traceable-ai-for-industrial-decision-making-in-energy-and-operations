@@ -1,0 +1,50 @@
+{
+  "motor_id": "motor_034",
+  "motor_name": "Evidence Maturity & Claim Permission Engine",
+  "reviewed_at": "2026-05-03T11:46:01Z",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "runtime-orchestrator/tests/test_declared_input_downgrader.py",
+    "runtime-orchestrator/tests/test_evidence_maturity_engine.py",
+    "read_only_smoke_check: structural_building_claim_permission_surface_via_governance_wrapper"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_034 contract. The governance-stage wrapper delegates directly to the runtime adapter, preserves the full maturity-to-permission surface, caps weak evidence correctly, supports structural problem-frame activation, and clamps report promotion when the evidence base is still below threshold."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The implementation accepts the documented upstream inputs from target classification, asset-field extraction, source discovery and the optional structural/congruence lane, with the wrapper enforcing mapping-shaped input before runtime delegation.",
+      "Executable coverage confirms the key permission rules: missing GFA blocks strong numeric EUI and ROI claims, benchmark-only evidence remains bounded, declared-input rows stay capped, and requested full technical output is downgraded when maturity is insufficient.",
+      "NYC public-record and regulatory behavior remains jurisdiction-scoped: accepted public datasets can strengthen maturity when observed field support exists, while LL97-specific claim logic is filtered out in non-NYC contexts.",
+      "Structural inputs correctly activate canonical problem framing and structural output-mode classification without automatically upgrading the primary report type."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "The wrapper returns the expected top-level surfaces: dataset coverage, variable maturity, claim permission, structural claim permission, decision permission, report readiness, classifier tables, canonical problem frame, promotion gate and maturity summary.",
+      "The read-only governance-wrapper smoke check produced variable_maturity_count=90, claim_permission_count=11, structural_claim_permission_count=14, claim_contract_count=25 and report_output_mode_classifier_count=9, matching the runtime adapter surface without wrapper-local logic drift.",
+      "The smoke output preserved the documented structural claim row shape with keys claim, permission, evidence_required, current_evidence, allowed_language and forbidden_language, and it emitted canonical_problem_frame_active=true with reasoning_path=structural_first and leading_structural_output_mode=TAD Action Priority Brief."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 19,
+    "failed": 0,
+    "coverage_assessment": "Executable conformance evidence covered maturity derivation, declared-input downgrade, claim permission, decision admissibility, report clamping, NYC regulatory upgrades, non-NYC regulatory filtering and structural canonical-problem-frame activation. This is sufficient for conformance review because it exercises both the general permission boundary and the structural extension documented for motor_034.",
+    "notes": "Ran pytest -q on runtime-orchestrator/tests/test_declared_input_downgrader.py and runtime-orchestrator/tests/test_evidence_maturity_engine.py with 19 passing tests and 1 environment warning from urllib3/LibreSSL. Also executed a read-only smoke invocation through artifacts/implementation/codebase/engine.py using a structural NYC building fixture and confirmed the wrapper returns the runtime adapter surface unchanged."
+  },
+  "open_items": []
+}

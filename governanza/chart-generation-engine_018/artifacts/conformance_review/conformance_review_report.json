@@ -1,0 +1,50 @@
+{
+  "motor_id": "motor_018",
+  "motor_name": "Chart Generation Engine",
+  "reviewed_at": "2026-05-03T13:05:39Z",
+  "reviewer": "automated_codex_conformance_review",
+  "inputs_used": [
+    "artifacts/documentation_base/functional_contract.md",
+    "artifacts/documentation_base/operational_rules.md",
+    "artifacts/schema_technical/technical_schema.md",
+    "artifacts/tests/test_spec.md",
+    "artifacts/failure_modes/failure_modes_spec.md",
+    "artifacts/implementation/usage_example.md",
+    "artifacts/implementation/codebase/__init__.py",
+    "artifacts/implementation/codebase/engine.py",
+    "runtime-orchestrator/tests/test_congruence_chart_generation.py",
+    "runtime-orchestrator/tests/test_chart_taxonomy.py",
+    "read_only_smoke_check: structural_congruence_chart_set_via_governance_wrapper"
+  ],
+  "summary": {
+    "status": "PASS",
+    "verdict": "The implementation conforms to the motor_018 contract. The governance-stage wrapper delegates directly to the runtime adapter, emits governed chart assets with taxonomy metadata and bilingual copy, adapts curation copy by mode, and preserves case-stamped chart context for downstream isolation checks."
+  },
+  "contract_compliance": {
+    "status": "PASS",
+    "findings": [
+      "The implementation accepts the documented report-identity, facility-prior, congruence, measurement and finance-dependency inputs, with the wrapper enforcing mapping-shaped input before runtime delegation.",
+      "Executable coverage confirms structural and exploratory chart generation, distinct congruence copy by mode, distinct blocked/exploratory legacy chart copy, image payload presence and stable chart-taxonomy mapping.",
+      "Chart assets remain subordinated to upstream evidence posture through curation modes, section hints, epistemic markers and support-state fields.",
+      "The motor stays within boundary: it does not emit uncategorized known charts or unstamped chart assets detached from the current case."
+    ]
+  },
+  "boundary_violations": [],
+  "metadata_integrity": {
+    "status": "PASS",
+    "findings": [
+      "The wrapper returns the expected top-level surfaces: chart_assets, total_charts, chart_errors and case_namespace_register.",
+      "The read-only governance-wrapper smoke check over the structural congruence fixture produced total_charts=9, chart_errors=0 and preserved same-case stamping for the first emitted chart asset.",
+      "The same smoke confirmed the first emitted asset as chart_context_routing_status with chart_category=context_routing and title=Supporting Routing Context."
+    ]
+  },
+  "separation_issues": [],
+  "test_results": {
+    "executable": true,
+    "passed": 6,
+    "failed": 0,
+    "coverage_assessment": "Executable conformance evidence covered structural/exploratory chart generation, chart taxonomy behavior, mode-specific copy changes, image payload generation and chart-context stamping. This is sufficient for conformance review because it exercises both the governed visual surface and the taxonomy/isolation constraints that matter downstream.",
+    "notes": "Ran pytest -q on runtime-orchestrator/tests/test_congruence_chart_generation.py and runtime-orchestrator/tests/test_chart_taxonomy.py with 6 passing tests and environment warnings from urllib3/LibreSSL and matplotlib font parsing. Also executed a read-only smoke invocation through artifacts/implementation/codebase/engine.py using the structural congruence fixture and confirmed the wrapper returns governed chart assets with case stamping intact."
+  },
+  "open_items": []
+}
