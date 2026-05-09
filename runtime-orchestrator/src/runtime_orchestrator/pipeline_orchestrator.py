@@ -21,6 +21,8 @@ from uuid import uuid4
 from typing import Any
 
 from .artifact_store import ArtifactStore, hash_inputs
+from .layer_bundle import LayerBundle
+from .layer_registry import MOTOR_LAYER_MAP
 from .asset_contracts import (
     derive_asset_context_readiness,
     derive_dominant_evidence_scope,
@@ -44,6 +46,9 @@ from .motor_registry import MotorRegistry
 log = logging.getLogger(__name__)
 
 _HEARTBEAT_INTERVAL_SECONDS = 5.0
+# Default schema version emitted for any auto-constructed LayerBundle.
+# Bumped per-motor when a producer changes its payload contract.
+_DEFAULT_BUNDLE_VERSION = "1.0.0"
 _RUNTIME_HASH_EXCLUDED_KEYS = {
     "run_id",
     "status",
@@ -218,6 +223,11 @@ class PipelineOrchestrator:
                         cached = self._store.get_output(mid, result.inputs_hash)
                         if cached is not None:
                             outputs[mid] = cached
+                # Populate the LayerBundle bus for motors with a layer assigned.
+                # Auto-built from the just-produced output; adapters do not need
+                # to know about LayerBundle. Motors with layer=None are skipped
+                # (infrastructure / ingestion / support — see layer_registry.py).
+                _populate_layer_bundles(outputs, level)
                 self._refresh_run_semantics(pipeline_run, outputs)
                 self._persist_run(pipeline_run)
 
@@ -393,13 +403,12 @@ class PipelineOrchestrator:
         runtime_context: dict[str, Any],
     ) -> dict[str, Any]:
         # __bundles__ is the LayerBundle bus (RECOVERY_ARCHITECTURE_PLAN.md §3).
-        # Empty for now: population happens incrementally per RECOVERY_BACKLOG.md
-        # R-14b..R-23 as motors are migrated off the legacy __runtime__ god-object.
+        # Populated by run() after each motor with a layer assignment finishes.
         # A motor that does not consume LayerBundle simply ignores this key.
         collected: dict[str, Any] = {
             "__pipeline__": outputs.get("__pipeline__", {}),
             "__runtime__": runtime_context,
-            "__bundles__": {},
+            "__bundles__": dict(outputs.get("__bundles__", {})),
         }
         for dep_id in adapter.input_motor_ids:
             if dep_id in outputs:
@@ -704,7 +713,50 @@ def _stable_inputs_for_hash(inputs: dict[str, Any]) -> dict[str, Any]:
             for key, value in runtime.items()
             if key not in _RUNTIME_HASH_EXCLUDED_KEYS
         }
+    bundles = stable.get("__bundles__")
+    if isinstance(bundles, dict):
+        # Hash bundles by content_hash only; produced_at/produced_by are
+        # volatile and would invalidate cache on every run otherwise.
+        stable["__bundles__"] = {
+            mid: {
+                "layer_id": entry.get("layer_id"),
+                "bundle_version": entry.get("bundle_version"),
+                "content_hash": entry.get("content_hash"),
+            }
+            for mid, entry in bundles.items()
+            if isinstance(entry, dict)
+        }
     return stable
+
+
+def _populate_layer_bundles(
+    outputs: dict[str, dict[str, Any]],
+    level: list[str],
+) -> None:
+    """Auto-build LayerBundles for finished motors with a layer assignment.
+
+    Mutates `outputs["__bundles__"]` in place. Idempotent: if a bundle for a
+    motor already exists, it is overwritten with the latest payload (handles
+    the rare case of force-rerun within the same level).
+
+    Motors not in MOTOR_LAYER_MAP or assigned layer=None are skipped.
+    """
+    bundles: dict[str, dict[str, Any]] = outputs.setdefault("__bundles__", {})
+    for motor_id in level:
+        layer = MOTOR_LAYER_MAP.get(motor_id)
+        if layer is None:
+            continue
+        motor_output = outputs.get(motor_id)
+        if not isinstance(motor_output, dict) or not motor_output:
+            continue
+        bundle = LayerBundle.make(
+            layer_id=layer,
+            bundle_version=_DEFAULT_BUNDLE_VERSION,
+            produced_by=motor_id,
+            produced_at=_now(),
+            payload=motor_output,
+        )
+        bundles[motor_id] = bundle.to_dict()
 
 
 def _load_previous_pipeline_run_summary(
