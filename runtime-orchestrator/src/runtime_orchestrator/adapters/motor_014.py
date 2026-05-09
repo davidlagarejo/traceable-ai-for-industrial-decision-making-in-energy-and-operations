@@ -1610,7 +1610,7 @@ def _structural_reasoning_path(
         str(row.get("variable", "")).strip()
         for row in dominant_variable_register
         if str(row.get("variable", "")).strip()
-        and str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
+        and str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
     ][:5]
     return {
         "reasoning_path": str(canonical_problem_frame.get("reasoning_path", "")).strip() or "legacy_decision_gating_only",

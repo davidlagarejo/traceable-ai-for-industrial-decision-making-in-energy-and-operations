@@ -48,5 +48,12 @@ class Motor038Adapter(BaseMotorAdapter):
                     if row.get("evidence_state") in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
                 ]
             ),
+            "admissible_variable_count": len(
+                [
+                    row
+                    for row in register
+                    if row.get("evidence_state") in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
+                ]
+            ),
         }
 

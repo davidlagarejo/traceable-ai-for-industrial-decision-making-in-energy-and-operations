@@ -1601,7 +1601,7 @@ def _structural_output_mode_classifier_table(
         [
             row
             for row in dominant_variable_register
-            if str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
+            if str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
         ]
     )
 
@@ -1680,7 +1680,7 @@ def _structural_output_mode_classifier_table(
                 for item in redesign_rows
             )
             redesign_evidence_ready = any(
-                str(item.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
+                str(item.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
                 for item in redesign_rows
             )
             if redesign_rows_ready and redesign_evidence_ready:
@@ -1695,7 +1695,7 @@ def _structural_output_mode_classifier_table(
         elif mode_name == "Competitive Positioning Brief":
             has_conditional_peer_frame = any(
                 str(item.get("comparison_mode", "")).strip() == "conditional_comparison"
-                and str(item.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
+                and str(item.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
                 for item in competitive_comparison_register
             )
             if has_conditional_peer_frame and structural_benchmark_register:
@@ -1910,7 +1910,7 @@ def _canonical_problem_frame(
         str(row.get("variable", "")).strip()
         for row in dominant_variable_register
         if str(row.get("variable", "")).strip()
-        and str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}
+        and str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
     ][:5]
     structural_modelable = (
         str(archetype_resolution.get("selected_archetype_id", "")).strip()

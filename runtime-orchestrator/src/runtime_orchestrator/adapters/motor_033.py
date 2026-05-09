@@ -329,7 +329,7 @@ def _expanded_structural_tad_actions(
     }
     evidence_needed = minimum_evidence_for_discrimination_register[0]["minimum_evidence"] if minimum_evidence_for_discrimination_register else ""
     financial_exposure = structural_financial_exposure_register[0]["financial_exposure_if_wrong"] if structural_financial_exposure_register else ""
-    observed_or_conditional = len([row for row in dominant_variable_register if str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS"}])
+    observed_or_conditional = len([row for row in dominant_variable_register if str(row.get("evidence_state", "")).strip() in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}])
     compare_permission = claim_map.get("peer_comparison_claim", "prohibited")
     redesign_permission = claim_map.get("redesign_hypothesis_claim", "prohibited")
 
