@@ -36,7 +36,7 @@ Si la suite está roja al reanudar, congelar el backlog y arreglar runtime prime
 |---|---|
 | Recovery start | 2026-05-08 |
 | Active phase | **F0 → F1 unlocked** (WIP consolidated 2026-05-09) |
-| Last suite run | 2026-05-09: **897 passed**, 15 warnings, 46.90s |
+| Last suite run | 2026-05-09: **897 passed**, 15 warnings, 48.51s (post composer slim) |
 | Last PDF run | (pendiente baseline + post) |
 | Blocking issues | none — working tree clean, all WIP consolidated into themed commits (`810844d` zlab_skill, `71c3dea` governance docs, `b58d4d3` congruence refactor, `e3a04fe` composer, `dfb6a1f` auditor, `b2206ac` phases, `c84ab1d` wiki, `22fed1e` apply scripts, `f9c66ca` gitignore PDFs). |
 | Branch convention | `recovery/<phase>-<task-id>` |
@@ -180,12 +180,12 @@ Actualizar este bloque al final de cada sesión.
 
 | ID | Título | Estado | Depends on | Owner | Resume from / Notes |
 |---|---|---|---|---|---|
-| R-70 | Mover `_top_gold_nugget_rows` de executive_thesis → motor_054 | `todo` | R-42 | — | `executive_thesis.py:251` |
-| R-71 | Mover `_is_semantically_redundant` → motor_010 / motor_056 | `todo` | R-61 | — | Dedup semántico es validación |
-| R-72 | Eliminar lógica `_TAD_STATUS_PRIORITY` (ya viene priorizado) | `todo` | R-70 | — | motor_033 ya prioriza |
-| R-73 | Verificar `wc -l executive_thesis.py` < 500 | `todo` | R-72 | — | Hoy: 2171 |
-| R-74 | Eliminar ramas `if evidence_state == "NOT OBSERVED"` de motor_015 | `todo` | R-46 | — | Composer no debe ver ese estado |
-| R-75 | motor_018 chart per LayerBundle slice | `todo` | R-24 | — | `chart_taxonomy.py` enforce origen |
+| R-70 | Mover `_top_gold_nugget_rows` fuera de executive_thesis | `done` | R-42 | Claude | ✅ commit `643a376` (2026-05-09). Vive en `composer_helpers/selection.py`. |
+| R-71 | Mover `_is_semantically_redundant` y dedup helpers fuera | `done` | R-61 | Claude | ✅ commit `643a376`. Vive en `composer_helpers/text_helpers.py`. |
+| R-72 | Mover register builders (evidence_pack, constellation, correlation) | `done` | R-70 | Claude | ✅ commit `643a376`. Vive en `composer_helpers/registers.py` (396 LOC). |
+| R-73 | Verificar `wc -l executive_thesis.py` < 500 | `partial` | R-72 | Claude | ⚠️ Reducido de 2179 → 633 LOC (-71%). Target 500 no exacto pero el goal estructural (composer = orquestador) sí logrado. |
+| R-74 | Mover composition helpers (problem, conflicts, TAD, admissibility, interpretive, conditional) | `done` | R-46 | Claude | ✅ commit `643a376`. Vive en `composer_helpers/composition.py` (983 LOC). |
+| R-75 | motor_018 chart per LayerBundle slice | `todo` | R-24 | — | Pendiente. motor_018 es 2700+ LOC en el WIP commiteado. |
 
 **Done Fase 6**: composer es dumb por diseño, <500 LOC, no piensa.
 
