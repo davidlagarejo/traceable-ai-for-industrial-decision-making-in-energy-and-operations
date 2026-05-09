@@ -131,6 +131,64 @@ def build_conditional_redesign_register(
             ).to_dict()
         )
 
+    if target_type == "cold_chain_facility":
+        rows.append(
+            ConditionalRedesignRecord(
+                hypothesis="Refrigeration economics may be dominated by infiltration and thermal-boundary discipline rather than equipment efficiency.",
+                trigger_hypothesis="Refrigeration economics may be dominated by infiltration and thermal-boundary discipline rather than equipment efficiency.",
+                evidence_state=StructuralEvidenceState.CONDITIONAL_HYPOTHESIS,
+                if_confirmed="Prioritize thermal-boundary, dock-seal, and door-cycle redesign before equipment replacement.",
+                redesign_direction="Thermal envelope, dock seal discipline, defrost orchestration, and refrigerant integrity.",
+                if_falsified="Refrigeration equipment refresh and compressor strategy may deserve priority over envelope redesign.",
+                conflict_resolved="Equipment-first retrofit may target a secondary cost driver while the real loss is structural / operational.",
+                economic_logic="If infiltration and dock cycles dominate refrigeration duty, equipment-only retrofit captures less value than envelope discipline.",
+                evidence_needed=[
+                    "temperature zone log",
+                    "door cycle profile",
+                    "dock seal audit",
+                    "refrigeration inventory",
+                    "defrost schedule",
+                ],
+                kill_condition="Observed thermal-boundary evidence shows envelope is bounded and equipment replacement dominates economics.",
+                next_evidence=[
+                    "temperature zone log",
+                    "door cycle profile",
+                    "dock seal audit",
+                    "refrigeration inventory",
+                    "defrost schedule",
+                ],
+            ).to_dict()
+        )
+
+    if target_type == "warehouse_distribution":
+        rows.append(
+            ConditionalRedesignRecord(
+                hypothesis="Warehouse economics may be dominated by tariff exposure and dock-cycle thermal exchange rather than area-normalized inefficiency.",
+                trigger_hypothesis="Warehouse economics may be dominated by tariff exposure and dock-cycle thermal exchange rather than area-normalized inefficiency.",
+                evidence_state=StructuralEvidenceState.CONDITIONAL_HYPOTHESIS,
+                if_confirmed="Prioritize charging-window orchestration, dock-seal discipline, and control-boundary realignment before HVAC/lighting CAPEX.",
+                redesign_direction="Tariff orchestration, dock thermal discipline, control-boundary alignment.",
+                if_falsified="Generic efficiency retrofit may still deserve priority over operational redesign.",
+                conflict_resolved="Area-normalized retrofit logic may target a secondary driver while real cost is tariff- and boundary-driven.",
+                economic_logic="If charging windows and dock exchange dominate cost, area-EUI retrofit captures less value than operational discipline.",
+                evidence_needed=[
+                    "utility bill intervals",
+                    "tariff schedule",
+                    "charging schedule",
+                    "MHE inventory",
+                    "dock activity profile",
+                ],
+                kill_condition="Observed tariff and dock evidence shows charging is bounded and equipment efficiency dominates upside.",
+                next_evidence=[
+                    "utility bill intervals",
+                    "tariff schedule",
+                    "charging schedule",
+                    "MHE inventory",
+                    "dock activity profile",
+                ],
+            ).to_dict()
+        )
+
     if not rows:
         next_evidence = []
         if problem_framing_register:
