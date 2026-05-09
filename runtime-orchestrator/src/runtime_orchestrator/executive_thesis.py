@@ -1011,17 +1011,34 @@ def _primary_peer_comparison(competitive_comparison_register: list[dict[str, Any
     return dict(row or {})
 
 
-def _what_is_not_admissible(claim_contract_register: list[dict[str, Any]]) -> list[str]:
+def _what_is_not_admissible(
+    claim_contract_register: list[dict[str, Any]],
+    governed_claim_contract_register: list[dict[str, Any]] | None = None,
+) -> list[str]:
+    """Aggregate prohibited statements from both the legacy claim register and
+    the new governed contract register (motor_054.congruence_claim_contract_register).
+
+    The governed register, when populated, takes precedence — its statements
+    are listed first because they carry the four-state epistemic vocabulary
+    and explicit falsification_condition, which produces sharper "do not"
+    language for the report. The legacy register is appended for backward
+    compatibility and to avoid losing prohibitions that exist only there.
+    """
     blocked: list[str] = []
+    for row in (governed_claim_contract_register or []):
+        if _text(row.get("permission")).lower() != "prohibited":
+            continue
+        statement = _text(row.get("statement")) or _text(row.get("claim_id"))
+        if statement:
+            blocked.append(statement)
     for row in claim_contract_register:
         if _text(row.get("permission")).lower() != "prohibited":
             continue
         statement = _text(row.get("statement")) or _text(row.get("claim_id"))
         if statement:
             blocked.append(statement)
-        if len(blocked) >= 5:
-            break
-    return _dedupe(blocked)
+    deduped = _dedupe(blocked)
+    return deduped[:5]
 
 
 def _evidence_state(
@@ -1719,7 +1736,10 @@ def build_executive_thesis(  # noqa: PLR0913
         structural_financial_exposure_register,
     )
     what_is_admissible_now = [row["action"] for row in top_actions[:3]]
-    prohibited_actions = _what_is_not_admissible(claim_contract_register)
+    prohibited_actions = _what_is_not_admissible(
+        claim_contract_register,
+        governed_claim_contract_register=congruence_claim_contract_register,
+    )
     top_scenarios = _top_scenarios(scenario_register)
     top_variables = _top_dominant_variables(dominant_variable_register)
     selected_top_gold_nuggets = _top_gold_nugget_rows(

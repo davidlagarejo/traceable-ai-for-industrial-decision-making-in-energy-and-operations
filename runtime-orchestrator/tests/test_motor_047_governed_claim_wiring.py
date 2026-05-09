@@ -86,3 +86,56 @@ def test_motor_047_handles_m54_without_register_key():
     adapter = Motor047Adapter()
     result = adapter.run({"motor_054": {"unrelated_key": "value"}})
     assert result["governed_claim_contract_count"] == 0
+
+
+def test_governed_register_prohibitions_appear_in_what_is_not_admissible():
+    """R-W02b: prohibited claims from the governed register surface in
+    'what_is_not_admissible' (which feeds cap. 12 'Claim Permissions / What
+    Not To Do' of the rendered PDF)."""
+    out = build_executive_thesis(
+        **_minimal_kwargs(),
+        congruence_claim_contract_register=[
+            {
+                "claim_id": "no_unverified_roi",
+                "permission": "prohibited",
+                "statement": "Do not state ROI without bounded local evidence.",
+            },
+            {
+                "claim_id": "no_compliance_closure",
+                "permission": "prohibited",
+                "statement": "Do not close compliance without permit-to-physics evidence.",
+            },
+        ],
+    )
+    blocked = out["what_is_not_admissible"]
+    joined = " | ".join(blocked)
+    assert "Do not state ROI without bounded local evidence." in joined
+    assert "Do not close compliance without permit-to-physics evidence." in joined
+
+
+def test_governed_register_takes_precedence_over_legacy_in_ordering():
+    out = build_executive_thesis(
+        **{**_minimal_kwargs(), "claim_contract_register": [
+            {"claim_id": "legacy_x", "permission": "prohibited", "statement": "Legacy prohibition"},
+        ]},
+        congruence_claim_contract_register=[
+            {"claim_id": "governed_y", "permission": "prohibited", "statement": "Governed prohibition"},
+        ],
+    )
+    blocked = out["what_is_not_admissible"]
+    # Governed comes first
+    assert blocked[0] == "Governed prohibition"
+    assert "Legacy prohibition" in blocked
+
+
+def test_governed_register_dedupes_against_legacy_when_text_matches():
+    out = build_executive_thesis(
+        **{**_minimal_kwargs(), "claim_contract_register": [
+            {"claim_id": "x", "permission": "prohibited", "statement": "Same wording"},
+        ]},
+        congruence_claim_contract_register=[
+            {"claim_id": "y", "permission": "prohibited", "statement": "Same wording"},
+        ],
+    )
+    blocked = out["what_is_not_admissible"]
+    assert blocked.count("Same wording") == 1
