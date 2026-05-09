@@ -1,0 +1,152 @@
+{
+  "run_id": "20260404_125037Z",
+  "phase_id": "phase1_public_data_engine",
+  "phase_version": "1.0.0",
+  "target_id": "phase1_public_data_engine:facility:the-coca-cola-company",
+  "target_slug": "the-coca-cola-company",
+  "status": "completed",
+  "started_at": "2026-04-04T12:50:37.894511+00:00",
+  "finished_at": "2026-04-04T12:50:37.894513+00:00",
+  "code_version": "unknown",
+  "policy_version": "2026-04-04",
+  "model_version": "phi4:14b",
+  "query_plan_hash": "598cc34b8e9004ad45464cbce0d1585844260a8a22fe9990d4f1fd3f1b44e947",
+  "structural_pass": true,
+  "quality_pass": false,
+  "overall_pass": false,
+  "source_count": 5,
+  "high_trust_source_count": 5,
+  "datasets_used": [],
+  "quality_failed_gates": [
+    "critical_field_coverage_gate"
+  ],
+  "critical_unresolved_targets": [
+    "approximate_size",
+    "climate_context:avg_temperature",
+    "climate_context:cdd_annual",
+    "climate_context:hdd_annual",
+    "energy_context:electricity_emissions_context",
+    "energy_context:grid_mix_summary",
+    "energy_context:grid_region",
+    "operating_schedule_proxy",
+    "vintage_or_age_proxy"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "latest_attempt_csv",
+      "artifact_role": "latest_attempt_csv",
+      "relative_path": "research_attempt_log_latest.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "latest_context_csv",
+      "artifact_role": "latest_context_csv",
+      "relative_path": "phase1_public_context_case_example_latest.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "latest_intake_csv",
+      "artifact_role": "latest_intake_csv",
+      "relative_path": "phase1_intake_case_example_latest.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "latest_json",
+      "artifact_role": "latest_json",
+      "relative_path": "phase1_case_research_latest.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "latest_md",
+      "artifact_role": "latest_md",
+      "relative_path": "phase1_case_research_latest.md",
+      "media_type": "text/markdown"
+    },
+    {
+      "artifact_id": "latest_raw_search_json",
+      "artifact_role": "latest_raw_search_json",
+      "relative_path": "phase1_raw_search_results_latest.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "latest_source_decision_csv",
+      "artifact_role": "latest_source_decision_csv",
+      "relative_path": "phase1_source_decision_log_latest.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "latest_source_decision_json",
+      "artifact_role": "latest_source_decision_json",
+      "relative_path": "phase1_source_decision_log_latest.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "latest_source_pack_json",
+      "artifact_role": "latest_source_pack_json",
+      "relative_path": "phase1_source_pack_latest.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "run_attempt_csv",
+      "artifact_role": "run_attempt_csv",
+      "relative_path": "research_attempt_log_20260404_125037.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "run_context_csv",
+      "artifact_role": "run_context_csv",
+      "relative_path": "phase1_public_context_case_example_20260404_125037.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "run_intake_csv",
+      "artifact_role": "run_intake_csv",
+      "relative_path": "phase1_intake_case_example_20260404_125037.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "run_json",
+      "artifact_role": "run_json",
+      "relative_path": "phase1_case_research_20260404_125037.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "run_md",
+      "artifact_role": "run_md",
+      "relative_path": "phase1_case_research_20260404_125037.md",
+      "media_type": "text/markdown"
+    },
+    {
+      "artifact_id": "run_raw_search_json",
+      "artifact_role": "run_raw_search_json",
+      "relative_path": "phase1_raw_search_results_20260404_125037.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "run_source_decision_csv",
+      "artifact_role": "run_source_decision_csv",
+      "relative_path": "phase1_source_decision_log_20260404_125037.csv",
+      "media_type": "text/csv"
+    },
+    {
+      "artifact_id": "run_source_decision_json",
+      "artifact_role": "run_source_decision_json",
+      "relative_path": "phase1_source_decision_log_20260404_125037.json",
+      "media_type": "application/json"
+    },
+    {
+      "artifact_id": "run_source_pack_json",
+      "artifact_role": "run_source_pack_json",
+      "relative_path": "phase1_source_pack_20260404_125037.json",
+      "media_type": "application/json"
+    }
+  ],
+  "metrics": {
+    "distinct_domains": 3,
+    "raw_search_result_count": 60,
+    "rejected_result_count": 30,
+    "needs_followup_count": 0,
+    "auxiliary_only_count": 9,
+    "dataset_adapter_issue_count": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "selected_company_present": true,
+  "intake_minimum_complete": true,
+  "intake_missing_fields": [],
+  "context_rows_present": true,
+  "research_attempt_log_present": true,
+  "audit_present": true,
+  "readiness_assessment_present": true,
+  "source_decision_log_present": true,
+  "missing_top_level_keys": [],
+  "invalid_status_rows": [],
+  "missing_attempt_log_rows": [],
+  "structural_pass": true,
+  "quality_pass": false,
+  "quality_failed_gates": [
+    "critical_field_coverage_gate"
+  ],
+  "traceability_issue_rows": [],
+  "source_admission_quality_issues": [],
+  "critical_unresolved_targets": [
+    "approximate_size",
+    "climate_context:avg_temperature",
+    "climate_context:cdd_annual",
+    "climate_context:hdd_annual",
+    "energy_context:electricity_emissions_context",
+    "energy_context:grid_mix_summary",
+    "energy_context:grid_region",
+    "operating_schedule_proxy",
+    "vintage_or_age_proxy"
+  ],
+  "pass": false,
+  "source_count": 9,
+  "high_trust_source_count": 9,
+  "covered_source_families": [
+    "benchmark_archetype",
+    "climate",
+    "energy_emissions"
+  ],
+  "source_family_counts": {
+    "benchmark_archetype": 3,
+    "climate": 3,
+    "energy_emissions": 3
+  },
+  "distinct_domains": 3,
+  "raw_search_result_count": 60,
+  "rejected_result_count": 19,
+  "needs_followup_count": 0,
+  "auxiliary_only_count": 35,
+  "accepted_source_count": 9,
+  "has_accepted_sources": true
+}

@@ -1,0 +1,296 @@
+{
+  "intake": {
+    "location": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for location.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "facility_type": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for facility_type.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "sector_subsector": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for sector_subsector.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "primary_use": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for primary_use.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "approximate_size": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for approximate_size.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "vintage_or_age_proxy": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for vintage_or_age_proxy.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "operating_schedule_proxy": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for operating_schedule_proxy.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "primary_energy_or_fuel": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_public_dataset",
+      "source_reference": "https://www.eia.gov/consumption/commercial/data/2018/index.php?view=consumption",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for primary_energy_or_fuel.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "known_main_systems": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for known_main_systems.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    },
+    "primary_concern_driver": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for primary_concern_driver.",
+      "evidence_mode": "",
+      "admissibility_note": ""
+    }
+  },
+  "context": {
+    "jurisdiction_context:country": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for jurisdiction_context:country.",
+      "evidence_mode": "",
+      "admissibility_note": "Awaiting facility-linked official location evidence."
+    },
+    "jurisdiction_context:state": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for jurisdiction_context:state.",
+      "evidence_mode": "",
+      "admissibility_note": "Awaiting facility-linked official location evidence."
+    },
+    "jurisdiction_context:city": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for jurisdiction_context:city.",
+      "evidence_mode": "",
+      "admissibility_note": "Awaiting facility-linked official location evidence."
+    },
+    "jurisdiction_context:zip_postal": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for jurisdiction_context:zip_postal.",
+      "evidence_mode": "",
+      "admissibility_note": "Awaiting facility-linked official location evidence."
+    },
+    "jurisdiction_context:local_benchmarking_relevance": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_regulation",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for jurisdiction_context:local_benchmarking_relevance.",
+      "evidence_mode": "",
+      "admissibility_note": "Local applicability cannot be closed until the facility geography is directly anchored."
+    },
+    "climate_context:climate_zone": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_climate_dataset",
+      "source_reference": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for climate_context:climate_zone.",
+      "evidence_mode": "",
+      "admissibility_note": "Climate context requires a facility-linked geography anchor."
+    },
+    "climate_context:hdd_annual": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_climate_dataset",
+      "source_reference": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for climate_context:hdd_annual.",
+      "evidence_mode": "",
+      "admissibility_note": "HDD extraction requires a facility-linked official geography anchor."
+    },
+    "climate_context:cdd_annual": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_climate_dataset",
+      "source_reference": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for climate_context:cdd_annual.",
+      "evidence_mode": "",
+      "admissibility_note": "CDD extraction requires a facility-linked official geography anchor."
+    },
+    "climate_context:avg_temperature": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_climate_dataset",
+      "source_reference": "https://www.ncei.noaa.gov/access/us-climate-normals/",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for climate_context:avg_temperature.",
+      "evidence_mode": "",
+      "admissibility_note": "Average temperature extraction requires a facility-linked official geography anchor."
+    },
+    "energy_context:grid_region": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_energy_dataset",
+      "source_reference": "https://www.epa.gov/egrid",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for energy_context:grid_region.",
+      "evidence_mode": "",
+      "admissibility_note": "Grid-region mapping requires a facility-linked geography anchor."
+    },
+    "energy_context:electricity_emissions_context": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_energy_dataset",
+      "source_reference": "https://www.epa.gov/egrid",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for energy_context:electricity_emissions_context.",
+      "evidence_mode": "",
+      "admissibility_note": "Emissions context requires an anchored grid region or service territory."
+    },
+    "energy_context:grid_mix_summary": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "official_energy_dataset",
+      "source_reference": "https://www.epa.gov/egrid",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for energy_context:grid_mix_summary.",
+      "evidence_mode": "",
+      "admissibility_note": "Grid-mix summary requires an anchored grid region or state mapping."
+    },
+    "benchmark_context:comparable_archetype": {
+      "value": "commercial or industrial facility archetype pending stronger facility typing",
+      "value_status": "assumption_required",
+      "source_type": "official_public_dataset",
+      "source_reference": "https://www.eia.gov/consumption/commercial/data/2018/index.php?view=consumption",
+      "confidence_note": "low",
+      "note": "A generic benchmark family placeholder is kept only to preserve packet structure.",
+      "evidence_mode": "",
+      "admissibility_note": "Benchmark context remains provisional until facility type is directly anchored."
+    },
+    "systems_context:publicly_confirmed_systems": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for systems_context:publicly_confirmed_systems.",
+      "evidence_mode": "",
+      "admissibility_note": "No direct facility system list was found in accepted sources."
+    },
+    "systems_context:archetype_plausible_systems": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_benchmark",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for systems_context:archetype_plausible_systems.",
+      "evidence_mode": "",
+      "admissibility_note": "No bounded archetype system mapping was strong enough to keep without facility typing."
+    },
+    "systems_context:unknown_systems": {
+      "value": "all major system layers remain unresolved from current public evidence",
+      "value_status": "assumption_required",
+      "source_type": "research_protocol",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "This row preserves visible uncertainty rather than inventing a system stack.",
+      "evidence_mode": "",
+      "admissibility_note": "Unknown systems remain explicit until direct or archetype support improves."
+    },
+    "operational_practice_context:shift_signals": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for operational_practice_context:shift_signals.",
+      "evidence_mode": "",
+      "admissibility_note": "No site-linked operating schedule signal cleared the hardened gate."
+    },
+    "organization_capability_context:operations_team_visible": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for organization_capability_context:operations_team_visible.",
+      "evidence_mode": "",
+      "admissibility_note": "No accepted source directly exposed site-level operations staffing."
+    },
+    "improvement_constraint_context:uptime_criticality": {
+      "value": "",
+      "value_status": "not_publicly_found",
+      "source_type": "search_path_identity_asset",
+      "source_reference": "not_publicly_found",
+      "confidence_note": "low",
+      "note": "Public evidence gathered so far did not support a reliable Phase 1 value for improvement_constraint_context:uptime_criticality.",
+      "evidence_mode": "",
+      "admissibility_note": "Constraint context remains unresolved until facility use is better anchored."
+    }
+  }
+}

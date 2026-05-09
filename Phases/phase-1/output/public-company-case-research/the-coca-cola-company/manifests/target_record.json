@@ -1,0 +1,13 @@
+{
+  "target_id": "phase1_public_data_engine:facility:the-coca-cola-company",
+  "target_type": "facility",
+  "canonical_name": "The Coca-Cola Company",
+  "canonical_slug": "the-coca-cola-company",
+  "phase_id": "phase1_public_data_engine",
+  "created_at": "2026-04-04T12:50:37.894344+00:00",
+  "metadata": {
+    "output_contract_version": "2026-04-03",
+    "policy_version": "2026-04-04",
+    "output_root": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company"
+  }
+}

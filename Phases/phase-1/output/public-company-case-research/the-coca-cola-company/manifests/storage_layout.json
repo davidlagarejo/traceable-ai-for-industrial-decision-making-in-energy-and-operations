@@ -1,0 +1,15 @@
+{
+  "root_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company",
+  "manifests_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/manifests",
+  "runtime_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/runtime",
+  "runtime_runs_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/runtime/runs",
+  "data_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data",
+  "raw_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data/raw",
+  "normalized_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data/normalized",
+  "evidence_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data/evidence",
+  "evidence_latest_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data/evidence/latest",
+  "evidence_runs_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/data/evidence/runs",
+  "artifacts_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/artifacts",
+  "latest_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/artifacts/latest",
+  "artifact_runs_dir": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/the-coca-cola-company/artifacts/runs"
+}

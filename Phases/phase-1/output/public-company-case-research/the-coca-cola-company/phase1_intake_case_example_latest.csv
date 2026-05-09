@@ -1,0 +1,11 @@
+field_name,field_value,value_status,source_type,source_reference,confidence_note,note
+location,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for location.
+facility_type,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for facility_type.
+sector_subsector,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for sector_subsector.
+primary_use,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for primary_use.
+approximate_size,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for approximate_size.
+vintage_or_age_proxy,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for vintage_or_age_proxy.
+operating_schedule_proxy,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for operating_schedule_proxy.
+primary_energy_or_fuel,,not_publicly_found,official_public_dataset,https://www.eia.gov/consumption/commercial/pba/food-service.php,low,Public evidence gathered so far did not support a reliable Phase 1 value for primary_energy_or_fuel.
+known_main_systems,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for known_main_systems.
+primary_concern_driver,,not_publicly_found,search_path_identity_asset,not_publicly_found,low,Public evidence gathered so far did not support a reliable Phase 1 value for primary_concern_driver.

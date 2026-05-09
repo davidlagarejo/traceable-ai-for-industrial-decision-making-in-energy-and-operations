@@ -1,0 +1,13 @@
+{
+  "target_id": "phase1_public_data_engine:facility:public-storage",
+  "target_type": "facility",
+  "canonical_name": "Public Storage",
+  "canonical_slug": "public-storage",
+  "phase_id": "phase1_public_data_engine",
+  "created_at": "2026-04-04T12:33:00.993847+00:00",
+  "metadata": {
+    "output_contract_version": "2026-04-03",
+    "policy_version": "2026-04-04",
+    "output_root": "/Users/davidlagarejo/Workspace/ZLab/repos/zlab-operational-truth-framework/phase-1/output/public-company-case-research/public-storage"
+  }
+}

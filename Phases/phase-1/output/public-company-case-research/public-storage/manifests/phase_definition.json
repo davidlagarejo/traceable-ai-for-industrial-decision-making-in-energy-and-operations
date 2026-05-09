@@ -1,0 +1,33 @@
+{
+  "phase_id": "phase1_public_data_engine",
+  "phase_version": "1.0.0",
+  "target_type": "facility",
+  "output_contract_version": "2026-04-03",
+  "max_output_grade": "decision-grade",
+  "non_goals": [
+    "strong diagnosis",
+    "closed causality",
+    "verifiable savings",
+    "final compliance",
+    "high-weight recommendation",
+    "M&V"
+  ],
+  "allowed_value_statuses": [
+    "publicly_confirmed",
+    "proxy_inferred_from_archetype",
+    "assumption_required",
+    "not_publicly_found"
+  ],
+  "required_source_families": [
+    "identity_asset",
+    "climate",
+    "energy_emissions",
+    "regulation",
+    "benchmark_archetype"
+  ],
+  "quality_gates": [
+    "traceability_consistency_gate",
+    "source_admission_quality_gate",
+    "critical_field_coverage_gate"
+  ]
+}
