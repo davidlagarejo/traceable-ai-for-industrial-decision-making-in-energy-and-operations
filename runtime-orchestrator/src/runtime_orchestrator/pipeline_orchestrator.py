@@ -392,9 +392,14 @@ class PipelineOrchestrator:
         outputs: dict[str, dict[str, Any]],
         runtime_context: dict[str, Any],
     ) -> dict[str, Any]:
+        # __bundles__ is the LayerBundle bus (RECOVERY_ARCHITECTURE_PLAN.md §3).
+        # Empty for now: population happens incrementally per RECOVERY_BACKLOG.md
+        # R-14b..R-23 as motors are migrated off the legacy __runtime__ god-object.
+        # A motor that does not consume LayerBundle simply ignores this key.
         collected: dict[str, Any] = {
             "__pipeline__": outputs.get("__pipeline__", {}),
             "__runtime__": runtime_context,
+            "__bundles__": {},
         }
         for dep_id in adapter.input_motor_ids:
             if dep_id in outputs:
