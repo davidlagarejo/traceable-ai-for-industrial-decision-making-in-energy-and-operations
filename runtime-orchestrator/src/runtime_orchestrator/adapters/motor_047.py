@@ -133,10 +133,12 @@ class Motor047Adapter(BaseMotorAdapter):
             strategic_gold_nugget_authority_state=gold_nugget_authority_state or "legacy_primary_skill_shadow",
             gold_nugget_strength_register=list(m54.get("gold_nugget_strength_register", []) or []),
             congruence_action_priority_register=list(m54.get("congruence_action_priority_register", []) or []),
+            congruence_claim_contract_register=list(m54.get("congruence_claim_contract_register", []) or []),
         )
         return {
             "executive_thesis": thesis,
             "dominant_contradiction": str(thesis.get("dominant_contradiction", "")).strip(),
             "supporting_mode_count": len(list(thesis.get("supporting_modes", []) or [])),
             "client_facing_action_count": len(list(thesis.get("top_actions", []) or [])),
+            "governed_claim_contract_count": int(thesis.get("governed_claim_contract_count", 0) or 0),
         }
