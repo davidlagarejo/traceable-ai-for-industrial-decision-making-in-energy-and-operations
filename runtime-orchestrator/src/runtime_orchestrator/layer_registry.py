@@ -77,6 +77,7 @@ _LAYER_F: tuple[str, ...] = (
     "motor_022",  # Evaluation / Conformance
     "motor_036",  # System Consistency Validator
     "motor_040",  # Cross-Layer Conflict
+    "motor_059",  # Strategic Intelligence Validator (RECOVERY R-64)
 )
 
 # ── Sin capa (infraestructura / ingesta / soporte) ──────────────────────────

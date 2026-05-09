@@ -713,6 +713,17 @@
         "motor_053"
       ],
       "notes": "Produce gold nuggets, prioridades de acción y contratos de claim de la lane de congruencia, dejándolos listos para puentearse a tesis y validator sin romper la gobernanza epistemológica."
+    },
+    "motor_059": {
+      "name": "Strategic Intelligence Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_033",
+        "motor_038",
+        "motor_054"
+      ],
+      "notes": "Capa F (Validation). Detecta incoherencias estructurales en outputs estratégicos: claim sin falsification, ACT NOW con claim prohibido, DO NOT MODEL coexistente con redesign ACT NOW, OBSERVED_FACT sin evidencia. Emite warnings no bloqueantes hoy; promoción a hard-block en fase posterior."
     }
   }
 }
