@@ -9,6 +9,10 @@ from runtime_orchestrator.adapters.motor_014 import (
 from runtime_orchestrator.adapters.motor_015 import Motor015Adapter
 from runtime_orchestrator.adapters.motor_016 import (
     Motor016Adapter,
+    _apply_section_inventory_surface_gate,
+    _apply_section_surface_density_gate,
+    _apply_section_strategic_redundancy_gate,
+    _apply_section_strategic_surface_gate,
     _apply_support_chart_lane_visibility_cap,
     _build_case_adaptation_memo,
     _disambiguate_appendix_titles_against_body,
@@ -541,6 +545,104 @@ def test_case_adaptation_memo_flags_template_clone_against_comparable_reference(
     assert memo["comparison_summary"]["closest_reference_key"] == "one_vanderbilt_nyc_screening"
     assert memo["template_contamination_failure"] is True
     assert any("too close to comparable reference" in reason.lower() for reason in memo["failure_reasons"])
+
+
+def test_case_adaptation_memo_tracks_structural_diversity_when_case_is_not_flat():
+    memo = _build_case_adaptation_memo(
+        target_definition={
+            "target_type": "warehouse_distribution",
+            "target_name": "Sunrise Logistics Hub",
+            "address_raw": "1450 LOGISTICS PARKWAY, DALLAS, TX 75201",
+        },
+        jurisdiction_resolution={
+            "state": "TX",
+            "city": "Dallas",
+            "utility": "Oncor",
+            "regulatory_stack": ["local utility tariff", "fire / refrigeration review"],
+        },
+        source_register=[
+            {"accepted": True, "source_name": "county_assessor_property_record"},
+            {"accepted": True, "source_name": "utility_tariff_sheet"},
+            {"accepted": True, "source_name": "benchmarking_or_disclosure_context"},
+        ],
+        cluster_maturity_register=[
+            {"cluster": "identity_cluster", "level": 3},
+            {"cluster": "geometry_size_cluster", "level": 3},
+            {"cluster": "control_boundary_cluster", "level": 0},
+            {"cluster": "operating_regime_cluster", "level": 0},
+        ],
+        decision_front_register=[
+            {"decision_front": "Tariff optimization", "current_status": "VALIDATE FIRST"},
+            {"decision_front": "Operator evidence request", "current_status": "ACT NOW"},
+            {"decision_front": "Retrofit CAPEX", "current_status": "DEFER"},
+        ],
+        scenario_space=[
+            {
+                "scenario": "Charging windows drive peak-demand economics.",
+                "financial_meaning": "Tariff orchestration may matter more than generic EUI logic.",
+            },
+            {
+                "scenario": "Dock exchange dominates thermal behavior.",
+                "financial_meaning": "HVAC retrofit may attack the wrong variable.",
+            },
+        ],
+        report_readiness_register={
+            "report_type_allowed": ["Exploratory Prior Brief"],
+            "reason": "Case is strong enough for bounded strategic interpretation but not local closure.",
+        },
+        variable_bottleneck_register=[
+            {"variable_name": "charging_window_concentration"},
+            {"variable_name": "dock_thermal_exchange"},
+        ],
+    )
+
+    assert memo["diversity_failure"] is False
+    assert memo["diversity_score"] >= memo["diversity_target_score"]
+    by_dimension = {row["dimension"]: row for row in memo["diversity_register"]}
+    assert by_dimension["decision_front_diversity"]["passes"] is True
+    assert by_dimension["scenario_tension_diversity"]["passes"] is True
+    assert any(row["dimension"] == "structural_diversity" for row in memo["rows"])
+
+
+def test_case_adaptation_memo_flags_flat_structural_diversity_even_without_reference_clone():
+    memo = _build_case_adaptation_memo(
+        target_definition={
+            "target_type": "warehouse_distribution",
+            "target_name": "Sparse Logistics Box",
+            "address_raw": "1 BOX ROAD, EL PASO, TX 79901",
+        },
+        jurisdiction_resolution={
+            "state": "TX",
+            "city": "El Paso",
+            "utility": "",
+            "regulatory_stack": [],
+        },
+        source_register=[
+            {"accepted": True, "source_name": "county_assessor_property_record"},
+        ],
+        cluster_maturity_register=[
+            {"cluster": "identity_cluster", "level": 3},
+        ],
+        decision_front_register=[
+            {"decision_front": "Operator evidence request", "current_status": "ACT NOW"},
+        ],
+        scenario_space=[
+            {
+                "scenario": "Evidence remains too thin to discriminate the case.",
+                "financial_meaning": "",
+            }
+        ],
+        report_readiness_register={
+            "report_type_allowed": ["Target Classification Brief"],
+            "reason": "Too little evidence for structural differentiation.",
+        },
+        variable_bottleneck_register=[],
+    )
+
+    assert memo["diversity_failure"] is True
+    assert memo["template_contamination_failure"] is True
+    assert memo["diversity_score"] < memo["diversity_target_score"]
+    assert any("structural diversity" in reason.lower() for reason in memo["failure_reasons"])
 
 
 def test_decision_front_register_oil_gas_uses_family_specific_fronts():
@@ -1411,6 +1513,16 @@ def test_motor_016_exposes_structural_lane_as_governed_appendices():
     appendix_titles = [section["title"] for section in report_package["approved_views"]["report_view"]["appendix_sections"]]
     executive = next(section for section in report_package["approved_views"]["report_view"]["body_sections"] if section["title"] == "Framework Context & Executive Brief")
     executive_content = executive["blocks"][0]["content"]
+    expected_gold_nugget_authority_state = (
+        report_package["main_report_outline"].get("gold_nugget_authority_state")
+        or report_package["executive_thesis"].get("gold_nugget_authority_state")
+        or "legacy_primary_skill_shadow"
+    )
+    expected_gold_nugget_source_register = (
+        report_package["main_report_outline"].get("gold_nugget_source_register")
+        or report_package["executive_thesis"].get("gold_nugget_source_register")
+        or ""
+    )
 
     assert "Executive Structural Brief" in body_titles
     assert "What the Client Thinks the Problem Is" in body_titles
@@ -1422,18 +1534,38 @@ def test_motor_016_exposes_structural_lane_as_governed_appendices():
     assert "Competitive / Peer Comparison" in body_titles
     assert "Conditional Redesign Pathways" in body_titles
     assert "Minimum Evidence for Discrimination" in body_titles
-    assert "What Not To Do Yet" in body_titles
     assert "System Consistency Check" in body_titles
+    assert "What Not To Do Yet" in report_package["render_section_contract"]["preferred_body_sections"]
+    assert (
+        "What Not To Do Yet" in body_titles
+        or "What Not To Do Yet" in appendix_titles
+    )
     assert "Public Source Coverage Table" in appendix_titles
     assert report_package["structural_intelligence_summary"]["dominant_variable_count"] == 1
     assert report_package["structural_intelligence_summary"]["evidence_state_by_layer_count"] == 1
     assert report_package["structural_intelligence_summary"]["expanded_structural_tad_action_count"] == 1
+    assert (
+        report_package["structural_intelligence_summary"]["gold_nugget_authority_state"]
+        == expected_gold_nugget_authority_state
+    )
+    assert (
+        report_package["structural_intelligence_summary"]["gold_nugget_source_register"]
+        == expected_gold_nugget_source_register
+    )
     assert "STRUCTURAL READ" in executive_content
     assert "Primary-Eligible  : Competitive Positioning Brief" in executive_content
     assert "Reframed Problem  : Need to distinguish owner-controlled base-building upside from tenant-driven load." in executive_content
     assert "Dominant Conflict : Regulation vs control boundary" in executive_content
     assert report_package["structural_executive_summary"]["primary_structural_action"] == "Compare against structural peers"
     assert report_package["structural_executive_summary"]["promotable_primary_structural_modes"] == ["Competitive Positioning Brief"]
+    assert (
+        report_package["structural_executive_summary"]["gold_nugget_authority_state"]
+        == expected_gold_nugget_authority_state
+    )
+    assert (
+        report_package["structural_executive_summary"]["gold_nugget_source_register"]
+        == expected_gold_nugget_source_register
+    )
     assert report_package["structural_output_mode_classifier_table"][0]["recommended_output_mode"] == "Competitive Positioning Brief"
     assert report_package["structural_output_mode_classifier_table"][0]["activation_state"] == "activated_secondary"
     assert report_package["structural_output_mode_summary"]["activated_secondary_modes"] == ["Competitive Positioning Brief"]
@@ -1447,6 +1579,16 @@ def test_motor_016_exposes_structural_lane_as_governed_appendices():
         "System Abstraction Map",
         "Dominant Variables",
     ]
+    assert "What Not To Do Yet" not in report_package["render_section_contract"]["required_body_sections"]
+    assert "Claim Permission Matrix" not in report_package["render_section_contract"]["required_body_sections"]
+    assert "Scenario Space" not in report_package["render_section_contract"]["required_body_sections"]
+    assert "Conditional Redesign Pathways" not in report_package["render_section_contract"]["required_body_sections"]
+    assert report_package["render_section_contract"]["preferred_body_sections"][0] == "Executive Structural Brief"
+    assert "What the Client Thinks the Problem Is" in report_package["render_section_contract"]["preferred_body_sections"]
+    assert "What the System Thinks the Problem Might Actually Be" in report_package["render_section_contract"]["preferred_body_sections"]
+    assert set(report_package["render_section_contract"]["required_body_sections"]).issubset(
+        set(report_package["render_section_contract"]["resolved_body_sections"])
+    )
     assert report_package["planned_chapter_inventory"]["canonical_output_mode"] == "Compliance / Investment Screening Brief"
     assert report_package["planned_chapter_inventory"]["body_section_titles"] == [
         section["title"] for section in report_package["approved_views"]["report_view"]["body_sections"]
@@ -1727,6 +1869,13 @@ def test_render_section_contract_prioritizes_structural_primary_body_by_mode():
 
     assert contract["canonical_output_mode"] == "Competitive Positioning Brief"
     assert contract["structural_primary"] is True
+    assert contract["required_body_sections"] == [
+        "Executive Structural Brief",
+        "Competitive / Peer Comparison",
+        "Dominant Variables",
+        "Financial Exposure Under Uncertainty",
+        "TAD — Action Priority",
+    ]
     assert [section["title"] for section in ordered_body[:6]] == [
         "Executive Structural Brief",
         "What the System Thinks the Problem Might Actually Be",
@@ -2112,6 +2261,428 @@ def test_appendix_titles_do_not_compete_with_client_facing_body_titles():
         "Minimum Evidence for Discrimination — Technical Register",
         "Evidence State by Layer",
     ]
+
+
+def test_section_surface_density_gate_demotes_thin_support_sections_to_appendix():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "llm_text": "",
+            "blocks": [
+                {
+                    "content": "\n".join(
+                        [
+                            "EXECUTIVE STRUCTURAL THESIS",
+                            "Declared Problem     : Need retrofit decision",
+                            "Reframed Problem     : The problem may be wrong-variable selection.",
+                            "Dominant Contradiction: Service intensity vs area-normalized benchmarking",
+                            "Financial Exposure If Wrong: Capital may chase the wrong variable.",
+                            "Strategic Gold Nugget: Wrong denominator can distort capital allocation.",
+                        ]
+                    )
+                }
+            ],
+        },
+        {
+            "section_id": "cf_peer",
+            "title": "Competitive / Peer Comparison",
+            "section_type": "body",
+            "outline_section_key": "peer_comparison",
+            "llm_text": "",
+            "blocks": [
+                {
+                    "content": "\n".join(
+                        [
+                            "PEER / COMPETITIVE COMPARISON",
+                            "Peer Type           : fulfillment peer set",
+                            "Invalid Comparison Risk: area-based EUI may be structurally misleading.",
+                            "Peer Requirements   : dock density, charging profile, service level",
+                            "Better-Practice Deltas: managed charging windows and dock-seal discipline",
+                            "Peer Superiority Block: local superiority remains prohibited.",
+                        ]
+                    )
+                }
+            ],
+        },
+        {
+            "section_id": "cf_consistency",
+            "title": "System Consistency Check",
+            "section_type": "body",
+            "llm_text": "",
+            "blocks": [
+                {
+                    "content": "\n".join(
+                        [
+                            "SYSTEM CONSISTENCY CHECK",
+                            "NOT OBSERVED",
+                            "NONE BOUNDED",
+                        ]
+                    )
+                }
+            ],
+        },
+    ]
+    appendix_sections = [
+        {
+            "section_id": "a1_traceability",
+            "title": "Evidence & Source Traceability",
+            "section_type": "appendix",
+            "blocks": [{"content": "Traceability appendix."}],
+        }
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_surface_density_gate(
+        body_sections=body_sections,
+        appendix_sections=appendix_sections,
+        minimum_body_sections=2,
+        min_substantive_lines=5,
+        min_density_score=8,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Competitive / Peer Comparison",
+    ]
+    assert any(section["title"] == "System Consistency Check" for section in gated_appendix)
+    density_row = next(row for row in policy_register if row["section_id"] == "cf_consistency")
+    assert density_row["policy_state"] == "demoted_thin_body_section_to_appendix"
+    assert density_row["destination_surface"] == "appendix"
+    assert summary["demoted_to_appendix_count"] == 1
+
+
+def test_section_surface_density_gate_keeps_core_sections_even_when_thin():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "llm_text": "",
+            "blocks": [{"content": "EXECUTIVE STRUCTURAL THESIS\nNOT OBSERVED"}],
+        },
+        {
+            "section_id": "cf_claims",
+            "title": "Claim Permission Matrix",
+            "section_type": "body",
+            "llm_text": "",
+            "blocks": [{"content": "CLAIM PERMISSIONS\nNOT OBSERVED\nNONE BOUNDED"}],
+        },
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_surface_density_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=1,
+        min_substantive_lines=5,
+        min_density_score=8,
+    )
+
+    assert [section["title"] for section in gated_body] == ["Executive Structural Brief"]
+    assert any(section["title"] == "Claim Permission Matrix" for section in gated_appendix)
+    executive_row = next(row for row in policy_register if row["section_id"] == "cf_exec")
+    assert executive_row["policy_state"] == "retained_body_core_section"
+    assert summary["retained_protected_count"] == 1
+
+
+def test_section_strategic_surface_gate_demotes_low_value_optional_sections_when_body_is_already_strong():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "thesis_anchor_type": "dominant_contradiction",
+            "blocks": [{"content": "Dominant Contradiction\nReframed Problem\nFinancial Exposure\nStrategic Gold Nugget"}],
+        },
+        {
+            "section_id": "cf_vars",
+            "title": "Dominant Variables",
+            "section_type": "body",
+            "outline_section_key": "dominant_variables",
+            "thesis_anchor_type": "dominant_contradiction",
+            "blocks": [{"content": "Dominant Variables\nWrong variable\nMinimum Evidence\nDecision Front"}],
+        },
+        {
+            "section_id": "cf_peer",
+            "title": "Competitive / Peer Comparison",
+            "section_type": "body",
+            "outline_section_key": "peer_comparison",
+            "thesis_anchor_type": "dominant_contradiction",
+            "blocks": [{"content": "Peer Requirement\nBetter-Practice\nInvalid Comparison Risk\nPeer Superiority Block"}],
+        },
+        {
+            "section_id": "cf_fin",
+            "title": "Financial Exposure Under Uncertainty",
+            "section_type": "body",
+            "outline_section_key": "financial_exposure",
+            "thesis_anchor_type": "dominant_contradiction",
+            "blocks": [{"content": "Financial Exposure\nCapital Logic\nWrong boundary\nMinimum Evidence"}],
+        },
+        {
+            "section_id": "cf_tad",
+            "title": "TAD — Action Priority",
+            "section_type": "body",
+            "outline_section_key": "tad",
+            "thesis_anchor_type": "minimum_discriminating_evidence",
+            "blocks": [{"content": "Decision Front\nTrigger Family\nNo-Go Class\nFinancial Exposure"}],
+        },
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "blocks": [{"content": "Source register\nReference packet\nTrace notes"}],
+        },
+    ]
+    gated_body, gated_appendix, policy_register, summary = _apply_section_strategic_surface_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=5,
+        minimum_high_value_sections=4,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Dominant Variables",
+        "Competitive / Peer Comparison",
+        "Financial Exposure Under Uncertainty",
+        "TAD — Action Priority",
+    ]
+    assert any(section["title"] == "Source Traceability" for section in gated_appendix)
+    strategic_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert strategic_row["policy_state"] == "demoted_low_value_optional_section_to_appendix"
+    assert strategic_row["destination_surface"] == "appendix"
+    assert summary["demoted_to_appendix_count"] == 1
+
+
+def test_section_strategic_surface_gate_respects_required_body_titles_for_optional_sections():
+    body_sections = [
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "blocks": [{"content": "Source register\nReference packet\nTrace notes"}],
+        }
+    ]
+    gated_body, gated_appendix, policy_register, summary = _apply_section_strategic_surface_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        required_body_titles={"Source Traceability"},
+        minimum_body_sections=1,
+        minimum_high_value_sections=1,
+    )
+
+    assert [section["title"] for section in gated_body] == ["Source Traceability"]
+    assert gated_appendix == []
+    strategic_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert strategic_row["policy_state"] == "retained_strategic_core_section"
+    assert summary["retained_protected_count"] == 1
+
+
+def test_section_strategic_redundancy_gate_demotes_optional_sections_that_repeat_the_retained_spine():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "thesis_anchor_type": "dominant_contradiction",
+            "thesis_anchor_text": "wrong denominator and wrong variable",
+            "section_surface_strategic_profile": {"strategic_value_tier": "thesis_critical"},
+            "blocks": [{"content": "Wrong denominator\nWrong variable\nFinancial exposure\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_peer",
+            "title": "Competitive / Peer Comparison",
+            "section_type": "body",
+            "outline_section_key": "peer_comparison",
+            "thesis_anchor_type": "dominant_contradiction",
+            "thesis_anchor_text": "fair comparison requirement",
+            "section_surface_strategic_profile": {"strategic_value_tier": "strategic_support"},
+            "blocks": [{"content": "Peer requirement\nInvalid comparison risk\nBetter-practice delta"}],
+        },
+        {
+            "section_id": "cf_tad",
+            "title": "TAD — Action Priority",
+            "section_type": "body",
+            "outline_section_key": "tad",
+            "thesis_anchor_type": "minimum_discriminating_evidence",
+            "thesis_anchor_text": "request minimum evidence",
+            "section_surface_strategic_profile": {"strategic_value_tier": "strategic_support"},
+            "blocks": [{"content": "Decision front\nTrigger family\nNo-Go class\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "section_surface_strategic_profile": {"strategic_value_tier": "surface_optional"},
+            "blocks": [{"content": "Wrong denominator\nWrong variable\nMinimum evidence\nFinancial exposure"}],
+        },
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_strategic_redundancy_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=3,
+        minimum_high_value_sections=2,
+        redundancy_overlap_threshold=0.5,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Competitive / Peer Comparison",
+        "TAD — Action Priority",
+    ]
+    assert any(section["title"] == "Source Traceability" for section in gated_appendix)
+    redundancy_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert redundancy_row["policy_state"] == "demoted_redundant_optional_section_to_appendix"
+    assert redundancy_row["destination_surface"] == "appendix"
+    assert redundancy_row["highly_redundant"] is True
+    assert summary["demoted_to_appendix_count"] == 1
+
+
+def test_section_strategic_redundancy_gate_keeps_optional_section_when_overlap_is_low():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "thesis_anchor_type": "dominant_contradiction",
+            "thesis_anchor_text": "wrong denominator and wrong variable",
+            "section_surface_strategic_profile": {"strategic_value_tier": "thesis_critical"},
+            "blocks": [{"content": "Wrong denominator\nWrong variable\nFinancial exposure\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "section_surface_strategic_profile": {"strategic_value_tier": "surface_optional"},
+            "blocks": [{"content": "Provider family\nreference packet\nsource lineage\narticle register"}],
+        },
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_strategic_redundancy_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=2,
+        minimum_high_value_sections=1,
+        redundancy_overlap_threshold=0.5,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Source Traceability",
+    ]
+    assert gated_appendix == []
+    redundancy_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert redundancy_row["policy_state"] == "retained_low_value_but_nonredundant_section"
+    assert redundancy_row["highly_redundant"] is False
+    assert summary["retained_low_overlap_count"] == 1
+
+
+def test_section_inventory_surface_gate_demotes_registry_like_optional_sections_when_body_is_already_strong():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "section_surface_strategic_profile": {"strategic_value_tier": "thesis_critical", "strategic_signal_hits": 4},
+            "blocks": [{"content": "Wrong denominator\nWrong variable\nCapital logic\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_peer",
+            "title": "Competitive / Peer Comparison",
+            "section_type": "body",
+            "outline_section_key": "peer_comparison",
+            "section_surface_strategic_profile": {"strategic_value_tier": "strategic_support", "strategic_signal_hits": 4},
+            "blocks": [{"content": "Peer requirement\nInvalid comparison risk\nBetter-practice delta"}],
+        },
+        {
+            "section_id": "cf_fin",
+            "title": "Financial Exposure Under Uncertainty",
+            "section_type": "body",
+            "outline_section_key": "financial_exposure",
+            "section_surface_strategic_profile": {"strategic_value_tier": "strategic_support", "strategic_signal_hits": 4},
+            "blocks": [{"content": "Capital logic\nWrong boundary\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_tad",
+            "title": "TAD — Action Priority",
+            "section_type": "body",
+            "outline_section_key": "tad",
+            "section_surface_strategic_profile": {"strategic_value_tier": "strategic_support", "strategic_signal_hits": 4},
+            "blocks": [{"content": "Decision front\nTrigger family\nNo-Go class"}],
+        },
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "section_surface_strategic_profile": {"strategic_value_tier": "surface_optional", "strategic_signal_hits": 0},
+            "blocks": [{"content": "Status: blocked\nProvider Family: scopus\nReference Packet: 4 items"}],
+        },
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_inventory_surface_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=4,
+        minimum_high_value_sections=3,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Competitive / Peer Comparison",
+        "Financial Exposure Under Uncertainty",
+        "TAD — Action Priority",
+    ]
+    assert any(section["title"] == "Source Traceability" for section in gated_appendix)
+    inventory_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert inventory_row["policy_state"] == "demoted_inventory_like_optional_section_to_appendix"
+    assert inventory_row["destination_surface"] == "appendix"
+    assert inventory_row["inventory_heavy"] is True
+    assert summary["demoted_to_appendix_count"] == 1
+
+
+def test_section_inventory_surface_gate_keeps_optional_section_when_strategic_readout_is_present():
+    body_sections = [
+        {
+            "section_id": "cf_exec",
+            "title": "Executive Structural Brief",
+            "section_type": "body",
+            "outline_section_key": "executive_structural_thesis",
+            "section_surface_strategic_profile": {"strategic_value_tier": "thesis_critical", "strategic_signal_hits": 4},
+            "blocks": [{"content": "Wrong denominator\nWrong variable\nCapital logic\nMinimum evidence"}],
+        },
+        {
+            "section_id": "cf_trace",
+            "title": "Source Traceability",
+            "section_type": "body",
+            "section_surface_strategic_profile": {"strategic_value_tier": "surface_optional", "strategic_signal_hits": 0},
+            "section_surface_readout_register": [{"label": "Evidence Pivot", "value": "Dock cycle logs"}],
+            "blocks": [{"content": "Status: partial\nProvider Family: utility\nReference Packet: 2 items"}],
+        },
+    ]
+
+    gated_body, gated_appendix, policy_register, summary = _apply_section_inventory_surface_gate(
+        body_sections=body_sections,
+        appendix_sections=[],
+        minimum_body_sections=2,
+        minimum_high_value_sections=1,
+    )
+
+    assert [section["title"] for section in gated_body] == [
+        "Executive Structural Brief",
+        "Source Traceability",
+    ]
+    assert gated_appendix == []
+    inventory_row = next(row for row in policy_register if row["section_id"] == "cf_trace")
+    assert inventory_row["policy_state"] == "retained_optional_section_with_readout_surface"
+    assert inventory_row["readout_signal_count"] == 1
+    assert summary["retained_readout_surface_count"] == 1
 
 
 def test_hydrated_system_consistency_section_uses_motor_036_results():

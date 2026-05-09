@@ -391,14 +391,10 @@ HYBRID_STRUCTURAL_FIRST_REQUIRED_BODY_TITLES = [
     "Cross-Layer Contradictions",
     "System Abstraction Map",
     "Dominant Variables",
-    "Scenario Space",
     "Financial Exposure Under Uncertainty",
     "Competitive / Peer Comparison",
-    "Conditional Redesign Pathways",
     "Minimum Evidence for Discrimination",
     "TAD — Action Priority",
-    "What Not To Do Yet",
-    "Claim Permission Matrix",
 ]
 
 

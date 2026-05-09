@@ -74,6 +74,36 @@ def _build_traceability_summary(report_package: dict) -> dict[str, Any]:
     }
 
 
+def _resolve_gold_nugget_authority(
+    report_package: dict[str, Any],
+    motor_017_output: dict[str, Any] | None = None,
+) -> tuple[str, str]:
+    m17 = motor_017_output or {}
+    authority_state = str(m17.get("gold_nugget_authority_state", "") or "").strip()
+    source_register = str(m17.get("gold_nugget_source_register", "") or "").strip()
+    if authority_state and source_register:
+        return authority_state, source_register
+    for key in (
+        "main_report_outline",
+        "structural_executive_summary",
+        "structural_intelligence_summary",
+        "executive_thesis",
+    ):
+        row = report_package.get(key, {})
+        if not isinstance(row, dict):
+            continue
+        if not authority_state:
+            authority_state = str(row.get("gold_nugget_authority_state", "") or "").strip()
+        if not source_register:
+            source_register = str(row.get("gold_nugget_source_register", "") or "").strip()
+        if authority_state and source_register:
+            break
+    return (
+        authority_state or "legacy_primary_skill_shadow",
+        source_register or "motor_054.strategic_gold_nugget_register",
+    )
+
+
 class Motor027Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -97,6 +127,10 @@ class Motor027Adapter(BaseMotorAdapter):
         compilation_status = m17.get("compilation_status", "unknown")
         render_job_id = m17.get("render_job_id", "")
         package_id = m17.get("package_id", report_package.get("package_id", "unknown"))
+        gold_nugget_authority_state, gold_nugget_source_register = _resolve_gold_nugget_authority(
+            report_package,
+            m17,
+        )
 
         # Pipeline delivery config
         output_dir_str = pipeline.get("output_dir", str(_DEFAULT_OUTPUT_DIR))
@@ -158,6 +192,8 @@ class Motor027Adapter(BaseMotorAdapter):
                 "delivery_manifest": {
                     "document_type": report_package.get("document_type", ""),
                     "report_product_state": report_package.get("report_product_state", ""),
+                    "gold_nugget_authority_state": gold_nugget_authority_state,
+                    "gold_nugget_source_register": gold_nugget_source_register,
                     "routing_plan_summary": routing_plan_summary,
                     "report_preflight_summary": report_preflight_summary,
                     "case_adaptation_summary": {
@@ -255,6 +291,8 @@ class Motor027Adapter(BaseMotorAdapter):
                 "delivery_manifest": {
                     "document_type": report_package.get("document_type", ""),
                     "report_product_state": report_package.get("report_product_state", ""),
+                    "gold_nugget_authority_state": gold_nugget_authority_state,
+                    "gold_nugget_source_register": gold_nugget_source_register,
                     "context_integrity_summary": {
                         "scan_status": context_integrity_scan.get("scan_status", "blocked"),
                         "issue_count": context_integrity_scan.get("issue_count", 0),
@@ -302,12 +340,16 @@ class Motor027Adapter(BaseMotorAdapter):
             "pdf_source_paths": source_pdf_map,
             "pdf_output_path": output_path_str,
             "pdf_output_paths": output_paths,
+            "gold_nugget_authority_state": gold_nugget_authority_state,
+            "gold_nugget_source_register": gold_nugget_source_register,
             "epistemic_grade": epistemic_grade,
             "publication_ceiling": publication_ceiling,
             "framework_constraint": report_package.get("framework_constraint", ""),
             "governance_summary": {
                 "epistemic_grade": governance_summary.get("epistemic_grade", epistemic_grade),
                 "publication_ceiling": governance_summary.get("publication_ceiling", publication_ceiling),
+                "gold_nugget_authority_state": gold_nugget_authority_state,
+                "gold_nugget_source_register": gold_nugget_source_register,
                 "traceability_chain_complete": governance_summary.get("traceability_chain_complete", False),
                 "blocking_conflicts": governance_summary.get("blocking_conflicts", 0),
                 "stubs_active": governance_summary.get("stubs_active", 0),

@@ -1171,6 +1171,30 @@ def _hydrated_system_consistency_section(
     return hydrated
 
 
+def _resolve_gold_nugget_authority(report_package: dict[str, Any]) -> tuple[str, str]:
+    authority_state = ""
+    source_register = ""
+    for key in (
+        "main_report_outline",
+        "structural_executive_summary",
+        "structural_intelligence_summary",
+        "executive_thesis",
+    ):
+        row = report_package.get(key, {})
+        if not isinstance(row, dict):
+            continue
+        if not authority_state:
+            authority_state = str(row.get("gold_nugget_authority_state", "") or "").strip()
+        if not source_register:
+            source_register = str(row.get("gold_nugget_source_register", "") or "").strip()
+        if authority_state and source_register:
+            break
+    return (
+        authority_state or "legacy_primary_skill_shadow",
+        source_register or "motor_054.strategic_gold_nugget_register",
+    )
+
+
 # ── Adapter ───────────────────────────────────────────────────────────────────
 
 class Motor017Adapter(BaseMotorAdapter):
@@ -1186,6 +1210,7 @@ class Motor017Adapter(BaseMotorAdapter):
         report_package = inputs.get("motor_016", {}).get("report_package")
         if not report_package:
             raise ValueError("motor_016 did not produce a report_package")
+        gold_nugget_authority_state, gold_nugget_source_register = _resolve_gold_nugget_authority(report_package)
         consistency_summary = inputs.get("motor_036", {}) if isinstance(inputs.get("motor_036", {}), dict) else {}
         if consistency_summary and not consistency_summary.get("can_render_pdf", True):
             failures = list(consistency_summary.get("critical_failures", []) or [])
@@ -1197,6 +1222,8 @@ class Motor017Adapter(BaseMotorAdapter):
                 "render_job_id": "",
                 "package_id": report_package.get("package_id", "unknown"),
                 "available_languages": ["en"],
+                "gold_nugget_authority_state": gold_nugget_authority_state,
+                "gold_nugget_source_register": gold_nugget_source_register,
                 "blocking_reason": failure_summary or "Blocked by system consistency validator.",
                 "consistency_summary": consistency_summary,
             }
@@ -1412,5 +1439,7 @@ class Motor017Adapter(BaseMotorAdapter):
             "render_job_id": render_id,
             "package_id": pkg_id,
             "available_languages": available_languages,
+            "gold_nugget_authority_state": gold_nugget_authority_state,
+            "gold_nugget_source_register": gold_nugget_source_register,
             "written_chapter_inventory": _written_chapter_inventory(job_dir / "Chapters"),
         }

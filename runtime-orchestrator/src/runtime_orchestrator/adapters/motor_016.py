@@ -58,6 +58,11 @@ from ..render_section_contract import (
     resolve_render_section_contract,
 )
 from ..public_data_routing.asset_type_router import route_for_asset_type
+from ..zlab_skill.runtime_bridge import (
+    build_skill_first_runtime_analysis_registers,
+    build_skill_first_package_support_context,
+    build_skill_first_report_package_context,
+)
 from .base import BaseMotorAdapter
 
 
@@ -361,6 +366,16 @@ def _build_structural_intelligence_summary(bundle: dict[str, Any]) -> dict[str, 
     executive_thesis = dict(bundle.get("executive_thesis", {}) or {})
     main_report_outline = dict(bundle.get("main_report_outline", {}) or {})
     client_facing_tad = dict(bundle.get("client_facing_tad", {}) or {})
+    gold_nugget_authority_state = str(
+        main_report_outline.get("gold_nugget_authority_state")
+        or executive_thesis.get("gold_nugget_authority_state")
+        or "legacy_primary_skill_shadow"
+    ).strip()
+    gold_nugget_source_register = str(
+        main_report_outline.get("gold_nugget_source_register")
+        or executive_thesis.get("gold_nugget_source_register")
+        or ""
+    ).strip()
     return {
         "system_abstraction_fields": len(dict(bundle.get("system_abstraction", {}) or {})),
         "dominant_variable_count": len(list(bundle.get("dominant_variable_register", []) or [])),
@@ -377,20 +392,58 @@ def _build_structural_intelligence_summary(bundle: dict[str, Any]) -> dict[str, 
         "expanded_structural_tad_action_count": len(list(bundle.get("expanded_structural_tad_action_register", []) or [])),
         "canonical_problem_frame_active": bool(canonical_problem_frame.get("problem_frame_active", False)),
         "executive_thesis_present": bool(executive_thesis),
+        "thesis_constellation_count": len(list(executive_thesis.get("thesis_constellation_register", []) or [])),
+        "evidence_pack_family_count": len(list(executive_thesis.get("evidence_pack_register", []) or [])),
+        "gold_nugget_authority_state": gold_nugget_authority_state,
+        "gold_nugget_source_register": gold_nugget_source_register,
         "compressed_main_section_count": len(list(main_report_outline.get("sections", []) or [])),
         "client_facing_tad_action_count": int(client_facing_tad.get("action_count", 0) or 0),
     }
+
+
+def _build_visible_claim_integrity_register(
+    *,
+    claim_contract_register: list[dict[str, Any]],
+    deduplicated_claim_map: dict[str, Any],
+) -> list[dict[str, Any]]:
+    prohibited_ids = {
+        str(row.get("claim_id", "")).strip()
+        for row in list(claim_contract_register or [])
+        if str(row.get("claim_id", "")).strip()
+        and str(row.get("permission", "")).strip().lower() == "prohibited"
+    }
+    rows: list[dict[str, Any]] = []
+    for section_key, values in dict(deduplicated_claim_map or {}).items():
+        claim_ids = [
+            str(value).strip()
+            for value in list(values or [])
+            if str(value).strip()
+        ]
+        blocked_ids = [claim_id for claim_id in claim_ids if claim_id in prohibited_ids]
+        rows.append(
+            {
+                "section_key": str(section_key).strip(),
+                "visible_claim_ids": claim_ids,
+                "visible_claim_count": len(claim_ids),
+                "blocked_claim_ids": blocked_ids,
+                "blocked_claim_count": len(blocked_ids),
+            }
+        )
+    return rows
 
 
 def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any]:
     canonical_problem_frame = dict(bundle.get("canonical_problem_frame", {}) or {})
     structural_reasoning_path = dict(bundle.get("structural_reasoning_path", {}) or {})
     executive_thesis = dict(bundle.get("executive_thesis", {}) or {})
+    main_report_outline = dict(bundle.get("main_report_outline", {}) or {})
     problem_rows = list(bundle.get("problem_framing_register", []) or [])
     conflict_rows = list(bundle.get("cross_layer_conflict_register", []) or [])
     mode_rows = list(bundle.get("structural_output_mode_classifier_table", []) or [])
     mode_summary = dict(bundle.get("structural_output_mode_summary", {}) or {})
     action_rows = list(bundle.get("expanded_structural_tad_action_register", []) or [])
+    claim_contract_register = list(bundle.get("claim_contract_register", []) or [])
+    deduplicated_claim_map = dict(bundle.get("deduplicated_claim_map", {}) or {})
     primary_action = next(
         (
             row for row in action_rows
@@ -401,7 +454,42 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
     activated_modes = list(mode_summary.get("activated_secondary_modes", []) or [])
     blocked_modes = list(mode_summary.get("blocked_secondary_modes", []) or [])
     promotable_modes = list(mode_summary.get("eligible_primary_modes", []) or [])
+    gold_nugget_authority_state = str(
+        main_report_outline.get("gold_nugget_authority_state")
+        or executive_thesis.get("gold_nugget_authority_state")
+        or "legacy_primary_skill_shadow"
+    ).strip()
+    gold_nugget_source_register = str(
+        main_report_outline.get("gold_nugget_source_register")
+        or executive_thesis.get("gold_nugget_source_register")
+        or ""
+    ).strip()
+    top_gold_nuggets = [
+        str((row or {}).get("gold_nugget", "")).strip()
+        for row in list(executive_thesis.get("top_gold_nuggets", []) or [])
+        if str((row or {}).get("gold_nugget", "")).strip()
+    ]
+    thesis_constellation_register = list(executive_thesis.get("thesis_constellation_register", []) or [])
+    correlation_constellation_register = list(executive_thesis.get("correlation_constellation_register", []) or [])
+    evidence_pack_register = list(executive_thesis.get("evidence_pack_register", []) or [])
+    visible_claim_integrity_register = _build_visible_claim_integrity_register(
+        claim_contract_register=claim_contract_register,
+        deduplicated_claim_map=deduplicated_claim_map,
+    )
+    visible_blocked_claim_count = sum(
+        int(row.get("blocked_claim_count", 0) or 0)
+        for row in visible_claim_integrity_register
+    )
+    visible_claim_count = sum(
+        int(row.get("visible_claim_count", 0) or 0)
+        for row in visible_claim_integrity_register
+    )
+    conditional_opportunity_pathways = _build_conditional_opportunity_fallbacks(executive_thesis)
     return {
+        "thesis_state": str(executive_thesis.get("thesis_state", "")).strip(),
+        "local_claim_closure_state": str(executive_thesis.get("local_claim_closure_state", "")).strip(),
+        "conditional_intelligence_available": bool(executive_thesis.get("conditional_intelligence_available", False)),
+        "conditional_intelligence_reason": str(executive_thesis.get("conditional_intelligence_reason", "")).strip(),
         "structural_mode_candidates": activated_modes or [
             str(row.get("recommended_output_mode", "")).strip()
             for row in mode_rows
@@ -418,6 +506,8 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
         "blocked_structural_modes": blocked_modes,
         "promotable_primary_structural_modes": promotable_modes,
         "leading_primary_structural_mode": str(mode_summary.get("leading_primary_promotion_candidate", "") or ""),
+        "gold_nugget_authority_state": gold_nugget_authority_state,
+        "gold_nugget_source_register": gold_nugget_source_register,
         "stated_problem": str(executive_thesis.get("declared_problem", "")).strip()
         or str(canonical_problem_frame.get("stated_problem", "")).strip()
         or (str((problem_rows[0] or {}).get("stated_problem", "")).strip() if problem_rows else ""),
@@ -437,8 +527,29 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
         "primary_structural_action_status": str(
             ((executive_thesis.get("top_actions", []) or [{}])[0] or {}).get("status", "")
         ).strip() or str(primary_action.get("status", "")).strip(),
+        "why_current_question_is_premature": str(executive_thesis.get("why_current_question_is_premature", "")).strip(),
+        "what_reality_feature_changes_the_decision": str(
+            executive_thesis.get("what_reality_feature_changes_the_decision", "")
+        ).strip(),
         "dominant_risk": str(executive_thesis.get("dominant_risk", "")).strip(),
         "why_it_matters": str(executive_thesis.get("why_it_matters", "")).strip(),
+        "surprising_but_evidenced_takeaway": str(
+            executive_thesis.get("surprising_but_evidenced_takeaway", "")
+        ).strip(),
+        "dominant_operational_misunderstanding": str(
+            executive_thesis.get("dominant_operational_misunderstanding", "")
+        ).strip(),
+        "hidden_system_boundary_error": str(executive_thesis.get("hidden_system_boundary_error", "")).strip(),
+        "invalid_comparison_risk": str(executive_thesis.get("invalid_comparison_risk", "")).strip(),
+        "dominant_loss_logic": str(executive_thesis.get("dominant_loss_logic", "")).strip(),
+        "top_gold_nuggets": top_gold_nuggets[:8],
+        "thesis_constellation_register": thesis_constellation_register,
+        "correlation_constellation_register": correlation_constellation_register[:5],
+        "evidence_pack_register": evidence_pack_register,
+        "visible_claim_integrity_register": visible_claim_integrity_register,
+        "visible_blocked_claim_count": visible_blocked_claim_count,
+        "visible_claim_count": visible_claim_count,
+        "conditional_opportunity_pathways": conditional_opportunity_pathways,
         "not_admissible_actions": list(executive_thesis.get("what_is_not_admissible", []) or []),
         "supporting_modes": list(executive_thesis.get("supporting_modes", []) or []),
         "report_mode": str(executive_thesis.get("report_mode", "")).strip(),
@@ -448,6 +559,136 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
             else ""
         ),
     }
+
+
+def _build_conditional_opportunity_fallbacks(executive_thesis: dict[str, Any]) -> list[dict[str, Any]]:
+    executive_thesis = dict(executive_thesis or {})
+
+    def _clean(items: Any, *, limit: int | None = None) -> list[str]:
+        if isinstance(items, list):
+            values = [str(item).strip() for item in items if str(item).strip()]
+        else:
+            text = str(items or "").strip()
+            values = [text] if text else []
+        deduped: list[str] = []
+        seen: set[str] = set()
+        for value in values:
+            if value in seen:
+                continue
+            seen.add(value)
+            deduped.append(value)
+            if limit is not None and len(deduped) >= limit:
+                break
+        return deduped
+
+    def _append(
+        rows: list[dict[str, Any]],
+        *,
+        name: str,
+        opportunity_type: str,
+        statement: str,
+        dependencies: list[str],
+        validation_requirement: str,
+    ) -> None:
+        text = str(statement or "").strip()
+        if not text:
+            return
+        deps = _clean(dependencies, limit=4)
+        rows.append(
+            {
+                "opportunity_id": f"fallback_{len(rows) + 1:02d}",
+                "opportunity_name": name,
+                "opportunity_type": opportunity_type,
+                "plausibility_score": 0.74,
+                "decision_relevance_score": 0.87,
+                "validation_urgency_score": 0.91
+                if str(executive_thesis.get("local_claim_closure_state", "")).strip() == "blocked"
+                else 0.76,
+                "conditional_statement": text,
+                "dependency_assumptions": deps,
+                "validation_requirement": validation_requirement,
+            }
+        )
+
+    thesis_state = str(executive_thesis.get("thesis_state", "")).strip()
+    strategic_signal_present = any(
+        str(executive_thesis.get(key, "")).strip()
+        for key in [
+            "dominant_operational_misunderstanding",
+            "hidden_system_boundary_error",
+            "invalid_comparison_risk",
+            "dominant_loss_logic",
+            "surprising_but_evidenced_takeaway",
+        ]
+    ) or bool(executive_thesis.get("conditional_redesign"))
+    if thesis_state not in {"conditional_structural_intelligence", "admissible_structural_thesis"} and not strategic_signal_present:
+        return []
+
+    minimum_evidence = _clean(executive_thesis.get("minimum_discriminating_evidence", []), limit=4)
+    validation_requirement = (
+        "; ".join(minimum_evidence)
+        or str(executive_thesis.get("why_current_question_is_premature", "")).strip()
+        or "Bound the dominant discriminator before closing local claims."
+    )
+    rows: list[dict[str, Any]] = []
+    dominant_misunderstanding = str(executive_thesis.get("dominant_operational_misunderstanding", "")).strip()
+    hidden_boundary_error = str(executive_thesis.get("hidden_system_boundary_error", "")).strip()
+    invalid_comparison_risk = str(executive_thesis.get("invalid_comparison_risk", "")).strip()
+    dominant_loss_logic = str(executive_thesis.get("dominant_loss_logic", "")).strip()
+    surprising_takeaway = str(executive_thesis.get("surprising_but_evidenced_takeaway", "")).strip()
+    decision_trigger = str(executive_thesis.get("what_reality_feature_changes_the_decision", "")).strip()
+    conditional_redesign = dict(executive_thesis.get("conditional_redesign", {}) or {})
+
+    if dominant_misunderstanding or invalid_comparison_risk:
+        _append(
+            rows,
+            name="Reframe the comparison before sizing action",
+            opportunity_type="comparison_reframe",
+            statement=(
+                "If the current denominator or peer frame is wrong, capital can target the wrong variable before the asset is normalized."
+            ),
+            dependencies=[dominant_misunderstanding, invalid_comparison_risk, decision_trigger],
+            validation_requirement=validation_requirement,
+        )
+    if hidden_boundary_error or decision_trigger:
+        _append(
+            rows,
+            name="Rebound the control boundary before underwriting value capture",
+            opportunity_type="boundary_reframe",
+            statement=(
+                "If the burdened actor and the controllable load boundary are not the same thing, underwriting can over-assign savings or CAPEX to the wrong operator."
+            ),
+            dependencies=[hidden_boundary_error, decision_trigger],
+            validation_requirement=validation_requirement,
+        )
+    if dominant_loss_logic or surprising_takeaway:
+        _append(
+            rows,
+            name="Test whether the visible problem is structural, not generic energy waste",
+            opportunity_type="structural_loss_hypothesis",
+            statement=dominant_loss_logic or surprising_takeaway,
+            dependencies=[surprising_takeaway, dominant_loss_logic, decision_trigger],
+            validation_requirement=validation_requirement,
+        )
+    redesign_direction = str(
+        conditional_redesign.get("redesign_direction") or conditional_redesign.get("economic_logic") or ""
+    ).strip()
+    if redesign_direction:
+        _append(
+            rows,
+            name="Pursue redesign only after the trigger hypothesis survives falsification",
+            opportunity_type="conditional_redesign",
+            statement=redesign_direction,
+            dependencies=[
+                str(conditional_redesign.get("trigger_hypothesis") or conditional_redesign.get("hypothesis") or "").strip(),
+                str(conditional_redesign.get("kill_condition") or "").strip(),
+            ],
+            validation_requirement=(
+                "; ".join(_clean(conditional_redesign.get("evidence_needed", []), limit=4))
+                or validation_requirement
+            ),
+        )
+    return rows[:4]
 
 
 _CASE_ADAPTATION_REFERENCE_FINGERPRINTS: list[dict[str, Any]] = [
@@ -580,6 +821,15 @@ def _compare_case_adaptation_fingerprint(
     case_label: str,
     report_mode: str,
 ) -> dict[str, Any]:
+    high_value_dimensions = {
+        "target_type",
+        "jurisdiction",
+        "source_coverage",
+        "strong_clusters",
+        "decision_fronts",
+        "scenario_headlines",
+        "report_mode",
+    }
     comparables = [
         reference
         for reference in _CASE_ADAPTATION_REFERENCE_FINGERPRINTS
@@ -604,8 +854,12 @@ def _compare_case_adaptation_fingerprint(
             differing_dimensions.append("weak_clusters")
         if sorted(reference.get("decision_fronts", []) or []) != sorted(fingerprint.get("decision_fronts", []) or []):
             differing_dimensions.append("decision_fronts")
+        if sorted(reference.get("decision_front_statuses", []) or []) != sorted(fingerprint.get("decision_front_statuses", []) or []):
+            differing_dimensions.append("decision_front_statuses")
         if sorted(reference.get("scenario_headlines", []) or []) != sorted(fingerprint.get("scenario_headlines", []) or []):
             differing_dimensions.append("scenario_headlines")
+        if sorted(reference.get("bottlenecks", []) or []) != sorted(fingerprint.get("bottlenecks", []) or []):
+            differing_dimensions.append("bottlenecks")
         if str(reference.get("report_mode", "")).strip() != report_mode:
             differing_dimensions.append("report_mode")
 
@@ -628,22 +882,155 @@ def _compare_case_adaptation_fingerprint(
     )
     closest = comparison_rows[0] if comparison_rows else {}
     closest_difference_count = int(closest.get("difference_count", 0) or 0)
-    comparison_failure = bool(comparison_rows) and closest_difference_count < 2
+    closest_high_value_difference_count = sum(
+        1
+        for dimension in list(closest.get("differing_dimensions", []) or [])
+        if dimension in high_value_dimensions
+    )
+    comparison_failure = bool(comparison_rows) and (
+        closest_difference_count < 2
+        or closest_high_value_difference_count == 0
+    )
     failure_reason = ""
     if comparison_failure:
-        failure_reason = (
-            "Case adaptation fingerprint remains too close to comparable reference "
-            f"{closest.get('reference_key', '')} across structured dimensions."
-        )
+        if closest_high_value_difference_count == 0:
+            failure_reason = (
+                "Case adaptation fingerprint remains too close to comparable reference "
+                f"{closest.get('reference_key', '')}; only low-signal divergence is visible."
+            )
+        else:
+            failure_reason = (
+                "Case adaptation fingerprint remains too close to comparable reference "
+                f"{closest.get('reference_key', '')} across structured dimensions."
+            )
     return {
         "reference_count": len(comparison_rows),
         "rows": comparison_rows,
         "closest_reference_key": str(closest.get("reference_key", "")).strip(),
         "closest_reference_difference_count": closest_difference_count,
+        "closest_high_value_difference_count": closest_high_value_difference_count,
         "closest_reference_differences": list(closest.get("differing_dimensions", []) or []),
         "comparison_failure": comparison_failure,
         "failure_reason": failure_reason,
     }
+
+
+def _build_case_adaptation_diversity_register(
+    *,
+    accepted_sources: list[str],
+    decision_front_register: list[dict[str, Any]],
+    scenario_space: list[dict[str, Any]],
+    strong_clusters: list[str],
+    weak_clusters: list[str],
+    bottlenecks: list[str],
+) -> list[dict[str, Any]]:
+    unique_sources = _dedupe_preserve_order(accepted_sources)
+    unique_fronts = _dedupe_preserve_order(
+        [str(row.get("decision_front", "")).strip() for row in decision_front_register if str(row.get("decision_front", "")).strip()]
+    )
+    unique_statuses = _dedupe_preserve_order(
+        [str(row.get("current_status", "")).strip() for row in decision_front_register if str(row.get("current_status", "")).strip()]
+    )
+    nonempty_scenarios = [
+        row for row in scenario_space
+        if str(row.get("scenario", "")).strip() or str(row.get("financial_meaning", "")).strip()
+    ]
+
+    rows: list[dict[str, Any]] = []
+
+    def _append(
+        *,
+        dimension: str,
+        score: int,
+        minimum_score: int,
+        observed_state: str,
+        detail: str,
+        why_it_matters: str,
+    ) -> None:
+        rows.append(
+            {
+                "dimension": dimension,
+                "score": score,
+                "minimum_score": minimum_score,
+                "passes": score >= minimum_score,
+                "observed_state": observed_state,
+                "detail": detail,
+                "why_it_matters": why_it_matters,
+            }
+        )
+
+    _append(
+        dimension="source_family_diversity",
+        score=min(len(unique_sources), 3),
+        minimum_score=2,
+        observed_state=(
+            "strong" if len(unique_sources) >= 3
+            else "bounded" if len(unique_sources) >= 2
+            else "thin"
+        ),
+        detail=f"{len(unique_sources)} accepted source families visible in the adaptation memo.",
+        why_it_matters="Multiple source families reduce the risk that the report is only rephrasing one public surface.",
+    )
+    _append(
+        dimension="decision_front_diversity",
+        score=min(len(unique_fronts), 3) + (1 if len(unique_statuses) >= 2 else 0),
+        minimum_score=3,
+        observed_state=(
+            "strong" if len(unique_fronts) >= 3 and len(unique_statuses) >= 2
+            else "bounded" if len(unique_fronts) >= 2
+            else "thin"
+        ),
+        detail=(
+            f"{len(unique_fronts)} decision fronts across {len(unique_statuses)} action postures."
+        ),
+        why_it_matters="A strong report should show more than one action lane and more than one posture under uncertainty.",
+    )
+    _append(
+        dimension="cluster_tension_diversity",
+        score=int(bool(strong_clusters)) + int(bool(weak_clusters)),
+        minimum_score=2,
+        observed_state=(
+            "strong" if strong_clusters and weak_clusters
+            else "thin"
+        ),
+        detail=(
+            f"Strong clusters: {len(strong_clusters)}; weak clusters: {len(weak_clusters)}."
+        ),
+        why_it_matters="The report should show both what is already bounded and what still blocks closure.",
+    )
+    scenario_score = int(bool(nonempty_scenarios))
+    if len(nonempty_scenarios) >= 2:
+        scenario_score += 1
+    if any(str(row.get("financial_meaning", "")).strip() for row in nonempty_scenarios):
+        scenario_score += 1
+    _append(
+        dimension="scenario_tension_diversity",
+        score=scenario_score,
+        minimum_score=2,
+        observed_state=(
+            "strong" if scenario_score >= 3
+            else "bounded" if scenario_score >= 2
+            else "thin"
+        ),
+        detail=(
+            f"{len(nonempty_scenarios)} bounded scenarios with "
+            f"{sum(1 for row in nonempty_scenarios if str(row.get('financial_meaning', '')).strip())} explicit financial meanings."
+        ),
+        why_it_matters="The report should carry at least one real strategic fork, not just a single static thesis sentence.",
+    )
+    _append(
+        dimension="bottleneck_specificity",
+        score=min(len(bottlenecks), 2),
+        minimum_score=1,
+        observed_state=(
+            "strong" if len(bottlenecks) >= 2
+            else "bounded" if len(bottlenecks) == 1
+            else "thin"
+        ),
+        detail=f"{len(bottlenecks)} named bottleneck variables surfaced.",
+        why_it_matters="A non-template report should expose the limiting variables it thinks actually govern the case.",
+    )
+    return rows
 
 
 def _build_case_adaptation_memo(
@@ -811,8 +1198,38 @@ def _build_case_adaptation_memo(
         "strong_clusters": strong_clusters[:4],
         "weak_clusters": weak_clusters[:4],
         "decision_fronts": [str(row.get("decision_front", "")).strip() for row in decision_front_register[:4] if str(row.get("decision_front", "")).strip()],
+        "decision_front_statuses": [str(row.get("current_status", "")).strip() for row in decision_front_register[:4] if str(row.get("current_status", "")).strip()],
         "scenario_headlines": [str(row.get("scenario", "")).strip() for row in scenario_space[:2] if str(row.get("scenario", "")).strip()],
+        "bottlenecks": bottlenecks[:4],
     }
+
+    diversity_register = _build_case_adaptation_diversity_register(
+        accepted_sources=accepted_sources,
+        decision_front_register=decision_front_register,
+        scenario_space=scenario_space,
+        strong_clusters=strong_clusters,
+        weak_clusters=weak_clusters,
+        bottlenecks=bottlenecks,
+    )
+    diversity_score = sum(1 for row in diversity_register if bool(row.get("passes")))
+    diversity_target_score = 4
+    diversity_failure = diversity_score < diversity_target_score
+    rows.append(
+        {
+            "dimension": "structural_diversity",
+            "case_specific_finding": (
+                f"Structured diversity score is {diversity_score}/{len(diversity_register)} "
+                f"against a target of {diversity_target_score}."
+            ),
+            "how_it_changes_the_report": (
+                "Protects against reports that technically adapt to the case but still read too flat, single-lane, or template-like."
+            ),
+        }
+    )
+    if diversity_failure:
+        failure_reasons.append(
+            "Case adaptation memo lacks enough structural diversity across sources, decision fronts, scenarios, and bottleneck variables."
+        )
 
     comparison_summary = _compare_case_adaptation_fingerprint(
         adaptation_fingerprint,
@@ -835,6 +1252,10 @@ def _build_case_adaptation_memo(
 
     return {
         "rows": rows,
+        "diversity_register": diversity_register,
+        "diversity_score": diversity_score,
+        "diversity_target_score": diversity_target_score,
+        "diversity_failure": diversity_failure,
         "substantive_dimension_count": len(present_dimensions),
         "required_dimension_count": len(required_dimensions),
         "template_contamination_failure": bool(failure_reasons),
@@ -980,6 +1401,318 @@ def _wrap_text(text: str, prefix: str = "  ", width: int = 68) -> list[str]:
     return lines
 
 
+_THESIS_SURFACE_CONCEPT_MARKER_MAP = {
+    "denominator_reframe": {"denominator", "benchmark", "comparison", "peer", "intensity"},
+    "boundary_reframe": {"boundary", "owner", "tenant", "control", "capture", "payer", "meter"},
+    "tariff_logic": {"tariff", "demand", "peak", "charging", "schedule"},
+    "thermal_exchange": {"dock", "infiltration", "thermal", "refrigeration", "hvac", "envelope"},
+    "maintenance_reality": {"maintenance", "downtime", "reliability", "uptime"},
+    "model_prematurity": {"model", "sensor", "digital", "instrumentation", "twin"},
+}
+
+
+def _thesis_surface_tokens(*values: Any) -> set[str]:
+    tokens: set[str] = set()
+    for value in values:
+        queue = list(value) if isinstance(value, list) else [value]
+        for item in queue:
+            text = str(item or "").strip().lower()
+            if not text:
+                continue
+            for token in re.split(r"[^a-z0-9]+", text):
+                if len(token) >= 4:
+                    tokens.add(token)
+    return tokens
+
+
+def _thesis_surface_concept_markers(*values: Any) -> set[str]:
+    tokens = _thesis_surface_tokens(*values)
+    markers: set[str] = set()
+    for marker, required_tokens in _THESIS_SURFACE_CONCEPT_MARKER_MAP.items():
+        if tokens.intersection(required_tokens):
+            markers.add(marker)
+    return markers
+
+
+def _thesis_surface_overlap_ratio(left: Any, right: Any) -> float:
+    left_tokens = _thesis_surface_tokens(left)
+    right_tokens = _thesis_surface_tokens(right)
+    if not left_tokens or not right_tokens:
+        return 0.0
+    shared = len(left_tokens.intersection(right_tokens))
+    return shared / max(min(len(left_tokens), len(right_tokens)), 1)
+
+
+def _thesis_surface_shared_token_count(left: Any, right: Any) -> int:
+    return len(_thesis_surface_tokens(left).intersection(_thesis_surface_tokens(right)))
+
+
+def _thesis_surface_is_semantically_redundant(
+    candidate: Any,
+    existing_values: list[Any],
+    *,
+    threshold: float = 0.65,
+    allow_marker_collapse: bool = True,
+    marker_overlap_token_floor: int = 1,
+) -> bool:
+    candidate_markers = _thesis_surface_concept_markers(candidate)
+    for existing in list(existing_values or []):
+        if _thesis_surface_overlap_ratio(candidate, existing) >= threshold:
+            return True
+        if not allow_marker_collapse:
+            continue
+        shared_markers = candidate_markers.intersection(_thesis_surface_concept_markers(existing))
+        if shared_markers and _thesis_surface_shared_token_count(candidate, existing) >= marker_overlap_token_floor:
+            return True
+    return False
+
+
+def _compact_executive_thesis_surface(
+    *,
+    spine_signals: list[str],
+    strategic_gold_nuggets: list[str],
+    thesis_constellation_focus: list[dict[str, Any]],
+    differentiated_evidence_packs: list[dict[str, Any]],
+    correlation_constellation_register: list[dict[str, Any]],
+) -> dict[str, Any]:
+    retained_spine_signals = [str(value).strip() for value in list(spine_signals or []) if str(value).strip()]
+    compaction_register: list[dict[str, Any]] = []
+
+    def _record(
+        lane: str,
+        label: str,
+        text: str,
+        *,
+        state: str,
+        reason: str,
+        overlap_anchor: str = "",
+    ) -> None:
+        compaction_register.append(
+            {
+                "lane": lane,
+                "label": label,
+                "text": text,
+                "state": state,
+                "reason": reason,
+                "overlap_anchor": overlap_anchor,
+            }
+        )
+
+    def _first_redundant_anchor(
+        signature: str,
+        *,
+        threshold: float,
+        allow_marker_collapse: bool,
+        marker_overlap_token_floor: int = 1,
+    ) -> str:
+        for existing in retained_spine_signals:
+            if _thesis_surface_overlap_ratio(signature, existing) >= threshold:
+                return existing
+            if not allow_marker_collapse:
+                continue
+            shared_markers = _thesis_surface_concept_markers(signature).intersection(
+                _thesis_surface_concept_markers(existing)
+            )
+            if shared_markers and _thesis_surface_shared_token_count(signature, existing) >= marker_overlap_token_floor:
+                return existing
+        return ""
+
+    compacted_gold_nuggets: list[str] = []
+    for nugget in list(strategic_gold_nuggets or []):
+        text = str(nugget or "").strip()
+        if not text:
+            continue
+        redundant_anchor = _first_redundant_anchor(
+            text,
+            threshold=0.58,
+            allow_marker_collapse=True,
+        )
+        if redundant_anchor:
+            if not compacted_gold_nuggets:
+                compacted_gold_nuggets.append(text)
+                retained_spine_signals.append(text)
+                _record(
+                    "gold_nugget",
+                    "strategic_gold_nugget",
+                    text,
+                    state="retained_lane_floor",
+                    reason="At least one bounded executive nugget remains visible even when it sharpens an already visible thesis spine.",
+                    overlap_anchor=redundant_anchor,
+                )
+                continue
+            _record(
+                "gold_nugget",
+                "strategic_gold_nugget",
+                text,
+                state="suppressed_semantic_overlap",
+                reason="Strategic nugget repeats the already visible thesis spine.",
+                overlap_anchor=redundant_anchor,
+            )
+            continue
+        compacted_gold_nuggets.append(text)
+        retained_spine_signals.append(text)
+        _record(
+            "gold_nugget",
+            "strategic_gold_nugget",
+            text,
+            state="retained_visible_surface",
+            reason="Strategic nugget adds executive novelty beyond the retained thesis spine.",
+        )
+
+    compacted_constellation: list[dict[str, Any]] = []
+    for row in list(thesis_constellation_focus or []):
+        element_type = str((row or {}).get("element_type", "")).strip()
+        statement = str((row or {}).get("statement", "")).strip()
+        signature = " ".join(
+            value
+            for value in [
+                statement,
+                str((row or {}).get("why_it_matters", "")).strip(),
+                str((row or {}).get("differentiator", "")).strip(),
+            ]
+            if value
+        )
+        if not signature:
+            continue
+        allow_marker_collapse = element_type != "challenger_hypothesis"
+        redundant_anchor = _first_redundant_anchor(
+            signature,
+            threshold=0.76 if element_type == "challenger_hypothesis" else 0.62,
+            allow_marker_collapse=allow_marker_collapse,
+            marker_overlap_token_floor=2 if element_type == "challenger_hypothesis" else 1,
+        )
+        if redundant_anchor:
+            _record(
+                "thesis_constellation",
+                element_type or "constellation_lane",
+                statement or signature,
+                state="suppressed_semantic_overlap",
+                reason=(
+                    "Constellation row repeats the retained thesis spine."
+                    if allow_marker_collapse
+                    else "Challenger lane is only suppressed when it is genuinely overlapping, not merely concept-adjacent."
+                ),
+                overlap_anchor=redundant_anchor,
+            )
+            continue
+        compacted_constellation.append(row)
+        retained_spine_signals.append(signature)
+        _record(
+            "thesis_constellation",
+            element_type or "constellation_lane",
+            statement or signature,
+            state="retained_visible_surface",
+            reason="Constellation row adds a distinct rival or alternative structural lane.",
+        )
+
+    compacted_evidence_packs: list[dict[str, Any]] = []
+    for idx, row in enumerate(list(differentiated_evidence_packs or [])):
+        signature = " ".join(
+            [
+                str((row or {}).get("pack_title", "")).strip(),
+                str((row or {}).get("why", "")).strip(),
+                "; ".join(str(value).strip() for value in list((row or {}).get("unlocks", []) or []) if str(value).strip()),
+                "; ".join(str(value).strip() for value in list((row or {}).get("evidence_items", []) or []) if str(value).strip()),
+            ]
+        ).strip()
+        if not signature:
+            continue
+        redundant_anchor = _first_redundant_anchor(
+            signature,
+            threshold=0.76,
+            allow_marker_collapse=True,
+        )
+        if redundant_anchor and idx > 0:
+            _record(
+                "evidence_pack",
+                str((row or {}).get("pack_family", "")).strip() or "evidence_pack",
+                str((row or {}).get("pack_title", "")).strip() or signature,
+                state="suppressed_semantic_overlap",
+                reason="Evidence pack repeats already visible discriminator logic.",
+                overlap_anchor=redundant_anchor,
+            )
+            continue
+        compacted_evidence_packs.append(row)
+        retained_spine_signals.append(signature)
+        _record(
+            "evidence_pack",
+            str((row or {}).get("pack_family", "")).strip() or "evidence_pack",
+            str((row or {}).get("pack_title", "")).strip() or signature,
+            state="retained_visible_surface",
+            reason="Evidence pack adds distinct discriminator or proof logic.",
+        )
+
+    compacted_correlation_rows: list[dict[str, Any]] = []
+    retained_correlation_signatures: list[str] = []
+    for idx, row in enumerate(list(correlation_constellation_register or [])):
+        signature = " ".join(
+            [
+                str((row or {}).get("correlation", "")).strip(),
+                str((row or {}).get("strategic_meaning", "")).strip(),
+                "; ".join(str(value).strip() for value in list((row or {}).get("evidence_needed", []) or []) if str(value).strip()),
+            ]
+        ).strip()
+        if not signature:
+            continue
+        redundant_anchor = ""
+        for existing in retained_correlation_signatures:
+            if _thesis_surface_is_semantically_redundant(
+                signature,
+                [existing],
+                threshold=0.74,
+                allow_marker_collapse=True,
+                marker_overlap_token_floor=2,
+            ):
+                redundant_anchor = existing
+                break
+        if redundant_anchor and idx > 0:
+            _record(
+                "correlation_constellation",
+                "correlation_signal",
+                str((row or {}).get("correlation", "")).strip() or signature,
+                state="suppressed_semantic_overlap",
+                reason="Correlation row restates already visible structural meaning.",
+                overlap_anchor=redundant_anchor,
+            )
+            continue
+        compacted_correlation_rows.append(row)
+        retained_correlation_signatures.append(signature)
+        retained_spine_signals.append(signature)
+        _record(
+            "correlation_constellation",
+            "correlation_signal",
+            str((row or {}).get("correlation", "")).strip() or signature,
+            state="retained_visible_surface",
+            reason="Correlation row adds distinct multi-layer reinforcement.",
+        )
+
+    summary = {
+        "initial_gold_nugget_count": len(list(strategic_gold_nuggets or [])),
+        "retained_gold_nugget_count": len(compacted_gold_nuggets),
+        "initial_constellation_count": len(list(thesis_constellation_focus or [])),
+        "retained_constellation_count": len(compacted_constellation),
+        "initial_evidence_pack_count": len(list(differentiated_evidence_packs or [])),
+        "retained_evidence_pack_count": len(compacted_evidence_packs),
+        "initial_correlation_count": len(list(correlation_constellation_register or [])),
+        "retained_correlation_count": len(compacted_correlation_rows),
+        "suppressed_count": len(
+            [row for row in compaction_register if str(row.get("state", "")).strip() == "suppressed_semantic_overlap"]
+        ),
+        "retained_count": len(
+            [row for row in compaction_register if str(row.get("state", "")).strip() == "retained_visible_surface"]
+        ),
+    }
+
+    return {
+        "strategic_gold_nuggets": compacted_gold_nuggets,
+        "thesis_constellation_focus": compacted_constellation,
+        "differentiated_evidence_packs": compacted_evidence_packs,
+        "correlation_constellation_register": compacted_correlation_rows,
+        "thesis_surface_compaction_register": compaction_register,
+        "thesis_surface_compaction_summary": summary,
+    }
+
+
 def _section(  # noqa: PLR0913
     sid: str,
     chapter_id: str,
@@ -1101,13 +1834,50 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
         return statement, evidence_state, minimum_evidence
 
     primary_problem = dict(problem_framing_register[0] if problem_framing_register else {})
+    if not primary_problem:
+        primary_problem = {
+            "stated_problem": _text(executive_thesis.get("declared_problem")),
+            "reframed_problem": _text(executive_thesis.get("reframed_problem")),
+            "why_original_framing_may_be_wrong": _text(executive_thesis.get("why_current_question_is_premature")),
+            "strategic_risk": _text(executive_thesis.get("why_it_matters")) or _text(executive_thesis.get("dominant_risk")),
+        }
     primary_conflict = dict(cross_layer_conflict_register[0] if cross_layer_conflict_register else {})
+    if not primary_conflict:
+        primary_conflict = {
+            "conflict": _text(executive_thesis.get("dominant_contradiction")),
+            "layers_involved": list(
+                (
+                    (executive_thesis.get("thesis_ranked_conflict_register", []) or [{}])[0] or {}
+                ).get("layers_involved", [])
+                or []
+            ),
+            "why_it_matters": _text(executive_thesis.get("why_it_matters")),
+            "what_confirms_it": _list_text(executive_thesis.get("minimum_discriminating_evidence", []), default="NONE BOUNDED"),
+            "what_falsifies_it": _text(executive_thesis.get("what_reality_feature_changes_the_decision")),
+            "potential_redesign_direction": _text((executive_thesis.get("conditional_redesign", {}) or {}).get("redesign_direction")),
+        }
     primary_financial = dict(executive_thesis.get("primary_financial_exposure", {}) or {})
     primary_peer = dict(executive_thesis.get("primary_peer_comparison", {}) or {})
     primary_redesign = dict(executive_thesis.get("conditional_redesign", {}) or {})
+    peer_requirement_rows = list(primary_peer.get("peer_requirement_rows", []) or [])
+    candidate_peer_frames = list(primary_peer.get("candidate_peer_frame_register", []) or [])
+    better_practice_deltas = list(primary_peer.get("better_practice_delta_register", []) or [])
+    peer_superiority_block_reason = _text(primary_peer.get("peer_superiority_block_reason"))
     top_variables = list(executive_thesis.get("top_dominant_variables", []) or [])
     top_scenarios = list(executive_thesis.get("top_scenarios", []) or [])
     top_actions = list((client_facing_tad or {}).get("actions", []) or [])
+    conditional_pathways = list(
+        executive_thesis.get("conditional_opportunity_pathways", [])
+        or _build_conditional_opportunity_fallbacks(executive_thesis)
+    )
+    thesis_constellation_register = list(executive_thesis.get("thesis_constellation_register", []) or [])
+    correlation_constellation_register = list(executive_thesis.get("correlation_constellation_register", []) or [])
+    evidence_pack_register = list(executive_thesis.get("evidence_pack_register", []) or [])
+    strategic_gold_nuggets = [
+        str((row or {}).get("gold_nugget", "")).strip()
+        for row in list(executive_thesis.get("top_gold_nuggets", []) or [])
+        if str((row or {}).get("gold_nugget", "")).strip()
+    ][:8]
     prohibited_claims = [
         str(value).strip()
         for value in list(executive_thesis.get("what_is_not_admissible", []) or [])
@@ -1140,6 +1910,9 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
 
     evidence_state = _text(executive_thesis.get("evidence_state"), default="uncertain")
     dominant_lens = _text(executive_thesis.get("dominant_lens"), default="NOT OBSERVED")
+    thesis_state = _text(executive_thesis.get("thesis_state"), default="inadmissible_thesis")
+    local_claim_closure_state = _text(executive_thesis.get("local_claim_closure_state"), default="unknown")
+    conditional_intelligence_reason = _text(executive_thesis.get("conditional_intelligence_reason"), default="")
     minimum_evidence = list(executive_thesis.get("minimum_discriminating_evidence", []) or [])
     minimum_evidence_text = _list_text(minimum_evidence, default="NONE BOUNDED")
     evidence_unlocks = _list_text(
@@ -1199,6 +1972,287 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
         ),
     }
 
+    thesis_constellation_focus = [
+        row
+        for row in thesis_constellation_register
+        if str((row or {}).get("element_type", "")).strip()
+        not in {"dominant_contradiction", "strategic_nugget"}
+    ][:8]
+
+    differentiated_evidence_packs = evidence_pack_register[:4]
+    thesis_surface_compaction = _compact_executive_thesis_surface(
+        spine_signals=[
+            _text(executive_thesis.get("reframed_problem"), default=""),
+            _text(executive_thesis.get("dominant_contradiction"), default=""),
+            _text(executive_thesis.get("why_current_question_is_premature"), default=""),
+            conditional_intelligence_reason,
+            _text(executive_thesis.get("dominant_operational_misunderstanding"), default=""),
+            _text(executive_thesis.get("hidden_system_boundary_error"), default=""),
+            _text(executive_thesis.get("why_it_matters"), default=""),
+            _text(executive_thesis.get("dominant_risk"), default=""),
+            _text(executive_thesis.get("surprising_but_evidenced_takeaway"), default=""),
+        ],
+        strategic_gold_nuggets=strategic_gold_nuggets,
+        thesis_constellation_focus=thesis_constellation_focus,
+        differentiated_evidence_packs=differentiated_evidence_packs,
+        correlation_constellation_register=correlation_constellation_register[:4],
+    )
+    strategic_gold_nuggets = list(thesis_surface_compaction.get("strategic_gold_nuggets", []) or [])
+    thesis_constellation_focus = list(thesis_surface_compaction.get("thesis_constellation_focus", []) or [])
+    differentiated_evidence_packs = list(thesis_surface_compaction.get("differentiated_evidence_packs", []) or [])
+    correlation_constellation_register = list(
+        thesis_surface_compaction.get("correlation_constellation_register", []) or []
+    )
+    thesis_surface_compaction_register = list(
+        thesis_surface_compaction.get("thesis_surface_compaction_register", []) or []
+    )
+    thesis_surface_compaction_summary = dict(
+        thesis_surface_compaction.get("thesis_surface_compaction_summary", {}) or {}
+    )
+
+    def _build_surface_readout_rows(
+        rows: list[dict[str, str]],
+        *,
+        protected_signals: set[str] | None = None,
+        threshold: float = 0.66,
+    ) -> list[dict[str, str]]:
+        compacted_rows: list[dict[str, str]] = []
+        retained_signatures: list[str] = []
+        protected = {str(value).strip() for value in list(protected_signals or set()) if str(value).strip()}
+        for row in rows:
+            signal = _text(row.get("signal"), default="")
+            statement = _text(row.get("statement"), default="")
+            why_now = _text(row.get("why_now"), default="")
+            if not signal or not statement:
+                continue
+            signature = " ".join(value for value in [signal, statement, why_now] if value)
+            if signal in protected and not any(_text(existing.get("signal"), default="") == signal for existing in compacted_rows):
+                compacted_rows.append({"signal": signal, "statement": statement, "why_now": why_now})
+                retained_signatures.append(signature)
+                continue
+            if _thesis_surface_is_semantically_redundant(
+                signature,
+                retained_signatures,
+                threshold=threshold,
+                allow_marker_collapse=True,
+                marker_overlap_token_floor=2,
+            ):
+                continue
+            compacted_rows.append({"signal": signal, "statement": statement, "why_now": why_now})
+            retained_signatures.append(signature)
+        return compacted_rows
+
+    thesis_surface_readout_register: list[dict[str, str]] = []
+
+    def _append_thesis_surface_readout(signal: str, statement: str, *, why_now: str = "") -> None:
+        clean_statement = _text(statement, default="")
+        if not clean_statement:
+            return
+        thesis_surface_readout_register.append(
+            {
+                "signal": signal,
+                "statement": clean_statement,
+                "why_now": _text(why_now, default=""),
+            }
+        )
+
+    top_variable_row = dict(top_variables[0] if top_variables else {})
+    top_variable_name = _text(top_variable_row.get("variable"), default="")
+    top_variable_why = _text(
+        top_variable_row.get("why_it_could_matter") or top_variable_row.get("decision_impact"),
+        default="",
+    )
+
+    _append_thesis_surface_readout(
+        "Framing Risk",
+        _text(primary_problem.get("why_original_framing_may_be_wrong")),
+        why_now=_text(executive_thesis.get("reframed_problem")),
+    )
+    _append_thesis_surface_readout(
+        "Dominant Variable Shift",
+        top_variable_why or _text(executive_thesis.get("dominant_operational_misunderstanding")),
+        why_now=top_variable_name or _text(executive_thesis.get("dominant_contradiction")),
+    )
+    _append_thesis_surface_readout(
+        "Capital-at-Risk Logic",
+        _text(primary_financial.get("financial_exposure_if_wrong"))
+        or _text(executive_thesis.get("dominant_risk")),
+        why_now=_text(executive_thesis.get("capital_logic_if_assumption_breaks")),
+    )
+    _append_thesis_surface_readout(
+        "Comparison / Boundary Warning",
+        _text(executive_thesis.get("invalid_comparison_risk"))
+        or _text(executive_thesis.get("hidden_system_boundary_error")),
+        why_now=_text(executive_thesis.get("hidden_system_boundary_error")),
+    )
+    _append_thesis_surface_readout(
+        "Minimum Evidence Pivot",
+        _text(executive_thesis.get("what_reality_feature_changes_the_decision"))
+        or minimum_evidence_text,
+        why_now=minimum_evidence_text,
+    )
+
+    # Avoid a long block of quasi-duplicate strategic readouts on the visible surface.
+    thesis_surface_readout_register = _build_surface_readout_rows(
+        thesis_surface_readout_register,
+        protected_signals={
+            "Framing Risk",
+            "Dominant Variable Shift",
+            "Capital-at-Risk Logic",
+            "Minimum Evidence Pivot",
+        },
+        threshold=0.66,
+    )[:5]
+
+    financial_surface_readout_register = _build_surface_readout_rows(
+        [
+            {
+                "signal": "Cost-of-Wrong-Question",
+                "statement": _text(primary_financial.get("financial_exposure_if_wrong"))
+                or _text(executive_thesis.get("dominant_risk")),
+                "why_now": _text(primary_financial.get("structural_assumption")),
+            },
+            {
+                "signal": "Boundary / Capture Logic",
+                "statement": _text(executive_thesis.get("hidden_system_boundary_error"))
+                or _text(primary_financial.get("structural_assumption")),
+                "why_now": _text(executive_thesis.get("capital_logic_if_assumption_breaks")),
+            },
+            {
+                "signal": "Evidence Pivot",
+                "statement": _list_text(primary_financial.get("evidence_needed", []), default=""),
+                "why_now": _list_text(primary_financial.get("allowed_financial_output", []), default=""),
+            },
+        ],
+        protected_signals={"Cost-of-Wrong-Question", "Evidence Pivot"},
+        threshold=0.68,
+    )[:3]
+
+    peer_surface_readout_register = _build_surface_readout_rows(
+        [
+            {
+                "signal": "Comparison Gate",
+                "statement": _text(executive_thesis.get("invalid_comparison_risk")),
+                "why_now": _text(primary_peer.get("what_it_proves")),
+            },
+            {
+                "signal": "Valid Peer Frame",
+                "statement": _text((candidate_peer_frames[0] if candidate_peer_frames else {}).get("candidate_peer_frame")),
+                "why_now": _text((candidate_peer_frames[0] if candidate_peer_frames else {}).get("why_it_matters")),
+            },
+            {
+                "signal": "Practice Delta To Test",
+                "statement": _text((better_practice_deltas[0] if better_practice_deltas else {}).get("practice_delta")),
+                "why_now": _text((better_practice_deltas[0] if better_practice_deltas else {}).get("why_plausible")),
+            },
+        ],
+        protected_signals={"Comparison Gate"},
+        threshold=0.68,
+    )[:3]
+
+    tad_surface_readout_register = _build_surface_readout_rows(
+        [
+            {
+                "signal": "Decision Front",
+                "statement": _text((top_actions[0] if top_actions else {}).get("decision_front")),
+                "why_now": _text((top_actions[0] if top_actions else {}).get("why")),
+            },
+            {
+                "signal": "Protect Capital From",
+                "statement": _text((top_actions[0] if top_actions else {}).get("financial_exposure")),
+                "why_now": _text((top_actions[0] if top_actions else {}).get("prohibited_action_class")),
+            },
+            {
+                "signal": "Do Not Do Yet",
+                "statement": _text((top_actions[0] if top_actions else {}).get("prohibited_action")),
+                "why_now": _text((top_actions[0] if top_actions else {}).get("evidence_needed")),
+            },
+        ],
+        protected_signals={"Decision Front", "Do Not Do Yet"},
+        threshold=0.68,
+    )[:3]
+
+    section_surface_readout_map = {
+        "executive_structural_thesis": thesis_surface_readout_register,
+        "financial_exposure": financial_surface_readout_register,
+        "peer_comparison": peer_surface_readout_register,
+        "tad": tad_surface_readout_register,
+    }
+
+    def _token_set(*values: Any) -> set[str]:
+        tokens: set[str] = set()
+        for value in values:
+            queue = list(value) if isinstance(value, list) else [value]
+            for item in queue:
+                text = str(item or "").strip().lower()
+                if not text:
+                    continue
+                for token in re.split(r"[^a-z0-9]+", text):
+                    if len(token) >= 4:
+                        tokens.add(token)
+        return tokens
+
+    def _best_pack(
+        *signals: Any,
+        preferred_families: list[str] | None = None,
+    ) -> dict[str, Any]:
+        preferred = [str(value).strip() for value in list(preferred_families or []) if str(value).strip()]
+        for family in preferred:
+            for row in evidence_pack_register:
+                if _text(row.get("pack_family")) == family:
+                    return row
+        signal_tokens = _token_set(*signals)
+        best_row: dict[str, Any] = {}
+        best_score = -1
+        for row in evidence_pack_register:
+            row_tokens = _token_set(
+                row.get("pack_title"),
+                row.get("pack_family"),
+                row.get("evidence_items", []),
+                row.get("unlocks", []),
+                row.get("why"),
+            )
+            score = len(signal_tokens.intersection(row_tokens))
+            if score > best_score:
+                best_score = score
+                best_row = row
+        return best_row
+
+    def _constellation_rows_for_pack(
+        pack_family: str,
+        *,
+        preferred_types: list[str] | None = None,
+        limit: int = 3,
+    ) -> list[dict[str, Any]]:
+        rows = [
+            row
+            for row in thesis_constellation_register
+            if _text(row.get("evidence_pack_family")) == pack_family
+        ]
+        preferred = [str(value).strip() for value in list(preferred_types or []) if str(value).strip()]
+        if preferred:
+            rows.sort(
+                key=lambda row: (
+                    0 if _text(row.get("element_type")) in preferred else 1,
+                    thesis_constellation_register.index(row),
+                )
+            )
+        return rows[:limit]
+
+    fair_comparison_pack = _best_pack(
+        primary_peer.get("peer_type"),
+        primary_peer.get("what_it_proves"),
+        executive_thesis.get("invalid_comparison_risk"),
+        preferred_families=["fair_comparison_pack"],
+    )
+    financial_logic_pack = _best_pack(
+        primary_financial.get("structural_assumption"),
+        primary_financial.get("financial_exposure_if_wrong"),
+        executive_thesis.get("hidden_system_boundary_error"),
+        executive_thesis.get("dominant_risk"),
+        preferred_families=["control_boundary_pack", "capital_logic_pack"],
+    )
+
     def _section_from_lines(
         *,
         idx: int,
@@ -1225,6 +2279,12 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
         row["outline_section_key"] = section_key
         row["thesis_anchor_type"] = anchor_type
         row["thesis_anchor_text"] = anchor_text
+        if section_key == "executive_structural_thesis":
+            row["thesis_surface_compaction_register"] = thesis_surface_compaction_register
+            row["thesis_surface_compaction_summary"] = thesis_surface_compaction_summary
+            row["thesis_surface_readout_register"] = thesis_surface_readout_register
+        if section_key in section_surface_readout_map:
+            row["section_surface_readout_register"] = list(section_surface_readout_map.get(section_key, []) or [])
         return row
 
     composed: list[dict[str, Any]] = []
@@ -1241,9 +2301,14 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 "",
                 f"  Declared Problem     : {_text(executive_thesis.get('declared_problem'))}",
                 f"  Reframed Problem     : {_text(executive_thesis.get('reframed_problem'))}",
+                f"  Thesis State         : {thesis_state}",
+                f"  Local Claim Closure  : {local_claim_closure_state}",
                 f"  Dominant Contradiction: {_text(executive_thesis.get('dominant_contradiction'))}",
                 f"  Hidden Assumption At Risk: {_text(executive_thesis.get('hidden_assumption_at_risk'))}",
                 f"  Why The Question Is Premature: {_text(executive_thesis.get('why_current_question_is_premature'))}",
+                f"  Conditional Intelligence Reason: {conditional_intelligence_reason or 'NOT OBSERVED'}",
+                f"  Dominant Misunderstanding: {_text(executive_thesis.get('dominant_operational_misunderstanding'))}",
+                f"  Hidden Boundary Error: {_text(executive_thesis.get('hidden_system_boundary_error'))}",
                 f"  Reality Feature That Changes The Decision: {_text(executive_thesis.get('what_reality_feature_changes_the_decision'))}",
                 f"  Why It Matters       : {_text(executive_thesis.get('why_it_matters'))}",
                 f"  Immediate Action     : {_list_text(admissible_actions, default='NONE BOUNDED')}",
@@ -1252,12 +2317,59 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Capital Logic If It Holds: {_text(executive_thesis.get('capital_logic_if_assumption_holds'))}",
                 f"  Capital Logic If It Breaks: {_text(executive_thesis.get('capital_logic_if_assumption_breaks'))}",
                 f"  Surprising But Evidenced Takeaway: {_text(executive_thesis.get('surprising_but_evidenced_takeaway'))}",
+                f"  Primary Strategic Gold Nugget: {_text(strategic_gold_nuggets[0] if strategic_gold_nuggets else '', default='NONE BOUNDED')}",
                 f"  Evidence State       : {evidence_state}",
                 f"  Visible Report Mode  : {report_mode}",
                 f"  Dominant Lens        : {dominant_lens}",
                 f"  Supporting Modes     : {_list_text(supporting_modes, default='NONE')}",
                 "",
             ]
+            if thesis_surface_readout_register:
+                content_en += ["  Strategic Reading:", ""]
+                for row in thesis_surface_readout_register:
+                    content_en += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_en += [f"      Why Now : {_text(row.get('why_now'))}"]
+                    content_en += [""]
+            if len(strategic_gold_nuggets) > 1:
+                content_en += ["  Strategic Gold Nugget Set:", ""]
+                for nugget in strategic_gold_nuggets[:8]:
+                    content_en += [
+                        f"    - {nugget}",
+                        "",
+                    ]
+            if thesis_constellation_focus:
+                content_en += ["  Rival Thesis Constellation:", ""]
+                for row in thesis_constellation_focus:
+                    content_en += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Why It Matters : {_text(row.get('why_it_matters'))}",
+                        f"      Differentiator : {_text(row.get('differentiator'))}",
+                        f"      Evidence Pack  : {_text(row.get('evidence_pack_family'), default='NONE BOUNDED')}",
+                        "",
+                    ]
+            if differentiated_evidence_packs:
+                content_en += ["  Differentiated Evidence Packs:", ""]
+                for row in differentiated_evidence_packs:
+                    content_en += [
+                        f"    - {_text(row.get('pack_title'))} [{_text(row.get('evidence_state'), default='CONDITIONAL_HYPOTHESIS')}]",
+                        f"      Evidence : {_list_text(row.get('evidence_items', []), default='NONE BOUNDED')}",
+                        f"      Unlocks  : {_list_text(row.get('unlocks', []), default='NONE BOUNDED')}",
+                        f"      Why      : {_text(row.get('why'))}",
+                        "",
+                    ]
+            if correlation_constellation_register:
+                content_en += ["  Correlation Constellation Signals:", ""]
+                for row in correlation_constellation_register[:4]:
+                    content_en += [
+                        f"    - {_text(row.get('correlation'))}",
+                        f"      Linked Conflict : {_text(row.get('linked_conflict'))}",
+                        f"      Strategic Meaning: {_text(row.get('strategic_meaning'))}",
+                        f"      Evidence Needed : {_list_text(row.get('evidence_needed', []), default='NONE BOUNDED')}",
+                        "",
+                    ]
             content_es = [
                 _sep("="),
                 "TESIS ESTRUCTURAL EJECUTIVA",
@@ -1265,9 +2377,14 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 "",
                 f"  Problema Declarado   : {_text(executive_thesis.get('declared_problem'))}",
                 f"  Problema Reencuadrado: {_text(executive_thesis.get('reframed_problem'))}",
+                f"  Estado de la Tesis   : {thesis_state}",
+                f"  Cierre de Claim Local: {local_claim_closure_state}",
                 f"  Contradicción Dominante: {_text(executive_thesis.get('dominant_contradiction'))}",
                 f"  Suposición en Riesgo : {_text(executive_thesis.get('hidden_assumption_at_risk'))}",
                 f"  Por Qué la Pregunta Es Prematura: {_text(executive_thesis.get('why_current_question_is_premature'))}",
+                f"  Razón de Inteligencia Condicional: {conditional_intelligence_reason or 'NO OBSERVADA'}",
+                f"  Malentendido Dominante: {_text(executive_thesis.get('dominant_operational_misunderstanding'))}",
+                f"  Error Oculto de Frontera: {_text(executive_thesis.get('hidden_system_boundary_error'))}",
                 f"  Rasgo de la Realidad que Cambia la Decisión: {_text(executive_thesis.get('what_reality_feature_changes_the_decision'))}",
                 f"  Por Qué Importa      : {_text(executive_thesis.get('why_it_matters'))}",
                 f"  Acción Inmediata     : {_list_text(admissible_actions, default='NINGUNA ACOTADA')}",
@@ -1276,12 +2393,59 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Lógica de Capital Si Se Confirma: {_text(executive_thesis.get('capital_logic_if_assumption_holds'))}",
                 f"  Lógica de Capital Si Se Rompe: {_text(executive_thesis.get('capital_logic_if_assumption_breaks'))}",
                 f"  Hallazgo Sorprendente Pero Sustentado: {_text(executive_thesis.get('surprising_but_evidenced_takeaway'))}",
+                f"  Gold Nugget Estratégico Primario: {_text(strategic_gold_nuggets[0] if strategic_gold_nuggets else '', default='NINGUNO ACOTADO')}",
                 f"  Estado de Evidencia  : {evidence_state}",
                 f"  Modo Visible         : {report_mode}",
                 f"  Lente Dominante      : {dominant_lens}",
                 f"  Modos de Soporte     : {_list_text(supporting_modes, default='NINGUNO')}",
                 "",
             ]
+            if thesis_surface_readout_register:
+                content_es += ["  Lectura Estratégica:", ""]
+                for row in thesis_surface_readout_register:
+                    content_es += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_es += [f"      Por Qué Ahora: {_text(row.get('why_now'))}"]
+                    content_es += [""]
+            if len(strategic_gold_nuggets) > 1:
+                content_es += ["  Set de Gold Nuggets Estratégicos:", ""]
+                for nugget in strategic_gold_nuggets[:8]:
+                    content_es += [
+                        f"    - {nugget}",
+                        "",
+                    ]
+            if thesis_constellation_focus:
+                content_es += ["  Constelación de Hipótesis Rivales:", ""]
+                for row in thesis_constellation_focus:
+                    content_es += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Por Qué Importa : {_text(row.get('why_it_matters'))}",
+                        f"      Diferenciador   : {_text(row.get('differentiator'))}",
+                        f"      Pack de Evidencia: {_text(row.get('evidence_pack_family'), default='NINGUNO ACOTADO')}",
+                        "",
+                    ]
+            if correlation_constellation_register:
+                content_es += ["  Señales de Constelación de Correlaciones:", ""]
+                for row in correlation_constellation_register[:4]:
+                    content_es += [
+                        f"    - {_text(row.get('correlation'))}",
+                        f"      Conflicto Vinculado: {_text(row.get('linked_conflict'))}",
+                        f"      Significado Estratégico: {_text(row.get('strategic_meaning'))}",
+                        f"      Evidencia Necesaria : {_list_text(row.get('evidence_needed', []), default='NINGUNA ACOTADA')}",
+                        "",
+                    ]
+            if differentiated_evidence_packs:
+                content_es += ["  Packs de Evidencia Diferenciados:", ""]
+                for row in differentiated_evidence_packs:
+                    content_es += [
+                        f"    - {_text(row.get('pack_title'))} [{_text(row.get('evidence_state'), default='CONDITIONAL_HYPOTHESIS')}]",
+                        f"      Evidencia : {_list_text(row.get('evidence_items', []), default='NINGUNA ACOTADA')}",
+                        f"      Desbloquea: {_list_text(row.get('unlocks', []), default='NINGUNA ACOTADA')}",
+                        f"      Por Qué   : {_text(row.get('why'))}",
+                        "",
+                    ]
         elif section_key == "reframed_problem":
             content_en = [
                 _sep("="),
@@ -1387,6 +2551,10 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                     f"  Impacto en la Decisión: {_text(row.get('decision_impact'))}",
                     "",
                 ]
+            dominant_loss_logic = _text(executive_thesis.get("dominant_loss_logic"), default="")
+            if dominant_loss_logic:
+                content_en += [f"  Dominant Loss Logic : {dominant_loss_logic}", ""]
+                content_es += [f"  Lógica Dominante de Pérdida: {dominant_loss_logic}", ""]
         elif section_key == "scenario_space":
             content_en = [_sep("="), "SCENARIO SPACE", _sep("="), ""]
             content_es = [_sep("="), "ESPACIO DE ESCENARIOS", _sep("="), ""]
@@ -1409,6 +2577,11 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                     "",
                 ]
         elif section_key == "financial_exposure":
+            financial_support_rows = _constellation_rows_for_pack(
+                _text(financial_logic_pack.get("pack_family")),
+                preferred_types=["boundary_failure", "dominant_variable_candidate", "alternative_variable_candidate"],
+                limit=3,
+            )
             content_en = [
                 _sep("="),
                 "FINANCIAL EXPOSURE UNDER UNCERTAINTY",
@@ -1422,6 +2595,33 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Prohibited Output    : {_list_text(primary_financial.get('prohibited_financial_output', []), default='NONE BOUNDED')}",
                 "",
             ]
+            if financial_surface_readout_register:
+                content_en += ["  Strategic Reading:", ""]
+                for row in financial_surface_readout_register:
+                    content_en += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_en += [f"      Why Now : {_text(row.get('why_now'))}"]
+                    content_en += [""]
+            if financial_logic_pack:
+                content_en += [
+                    "  Financial Logic Pack:",
+                    "",
+                    f"    - {_text(financial_logic_pack.get('pack_title'))}",
+                    f"      Evidence : {_list_text(financial_logic_pack.get('evidence_items', []), default='NONE BOUNDED')}",
+                    f"      Unlocks  : {_list_text(financial_logic_pack.get('unlocks', []), default='NONE BOUNDED')}",
+                    f"      Why      : {_text(financial_logic_pack.get('why'))}",
+                    "",
+                ]
+            if financial_support_rows:
+                content_en += ["  Linked Structural Lanes:", ""]
+                for row in financial_support_rows:
+                    content_en += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Why It Matters : {_text(row.get('why_it_matters'))}",
+                        "",
+                    ]
             content_es = [
                 _sep("="),
                 "EXPOSICIÓN FINANCIERA BAJO INCERTIDUMBRE",
@@ -1435,16 +2635,61 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Salida Prohibida     : {_list_text(primary_financial.get('prohibited_financial_output', []), default='NINGUNA ACOTADA')}",
                 "",
             ]
+            if financial_surface_readout_register:
+                content_es += ["  Lectura Estratégica:", ""]
+                for row in financial_surface_readout_register:
+                    content_es += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_es += [f"      Por Qué Ahora: {_text(row.get('why_now'))}"]
+                    content_es += [""]
+            if financial_logic_pack:
+                content_es += [
+                    "  Pack de Lógica Financiera:",
+                    "",
+                    f"    - {_text(financial_logic_pack.get('pack_title'))}",
+                    f"      Evidencia : {_list_text(financial_logic_pack.get('evidence_items', []), default='NINGUNA ACOTADA')}",
+                    f"      Desbloquea: {_list_text(financial_logic_pack.get('unlocks', []), default='NINGUNA ACOTADA')}",
+                    f"      Por Qué   : {_text(financial_logic_pack.get('why'))}",
+                    "",
+                ]
+            if financial_support_rows:
+                content_es += ["  Carriles Estructurales Vinculados:", ""]
+                for row in financial_support_rows:
+                    content_es += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Por Qué Importa : {_text(row.get('why_it_matters'))}",
+                        "",
+                    ]
         elif section_key == "peer_comparison":
             peer_type = _text(primary_peer.get("peer_type") or primary_peer.get("comparison_mode"))
             source_reference = _text(primary_peer.get("source_reference"), default="")
             what_it_does_not_prove = _text(primary_peer.get("what_it_does_not_prove"))
+            peer_requirement_rows = list(primary_peer.get("peer_requirement_rows", []) or [])
+            candidate_peer_frames = list(primary_peer.get("candidate_peer_frame_register", []) or [])
+            better_practice_deltas = list(primary_peer.get("better_practice_delta_register", []) or [])
+            peer_superiority_block_reason = _text(primary_peer.get("peer_superiority_block_reason"))
             if primary_peer and not source_reference and _text(primary_peer.get("evidence_state")) != "OBSERVED_FACT":
                 what_it_does_not_prove = (
                     "Archetypal peer pattern, not observed competitor evidence."
                     if what_it_does_not_prove == "NOT OBSERVED"
                     else what_it_does_not_prove
                 )
+            peer_support_rows = _constellation_rows_for_pack(
+                _text(fair_comparison_pack.get("pack_family")),
+                preferred_types=["comparison_failure", "challenger_hypothesis", "alternative_variable_candidate"],
+                limit=3,
+            )
+            if not peer_support_rows and (_text(executive_thesis.get("invalid_comparison_risk")) or fair_comparison_pack):
+                peer_support_rows = [
+                    {
+                        "title": "Comparison failure",
+                        "statement": _text(executive_thesis.get("invalid_comparison_risk")),
+                        "differentiator": _text(fair_comparison_pack.get("why"))
+                        or "This attacks comparability before it attacks local equipment performance.",
+                    }
+                ]
             content_en = [
                 _sep("="),
                 "PEER / COMPETITIVE COMPARISON",
@@ -1455,9 +2700,69 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Transferability     : {_text(primary_peer.get('transferability'))}",
                 f"  What It Proves      : {_text(primary_peer.get('what_it_proves'))}",
                 f"  What It Does Not Prove: {what_it_does_not_prove}",
+                f"  Invalid Comparison Risk: {_text(executive_thesis.get('invalid_comparison_risk'))}",
                 f"  Source              : {source_reference or 'Archetypal / bounded structural pattern only'}",
                 "",
             ]
+            if peer_surface_readout_register:
+                content_en += ["  Comparison Reading:", ""]
+                for row in peer_surface_readout_register:
+                    content_en += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_en += [f"      Why Now : {_text(row.get('why_now'))}"]
+                    content_en += [""]
+            if fair_comparison_pack:
+                content_en += [
+                    "  Fair Comparison Pack:",
+                    "",
+                    f"    - {_text(fair_comparison_pack.get('pack_title'))}",
+                    f"      Evidence : {_list_text(fair_comparison_pack.get('evidence_items', []), default='NONE BOUNDED')}",
+                    f"      Unlocks  : {_list_text(fair_comparison_pack.get('unlocks', []), default='NONE BOUNDED')}",
+                    f"      Why      : {_text(fair_comparison_pack.get('why'))}",
+                    "",
+                ]
+            if peer_support_rows:
+                content_en += ["  Linked Comparison Lanes:", ""]
+                for row in peer_support_rows:
+                    content_en += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Differentiator : {_text(row.get('differentiator'))}",
+                        "",
+                    ]
+            if peer_requirement_rows:
+                content_en += ["  Peer Requirements:", ""]
+                for row in peer_requirement_rows[:4]:
+                    content_en += [
+                        f"    - {_text(row.get('peer_requirement'))} [{_text(row.get('status'), default='required')}]",
+                        f"      Why It Matters : {_text(row.get('why_it_matters'))}",
+                        f"      Missing        : {_text(row.get('missing_evidence'))}",
+                        "",
+                    ]
+            if candidate_peer_frames:
+                content_en += ["  Candidate Peer Frames:", ""]
+                for row in candidate_peer_frames[:3]:
+                    content_en += [
+                        f"    - {_text(row.get('candidate_peer_frame'))}",
+                        f"      State          : {_text(row.get('candidate_state'))}",
+                        f"      Why It Matters : {_text(row.get('why_it_matters'))}",
+                        "",
+                    ]
+            if better_practice_deltas:
+                content_en += ["  Better-Practice Deltas:", ""]
+                for row in better_practice_deltas[:3]:
+                    content_en += [
+                        f"    - {_text(row.get('practice_delta'))}",
+                        f"      Why Plausible  : {_text(row.get('why_plausible'))}",
+                        f"      Evidence Needed: {_text(row.get('evidence_needed'))}",
+                        "",
+                    ]
+            if peer_superiority_block_reason:
+                content_en += [
+                    f"  Peer Superiority Block: {peer_superiority_block_reason}",
+                    "",
+                ]
             content_es = [
                 _sep("="),
                 "COMPARACIÓN CON PARES / COMPETITIVA",
@@ -1468,9 +2773,69 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Transferibilidad    : {_text(primary_peer.get('transferability'))}",
                 f"  Qué Demuestra       : {_text(primary_peer.get('what_it_proves'))}",
                 f"  Qué No Demuestra    : {what_it_does_not_prove}",
+                f"  Riesgo de Comparación Inválida: {_text(executive_thesis.get('invalid_comparison_risk'))}",
                 f"  Fuente              : {source_reference or 'Patrón arquetípico / acotado, no competidor observado'}",
                 "",
             ]
+            if peer_surface_readout_register:
+                content_es += ["  Lectura de Comparación:", ""]
+                for row in peer_surface_readout_register:
+                    content_es += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_es += [f"      Por Qué Ahora: {_text(row.get('why_now'))}"]
+                    content_es += [""]
+            if fair_comparison_pack:
+                content_es += [
+                    "  Pack de Comparabilidad Justa:",
+                    "",
+                    f"    - {_text(fair_comparison_pack.get('pack_title'))}",
+                    f"      Evidencia : {_list_text(fair_comparison_pack.get('evidence_items', []), default='NINGUNA ACOTADA')}",
+                    f"      Desbloquea: {_list_text(fair_comparison_pack.get('unlocks', []), default='NINGUNA ACOTADA')}",
+                    f"      Por Qué   : {_text(fair_comparison_pack.get('why'))}",
+                    "",
+                ]
+            if peer_support_rows:
+                content_es += ["  Carriles Vinculados de Comparación:", ""]
+                for row in peer_support_rows:
+                    content_es += [
+                        f"    - {_text(row.get('title'))}: {_text(row.get('statement'))}",
+                        f"      Diferenciador : {_text(row.get('differentiator'))}",
+                        "",
+                    ]
+            if peer_requirement_rows:
+                content_es += ["  Requisitos del Peer:", ""]
+                for row in peer_requirement_rows[:4]:
+                    content_es += [
+                        f"    - {_text(row.get('peer_requirement'))} [{_text(row.get('status'), default='required')}]",
+                        f"      Por Qué Importa : {_text(row.get('why_it_matters'))}",
+                        f"      Faltante        : {_text(row.get('missing_evidence'))}",
+                        "",
+                    ]
+            if candidate_peer_frames:
+                content_es += ["  Marcos Candidatos de Peer:", ""]
+                for row in candidate_peer_frames[:3]:
+                    content_es += [
+                        f"    - {_text(row.get('candidate_peer_frame'))}",
+                        f"      Estado         : {_text(row.get('candidate_state'))}",
+                        f"      Por Qué Importa: {_text(row.get('why_it_matters'))}",
+                        "",
+                    ]
+            if better_practice_deltas:
+                content_es += ["  Deltas de Mejor Práctica:", ""]
+                for row in better_practice_deltas[:3]:
+                    content_es += [
+                        f"    - {_text(row.get('practice_delta'))}",
+                        f"      Por Qué Es Plausible: {_text(row.get('why_plausible'))}",
+                        f"      Evidencia Necesaria : {_text(row.get('evidence_needed'))}",
+                        "",
+                    ]
+            if peer_superiority_block_reason:
+                content_es += [
+                    f"  Bloqueo de Superioridad del Peer: {peer_superiority_block_reason}",
+                    "",
+                ]
         elif section_key == "conditional_redesign":
             content_en = [
                 _sep("="),
@@ -1486,6 +2851,15 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Kill Condition      : {_text(primary_redesign.get('kill_condition'))}",
                 "",
             ]
+            if conditional_pathways:
+                content_en += ["  Alternative Conditional Pathways:", ""]
+                for row in conditional_pathways:
+                    content_en += [
+                        f"    - {row.get('opportunity_name', '')}",
+                        f"      Statement : {_text(row.get('conditional_statement'))}",
+                        f"      Validate  : {_text(row.get('validation_requirement'))}",
+                        "",
+                    ]
             content_es = [
                 _sep("="),
                 "RUTA CONDICIONAL DE REDISEÑO",
@@ -1500,6 +2874,15 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 f"  Condición de Muerte : {_text(primary_redesign.get('kill_condition'))}",
                 "",
             ]
+            if conditional_pathways:
+                content_es += ["  Vías Condicionales Alternativas:", ""]
+                for row in conditional_pathways:
+                    content_es += [
+                        f"    - {row.get('opportunity_name', '')}",
+                        f"      Enunciado : {_text(row.get('conditional_statement'))}",
+                        f"      Validar   : {_text(row.get('validation_requirement'))}",
+                        "",
+                    ]
         elif section_key == "minimum_evidence":
             content_en = [
                 _sep("="),
@@ -1527,25 +2910,94 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
             if not top_actions:
                 content_en += ["  No client-facing TAD actions were selected.", ""]
                 content_es += ["  No se seleccionaron acciones TAD cliente-facing.", ""]
+            if tad_surface_readout_register:
+                content_en += ["  Decision Reading:", ""]
+                for row in tad_surface_readout_register:
+                    content_en += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_en += [f"      Why Now : {_text(row.get('why_now'))}"]
+                    content_en += [""]
+                content_es += ["  Lectura de Decisión:", ""]
+                for row in tad_surface_readout_register:
+                    content_es += [
+                        f"    - {_text(row.get('signal'))}: {_text(row.get('statement'))}",
+                    ]
+                    if _text(row.get("why_now"), default=""):
+                        content_es += [f"      Por Qué Ahora: {_text(row.get('why_now'))}"]
+                    content_es += [""]
             for row in top_actions:
+                linked_pack = _best_pack(
+                    row.get("action"),
+                    row.get("why"),
+                    row.get("evidence_needed"),
+                    row.get("maps_to"),
+                )
+                linked_pack_family = _text(linked_pack.get("pack_family"))
+                linked_lanes = _constellation_rows_for_pack(
+                    linked_pack_family,
+                    preferred_types=["challenger_hypothesis", "comparison_failure", "boundary_failure", "dominant_variable_candidate"],
+                    limit=2,
+                )
                 content_en += [
                     f"  Action              : {_text(row.get('action'))}",
                     f"  Status              : {_text(row.get('status'))}",
+                    f"  Decision Front      : {_text(row.get('decision_front'))}",
+                    f"  Trigger Signal      : {_text(row.get('trigger'))}",
+                    f"  Trigger Family      : {_text(row.get('trigger_family'))}",
                     f"  Why                 : {_text(row.get('why'))}",
+                    f"  Financial Exposure  : {_text(row.get('financial_exposure'))}",
                     f"  Evidence Needed     : {_text(row.get('evidence_needed'))}",
+                    f"  Action Posture      : {_text(row.get('action_posture'))}",
                     f"  Maps To             : {_text(row.get('maps_to'))}",
                     f"  Prohibited Action   : {_text(row.get('prohibited_action'))}",
+                    f"  No-Go Class         : {_text(row.get('prohibited_action_class'))}",
                     "",
                 ]
+                if linked_pack:
+                    content_en += [
+                        f"  Trigger Pack        : {_text(linked_pack.get('pack_title'))}",
+                        f"  Pack Family         : {_text(row.get('evidence_pack_family')) or _text(linked_pack.get('pack_family'))}",
+                        f"  Pack Unlocks        : {_list_text(linked_pack.get('unlocks', []), default='NONE BOUNDED')}",
+                        "",
+                    ]
+                if linked_lanes:
+                    content_en += ["  Protects Against    :", ""]
+                    for lane_row in linked_lanes:
+                        content_en += [
+                            f"    - {_text(lane_row.get('title'))}: {_text(lane_row.get('statement'))}",
+                            "",
+                        ]
                 content_es += [
                     f"  Acción              : {_text(row.get('action'))}",
                     f"  Estado              : {_text(row.get('status'))}",
+                    f"  Frente de Decisión  : {_text(row.get('decision_front'))}",
+                    f"  Señal Gatillo       : {_text(row.get('trigger'))}",
+                    f"  Familia de Gatillo  : {_text(row.get('trigger_family'))}",
                     f"  Por Qué             : {_text(row.get('why'))}",
+                    f"  Exposición Financiera: {_text(row.get('financial_exposure'))}",
                     f"  Evidencia Necesaria : {_text(row.get('evidence_needed'))}",
+                    f"  Postura de Acción   : {_text(row.get('action_posture'))}",
                     f"  Mapea a             : {_text(row.get('maps_to'))}",
                     f"  Acción Prohibida    : {_text(row.get('prohibited_action'))}",
+                    f"  Clase de No-Go      : {_text(row.get('prohibited_action_class'))}",
                     "",
                 ]
+                if linked_pack:
+                    content_es += [
+                        f"  Pack Gatillo        : {_text(linked_pack.get('pack_title'))}",
+                        f"  Familia del Pack    : {_text(row.get('evidence_pack_family')) or _text(linked_pack.get('pack_family'))}",
+                        f"  Desbloquea el Pack  : {_list_text(linked_pack.get('unlocks', []), default='NINGUNA ACOTADA')}",
+                        "",
+                    ]
+                if linked_lanes:
+                    content_es += ["  Protege Contra      :", ""]
+                    for lane_row in linked_lanes:
+                        content_es += [
+                            f"    - {_text(lane_row.get('title'))}: {_text(lane_row.get('statement'))}",
+                            "",
+                        ]
         else:
             content_en = [
                 _sep("="),
@@ -1554,6 +3006,8 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 "",
                 f"  Admissible Now      : {_list_text(admissible_actions, default='NONE BOUNDED')}",
                 f"  Not Admissible      : {_list_text(prohibited_claims, default='NONE BOUNDED')}",
+                f"  Local Closure State : {local_claim_closure_state}",
+                f"  Conditional Intelligence: {conditional_intelligence_reason or 'NONE BOUNDED'}",
                 f"  Claim Ceiling Counts: allowed={claim_permission_summary['allowed']} | conditional={claim_permission_summary['conditional']} | prohibited={claim_permission_summary['prohibited']}",
                 f"  Minimum Evidence Gate: {minimum_evidence_text}",
                 "",
@@ -1565,6 +3019,8 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 "",
                 f"  Admisible Ahora     : {_list_text(admissible_actions, default='NINGUNO ACOTADO')}",
                 f"  No Admisible        : {_list_text(prohibited_claims, default='NINGUNO ACOTADO')}",
+                f"  Estado del Cierre Local: {local_claim_closure_state}",
+                f"  Inteligencia Condicional: {conditional_intelligence_reason or 'NINGUNA ACOTADA'}",
                 f"  Conteo del Techo de Claims: permitidos={claim_permission_summary['allowed']} | condicionales={claim_permission_summary['conditional']} | prohibidos={claim_permission_summary['prohibited']}",
                 f"  Puerta de Evidencia Mínima: {minimum_evidence_text}",
                 "",
@@ -1621,6 +3077,135 @@ _LEGACY_DUPLICATE_BODY_TITLES = {
     "Conditional Opportunities",
     "Financial Context",
     "Energy Profile & Normative Constraints",
+}
+
+_SECTION_SURFACE_DENSITY_PROTECTED_KEYS = {
+    "executive_structural_thesis",
+    "reframed_problem",
+    "dominant_structural_contradiction",
+    "system_abstraction_snapshot",
+    "dominant_variables",
+    "scenario_space",
+    "financial_exposure",
+    "peer_comparison",
+    "conditional_redesign",
+    "minimum_evidence",
+    "tad",
+}
+
+_SECTION_SURFACE_DENSITY_PROTECTED_TITLES = {
+    "Executive Structural Brief",
+    "What the Client Thinks the Problem Is",
+    "What the System Thinks the Problem Might Actually Be",
+    "System Abstraction Map",
+    "Dominant Variables",
+    "Evidence State by Layer",
+    "Cross-Layer Contradictions",
+    "Scenario Space",
+    "Financial Exposure Under Uncertainty",
+    "Competitive / Peer Comparison",
+    "Conditional Redesign Pathways",
+    "Minimum Evidence for Discrimination",
+    "TAD — Action Priority",
+}
+
+_SECTION_SURFACE_DENSITY_PLACEHOLDER_TOKENS = (
+    "not observed",
+    "none bounded",
+    "blocking if used",
+    "no client-facing tad actions were selected",
+    "no se seleccionaron acciones tad cliente-facing",
+    "this section is intentionally explained rather than left empty",
+    "esta sección se explica explícitamente en vez de quedar vacía",
+    "no attempt metadata was recorded",
+)
+
+_SECTION_SURFACE_DENSITY_SIGNAL_TOKENS = (
+    "contradiction",
+    "reframed",
+    "variable",
+    "scenario",
+    "evidence",
+    "peer",
+    "comparison",
+    "financial",
+    "trigger",
+    "risk",
+    "action",
+    "pack",
+    "correlation",
+    "boundary",
+    "tad",
+)
+
+_SECTION_SURFACE_STRATEGIC_SIGNAL_TOKENS = (
+    "wrong variable",
+    "wrong denominator",
+    "wrong boundary",
+    "reframed problem",
+    "dominant contradiction",
+    "financial exposure",
+    "peer requirement",
+    "peer superiority block",
+    "better-practice",
+    "correlation constellation",
+    "trigger family",
+    "decision front",
+    "no-go class",
+    "minimum evidence",
+    "capital logic",
+)
+
+_SECTION_SURFACE_INVENTORY_TITLE_HINTS = (
+    "source traceability",
+    "evidence & source traceability",
+    "claim permission",
+    "claim permissions",
+    "source family coverage",
+    "requestable evidence",
+    "traceability",
+)
+
+_SECTION_SURFACE_INVENTORY_TOKENS = (
+    "status",
+    "state",
+    "register",
+    "traceability",
+    "lineage",
+    "provider",
+    "reference",
+    "packet",
+    "source",
+    "permission",
+    "policy",
+    "contract",
+    "coverage",
+    "authority",
+    "family",
+    "required",
+    "requestable",
+    "allowed",
+    "prohibited",
+    "blocked",
+)
+
+_SECTION_SURFACE_REDUNDANCY_STOPWORDS = {
+    "section",
+    "signal",
+    "signals",
+    "state",
+    "bounded",
+    "observed",
+    "logic",
+    "profile",
+    "surface",
+    "strategic",
+    "evidence",
+    "appendix",
+    "technical",
+    "executive",
+    "pack",
+    "trigger",
 }
 
 def _resolve_chart_visibility_policy_entry(
@@ -1878,6 +3463,155 @@ def _apply_support_chart_lane_visibility_cap(
     }
 
 
+def _apply_chart_strategic_surface_gate(
+    *,
+    resolved_chart_asset_list_map: dict[str, list[dict[str, Any]]] | None,
+    body_section_ids: set[str] | None,
+    appendix_section_ids: list[str] | None = None,
+    appendix_demote_section_id: str = "",
+) -> tuple[dict[str, list[dict[str, Any]]], list[dict[str, Any]], dict[str, Any]]:
+    normalized_map: dict[str, list[dict[str, Any]]] = {
+        str(section_id).strip(): [dict(row or {}) for row in list(chart_rows or [])]
+        for section_id, chart_rows in dict(resolved_chart_asset_list_map or {}).items()
+        if str(section_id).strip()
+    }
+    normalized_body_section_ids = {
+        str(section_id).strip() for section_id in set(body_section_ids or set()) if str(section_id).strip()
+    }
+    normalized_appendix_section_ids = [
+        str(section_id).strip()
+        for section_id in list(appendix_section_ids or [])
+        if str(section_id).strip()
+    ]
+    appendix_demote_target = str(appendix_demote_section_id or "").strip()
+    if not appendix_demote_target and normalized_appendix_section_ids:
+        appendix_demote_target = normalized_appendix_section_ids[0]
+    body_assets = [
+        asset
+        for section_id, chart_rows in normalized_map.items()
+        if section_id in normalized_body_section_ids
+        for asset in list(chart_rows or [])
+    ]
+    thesis_critical_count = sum(
+        1 for asset in body_assets if str(asset.get("strategic_value_tier", "")).strip() == "thesis_critical"
+    )
+    strategic_support_count = sum(
+        1 for asset in body_assets if str(asset.get("strategic_value_tier", "")).strip() == "strategic_support"
+    )
+    supportive_context_count = sum(
+        1 for asset in body_assets if str(asset.get("strategic_value_tier", "")).strip() == "supportive_context"
+    )
+    decorative_risk_body_count = sum(
+        1 for asset in body_assets if str(asset.get("strategic_value_tier", "")).strip() == "decorative_risk"
+    )
+    body_strategic_anchor_count = thesis_critical_count + strategic_support_count
+    body_gate_activated = thesis_critical_count >= 3 and body_strategic_anchor_count >= 4
+    gate_reason = (
+        "Body surface already carries enough thesis-critical and strategic-support charts to suppress decorative-risk charts."
+        if body_gate_activated
+        else "Body surface does not yet carry enough strategic charts to suppress decorative-risk charts."
+    )
+
+    filtered_map: dict[str, list[dict[str, Any]]] = {}
+    policy_register: list[dict[str, Any]] = []
+    decorative_risk_body_count_suppressed = 0
+    decorative_risk_body_count_demoted = 0
+    decorative_risk_body_count_visible = 0
+    demoted_appendix_assets: dict[str, list[dict[str, Any]]] = {}
+
+    for section_id, chart_rows in normalized_map.items():
+        is_body_section = section_id in normalized_body_section_ids
+        filtered_rows: list[dict[str, Any]] = []
+        for original_index, asset in enumerate(list(chart_rows or [])):
+            resolved_asset = dict(asset or {})
+            strategic_value_tier = str(resolved_asset.get("strategic_value_tier", "")).strip() or "unclassified"
+            if is_body_section and body_gate_activated and strategic_value_tier == "decorative_risk":
+                if appendix_demote_target:
+                    strategic_surface_policy_state = "demoted_decorative_risk_to_appendix"
+                    strategic_surface_policy_reason = (
+                        "Body surface already has enough strategic charts; this lower-value chart is preserved in appendix instead of remaining in the primary surface."
+                    )
+                    resolved_asset["demoted_from_section_id"] = section_id
+                    resolved_asset["demoted_to_section_id"] = appendix_demote_target
+                    demoted_appendix_assets.setdefault(appendix_demote_target, []).append(resolved_asset)
+                    decorative_risk_body_count_demoted += 1
+                else:
+                    strategic_surface_policy_state = "suppressed_decorative_risk_from_body"
+                    strategic_surface_policy_reason = gate_reason
+                    decorative_risk_body_count_suppressed += 1
+            elif is_body_section and body_gate_activated:
+                strategic_surface_policy_state = "visible_body_strategic_after_gate"
+                strategic_surface_policy_reason = "Strategic or contextual chart remains visible in the primary body surface."
+                if strategic_value_tier == "decorative_risk":
+                    decorative_risk_body_count_visible += 1
+                filtered_rows.append(resolved_asset)
+            elif is_body_section:
+                strategic_surface_policy_state = "visible_body_without_strategic_gate"
+                strategic_surface_policy_reason = gate_reason
+                if strategic_value_tier == "decorative_risk":
+                    decorative_risk_body_count_visible += 1
+                filtered_rows.append(resolved_asset)
+            else:
+                strategic_surface_policy_state = "appendix_or_non_body_exempt"
+                strategic_surface_policy_reason = "Strategic surface gate applies only to primary body sections."
+                filtered_rows.append(resolved_asset)
+
+            resolved_asset["strategic_surface_policy_state"] = strategic_surface_policy_state
+            resolved_asset["strategic_surface_policy_reason"] = strategic_surface_policy_reason
+            policy_register.append({
+                "section_id": section_id,
+                "asset_id": str(resolved_asset.get("asset_id", "")).strip(),
+                "original_index": original_index,
+                "strategic_value_tier": strategic_value_tier,
+                "strategic_surface_policy_state": strategic_surface_policy_state,
+                "strategic_surface_policy_reason": strategic_surface_policy_reason,
+                "body_gate_activated": body_gate_activated,
+                "demoted_to_section_id": str(resolved_asset.get("demoted_to_section_id", "")).strip(),
+            })
+        filtered_map[section_id] = filtered_rows
+
+    for section_id, moved_assets in demoted_appendix_assets.items():
+        filtered_map.setdefault(section_id, []).extend(moved_assets)
+
+    summary = {
+        "body_gate_activated": body_gate_activated,
+        "body_gate_reason": gate_reason,
+        "appendix_demote_target": appendix_demote_target,
+        "thesis_critical_body_count": thesis_critical_count,
+        "strategic_support_body_count": strategic_support_count,
+        "supportive_context_body_count": supportive_context_count,
+        "decorative_risk_body_count_before": decorative_risk_body_count,
+        "decorative_risk_body_count_suppressed": decorative_risk_body_count_suppressed,
+        "decorative_risk_body_count_demoted": decorative_risk_body_count_demoted,
+        "decorative_risk_body_count_visible": decorative_risk_body_count_visible,
+        "body_strategic_anchor_count": body_strategic_anchor_count,
+    }
+    return filtered_map, policy_register, summary
+
+
+def _rebuild_chart_surface_maps(
+    resolved_chart_asset_list_map: dict[str, list[dict[str, Any]]] | None,
+) -> tuple[dict[str, str], dict[str, str], dict[str, list[str]]]:
+    section_chart_map: dict[str, str] = {}
+    chart_b64_map: dict[str, str] = {}
+    chart_b64_list_map: dict[str, list[str]] = {}
+    for section_id, chart_rows in dict(resolved_chart_asset_list_map or {}).items():
+        normalized_section_id = str(section_id).strip()
+        if not normalized_section_id:
+            continue
+        normalized_chart_rows = [dict(row or {}) for row in list(chart_rows or [])]
+        chart_b64_list_map[normalized_section_id] = [
+            str(row.get("image_b64", "") or "")
+            for row in normalized_chart_rows
+            if str(row.get("image_b64", "") or "").strip()
+        ]
+        if normalized_chart_rows:
+            first_row = normalized_chart_rows[0]
+            section_chart_map[normalized_section_id] = str(first_row.get("asset_id", "")).strip()
+            chart_b64_map[normalized_section_id] = str(first_row.get("image_b64", "") or "")
+    return section_chart_map, chart_b64_map, chart_b64_list_map
+
+
 def _demote_legacy_duplicate_sections(
     body_sections: list[dict[str, Any]],
     appendix_sections: list[dict[str, Any]],
@@ -1943,6 +3677,690 @@ def _section_visible_excerpt(section: dict[str, Any]) -> str:
             continue
         return stripped
     return ""
+
+
+def _section_visible_lines(section: dict[str, Any]) -> list[str]:
+    lines: list[str] = []
+    for block in list(section.get("blocks", []) or []):
+        content = str((block or {}).get("content", "")).strip()
+        if not content:
+            continue
+        for line in content.splitlines():
+            stripped = str(line).strip()
+            if not stripped:
+                continue
+            if len(set(stripped)) == 1:
+                continue
+            lines.append(stripped)
+    return lines
+
+
+def _section_surface_density_profile(section: dict[str, Any]) -> dict[str, Any]:
+    visible_lines = _section_visible_lines(section)
+    placeholder_lines = [
+        line
+        for line in visible_lines
+        if any(token in line.lower() for token in _SECTION_SURFACE_DENSITY_PLACEHOLDER_TOKENS)
+    ]
+    substantive_lines = [
+        line
+        for line in visible_lines
+        if line not in placeholder_lines
+    ]
+    signal_line_count = sum(
+        1
+        for line in substantive_lines
+        if any(token in line.lower() for token in _SECTION_SURFACE_DENSITY_SIGNAL_TOKENS)
+    )
+    chart_assets = list(section.get("chart_assets", []) or [])
+    chart_count = len(chart_assets) + (1 if str(section.get("chart_ref", "")).strip() else 0)
+    llm_present = any(
+        str(section.get(field, "")).strip()
+        for field in ("llm_text", "llm_text_en", "llm_text_es")
+    )
+    density_score = (
+        len(substantive_lines)
+        + min(signal_line_count, 4)
+        + min(chart_count, 2)
+        + (1 if llm_present else 0)
+        - min(len(placeholder_lines), 2)
+    )
+    return {
+        "visible_line_count": len(visible_lines),
+        "substantive_line_count": len(substantive_lines),
+        "placeholder_line_count": len(placeholder_lines),
+        "signal_line_count": signal_line_count,
+        "chart_count": chart_count,
+        "llm_present": llm_present,
+        "density_score": density_score,
+    }
+
+
+def _section_surface_strategic_profile(section: dict[str, Any]) -> dict[str, Any]:
+    visible_lines = _section_visible_lines(section)
+    title = str(section.get("title", "")).strip().lower()
+    outline_key = str(section.get("outline_section_key", "")).strip()
+    anchor_type = str(section.get("thesis_anchor_type", "")).strip()
+    chart_assets = list(section.get("chart_assets", []) or [])
+    chart_count = len(chart_assets) + (1 if str(section.get("chart_ref", "")).strip() else 0)
+    signal_hits = sum(
+        1
+        for line in visible_lines
+        if any(token in line.lower() for token in _SECTION_SURFACE_STRATEGIC_SIGNAL_TOKENS)
+    )
+    thesis_anchor_bonus = 2 if anchor_type else 0
+    outline_key_bonus = 2 if outline_key in _SECTION_SURFACE_DENSITY_PROTECTED_KEYS else 0
+    title_bonus = 2 if title in {value.lower() for value in _SECTION_SURFACE_DENSITY_PROTECTED_TITLES} else 0
+    chart_bonus = min(chart_count, 2)
+    strategic_value_score = signal_hits + thesis_anchor_bonus + outline_key_bonus + title_bonus + chart_bonus
+    if strategic_value_score >= 8:
+        strategic_value_tier = "thesis_critical"
+    elif strategic_value_score >= 5:
+        strategic_value_tier = "strategic_support"
+    elif strategic_value_score >= 3:
+        strategic_value_tier = "supportive_context"
+    else:
+        strategic_value_tier = "surface_optional"
+    return {
+        "strategic_signal_hits": signal_hits,
+        "thesis_anchor_type": anchor_type,
+        "outline_key_bonus": outline_key_bonus,
+        "title_bonus": title_bonus,
+        "chart_count": chart_count,
+        "strategic_value_score": strategic_value_score,
+        "strategic_value_tier": strategic_value_tier,
+    }
+
+
+def _section_surface_redundancy_tokens(section: dict[str, Any]) -> set[str]:
+    title = str(section.get("title", "")).strip().lower()
+    outline_key = str(section.get("outline_section_key", "")).strip().lower()
+    anchor_text = str(section.get("thesis_anchor_text", "")).strip().lower()
+    values = [title, outline_key, anchor_text, *_section_visible_lines(section)]
+    tokens: set[str] = set()
+    for value in values:
+        text = str(value or "").strip().lower()
+        if not text:
+            continue
+        for token in re.split(r"[^a-z0-9]+", text):
+            if len(token) < 4 or token in _SECTION_SURFACE_REDUNDANCY_STOPWORDS:
+                continue
+            tokens.add(token)
+    return tokens
+
+
+def _section_surface_inventory_profile(section: dict[str, Any]) -> dict[str, Any]:
+    visible_lines = _section_visible_lines(section)
+    title = str(section.get("title", "")).strip().lower()
+    strategic_profile = dict(
+        section.get("section_surface_strategic_profile", {}) or _section_surface_strategic_profile(section)
+    )
+    readout_register = list(section.get("section_surface_readout_register", []) or [])
+    label_like_line_count = sum(
+        1
+        for line in visible_lines
+        if ":" in line and len(str(line).split(":", 1)[0].split()) <= 6
+    )
+    narrative_line_count = sum(
+        1
+        for line in visible_lines
+        if len(re.findall(r"[A-Za-z0-9]+", str(line))) >= 7 and ":" not in str(line).split(" ", 1)[0]
+    )
+    inventory_token_hits = sum(
+        1
+        for line in visible_lines
+        if any(token in str(line).lower() for token in _SECTION_SURFACE_INVENTORY_TOKENS)
+    )
+    title_hint = any(hint in title for hint in _SECTION_SURFACE_INVENTORY_TITLE_HINTS)
+    readout_signal_count = sum(
+        1
+        for row in readout_register
+        if str((row or {}).get("label", "")).strip() and str((row or {}).get("value", "")).strip()
+    )
+    label_like_ratio = label_like_line_count / max(len(visible_lines), 1)
+    inventory_score = (
+        label_like_line_count
+        + min(inventory_token_hits, 4)
+        + (2 if title_hint else 0)
+    )
+    narrative_score = (
+        narrative_line_count
+        + min(readout_signal_count, 2)
+        + min(int(strategic_profile.get("strategic_signal_hits", 0) or 0), 2)
+        + (1 if bool(strategic_profile.get("chart_count", 0)) else 0)
+    )
+    inventory_heavy = (
+        len(visible_lines) >= 2
+        and label_like_ratio >= 0.5
+        and inventory_score >= 6
+        and readout_signal_count == 0
+        and narrative_score <= 2
+    )
+    return {
+        "visible_line_count": len(visible_lines),
+        "label_like_line_count": label_like_line_count,
+        "label_like_ratio": round(label_like_ratio, 3),
+        "narrative_line_count": narrative_line_count,
+        "inventory_token_hits": inventory_token_hits,
+        "title_hint": title_hint,
+        "readout_signal_count": readout_signal_count,
+        "inventory_score": inventory_score,
+        "narrative_score": narrative_score,
+        "strategic_value_tier": str(strategic_profile.get("strategic_value_tier", "")).strip(),
+        "inventory_heavy": inventory_heavy,
+    }
+
+
+def _apply_section_surface_density_gate(
+    *,
+    body_sections: list[dict[str, Any]],
+    appendix_sections: list[dict[str, Any]],
+    required_body_titles: set[str] | None = None,
+    minimum_body_sections: int = 10,
+    min_substantive_lines: int = 6,
+    min_density_score: int = 9,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    retained_body: list[dict[str, Any]] = []
+    appended_appendix: list[dict[str, Any]] = list(appendix_sections or [])
+    policy_rows: list[dict[str, Any]] = []
+    thin_candidate_count = 0
+    demoted_to_appendix_count = 0
+    retained_by_density_count = 0
+    retained_protected_count = 0
+    retained_by_body_floor_count = 0
+    total_body_sections = len(list(body_sections or []))
+    normalized_required_titles = {
+        str(title).strip()
+        for title in set(required_body_titles or set())
+        if str(title).strip()
+    }
+
+    for idx, section in enumerate(list(body_sections or [])):
+        row = dict(section)
+        title = str(row.get("title", "")).strip()
+        outline_key = str(row.get("outline_section_key", "")).strip()
+        profile = _section_surface_density_profile(row)
+        remaining_body_if_demoted = len(retained_body) + (total_body_sections - idx - 1)
+        is_protected = (
+            outline_key in _SECTION_SURFACE_DENSITY_PROTECTED_KEYS
+            or title in _SECTION_SURFACE_DENSITY_PROTECTED_TITLES
+            or title in normalized_required_titles
+        )
+        is_thin = (
+            profile["substantive_line_count"] < min_substantive_lines
+            or profile["density_score"] < min_density_score
+        )
+        policy_state = "retained_body_sufficient_density"
+        policy_reason = "Section carries enough strategic density to remain in the primary body surface."
+        destination_surface = "body"
+
+        if is_protected:
+            policy_state = "retained_body_core_section"
+            policy_reason = "Section remains in the primary body because it is part of the protected strategic spine."
+            retained_protected_count += 1
+        elif is_thin and remaining_body_if_demoted < minimum_body_sections:
+            policy_state = "retained_body_due_to_minimum_surface_floor"
+            policy_reason = "Section is thin, but demoting it would undercut the minimum body-surface floor."
+            thin_candidate_count += 1
+            retained_by_body_floor_count += 1
+        elif is_thin:
+            policy_state = "demoted_thin_body_section_to_appendix"
+            policy_reason = "Section is too thin for the main surface and is preserved in appendix instead of flattening the body."
+            destination_surface = "appendix"
+            thin_candidate_count += 1
+            demoted_row = {
+                **row,
+                "section_type": "appendix",
+                "demoted_from_surface": "body",
+                "demoted_to_surface": "appendix",
+                "section_surface_density_state": "demoted_thin_body_section_to_appendix",
+                "section_surface_density_profile": dict(profile),
+            }
+            appended_appendix.append(demoted_row)
+            demoted_to_appendix_count += 1
+        else:
+            retained_by_density_count += 1
+
+        policy_entry = {
+            "section_id": str(row.get("section_id", "")).strip(),
+            "section_title": title,
+            "outline_section_key": outline_key,
+            "section_type": str(row.get("section_type", "")).strip(),
+            "protected": is_protected,
+            "density_score": profile["density_score"],
+            "substantive_line_count": profile["substantive_line_count"],
+            "placeholder_line_count": profile["placeholder_line_count"],
+            "signal_line_count": profile["signal_line_count"],
+            "chart_count": profile["chart_count"],
+            "llm_present": profile["llm_present"],
+            "thin_candidate": is_thin,
+            "policy_state": policy_state,
+            "policy_reason": policy_reason,
+            "destination_surface": destination_surface,
+        }
+        policy_rows.append(policy_entry)
+
+        if destination_surface == "body":
+            retained_row = {
+                **row,
+                "section_surface_density_state": policy_state,
+                "section_surface_density_profile": dict(profile),
+            }
+            retained_body.append(retained_row)
+
+    summary = {
+        "minimum_body_sections": minimum_body_sections,
+        "min_substantive_lines": min_substantive_lines,
+            "min_density_score": min_density_score,
+            "required_body_title_count": len(normalized_required_titles),
+            "total_body_sections_evaluated": total_body_sections,
+        "thin_candidate_count": thin_candidate_count,
+        "demoted_to_appendix_count": demoted_to_appendix_count,
+        "retained_by_density_count": retained_by_density_count,
+        "retained_protected_count": retained_protected_count,
+        "retained_by_body_floor_count": retained_by_body_floor_count,
+    }
+    return retained_body, appended_appendix, policy_rows, summary
+
+
+def _apply_section_strategic_surface_gate(
+    *,
+    body_sections: list[dict[str, Any]],
+    appendix_sections: list[dict[str, Any]],
+    required_body_titles: set[str] | None = None,
+    minimum_body_sections: int = 10,
+    minimum_high_value_sections: int = 6,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    retained_body: list[dict[str, Any]] = []
+    appended_appendix: list[dict[str, Any]] = list(appendix_sections or [])
+    policy_rows: list[dict[str, Any]] = []
+    normalized_required_titles = {
+        str(title).strip()
+        for title in set(required_body_titles or set())
+        if str(title).strip()
+    }
+    strategic_profiles = [
+        _section_surface_strategic_profile(section)
+        for section in list(body_sections or [])
+    ]
+    high_value_available = sum(
+        1
+        for profile in strategic_profiles
+        if str(profile.get("strategic_value_tier", "")).strip() in {"thesis_critical", "strategic_support"}
+    )
+    total_body_sections = len(list(body_sections or []))
+    demoted_to_appendix_count = 0
+    retained_protected_count = 0
+    retained_low_value_due_to_floor_count = 0
+    retained_low_value_due_to_surface_depth_count = 0
+
+    for idx, section in enumerate(list(body_sections or [])):
+        row = dict(section)
+        title = str(row.get("title", "")).strip()
+        outline_key = str(row.get("outline_section_key", "")).strip()
+        profile = strategic_profiles[idx]
+        remaining_body_if_demoted = len(retained_body) + (total_body_sections - idx - 1)
+        is_protected = (
+            outline_key in _SECTION_SURFACE_DENSITY_PROTECTED_KEYS
+            or title in _SECTION_SURFACE_DENSITY_PROTECTED_TITLES
+            or title in normalized_required_titles
+        )
+        low_value_optional = str(profile.get("strategic_value_tier", "")).strip() == "surface_optional"
+        policy_state = "retained_strategic_surface_section"
+        policy_reason = "Section carries enough strategic value to remain on the primary surface."
+        destination_surface = "body"
+
+        if is_protected:
+            policy_state = "retained_strategic_core_section"
+            policy_reason = "Section remains because it belongs to the protected strategic or contract-required spine."
+            retained_protected_count += 1
+        elif low_value_optional and high_value_available < minimum_high_value_sections:
+            policy_state = "retained_surface_optional_due_to_surface_depth"
+            policy_reason = "Section is low-value optional, but the current body does not yet have enough high-value sections to absorb the demotion."
+            retained_low_value_due_to_surface_depth_count += 1
+        elif low_value_optional and remaining_body_if_demoted < minimum_body_sections:
+            policy_state = "retained_surface_optional_due_to_minimum_surface_floor"
+            policy_reason = "Section is low-value optional, but demoting it would collapse the minimum body-surface floor."
+            retained_low_value_due_to_floor_count += 1
+        elif low_value_optional:
+            policy_state = "demoted_low_value_optional_section_to_appendix"
+            policy_reason = "Section is populated but strategically optional; appendix preserves it without flattening the body surface."
+            destination_surface = "appendix"
+            demoted_row = {
+                **row,
+                "section_type": "appendix",
+                "demoted_from_surface": "body",
+                "demoted_to_surface": "appendix",
+                "section_surface_strategic_state": policy_state,
+                "section_surface_strategic_profile": dict(profile),
+            }
+            appended_appendix.append(demoted_row)
+            demoted_to_appendix_count += 1
+
+        policy_entry = {
+            "section_id": str(row.get("section_id", "")).strip(),
+            "section_title": title,
+            "outline_section_key": outline_key,
+            "protected": is_protected,
+            "strategic_value_score": profile["strategic_value_score"],
+            "strategic_value_tier": profile["strategic_value_tier"],
+            "strategic_signal_hits": profile["strategic_signal_hits"],
+            "chart_count": profile["chart_count"],
+            "policy_state": policy_state,
+            "policy_reason": policy_reason,
+            "destination_surface": destination_surface,
+        }
+        policy_rows.append(policy_entry)
+        if destination_surface == "body":
+            retained_row = {
+                **row,
+                "section_surface_strategic_state": policy_state,
+                "section_surface_strategic_profile": dict(profile),
+            }
+            retained_body.append(retained_row)
+
+    summary = {
+        "minimum_body_sections": minimum_body_sections,
+        "minimum_high_value_sections": minimum_high_value_sections,
+        "required_body_title_count": len(normalized_required_titles),
+        "total_body_sections_evaluated": total_body_sections,
+        "high_value_available": high_value_available,
+        "demoted_to_appendix_count": demoted_to_appendix_count,
+        "retained_protected_count": retained_protected_count,
+        "retained_low_value_due_to_floor_count": retained_low_value_due_to_floor_count,
+        "retained_low_value_due_to_surface_depth_count": retained_low_value_due_to_surface_depth_count,
+    }
+    return retained_body, appended_appendix, policy_rows, summary
+
+
+def _apply_section_strategic_redundancy_gate(
+    *,
+    body_sections: list[dict[str, Any]],
+    appendix_sections: list[dict[str, Any]],
+    required_body_titles: set[str] | None = None,
+    minimum_body_sections: int = 10,
+    minimum_high_value_sections: int = 6,
+    redundancy_overlap_threshold: float = 0.6,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    retained_body: list[dict[str, Any]] = []
+    appended_appendix: list[dict[str, Any]] = list(appendix_sections or [])
+    policy_rows: list[dict[str, Any]] = []
+    normalized_required_titles = {
+        str(title).strip()
+        for title in set(required_body_titles or set())
+        if str(title).strip()
+    }
+    strategic_profiles = [
+        dict(section.get("section_surface_strategic_profile", {}) or _section_surface_strategic_profile(section))
+        for section in list(body_sections or [])
+    ]
+    redundancy_tokens = [
+        _section_surface_redundancy_tokens(section)
+        for section in list(body_sections or [])
+    ]
+    high_value_available = sum(
+        1
+        for profile in strategic_profiles
+        if str(profile.get("strategic_value_tier", "")).strip() in {"thesis_critical", "strategic_support"}
+    )
+    total_body_sections = len(list(body_sections or []))
+    demoted_to_appendix_count = 0
+    retained_protected_count = 0
+    retained_low_value_due_to_floor_count = 0
+    retained_low_value_due_to_surface_depth_count = 0
+    retained_low_overlap_count = 0
+    accumulated_spine_tokens: set[str] = set()
+
+    for idx, section in enumerate(list(body_sections or [])):
+        row = dict(section)
+        title = str(row.get("title", "")).strip()
+        outline_key = str(row.get("outline_section_key", "")).strip()
+        profile = strategic_profiles[idx]
+        row_tokens = redundancy_tokens[idx]
+        remaining_body_if_demoted = len(retained_body) + (total_body_sections - idx - 1)
+        is_protected = (
+            outline_key in _SECTION_SURFACE_DENSITY_PROTECTED_KEYS
+            or title in _SECTION_SURFACE_DENSITY_PROTECTED_TITLES
+            or title in normalized_required_titles
+        )
+        low_value_optional = str(profile.get("strategic_value_tier", "")).strip() in {"surface_optional", "supportive_context"}
+        overlap_score = 0.0
+        if row_tokens and accumulated_spine_tokens:
+            overlap_score = len(row_tokens.intersection(accumulated_spine_tokens)) / max(len(row_tokens), 1)
+        highly_redundant = overlap_score >= redundancy_overlap_threshold
+        policy_state = "retained_nonredundant_surface_section"
+        policy_reason = "Section carries distinct enough value to remain on the primary surface."
+        destination_surface = "body"
+
+        if is_protected:
+            policy_state = "retained_redundancy_protected_section"
+            policy_reason = "Section remains because it belongs to the protected strategic or contract-required spine."
+            retained_protected_count += 1
+        elif not low_value_optional:
+            policy_state = "retained_higher_value_surface_section"
+            policy_reason = "Section is not surface-optional, so redundancy alone cannot demote it."
+        elif not highly_redundant:
+            policy_state = "retained_low_value_but_nonredundant_section"
+            policy_reason = "Section is optional but still adds sufficiently distinct signal to the primary surface."
+            retained_low_overlap_count += 1
+        elif high_value_available < minimum_high_value_sections:
+            policy_state = "retained_redundant_optional_due_to_surface_depth"
+            policy_reason = "Section is redundant and optional, but the body does not yet have enough high-value sections to absorb the demotion."
+            retained_low_value_due_to_surface_depth_count += 1
+        elif remaining_body_if_demoted < minimum_body_sections:
+            policy_state = "retained_redundant_optional_due_to_minimum_surface_floor"
+            policy_reason = "Section is redundant and optional, but demoting it would collapse the minimum body-surface floor."
+            retained_low_value_due_to_floor_count += 1
+        else:
+            policy_state = "demoted_redundant_optional_section_to_appendix"
+            policy_reason = "Section is strategically optional and materially overlaps the retained thesis spine; appendix preserves it without repeating the body."
+            destination_surface = "appendix"
+            demoted_row = {
+                **row,
+                "section_type": "appendix",
+                "demoted_from_surface": "body",
+                "demoted_to_surface": "appendix",
+                "section_surface_redundancy_state": policy_state,
+                "section_surface_redundancy_profile": {
+                    "overlap_score": overlap_score,
+                    "redundancy_overlap_threshold": redundancy_overlap_threshold,
+                    "token_count": len(row_tokens),
+                    "shared_token_count": len(row_tokens.intersection(accumulated_spine_tokens)),
+                    "strategic_value_tier": str(profile.get("strategic_value_tier", "")).strip(),
+                },
+            }
+            appended_appendix.append(demoted_row)
+            demoted_to_appendix_count += 1
+
+        policy_entry = {
+            "section_id": str(row.get("section_id", "")).strip(),
+            "section_title": title,
+            "outline_section_key": outline_key,
+            "protected": is_protected,
+            "strategic_value_tier": str(profile.get("strategic_value_tier", "")).strip(),
+            "low_value_optional": low_value_optional,
+            "overlap_score": overlap_score,
+            "overlap_threshold": redundancy_overlap_threshold,
+            "token_count": len(row_tokens),
+            "shared_token_count": len(row_tokens.intersection(accumulated_spine_tokens)),
+            "highly_redundant": highly_redundant,
+            "policy_state": policy_state,
+            "policy_reason": policy_reason,
+            "destination_surface": destination_surface,
+        }
+        policy_rows.append(policy_entry)
+
+        if destination_surface == "body":
+            retained_row = {
+                **row,
+                "section_surface_redundancy_state": policy_state,
+                "section_surface_redundancy_profile": {
+                    "overlap_score": overlap_score,
+                    "redundancy_overlap_threshold": redundancy_overlap_threshold,
+                    "token_count": len(row_tokens),
+                    "shared_token_count": len(row_tokens.intersection(accumulated_spine_tokens)),
+                    "strategic_value_tier": str(profile.get("strategic_value_tier", "")).strip(),
+                },
+            }
+            retained_body.append(retained_row)
+            if is_protected or str(profile.get("strategic_value_tier", "")).strip() in {"thesis_critical", "strategic_support"}:
+                accumulated_spine_tokens.update(row_tokens)
+
+    summary = {
+        "minimum_body_sections": minimum_body_sections,
+        "minimum_high_value_sections": minimum_high_value_sections,
+        "redundancy_overlap_threshold": redundancy_overlap_threshold,
+        "required_body_title_count": len(normalized_required_titles),
+        "total_body_sections_evaluated": total_body_sections,
+        "high_value_available": high_value_available,
+        "demoted_to_appendix_count": demoted_to_appendix_count,
+        "retained_protected_count": retained_protected_count,
+        "retained_low_value_due_to_floor_count": retained_low_value_due_to_floor_count,
+        "retained_low_value_due_to_surface_depth_count": retained_low_value_due_to_surface_depth_count,
+        "retained_low_overlap_count": retained_low_overlap_count,
+    }
+    return retained_body, appended_appendix, policy_rows, summary
+
+
+def _apply_section_inventory_surface_gate(
+    *,
+    body_sections: list[dict[str, Any]],
+    appendix_sections: list[dict[str, Any]],
+    required_body_titles: set[str] | None = None,
+    minimum_body_sections: int = 10,
+    minimum_high_value_sections: int = 6,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    retained_body: list[dict[str, Any]] = []
+    appended_appendix: list[dict[str, Any]] = list(appendix_sections or [])
+    policy_rows: list[dict[str, Any]] = []
+    normalized_required_titles = {
+        str(title).strip()
+        for title in set(required_body_titles or set())
+        if str(title).strip()
+    }
+    strategic_profiles = [
+        dict(section.get("section_surface_strategic_profile", {}) or _section_surface_strategic_profile(section))
+        for section in list(body_sections or [])
+    ]
+    inventory_profiles = [
+        _section_surface_inventory_profile(section)
+        for section in list(body_sections or [])
+    ]
+    high_value_available = sum(
+        1
+        for profile in strategic_profiles
+        if str(profile.get("strategic_value_tier", "")).strip() in {"thesis_critical", "strategic_support"}
+    )
+    total_body_sections = len(list(body_sections or []))
+    demoted_to_appendix_count = 0
+    retained_protected_count = 0
+    retained_low_value_due_to_floor_count = 0
+    retained_low_value_due_to_surface_depth_count = 0
+    retained_readout_surface_count = 0
+    retained_noninventory_optional_count = 0
+
+    for idx, section in enumerate(list(body_sections or [])):
+        row = dict(section)
+        title = str(row.get("title", "")).strip()
+        outline_key = str(row.get("outline_section_key", "")).strip()
+        strategic_profile = strategic_profiles[idx]
+        inventory_profile = inventory_profiles[idx]
+        remaining_body_if_demoted = len(retained_body) + (total_body_sections - idx - 1)
+        is_protected = (
+            outline_key in _SECTION_SURFACE_DENSITY_PROTECTED_KEYS
+            or title in _SECTION_SURFACE_DENSITY_PROTECTED_TITLES
+            or title in normalized_required_titles
+        )
+        low_value_optional = str(strategic_profile.get("strategic_value_tier", "")).strip() in {
+            "surface_optional",
+            "supportive_context",
+        }
+        inventory_heavy = bool(inventory_profile.get("inventory_heavy", False))
+        readout_signal_count = int(inventory_profile.get("readout_signal_count", 0) or 0)
+        policy_state = "retained_noninventory_surface_section"
+        policy_reason = "Section does not read as a registry-like surface and can remain in the primary body."
+        destination_surface = "body"
+
+        if is_protected:
+            policy_state = "retained_inventory_protected_section"
+            policy_reason = "Section remains because it belongs to the protected strategic or contract-required spine."
+            retained_protected_count += 1
+        elif not low_value_optional:
+            policy_state = "retained_higher_value_surface_section"
+            policy_reason = "Section is not surface-optional, so inventory tone alone cannot demote it."
+        elif readout_signal_count > 0:
+            policy_state = "retained_optional_section_with_readout_surface"
+            policy_reason = "Section is optional but still carries an explicit strategic readout, so it remains on the primary surface."
+            retained_readout_surface_count += 1
+        elif not inventory_heavy:
+            policy_state = "retained_optional_but_noninventory_section"
+            policy_reason = "Section is optional, but it does not collapse into a registry-like surface."
+            retained_noninventory_optional_count += 1
+        elif high_value_available < minimum_high_value_sections:
+            policy_state = "retained_inventory_optional_due_to_surface_depth"
+            policy_reason = "Section is registry-like and optional, but the current body does not yet have enough high-value sections to absorb the demotion."
+            retained_low_value_due_to_surface_depth_count += 1
+        elif remaining_body_if_demoted < minimum_body_sections:
+            policy_state = "retained_inventory_optional_due_to_minimum_surface_floor"
+            policy_reason = "Section is registry-like and optional, but demoting it would collapse the minimum body-surface floor."
+            retained_low_value_due_to_floor_count += 1
+        else:
+            policy_state = "demoted_inventory_like_optional_section_to_appendix"
+            policy_reason = "Section is strategically optional and reads more like a governed register than a primary-surface insight layer, so appendix preserves it instead."
+            destination_surface = "appendix"
+            demoted_row = {
+                **row,
+                "section_type": "appendix",
+                "demoted_from_surface": "body",
+                "demoted_to_surface": "appendix",
+                "section_surface_inventory_state": policy_state,
+                "section_surface_inventory_profile": dict(inventory_profile),
+            }
+            appended_appendix.append(demoted_row)
+            demoted_to_appendix_count += 1
+
+        policy_entry = {
+            "section_id": str(row.get("section_id", "")).strip(),
+            "section_title": title,
+            "outline_section_key": outline_key,
+            "protected": is_protected,
+            "strategic_value_tier": str(strategic_profile.get("strategic_value_tier", "")).strip(),
+            "low_value_optional": low_value_optional,
+            "inventory_heavy": inventory_heavy,
+            "inventory_score": inventory_profile["inventory_score"],
+            "narrative_score": inventory_profile["narrative_score"],
+            "label_like_ratio": inventory_profile["label_like_ratio"],
+            "label_like_line_count": inventory_profile["label_like_line_count"],
+            "inventory_token_hits": inventory_profile["inventory_token_hits"],
+            "readout_signal_count": readout_signal_count,
+            "policy_state": policy_state,
+            "policy_reason": policy_reason,
+            "destination_surface": destination_surface,
+        }
+        policy_rows.append(policy_entry)
+
+        if destination_surface == "body":
+            retained_row = {
+                **row,
+                "section_surface_inventory_state": policy_state,
+                "section_surface_inventory_profile": dict(inventory_profile),
+            }
+            retained_body.append(retained_row)
+
+    summary = {
+        "minimum_body_sections": minimum_body_sections,
+        "minimum_high_value_sections": minimum_high_value_sections,
+        "required_body_title_count": len(normalized_required_titles),
+        "total_body_sections_evaluated": total_body_sections,
+        "high_value_available": high_value_available,
+        "demoted_to_appendix_count": demoted_to_appendix_count,
+        "retained_protected_count": retained_protected_count,
+        "retained_low_value_due_to_floor_count": retained_low_value_due_to_floor_count,
+        "retained_low_value_due_to_surface_depth_count": retained_low_value_due_to_surface_depth_count,
+        "retained_readout_surface_count": retained_readout_surface_count,
+        "retained_noninventory_optional_count": retained_noninventory_optional_count,
+    }
+    return retained_body, appended_appendix, policy_rows, summary
 
 
 def _candidate_claim_ids_for_section(
@@ -2454,10 +4872,18 @@ def _build_structural_primary_body_sections(  # noqa: PLR0913
         f"  Reasoning Path      : {default_reasoning_path}",
         f"  Problem Frame Active: {'YES' if problem_frame_active else 'NO'}",
         f"  Leading Structural Mode: {leading_mode or 'NONE'}",
+        f"  Thesis State        : {structural_executive_summary.get('thesis_state', '')}",
+        f"  Local Claim Closure : {structural_executive_summary.get('local_claim_closure_state', '')}",
         f"  Reframed Problem    : {structural_executive_summary.get('primary_reframed_problem', '')}",
         f"  Dominant Conflict   : {structural_executive_summary.get('dominant_structural_conflict', '')}",
+        f"  Why Premature       : {structural_executive_summary.get('why_current_question_is_premature', '')}",
+        f"  Wrong Variable Risk : {structural_executive_summary.get('dominant_operational_misunderstanding', '')}",
+        f"  Boundary Error      : {structural_executive_summary.get('hidden_system_boundary_error', '')}",
+        f"  Invalid Comparison  : {structural_executive_summary.get('invalid_comparison_risk', '')}",
+        f"  Dominant Loss Logic : {structural_executive_summary.get('dominant_loss_logic', '')}",
         f"  Why It Matters      : {structural_executive_summary.get('why_it_matters', '')}",
         f"  Dominant Risk       : {structural_executive_summary.get('dominant_risk', '')}",
+        f"  Strategic Nugget    : {_join(structural_executive_summary.get('top_gold_nuggets', []), default='NONE BOUNDED')}",
         f"  Priority Action     : {primary_action} [{primary_action_status}]",
         f"  Not Admissible      : {_join(structural_executive_summary.get('not_admissible_actions', []), default='NONE BOUNDED')}",
         f"  Constraint          : {structural_executive_summary.get('bounded_note', '')}",
@@ -2483,10 +4909,18 @@ def _build_structural_primary_body_sections(  # noqa: PLR0913
         f"  Ruta de Razonamiento   : {default_reasoning_path}",
         f"  Marco del Problema Activo: {'SÍ' if problem_frame_active else 'NO'}",
         f"  Modo Estructural Líder : {leading_mode or 'NINGUNO'}",
+        f"  Estado de la Tesis    : {structural_executive_summary.get('thesis_state', '')}",
+        f"  Cierre de Claim Local : {structural_executive_summary.get('local_claim_closure_state', '')}",
         f"  Problema Reencuadrado  : {structural_executive_summary.get('primary_reframed_problem', '')}",
         f"  Conflicto Dominante    : {structural_executive_summary.get('dominant_structural_conflict', '')}",
+        f"  Por Qué Es Prematuro   : {structural_executive_summary.get('why_current_question_is_premature', '')}",
+        f"  Riesgo de Variable Equivocada: {structural_executive_summary.get('dominant_operational_misunderstanding', '')}",
+        f"  Error de Frontera      : {structural_executive_summary.get('hidden_system_boundary_error', '')}",
+        f"  Comparación Inválida   : {structural_executive_summary.get('invalid_comparison_risk', '')}",
+        f"  Lógica Dominante de Pérdida: {structural_executive_summary.get('dominant_loss_logic', '')}",
         f"  Por Qué Importa        : {structural_executive_summary.get('why_it_matters', '')}",
         f"  Riesgo Dominante       : {structural_executive_summary.get('dominant_risk', '')}",
+        f"  Gold Nugget Estratégico: {_join(structural_executive_summary.get('top_gold_nuggets', []), default='NINGUNO ACOTADO')}",
         f"  Acción Prioritaria     : {primary_action} [{primary_action_status}]",
         f"  No Admisible           : {_join(structural_executive_summary.get('not_admissible_actions', []), default='NINGÚN CIERRE ADICIONAL ACOTADO')}",
         f"  Restricción            : {structural_executive_summary.get('bounded_note', '')}",
@@ -4141,6 +6575,27 @@ class Motor016Adapter(BaseMotorAdapter):
         m28 = inputs.get("motor_028", {})
         m47 = inputs.get("motor_047", {}) if isinstance(inputs.get("motor_047", {}), dict) else {}
         m48 = inputs.get("motor_048", {}) if isinstance(inputs.get("motor_048", {}), dict) else {}
+        m53 = inputs.get("motor_053", {}) if isinstance(inputs.get("motor_053", {}), dict) else {}
+        m54 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
+
+        skill_support_context = build_skill_first_package_support_context(
+            target_definition=(inputs.get("__runtime__", {}) if isinstance(inputs.get("__runtime__", {}), dict) else {}).get(
+                "target_definition",
+                {},
+            ),
+            executive_thesis=dict(m47.get("executive_thesis", {}) or {}),
+            motor_053_output=m53,
+            motor_054_output=m54,
+        )
+        skill_analysis_context = build_skill_first_runtime_analysis_registers(
+            target_definition=(inputs.get("__runtime__", {}) if isinstance(inputs.get("__runtime__", {}), dict) else {}).get(
+                "target_definition",
+                {},
+            ),
+            executive_thesis=dict(m47.get("executive_thesis", {}) or {}),
+            motor_053_output=m53,
+            motor_054_output=m54,
+        )
 
         output_blocks      = m15.get("output_blocks", [])
         composite_reading  = m15.get("composite_reading", {})
@@ -4148,10 +6603,13 @@ class Motor016Adapter(BaseMotorAdapter):
         traceability_register = m15.get("traceability_register", {})
         decision_core_lineage = m14.get("decision_core_lineage", {})
         source_lineage = m12.get("evidence_lineage", {})
+        if not output_blocks:
+            output_blocks = list(skill_support_context.get("output_blocks", []) or [])
+        if not composite_reading:
+            composite_reading = dict(skill_support_context.get("composite_reading", {}) or {})
 
         m49 = inputs.get("motor_049", {}) if isinstance(inputs.get("motor_049", {}), dict) else {}
         m51 = inputs.get("motor_051", {}) if isinstance(inputs.get("motor_051", {}), dict) else {}
-
         inference_records      = m14.get("inference_records", [])
         tension_records        = m14.get("tension_records", [])
         conflict_register      = m14.get("conflict_register", [])
@@ -4160,11 +6618,53 @@ class Motor016Adapter(BaseMotorAdapter):
         evidence_gap_register  = m14.get("evidence_gap_register", [])
         validation_queue       = m14.get("validation_queue", [])
         next_best_questions    = m14.get("next_best_questions", [])
+        if not inference_records:
+            inference_records = list(skill_analysis_context.get("inference_records", []) or [])
+        if not conflict_register:
+            conflict_register = list(skill_analysis_context.get("conflict_register", []) or [])
+        if not opportunity_candidates:
+            opportunity_candidates = list(skill_analysis_context.get("opportunity_candidates", []) or [])
+        if not uncertainty_register:
+            uncertainty_register = list(skill_analysis_context.get("uncertainty_register", []) or [])
+        if not evidence_gap_register:
+            evidence_gap_register = list(skill_analysis_context.get("evidence_gap_register", []) or [])
+        if not validation_queue:
+            validation_queue = list(skill_analysis_context.get("validation_queue", []) or [])
+        if not next_best_questions:
+            next_best_questions = list(skill_analysis_context.get("next_best_questions", []) or [])
         scenario_space         = list(m14.get("scenario_space", []) or [])
         claim_permission_summary = m14.get("claim_permission_summary", {}) if isinstance(m14.get("claim_permission_summary", {}), dict) else {}
         variable_bottleneck_register = list(m14.get("variable_bottleneck_register", []) or [])
         report_readiness_register = dict(
             m14.get("report_readiness_register", m34.get("report_readiness_register", {})) or {}
+        )
+        if not scenario_space:
+            scenario_space = list(skill_support_context.get("scenario_space", []) or [])
+        if not claim_permission_summary:
+            claim_permission_summary = dict(skill_support_context.get("claim_permission_summary", {}) or {})
+        if not variable_bottleneck_register:
+            variable_bottleneck_register = list(skill_support_context.get("variable_bottleneck_register", []) or [])
+        if not report_readiness_register:
+            report_readiness_register = dict(skill_support_context.get("report_readiness_register", {}) or {})
+        motor_014_enrichment_state = (
+            "legacy_present"
+            if m14
+            else "optional_legacy_absent_skill_backfilled"
+            if inference_records or validation_queue or next_best_questions
+            else "optional_legacy_absent_unbackfilled"
+        )
+        motor_015_enrichment_state = (
+            "legacy_present"
+            if m15
+            else "optional_legacy_absent_skill_backfilled"
+            if output_blocks or report_readiness_register or claim_permission_summary
+            else "optional_legacy_absent_unbackfilled"
+        )
+        legacy_enrichment_dependency_state = (
+            "optional_legacy_enrichment_only"
+            if motor_014_enrichment_state != "optional_legacy_absent_unbackfilled"
+            and motor_015_enrichment_state != "optional_legacy_absent_unbackfilled"
+            else "legacy_enrichment_gap"
         )
         report_type_classifier_table = list(m34.get("report_type_classifier_table", []) or [])
         claim_contract_register = list(m34.get("claim_contract_register", []) or [])
@@ -4286,6 +6786,10 @@ class Motor016Adapter(BaseMotorAdapter):
         decision_permission_register = list(
             m14.get("decision_permission_register", m34.get("decision_permission_register", [])) or []
         )
+        if not claim_permission_register:
+            claim_permission_register = list(skill_support_context.get("claim_permission_register", []) or [])
+        if not decision_permission_register:
+            decision_permission_register = list(skill_support_context.get("decision_permission_register", []) or [])
         blocked_claim_count = len(
             [row for row in claim_permission_register if str(row.get("current_permission", "")).strip() == "prohibited"]
         )
@@ -4457,6 +6961,65 @@ class Motor016Adapter(BaseMotorAdapter):
         section_demotions_register = list(m48.get("section_demotions_register", []) or [])
         body_to_appendix_justification_map = dict(m48.get("body_to_appendix_justification_map", {}) or {})
         compression_decision_log = list(m48.get("compression_decision_log", []) or [])
+        skill_package_context = build_skill_first_report_package_context(
+            target_definition=runtime_target_definition,
+            executive_thesis=executive_thesis,
+            main_report_outline=main_report_outline,
+            motor_053_output=m53,
+            motor_054_output=m54,
+        )
+        if not canonical_problem_frame:
+            canonical_problem_frame = dict(skill_package_context.get("canonical_problem_frame", {}) or {})
+        if not claim_contract_register:
+            claim_contract_register = list(skill_package_context.get("claim_contract_register", []) or [])
+        if not structural_claim_permission_register:
+            structural_claim_permission_register = list(
+                skill_package_context.get("structural_claim_permission_register", []) or []
+            )
+        if not report_type_classifier_table:
+            report_type_classifier_table = list(skill_package_context.get("report_type_classifier_table", []) or [])
+        if not structural_output_mode_classifier_table:
+            structural_output_mode_classifier_table = list(
+                skill_package_context.get("structural_output_mode_classifier_table", []) or []
+            )
+        if not structural_output_mode_summary:
+            structural_output_mode_summary = dict(skill_package_context.get("structural_output_mode_summary", {}) or {})
+        if not structural_primary_promotion_gate:
+            structural_primary_promotion_gate = dict(
+                skill_package_context.get("structural_primary_promotion_gate", {}) or {}
+            )
+        if not system_abstraction:
+            system_abstraction = dict(skill_package_context.get("system_abstraction", {}) or {})
+        if not dominant_variable_register:
+            dominant_variable_register = list(skill_package_context.get("dominant_variable_register", []) or [])
+        if not cross_layer_conflict_register:
+            cross_layer_conflict_register = list(skill_package_context.get("cross_layer_conflict_register", []) or [])
+        if not problem_framing_register:
+            problem_framing_register = list(skill_package_context.get("problem_framing_register", []) or [])
+        if not structural_benchmark_register:
+            structural_benchmark_register = list(skill_package_context.get("structural_benchmark_register", []) or [])
+        if not competitive_comparison_register:
+            competitive_comparison_register = list(
+                skill_package_context.get("competitive_comparison_register", []) or []
+            )
+        if not conditional_redesign_register:
+            conditional_redesign_register = list(skill_package_context.get("conditional_redesign_register", []) or [])
+        if not structural_financial_exposure_register:
+            structural_financial_exposure_register = list(
+                skill_package_context.get("structural_financial_exposure_register", []) or []
+            )
+        if not evidence_state_by_layer_register:
+            evidence_state_by_layer_register = list(
+                skill_package_context.get("evidence_state_by_layer_register", []) or []
+            )
+        if not minimum_evidence_for_discrimination_register:
+            minimum_evidence_for_discrimination_register = list(
+                skill_package_context.get("minimum_evidence_for_discrimination_register", []) or []
+            )
+        if not expanded_structural_tad_action_register:
+            expanded_structural_tad_action_register = list(
+                skill_package_context.get("expanded_structural_tad_action_register", []) or []
+            )
         if not cross_layer_conflict_register:
             dominant_conflict = str(canonical_problem_frame.get("dominant_conflict", "")).strip()
             if dominant_conflict:
@@ -4490,7 +7053,7 @@ class Motor016Adapter(BaseMotorAdapter):
             "structural_financial_exposure_register": structural_financial_exposure_register,
             "minimum_evidence_for_discrimination_register": minimum_evidence_for_discrimination_register,
             "structural_claim_permission_register": structural_claim_permission_register,
-            "claim_contract_register": list(m34.get("claim_contract_register", []) or []),
+            "claim_contract_register": claim_contract_register,
             "structural_output_mode_classifier_table": structural_output_mode_classifier_table,
             "structural_output_mode_summary": structural_output_mode_summary,
             "structural_primary_promotion_gate": structural_primary_promotion_gate,
@@ -5413,7 +7976,10 @@ class Motor016Adapter(BaseMotorAdapter):
             "Each pathway is conditional on specific field validation requirements.",
             "",
         ]
-        for o in opportunity_candidates:
+        display_opportunity_candidates = list(opportunity_candidates or []) or list(
+            structural_executive_summary.get("conditional_opportunity_pathways", []) or []
+        )
+        for o in display_opportunity_candidates:
             c8 += [
                 _sep("-"),
                 f"  [{o['opportunity_id']}]  {o['opportunity_name']}",
@@ -6185,6 +8751,11 @@ class Motor016Adapter(BaseMotorAdapter):
             for sec in body_sections + appendix_sections
             if str(sec.get("section_id", "")).strip()
         }
+        body_section_ids = {
+            str(sec.get("section_id", "")).strip()
+            for sec in body_sections
+            if str(sec.get("section_id", "")).strip()
+        }
         section_surface_map = {
             str(sec.get("section_id", "")).strip(): str(sec.get("section_type", "")).strip()
             for sec in body_sections + appendix_sections
@@ -6318,18 +8889,49 @@ class Motor016Adapter(BaseMotorAdapter):
                 resolved_chart_b64_list_map.setdefault(target_hint, []).append(resolved_ca.get("image_b64", ""))
                 resolved_chart_asset_list_map.setdefault(target_hint, []).append(resolved_ca)
 
+        (
+            resolved_chart_asset_list_map,
+            chart_strategic_surface_policy_register,
+            chart_strategic_surface_summary,
+        ) = _apply_chart_strategic_surface_gate(
+            resolved_chart_asset_list_map=resolved_chart_asset_list_map,
+            body_section_ids=body_section_ids,
+            appendix_section_ids=[
+                str(sec.get("section_id", "")).strip()
+                for sec in appendix_sections
+                if str(sec.get("section_id", "")).strip()
+            ],
+            appendix_demote_section_id=(
+                str((appendix_sections[0] or {}).get("section_id", "")).strip()
+                if appendix_sections
+                else ""
+            ),
+        )
+        resolved_chart_surface_section_ids = set(resolved_chart_asset_list_map.keys())
+        (
+            resolved_section_chart_map,
+            resolved_chart_b64_map,
+            resolved_chart_b64_list_map,
+        ) = _rebuild_chart_surface_maps(resolved_chart_asset_list_map)
+
         # ── Assign chart_refs and chart_b64 from maps ─────────────────────────
         for sec in body_sections + appendix_sections:
             sid = sec.get("section_id", "")
-            if not sec.get("chart_ref"):
-                sec["chart_ref"] = resolved_section_chart_map.get(sid, _section_chart_map.get(sid, ""))
-            if not sec.get("chart_b64"):
-                sec["chart_b64"] = resolved_chart_b64_map.get(sid, _chart_b64_map.get(sid, ""))
-            if not sec.get("chart_b64_list"):
-                sec["chart_b64_list"] = resolved_chart_b64_list_map.get(sid, _chart_b64_list_map.get(sid, (
-                    [sec["chart_b64"]] if sec.get("chart_b64") else []
-                )))
-            sec["chart_assets"] = resolved_chart_asset_list_map.get(sid, _chart_asset_list_map.get(sid, []))
+            if sid in resolved_chart_surface_section_ids:
+                sec["chart_ref"] = resolved_section_chart_map.get(sid, "")
+                sec["chart_b64"] = resolved_chart_b64_map.get(sid, "")
+                sec["chart_b64_list"] = resolved_chart_b64_list_map.get(sid, [])
+                sec["chart_assets"] = resolved_chart_asset_list_map.get(sid, [])
+            else:
+                if not sec.get("chart_ref"):
+                    sec["chart_ref"] = resolved_section_chart_map.get(sid, _section_chart_map.get(sid, ""))
+                if not sec.get("chart_b64"):
+                    sec["chart_b64"] = resolved_chart_b64_map.get(sid, _chart_b64_map.get(sid, ""))
+                if not sec.get("chart_b64_list"):
+                    sec["chart_b64_list"] = resolved_chart_b64_list_map.get(sid, _chart_b64_list_map.get(sid, (
+                        [sec["chart_b64"]] if sec.get("chart_b64") else []
+                    )))
+                sec["chart_assets"] = resolved_chart_asset_list_map.get(sid, _chart_asset_list_map.get(sid, []))
             llm_section = llm_section_lookup.get(sid, {})
             sec["llm_render_mode"] = llm_section.get("render_mode", "structured_only")
             sec["llm_lint_status"] = llm_section.get("lint_status", "not_applicable")
@@ -6374,6 +8976,57 @@ class Motor016Adapter(BaseMotorAdapter):
                 sections_body_ordered,
                 main_report_outline,
             )
+        hard_required_body_titles = {
+            str(title).strip()
+            for title in list(render_section_contract.get("required_body_sections", []) or [])
+            if str(title).strip()
+        }
+        original_required_body_sections = [
+            str(title).strip()
+            for title in list(render_section_contract.get("required_body_sections", []) or [])
+            if str(title).strip()
+        ]
+
+        (
+            sections_body_ordered,
+            sections_appendix,
+            section_density_surface_policy_register,
+            section_density_surface_summary,
+        ) = _apply_section_surface_density_gate(
+            body_sections=sections_body_ordered,
+            appendix_sections=sections_appendix,
+            required_body_titles=hard_required_body_titles,
+        )
+        (
+            sections_body_ordered,
+            sections_appendix,
+            section_strategic_surface_policy_register,
+            section_strategic_surface_summary,
+        ) = _apply_section_strategic_surface_gate(
+            body_sections=sections_body_ordered,
+            appendix_sections=sections_appendix,
+            required_body_titles=hard_required_body_titles,
+        )
+        (
+            sections_body_ordered,
+            sections_appendix,
+            section_redundancy_surface_policy_register,
+            section_redundancy_surface_summary,
+        ) = _apply_section_strategic_redundancy_gate(
+            body_sections=sections_body_ordered,
+            appendix_sections=sections_appendix,
+            required_body_titles=hard_required_body_titles,
+        )
+        (
+            sections_body_ordered,
+            sections_appendix,
+            section_inventory_surface_policy_register,
+            section_inventory_surface_summary,
+        ) = _apply_section_inventory_surface_gate(
+            body_sections=sections_body_ordered,
+            appendix_sections=sections_appendix,
+            required_body_titles=hard_required_body_titles,
+        )
         sections_body_ordered = _renumber_body_sections(sections_body_ordered)
         sections_appendix = _normalize_appendix_chapter_ids(sections_appendix)
         compression_state = str(main_report_outline.get("compression_state", "") or "").strip()
@@ -6382,6 +9035,14 @@ class Motor016Adapter(BaseMotorAdapter):
             for title in list(main_report_outline.get("body_section_titles", []) or [])
             if str(title).strip()
         ]
+        planned_body_titles = (
+            list(client_facing_body_titles)
+            or [
+                str(title).strip()
+                for title in list(render_section_contract.get("body_section_titles", []) or [])
+                if str(title).strip()
+            ]
+        )
         if compression_state == "inadmissible_bypass":
             actual_body_titles = [
                 str(section.get("title", "")).strip()
@@ -6405,15 +9066,40 @@ class Motor016Adapter(BaseMotorAdapter):
                 "Inadmissible thesis bypass: render only the sections actually packaged and "
                 "do not inherit structural or legacy minimum-body requirements."
             )
-        elif client_facing_body_titles and canonical_output_mode != "Target Classification Brief":
-            render_section_contract["body_priority_titles"] = list(client_facing_body_titles)
-            render_section_contract["body_section_titles"] = list(client_facing_body_titles)
-            render_section_contract["required_body_sections"] = list(client_facing_body_titles)
-            render_section_contract["resolved_body_sections"] = [
+        elif planned_body_titles and canonical_output_mode != "Target Classification Brief":
+            actual_body_titles = [
                 str(section.get("title", "")).strip()
                 for section in sections_body_ordered
                 if str(section.get("title", "")).strip()
             ]
+            actual_appendix_titles = [
+                str(section.get("title", "")).strip()
+                for section in sections_appendix
+                if str(section.get("title", "")).strip()
+            ]
+            required_body_after_surface = [
+                title for title in original_required_body_sections if title in actual_body_titles
+            ]
+            demoted_preferred_titles = [
+                title for title in planned_body_titles if title not in actual_body_titles
+            ]
+            render_section_contract["preferred_body_sections"] = list(planned_body_titles)
+            render_section_contract["body_priority_titles"] = list(actual_body_titles)
+            render_section_contract["body_section_titles"] = list(actual_body_titles)
+            render_section_contract["required_body_sections"] = list(required_body_after_surface)
+            render_section_contract["resolved_body_sections"] = list(actual_body_titles)
+            render_section_contract["preferred_appendix_sections"] = list(
+                render_section_contract.get("appendix_section_titles", []) or []
+            )
+            render_section_contract["resolved_appendix_sections"] = list(actual_appendix_titles)
+            render_section_contract["demoted_preferred_body_sections"] = list(demoted_preferred_titles)
+            if demoted_preferred_titles:
+                render_section_contract["policy_note"] = (
+                    "Surface governance may demote preferred body sections to appendix when they are "
+                    "optional, low-novelty, or inventory-like; only hard required sections remain protected."
+                )
+            else:
+                render_section_contract["policy_note"] = str(render_section_contract.get("policy_note", "") or "")
         sections_body_ordered, sections_appendix, section_claim_trace_register = _attach_claim_contract_traces(
             sections_body_ordered,
             sections_appendix,
@@ -6544,12 +9230,22 @@ class Motor016Adapter(BaseMotorAdapter):
             "support_chart_lane_visibility_policy": support_chart_lane_visibility_policy,
             "support_chart_lane_curation_policy": support_chart_lane_curation_policy,
             "chart_visibility_policy_register": chart_visibility_policy_register,
+            "chart_strategic_surface_policy_register": chart_strategic_surface_policy_register,
+            "chart_strategic_surface_summary": chart_strategic_surface_summary,
             "case_namespace_register": case_namespace_register,
             "chart_case_match_register": chart_case_match_register,
             "cross_case_contamination_scan": cross_case_contamination_scan,
             "empty_section_policy_register": empty_section_policy_register,
             "section_population_status_register": section_population_status_register,
             "section_explanation_fallback_register": section_explanation_fallback_register,
+            "section_density_surface_policy_register": section_density_surface_policy_register,
+            "section_density_surface_summary": section_density_surface_summary,
+            "section_strategic_surface_policy_register": section_strategic_surface_policy_register,
+            "section_strategic_surface_summary": section_strategic_surface_summary,
+            "section_redundancy_surface_policy_register": section_redundancy_surface_policy_register,
+            "section_redundancy_surface_summary": section_redundancy_surface_summary,
+            "section_inventory_surface_policy_register": section_inventory_surface_policy_register,
+            "section_inventory_surface_summary": section_inventory_surface_summary,
             "required_body_sections": list(render_section_contract.get("required_body_sections", []) or []),
             "required_appendix_sections": list(render_section_contract.get("required_appendix_sections", []) or []),
             "written_body_policy_basis": str(render_section_contract.get("policy_note", "") or ""),
@@ -6583,6 +9279,11 @@ class Motor016Adapter(BaseMotorAdapter):
             "llm_governance_summary": llm_governance_summary,
             "financial_exposure_case": financial_exposure_case,
             "compliance_applicability_case": comp_case,
+            "legacy_enrichment_boundary": {
+                "motor_014_enrichment_state": motor_014_enrichment_state,
+                "motor_015_enrichment_state": motor_015_enrichment_state,
+                "legacy_enrichment_dependency_state": legacy_enrichment_dependency_state,
+            },
             "primary_view_key": "report_view",
             "approved_views": {
                 "report_view": {
@@ -6619,4 +9320,7 @@ class Motor016Adapter(BaseMotorAdapter):
             "chart_assets_available":  len(chart_assets),
             "facility_prior_id":       facility_prior_id,
             "produced_at":             produced_at,
+            "motor_014_enrichment_state": motor_014_enrichment_state,
+            "motor_015_enrichment_state": motor_015_enrichment_state,
+            "legacy_enrichment_dependency_state": legacy_enrichment_dependency_state,
         }

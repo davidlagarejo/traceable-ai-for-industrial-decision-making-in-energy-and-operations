@@ -336,6 +336,10 @@ def _is_inadmissible_thesis(executive_thesis: dict[str, Any]) -> bool:
     return _text(executive_thesis.get("thesis_state")) == "inadmissible_thesis"
 
 
+def _is_conditional_intelligence_thesis(executive_thesis: dict[str, Any]) -> bool:
+    return _text(executive_thesis.get("thesis_state")) == "conditional_structural_intelligence"
+
+
 def build_report_compression(  # noqa: PLR0913
     *,
     executive_thesis: dict[str, Any],
@@ -378,6 +382,7 @@ def build_report_compression(  # noqa: PLR0913
             ],
             "report_output_mode_classifier_count": len(report_output_mode_classifier_table),
         }
+    conditional_intelligence_only = _is_conditional_intelligence_thesis(executive_thesis)
     supporting_modes = _supporting_modes(executive_thesis)
     appendix_map = _appendix_map(executive_thesis)
     section_demotions_register = _section_demotions_register(executive_thesis)
@@ -395,13 +400,15 @@ def build_report_compression(  # noqa: PLR0913
         "visible_report_mode": visible_report_mode,
         "dominant_lens": _text(executive_thesis.get("dominant_lens")),
         "supporting_modes": supporting_modes,
+        "gold_nugget_authority_state": _text(executive_thesis.get("gold_nugget_authority_state")),
+        "gold_nugget_source_register": _text(executive_thesis.get("gold_nugget_source_register")),
         "max_primary_sections": len(_CLIENT_FACING_SECTION_BLUEPRINT),
-        "compression_state": "thesis_compressed",
+        "compression_state": "conditional_intelligence_compressed" if conditional_intelligence_only else "thesis_compressed",
         "sections": sections,
         "body_section_titles": [row["title"] for row in sections],
         "appendix_map": appendix_map,
         "section_authority_map": {
-            "executive_structural_thesis": "motor_047.executive_thesis / motor_054.strategic_gold_nugget_register",
+            "executive_structural_thesis": "motor_047.executive_thesis / motor_054.authoritative_gold_nugget_register | motor_054.strategic_gold_nugget_register",
             "reframed_problem": "motor_047.executive_thesis / motor_041.problem_framing_register",
             "dominant_structural_contradiction": "motor_047.executive_thesis / motor_040.cross_layer_conflict_register / motor_051.cross_layer_congruence_register / motor_053.regulatory_physics_register",
             "system_abstraction_snapshot": "motor_037.system_abstraction",
@@ -430,6 +437,19 @@ def build_report_compression(  # noqa: PLR0913
             sections=sections,
             appendix_map=appendix_map,
             congruence_visibility_register=congruence_visibility_register,
+        )
+        + (
+            [
+                {
+                    "decision_type": "conditional_intelligence_preserved",
+                    "selected_mode": visible_report_mode,
+                    "thesis_state": "conditional_structural_intelligence",
+                    "reason": _text(executive_thesis.get("conditional_intelligence_reason"))
+                    or "Local closure remains blocked, but bounded structural intelligence survives into the client-facing outline.",
+                }
+            ]
+            if conditional_intelligence_only
+            else []
         ),
         "report_output_mode_classifier_count": len(report_output_mode_classifier_table),
     }

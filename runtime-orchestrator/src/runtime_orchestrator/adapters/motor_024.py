@@ -30,6 +30,12 @@ from ..ingestion_learning import (
     build_next_ingestion_priority_update,
     build_source_yield_memory,
 )
+try:
+    from ..zlab_skill.loader import load_registry_bundle
+    from ..zlab_skill.validator_engine import apply_validators_for_scope
+except Exception:
+    load_registry_bundle = None
+    apply_validators_for_scope = None
 
 # Severity levels
 _SEV_INFO = "info"
@@ -117,6 +123,8 @@ def _build_report_preflight_register(
     report_package = dict(m16.get("report_package", {}) or {})
     context_integrity_scan = dict(report_package.get("context_integrity_scan", {}) or {})
     case_adaptation_memo = dict(report_package.get("case_adaptation_memo", {}) or {})
+    case_metadata = dict(report_package.get("case_metadata", {}) or {})
+    executive_thesis = dict(report_package.get("executive_thesis", {}) or {})
     context_integrity_issues = list(context_integrity_scan.get("issues", []) or [])
     consistency_failures = list(m36.get("critical_failures", []) or [])
     consistency_can_render = bool(m36.get("can_render_pdf", True))
@@ -188,6 +196,42 @@ def _build_report_preflight_register(
 
     critical_failures: list[dict[str, Any]] = []
     checks: list[dict[str, Any]] = []
+
+    scenario_signature_seed = {
+        "document_visible_type": str(case_metadata.get("document_visible_type", "")).strip(),
+        "gold_nugget_authority_state": str(executive_thesis.get("gold_nugget_authority_state", "")).strip(),
+        "minimum_discriminating_evidence": list(executive_thesis.get("minimum_discriminating_evidence", []) or []),
+        "failure_reasons": list(case_adaptation_memo.get("failure_reasons", []) or []),
+        "case_rows": list(case_adaptation_memo.get("rows", []) or [])[:6],
+    }
+    scenario_signature = hashlib.sha1(
+        json.dumps(scenario_signature_seed, sort_keys=True, ensure_ascii=True).encode("utf-8")
+    ).hexdigest()
+    report_output_validation_row = {
+        "scenario_signature": scenario_signature,
+        "template_contamination_failure": bool(case_adaptation_memo.get("template_contamination_failure", False)),
+        "template_contamination_state": (
+            "contaminated"
+            if bool(case_adaptation_memo.get("template_contamination_failure", False))
+            else "clear"
+        ),
+        "document_visible_type": str(case_metadata.get("document_visible_type", "")).strip(),
+        "gold_nugget_authority_state": str(executive_thesis.get("gold_nugget_authority_state", "")).strip(),
+    }
+    try:
+        registry_bundle = load_registry_bundle() if load_registry_bundle is not None else {}
+    except Exception:
+        registry_bundle = {}
+    report_output_validation_register = (
+        apply_validators_for_scope(
+            [report_output_validation_row],
+            scope="report_output",
+            registry_bundle=registry_bundle,
+        )
+        if apply_validators_for_scope is not None
+        else [dict(report_output_validation_row, validator_state="not_run", validator_findings=[])]
+    )
+    report_output_validator_row = dict((report_output_validation_register or [{}])[0] or {})
 
     def _append_check(name: str, passed: bool, error: str = "", location: str = "", critical: bool = False) -> None:
         checks.append(
@@ -339,6 +383,17 @@ def _build_report_preflight_register(
         critical=True,
     )
     _append_check(
+        "report_output_validators_passed",
+        str(report_output_validator_row.get("validator_state", "")).strip() != "blocked",
+        error="; ".join(
+            str(row.get("message", "")).strip()
+            for row in list(report_output_validator_row.get("validator_findings", []) or [])
+            if str(row.get("message", "")).strip()
+        ),
+        location="zlab_skill.report_output_validation_register",
+        critical=True,
+    )
+    _append_check(
         "system_consistency_validator_passed",
         consistency_can_render,
         error="; ".join(str(row.get("message", "")) for row in consistency_failures[:4]),
@@ -364,6 +419,9 @@ def _build_report_preflight_register(
         "legacy_context_hits": legacy_context_hits,
         "system_consistency_failures": consistency_failures,
         "system_consistency_passed": consistency_can_render,
+        "report_output_validation_register": report_output_validation_register,
+        "report_output_validator_state": str(report_output_validator_row.get("validator_state", "")).strip(),
+        "report_output_validator_findings": list(report_output_validator_row.get("validator_findings", []) or []),
         "case_adaptation_summary": {
             "substantive_dimension_count": int(case_adaptation_memo.get("substantive_dimension_count", 0) or 0),
             "required_dimension_count": int(case_adaptation_memo.get("required_dimension_count", 0) or 0),
