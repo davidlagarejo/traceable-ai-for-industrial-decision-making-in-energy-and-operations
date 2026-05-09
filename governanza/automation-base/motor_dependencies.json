@@ -787,6 +787,16 @@
         "motor_054"
       ],
       "notes": "Capa F (Validation). Implementa Validador A del prompt RECOVERY-2026-05-09. Detecta asset-family contamination: patterns activos cross-family (process heat en warehouse, dock cycles en office, etc.) + tokens cross-family en gold nuggets. Bloquea reporte cuando contamination_detected=True (la integración con motor_017 force_render gate viene en commit posterior)."
+    },
+    "motor_063": {
+      "name": "Chart Validity Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_018",
+        "motor_047"
+      ],
+      "notes": "Capa F (Validation). Implementa Validador E del prompt RECOVERY-2026-05-09. Cada chart debe apoyar hipótesis/combinación/contradicción; si no, REMOVE. Reglas: CV1 decorative_risk chart presente; CV2 chart sin intelligence_binding; CV3 ratio decorative_risk > 30% (critical); CV4 thesis admisible sin charts."
     }
   }
 }
