@@ -1212,7 +1212,19 @@ class Motor017Adapter(BaseMotorAdapter):
             raise ValueError("motor_016 did not produce a report_package")
         gold_nugget_authority_state, gold_nugget_source_register = _resolve_gold_nugget_authority(report_package)
         consistency_summary = inputs.get("motor_036", {}) if isinstance(inputs.get("motor_036", {}), dict) else {}
-        if consistency_summary and not consistency_summary.get("can_render_pdf", True):
+        # Recovery R-66: allow opt-in render under warnings via pipeline input.
+        # Set `__pipeline__.__force_render__ = true` to bypass motor_036's
+        # can_render_pdf=False gate. The render proceeds and the resulting
+        # output carries the warnings in `consistency_summary` for the
+        # composer / readers to inspect. Default behaviour (no flag) is
+        # unchanged: motor_036 still blocks when it detects critical failures.
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        force_render_under_warnings = bool(pipeline_inputs.get("__force_render__", False))
+        if (
+            consistency_summary
+            and not consistency_summary.get("can_render_pdf", True)
+            and not force_render_under_warnings
+        ):
             failures = list(consistency_summary.get("critical_failures", []) or [])
             failure_summary = "; ".join(str(row.get("message", "consistency failure")) for row in failures[:4])
             return {
