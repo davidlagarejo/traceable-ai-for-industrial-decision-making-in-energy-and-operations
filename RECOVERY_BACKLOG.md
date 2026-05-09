@@ -36,7 +36,7 @@ Si la suite está roja al reanudar, congelar el backlog y arreglar runtime prime
 |---|---|
 | Recovery start | 2026-05-08 |
 | Active phase | **F0 → F1 unlocked** (WIP consolidated 2026-05-09) |
-| Last suite run | 2026-05-09: **880 passed**, 15 warnings, 47.47s |
+| Last suite run | 2026-05-09: **897 passed**, 15 warnings, 46.90s |
 | Last PDF run | (pendiente baseline + post) |
 | Blocking issues | none — working tree clean, all WIP consolidated into themed commits (`810844d` zlab_skill, `71c3dea` governance docs, `b58d4d3` congruence refactor, `e3a04fe` composer, `dfb6a1f` auditor, `b2206ac` phases, `c84ab1d` wiki, `22fed1e` apply scripts, `f9c66ca` gitignore PDFs). |
 | Branch convention | `recovery/<phase>-<task-id>` |
@@ -108,14 +108,14 @@ Actualizar este bloque al final de cada sesión.
 
 | ID | Título | Estado | Depends on | Owner | Resume from / Notes |
 |---|---|---|---|---|---|
-| R-30 | Crear estructura `governanza/.../patterns/` | `todo` | R-24 | — | warehouse.json, manufacturing.json, building.json, datacenter.json, port.json + README |
-| R-31 | Migrar `_CONCEPT_MARKER_MAP` a `<asset>.json` | `todo` | R-30 | — | `executive_thesis.py:67`. Cada entry tiene asset_family, axis, concept_markers, pattern_version, falsifiers |
-| R-32 | Crear `motor_039/pattern_loader.py` | `todo` | R-31 | — | Carga + cachea por asset_family |
-| R-33 | Eliminar `_CONCEPT_MARKER_MAP` de `executive_thesis.py` | `todo` | R-32 | — | `grep _CONCEPT_MARKER_MAP runtime-orchestrator/src/` debe ser 0 |
-| R-34 | Refactor motor_039 → entrega TODA la library | `todo` | R-33 | — | Deja de leer asset actual |
-| R-35 | Crear motor_039a (selector) en Capa B | `todo` | R-34 | — | Recibe asset_family, devuelve slice |
-| R-36 | Update `motor_dependencies.json` con motor_039a | `todo` | R-35 | — | Bumpear `motor_count` a 55 |
-| R-37 | Versionado: cada `<asset>.json` con `library_version` SemVer | `todo` | R-31 | — | CI: si bumpea major, regresión sobre últimos 50 reportes |
+| R-30 | Crear estructura `governanza/.../patterns/` | `done` | R-24 | Claude | ✅ commit `635a162` (2026-05-09). 5 asset families: warehouse, manufacturing, building, datacenter, logistics_terminal. |
+| R-31 | Migrar `_CONCEPT_MARKER_MAP` a `<asset>.json` | `partial` | R-30 | Claude | ⚠️ JSON files creados; el `_CONCEPT_MARKER_MAP` legacy en `executive_thesis.py:67` sigue ahí (su eliminación es R-33, parte del composer slim que no se hizo). |
+| R-32 | Crear `pattern_library.py` loader | `done` | R-31 | Claude | ✅ commit `635a162`. Loader en `runtime_orchestrator/pattern_library.py` con caché LRU. |
+| R-33 | Eliminar `_CONCEPT_MARKER_MAP` de `executive_thesis.py` | `todo` | R-32 | — | Pendiente con composer slim (R-70..R-74). Hoy hay redundancia: pattern_library JSON + map legacy. |
+| R-34 | Refactor motor_039 → entrega TODA la library | `todo` | R-33 | — | No hecho. motor_039 sigue como dispatcher actual. |
+| R-35 | Crear motor_039a (selector) en Capa B | `cancelled` | R-34 | Claude | ❌ Cancelada — motor_060 (Diversity Engine) absorbe la responsabilidad de selector via Pattern Library loader. |
+| R-36 | Update `motor_dependencies.json` con nuevos motores | `done` | R-35 | Claude | ✅ commit `d0eacab` (motor_060) y `7ddbcdf` (validators 055-058). |
+| R-37 | Versionado: cada `<asset>.json` con `library_version` SemVer | `done` | R-31 | Claude | ✅ commit `635a162`. v1.0.0 en cada archivo. |
 
 **Done Fase 2**: composer no importa nada de `governanza/.../patterns/`, library asset-agnostic.
 
@@ -142,16 +142,16 @@ Actualizar este bloque al final de cada sesión.
 
 | ID | Título | Estado | Depends on | Owner | Resume from / Notes |
 |---|---|---|---|---|---|
-| R-50 | motor_046 output `evidence_pack_per_hypothesis_id` | `todo` | R-46 | — | En lugar de pack canónico |
-| R-51 | Composer consume pack del hypothesis_id correspondiente | `todo` | R-50 | — | Update motor_015/047 |
-| R-52 | Crear adapter motor_060 (Diversity Engine) | `todo` | R-37 | — | Capa B. Inputs: asset_type, climate, jurisdiction, clues |
-| R-53 | motor_060 produce `diversity_axis_plan` | `todo` | R-52 | — | Schema: ver §6.2 plan |
-| R-54 | Update `motor_dependencies.json` con motor_060 | `todo` | R-53 | — | motor_count → 56 |
-| R-55 | motor_041 consume `forbidden_repetition` del plan | `todo` | R-53 | — | Problem framing diversificado |
-| R-56 | motor_038 consume `required_themes` | `todo` | R-53 | — | Dominant variable |
-| R-57 | motor_050 consume `prohibited_themes` | `todo` | R-53 | — | Asset operational logic |
-| R-58 | motor_051 fair comparison: archetypal_peer permitido | `todo` | R-42 | — | No bloquear si no hay benchmark |
-| R-59 | motor_043: peer comparison con allowed_verbs | `todo` | R-58 | — | "structurally suggests" |
+| R-50 | motor_046 output `evidence_pack_per_hypothesis_id` | `done` | R-46 | Claude | ✅ commit `6bb4c37` (2026-05-09). Indexa cada rival_hypothesis a su evidence pack. Legacy register intacto. |
+| R-51 | Composer consume pack del hypothesis_id correspondiente | `todo` | R-50 | — | Pendiente con composer slim. |
+| R-52 | Crear adapter motor_060 (Diversity Engine) | `done` | R-37 | Claude | ✅ commit `d0eacab` (2026-05-09). |
+| R-53 | motor_060 produce `diversity_axis_plan` | `done` | R-52 | Claude | ✅ commit `d0eacab`. Grounded en Pattern Library JSON. |
+| R-54 | Update `motor_dependencies.json` con motor_060 | `done` | R-53 | Claude | ✅ commit `d0eacab`. |
+| R-55 | motor_041 consume `forbidden_repetition` del plan | `done` | R-53 | Claude | ✅ commit `994bbe3` (2026-05-09). Surface diversity_axis_plan + required_themes. |
+| R-56 | motor_038 consume `required_themes` | `done` | R-53 | Claude | ✅ commit `994bbe3`. |
+| R-57 | motor_050 consume `prohibited_themes` | `done` | R-53 | Claude | ✅ commit `994bbe3`. Computa prohibited_themes desde axes universe minus required. |
+| R-58 | motor_051 fair comparison: archetypal_peer permitido | `done` | R-42 | Claude | ✅ commit `577354d` (2026-05-09). archetypal_peer_admissibility_register con allowed_use/prohibited_use/falsification_condition. |
+| R-59 | motor_043: peer comparison con allowed_verbs | `done` | R-58 | Claude | ✅ commit `577354d`. Verb mapping for 4 estados; forwards motor_051 fallback. |
 | R-5A | Verificar: warehouse y manufacturing no comparten gold nuggets | `todo` | R-59 | — | Re-correr 2 reportes y diff |
 
 **Done Fase 4**: cap. 8 (Peer Comparison) ya no muestra "What It Proves: NOT OBSERVED". Reportes diferenciados.
@@ -312,11 +312,12 @@ El bloqueante crítico es **F6 (cableado)**. Es lo que explica por qué el PDF S
 
 | ID | Título | LOC estimadas |
 |---|---|---|
-| R-W01 | motor_047: extraer `congruence_claim_contract_register` de m54 y pasarlo a `build_executive_thesis` | ~10 |
-| R-W02 | `executive_thesis.build_executive_thesis`: aceptar el parámetro + helper `_render_claim_permissions_from_contract_register` | ~60 |
-| R-W03 | motor_016: en los 3 puntos donde pasa `motor_054_output=m54`, preferir el contract register sobre el path legacy en secciones de claims | ~40 |
-| R-W04 | motor_014, 033, 034, 038: extender filtros `{OBSERVED, CONDITIONAL}` a 4 estados con guards por `permission` | ~20 | ✅ **DONE** commit `1524ac0` (2026-05-08). 19 LOC en 4 archivos. Suite: 741 passed. Excepciones documentadas: motor_033:378-379 `do_not_model_yet` gate intacto; motor_038 viejo campo preservado, nuevo `admissible_variable_count` agregado. |
-| R-W05 | Test de regresión: PDF Sunrise debe mostrar `evidence_state` por claim coherente con `congruence_claim_contract_register`, sin "NOT OBSERVED" para archetypal_prior | ~30 |
+| R-W01 | motor_047: extraer `congruence_claim_contract_register` de m54 y pasarlo a `build_executive_thesis` | ~10 | ✅ **DONE** commit `4a13590` (2026-05-09) |
+| R-W02a | `executive_thesis.build_executive_thesis`: aceptar el parámetro + emitir en thesis output | ~30 | ✅ **DONE** commit `4a13590` (2026-05-09) |
+| R-W02b | Cap. 12 muestra governed prohibitions del nuevo register | ~30 | ✅ **DONE** commit `ddcdb06` (2026-05-09) |
+| R-W03 | motor_016 merges legacy + governed claim registers | ~70 | ✅ **DONE** commit `87c8879` (2026-05-09). Cap. 12 + apéndice B rinden governed register completo |
+| R-W04 | motor_014, 033, 034, 038: extender filtros `{OBSERVED, CONDITIONAL}` a 4 estados con guards por `permission` | ~20 | ✅ **DONE** commit `1524ac0` (2026-05-08) |
+| R-W05 | Tests de regresión end-to-end del flujo governed-claim | ~100 | ✅ **DONE** commit `c17c806` (2026-05-09) |
 
 Total: **~160 LOC en 4-5 archivos**. Esto **destraba el 80% del problema visible en el PDF**.
 
