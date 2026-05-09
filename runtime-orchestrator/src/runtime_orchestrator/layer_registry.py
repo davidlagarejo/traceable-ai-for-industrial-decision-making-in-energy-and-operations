@@ -15,9 +15,12 @@ Reglas:
 """
 from __future__ import annotations
 
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 from .layer_bundle import LayerId
+
+if TYPE_CHECKING:
+    from .layer_bundle import LayerBundle  # noqa: F401
 
 
 # ── Capa A: Governed Knowledge Layer ────────────────────────────────────────
@@ -153,3 +156,34 @@ def motors_in_layer(layer_id: LayerId) -> tuple[str, ...]:
         for motor_id, layer in MOTOR_LAYER_MAP.items()
         if layer == layer_id
     )
+
+
+def visible_bundles_for(
+    consumer_motor_id: str,
+    bundles: dict[str, "LayerBundle"],
+) -> dict[str, "LayerBundle"]:
+    """Devuelve solo los bundles que el consumer puede leer según la capa.
+
+    Reglas:
+      - Un motor de capa X solo lee bundles producidos por capas estrictamente
+        anteriores (A < B < C < D < E < F).
+      - Un motor sin capa asignada (None) no participa del bus: recibe {}.
+      - Si el motor_id no existe en MOTOR_LAYER_MAP, lanza KeyError.
+
+    Esta función NO muta el dict de entrada. Devuelve un dict nuevo.
+
+    Args:
+        consumer_motor_id: motor_id del que va a leer.
+        bundles: dict {producer_motor_id: LayerBundle} disponible.
+
+    Returns:
+        dict {producer_motor_id: LayerBundle} filtrado por visibilidad.
+    """
+    consumer_layer = layer_of(consumer_motor_id)
+    if consumer_layer is None:
+        return {}
+    visible: dict[str, "LayerBundle"] = {}
+    for producer_motor_id, bundle in bundles.items():
+        if bundle.is_readable_from(consumer_layer):
+            visible[producer_motor_id] = bundle
+    return visible

@@ -15,11 +15,23 @@ from pathlib import Path
 
 import pytest
 
+from runtime_orchestrator.layer_bundle import LayerBundle
 from runtime_orchestrator.layer_registry import (
     MOTOR_LAYER_MAP,
     layer_of,
     motors_in_layer,
+    visible_bundles_for,
 )
+
+
+def _bundle(layer, produced_by, payload=None):
+    return LayerBundle.make(
+        layer_id=layer,
+        bundle_version="1.0.0",
+        produced_by=produced_by,
+        produced_at="2026-05-08T00:00:00+00:00",
+        payload=payload or {},
+    )
 
 
 _MOTOR_DEPENDENCIES_JSON = (
@@ -103,6 +115,68 @@ def test_motors_in_layer_c_contains_claim_governors():
     assert "motor_034" in layer_c
     assert "motor_054" in layer_c
     assert "motor_025" in layer_c
+
+
+def test_visible_bundles_for_filters_by_strict_predecessor():
+    """Un motor de capa C solo ve bundles de A y B, no de C/D/E/F."""
+    bundles = {
+        "motor_011": _bundle("A", "motor_011"),
+        "motor_041": _bundle("B", "motor_041"),
+        "motor_054": _bundle("C", "motor_054"),
+        "motor_033": _bundle("D", "motor_033"),
+    }
+    # motor_034 está en capa C, ve solo A y B (estrictamente anteriores)
+    visible = visible_bundles_for("motor_034", bundles)
+    assert set(visible.keys()) == {"motor_011", "motor_041"}
+
+
+def test_visible_bundles_for_layer_a_consumer_sees_nothing():
+    """Un motor de capa A no tiene predecesores."""
+    bundles = {
+        "motor_011": _bundle("A", "motor_011"),
+        "motor_041": _bundle("B", "motor_041"),
+    }
+    # motor_039 está en capa A
+    visible = visible_bundles_for("motor_039", bundles)
+    assert visible == {}
+
+
+def test_visible_bundles_for_layer_f_consumer_sees_all_predecessors():
+    """Un motor de capa F ve A, B, C, D, E."""
+    bundles = {
+        "motor_011": _bundle("A", "motor_011"),
+        "motor_041": _bundle("B", "motor_041"),
+        "motor_054": _bundle("C", "motor_054"),
+        "motor_033": _bundle("D", "motor_033"),
+        "motor_016": _bundle("E", "motor_016"),
+    }
+    # motor_036 está en capa F
+    visible = visible_bundles_for("motor_036", bundles)
+    assert set(visible.keys()) == {"motor_011", "motor_041", "motor_054", "motor_033", "motor_016"}
+
+
+def test_visible_bundles_for_unassigned_consumer_returns_empty():
+    """Un motor sin capa (infra/ingest) no participa del bus."""
+    bundles = {"motor_011": _bundle("A", "motor_011")}
+    # motor_001 está en None (infra)
+    assert visible_bundles_for("motor_001", bundles) == {}
+
+
+def test_visible_bundles_for_unknown_consumer_raises():
+    with pytest.raises(KeyError):
+        visible_bundles_for("motor_999", {})
+
+
+def test_visible_bundles_for_does_not_mutate_input():
+    bundles = {
+        "motor_011": _bundle("A", "motor_011"),
+        "motor_041": _bundle("B", "motor_041"),
+    }
+    snapshot = dict(bundles)
+    visible_bundles_for("motor_034", bundles)
+    assert bundles == snapshot
+    # El dict devuelto es independiente
+    assert visible_bundles_for("motor_034", bundles) is not bundles
 
 
 def test_layer_partition_is_disjoint_and_complete():
