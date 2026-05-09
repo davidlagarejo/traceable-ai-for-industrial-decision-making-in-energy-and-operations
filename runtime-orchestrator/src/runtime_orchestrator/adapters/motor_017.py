@@ -1204,7 +1204,7 @@ class Motor017Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_016", "motor_036"]
+        return ["motor_016", "motor_036", "motor_061", "motor_063"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         report_package = inputs.get("motor_016", {}).get("report_package")
@@ -1220,13 +1220,37 @@ class Motor017Adapter(BaseMotorAdapter):
         # unchanged: motor_036 still blocks when it detects critical failures.
         pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
         force_render_under_warnings = bool(pipeline_inputs.get("__force_render__", False))
-        if (
-            consistency_summary
-            and not consistency_summary.get("can_render_pdf", True)
-            and not force_render_under_warnings
-        ):
+
+        # Recovery 2026-05-09 prompt: integrate motor_061 (Asset Family
+        # Isolation) and motor_063 (Chart Validity) into the render gate.
+        # Their critical_count > 0 signals contamination that would degrade
+        # report quality. Honors the same __force_render__ escape.
+        m061 = inputs.get("motor_061", {}) if isinstance(inputs.get("motor_061", {}), dict) else {}
+        m063 = inputs.get("motor_063", {}) if isinstance(inputs.get("motor_063", {}), dict) else {}
+        family_contamination = bool(m061.get("contamination_detected", False))
+        chart_contamination = bool(m063.get("chart_contamination_detected", False))
+
+        block_reasons: list[str] = []
+        if consistency_summary and not consistency_summary.get("can_render_pdf", True):
             failures = list(consistency_summary.get("critical_failures", []) or [])
-            failure_summary = "; ".join(str(row.get("message", "consistency failure")) for row in failures[:4])
+            block_reasons.append(
+                "; ".join(str(row.get("message", "consistency failure")) for row in failures[:4])
+                or "Blocked by system consistency validator."
+            )
+        if family_contamination:
+            warns = list(m061.get("asset_family_isolation_warnings", []) or [])
+            block_reasons.append(
+                "Asset-family contamination detected by motor_061: "
+                + "; ".join(str(w.get("description", "")) for w in warns[:2])
+            )
+        if chart_contamination:
+            warns = list(m063.get("chart_validity_warnings", []) or [])
+            block_reasons.append(
+                "Chart-validity contamination detected by motor_063: "
+                + "; ".join(str(w.get("description", "")) for w in warns[:2])
+            )
+
+        if block_reasons and not force_render_under_warnings:
             return {
                 "pdf_path": "",
                 "pdf_paths": {},
@@ -1236,8 +1260,18 @@ class Motor017Adapter(BaseMotorAdapter):
                 "available_languages": ["en"],
                 "gold_nugget_authority_state": gold_nugget_authority_state,
                 "gold_nugget_source_register": gold_nugget_source_register,
-                "blocking_reason": failure_summary or "Blocked by system consistency validator.",
+                "blocking_reason": " | ".join(block_reasons)[:1000],
                 "consistency_summary": consistency_summary,
+                "asset_family_isolation_summary": {
+                    "contamination_detected": family_contamination,
+                    "warning_count": int(m061.get("warning_count", 0) or 0),
+                    "critical_count": int(m061.get("critical_count", 0) or 0),
+                },
+                "chart_validity_summary": {
+                    "chart_contamination_detected": chart_contamination,
+                    "warning_count": int(m063.get("warning_count", 0) or 0),
+                    "critical_count": int(m063.get("critical_count", 0) or 0),
+                },
             }
 
         meta      = report_package.get("case_metadata", {})

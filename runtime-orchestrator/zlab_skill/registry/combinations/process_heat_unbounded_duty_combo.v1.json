@@ -1,0 +1,56 @@
+{
+  "id": "process_heat_unbounded_duty_combo",
+  "version": "1.0.0",
+  "name": "Process Heat Unbounded Duty Combination (Manufacturing-only)",
+  "pattern_ids": [
+    "process_load_vs_waste",
+    "boiler_degradation_plausibility",
+    "benchmark_denominator_error"
+  ],
+  "trigger_logic": [
+    "manufacturing or thermal-process facility active",
+    "process-heat duty unbounded",
+    "process-load vs support-waste split not evidenced",
+    "area-normalized benchmark presented"
+  ],
+  "anti_triggers": [
+    "process map declares no thermal duty",
+    "process heat metered and bounded",
+    "logistics asset family",
+    "tenant boundary asset",
+    "cold-chain only"
+  ],
+  "combined_hypothesis": "What looks like inefficient energy intensity may be a structurally bounded process-heat duty that area-normalized benchmarks cannot capture. Trying to compress consumption without splitting structural process load from support-system waste leads to misallocation.",
+  "strategic_risk": "Retrofit capital is deployed against a denominator that hides the production-bounded thermal duty; savings projections are inflated and operational continuity is risked.",
+  "minimum_evidence": [
+    "process heat metering",
+    "boiler runtime log",
+    "production schedule by shift",
+    "steam distribution map",
+    "support-system inventory"
+  ],
+  "financial_exposure": [
+    "ROI inflation from invalid denominator",
+    "production continuity risk if process heat is throttled",
+    "missed support-system optimization (steam traps, condensate)",
+    "wrong peer set valuation"
+  ],
+  "tad_action": "VALIDATE PROCESS HEAT DUTY + COMPARE FAIRLY (not by area) + DO NOT THROTTLE PROCESS YET + PROHIBIT ROI",
+  "prohibited_claims": [
+    "process heat is waste",
+    "savings claim on whole-site EUI reduction",
+    "owner-capturable retrofit ROI",
+    "generic manufacturing benchmark inefficiency"
+  ],
+  "allowed_language": "A bounded structural framing is admissible: thermal economics may be production-bounded while support-systems carry the actual recoverable waste.",
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "adjudication_required": true,
+  "tests": [
+    "manufacturing acceptance bundle should surface this combination when process heat duty is unbounded and the framework presents area-normalized benchmark",
+    "must NOT activate in warehouse, cold-chain, office cases (anti-pattern protection by required process-heat patterns)",
+    "combination must require run-level adjudication before downstream strategic use"
+  ]
+}

@@ -211,9 +211,11 @@
       "catalog_status": "planned",
       "requires": [
         "motor_016",
-        "motor_036"
+        "motor_036",
+        "motor_061",
+        "motor_063"
       ],
-      "notes": "Renderiza documentos desde paquetes ensamblados."
+      "notes": "Renderiza documentos desde paquetes ensamblados. Gates: motor_036 (system consistency), motor_061 (asset family isolation), motor_063 (chart validity). Bypass via __pipeline__.__force_render__=true."
     },
     "motor_018": {
       "name": "Chart Generation Engine",

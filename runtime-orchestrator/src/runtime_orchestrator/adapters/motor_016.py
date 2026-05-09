@@ -496,6 +496,12 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
         for row in visible_claim_integrity_register
     )
     conditional_opportunity_pathways = _build_conditional_opportunity_fallbacks(executive_thesis)
+    # Recovery R-W06+: surface activated structural combinations from
+    # zlab_skill so downstream renderers (LaTeX templates, validators)
+    # can use them without re-fetching from motor_054.
+    skill_combination_activation_register = list(
+        executive_thesis.get("skill_combination_activation_register", []) or []
+    )
     return {
         "thesis_state": str(executive_thesis.get("thesis_state", "")).strip(),
         "local_claim_closure_state": str(executive_thesis.get("local_claim_closure_state", "")).strip(),
@@ -561,6 +567,8 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
         "visible_blocked_claim_count": visible_blocked_claim_count,
         "visible_claim_count": visible_claim_count,
         "conditional_opportunity_pathways": conditional_opportunity_pathways,
+        "skill_combination_activation_register": skill_combination_activation_register,
+        "skill_combination_activation_count": len(skill_combination_activation_register),
         "not_admissible_actions": list(executive_thesis.get("what_is_not_admissible", []) or []),
         "supporting_modes": list(executive_thesis.get("supporting_modes", []) or []),
         "report_mode": str(executive_thesis.get("report_mode", "")).strip(),

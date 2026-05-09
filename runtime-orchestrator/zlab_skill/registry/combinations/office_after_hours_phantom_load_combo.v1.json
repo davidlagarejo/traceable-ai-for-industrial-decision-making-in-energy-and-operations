@@ -1,0 +1,56 @@
+{
+  "id": "office_after_hours_phantom_load_combo",
+  "version": "1.0.0",
+  "name": "Office After-Hours Phantom Load Combination (Building-only)",
+  "pattern_ids": [
+    "hvac_schedule_drift",
+    "tenant_operator_boundary_unresolved",
+    "value_boundary_leakage_owner_operator"
+  ],
+  "trigger_logic": [
+    "commercial building or office tower active",
+    "BMS schedule drift suspected",
+    "tenant/operator control boundary unresolved",
+    "after-hours load uncharacterized"
+  ],
+  "anti_triggers": [
+    "industrial or warehouse asset family",
+    "BMS schedule documented and trended",
+    "tenant boundary fully aligned with metering",
+    "process heat present",
+    "logistics throughput dominant",
+    "cold-chain refrigeration dominant"
+  ],
+  "combined_hypothesis": "After-hours phantom load may dominate measured energy intensity precisely because BMS schedules drift while tenant boundary control is unclear about who is responsible. Capital will be misdirected at HVAC equipment when the real lever is governance + scheduling.",
+  "strategic_risk": "Owner allocates retrofit capital while the savings would land on the tenant side or be evaporated by schedule drift the next quarter.",
+  "minimum_evidence": [
+    "interval meter data (15-min)",
+    "BMS trend log (12+ weeks)",
+    "lease responsibility matrix",
+    "occupancy schedule (tenant-declared)",
+    "submetering topology"
+  ],
+  "financial_exposure": [
+    "phantom load >20% of measured EUI hidden in after-hours",
+    "value capture leaks across owner-tenant boundary",
+    "wrong CAPEX target (equipment vs governance)"
+  ],
+  "tad_action": "VALIDATE CONTROL BOUNDARY + AUDIT BMS SCHEDULE + REBOUND TENANT BOUNDARY + PROHIBIT ROI",
+  "prohibited_claims": [
+    "HVAC retrofit will deliver savings",
+    "owner-capturable ROI",
+    "savings on whole-building EUI reduction",
+    "compliance closure claim"
+  ],
+  "allowed_language": "A bounded structural framing is admissible: the phantom load story may be a governance/scheduling story disguised as an equipment opportunity.",
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "adjudication_required": true,
+  "tests": [
+    "commercial-building acceptance bundle should surface this combination when BMS drift, tenant boundary and after-hours load remain unresolved",
+    "must NOT activate in warehouse, manufacturing, cold-chain cases (anti-pattern protection by tenant_operator_boundary_unresolved)",
+    "combination must require run-level adjudication before downstream strategic use"
+  ]
+}
