@@ -85,3 +85,17 @@ def test_motor_053_manufacturing_ties_cost_logic_to_process_and_downtime():
     drivers = {row["cost_driver"] for row in out["cost_driver_dependency_register"]}
     assert "throughput, uptime and process-duty economics" in drivers
     assert "downtime and failure cost" in drivers
+
+
+def test_motor_053_preserves_building_finance_to_physics_when_target_is_not_yet_operationally_bounded():
+    inputs = _building_inputs()
+    inputs["motor_007"]["target_classification_object"] = {
+        "target_type": "REGISTERED_AGENT_OR_MAILING_ADDRESS",
+        "classification_confidence": "medium",
+    }
+    out = _run(inputs)
+
+    assumptions = {row["financial_assumption"] for row in out["finance_physics_dependency_register"]}
+    assert "owner economics track whole-building performance pressure" in assumptions
+    capital_logic = {row["capital_logic"] for row in out["capital_logic_register"]}
+    assert "owner economics track whole-building performance pressure" in capital_logic

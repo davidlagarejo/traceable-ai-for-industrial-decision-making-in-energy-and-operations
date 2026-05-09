@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from runtime_orchestrator.adapters.motor_047 import Motor047Adapter
 from runtime_orchestrator.adapters.motor_048 import Motor048Adapter
+from tests.test_congruence_gold_nuggets import (
+    _manufacturing_inputs as _gold_manufacturing_inputs,
+    _run as _run_gold_chain,
+)
 
 
 def _bridge_inputs() -> dict:
@@ -215,11 +219,14 @@ def test_motor_048_maps_congruence_signals_without_expanding_body():
     out = Motor048Adapter().run({**inputs, "motor_047": m47})
 
     outline = out["main_report_outline"]
+    thesis = m47["executive_thesis"]
     body_titles = set(outline["body_section_titles"])
     appendix_titles = {row["title"] for row in out["appendix_map"]}
 
     assert outline["max_primary_sections"] == 12
     assert len(outline["sections"]) == 12
+    assert outline["gold_nugget_authority_state"] == thesis["gold_nugget_authority_state"]
+    assert outline["gold_nugget_source_register"] == thesis["gold_nugget_source_register"]
     assert outline["congruence_visible_signal_count"] >= 4
     assert out["congruence_visibility_register"]
     assert all(row["section_title"] in body_titles for row in out["congruence_visibility_register"])
@@ -229,6 +236,67 @@ def test_motor_048_maps_congruence_signals_without_expanding_body():
     assert "motor_054.congruence_claim_contract_register" in out["section_authority_map"]["claim_permissions"]
     assert "congruence_invalid_comparison_claim" in out["deduplicated_claim_map"]["peer_comparison"]
     assert len(out["client_facing_tad"]["actions"]) <= 5
+
+
+def test_motor_048_preserves_skill_primary_authority_for_manufacturing_like_outline():
+    m54 = _run_gold_chain(_gold_manufacturing_inputs())
+    out = Motor048Adapter().run(
+        {
+            "motor_034": {
+                "canonical_problem_frame": {
+                    "leading_structural_output_mode": "Industrial Process Diagnostic Brief",
+                },
+                "claim_contract_register": [],
+                "report_output_mode_classifier_table": [
+                    {
+                        "canonical_output_mode": "Industrial Process Diagnostic Brief",
+                        "selected_for_publication": True,
+                        "classification_state": "selected_primary_default",
+                    }
+                ],
+            },
+            "motor_047": {
+                "executive_thesis": {
+                    "report_mode": "Industrial Process Diagnostic Brief",
+                    "thesis_state": "admissible_structural_thesis",
+                    "dominant_lens": "process_vs_support_system_discrimination",
+                    "gold_nugget_authority_state": "skill_primary",
+                    "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
+                    "top_gold_nuggets": list(m54["authoritative_gold_nugget_register"][:5]),
+                    "what_is_admissible_now": [
+                        "Validate tariff exposure",
+                        "Validate compressed air materiality",
+                    ],
+                    "minimum_discriminating_evidence": [
+                        "utility bills + tariff",
+                        "compressed air inventory + leak survey basis",
+                    ],
+                    "top_actions": [
+                        {
+                            "action": "Validate Tariff Exposure",
+                            "status": "VALIDATE FIRST",
+                            "maps_to": "utility bills + tariff schedule",
+                        }
+                    ],
+                    "congruence_action_priority_register": list(
+                        m54["authoritative_tad_action_register"][:5]
+                    ),
+                }
+            },
+            "motor_054": {
+                "congruence_claim_contract_register": list(
+                    m54["congruence_claim_contract_register"]
+                ),
+            },
+        }
+    )
+
+    outline = out["main_report_outline"]
+    assert outline["visible_report_mode"] == "Industrial Process Diagnostic Brief"
+    assert outline["gold_nugget_authority_state"] == "skill_primary"
+    assert outline["gold_nugget_source_register"] == "motor_054.authoritative_gold_nugget_register"
+    assert outline["compression_state"] == "thesis_compressed"
+    assert len(outline["sections"]) == 12
 
 
 def test_motor_048_exposes_prompt_block_mapping_without_reopening_body():

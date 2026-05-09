@@ -5,6 +5,101 @@ from typing import Any
 from .schemas import text
 
 
+def _token_set(*values: Any) -> set[str]:
+    tokens: set[str] = set()
+    for value in values:
+        queue = list(value) if isinstance(value, list) else [value]
+        for item in queue:
+            raw = text(item).lower()
+            if not raw:
+                continue
+            for token in raw.replace("/", " ").replace("-", " ").split():
+                token = token.strip()
+                if len(token) >= 4:
+                    tokens.add(token)
+    return tokens
+
+
+def _overlap_score(*values: Any) -> int:
+    token_sets = [token_set for token_set in (_token_set(value) for value in values) if token_set]
+    if len(token_sets) < 2:
+        return 0
+    running = token_sets[0]
+    overlap = 0
+    for token_set in token_sets[1:]:
+        shared = running.intersection(token_set)
+        overlap = max(overlap, len(shared))
+    return overlap
+
+
+def _supporting_correlation_register(
+    *,
+    contradiction_row: dict[str, Any],
+    structural_correlation_graph: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    contradiction_layers = {
+        text(layer)
+        for layer in list(contradiction_row.get("layers", []) or [])
+        if text(layer)
+    }
+    contradiction_text = " ".join(
+        [
+            text(contradiction_row.get("contradiction")),
+            text(contradiction_row.get("strategic_risk")),
+            " ".join(list(contradiction_layers)),
+            " ".join(list(contradiction_row.get("evidence_needed", []) or [])),
+        ]
+    )
+    supporting_rows: list[dict[str, Any]] = []
+    for corr in list(structural_correlation_graph or []):
+        corr_layers = {
+            text(layer)
+            for layer in list(corr.get("layers_connected", []) or [])
+            if text(layer)
+        }
+        layer_overlap = len(contradiction_layers.intersection(corr_layers))
+        text_overlap = _overlap_score(
+            contradiction_text,
+            text(corr.get("correlation")),
+            text(corr.get("strategic_meaning")),
+            list(corr.get("evidence_needed", []) or []),
+        )
+        if not layer_overlap and not text_overlap:
+            continue
+        supporting_rows.append(
+            {
+                "correlation_id": text(corr.get("correlation_id")),
+                "correlation": text(corr.get("correlation")),
+                "strategic_meaning": text(corr.get("strategic_meaning")),
+                "evidence_needed": list(corr.get("evidence_needed", []) or []),
+                "evidence_state": text(corr.get("evidence_state")),
+                "layer_overlap_count": layer_overlap,
+                "text_overlap_score": text_overlap,
+                "support_score": layer_overlap * 3 + text_overlap,
+            }
+        )
+    supporting_rows.sort(
+        key=lambda row: (
+            -int(row.get("support_score", 0) or 0),
+            -int(row.get("layer_overlap_count", 0) or 0),
+            text(row.get("correlation_id")),
+        )
+    )
+    return supporting_rows[:3]
+
+
+def _allows_conditional_archetypal_intelligence(
+    asset_family_research_profile: dict[str, Any],
+) -> bool:
+    route_state = text(asset_family_research_profile.get("route_state"))
+    asset_family = text(asset_family_research_profile.get("asset_family"))
+    return route_state == "operational_asset_candidate" or (
+        route_state == "target_not_yet_operationally_bounded"
+        and bool(asset_family)
+        and asset_family != "generic_operational_asset"
+    )
+
+
 def build_cross_layer_congruence_register(
     *,
     asset_family_research_profile: dict[str, Any],
@@ -18,7 +113,7 @@ def build_cross_layer_congruence_register(
     asset_family = text(asset_family_research_profile.get("asset_family"))
     route_state = text(asset_family_research_profile.get("route_state"))
     rows: list[dict[str, Any]] = []
-    if route_state != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return rows
 
     control_boundary_state = text((operational_intake_pack.get("control_boundary_pack", {}) or {}).get("current_state"))
@@ -145,19 +240,45 @@ def build_cross_layer_congruence_register(
             }
         )
 
-    _ = fair_comparison_profile
-    _ = structural_correlation_register
-    _ = maintenance_dependency_map
-    _ = control_boundary_state
     for row in rows:
         layers = {text(layer) for layer in list(row.get("layers", []) or []) if text(layer)}
-        supporting = 0
-        for corr in structural_correlation_graph:
-            corr_layers = {text(layer) for layer in list(corr.get("layers_connected", []) or []) if text(layer)}
-            if layers and corr_layers and layers.intersection(corr_layers):
-                supporting += 1
-        row["supporting_correlation_count"] = supporting
-    return rows
+        supporting_rows = _supporting_correlation_register(
+            contradiction_row=row,
+            structural_correlation_graph=structural_correlation_graph,
+        )
+        comparison_state = text(fair_comparison_profile.get("comparison_state"))
+        fair_comparison_pressure_score = 0
+        if "benchmarking" in layers and comparison_state and comparison_state != "comparison_admissible":
+            fair_comparison_pressure_score = 2
+        boundary_pressure_score = 0
+        if "control" in layers and control_boundary_state in {"public_context_only", "partially_evidenced", "not_yet_evidenced"}:
+            boundary_pressure_score = 2
+        maintenance_pressure_score = 0
+        if "maintenance" in layers and maintenance_state in {"public_context_only", "partially_evidenced", "not_yet_evidenced"}:
+            maintenance_pressure_score = 2
+        correlation_constellation_score = (
+            len(layers) * 2
+            + sum(int(support.get("support_score", 0) or 0) for support in supporting_rows)
+            + fair_comparison_pressure_score
+            + boundary_pressure_score
+            + maintenance_pressure_score
+        )
+        row["supporting_correlation_count"] = len(supporting_rows)
+        row["supporting_correlation_register"] = supporting_rows
+        row["supporting_correlation_ids"] = [text(support.get("correlation_id")) for support in supporting_rows if text(support.get("correlation_id"))]
+        row["supporting_correlation_headlines"] = [text(support.get("correlation")) for support in supporting_rows if text(support.get("correlation"))]
+        row["fair_comparison_pressure_score"] = fair_comparison_pressure_score
+        row["boundary_pressure_score"] = boundary_pressure_score
+        row["maintenance_pressure_score"] = maintenance_pressure_score
+        row["correlation_constellation_score"] = correlation_constellation_score
+    return sorted(
+        rows,
+        key=lambda row: (
+            -int(row.get("correlation_constellation_score", 0) or 0),
+            -int(row.get("supporting_correlation_count", 0) or 0),
+            text(row.get("contradiction")),
+        ),
+    )
 
 
 def build_invalid_problem_frame_register(

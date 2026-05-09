@@ -95,15 +95,28 @@ def test_expanded_strategic_tad_engine_emits_multi_action_warehouse_register():
     assert "DO_NOT_SENSOR_YET" in actions
     assert "DO_NOT_INVEST_YET" in actions
     assert "PROHIBIT_CLAIM" in actions
+    skill_actions = {row["strategic_action"] for row in out["skill_expanded_tad_action_register"]}
+    assert "BUILD_FAIR_PEER_SET" in skill_actions
+    assert "VALIDATE_TARIFF_EXPOSURE" in skill_actions
+    assert "VALIDATE_CONTROL_BOUNDARY" in skill_actions
+    assert "DO_NOT_MODEL_YET" in skill_actions
+    assert "DO_NOT_SENSOR_YET" in skill_actions
+    assert out["tad_authority_state"] == "skill_primary"
 
     by_action = {row["strategic_action"]: row for row in out["expanded_tad_action_register"]}
     assert by_action["BUILD_FAIR_PEER_SET"]["evidence_needed"]
     assert "peer superiority" in by_action["BUILD_FAIR_PEER_SET"]["prohibited_action"].lower()
     assert "digital twin" in by_action["DO_NOT_MODEL_YET"]["prohibited_action"].lower()
     assert by_action["VALIDATE_TARIFF_EXPOSURE"]["trigger"]
+    assert by_action["VALIDATE_TARIFF_EXPOSURE"]["decision_front"] == "VALIDATE DEMAND / TARIFF EXPOSURE"
+    assert by_action["VALIDATE_TARIFF_EXPOSURE"]["trigger_family"] == "tariff_or_demand"
+    assert by_action["VALIDATE_CONTROL_BOUNDARY"]["evidence_pack_family"] == "control_boundary_pack"
+    assert by_action["DO_NOT_INVEST_YET"]["prohibited_action_class"] == "capex_underwriting_block"
 
 
 def test_prohibited_action_register_tracks_expanded_actions():
     out = _run(_warehouse_inputs())
     assert out["prohibited_action_count"] == len(out["prohibited_action_register"])
     assert any(row["strategic_action"] == "PROHIBIT_CLAIM" for row in out["prohibited_action_register"])
+    assert out["skill_combination_review_count"] >= 1
+    assert out["authoritative_tad_action_count"] == len(out["authoritative_tad_action_register"])

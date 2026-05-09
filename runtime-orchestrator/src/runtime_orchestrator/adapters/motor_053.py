@@ -20,6 +20,7 @@ from ..congruence_intelligence.regulatory_physics import (
     build_regulatory_constraint_register,
     build_regulatory_physics_register,
 )
+from ..zlab_skill.runtime_bridge import build_registry_financial_exposure_register
 from .base import BaseMotorAdapter
 
 
@@ -114,6 +115,30 @@ class Motor053Adapter(BaseMotorAdapter):
             operational_intake_pack=operational_intake_pack,
             source_register=source_register,
         )
+        skill_financial_exposure_register = build_registry_financial_exposure_register(
+            financial_exposure_type_register=financial_exposure_type_register,
+        )
+        authoritative_financial_exposure_register = (
+            skill_financial_exposure_register
+            if skill_financial_exposure_register
+            else financial_exposure_type_register
+        )
+        financial_exposure_authority_state = (
+            "skill_primary"
+            if skill_financial_exposure_register
+            else "legacy_primary"
+        )
+        skill_financial_exposure_summary = {
+            "total": len(skill_financial_exposure_register),
+            "governed_categories": sorted(
+                {
+                    str(row.get("governed_exposure_category", "")).strip()
+                    for row in skill_financial_exposure_register
+                    if str(row.get("governed_exposure_category", "")).strip()
+                }
+            ),
+            "authority_state": financial_exposure_authority_state,
+        }
         return {
             "regulatory_physics_register": regulatory_physics_register,
             "permit_signal_register": permit_signal_register,
@@ -122,6 +147,10 @@ class Motor053Adapter(BaseMotorAdapter):
             "cost_driver_dependency_register": cost_driver_dependency_register,
             "capital_logic_register": capital_logic_register,
             "financial_exposure_type_register": financial_exposure_type_register,
+            "skill_financial_exposure_register": skill_financial_exposure_register,
+            "authoritative_financial_exposure_register": authoritative_financial_exposure_register,
+            "financial_exposure_authority_state": financial_exposure_authority_state,
+            "skill_financial_exposure_summary": skill_financial_exposure_summary,
             "underwriting_misread_register": underwriting_misread_register,
             "value_leakage_register": value_leakage_register,
             "climate_location_context_register": climate_location_context_register,
@@ -132,6 +161,7 @@ class Motor053Adapter(BaseMotorAdapter):
             "finance_physics_dependency_count": len(finance_physics_dependency_register),
             "capital_logic_count": len(capital_logic_register),
             "financial_exposure_type_count": len(financial_exposure_type_register),
+            "skill_financial_exposure_count": len(skill_financial_exposure_register),
             "underwriting_misread_count": len(underwriting_misread_register),
             "value_leakage_count": len(value_leakage_register),
             "climate_context_count": len(climate_location_context_register),

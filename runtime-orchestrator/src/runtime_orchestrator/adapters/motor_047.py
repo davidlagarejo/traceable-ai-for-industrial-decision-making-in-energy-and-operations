@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..executive_thesis import build_executive_thesis
+from ..zlab_skill.runtime_bridge import build_skill_first_executive_thesis_context
 from .base import BaseMotorAdapter
 
 
@@ -39,20 +40,82 @@ class Motor047Adapter(BaseMotorAdapter):
         m52 = inputs.get("motor_052", {}) if isinstance(inputs.get("motor_052", {}), dict) else {}
         m53 = inputs.get("motor_053", {}) if isinstance(inputs.get("motor_053", {}), dict) else {}
         m54 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
+        skill_context = build_skill_first_executive_thesis_context(
+            motor_007_output=inputs.get("motor_007", {}) if isinstance(inputs.get("motor_007", {}), dict) else {},
+            motor_012_output=inputs.get("motor_012", {}) if isinstance(inputs.get("motor_012", {}), dict) else {},
+            motor_051_output=m51,
+            motor_053_output=m53,
+            motor_054_output=m54,
+        )
+        gold_nugget_authority_state = str(m54.get("gold_nugget_authority_state", "") or "").strip()
+        authoritative_gold_nugget_register = list(m54.get("authoritative_gold_nugget_register", []) or [])
+        strategic_gold_nugget_register = (
+            authoritative_gold_nugget_register
+            if authoritative_gold_nugget_register and gold_nugget_authority_state == "skill_primary"
+            else list(m54.get("gold_nugget_register", m54.get("strategic_gold_nugget_register", [])) or [])
+        )
         thesis = build_executive_thesis(
-            system_abstraction=dict(inputs.get("motor_037", {}).get("system_abstraction", {}) or {}),
-            canonical_problem_frame=dict(m34.get("canonical_problem_frame", {}) or {}),
-            problem_framing_register=list(inputs.get("motor_041", {}).get("problem_framing_register", []) or []),
-            dominant_variable_register=list(inputs.get("motor_038", {}).get("dominant_variable_register", []) or []),
-            cross_layer_conflict_register=list(inputs.get("motor_040", {}).get("cross_layer_conflict_register", []) or []),
+            system_abstraction=dict(
+                inputs.get("motor_037", {}).get("system_abstraction", {})
+                or skill_context.get("system_abstraction", {})
+                or {}
+            ),
+            canonical_problem_frame=dict(
+                m34.get("canonical_problem_frame", {})
+                or skill_context.get("canonical_problem_frame", {})
+                or {}
+            ),
+            problem_framing_register=list(
+                inputs.get("motor_041", {}).get("problem_framing_register", [])
+                or skill_context.get("problem_framing_register", [])
+                or []
+            ),
+            dominant_variable_register=list(
+                inputs.get("motor_038", {}).get("dominant_variable_register", [])
+                or skill_context.get("dominant_variable_register", [])
+                or []
+            ),
+            cross_layer_conflict_register=list(
+                inputs.get("motor_040", {}).get("cross_layer_conflict_register", [])
+                or skill_context.get("cross_layer_conflict_register", [])
+                or []
+            ),
             scenario_register=list(m14.get("scenario_space", []) or []),
-            structural_financial_exposure_register=list(inputs.get("motor_045", {}).get("structural_financial_exposure_register", []) or []),
-            competitive_comparison_register=list(inputs.get("motor_043", {}).get("competitive_comparison_register", []) or []),
-            conditional_redesign_register=list(inputs.get("motor_044", {}).get("conditional_redesign_register", []) or []),
-            minimum_evidence_for_discrimination_register=list(inputs.get("motor_046", {}).get("minimum_evidence_for_discrimination_register", []) or []),
-            expanded_structural_tad_action_register=list(m33.get("expanded_structural_tad_action_register", []) or []),
-            claim_contract_register=list(m34.get("claim_contract_register", []) or []),
-            report_output_mode_classifier_table=list(m34.get("report_output_mode_classifier_table", []) or []),
+            structural_financial_exposure_register=list(
+                inputs.get("motor_045", {}).get("structural_financial_exposure_register", [])
+                or skill_context.get("structural_financial_exposure_register", [])
+                or []
+            ),
+            competitive_comparison_register=list(
+                inputs.get("motor_043", {}).get("competitive_comparison_register", [])
+                or skill_context.get("competitive_comparison_register", [])
+                or []
+            ),
+            conditional_redesign_register=list(
+                inputs.get("motor_044", {}).get("conditional_redesign_register", [])
+                or skill_context.get("conditional_redesign_register", [])
+                or []
+            ),
+            minimum_evidence_for_discrimination_register=list(
+                inputs.get("motor_046", {}).get("minimum_evidence_for_discrimination_register", [])
+                or skill_context.get("minimum_evidence_for_discrimination_register", [])
+                or []
+            ),
+            expanded_structural_tad_action_register=list(
+                m33.get("expanded_structural_tad_action_register", [])
+                or skill_context.get("expanded_structural_tad_action_register", [])
+                or []
+            ),
+            claim_contract_register=list(
+                m34.get("claim_contract_register", [])
+                or skill_context.get("claim_contract_register", [])
+                or []
+            ),
+            report_output_mode_classifier_table=list(
+                m34.get("report_output_mode_classifier_table", [])
+                or skill_context.get("report_output_mode_classifier_table", [])
+                or []
+            ),
             invalid_problem_frame_register=list(m51.get("invalid_problem_frame_register", []) or []),
             invalid_comparison_risk_register=list(m51.get("invalid_comparison_risk_register", []) or []),
             cross_layer_congruence_register=list(m51.get("cross_layer_congruence_register", []) or []),
@@ -61,9 +124,13 @@ class Motor047Adapter(BaseMotorAdapter):
             measurement_strategy_register=list(m52.get("measurement_strategy_register", []) or []),
             regulatory_physics_register=list(m53.get("regulatory_physics_register", []) or []),
             finance_physics_dependency_register=list(m53.get("finance_physics_dependency_register", []) or []),
-            strategic_gold_nugget_register=list(
-                m54.get("gold_nugget_register", m54.get("strategic_gold_nugget_register", [])) or []
+            strategic_gold_nugget_register=strategic_gold_nugget_register,
+            strategic_gold_nugget_source_register=(
+                "motor_054.authoritative_gold_nugget_register"
+                if authoritative_gold_nugget_register and gold_nugget_authority_state == "skill_primary"
+                else "motor_054.strategic_gold_nugget_register"
             ),
+            strategic_gold_nugget_authority_state=gold_nugget_authority_state or "legacy_primary_skill_shadow",
             gold_nugget_strength_register=list(m54.get("gold_nugget_strength_register", []) or []),
             congruence_action_priority_register=list(m54.get("congruence_action_priority_register", []) or []),
         )

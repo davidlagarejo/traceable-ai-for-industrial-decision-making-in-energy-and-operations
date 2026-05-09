@@ -366,7 +366,7 @@ def test_warehouse_dynamic_congruence_acceptance_bundle_covers_prompt_behaviors(
         for row in m52["measurement_strategy_register"]
     )
 
-    assert 3 <= m54["gold_nugget_count"] <= 5
+    assert 5 <= m54["gold_nugget_count"] <= 8
     assert any("wrong denominator" in row["gold_nugget"].lower() for row in m54["gold_nugget_register"])
     assert any("tariff design problem" in row["gold_nugget"].lower() for row in m54["gold_nugget_register"])
 

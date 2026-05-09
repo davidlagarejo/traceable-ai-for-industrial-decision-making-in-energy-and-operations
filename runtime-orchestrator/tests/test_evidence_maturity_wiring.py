@@ -319,8 +319,54 @@ def test_motor_024_flags_template_contamination_failure_from_case_adaptation_mem
     preflight = out["report_preflight_register"]
     assert not preflight["passed"]
     assert preflight["case_adaptation_summary"]["template_contamination_failure"]
+    assert preflight["report_output_validator_state"] == "blocked"
+    assert any(
+        row["validator"] == "ReportDiversityValidator"
+        for row in preflight["report_output_validator_findings"]
+    )
     failed = {row["check"] for row in preflight["critical_failures"]}
     assert "template_contamination_failure" in failed
+    assert "report_output_validators_passed" in failed
+
+
+def test_motor_024_report_output_validators_pass_when_template_contamination_is_clear():
+    out = Motor024Adapter().run(
+        {
+            "motor_001": {},
+            "motor_002": {},
+            "motor_007": {},
+            "motor_009": {},
+            "motor_028": {},
+            "motor_012": {},
+            "motor_034": {"claim_permission_register": [], "decision_permission_register": [], "report_readiness_register": {}},
+            "motor_013": {},
+            "motor_014": {"claim_permission_summary": {}, "minimum_evidence_unlock_map": [], "scenario_space": []},
+            "motor_019": {},
+            "motor_020": {},
+            "motor_015": {},
+            "motor_016": {
+                "report_package": {
+                    "context_integrity_scan": {"render_eligible": True, "scan_status": "passed", "issue_count": 0},
+                    "case_adaptation_memo": {
+                        "rows": [{"dimension": "asset_type_logic"}],
+                        "substantive_dimension_count": 6,
+                        "required_dimension_count": 6,
+                        "template_contamination_failure": False,
+                        "failure_reasons": [],
+                    },
+                    "case_metadata": {"document_visible_type": "Compliance / Investment Screening Brief"},
+                    "executive_thesis": {"gold_nugget_authority_state": "skill_primary"},
+                }
+            },
+            "motor_017": {},
+            "motor_027": {},
+            "motor_033": {},
+        }
+    )
+
+    preflight = out["report_preflight_register"]
+    assert preflight["report_output_validator_state"] == "passed"
+    assert preflight["report_output_validator_findings"] == []
 
 
 def test_motor_024_flags_literal_lint_and_wrong_context_hits_from_context_integrity_scan():

@@ -17,6 +17,18 @@ def _route_state(asset_family_research_profile: dict[str, Any]) -> str:
     return text(asset_family_research_profile.get("route_state"))
 
 
+def _allows_conditional_archetypal_intelligence(
+    asset_family_research_profile: dict[str, Any],
+) -> bool:
+    route_state = _route_state(asset_family_research_profile)
+    asset_family = text(asset_family_research_profile.get("asset_family"))
+    return route_state == "operational_asset_candidate" or (
+        route_state == "target_not_yet_operationally_bounded"
+        and bool(asset_family)
+        and asset_family != "generic_operational_asset"
+    )
+
+
 def _pack_state(operational_intake_pack: dict[str, Any], pack_name: str) -> str:
     return text((operational_intake_pack.get(pack_name, {}) or {}).get("current_state"))
 
@@ -78,7 +90,7 @@ def build_loss_pattern_hypothesis_register(
     peer_requirement_register: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     asset_family = text(asset_family_research_profile.get("asset_family"))
-    if _route_state(asset_family_research_profile) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     subsystems = _subsystem_names(subsystem_register)

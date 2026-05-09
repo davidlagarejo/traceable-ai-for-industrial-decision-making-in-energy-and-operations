@@ -5,6 +5,18 @@ from typing import Any
 from .schemas import text
 
 
+def _allows_conditional_archetypal_intelligence(
+    asset_family_research_profile: dict[str, Any],
+) -> bool:
+    route_state = text(asset_family_research_profile.get("route_state"))
+    asset_family = text(asset_family_research_profile.get("asset_family"))
+    return route_state == "operational_asset_candidate" or (
+        route_state == "target_not_yet_operationally_bounded"
+        and bool(asset_family)
+        and asset_family != "generic_operational_asset"
+    )
+
+
 def _first(register: list[dict[str, Any]]) -> dict[str, Any]:
     return dict(register[0] if register else {})
 
@@ -131,6 +143,45 @@ def _nugget(
     }
 
 
+def _infer_nugget_theme(row: dict[str, Any]) -> str:
+    nugget_id = text(row.get("nugget_id")).lower()
+    gold_nugget = text(row.get("gold_nugget")).lower()
+    comparison_failure = text(row.get("linked_comparison_failure")).lower()
+    linked_dependency = text(row.get("linked_dependency")).lower()
+    linked_loss_pattern = text(row.get("linked_loss_pattern")).lower()
+    linked_financial_exposure = text(row.get("linked_financial_exposure")).lower()
+    tad_action = text(row.get("tad_action")).lower()
+
+    combined = " ".join(
+        [
+            nugget_id,
+            gold_nugget,
+            comparison_failure,
+            linked_dependency,
+            linked_loss_pattern,
+            linked_financial_exposure,
+            tad_action,
+        ]
+    )
+    if any(token in combined for token in ["denominator", "comparison", "peer", "benchmark"]):
+        return "comparison_reframe"
+    if any(token in combined for token in ["boundary", "owner", "tenant", "control", "capture", "meter"]):
+        return "boundary_reframe"
+    if any(token in combined for token in ["tariff", "demand", "peak", "power factor", "reactive"]):
+        return "tariff_orchestration"
+    if any(token in combined for token in ["maintenance", "downtime", "reliability", "uptime"]):
+        return "maintenance_reality"
+    if any(token in combined for token in ["sensor", "measurement", "bill", "map", "log", "model"]):
+        return "measurement_path"
+    if any(token in combined for token in ["capital", "capex", "invest", "economic boundary", "value capture"]):
+        return "capital_target"
+    if any(token in combined for token in ["charging", "dock", "refrigeration", "compressed air", "steam", "loss"]):
+        return "structural_loss_logic"
+    if any(token in combined for token in ["problem", "premature", "wrong question"]):
+        return "problem_reframe"
+    return "cross_layer_reframe"
+
+
 def _candidate_nuggets(
     *,
     gold_nugget_candidate_register: list[dict[str, Any]],
@@ -219,7 +270,7 @@ def build_strategic_gold_nugget_register(  # noqa: PLR0913
     comparison_not_yet_valid_register: list[dict[str, Any]] | None = None,
     expanded_tad_action_register: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    if text(asset_family_research_profile.get("route_state")) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     gold_nugget_candidate_register = list(gold_nugget_candidate_register or [])
@@ -356,10 +407,12 @@ def build_strategic_gold_nugget_register(  # noqa: PLR0913
         nugget_text = text(row.get("gold_nugget"))
         if not nugget_id or not nugget_text or nugget_id in seen_ids or nugget_text in seen_texts:
             continue
+        enriched_row = dict(row)
+        enriched_row["nugget_theme"] = _infer_nugget_theme(row)
         seen_ids.add(nugget_id)
         seen_texts.add(nugget_text)
-        deduped.append(row)
-    return deduped[:5]
+        deduped.append(enriched_row)
+    return deduped[:8]
 
 
 def build_gold_nugget_strength_register(
@@ -368,30 +421,91 @@ def build_gold_nugget_strength_register(
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for row in list(gold_nugget_register or []):
-        score = 1
+        theme = text(row.get("nugget_theme")) or _infer_nugget_theme(row)
+        cross_layer_breadth_score = 1
         if text(row.get("linked_comparison_failure")):
-            score += 1
+            cross_layer_breadth_score += 1
         if text(row.get("linked_loss_pattern")):
-            score += 1
+            cross_layer_breadth_score += 1
         if text(row.get("linked_financial_exposure")):
-            score += 1
-        if _list_text(row.get("minimum_evidence")):
-            score += 1
+            cross_layer_breadth_score += 1
+        financial_tension_score = 1
+        if text(row.get("linked_financial_exposure")):
+            financial_tension_score += 2
+        if any(token in text(row.get("gold_nugget")).lower() for token in ["capital", "tariff", "demand", "downtime", "boundary"]):
+            financial_tension_score += 1
+        action_divergence_score = 1
+        if text(row.get("tad_action")):
+            action_divergence_score += 1
         if text(row.get("what_to_do_next")):
-            score += 1
+            action_divergence_score += 1
+        if any(token in text(row.get("what_to_do_next")).lower() for token in ["do not", "prohibit", "wrong", "before"]):
+            action_divergence_score += 1
+        novelty_score = 1
+        if theme in {
+            "problem_reframe",
+            "comparison_reframe",
+            "boundary_reframe",
+            "tariff_orchestration",
+            "maintenance_reality",
+            "capital_target",
+            "structural_loss_logic",
+        }:
+            novelty_score += 1
+        if any(token in text(row.get("gold_nugget")).lower() for token in ["wrong", "may not be", "before it is", "rather than"]):
+            novelty_score += 1
+        evidence_path_score = 1
+        if _list_text(row.get("minimum_evidence")):
+            evidence_path_score += 1
+        if text(row.get("what_to_do_next")):
+            evidence_path_score += 1
+        theme_priority_bonus = {
+            "problem_reframe": 3,
+            "boundary_reframe": 2,
+            "tariff_orchestration": 2,
+            "capital_target": 2,
+            "structural_loss_logic": 2,
+            "maintenance_reality": 2,
+            "comparison_reframe": 1,
+            "measurement_path": 1,
+        }.get(theme, 0)
+        score = (
+            cross_layer_breadth_score
+            + financial_tension_score
+            + action_divergence_score
+            + novelty_score
+            + evidence_path_score
+        )
+        selection_priority_score = score + theme_priority_bonus
         rows.append(
             {
                 "nugget_id": text(row.get("nugget_id")),
+                "nugget_theme": theme,
                 "strength_score": score,
                 "strength_label": (
-                    "strong"
-                    if score >= 5
+                    "deep_strategic"
+                    if score >= 12
+                    else "strong"
+                    if score >= 7
                     else "bounded"
-                    if score >= 3
+                    if score >= 5
                     else "weak"
                 ),
+                "cross_layer_breadth_score": cross_layer_breadth_score,
+                "financial_tension_score": financial_tension_score,
+                "action_divergence_score": action_divergence_score,
+                "novelty_score": novelty_score,
+                "evidence_path_score": evidence_path_score,
+                "selection_priority_score": selection_priority_score,
                 "evidence_state": text(row.get("evidence_state")),
                 "what_to_do_next": text(row.get("what_to_do_next")),
             }
         )
-    return rows
+    return sorted(
+        rows,
+        key=lambda row: (
+            -int(row.get("selection_priority_score", 0) or 0),
+            -int(row.get("cross_layer_breadth_score", 0) or 0),
+            text(row.get("nugget_id")),
+        ),
+    )

@@ -194,7 +194,7 @@ def test_motor_050_logistics_outputs_movement_and_service_level_logic():
     assert out["equipment_dominance_count"] > 0
 
 
-def test_motor_050_degrades_unbounded_target_to_inadmissible_operational_logic():
+def test_motor_050_preserves_archetypal_operational_logic_for_bounded_but_not_yet_operational_targets():
     inputs = {
         "motor_007": {
             "target_definition_contract": {
@@ -222,6 +222,8 @@ def test_motor_050_degrades_unbounded_target_to_inadmissible_operational_logic()
     }
     out = _run(inputs)
 
-    assert out["operational_logic_state"] == "inadmissible_until_asset_identity_bounded"
-    assert out["subsystem_register"] == []
-    assert out["control_boundary_map"] == []
+    assert out["operational_logic_state"] == "archetypal_screening_operational_logic"
+    assert out["subsystem_register"]
+    assert out["control_boundary_map"]
+    assert all(row["evidence_state"] == "ARCHETYPAL_PRIOR" for row in out["subsystem_register"])
+    assert all(row["evidence_state"] == "ARCHETYPAL_PRIOR" for row in out["control_boundary_map"])

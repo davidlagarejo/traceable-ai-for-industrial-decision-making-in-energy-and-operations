@@ -129,6 +129,11 @@ def test_warehouse_financial_exposure_type_engine_emits_tariff_peer_and_value_le
     leakage_types = {row["financial_exposure_type"] for row in out["value_leakage_register"]}
     assert "operational_savings_not_capturable" in leakage_types
     assert "tenant_operator_value_leakage" in leakage_types
+    skill_categories = {row["governed_exposure_category"] for row in out["skill_financial_exposure_register"]}
+    assert "wrong peer valuation" in skill_categories
+    assert "tariff exposure" in skill_categories
+    assert "hidden demand charge exposure" in skill_categories
+    assert "boundary leakage" in skill_categories
 
 
 def test_building_and_manufacturing_financial_exposure_types_cover_capex_compliance_and_downtime():
@@ -146,3 +151,8 @@ def test_building_and_manufacturing_financial_exposure_types_cover_capex_complia
 
     underwriting_types = {row["financial_exposure_type"] for row in manufacturing["underwriting_misread_register"]}
     assert "CAPEX_misallocated" in underwriting_types
+    manufacturing_skill_categories = {
+        row["governed_exposure_category"] for row in manufacturing["skill_financial_exposure_register"]
+    }
+    assert "CAPEX misallocation risk" in manufacturing_skill_categories
+    assert "maintenance downtime exposure" in manufacturing_skill_categories

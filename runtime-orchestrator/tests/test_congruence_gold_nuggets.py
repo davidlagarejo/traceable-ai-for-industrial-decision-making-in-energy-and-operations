@@ -46,6 +46,25 @@ def _building_inputs() -> dict:
     }
 
 
+def _manufacturing_inputs() -> dict:
+    return {
+        "motor_007": {
+            "target_definition_contract": {
+                "address_raw": "TEMPLE, TX",
+                "jurisdiction_scope": ["US-TX"],
+                "target_type": "manufacturing_facility",
+                "target_name": "Wilsonart",
+            },
+            "target_classification_object": {"target_type": "OPERATING_ASSET", "classification_confidence": "high"},
+        },
+        "motor_012": {
+            "facility_prior": {"target_definition": {"target_type": "manufacturing_facility", "jurisdiction_scope": ["US-TX"]}},
+            "asset_field_register": [_field("asset_class", "manufacturing_facility")],
+        },
+        "motor_028": {"source_register": []},
+    }
+
+
 def _run(inputs: dict) -> dict:
     m49 = Motor049Adapter().run(inputs)
     m50 = Motor050Adapter().run({**inputs, "motor_049": m49})
@@ -77,3 +96,74 @@ def test_motor_054_emits_bounded_congruence_action_priority():
     assert "REQUEST_MINIMUM_EVIDENCE" in actions
     assert "REQUEST_FAIR_PEER_SET" in actions
     assert len(out["congruence_action_priority_register"]) <= 5
+
+
+def test_building_skill_gold_nuggets_follow_building_patterns_without_warehouse_contamination():
+    out = _run(_building_inputs())
+
+    skill_nuggets = out["skill_gold_nugget_register"]
+    themes = {row["nugget_theme"] for row in skill_nuggets}
+    nugget_text = " ".join(row["gold_nugget"].lower() for row in skill_nuggets)
+
+    assert out["gold_nugget_authority_state"] == "skill_primary"
+    assert out["authoritative_gold_nugget_register"] == skill_nuggets
+    assert "controls_or_schedule" in themes
+    assert "boundary_leakage" in themes
+    assert "model_prematurity" in themes
+    assert "charging drives peak demand" not in nugget_text
+    assert "logistics interface" not in nugget_text
+    assert "service-level intensity and charging profile" not in nugget_text
+
+
+def test_manufacturing_skill_gold_nuggets_follow_process_and_power_quality_patterns():
+    out = _run(_manufacturing_inputs())
+
+    skill_nuggets = out["skill_gold_nugget_register"]
+    themes = {row["nugget_theme"] for row in skill_nuggets}
+    nugget_text = " ".join(row["gold_nugget"].lower() for row in skill_nuggets)
+
+    assert out["gold_nugget_authority_state"] == "skill_primary"
+    assert out["authoritative_gold_nugget_register"] == skill_nuggets
+    assert "process_dominance" in themes
+    assert "tariff_orchestration" in themes
+    assert "support_utility_loss" in themes
+    assert "model_prematurity" in themes
+    assert "maintenance_hidden_value" in themes or "maintenance_reality" in themes
+    assert "compressed air" in nugget_text or "power factor" in nugget_text
+    assert "digital twin" in nugget_text or "do not model" in nugget_text
+    assert "charging drives peak demand" not in nugget_text
+    assert "logistics interface" not in nugget_text
+
+
+def test_building_gold_nuggets_survive_target_not_yet_operationally_bounded():
+    inputs = _building_inputs()
+    inputs["motor_007"]["target_classification_object"] = {
+        "target_type": "REGISTERED_AGENT_OR_MAILING_ADDRESS",
+        "classification_confidence": "medium",
+    }
+    out = _run(inputs)
+
+    nuggets = out["strategic_gold_nugget_register"]
+    assert nuggets
+    nugget_text = " ".join(row["gold_nugget"].lower() for row in nuggets)
+    assert "visible question may be premature" in nugget_text or "wrong measurement instinct" in nugget_text
+    assert out["congruence_action_priority_register"]
+
+
+def test_gold_nugget_strength_register_carries_theme_and_priority_scoring():
+    out = _run(_manufacturing_inputs())
+
+    strength_rows = out["gold_nugget_strength_register"]
+    assert strength_rows
+    assert all(row["nugget_theme"] for row in strength_rows)
+    assert all("selection_priority_score" in row for row in strength_rows)
+    assert all("cross_layer_breadth_score" in row for row in strength_rows)
+    assert strength_rows == sorted(
+        strength_rows,
+        key=lambda row: (
+            -int(row.get("selection_priority_score", 0) or 0),
+            -int(row.get("cross_layer_breadth_score", 0) or 0),
+            str(row.get("nugget_id", "")),
+        ),
+    )
+    assert any(row["strength_label"] in {"strong", "deep_strategic"} for row in strength_rows)

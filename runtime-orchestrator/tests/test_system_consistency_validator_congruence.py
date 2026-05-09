@@ -472,6 +472,19 @@ def test_motor_036_accepts_bounded_congruence_lane():
     assert out["can_render_pdf"] is True
 
 
+def test_motor_036_accepts_authoritative_gold_nugget_register_without_legacy_alias():
+    inputs = deepcopy(_base_inputs())
+    inputs["motor_054"]["authoritative_gold_nugget_register"] = list(
+        inputs["motor_054"]["strategic_gold_nugget_register"]
+    )
+    inputs["motor_054"]["gold_nugget_authority_state"] = "skill_primary"
+    inputs["motor_054"]["strategic_gold_nugget_register"] = []
+
+    out = Motor036Adapter().run(inputs)
+    assert out["critical_failure_count"] == 0
+    assert out["can_render_pdf"] is True
+
+
 def test_motor_036_blocks_invalid_comparison_as_peer_evidence():
     inputs = deepcopy(_base_inputs())
     inputs["motor_043"]["competitive_comparison_register"][0]["evidence_state"] = "OBSERVED_FACT"

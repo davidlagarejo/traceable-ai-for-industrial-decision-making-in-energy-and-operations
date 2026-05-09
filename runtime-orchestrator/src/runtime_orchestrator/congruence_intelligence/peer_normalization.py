@@ -9,6 +9,14 @@ def _binding_state(local_evidence_binding_register: list[dict[str, Any]]) -> str
     return text((local_evidence_binding_register or [{}])[0].get("current_local_binding_state"))
 
 
+def _allows_conditional_archetypal_screening(route_state: str, asset_family: str) -> bool:
+    return (
+        route_state == "target_not_yet_operationally_bounded"
+        and bool(asset_family)
+        and asset_family != "generic_operational_asset"
+    )
+
+
 def build_fair_comparison_profile(
     *,
     asset_family_research_profile: dict[str, Any],
@@ -45,7 +53,15 @@ def build_fair_comparison_profile(
     )
     comparison_state = (
         "inadmissible_until_asset_identity_bounded"
-        if route_state != "operational_asset_candidate"
+        if (
+            route_state == "target_unresolved"
+            or (
+                route_state != "operational_asset_candidate"
+                and not _allows_conditional_archetypal_screening(route_state, asset_family)
+            )
+        )
+        else "archetypal_screening_only"
+        if _allows_conditional_archetypal_screening(route_state, asset_family)
         else "bounded_screening_only"
         if binding_state not in {"partially_bound", "sufficiently_bound"}
         else "partially_normalized"

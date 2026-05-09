@@ -5,6 +5,18 @@ from typing import Any
 from .schemas import text
 
 
+def _allows_conditional_archetypal_intelligence(
+    asset_family_research_profile: dict[str, Any],
+) -> bool:
+    route_state = text(asset_family_research_profile.get("route_state"))
+    asset_family = text(asset_family_research_profile.get("asset_family"))
+    return route_state == "operational_asset_candidate" or (
+        route_state == "target_not_yet_operationally_bounded"
+        and bool(asset_family)
+        and asset_family != "generic_operational_asset"
+    )
+
+
 def _exposure(
     *,
     exposure_type: str,
@@ -30,7 +42,7 @@ def build_finance_physics_dependency_register(
     measurement_strategy_register: list[dict[str, Any]],
     maintenance_reality_register: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    if text(asset_family_research_profile.get("route_state")) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     asset_family = text(asset_family_research_profile.get("asset_family"))
@@ -121,7 +133,7 @@ def build_cost_driver_dependency_register(
     power_quality_hypothesis_register: list[dict[str, Any]],
     maintenance_reality_register: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    if text(asset_family_research_profile.get("route_state")) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     asset_family = text(asset_family_research_profile.get("asset_family"))
@@ -158,7 +170,7 @@ def build_capital_logic_register(
     regulatory_constraint_register: list[dict[str, Any]],
     finance_physics_dependency_register: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    if text(asset_family_research_profile.get("route_state")) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     rows: list[dict[str, Any]] = []
@@ -199,7 +211,7 @@ def build_financial_exposure_type_register(
     measurement_strategy_register: list[dict[str, Any]],
     hardware_minimality_register: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    if text(asset_family_research_profile.get("route_state")) != "operational_asset_candidate":
+    if not _allows_conditional_archetypal_intelligence(asset_family_research_profile):
         return []
 
     asset_family = text(asset_family_research_profile.get("asset_family"))

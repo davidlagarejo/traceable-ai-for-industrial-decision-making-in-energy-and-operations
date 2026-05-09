@@ -100,6 +100,8 @@ def _report_package(
             appendix_sections.extend(list(extra_body_sections or []))
     default_main_report_outline = main_report_outline or {
         "visible_report_mode": document_type,
+        "gold_nugget_authority_state": "legacy_primary_skill_shadow",
+        "gold_nugget_source_register": "motor_054.strategic_gold_nugget_register",
         "max_primary_sections": 12,
         "sections": [
             {"section_key": "executive_structural_thesis", "title": "Executive Structural Thesis", "render_targets": ["Executive Structural Brief"]},
@@ -200,6 +202,8 @@ def _report_package(
         "top_actions": [
             {"action": "Request bounded evidence", "status": "ACT NOW"},
         ],
+        "gold_nugget_authority_state": "legacy_primary_skill_shadow",
+        "gold_nugget_source_register": "motor_054.strategic_gold_nugget_register",
         "dominant_lens": "Regulation vs control boundary",
         "supporting_modes": ["System Redesign Hypothesis Brief"],
         "interpretive_signal_register": [
@@ -2069,6 +2073,8 @@ def test_motor_017_purges_template_chapters_from_job_dir(tmp_path, monkeypatch):
     )
 
     assert out["compilation_status"] == "success"
+    assert out["gold_nugget_authority_state"] == "legacy_primary_skill_shadow"
+    assert out["gold_nugget_source_register"] == "motor_054.strategic_gold_nugget_register"
     written_inventory = set(out["written_chapter_inventory"])
     assert {"00-Brief.tex", "A0.tex", "A6.tex", "A7.tex", "C1.tex", "C6.tex", "C12.tex"} <= written_inventory
     written_dir = output_dir / out["render_job_id"] / "Chapters"
@@ -2077,3 +2083,66 @@ def test_motor_017_purges_template_chapters_from_job_dir(tmp_path, monkeypatch):
     assert not (written_dir / "03-Latex-Tutorial.tex").exists()
     assert not (written_dir / "Appendices").exists()
     assert not (written_dir / "Annexes").exists()
+
+
+def test_motor_017_exposes_skill_primary_gold_nugget_authority_from_report_package(tmp_path, monkeypatch):
+    template_dir = tmp_path / "template"
+    output_dir = tmp_path / "output"
+    chapters_dir = template_dir / "Chapters"
+    (template_dir / "Metadata").mkdir(parents=True, exist_ok=True)
+    (template_dir / "Matter").mkdir(parents=True, exist_ok=True)
+    (template_dir / "Bibliography").mkdir(parents=True, exist_ok=True)
+    (template_dir / "Configurations").mkdir(parents=True, exist_ok=True)
+    chapters_dir.mkdir(parents=True, exist_ok=True)
+
+    monkeypatch.setattr(motor_017_module, "_TEMPLATE_DIR", template_dir)
+    monkeypatch.setattr(motor_017_module, "_OUTPUT_DIR", output_dir)
+
+    def _fake_run(cmd, cwd, capture_output, text, timeout):
+        pdf_path = motor_017_module.Path(cwd) / "main.pdf"
+        pdf_path.write_bytes(b"%PDF-1.4\n% fake pdf\n")
+        return types.SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(motor_017_module.subprocess, "run", _fake_run)
+
+    base_pkg = _report_package(
+        exec_content="ok",
+        c2_content="ok",
+        a0_content="ok",
+        document_type="Compliance / Investment Screening Brief",
+        extra_appendix_sections=[
+            {"title": "Public Source Coverage Table", "chapter_id": "A6", "blocks": [{"content": "bounded source coverage"}]},
+            {"title": "Report Type Classifier Table", "chapter_id": "A7", "blocks": [{"content": "recommended output mode remains screening"}]},
+        ],
+    )
+    pkg = _report_package(
+        exec_content="ok",
+        c2_content="ok",
+        a0_content="ok",
+        document_type="Compliance / Investment Screening Brief",
+        extra_appendix_sections=[
+            {"title": "Public Source Coverage Table", "chapter_id": "A6", "blocks": [{"content": "bounded source coverage"}]},
+            {"title": "Report Type Classifier Table", "chapter_id": "A7", "blocks": [{"content": "recommended output mode remains screening"}]},
+        ],
+        executive_thesis={
+            **base_pkg["executive_thesis"],
+            "gold_nugget_authority_state": "skill_primary",
+            "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
+        },
+        main_report_outline={
+            **base_pkg["main_report_outline"],
+            "gold_nugget_authority_state": "skill_primary",
+            "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
+        },
+    )
+
+    out = Motor017Adapter().run(
+        {
+            "motor_016": {"report_package": pkg},
+            "motor_036": {"can_render_pdf": True, "critical_failures": []},
+        }
+    )
+
+    assert out["compilation_status"] == "success"
+    assert out["gold_nugget_authority_state"] == "skill_primary"
+    assert out["gold_nugget_source_register"] == "motor_054.authoritative_gold_nugget_register"

@@ -83,11 +83,12 @@ def _run(inputs: dict) -> dict:
     })
 
 
-def test_gold_nugget_generator_emits_three_to_five_case_specific_warehouse_nuggets():
+def test_gold_nugget_generator_emits_five_to_eight_case_specific_warehouse_nuggets():
     out = _run(_warehouse_inputs())
 
     nuggets = out["gold_nugget_register"]
-    assert 3 <= len(nuggets) <= 5
+    skill_nuggets = out["skill_gold_nugget_register"]
+    assert 5 <= len(nuggets) <= 8
     assert len(out["gold_nugget_strength_register"]) == len(nuggets)
     assert any("wrong denominator" in row["gold_nugget"].lower() for row in nuggets)
     assert any("tariff design problem" in row["gold_nugget"].lower() for row in nuggets)
@@ -98,6 +99,16 @@ def test_gold_nugget_generator_emits_three_to_five_case_specific_warehouse_nugge
         assert row["what_to_do_next"]
         assert row["minimum_evidence"]
         assert row["tad_action"]
+    assert 3 <= len(skill_nuggets) <= 5
+    assert out["gold_nugget_authority_state"] == "skill_primary"
+    assert out["authoritative_gold_nugget_register"] == skill_nuggets
+    assert any("wrong denominator" in row["gold_nugget"].lower() for row in skill_nuggets)
+    assert any("tariff orchestration problem" in row["gold_nugget"].lower() for row in skill_nuggets)
+    assert any("value may leak" in row["gold_nugget"].lower() for row in skill_nuggets)
+    skill_nugget_ids = {row["nugget_id"] for row in skill_nuggets}
+    assert "pattern_fair_comparison_invalid_area_metric" in skill_nugget_ids
+    assert "pattern_warehouse_mhe_charging_demand_peak" in skill_nugget_ids
+    assert "pattern_value_boundary_leakage_owner_operator" in skill_nugget_ids
 
 
 def test_gold_nugget_strength_register_marks_strong_nuggets_when_multiple_lanes_align():
@@ -106,4 +117,15 @@ def test_gold_nugget_strength_register_marks_strong_nuggets_when_multiple_lanes_
     strength_by_id = {row["nugget_id"]: row for row in out["gold_nugget_strength_register"]}
     candidate_rows = [row for row in out["gold_nugget_register"] if row["nugget_id"].startswith("candidate_")]
     assert candidate_rows
-    assert any(strength_by_id[row["nugget_id"]]["strength_label"] == "strong" for row in candidate_rows)
+    assert any(
+        strength_by_id[row["nugget_id"]]["strength_label"] in {"strong", "deep_strategic"}
+        for row in candidate_rows
+    )
+    assert any(
+        row["validator_state"] == "passed"
+        for row in out["skill_gold_nugget_register"]
+    )
+    assert any(
+        row["nugget_theme"] == "model_prematurity"
+        for row in out["skill_gold_nugget_register"]
+    )

@@ -17,6 +17,12 @@ from ..congruence_intelligence.maintenance_reality import (
 )
 from ..congruence_intelligence.measurement_strategy import build_measurement_strategy_register
 from ..congruence_intelligence.power_quality import build_power_quality_hypothesis_register
+from ..zlab_skill.loader import load_registry_bundle
+from ..zlab_skill.runtime_bridge import (
+    build_active_skill_pattern_state,
+    build_pattern_authority_state,
+    build_registry_pattern_activation_register,
+)
 from .base import BaseMotorAdapter
 
 
@@ -88,10 +94,47 @@ class Motor052Adapter(BaseMotorAdapter):
         hardware_minimality_register = build_hardware_minimality_register(
             measurement_strategy_register=measurement_strategy_register,
         )
+        try:
+            registry_bundle = load_registry_bundle()
+        except Exception:
+            registry_bundle = {}
+        skill_active_pattern_ids, skill_active_pattern_sources, _ = build_active_skill_pattern_state(
+            motor_049_output=m49,
+            motor_051_output=m51,
+            motor_052_output={
+                "activated_pattern_register": activated_pattern_register,
+                "power_quality_hypothesis_register": power_quality_hypothesis_register,
+                "measurement_strategy_register": measurement_strategy_register,
+                "hardware_minimality_register": hardware_minimality_register,
+            }
+        )
+        skill_pattern_activation_register = build_registry_pattern_activation_register(
+            registry_bundle=registry_bundle,
+            active_pattern_sources=skill_active_pattern_sources,
+        )
+        pattern_authority_summary = build_pattern_authority_state(
+            legacy_pattern_register=activated_pattern_register,
+            skill_pattern_activation_register=skill_pattern_activation_register,
+            skill_active_pattern_ids=skill_active_pattern_ids,
+        )
+        pattern_authority_state = str(
+            pattern_authority_summary.get("pattern_authority_state", "legacy_primary_skill_shadow")
+        ).strip() or "legacy_primary_skill_shadow"
+        authoritative_pattern_activation_register = (
+            skill_pattern_activation_register
+            if pattern_authority_state == "skill_primary"
+            else activated_pattern_register
+        )
         return {
             "loss_pattern_hypothesis_register": loss_pattern_hypothesis_register,
             "activated_pattern_register": activated_pattern_register,
             "pattern_discrimination_register": pattern_discrimination_register,
+            "skill_active_pattern_ids": skill_active_pattern_ids,
+            "skill_active_pattern_sources": skill_active_pattern_sources,
+            "skill_pattern_activation_register": skill_pattern_activation_register,
+            "authoritative_pattern_activation_register": authoritative_pattern_activation_register,
+            "pattern_authority_state": pattern_authority_state,
+            "pattern_authority_summary": pattern_authority_summary,
             "industrial_common_sense_register": industrial_common_sense_register,
             "maintenance_reality_register": maintenance_reality_register,
             "maintenance_proof_gap_register": maintenance_proof_gap_register,
@@ -102,6 +145,7 @@ class Motor052Adapter(BaseMotorAdapter):
             "leakage_hypothesis_register": leakage_hypothesis_register,
             "loss_pattern_count": len(loss_pattern_hypothesis_register),
             "activated_pattern_count": len(activated_pattern_register),
+            "skill_pattern_activation_count": len(skill_pattern_activation_register),
             "pattern_discrimination_count": len(pattern_discrimination_register),
             "maintenance_reality_count": len(maintenance_reality_register),
             "maintenance_proof_gap_count": len(maintenance_proof_gap_register),

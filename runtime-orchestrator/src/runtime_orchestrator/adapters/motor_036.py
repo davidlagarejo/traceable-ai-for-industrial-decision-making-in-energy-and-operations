@@ -425,7 +425,13 @@ class Motor036Adapter(BaseMotorAdapter):
         hardware_minimality_register = list(m52.get("hardware_minimality_register", []) or [])
         regulatory_physics_register = list(m53.get("regulatory_physics_register", []) or [])
         finance_physics_dependency_register = list(m53.get("finance_physics_dependency_register", []) or [])
-        strategic_gold_nugget_register = list(m54.get("strategic_gold_nugget_register", []) or [])
+        gold_nugget_authority_state = str(m54.get("gold_nugget_authority_state", "") or "").strip()
+        authoritative_gold_nugget_register = list(m54.get("authoritative_gold_nugget_register", []) or [])
+        strategic_gold_nugget_register = (
+            authoritative_gold_nugget_register
+            if authoritative_gold_nugget_register and gold_nugget_authority_state == "skill_primary"
+            else list(m54.get("strategic_gold_nugget_register", m54.get("gold_nugget_register", [])) or [])
+        )
         congruence_action_priority_register = list(m54.get("congruence_action_priority_register", []) or [])
         congruence_claim_contract_register = list(m54.get("congruence_claim_contract_register", []) or [])
         congruence_claim_ids = {

@@ -36,6 +36,7 @@ def _contract(
 def build_congruence_claim_contract_register(
     *,
     strategic_gold_nugget_register: list[dict[str, Any]],
+    strategic_gold_nugget_source: str = "motor_054.strategic_gold_nugget_register",
     congruence_action_priority_register: list[dict[str, Any]],
     invalid_comparison_risk_register: list[dict[str, Any]],
     measurement_strategy_register: list[dict[str, Any]],
@@ -149,7 +150,7 @@ def build_congruence_claim_contract_register(
                 claim_id="congruence_gold_nugget_claim",
                 statement="Strategic gold nuggets must stay evidence-bounded and tied to a concrete dependency or invalid frame.",
                 evidence_state=text(first.get("evidence_state")) or "CONDITIONAL_HYPOTHESIS",
-                supporting_sources=["motor_054.strategic_gold_nugget_register"],
+                supporting_sources=[text(strategic_gold_nugget_source) or "motor_054.strategic_gold_nugget_register"],
                 assumptions=["A surprising interpretation is only useful if it is traceable to the governing evidence and constraint structure."],
                 minimum_evidence_required=[text(first.get("linked_dependency"))],
                 allowed_use=["Executive reframe", "Decision-shock insight"],

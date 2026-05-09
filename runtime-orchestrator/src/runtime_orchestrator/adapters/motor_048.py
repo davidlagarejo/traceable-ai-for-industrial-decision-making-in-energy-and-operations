@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..report_compression import build_report_compression
+from ..zlab_skill.runtime_bridge import build_skill_first_report_compression_context
 from .base import BaseMotorAdapter
 
 
@@ -19,11 +20,27 @@ class Motor048Adapter(BaseMotorAdapter):
         m34 = inputs.get("motor_034", {}) if isinstance(inputs.get("motor_034", {}), dict) else {}
         m47 = inputs.get("motor_047", {}) if isinstance(inputs.get("motor_047", {}), dict) else {}
         m54 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
+        skill_context = build_skill_first_report_compression_context(
+            executive_thesis=dict(m47.get("executive_thesis", {}) or {}),
+            motor_054_output=m54,
+        )
         compression = build_report_compression(
             executive_thesis=dict(m47.get("executive_thesis", {}) or {}),
-            canonical_problem_frame=dict(m34.get("canonical_problem_frame", {}) or {}),
-            claim_contract_register=list(m34.get("claim_contract_register", []) or []),
-            report_output_mode_classifier_table=list(m34.get("report_output_mode_classifier_table", []) or []),
+            canonical_problem_frame=dict(
+                m34.get("canonical_problem_frame", {})
+                or skill_context.get("canonical_problem_frame", {})
+                or {}
+            ),
+            claim_contract_register=list(
+                m34.get("claim_contract_register", [])
+                or skill_context.get("claim_contract_register", [])
+                or []
+            ),
+            report_output_mode_classifier_table=list(
+                m34.get("report_output_mode_classifier_table", [])
+                or skill_context.get("report_output_mode_classifier_table", [])
+                or []
+            ),
             congruence_claim_contract_register=list(m54.get("congruence_claim_contract_register", []) or []),
         )
         return {
@@ -31,6 +48,8 @@ class Motor048Adapter(BaseMotorAdapter):
                 "visible_report_mode": compression.get("visible_report_mode", ""),
                 "dominant_lens": compression.get("dominant_lens", ""),
                 "supporting_modes": list(compression.get("supporting_modes", []) or []),
+                "gold_nugget_authority_state": compression.get("gold_nugget_authority_state", ""),
+                "gold_nugget_source_register": compression.get("gold_nugget_source_register", ""),
                 "max_primary_sections": int(compression.get("max_primary_sections", 0) or 0),
                 "compression_state": compression.get("compression_state", ""),
                 "sections": list(compression.get("sections", []) or []),

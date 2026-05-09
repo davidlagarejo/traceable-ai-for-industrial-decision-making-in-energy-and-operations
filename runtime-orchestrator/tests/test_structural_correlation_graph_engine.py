@@ -100,7 +100,17 @@ def test_cross_layer_congruence_keeps_dominant_contradiction_and_adds_supporting
 
     contradictions = {row["contradiction"]: row for row in out["cross_layer_congruence_register"]}
     assert "Area benchmark vs service-level complexity" in contradictions
-    assert contradictions["Area benchmark vs service-level complexity"]["supporting_correlation_count"] >= 1
+    dominant = contradictions["Area benchmark vs service-level complexity"]
+    assert dominant["supporting_correlation_count"] >= 1
+    assert dominant["correlation_constellation_score"] > 0
+    assert dominant["supporting_correlation_ids"]
+    assert dominant["supporting_correlation_headlines"]
+    assert dominant["supporting_correlation_register"][0]["support_score"] > 0
+    assert any(
+        "dock activity" in row["correlation"].lower()
+        or "charging" in row["correlation"].lower()
+        for row in dominant["supporting_correlation_register"]
+    )
 
 
 def test_correlation_sidecars_can_be_built_from_register_directly():

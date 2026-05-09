@@ -111,6 +111,28 @@ def test_warehouse_loss_pattern_activator_emits_relevant_subset_and_discriminati
 
     activated = {row["pattern_name"]: row for row in out["activated_pattern_register"]}
     assert activated["forklift_charging_and_demand_spike_plausible"]["tad_action"] == "VALIDATE_TARIFF_EXPOSURE"
+    skill_pattern_ids = {row["pattern_id"] for row in out["skill_pattern_activation_register"]}
+    assert "fair_comparison_invalid_area_metric" in skill_pattern_ids
+    assert "cold_chain_status_unknown" in skill_pattern_ids
+    assert "warehouse_mhe_charging_demand_peak" in skill_pattern_ids
+    assert "warehouse_dock_infiltration_loss" in skill_pattern_ids
+    assert "demand_charge_exposure_unknown" in skill_pattern_ids
+    assert "digital_twin_prematurity" in skill_pattern_ids
+    assert out["pattern_authority_state"] == "skill_primary"
+    assert out["authoritative_pattern_activation_register"] == out["skill_pattern_activation_register"]
+    allowed_states = {
+        "candidate",
+        "weakly_activated",
+        "structurally_plausible",
+        "asset_supported",
+        "verified",
+        "falsified",
+    }
+    for row in out["skill_pattern_activation_register"]:
+        assert row["activation_state"] in allowed_states
+        assert row["why_activated"]
+        assert row["what_would_falsify"]
+        assert row["minimum_evidence_to_confirm"]
 
     for row in out["loss_pattern_hypothesis_register"]:
         assert row["evidence_state"] != "OBSERVED_FACT"
@@ -131,3 +153,33 @@ def test_manufacturing_loss_pattern_activator_preserves_anti_hallucination_and_m
     assert maintenance_row["what_confirms"]
     assert maintenance_row["what_falsifies"]
     assert maintenance_row["tad_action"] == "VALIDATE_MAINTENANCE_REALITY"
+    skill_pattern_ids = {row["pattern_id"] for row in out["skill_pattern_activation_register"]}
+    assert "compressed_air_leak_plausibility" in skill_pattern_ids
+    assert "maintenance_maturity_not_evidenced" in skill_pattern_ids
+    assert "reactive_power_exposure" in skill_pattern_ids
+    assert "process_load_vs_waste" in skill_pattern_ids
+    assert "maintenance_hidden_value_driver" in skill_pattern_ids
+    assert "sensor_prematurity" in skill_pattern_ids
+    assert "digital_twin_prematurity" in skill_pattern_ids
+    assert "procurement_vs_lifecycle_cost" in skill_pattern_ids
+    assert out["pattern_authority_state"] == "skill_primary"
+    assert out["authoritative_pattern_activation_register"] == out["skill_pattern_activation_register"]
+    rows_by_id = {row["pattern_id"]: row for row in out["skill_pattern_activation_register"]}
+    assert rows_by_id["process_load_vs_waste"]["activation_state"] == "weakly_activated"
+    assert rows_by_id["maintenance_hidden_value_driver"]["activation_state"] == "weakly_activated"
+    assert rows_by_id["reactive_power_exposure"]["activation_state"] == "structurally_plausible"
+
+
+def test_warehouse_loss_patterns_survive_target_not_yet_operationally_bounded_as_archetypal_screening():
+    inputs = _warehouse_inputs()
+    inputs["motor_007"]["target_classification_object"] = {
+        "target_type": "REGISTERED_AGENT_OR_MAILING_ADDRESS",
+        "classification_confidence": "medium",
+    }
+    out = _run(inputs)
+
+    pattern_names = {row["pattern_name"] for row in out["loss_pattern_hypothesis_register"]}
+    assert "forklift_charging_and_demand_spike_plausible" in pattern_names
+    assert "dock_infiltration_and_door_discipline_plausible" in pattern_names
+    assert "schedule_and_idle_conditioning_waste_plausible" in pattern_names
+    assert all(row["evidence_state"] in {"ARCHETYPAL_PRIOR", "CONDITIONAL_HYPOTHESIS"} for row in out["loss_pattern_hypothesis_register"])

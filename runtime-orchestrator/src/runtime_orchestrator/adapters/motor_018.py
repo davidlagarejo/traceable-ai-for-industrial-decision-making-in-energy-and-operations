@@ -630,6 +630,164 @@ def _chart_story(chart_id: str, *, curation_mode: str = "default") -> dict[str, 
     })
 
 
+def _chart_strategic_value(chart_id: str, *, curation_mode: str = "default") -> dict[str, Any]:
+    policy = {
+        "chart_congruence_binding_state": (10, "thesis_critical", "Directly governs whether the visible thesis is bounded strongly enough to stand."),
+        "chart_fair_comparison_gate": (10, "thesis_critical", "Can invalidate the denominator and reframe the whole comparison logic."),
+        "chart_cross_layer_congruence_map": (10, "thesis_critical", "Shows the contradiction that should change interpretation."),
+        "chart_measurement_minimality_path": (9, "thesis_critical", "Defines the minimum evidence path before escalation or instrumentation waste."),
+        "chart_cost_driver_signal_profile": (9, "thesis_critical", "Can shift the case from generic energy logic to tariff, duty, boundary, or maintenance logic."),
+        "chart_peer_requirement_readiness": (8, "strategic_support", "Makes explicit which peer requirements still prohibit fair comparison."),
+        "chart_gap_taxonomy_profile": (7, "strategic_support", "Separates blocker types instead of collapsing all missing evidence into one bucket."),
+        "chart_next_best_search_path": (7, "strategic_support", "Shows the remaining public-search path before local evidence should be requested."),
+        "chart_investment_uncertainty_map": (7, "strategic_support", "Compresses the uncertainties still blocking capital-facing logic."),
+        "chart_minimum_evidence_pack": (7, "strategic_support", "Turns the evidence request into a bounded decision surface."),
+        "chart_decision_front_status": (6, "strategic_support", "Clarifies which decision fronts are blocked, deferred, or safe to advance."),
+        "chart_scenario_space": (6, "strategic_support", "Shows how bounded scenarios change the decision frame without inventing probabilities."),
+        "chart_validation_priority": (6, "strategic_support", "Helps sequence validation, but is secondary to contradiction and denominator charts."),
+        "chart_causal_dependency": (6, "strategic_support", "Shows when one evidence dependency contaminates several downstream readings."),
+        "chart_asset_context_completeness": (5, "supportive_context", "Useful context, but it does not usually change the strategic reading by itself."),
+        "chart_source_scope_balance": (5, "supportive_context", "Useful scope hygiene, but not usually the chart that changes interpretation directly."),
+        "chart_context_routing_status": (5, "supportive_context", "Useful routing hygiene, but mainly a support condition for stronger charts."),
+        "chart_system_typology_prior": (5, "supportive_context", "Shows likely system families, but mainly supports rather than drives the thesis."),
+        "chart_inference_scores": (5, "supportive_context", "Useful ranking context, but less interpretively sharp than contradiction or denominator charts."),
+        "chart_evidence_ladder": (4, "supportive_context", "Helpful support context, but can read as methodology unless tightly tied to the thesis."),
+        "chart_validation_effort_matrix": (4, "supportive_context", "Useful for work planning, but not usually the chart that changes the client's interpretation."),
+        "chart_scenario_decision": (4, "supportive_context", "Potentially useful, but vulnerable to becoming derivative if the scenario lane is thin."),
+        "chart_debt_discrepancy": (4, "supportive_context", "Useful blockage context, but not usually central to the asset thesis."),
+        "chart_revenue_trend": (3, "decorative_risk", "Can drift into issuer context unless tightly bound to the asset decision."),
+        "chart_revenue_composition": (3, "decorative_risk", "Can drift into descriptive company context without changing the asset interpretation."),
+        "chart_tenant_concentration": (3, "decorative_risk", "Can be useful, but often reads as side context unless directly linked to the contradiction."),
+        "chart_ll97_scenario": (3, "decorative_risk", "Useful only when regulatory framing is dominant; otherwise it risks decorative compliance energy."),
+        "chart_ll97_timeline": (2, "decorative_risk", "Timing context alone rarely changes interpretation unless the case is regulation-led."),
+    }
+    score, tier, reason = policy.get(
+        chart_id,
+        (4, "supportive_context", "This chart currently acts as support context more than as a thesis-moving surface."),
+    )
+    if curation_mode == "blocked" and tier == "decorative_risk":
+        score = min(score, 2)
+    return {
+        "strategic_value_score": int(score),
+        "strategic_value_tier": str(tier),
+        "strategic_value_reason": str(reason),
+    }
+
+
+def _chart_intelligence_binding(chart_id: str, executive_thesis: dict[str, Any]) -> dict[str, Any]:
+    executive_thesis = dict(executive_thesis or {})
+    dominant_contradiction = str(executive_thesis.get("dominant_contradiction", "")).strip()
+    thesis_constellation_register = list(executive_thesis.get("thesis_constellation_register", []) or [])
+    top_gold_nuggets = list(executive_thesis.get("top_gold_nuggets", []) or [])
+
+    challenger_row = next(
+        (
+            row for row in thesis_constellation_register
+            if str((row or {}).get("element_type", "")).strip()
+            in {"challenger_hypothesis", "alternative_variable_candidate"}
+        ),
+        {},
+    )
+    first_nugget_row = next(
+        (
+            row for row in top_gold_nuggets
+            if str((row or {}).get("gold_nugget", "")).strip()
+        ),
+        {},
+    )
+
+    contradiction_id = "dominant_contradiction" if dominant_contradiction else ""
+    contradiction_label = dominant_contradiction
+    hypothesis_id = str(challenger_row.get("element_type", "")).strip() or ""
+    hypothesis_label = str(challenger_row.get("statement") or challenger_row.get("title") or "").strip()
+    if not hypothesis_id:
+        fallback_hypothesis_label = (
+            str(executive_thesis.get("dominant_loss_logic", "")).strip()
+            or str(executive_thesis.get("what_reality_feature_changes_the_decision", "")).strip()
+        )
+        if fallback_hypothesis_label:
+            hypothesis_id = "bounded_structural_hypothesis"
+            hypothesis_label = fallback_hypothesis_label
+    nugget_id = str(first_nugget_row.get("nugget_id", "")).strip() or ""
+    nugget_label = str(first_nugget_row.get("gold_nugget", "")).strip()
+
+    chart_binding_policy = {
+        "chart_cross_layer_congruence_map": ("contradiction", "This chart exists to make the dominant contradiction visible."),
+        "chart_fair_comparison_gate": ("contradiction", "This chart should bind directly to the contradiction that blocks fair comparison."),
+        "chart_cost_driver_signal_profile": ("hypothesis", "This chart should bind to the alternative variable or challenger hypothesis driving the case."),
+        "chart_measurement_minimality_path": ("hypothesis", "This chart should bind to the bounded hypothesis that determines the next minimum evidence move."),
+        "chart_peer_requirement_readiness": ("contradiction", "This chart should bind to the contradiction that invalidates peer comparison."),
+        "chart_scenario_space": ("hypothesis", "This chart should bind to the bounded structural hypothesis that forks the decision space."),
+        "chart_validation_priority": ("hypothesis", "This chart should bind to the structural hypothesis that orders validation effort."),
+        "chart_next_best_search_path": ("hypothesis", "This chart should bind to the hypothesis that governs the next best search lane."),
+        "chart_gap_taxonomy_profile": ("contradiction", "This chart should bind to the contradiction that still blocks closure."),
+    }
+    anchor_type, binding_reason = chart_binding_policy.get(
+        chart_id,
+        ("nugget", "This chart is support context and must still tie back to a bounded strategic nugget.")
+    )
+
+    if anchor_type == "contradiction" and contradiction_id:
+        return {
+            "binding_anchor_type": "contradiction",
+            "binding_state": "bound",
+            "binding_reason": binding_reason,
+            "contradiction_id": contradiction_id,
+            "contradiction_label": contradiction_label,
+            "hypothesis_id": "",
+            "hypothesis_label": "",
+            "nugget_id": "",
+            "nugget_label": "",
+        }
+    if anchor_type == "hypothesis" and hypothesis_id:
+        return {
+            "binding_anchor_type": "hypothesis",
+            "binding_state": "bound",
+            "binding_reason": binding_reason,
+            "contradiction_id": contradiction_id if not contradiction_label else "",
+            "contradiction_label": "" if hypothesis_id else contradiction_label,
+            "hypothesis_id": hypothesis_id,
+            "hypothesis_label": hypothesis_label,
+            "nugget_id": "",
+            "nugget_label": "",
+        }
+    if nugget_id or nugget_label:
+        return {
+            "binding_anchor_type": "nugget",
+            "binding_state": "bound",
+            "binding_reason": binding_reason,
+            "contradiction_id": "",
+            "contradiction_label": "",
+            "hypothesis_id": "",
+            "hypothesis_label": "",
+            "nugget_id": nugget_id or "bounded_strategic_nugget",
+            "nugget_label": nugget_label,
+        }
+    if contradiction_id:
+        return {
+            "binding_anchor_type": "contradiction_fallback",
+            "binding_state": "bound_fallback",
+            "binding_reason": "The chart falls back to the dominant contradiction because no richer binding lane is available.",
+            "contradiction_id": contradiction_id,
+            "contradiction_label": contradiction_label,
+            "hypothesis_id": "",
+            "hypothesis_label": "",
+            "nugget_id": "",
+            "nugget_label": "",
+        }
+    return {
+        "binding_anchor_type": "unbound",
+        "binding_state": "unbound",
+        "binding_reason": "No bounded contradiction, hypothesis, or nugget anchor was available for this chart.",
+        "contradiction_id": "",
+        "contradiction_label": "",
+        "hypothesis_id": "",
+        "hypothesis_label": "",
+        "nugget_id": "",
+        "nugget_label": "",
+    }
+
+
 def _make_fig(w: float = 7.5, h: float = 4.2):
     import matplotlib
     matplotlib.use("Agg")
@@ -714,6 +872,75 @@ def _state_value_and_color(state: Any) -> tuple[float, str]:
 def _signal_score(text_blob: str, *, tokens: tuple[str, ...]) -> int:
     blob = (text_blob or "").lower()
     return 1 if any(token in blob for token in tokens) else 0
+
+
+def _executive_thesis_signal_blob(executive_thesis: dict[str, Any]) -> str:
+    executive_thesis = dict(executive_thesis or {})
+    return " ".join(
+        str(executive_thesis.get(key, "")).strip()
+        for key in [
+            "dominant_contradiction",
+            "why_current_question_is_premature",
+            "what_reality_feature_changes_the_decision",
+            "dominant_operational_misunderstanding",
+            "hidden_system_boundary_error",
+            "invalid_comparison_risk",
+            "dominant_loss_logic",
+            "surprising_but_evidenced_takeaway",
+        ]
+        if str(executive_thesis.get(key, "")).strip()
+    ).strip()
+
+
+def _fallback_comparison_requirements_from_thesis(executive_thesis: dict[str, Any]) -> list[dict[str, Any]]:
+    blob = _executive_thesis_signal_blob(executive_thesis)
+    if not blob:
+        return []
+    return [
+        {
+            "normalization_dimension": "comparison denominator and operating intensity",
+            "current_state": "not_yet_evidenced",
+        },
+        {
+            "normalization_dimension": "control boundary and value capture",
+            "current_state": "not_yet_evidenced" if "boundary" in blob.lower() or "control" in blob.lower() else "conditional",
+        },
+        {
+            "normalization_dimension": "tariff / duty / demand structure",
+            "current_state": "conditional" if any(token in blob.lower() for token in ("tariff", "demand", "charging", "duty")) else "not_yet_evidenced",
+        },
+    ]
+
+
+def _fallback_cross_layer_rows_from_thesis(executive_thesis: dict[str, Any]) -> list[dict[str, Any]]:
+    executive_thesis = dict(executive_thesis or {})
+    contradiction = str(executive_thesis.get("dominant_contradiction", "")).strip()
+    if not contradiction:
+        return []
+    ranked = list(executive_thesis.get("thesis_ranked_conflict_register", []) or [])
+    first_ranked = dict(ranked[0] if ranked else {})
+    layers = list(first_ranked.get("layers_involved", []) or [])
+    if not layers:
+        blob = _executive_thesis_signal_blob(executive_thesis).lower()
+        layer_map = [
+            ("finance", ("capital", "roi", "tariff", "cost", "financial")),
+            ("operation", ("service", "throughput", "movement", "dock", "charging", "schedule")),
+            ("control", ("control", "metering", "boundary", "owner", "tenant")),
+            ("regulation", ("regulation", "compliance", "permit", "ll97")),
+            ("benchmarking", ("benchmark", "denominator", "comparison", "peer")),
+        ]
+        for layer_name, tokens in layer_map:
+            if any(token in blob for token in tokens):
+                layers.append(layer_name)
+    if not layers:
+        layers = ["benchmarking", "operation"]
+    return [
+        {
+            "contradiction": contradiction,
+            "layers": layers[:4],
+            "evidence_state": str(executive_thesis.get("evidence_state", "")).strip() or "CONDITIONAL_HYPOTHESIS",
+        }
+    ]
 
 
 def _chart_asset_context_completeness(asset_identity_bundle: dict[str, Any]) -> str | None:
@@ -1658,8 +1885,11 @@ def _chart_congruence_binding_state(local_truth_confidence_register: list[dict[s
 def _chart_fair_comparison_gate(
     normalization_requirements_register: list[dict[str, Any]],
     invalid_comparison_risk_register: list[dict[str, Any]],
+    executive_thesis: dict[str, Any] | None = None,
 ) -> str | None:
     rows = [dict(row) for row in list(normalization_requirements_register or [])[:6]]
+    if not rows:
+        rows = _fallback_comparison_requirements_from_thesis(dict(executive_thesis or {}))
     if not rows:
         return None
     import matplotlib.pyplot as plt
@@ -1676,6 +1906,14 @@ def _chart_fair_comparison_gate(
         states.append(_shorten(state, 26))
 
     top_risk = _shorten((invalid_comparison_risk_register or [{}])[0].get("risk_name") or "invalid comparison risk", 42)
+    thesis_risk = _shorten(
+        str(dict(executive_thesis or {}).get("invalid_comparison_risk", "")).strip(),
+        92,
+    )
+    wrong_variable = _shorten(
+        str(dict(executive_thesis or {}).get("dominant_operational_misunderstanding", "")).strip(),
+        92,
+    )
     fig, ax = _make_fig(w=8.3, h=max(4.0, 0.72 * len(rows) + 2.0))
     bars = ax.barh(labels, values, color=colors, edgecolor="none")
     for bar, state in zip(bars, states):
@@ -1691,13 +1929,22 @@ def _chart_fair_comparison_gate(
     ax.set_xlabel("Normalization readiness", fontsize=8)
     ax.set_title("Fair Comparison Gate — What Must Be Normalized First", fontsize=9.5, fontweight="bold", color=_DARK, pad=10)
     ax.text(0.0, -0.16, f"Top invalid comparison risk: {top_risk}", transform=ax.transAxes, fontsize=7.4, color="#555555")
+    if thesis_risk and thesis_risk.lower() != "not observed":
+        ax.text(0.0, -0.26, f"Strategic comparison signal: {thesis_risk}", transform=ax.transAxes, fontsize=7.1, color="#555555")
+    if wrong_variable and wrong_variable.lower() != "not observed":
+        ax.text(0.0, -0.36, f"Wrong-variable warning: {wrong_variable}", transform=ax.transAxes, fontsize=7.1, color="#555555")
     ax.grid(axis="x", linestyle="--", alpha=0.25)
     plt.tight_layout()
     return _to_b64(fig)
 
 
-def _chart_cross_layer_congruence_map(cross_layer_congruence_register: list[dict[str, Any]]) -> str | None:
+def _chart_cross_layer_congruence_map(
+    cross_layer_congruence_register: list[dict[str, Any]],
+    executive_thesis: dict[str, Any] | None = None,
+) -> str | None:
     rows = [dict(row) for row in list(cross_layer_congruence_register or [])[:5]]
+    if not rows:
+        rows = _fallback_cross_layer_rows_from_thesis(dict(executive_thesis or {}))
     if not rows:
         return None
     import matplotlib.pyplot as plt
@@ -1717,6 +1964,14 @@ def _chart_cross_layer_congruence_map(cross_layer_congruence_register: list[dict
     ]
     labels = [_shorten(row.get("contradiction") or "cross-layer contradiction", 38) for row in rows]
     states = [_shorten(row.get("evidence_state") or "CONDITIONAL_HYPOTHESIS", 26) for row in rows]
+    hidden_boundary = _shorten(
+        str(dict(executive_thesis or {}).get("hidden_system_boundary_error", "")).strip(),
+        94,
+    )
+    premature = _shorten(
+        str(dict(executive_thesis or {}).get("why_current_question_is_premature", "")).strip(),
+        94,
+    )
 
     fig, ax = _make_fig(w=max(7.8, 1.25 * len(layer_order) + 4.8), h=max(4.2, 0.78 * len(rows) + 2.0))
     im = ax.imshow(matrix, cmap="Reds", vmin=0, vmax=1, aspect="auto")
@@ -1730,6 +1985,10 @@ def _chart_cross_layer_congruence_map(cross_layer_congruence_register: list[dict
     for i, state in enumerate(states):
         ax.text(len(layer_order) + 0.1, i, state, va="center", fontsize=7.2, color=_DARK)
     ax.text(len(layer_order) + 0.1, -0.65, "State", fontsize=7.2, color="#666666", fontweight="bold")
+    if hidden_boundary and hidden_boundary.lower() != "not observed":
+        ax.text(0.0, -0.16, f"Boundary signal: {hidden_boundary}", transform=ax.transAxes, fontsize=7.1, color="#555555")
+    if premature and premature.lower() != "not observed":
+        ax.text(0.0, -0.26, f"Why premature: {premature}", transform=ax.transAxes, fontsize=7.1, color="#555555")
     plt.tight_layout()
     return _to_b64(fig)
 
@@ -1799,13 +2058,12 @@ def _chart_cost_driver_signal_profile(
     tariff_exposure_register: list[dict[str, Any]],
     cost_driver_dependency_register: list[dict[str, Any]],
     finance_physics_dependency_register: list[dict[str, Any]],
+    executive_thesis: dict[str, Any] | None = None,
 ) -> str | None:
     bill_rows = [dict(row) for row in list(utility_charge_breakdown_register or [])]
     tariff_rows = [dict(row) for row in list(tariff_exposure_register or [])]
     cost_rows = [dict(row) for row in list(cost_driver_dependency_register or [])]
     finance_rows = [dict(row) for row in list(finance_physics_dependency_register or [])]
-    if not any([bill_rows, tariff_rows, cost_rows, finance_rows]):
-        return None
     import matplotlib.pyplot as plt
 
     signals = {
@@ -1835,12 +2093,42 @@ def _chart_cost_driver_signal_profile(
         signals["Operational Duty"] += _signal_score(blob, tokens=("continuity", "dispatch", "service level", "movement", "throughput", "temperature duty", "process duty"))
         signals["Maintenance / Uptime"] += _signal_score(blob, tokens=("maintenance", "downtime", "reliability", "failure", "uptime"))
 
+    thesis_blob = _executive_thesis_signal_blob(dict(executive_thesis or {}))
+    if thesis_blob:
+        signals["Consumption"] += _signal_score(thesis_blob, tokens=("consumption", "energy problem", "energy inefficiency"))
+        signals["Demand / Tariff"] += _signal_score(thesis_blob, tokens=("demand", "tariff", "charging", "power factor", "reactive"))
+        signals["PF / Reactive"] += _signal_score(thesis_blob, tokens=("pf", "reactive", "power factor"))
+        signals["Boundary / Control"] += _signal_score(thesis_blob, tokens=("boundary", "control", "owner", "tenant", "metering", "value capture"))
+        signals["Operational Duty"] += _signal_score(thesis_blob, tokens=("service", "throughput", "movement", "dock", "charging", "schedule", "process duty"))
+        signals["Maintenance / Uptime"] += _signal_score(thesis_blob, tokens=("maintenance", "uptime", "downtime", "reliability"))
+        thesis = dict(executive_thesis or {})
+        if str(thesis.get("hidden_system_boundary_error", "")).strip():
+            signals["Boundary / Control"] += 1
+        if str(thesis.get("invalid_comparison_risk", "")).strip():
+            signals["Boundary / Control"] += 1
+        if str(thesis.get("dominant_operational_misunderstanding", "")).strip():
+            signals["Operational Duty"] += 1
+        if str(thesis.get("dominant_loss_logic", "")).strip():
+            signals["Operational Duty"] += 1
+            signals["Demand / Tariff"] += _signal_score(
+                str(thesis.get("dominant_loss_logic", "")),
+                tokens=("demand", "tariff", "charging"),
+            )
+        if str(thesis.get("surprising_but_evidenced_takeaway", "")).strip():
+            signals["Consumption"] += _signal_score(
+                str(thesis.get("surprising_but_evidenced_takeaway", "")),
+                tokens=("energy", "inefficiency", "waste"),
+            )
+
     if not any(signals.values()):
         return None
 
     labels = list(signals.keys())
     values = [signals[label] for label in labels]
     colors = [_NAVY, _MAROON, _PURPLE, _TEAL, _AMBER, _GREEN]
+    wrong_variable = _shorten(str(dict(executive_thesis or {}).get("dominant_operational_misunderstanding", "")).strip(), 92)
+    dominant_loss_logic = _shorten(str(dict(executive_thesis or {}).get("dominant_loss_logic", "")).strip(), 92)
+    surprising_takeaway = _shorten(str(dict(executive_thesis or {}).get("surprising_but_evidenced_takeaway", "")).strip(), 92)
 
     fig, ax = _make_fig(w=8.2, h=4.9)
     bars = ax.barh(labels, values, color=colors, edgecolor="none")
@@ -1848,6 +2136,12 @@ def _chart_cost_driver_signal_profile(
         ax.text(bar.get_width() + 0.05, bar.get_y() + bar.get_height() / 2, str(value), va="center", fontsize=7.5, color=_DARK)
     ax.set_xlabel("Signal count across bills, tariff, finance and operating logic", fontsize=8)
     ax.set_title("Cost Driver Signal Profile — What Looks More Material Than Consumption Alone", fontsize=9.5, fontweight="bold", color=_DARK, pad=10)
+    if wrong_variable and wrong_variable.lower() != "not observed":
+        ax.text(0.0, -0.16, f"Wrong-variable warning: {wrong_variable}", transform=ax.transAxes, fontsize=7.1, color="#555555")
+    if dominant_loss_logic and dominant_loss_logic.lower() != "not observed":
+        ax.text(0.0, -0.26, f"Loss logic: {dominant_loss_logic}", transform=ax.transAxes, fontsize=7.1, color="#555555")
+    if surprising_takeaway and surprising_takeaway.lower() != "not observed":
+        ax.text(0.0, -0.36, f"Strategic takeaway: {surprising_takeaway}", transform=ax.transAxes, fontsize=7.1, color="#555555")
     ax.grid(axis="x", linestyle="--", alpha=0.25)
     plt.tight_layout()
     return _to_b64(fig)
@@ -1982,12 +2276,12 @@ def _chart_governance(spec_id: str) -> dict[str, Any]:
         "chart_fair_comparison_gate": {
             "epistemic_marker": "COMPARISON_GOVERNANCE | REQUIRES_NORMALIZATION",
             "support_state": "decision_grade",
-            "data_dependencies": ["motor_051.normalization_requirements_register", "motor_051.invalid_comparison_risk_register"],
+            "data_dependencies": ["motor_051.normalization_requirements_register", "motor_051.invalid_comparison_risk_register", "motor_047.executive_thesis"],
         },
         "chart_cross_layer_congruence_map": {
             "epistemic_marker": "CONDITIONAL | CROSS_LAYER",
             "support_state": "screening_grade",
-            "data_dependencies": ["motor_051.cross_layer_congruence_register"],
+            "data_dependencies": ["motor_051.cross_layer_congruence_register", "motor_047.executive_thesis"],
         },
         "chart_measurement_minimality_path": {
             "epistemic_marker": "REQUIRES_VALIDATION | MINIMUM_EVIDENCE",
@@ -1997,7 +2291,7 @@ def _chart_governance(spec_id: str) -> dict[str, Any]:
         "chart_cost_driver_signal_profile": {
             "epistemic_marker": "CONDITIONAL | FINANCE_TO_PHYSICS",
             "support_state": "screening_grade",
-            "data_dependencies": ["motor_049.utility_charge_breakdown_register", "motor_049.tariff_exposure_register", "motor_053.cost_driver_dependency_register", "motor_053.finance_physics_dependency_register"],
+            "data_dependencies": ["motor_049.utility_charge_breakdown_register", "motor_049.tariff_exposure_register", "motor_053.cost_driver_dependency_register", "motor_053.finance_physics_dependency_register", "motor_047.executive_thesis"],
         },
         "chart_gap_taxonomy_profile": {
             "epistemic_marker": "REQUIRES_VALIDATION | GAP_TAXONOMY",
@@ -2139,6 +2433,7 @@ class Motor018Adapter(BaseMotorAdapter):
         m07 = inputs.get("motor_007", {})
         m14 = inputs.get("motor_014", {})
         m47 = inputs.get("motor_047", {})
+        executive_thesis = m47.get("executive_thesis", {}) if isinstance(m47.get("executive_thesis", {}), dict) else {}
         m49 = inputs.get("motor_049", {})
         m51 = inputs.get("motor_051", {})
         m52 = inputs.get("motor_052", {})
@@ -2267,6 +2562,7 @@ class Motor018Adapter(BaseMotorAdapter):
                 "fn": lambda: _chart_fair_comparison_gate(
                     normalization_requirements_register,
                     invalid_comparison_risk_register,
+                    executive_thesis,
                 ),
             },
             {
@@ -2274,7 +2570,7 @@ class Motor018Adapter(BaseMotorAdapter):
                 **_chart_copy("chart_cross_layer_congruence_map", curation_mode=congruence_chart_curation_mode),
                 "chart_curation_mode": congruence_chart_curation_mode,
                 "section_hint": congruence_section_hints["contradiction"],
-                "fn": lambda: _chart_cross_layer_congruence_map(cross_layer_congruence_register),
+                "fn": lambda: _chart_cross_layer_congruence_map(cross_layer_congruence_register, executive_thesis),
             },
             {
                 "id": "chart_measurement_minimality_path",
@@ -2296,6 +2592,7 @@ class Motor018Adapter(BaseMotorAdapter):
                     tariff_exposure_register,
                     cost_driver_dependency_register,
                     finance_physics_dependency_register,
+                    executive_thesis,
                 ),
             },
         ]
@@ -2510,7 +2807,7 @@ class Motor018Adapter(BaseMotorAdapter):
         chart_assets = []
         chart_errors = []
 
-        for spec in chart_specs:
+        for original_chart_index, spec in enumerate(chart_specs):
             try:
                 b64 = spec["fn"]()
                 if b64:
@@ -2519,6 +2816,11 @@ class Motor018Adapter(BaseMotorAdapter):
                         spec["id"],
                         curation_mode=spec.get("chart_curation_mode", "default"),
                     )
+                    strategic_value = _chart_strategic_value(
+                        spec["id"],
+                        curation_mode=spec.get("chart_curation_mode", "default"),
+                    )
+                    binding = _chart_intelligence_binding(spec["id"], executive_thesis)
                     chart_assets.append({
                         "asset_id": spec["id"],
                         "asset_type": "chart",
@@ -2542,6 +2844,19 @@ class Motor018Adapter(BaseMotorAdapter):
                         "chart_role": story["chart_role"],
                         "reader_takeaway": story["reader_takeaway"],
                         "text_pairing_guidance": story["text_pairing_guidance"],
+                        "strategic_value_score": strategic_value["strategic_value_score"],
+                        "strategic_value_tier": strategic_value["strategic_value_tier"],
+                        "strategic_value_reason": strategic_value["strategic_value_reason"],
+                        "binding_anchor_type": binding["binding_anchor_type"],
+                        "binding_state": binding["binding_state"],
+                        "binding_reason": binding["binding_reason"],
+                        "contradiction_id": binding["contradiction_id"],
+                        "contradiction_label": binding["contradiction_label"],
+                        "hypothesis_id": binding["hypothesis_id"],
+                        "hypothesis_label": binding["hypothesis_label"],
+                        "nugget_id": binding["nugget_id"],
+                        "nugget_label": binding["nugget_label"],
+                        "original_chart_index": original_chart_index,
                         "image_b64": b64,
                         "width_mm": 170,
                         "height_mm": 90,
@@ -2559,10 +2874,49 @@ class Motor018Adapter(BaseMotorAdapter):
             chart_assets=chart_assets,
             case_namespace_register=case_namespace_register,
         )
+        chart_assets = sorted(
+            list(chart_assets or []),
+            key=lambda row: (
+                -int(row.get("strategic_value_score", 0) or 0),
+                int(row.get("original_chart_index", 0) or 0),
+            ),
+        )
+        chart_strategic_value_register = [
+            {
+                "asset_id": str(asset.get("asset_id", "")).strip(),
+                "strategic_value_score": int(asset.get("strategic_value_score", 0) or 0),
+                "strategic_value_tier": str(asset.get("strategic_value_tier", "")).strip(),
+                "strategic_value_reason": str(asset.get("strategic_value_reason", "")).strip(),
+                "binding_anchor_type": str(asset.get("binding_anchor_type", "")).strip(),
+                "binding_state": str(asset.get("binding_state", "")).strip(),
+                "contradiction_id": str(asset.get("contradiction_id", "")).strip(),
+                "hypothesis_id": str(asset.get("hypothesis_id", "")).strip(),
+                "nugget_id": str(asset.get("nugget_id", "")).strip(),
+                "chart_curation_mode": str(asset.get("chart_curation_mode", "")).strip(),
+                "section_hint": str(asset.get("section_hint", "")).strip(),
+            }
+            for asset in chart_assets
+        ]
+        chart_strategic_value_summary = {
+            "thesis_critical_count": sum(
+                1 for asset in chart_assets if str(asset.get("strategic_value_tier", "")).strip() == "thesis_critical"
+            ),
+            "strategic_support_count": sum(
+                1 for asset in chart_assets if str(asset.get("strategic_value_tier", "")).strip() == "strategic_support"
+            ),
+            "supportive_context_count": sum(
+                1 for asset in chart_assets if str(asset.get("strategic_value_tier", "")).strip() == "supportive_context"
+            ),
+            "decorative_risk_count": sum(
+                1 for asset in chart_assets if str(asset.get("strategic_value_tier", "")).strip() == "decorative_risk"
+            ),
+        }
 
         return {
             "chart_assets": chart_assets,
             "total_charts": len(chart_assets),
             "chart_errors": chart_errors,
+            "chart_strategic_value_register": chart_strategic_value_register,
+            "chart_strategic_value_summary": chart_strategic_value_summary,
             "case_namespace_register": case_namespace_register,
         }

@@ -1031,6 +1031,8 @@ def test_motor_027_manifest_exposes_structural_intelligence_bundle(tmp_path):
                         "dominant_variable_count": 4,
                         "cross_layer_conflict_count": 2,
                         "conditional_redesign_count": 1,
+                        "gold_nugget_authority_state": "skill_primary",
+                        "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
                     },
                     "structural_output_mode_classifier_table": [
                         {
@@ -1074,6 +1076,8 @@ def test_motor_027_manifest_exposes_structural_intelligence_bundle(tmp_path):
                         "dominant_structural_conflict": "Regulation vs control boundary",
                         "primary_structural_action": "Compare against structural peers",
                         "primary_structural_action_status": "COMPARE TO PEERS",
+                        "gold_nugget_authority_state": "skill_primary",
+                        "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
                     },
                     "structural_intelligence_registers": {
                         "system_abstraction": {
@@ -1089,6 +1093,8 @@ def test_motor_027_manifest_exposes_structural_intelligence_bundle(tmp_path):
                 "compilation_status": "success",
                 "render_job_id": "rj:test",
                 "package_id": "pkg:test",
+                "gold_nugget_authority_state": "skill_primary",
+                "gold_nugget_source_register": "motor_054.authoritative_gold_nugget_register",
             },
         }
     )
@@ -1104,6 +1110,10 @@ def test_motor_027_manifest_exposes_structural_intelligence_bundle(tmp_path):
     assert manifest["structural_primary_promotion_gate"]["elected_primary_report_type"] == "Structural Contradiction Brief"
     assert manifest["structural_executive_summary"]["primary_structural_action_status"] == "COMPARE TO PEERS"
     assert manifest["structural_executive_summary"]["promotable_primary_structural_modes"] == ["Structural Contradiction Brief"]
+    assert manifest["gold_nugget_authority_state"] == "skill_primary"
+    assert manifest["gold_nugget_source_register"] == "motor_054.authoritative_gold_nugget_register"
+    assert manifest["governance_summary"]["gold_nugget_authority_state"] == "skill_primary"
+    assert manifest["governance_summary"]["gold_nugget_source_register"] == "motor_054.authoritative_gold_nugget_register"
     assert manifest["governance_summary"]["structural_executive_summary"]["dominant_structural_conflict"] == "Regulation vs control boundary"
     assert manifest["structural_intelligence_registers"]["system_abstraction"]["asset_type"]["evidence_state"] == "OBSERVED_FACT"
 

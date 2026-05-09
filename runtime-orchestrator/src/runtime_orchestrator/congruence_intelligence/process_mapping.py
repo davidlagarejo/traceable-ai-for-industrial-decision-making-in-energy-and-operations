@@ -5,6 +5,17 @@ from typing import Any
 from .schemas import text
 
 
+def _allows_conditional_operational_abstraction(route_state: str, asset_family: str) -> bool:
+    return (
+        route_state == "operational_asset_candidate"
+        or (
+            route_state == "target_not_yet_operationally_bounded"
+            and bool(asset_family)
+            and asset_family != "generic_operational_asset"
+        )
+    )
+
+
 def _flow_row(
     stage: str,
     description: str,
@@ -28,7 +39,7 @@ def build_process_map(
     asset_family = text(asset_family_research_profile.get("asset_family"))
     route_state = text(asset_family_research_profile.get("route_state"))
     binding_state = text((local_evidence_binding_register or [{}])[0].get("current_local_binding_state"))
-    if route_state != "operational_asset_candidate":
+    if not _allows_conditional_operational_abstraction(route_state, asset_family):
         return {
             "asset_family": asset_family,
             "process_map_state": "inadmissible_until_asset_identity_bounded",
@@ -43,15 +54,20 @@ def build_process_map(
             "regulatory_friction_points": [],
         }
 
-    if binding_state in {"partially_bound", "sufficiently_bound"}:
+    if route_state == "target_not_yet_operationally_bounded":
+        evidence_state = "ARCHETYPAL_PRIOR"
+        process_map_state = "archetypal_screening_operational_logic"
+    elif binding_state in {"partially_bound", "sufficiently_bound"}:
         evidence_state = "CONDITIONAL_HYPOTHESIS"
+        process_map_state = "research_seeded_operational_logic"
     else:
         evidence_state = "ARCHETYPAL_PRIOR"
+        process_map_state = "research_seeded_operational_logic"
 
     if asset_family == "commercial_building":
         return {
             "asset_family": asset_family,
-            "process_map_state": "research_seeded_operational_logic",
+            "process_map_state": process_map_state,
             "inputs": [
                 _flow_row("occupants_and_tenants", "Occupancy and tenant demand create the service load that the building must support.", evidence_state=evidence_state, local_binding_state=binding_state),
             ],
@@ -85,7 +101,7 @@ def build_process_map(
     if asset_family in {"industrial_manufacturing", "thermal_process_site", "utility_heavy_site"}:
         return {
             "asset_family": asset_family,
-            "process_map_state": "research_seeded_operational_logic",
+            "process_map_state": process_map_state,
             "inputs": [
                 _flow_row("raw_materials_and_energy", "Raw materials, utilities and labor enter the asset as process inputs.", evidence_state=evidence_state, local_binding_state=binding_state),
             ],
@@ -118,7 +134,7 @@ def build_process_map(
     if asset_family == "infrastructure_node":
         return {
             "asset_family": asset_family,
-            "process_map_state": "research_seeded_operational_logic",
+            "process_map_state": process_map_state,
             "inputs": [
                 _flow_row("grid_or_network_feed", "Power, network flow or utility-service burden enters the node as a continuity-sensitive input.", evidence_state=evidence_state, local_binding_state=binding_state),
             ],
@@ -151,7 +167,7 @@ def build_process_map(
     if asset_family in {"logistics_warehouse", "cold_chain"}:
         return {
             "asset_family": asset_family,
-            "process_map_state": "research_seeded_operational_logic",
+            "process_map_state": process_map_state,
             "inputs": [
                 _flow_row("goods_receipt", "Goods arrive for storage, staging or onward movement.", evidence_state=evidence_state, local_binding_state=binding_state),
             ],

@@ -29,11 +29,15 @@ def build_comparison_validity_register(
         {
             "subject": asset_family,
             "peer_frame": "same_family_and_process_screening_comparison",
-            "comparable": comparison_state in {"bounded_screening_only", "partially_normalized"},
-            "why": "Same-family screening comparison is admissible only as a bounded lens, not as proof of superior or inferior economics.",
+            "comparable": comparison_state in {"bounded_screening_only", "partially_normalized", "archetypal_screening_only"},
+            "why": (
+                "Same-family screening comparison is admissible only as a bounded archetypal lens, not as local proof of superior or inferior economics."
+                if comparison_state == "archetypal_screening_only"
+                else "Same-family screening comparison is admissible only as a bounded lens, not as proof of superior or inferior economics."
+            ),
             "normalization_required": ["asset family", "process type", "climate", "operating schedule"],
             "invalid_comparison_risk": "medium",
-            "evidence_state": "CONDITIONAL_HYPOTHESIS",
+            "evidence_state": "ARCHETYPAL_PRIOR" if comparison_state == "archetypal_screening_only" else "CONDITIONAL_HYPOTHESIS",
         }
     ]
 

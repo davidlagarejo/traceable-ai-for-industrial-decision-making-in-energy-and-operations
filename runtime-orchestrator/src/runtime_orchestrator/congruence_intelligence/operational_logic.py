@@ -10,7 +10,20 @@ def _binding_state(local_evidence_binding_register: list[dict[str, Any]]) -> str
     return text((local_evidence_binding_register or [{}])[0].get("current_local_binding_state"))
 
 
+def _allows_conditional_operational_abstraction(route_state: str, asset_family: str) -> bool:
+    return (
+        route_state == "operational_asset_candidate"
+        or (
+            route_state == "target_not_yet_operationally_bounded"
+            and bool(asset_family)
+            and asset_family != "generic_operational_asset"
+        )
+    )
+
+
 def _base_evidence_state(route_state: str, binding_state: str) -> str:
+    if route_state == "target_not_yet_operationally_bounded":
+        return "ARCHETYPAL_PRIOR"
     if route_state != "operational_asset_candidate":
         return "INADMISSIBLE_CLAIM"
     if binding_state in {"partially_bound", "sufficiently_bound"}:
@@ -26,6 +39,8 @@ def build_subsystem_register(
     asset_family = text(asset_family_research_profile.get("asset_family"))
     route_state = text(asset_family_research_profile.get("route_state"))
     binding_state = _binding_state(local_evidence_binding_register)
+    if not _allows_conditional_operational_abstraction(route_state, asset_family):
+        return []
     evidence_state = _base_evidence_state(route_state, binding_state)
     if evidence_state == "INADMISSIBLE_CLAIM":
         return []
@@ -157,21 +172,22 @@ def build_control_boundary_map(
     route_state: str,
     binding_state: str,
 ) -> list[dict[str, Any]]:
-    if route_state != "operational_asset_candidate":
-        return []
     asset_family = text(asset_family_research_profile.get("asset_family"))
+    if not _allows_conditional_operational_abstraction(route_state, asset_family):
+        return []
+    evidence_state = "ARCHETYPAL_PRIOR" if route_state == "target_not_yet_operationally_bounded" else "CONDITIONAL_HYPOTHESIS"
     if asset_family == "commercial_building":
         return [
             {
                 "boundary_name": "owner_vs_tenant_load_boundary",
                 "boundary_logic": "The owner may face regulatory or utility burden while tenant-side loads or schedules drive realized economics.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
             {
                 "boundary_name": "base_building_vs_occupant_behavior",
                 "boundary_logic": "Base-building systems may be owner-managed while after-hours usage and tenant behavior shape realized load.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
         ]
@@ -180,13 +196,13 @@ def build_control_boundary_map(
             {
                 "boundary_name": "process_load_vs_support_system_load",
                 "boundary_logic": "The decision boundary may depend on whether process duty or support systems dominate the observed cost and energy pattern.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
             {
                 "boundary_name": "operations_vs_maintenance_control",
                 "boundary_logic": "Operational discipline and maintenance maturity can jointly determine whether visible consumption is structural or avoidable.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
         ]
@@ -195,13 +211,13 @@ def build_control_boundary_map(
             {
                 "boundary_name": "continuity_duty_vs_avoidable_loss_boundary",
                 "boundary_logic": "The decision boundary depends on whether visible demand or energy burden is the price of service continuity and redundancy, or truly avoidable operating waste.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
             {
                 "boundary_name": "dispatch_obligation_vs_tariff_optimization_boundary",
                 "boundary_logic": "Tariff and PF exposure may be real, but optimization is bounded by dispatch logic, switching practice and reliability obligations.",
-                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+                "evidence_state": evidence_state,
                 "binding_state": binding_state,
             },
         ]
@@ -209,7 +225,7 @@ def build_control_boundary_map(
         {
             "boundary_name": "throughput_vs_service_level_boundary",
             "boundary_logic": "The true operating boundary may be defined by service level, storage conditions and movement intensity rather than area alone.",
-            "evidence_state": "CONDITIONAL_HYPOTHESIS",
+            "evidence_state": evidence_state,
             "binding_state": binding_state,
         }
     ]
@@ -261,7 +277,12 @@ def build_asset_operational_logic(
     return {
         "operational_logic_state": (
             "inadmissible_until_asset_identity_bounded"
-            if route_state != "operational_asset_candidate"
+            if not _allows_conditional_operational_abstraction(
+                route_state,
+                text(asset_family_research_profile.get("asset_family")),
+            )
+            else "archetypal_screening_operational_logic"
+            if route_state == "target_not_yet_operationally_bounded"
             else "research_seeded_operational_logic"
         ),
         "process_map": process_map,

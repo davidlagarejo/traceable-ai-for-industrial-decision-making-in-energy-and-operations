@@ -215,10 +215,29 @@ def _one_vanderbilt_bridge_inputs() -> dict:
             ],
         },
         "motor_054": {
-            "strategic_gold_nugget_register": [
+            "authoritative_gold_nugget_register": [
                 {
                     "nugget_id": "wrong_problem_frame",
                     "gold_nugget": "The visible question may be premature: high building energy means owner retrofit opportunity.",
+                },
+                {
+                    "nugget_id": "wrong_benchmark_basis",
+                    "gold_nugget": "The benchmark can be structurally invalid even when it looks intuitively relevant.",
+                },
+                {
+                    "nugget_id": "wrong_capital_target",
+                    "gold_nugget": "The capital target may be wrong even if the technical symptom is real.",
+                },
+                {
+                    "nugget_id": "wrong_measurement_instinct",
+                    "gold_nugget": "The next best measurement may be a bill, map or log, not a new sensor.",
+                },
+            ],
+            "gold_nugget_authority_state": "skill_primary",
+            "strategic_gold_nugget_register": [
+                {
+                    "nugget_id": "wrong_problem_frame",
+                    "gold_nugget": "LEGACY SHOULD NOT WIN WHEN AUTHORITATIVE NUGGETS ARE PRESENT.",
                 },
                 {
                     "nugget_id": "wrong_benchmark_basis",
@@ -308,6 +327,9 @@ def test_motor_047_enriches_the_thesis_with_congruence_specific_takes():
     assert "only holds if owner control over the dominant covered load and schedule boundary" in thesis["finance_to_physics_take"]
     assert "maintenance proof remains a decision-relevant gap" in thesis["maintenance_reality_take"].lower()
     assert "The next best discriminator is utility bills + tenant metering map + lease responsibility matrix" in thesis["why_current_question_is_premature"]
+    assert thesis["gold_nugget_authority_state"] == "skill_primary"
+    assert thesis["gold_nugget_source_register"] == "motor_054.authoritative_gold_nugget_register"
+    assert thesis["top_gold_nuggets"][0]["gold_nugget"].startswith("The visible question may be premature")
     assert len(thesis["congruence_action_priority_register"]) <= 5
 
 
@@ -325,6 +347,22 @@ def test_motor_047_keeps_inadmissible_cases_bounded_after_congruence_bridge():
     assert thesis["finance_to_physics_take"] == ""
     assert thesis["maintenance_reality_take"] == ""
     assert thesis["congruence_action_priority_register"] == []
+
+
+def test_motor_047_emits_conditional_structural_intelligence_when_local_closure_is_blocked_but_strategic_signals_exist():
+    inputs = _one_vanderbilt_bridge_inputs()
+    inputs["motor_034"]["canonical_problem_frame"]["problem_frame_active"] = False
+    inputs["motor_037"]["system_abstraction"]["selected_archetype_id"] = "target_not_yet_structurally_modelable"
+    out = Motor047Adapter().run(inputs)
+    thesis = out["executive_thesis"]
+
+    assert thesis["thesis_state"] == "conditional_structural_intelligence"
+    assert thesis["local_claim_closure_state"] == "blocked"
+    assert thesis["conditional_intelligence_available"] is True
+    assert thesis["dominant_contradiction"] == "Regulation vs control boundary"
+    assert thesis["minimum_discriminating_evidence"]
+    assert thesis["top_actions"]
+    assert "owner controls the dominant covered load" in thesis["reframed_problem"].lower()
 
 
 def test_motor_047_uses_congruence_actions_when_structural_tad_is_empty():

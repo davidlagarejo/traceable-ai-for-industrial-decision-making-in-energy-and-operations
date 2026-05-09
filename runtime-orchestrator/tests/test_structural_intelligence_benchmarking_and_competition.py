@@ -93,6 +93,41 @@ def _manufacturing_inputs() -> dict:
     }
 
 
+def _warehouse_inputs() -> dict:
+    return {
+        "motor_001": {},
+        "motor_007": {
+            "target_definition_contract": {
+                "target_type": "warehouse_distribution",
+                "target_name": "Sunrise Logistics Hub",
+                "jurisdiction_scope": ["US-TX"],
+            },
+            "target_classification_object": {"target_type": "OPERATING_ASSET", "classification_confidence": "high"},
+        },
+        "motor_012": {
+            "facility_prior": {
+                "target_definition": {
+                    "target_type": "warehouse_distribution",
+                    "target_name": "Sunrise Logistics Hub",
+                    "jurisdiction_scope": ["US-TX"],
+                }
+            },
+            "canonical_asset_context_summary": {
+                "screening_supported": False,
+                "supported_field_register": [{"field": "asset_class"}, {"field": "operating_schedule"}],
+            },
+            "asset_field_register": [
+                _field("asset_class", "warehouse_distribution", source_id="listing::sunrise"),
+                _field("operating_schedule", "proxy: extended logistics operations", source_id="listing::sunrise"),
+            ],
+            "dataset_coverage_register": [
+                {"dataset_key": "property_listing_brochure", "status": "accepted"},
+            ],
+        },
+        "motor_028": {"source_register": [{"source_type": "property_listing_brochure", "accepted": True}]},
+    }
+
+
 def _run_lane(inputs: dict) -> dict:
     m39 = Motor039Adapter().run(inputs)
     m37 = Motor037Adapter().run({**inputs, "motor_039": m39})
@@ -124,6 +159,9 @@ def test_motor_043_building_outputs_conditional_competitive_comparison():
     assert any(row["comparison_mode"] in {"conditional_comparison", "archetypal_best_practice"} for row in rows)
     assert any("green-lease" in row["what_they_do_better"] or "submetering" in row["what_they_do_better"] for row in rows)
     assert all(row["evidence_state"] in {"CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "OBSERVED_FACT"} for row in rows)
+    assert rows[0]["candidate_peer_frame_register"]
+    assert rows[0]["better_practice_delta_register"]
+    assert rows[0]["peer_requirement_rows"]
 
 
 def test_motor_043_manufacturing_outputs_process_and_uptime_framing():
@@ -131,4 +169,14 @@ def test_motor_043_manufacturing_outputs_process_and_uptime_framing():
     rows = out["motor_043"]["competitive_comparison_register"]
     assert any("thermal integration" in row["what_they_do_better"] or "uptime" in row["structural_advantage"].lower() for row in rows)
     assert any("process map" in row["evidence_needed"] for row in rows)
+    assert any("maintenance" in row["peer_superiority_block_reason"].lower() for row in rows)
+    assert any(delta["practice_delta"] for delta in rows[0]["better_practice_delta_register"])
 
+
+def test_motor_043_warehouse_outputs_candidate_peer_frames_and_practice_deltas():
+    out = _run_lane(_warehouse_inputs())
+    rows = out["motor_043"]["competitive_comparison_register"]
+    assert any("charging peaks" in row["what_they_do_better"] or "dock exchange" in row["what_they_do_better"] for row in rows)
+    assert any("high-service dry fulfillment node" in frame["candidate_peer_frame"] for frame in rows[0]["candidate_peer_frame_register"])
+    assert any("Charging-window orchestration" in delta["practice_delta"] for delta in rows[0]["better_practice_delta_register"])
+    assert any("service model" in requirement["missing_evidence"] for requirement in rows[0]["peer_requirement_rows"])
