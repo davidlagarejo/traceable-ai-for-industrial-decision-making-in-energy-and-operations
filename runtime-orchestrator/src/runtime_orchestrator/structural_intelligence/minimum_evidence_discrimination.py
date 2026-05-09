@@ -54,6 +54,86 @@ def build_minimum_evidence_for_discrimination_register(
             ).to_dict()
         )
 
+    if target_type == "cold_chain_facility":
+        rows.append(
+            MinimumEvidenceDiscriminationRecord(
+                rival_hypotheses=[
+                    "Refrigeration duty dominates economics.",
+                    "Infiltration through docks and door cycles dominates losses.",
+                    "Defrost discipline and equipment maintenance dominate operating cost.",
+                ],
+                minimum_evidence="Temperature zone log + door cycle profile + refrigeration inventory + defrost schedule + dock seal audit",
+                source="operator BMS, refrigeration controls, dock-cycle records, and maintenance log",
+                what_it_confirms="Whether the dominant cost driver sits in equipment duty, envelope infiltration, or maintenance discipline.",
+                what_it_falsifies="The assumption that area-normalized energy intensity alone is enough to compare cold-chain peers.",
+                unlocks=[
+                    "thermal-boundary redesign hypothesis",
+                    "refrigeration vs infiltration prioritization",
+                    "fair cold-chain peer set construction",
+                ],
+            ).to_dict()
+        )
+
+    if target_type == "warehouse_distribution":
+        rows.append(
+            MinimumEvidenceDiscriminationRecord(
+                rival_hypotheses=[
+                    "Charging-window peak demand dominates economics.",
+                    "Dock cycles and infiltration dominate operating cost.",
+                    "Service-level intensity drives the loss story (movement, throughput).",
+                ],
+                minimum_evidence="Utility bill intervals + tariff schedule + charging schedule + MHE inventory + dock activity profile + service-level proxy",
+                source="operator dispatch records, utility bills, MHE telemetry, dock controls",
+                what_it_confirms="Whether the dominant cost driver is tariff exposure, thermal exchange via docks, or operational intensity.",
+                what_it_falsifies="The assumption that area-normalized EUI alone is a valid warehouse comparison basis.",
+                unlocks=[
+                    "tariff orchestration hypothesis",
+                    "thermal-boundary redesign hypothesis",
+                    "fair warehouse peer set construction",
+                ],
+            ).to_dict()
+        )
+
+    if target_type == "datacenter":
+        rows.append(
+            MinimumEvidenceDiscriminationRecord(
+                rival_hypotheses=[
+                    "PUE composition driven by IT-load split (not facility losses).",
+                    "Cooling topology and free-cooling capture dominate operating cost.",
+                    "Redundancy posture (Tier-N) drives over-provisioning loss.",
+                ],
+                minimum_evidence="IT-load metering + facility metering + one-line diagram + cooling inventory + containment audit",
+                source="operator DCIM, facility metering, redundancy audit",
+                what_it_confirms="Whether the dominant cost driver is IT-load split, cooling topology, or redundancy over-provisioning.",
+                what_it_falsifies="The assumption that PUE alone is a valid comparison basis without IT-load and redundancy bounds.",
+                unlocks=[
+                    "PUE composition reframe",
+                    "cooling redesign hypothesis",
+                    "redundancy posture audit",
+                ],
+            ).to_dict()
+        )
+
+    if target_type == "logistics_terminal":
+        rows.append(
+            MinimumEvidenceDiscriminationRecord(
+                rival_hypotheses=[
+                    "Continuity duty (reefer / shore power) dominates base load.",
+                    "Dispatch posture and yard-tractor fleet drive movement intensity.",
+                    "Refrigeration and cold-ironing capture drive operating envelope.",
+                ],
+                minimum_evidence="Reefer runtime log + dispatch log + shore-power records + intermodal throughput + fleet inventory",
+                source="terminal operations, dispatch and reefer telemetry, intermodal records",
+                what_it_confirms="Whether the dominant cost driver is continuity duty, dispatch posture, or thermal continuity.",
+                what_it_falsifies="The assumption that area-EUI is a valid comparison basis for a logistics terminal.",
+                unlocks=[
+                    "continuity duty reframe",
+                    "dispatch posture audit",
+                    "intermodal throughput peer construction",
+                ],
+            ).to_dict()
+        )
+
     if not rows:
         evidence_needed = []
         if problem_framing_register:
