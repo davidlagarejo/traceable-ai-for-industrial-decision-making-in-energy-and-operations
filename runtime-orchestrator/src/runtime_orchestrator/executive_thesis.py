@@ -109,6 +109,7 @@ def build_executive_thesis(  # noqa: PLR0913
     gold_nugget_strength_register: list[dict[str, Any]] | None = None,
     congruence_action_priority_register: list[dict[str, Any]] | None = None,
     congruence_claim_contract_register: list[dict[str, Any]] | None = None,
+    skill_combination_activation_register: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     invalid_problem_frame_register = list(invalid_problem_frame_register or [])
     invalid_comparison_risk_register = list(invalid_comparison_risk_register or [])
@@ -122,6 +123,7 @@ def build_executive_thesis(  # noqa: PLR0913
     gold_nugget_strength_register = list(gold_nugget_strength_register or [])
     congruence_action_priority_register = list(congruence_action_priority_register or [])
     congruence_claim_contract_register = list(congruence_claim_contract_register or [])
+    skill_combination_activation_register = list(skill_combination_activation_register or [])
 
     effective_primary_problem = _effective_primary_problem(
         problem_framing_register=problem_framing_register,
@@ -403,6 +405,8 @@ def build_executive_thesis(  # noqa: PLR0913
                 "rejected_contradiction_candidates": conditional_ranked_conflicts[1:],
                 "governed_claim_contract_register": congruence_claim_contract_register,
                 "governed_claim_contract_count": len(congruence_claim_contract_register),
+                "skill_combination_activation_register": skill_combination_activation_register,
+                "skill_combination_activation_count": len(skill_combination_activation_register),
                 "thesis_state": "conditional_structural_intelligence",
                 "local_thesis_state": "inadmissible_local_closure",
                 "local_claim_closure_state": "blocked",
@@ -469,6 +473,8 @@ def build_executive_thesis(  # noqa: PLR0913
             "rejected_contradiction_candidates": [],
             "governed_claim_contract_register": congruence_claim_contract_register,
             "governed_claim_contract_count": len(congruence_claim_contract_register),
+            "skill_combination_activation_register": skill_combination_activation_register,
+            "skill_combination_activation_count": len(skill_combination_activation_register),
             "thesis_state": "inadmissible_thesis",
             "local_thesis_state": "inadmissible_local_closure",
             "local_claim_closure_state": "blocked",
@@ -613,6 +619,8 @@ def build_executive_thesis(  # noqa: PLR0913
         "congruence_action_priority_register": congruence_action_priority_register[:5],
         "governed_claim_contract_register": congruence_claim_contract_register,
         "governed_claim_contract_count": len(congruence_claim_contract_register),
+        "skill_combination_activation_register": skill_combination_activation_register,
+        "skill_combination_activation_count": len(skill_combination_activation_register),
         "interpretive_signal_register": interpretive_signal_register,
         "dominant_contradiction_selection_basis": dict(primary_conflict.get("selection_basis", {}) or {}),
         "thesis_ranked_conflict_register": ranked_conflicts,

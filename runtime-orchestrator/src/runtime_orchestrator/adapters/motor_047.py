@@ -134,6 +134,7 @@ class Motor047Adapter(BaseMotorAdapter):
             gold_nugget_strength_register=list(m54.get("gold_nugget_strength_register", []) or []),
             congruence_action_priority_register=list(m54.get("congruence_action_priority_register", []) or []),
             congruence_claim_contract_register=list(m54.get("congruence_claim_contract_register", []) or []),
+            skill_combination_activation_register=list(m54.get("skill_combination_activation_register", []) or []),
         )
         return {
             "executive_thesis": thesis,
@@ -141,4 +142,5 @@ class Motor047Adapter(BaseMotorAdapter):
             "supporting_mode_count": len(list(thesis.get("supporting_modes", []) or [])),
             "client_facing_action_count": len(list(thesis.get("top_actions", []) or [])),
             "governed_claim_contract_count": int(thesis.get("governed_claim_contract_count", 0) or 0),
+            "skill_combination_activation_count": int(thesis.get("skill_combination_activation_count", 0) or 0),
         }

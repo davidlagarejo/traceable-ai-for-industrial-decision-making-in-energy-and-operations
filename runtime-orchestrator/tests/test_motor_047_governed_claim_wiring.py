@@ -240,3 +240,46 @@ def test_governed_register_carries_falsification_condition_through():
     )
     surfaced = thesis["governed_claim_contract_register"][0]
     assert surfaced["falsification_condition"].startswith("Direct measurement of X")
+
+
+# ── Skill combination activation wiring (RECOVERY-2026-05-09 prompt) ───────
+
+
+def test_skill_combination_activation_register_kwarg_default_is_empty():
+    out = build_executive_thesis(**_minimal_kwargs())
+    assert out["skill_combination_activation_register"] == []
+    assert out["skill_combination_activation_count"] == 0
+
+
+def test_skill_combination_activation_register_propagates():
+    register = [
+        {
+            "combination_id": "warehouse_tariff_boundary_area_combo",
+            "pattern_ids": ["warehouse_mhe_charging_demand_peak"],
+            "combined_hypothesis": "Demand may dominate energy economics.",
+        }
+    ]
+    out = build_executive_thesis(
+        **_minimal_kwargs(),
+        skill_combination_activation_register=register,
+    )
+    assert out["skill_combination_activation_count"] == 1
+    assert out["skill_combination_activation_register"][0]["combination_id"] == "warehouse_tariff_boundary_area_combo"
+
+
+def test_motor_047_propagates_skill_combinations_from_m54():
+    from runtime_orchestrator.adapters.motor_047 import Motor047Adapter
+    adapter = Motor047Adapter()
+    inputs = {
+        "motor_054": {
+            "skill_combination_activation_register": [
+                {"combination_id": "c_alpha", "pattern_ids": ["p1"]},
+                {"combination_id": "c_beta", "pattern_ids": ["p2"]},
+            ]
+        }
+    }
+    result = adapter.run(inputs)
+    assert result["skill_combination_activation_count"] == 2
+    thesis = result["executive_thesis"]
+    ids = [c["combination_id"] for c in thesis["skill_combination_activation_register"]]
+    assert ids == ["c_alpha", "c_beta"]
