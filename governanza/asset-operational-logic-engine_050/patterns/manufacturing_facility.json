@@ -1,0 +1,34 @@
+{
+  "asset_family": "manufacturing_facility",
+  "library_version": "1.0.0",
+  "last_validated_at": "2026-05-09",
+  "concept_markers": [
+    "process heat", "process_heat", "compressed air", "compressed_air",
+    "downtime", "throughput", "uptime", "power factor", "power_factor",
+    "harmonics", "reactive", "shift", "production", "boiler",
+    "steam", "chiller", "cogen", "preventive maintenance",
+    "OEE", "production line", "takt"
+  ],
+  "axes": {
+    "process_heat": {
+      "concept_markers": ["process heat", "boiler", "steam", "cogen"],
+      "falsifiers": ["thermal_meter_evidence", "boiler_log"]
+    },
+    "compressed_air": {
+      "concept_markers": ["compressed air", "compressed_air"],
+      "falsifiers": ["leak_audit_evidence", "compressor_runtime_log"]
+    },
+    "power_quality": {
+      "concept_markers": ["power factor", "power_factor", "harmonics", "reactive"],
+      "falsifiers": ["power_quality_meter_evidence"]
+    },
+    "maintenance_reality": {
+      "concept_markers": ["downtime", "uptime", "preventive maintenance", "OEE"],
+      "falsifiers": ["maintenance_log_evidence", "downtime_register"]
+    },
+    "production_throughput": {
+      "concept_markers": ["throughput", "production", "shift", "production line", "takt"],
+      "falsifiers": ["production_records_evidence"]
+    }
+  }
+}

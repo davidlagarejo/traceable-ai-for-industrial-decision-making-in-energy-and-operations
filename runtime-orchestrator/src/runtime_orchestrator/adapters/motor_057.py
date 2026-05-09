@@ -16,33 +16,29 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any
 
+from ..pattern_library import asset_family_concept_markers
 from .base import BaseMotorAdapter
 
 
-# Asset-family-specific tokens. Conservative seed set; the proper Pattern
-# Library (RECOVERY_BACKLOG.md R-30..R-37) will replace this with versioned
-# JSON files per asset family.
-_ASSET_FAMILY_TOKENS: dict[str, set[str]] = {
-    "warehouse_distribution": {
-        "dock", "charging", "refrigeration", "throughput", "logistics",
-        "service-level", "movement", "fleet", "cold-chain", "shipment",
-    },
-    "manufacturing_facility": {
-        "process heat", "process_heat", "compressed air", "compressed_air",
-        "downtime", "throughput", "uptime", "power factor", "power_factor",
-        "harmonics", "reactive", "shift", "production",
-    },
-    "commercial_building": {
-        "tenant", "bms", "occupancy", "after-hours", "after_hours",
-        "ll97", "hvac", "reheat", "lease", "common area",
-    },
-    "datacenter": {
-        "pue", "it load", "redundancy", "cooling", "n+1", "tier",
-    },
-    "logistics_terminal": {
-        "continuity", "dispatch", "fleet", "charging", "refrigeration",
-    },
+# Conservative fallback used only if the Pattern Library JSON file for an
+# asset_family is missing. The authoritative source is
+# governanza/asset-operational-logic-engine_050/patterns/<asset_family>.json
+# (loaded via runtime_orchestrator.pattern_library).
+_ASSET_FAMILY_TOKENS_FALLBACK: dict[str, set[str]] = {
+    "warehouse_distribution": {"dock", "charging", "refrigeration", "throughput"},
+    "manufacturing_facility": {"process heat", "compressed air", "downtime", "throughput"},
+    "commercial_building": {"tenant", "bms", "after-hours", "hvac"},
+    "datacenter": {"pue", "it load", "redundancy", "cooling"},
+    "logistics_terminal": {"continuity", "dispatch", "reefer"},
 }
+
+
+def _resolve_family_tokens(asset_family: str) -> set[str]:
+    """Prefer the JSON Pattern Library; fall back to the hardcoded seed."""
+    library_tokens = asset_family_concept_markers(asset_family)
+    if library_tokens:
+        return library_tokens
+    return _ASSET_FAMILY_TOKENS_FALLBACK.get(asset_family, set())
 
 _GENERIC_FALLBACK_TOKENS = {"asset", "site", "facility"}
 
@@ -62,7 +58,7 @@ def _detect_archetype_replay(
     nuggets: list[dict],
     asset_family: str,
 ) -> list[dict]:
-    family_tokens = _ASSET_FAMILY_TOKENS.get(asset_family, set())
+    family_tokens = _resolve_family_tokens(asset_family)
     if not family_tokens:
         return []
     out: list[dict] = []

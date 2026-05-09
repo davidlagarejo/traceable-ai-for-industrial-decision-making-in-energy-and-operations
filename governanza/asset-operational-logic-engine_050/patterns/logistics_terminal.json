@@ -1,0 +1,29 @@
+{
+  "asset_family": "logistics_terminal",
+  "library_version": "1.0.0",
+  "last_validated_at": "2026-05-09",
+  "concept_markers": [
+    "continuity", "dispatch", "fleet", "charging", "refrigeration",
+    "berth", "vessel", "yard tractor", "reefer", "gantry",
+    "chassis", "container", "intermodal", "transload",
+    "shore power", "cold ironing"
+  ],
+  "axes": {
+    "continuity_duty": {
+      "concept_markers": ["continuity", "reefer", "shore power", "cold ironing"],
+      "falsifiers": ["continuity_load_evidence", "reefer_runtime_log"]
+    },
+    "dispatch_posture": {
+      "concept_markers": ["dispatch", "fleet", "yard tractor", "chassis"],
+      "falsifiers": ["dispatch_log", "yard_movement_evidence"]
+    },
+    "thermal_continuity": {
+      "concept_markers": ["refrigeration", "reefer"],
+      "falsifiers": ["reefer_runtime_log"]
+    },
+    "intermodal_throughput": {
+      "concept_markers": ["berth", "vessel", "container", "intermodal", "transload", "gantry"],
+      "falsifiers": ["throughput_records_evidence"]
+    }
+  }
+}

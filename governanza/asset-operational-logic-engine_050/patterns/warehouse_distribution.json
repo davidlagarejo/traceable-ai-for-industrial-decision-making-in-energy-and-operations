@@ -1,0 +1,30 @@
+{
+  "asset_family": "warehouse_distribution",
+  "library_version": "1.0.0",
+  "last_validated_at": "2026-05-09",
+  "concept_markers": [
+    "dock", "charging", "refrigeration", "throughput", "logistics",
+    "service-level", "movement", "fleet", "cold-chain", "shipment",
+    "pallet", "bay", "loading", "outbound", "inbound", "yard",
+    "cross-dock", "tariff", "demand charge", "peak demand",
+    "operating schedule"
+  ],
+  "axes": {
+    "logistics_throughput": {
+      "concept_markers": ["throughput", "movement", "shipment", "pallet", "bay", "yard"],
+      "falsifiers": ["throughput_records", "dock_activity_profile"]
+    },
+    "tariff_orchestration": {
+      "concept_markers": ["tariff", "charging", "demand charge", "peak demand", "fleet"],
+      "falsifiers": ["utility_bill_intervals", "charging_schedule_evidence"]
+    },
+    "thermal_exchange": {
+      "concept_markers": ["dock", "refrigeration", "cold-chain", "loading"],
+      "falsifiers": ["dock_door_open_minutes", "refrigeration_duty_log"]
+    },
+    "service_level_intensity": {
+      "concept_markers": ["service-level", "operating schedule"],
+      "falsifiers": ["service_level_proxy_evidence", "operating_schedule_evidence"]
+    }
+  }
+}

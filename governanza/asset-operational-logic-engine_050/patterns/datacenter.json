@@ -1,0 +1,29 @@
+{
+  "asset_family": "datacenter",
+  "library_version": "1.0.0",
+  "last_validated_at": "2026-05-09",
+  "concept_markers": [
+    "pue", "it load", "it_load", "redundancy", "cooling", "n+1",
+    "tier", "tier iii", "tier iv", "ups", "crah", "containment",
+    "hot aisle", "cold aisle", "free cooling", "wue",
+    "rack density", "kw per rack"
+  ],
+  "axes": {
+    "pue_composition": {
+      "concept_markers": ["pue", "it load", "it_load", "rack density", "kw per rack"],
+      "falsifiers": ["it_load_meter_evidence", "facility_meter_evidence"]
+    },
+    "redundancy_posture": {
+      "concept_markers": ["redundancy", "n+1", "tier", "tier iii", "tier iv", "ups"],
+      "falsifiers": ["one_line_diagram_evidence", "redundancy_audit"]
+    },
+    "cooling_topology": {
+      "concept_markers": ["cooling", "crah", "containment", "hot aisle", "cold aisle", "free cooling"],
+      "falsifiers": ["cooling_inventory_evidence", "containment_audit"]
+    },
+    "water_use": {
+      "concept_markers": ["wue"],
+      "falsifiers": ["water_meter_evidence"]
+    }
+  }
+}

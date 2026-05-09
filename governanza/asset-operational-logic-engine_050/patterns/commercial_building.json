@@ -1,0 +1,34 @@
+{
+  "asset_family": "commercial_building",
+  "library_version": "1.0.0",
+  "last_validated_at": "2026-05-09",
+  "concept_markers": [
+    "tenant", "bms", "occupancy", "after-hours", "after_hours",
+    "ll97", "hvac", "reheat", "lease", "common area",
+    "tenant boundary", "owner control", "central plant",
+    "vav", "chilled water", "rooftop unit", "rtu",
+    "occupied hours", "setback", "schedule"
+  ],
+  "axes": {
+    "tenant_boundary": {
+      "concept_markers": ["tenant", "tenant boundary", "owner control", "lease", "common area"],
+      "falsifiers": ["lease_extract_evidence", "submetering_topology_evidence"]
+    },
+    "bms_schedule": {
+      "concept_markers": ["bms", "schedule", "setback", "occupied hours"],
+      "falsifiers": ["bms_export_evidence", "trend_log"]
+    },
+    "after_hours_load": {
+      "concept_markers": ["after-hours", "after_hours"],
+      "falsifiers": ["interval_meter_evidence", "after_hours_load_curve"]
+    },
+    "hvac_topology": {
+      "concept_markers": ["hvac", "reheat", "central plant", "vav", "chilled water", "rooftop unit", "rtu"],
+      "falsifiers": ["mep_drawing_evidence", "equipment_inventory_evidence"]
+    },
+    "regulatory": {
+      "concept_markers": ["ll97", "occupancy"],
+      "falsifiers": ["regulatory_filing_evidence"]
+    }
+  }
+}
