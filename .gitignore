@@ -26,3 +26,6 @@ runtime-orchestrator/source_refresh_status.json
 
 motor-creator/__pycache__/
 motor-creator/runtime/
+
+# Reference PDFs (binary, not source — keep out of git history)
+/Recursos genericos/
