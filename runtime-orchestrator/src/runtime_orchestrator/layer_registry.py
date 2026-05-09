@@ -77,6 +77,10 @@ _LAYER_F: tuple[str, ...] = (
     "motor_022",  # Evaluation / Conformance
     "motor_036",  # System Consistency Validator
     "motor_040",  # Cross-Layer Conflict
+    "motor_055",  # Hypothesis Diversity Validator (RECOVERY R-60)
+    "motor_056",  # Evidence Repetition Validator (RECOVERY R-61)
+    "motor_057",  # Gold Nugget Quality Validator (RECOVERY R-62)
+    "motor_058",  # Report Uniqueness Validator (RECOVERY R-63)
     "motor_059",  # Strategic Intelligence Validator (RECOVERY R-64)
 )
 

@@ -64,6 +64,10 @@ from .motor_051 import Motor051Adapter
 from .motor_052 import Motor052Adapter
 from .motor_053 import Motor053Adapter
 from .motor_054 import Motor054Adapter
+from .motor_055 import Motor055Adapter
+from .motor_056 import Motor056Adapter
+from .motor_057 import Motor057Adapter
+from .motor_058 import Motor058Adapter
 from .motor_059 import Motor059Adapter
 from .stub import StubMotorAdapter
 
@@ -123,6 +127,10 @@ REAL_ADAPTERS = [
     Motor052Adapter(),
     Motor053Adapter(),
     Motor054Adapter(),
+    Motor055Adapter(),
+    Motor056Adapter(),
+    Motor057Adapter(),
+    Motor058Adapter(),
     Motor059Adapter(),
 ]
 

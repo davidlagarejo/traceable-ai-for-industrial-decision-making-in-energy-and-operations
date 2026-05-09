@@ -714,6 +714,46 @@
       ],
       "notes": "Produce gold nuggets, prioridades de acción y contratos de claim de la lane de congruencia, dejándolos listos para puentearse a tesis y validator sin romper la gobernanza epistemológica."
     },
+    "motor_055": {
+      "name": "Hypothesis Diversity Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_033",
+        "motor_054"
+      ],
+      "notes": "Capa F (Validation). Detecta low-diversity en hipótesis activadas: pocos claims allowed, signaturas duplicadas (claim_family + current_evidence_summary), TAD action convergence a un solo linked_claim. Emite warnings no bloqueantes."
+    },
+    "motor_056": {
+      "name": "Evidence Repetition Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_033",
+        "motor_046"
+      ],
+      "notes": "Capa F (Validation). Detecta evidence pack repetido en >2 acciones TAD (artefacto del PDF Sunrise donde el mismo evidence_pack aparecía 5+ veces), repetición de minimum_measurement en motor_046, y acciones actionable sin evidence_needed."
+    },
+    "motor_057": {
+      "name": "Gold Nugget Quality Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_054"
+      ],
+      "notes": "Capa F (Validation). Detecta nuggets archetype-replay (sin tokens asset-family-specific), nuggets demasiado cortos para llevar insight, y template-fill (mismo prefijo en múltiples nuggets). Token tables conservadoras hasta promoción de la Pattern Library completa."
+    },
+    "motor_058": {
+      "name": "Report Uniqueness Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_054"
+      ],
+      "notes": "Capa F (Validation). Compara strategic_gold_nugget_register actual contra runs previos en artifact-store del mismo asset_family. Jaccard >0.65 → warning de overlap; reuso verbatim → warning de template fill. Best-effort: silente si no hay store o no hay runs previos."
+    },
     "motor_059": {
       "name": "Strategic Intelligence Validator",
       "group": "B",
