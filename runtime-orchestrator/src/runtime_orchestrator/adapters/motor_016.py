@@ -442,7 +442,18 @@ def _build_structural_executive_summary(bundle: dict[str, Any]) -> dict[str, Any
     mode_rows = list(bundle.get("structural_output_mode_classifier_table", []) or [])
     mode_summary = dict(bundle.get("structural_output_mode_summary", {}) or {})
     action_rows = list(bundle.get("expanded_structural_tad_action_register", []) or [])
-    claim_contract_register = list(bundle.get("claim_contract_register", []) or [])
+    legacy_claim_contract_register = list(bundle.get("claim_contract_register", []) or [])
+    governed_claim_contract_register = list(
+        executive_thesis.get("governed_claim_contract_register", []) or []
+    )
+    # Merge legacy (motor_034) and governed (motor_054) claim registers.
+    # Governed takes precedence per claim_id because it carries the
+    # four-state epistemic vocabulary and explicit falsification_condition.
+    # See RECOVERY_BACKLOG.md R-W03.
+    claim_contract_register = _merge_claim_contract_registers(
+        legacy_claim_contract_register,
+        governed_claim_contract_register,
+    )
     deduplicated_claim_map = dict(bundle.get("deduplicated_claim_map", {}) or {})
     primary_action = next(
         (
@@ -4361,6 +4372,46 @@ def _apply_section_inventory_surface_gate(
         "retained_noninventory_optional_count": retained_noninventory_optional_count,
     }
     return retained_body, appended_appendix, policy_rows, summary
+
+
+def _merge_claim_contract_registers(
+    legacy_register: list[dict[str, Any]],
+    governed_register: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Combine the legacy claim register (motor_034) with the governed one
+    (motor_054.congruence_claim_contract_register) for unified rendering.
+
+    Rules:
+      - Same claim_id present in both: governed wins (it carries the
+        four-state vocabulary and explicit falsification_condition).
+      - claim_id only in governed: appended after the legacy entries so
+        legacy ordering is preserved for backward-compatibility.
+      - claim_id only in legacy: kept as-is.
+
+    Returns a new list; inputs are not mutated.
+    """
+    governed_by_id = {
+        str(row.get("claim_id", "")).strip(): dict(row)
+        for row in (governed_register or [])
+        if str(row.get("claim_id", "")).strip()
+    }
+    seen_ids: set[str] = set()
+    merged: list[dict[str, Any]] = []
+    for row in (legacy_register or []):
+        claim_id = str(row.get("claim_id", "")).strip()
+        if not claim_id:
+            merged.append(dict(row))
+            continue
+        if claim_id in governed_by_id:
+            merged.append(governed_by_id[claim_id])
+        else:
+            merged.append(dict(row))
+        seen_ids.add(claim_id)
+    for claim_id, governed_row in governed_by_id.items():
+        if claim_id in seen_ids:
+            continue
+        merged.append(governed_row)
+    return merged
 
 
 def _candidate_claim_ids_for_section(
