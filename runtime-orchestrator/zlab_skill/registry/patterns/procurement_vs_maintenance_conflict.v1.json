@@ -1,0 +1,102 @@
+{
+  "id": "procurement_vs_maintenance_conflict",
+  "version": "1.0.0",
+  "name": "Procurement Versus Maintenance Conflict",
+  "knowledge_type": [
+    "MAINTENANCE_REALITY_PATTERN",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility",
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial",
+    "commercial_real_estate",
+    "infrastructure"
+  ],
+  "applicable_contexts": [
+    "capital action under consideration",
+    "maintenance proof weak or reactive",
+    "equipment reliability economics plausible"
+  ],
+  "trigger_conditions": [
+    "replacement or procurement logic visible",
+    "maintenance maturity unresolved",
+    "reliability or downtime burden plausible"
+  ],
+  "anti_triggers": [
+    "maintenance maturity evidenced and aligned with procurement",
+    "replacement logic already discriminated against maintenance reality",
+    "reliability burden immaterial"
+  ],
+  "physical_basis": "Equipment stress, poor maintenance and weak operating discipline can make a procurement narrative look more attractive than it should be.",
+  "operational_basis": "Teams may fund replacement because maintenance and operations evidence are weak, not because the equipment boundary is the true dominant problem.",
+  "financial_mechanism": "Capital can be spent on new equipment while the real economics remain in maintenance execution, downtime or operating discipline.",
+  "typical_false_assumption": "If procurement looks attractive, maintenance must already be bounded.",
+  "hypothesis": "Procurement and maintenance logic may be in conflict, making replacement-first action inadmissible until maintenance reality is bounded.",
+  "rival_hypotheses": [
+    "replacement is still the dominant lever after maintenance is bounded",
+    "maintenance maturity is adequate",
+    "downtime and reliability burden are minor"
+  ],
+  "evidence_required": [
+    "maintenance logs",
+    "downtime history",
+    "failure mode evidence",
+    "work orders",
+    "replacement rationale"
+  ],
+  "minimum_evidence_to_activate": [
+    "replacement framing visible",
+    "maintenance evidence unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "maintenance weakness materially explains the visible burden",
+    "procurement rationale is under-discriminated"
+  ],
+  "falsification_conditions": [
+    "maintenance maturity is evidenced and sufficient",
+    "replacement logic remains valid after maintenance review",
+    "downtime and reliability burden are immaterial"
+  ],
+  "allowed_claim_language": "Procurement may be targeting a secondary symptom if maintenance reality has not yet been bounded.",
+  "prohibited_claim_language": "The right answer is equipment replacement.",
+  "financial_exposure_if_true": [
+    "CAPEX misallocation risk",
+    "maintenance downtime exposure",
+    "wrong retrofit sequencing"
+  ],
+  "financial_exposure_if_false": [
+    "procurement-versus-maintenance conflict should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET",
+    "REDESIGN_HYPOTHESIS"
+  ],
+  "stop_conditions": [
+    "maintenance and replacement logic are bounded enough to rank the dominant lever"
+  ],
+  "escalation_conditions": [
+    "operations or maintenance leadership confirmation required if documentary evidence remains thin"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block replacement-first claims",
+    "block procurement-driven ROI framing without maintenance discrimination"
+  ],
+  "example_outputs": [
+    "The capital story may be a maintenance story in disguise."
+  ],
+  "tests": [
+    "industrial bundles should admit this when replacement framing appears before maintenance maturity is bounded",
+    "pattern must remain bounded at L2"
+  ]
+}

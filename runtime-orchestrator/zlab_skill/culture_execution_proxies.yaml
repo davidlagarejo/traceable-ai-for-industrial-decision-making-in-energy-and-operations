@@ -1,0 +1,8 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: CULTURE_EXECUTION_PROXY
+  pattern_ids:
+    - tenant_operator_boundary_unresolved
+    - maintenance_maturity_not_evidenced
+notes:
+  - Culture and execution cues are only weak signals and remain below diagnostic authority.

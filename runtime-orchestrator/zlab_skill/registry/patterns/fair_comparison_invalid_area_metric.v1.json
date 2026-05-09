@@ -1,0 +1,104 @@
+{
+  "id": "fair_comparison_invalid_area_metric",
+  "version": "1.0.0",
+  "name": "Fair Comparison Invalid Area Metric",
+  "knowledge_type": [
+    "FAIR_COMPARISON_RULE"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "cold_chain_distribution",
+    "logistics_hub"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "warehousing",
+    "distribution"
+  ],
+  "applicable_contexts": [
+    "service-level intensity unknown",
+    "dock density unknown",
+    "charging profile unknown",
+    "owner/operator boundary unresolved"
+  ],
+  "trigger_conditions": [
+    "area-based comparison proposed",
+    "key comparability dimensions missing"
+  ],
+  "anti_triggers": [
+    "dry vs cold-chain classification bounded",
+    "dock density bounded",
+    "operating hours bounded",
+    "charging profile bounded",
+    "owner/operator boundary bounded"
+  ],
+  "physical_basis": "Area alone does not capture logistics duty, charging burden, thermal interface intensity or service complexity.",
+  "operational_basis": "Cross-dock, storage, fulfillment and cold-chain nodes can share area but differ radically in throughput, schedule and conditioning duty.",
+  "financial_mechanism": "Using the wrong denominator can distort valuation, underwriting and retrofit sequencing.",
+  "typical_false_assumption": "EUI per square foot is a fair default for any warehouse-like asset.",
+  "hypothesis": "Area-based comparison may be conceptually invalid until service intensity and duty boundaries are normalized.",
+  "rival_hypotheses": [
+    "area is still a fair primary denominator",
+    "missing dimensions are not materially comparison-defining"
+  ],
+  "evidence_required": [
+    "dry vs cold-chain status",
+    "dock density",
+    "operating hours",
+    "MHE profile",
+    "charging profile",
+    "climate zone",
+    "utility tariff",
+    "service-level intensity",
+    "automation level",
+    "owner/operator boundary"
+  ],
+  "minimum_evidence_to_activate": [
+    "warehouse/logistics family",
+    "comparison proposed or implied",
+    "critical comparison dimensions missing"
+  ],
+  "minimum_evidence_to_confirm": [
+    "multiple critical comparison dimensions remain unbounded"
+  ],
+  "falsification_conditions": [
+    "required comparison dimensions are sufficiently bounded to support a fair peer set"
+  ],
+  "allowed_claim_language": "Fair comparison is not yet valid until the comparison basis is normalized.",
+  "prohibited_claim_language": "This asset is inefficient compared to peers.",
+  "financial_exposure_if_true": [
+    "wrong peer valuation",
+    "wrong retrofit sequencing",
+    "benchmark denominator error"
+  ],
+  "financial_exposure_if_false": [
+    "peer comparison may become admissible once normalization is complete"
+  ],
+  "tad_actions": [
+    "BUILD_FAIR_PEER_SET",
+    "COMPARE_FAIRLY",
+    "PROHIBIT_PEER_SUPERIORITY"
+  ],
+  "stop_conditions": [
+    "fair peer set can be built with normalized dimensions"
+  ],
+  "escalation_conditions": [
+    "operator input required if key service-level dimensions remain unavailable publicly"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block peer superiority claims",
+    "block generic warehouse EUI claims"
+  ],
+  "example_outputs": [
+    "Area may be the wrong denominator until service-level intensity and charging profile are bounded."
+  ],
+  "tests": [
+    "warehouse acceptance bundle should block generic peer framing when key dimensions are missing",
+    "no superiority claim allowed while comparison remains invalid"
+  ]
+}

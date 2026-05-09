@@ -1,0 +1,108 @@
+{
+  "id": "reactive_power_exposure",
+  "version": "1.0.0",
+  "name": "Reactive Power Exposure",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "industrial_facility",
+    "large_commercial_building",
+    "warehouse_distribution",
+    "cold_chain_distribution",
+    "manufacturing_facility"
+  ],
+  "applicable_industries": [
+    "industrial",
+    "commercial_real_estate",
+    "logistics",
+    "manufacturing"
+  ],
+  "applicable_contexts": [
+    "inductive or nonlinear loads plausible",
+    "tariff unknown",
+    "power factor correction unknown"
+  ],
+  "trigger_conditions": [
+    "motors, compressors, chillers, pumps, conveyors or chargers plausible",
+    "tariff or bill structure unresolved",
+    "power-factor correction not evidenced"
+  ],
+  "anti_triggers": [
+    "high power factor documented",
+    "no PF penalties",
+    "active compensation installed",
+    "low inductive load confirmed"
+  ],
+  "physical_basis": "Inductive and nonlinear loads can create reactive power or power-quality exposure even when total annual kWh appears ordinary.",
+  "operational_basis": "Load sequencing, compensation absence and equipment mix can shape utility penalties and hidden capacity pressure.",
+  "financial_mechanism": "PF penalties, kvar charges or demand interactions can create a cost story invisible to aggregate EUI analysis.",
+  "typical_false_assumption": "Aggregate consumption is enough to understand cost and capacity pressure.",
+  "hypothesis": "Reactive power or power-quality exposure may be material if inductive or nonlinear loads exist and compensation is absent or unknown.",
+  "rival_hypotheses": [
+    "power factor is already controlled",
+    "demand structure dominates without PF or reactive exposure",
+    "inductive load is too small to matter"
+  ],
+  "evidence_required": [
+    "utility bills showing kW, kWh, kvar, PF or demand structure",
+    "tariff",
+    "one-line diagram",
+    "capacitor bank or filter inventory",
+    "power-quality report if available"
+  ],
+  "minimum_evidence_to_activate": [
+    "inductive or nonlinear loads plausible",
+    "tariff structure unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "utility evidence shows PF or reactive penalties",
+    "load mix supports exposure",
+    "compensation absence or failure evidenced"
+  ],
+  "falsification_conditions": [
+    "high PF documented",
+    "no PF penalties or reactive charges",
+    "active compensation documented",
+    "load mix not materially inductive"
+  ],
+  "allowed_claim_language": "Power-quality exposure is a plausible hypothesis requiring tariff and utility-bill validation.",
+  "prohibited_claim_language": "The facility has reactive power losses.",
+  "financial_exposure_if_true": [
+    "hidden demand or PF penalty exposure",
+    "misdirected efficiency-first CAPEX",
+    "capacity and tariff pressure misread as generic inefficiency"
+  ],
+  "financial_exposure_if_false": [
+    "PF-oriented mitigation should be downgraded",
+    "attention should shift to other rival hypotheses"
+  ],
+  "tad_actions": [
+    "REQUEST_UTILITY_BILLS",
+    "VALIDATE_PF_TARIFF_EXPOSURE",
+    "DO_NOT_RECOMMEND_CAPACITOR_BANK_YET"
+  ],
+  "stop_conditions": [
+    "utility and tariff evidence bound PF relevance"
+  ],
+  "escalation_conditions": [
+    "power-quality study requested only if bills and tariff remain ambiguous"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block local reactive-loss diagnosis",
+    "block capacitor-bank recommendation without evidence",
+    "block simplistic EUI-only framing"
+  ],
+  "example_outputs": [
+    "If power factor is unmanaged, part of the cost and capacity problem may be invisible to standard EUI analysis."
+  ],
+  "tests": [
+    "manufacturing and utility-heavy cases should activate this when inductive load and tariff remain unresolved",
+    "no direct reactive-loss diagnosis allowed"
+  ]
+}

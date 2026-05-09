@@ -1,0 +1,101 @@
+{
+  "id": "compressed_air_leak_plausibility",
+  "version": "1.0.0",
+  "name": "Compressed Air Leak Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "PROCESS_LOGIC"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility",
+    "thermal_process_site"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial",
+    "process_industry"
+  ],
+  "applicable_contexts": [
+    "compressed air plausible",
+    "support-utility economics unresolved",
+    "maintenance maturity unresolved"
+  ],
+  "trigger_conditions": [
+    "compressed air system plausible or observed",
+    "pressure setpoints or sequencing unknown",
+    "leak survey evidence absent"
+  ],
+  "anti_triggers": [
+    "compressed air absent or negligible",
+    "recent leak survey shows low leakage",
+    "pressure already right-sized and evidenced",
+    "compressed air economics immaterial"
+  ],
+  "physical_basis": "Compressed air systems recurrently lose value through leaks, pressure overuse, poor sequencing and unloaded operation.",
+  "operational_basis": "Plants often use compressed air as a convenience utility, allowing maintenance and operations drift to hide recurring losses.",
+  "financial_mechanism": "Support-utility waste can inflate energy and maintenance cost while masquerading as structural process intensity.",
+  "typical_false_assumption": "High plant energy intensity proves generic process inefficiency.",
+  "hypothesis": "Compressed-air leakage, pressure overuse or weak sequencing may be materially affecting cost and support-system economics.",
+  "rival_hypotheses": [
+    "compressed air is well managed and economically secondary",
+    "process duty dominates the visible energy story",
+    "maintenance and leakage are not material"
+  ],
+  "evidence_required": [
+    "leak survey evidence",
+    "compressor sequencing logic",
+    "pressure setpoints",
+    "utility bills or demand profile",
+    "compressor inventory"
+  ],
+  "minimum_evidence_to_activate": [
+    "compressed air plausible",
+    "sequencing or leakage evidence unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "leak survey or operating evidence shows meaningful leakage or pressure overuse",
+    "compressed air is materially relevant to the site's support-utility stack"
+  ],
+  "falsification_conditions": [
+    "survey shows low leakage",
+    "pressure is right-sized and evidenced",
+    "compressed air use is structurally process-critical and already optimized"
+  ],
+  "allowed_claim_language": "Compressed-air leakage or pressure overuse is a recurring industrial pattern that should be falsified locally.",
+  "prohibited_claim_language": "This plant has compressed-air leaks.",
+  "financial_exposure_if_true": [
+    "support-system waste may outrank generic production-efficiency framing",
+    "maintenance and sequencing action may outperform equipment CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "compressed-air-first action should be downgraded",
+    "attention should shift to process-duty or thermal rivals"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_SENSOR_YET"
+  ],
+  "stop_conditions": [
+    "compressed-air leak and sequencing materiality are bounded enough to rank the hypothesis"
+  ],
+  "escalation_conditions": [
+    "temporary study or leak survey requested only if bills and runtime context still leave the hypothesis ambiguous"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block direct leak diagnosis",
+    "block compressor CAPEX recommendation without discrimination"
+  ],
+  "example_outputs": [
+    "Compressed air is a recurring hidden-loss mode, but materiality must be tested before capital is aimed at it."
+  ],
+  "tests": [
+    "manufacturing acceptance bundles should surface this when compressed air is plausible and leakage evidence is absent",
+    "pattern must remain bounded at L2 until site evidence exists"
+  ]
+}

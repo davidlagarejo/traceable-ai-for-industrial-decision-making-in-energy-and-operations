@@ -1,0 +1,99 @@
+{
+  "id": "process_load_vs_waste",
+  "version": "1.0.0",
+  "name": "Process Load Versus Waste",
+  "knowledge_type": [
+    "PROCESS_LOGIC",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "process map unresolved",
+    "support systems and process loads both plausible",
+    "utility intensity visible before throughput normalization is bounded"
+  ],
+  "trigger_conditions": [
+    "manufacturing-family asset",
+    "process line or throughput map unresolved",
+    "utility burden visible but dominant variable unclear"
+  ],
+  "anti_triggers": [
+    "process load is already normalized and bounded",
+    "support-system waste is already discriminated",
+    "dominant variable already known"
+  ],
+  "physical_basis": "Manufacturing energy can be structurally tied to throughput, temperature duty, process chemistry or material transformation rather than generic waste.",
+  "operational_basis": "Without a process map and throughput context, teams can misclassify structural process load as avoidable waste.",
+  "financial_mechanism": "Capital can be allocated against the wrong variable if structural production duty is mistaken for generic efficiency loss.",
+  "typical_false_assumption": "High plant energy intensity automatically means waste.",
+  "hypothesis": "Energy may be structural to production rather than waste, so the process-versus-support-system boundary must be discriminated first.",
+  "rival_hypotheses": [
+    "support-system waste dominates",
+    "throughput-normalized process load is already bounded",
+    "maintenance or tariff effects dominate before process logic does"
+  ],
+  "evidence_required": [
+    "process line map",
+    "throughput by shift",
+    "utility bill and tariff logic",
+    "major process thermal and motor loads",
+    "product mix context"
+  ],
+  "minimum_evidence_to_activate": [
+    "manufacturing-family asset",
+    "process map unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "process duty explains a material share of the observed load",
+    "throughput-normalized context changes the framing materially"
+  ],
+  "falsification_conditions": [
+    "support-system waste clearly dominates",
+    "process duty is already normalized and bounded",
+    "process load is immaterial to the visible burden"
+  ],
+  "allowed_claim_language": "Energy may be structural to production rather than waste, so the process-versus-support-system boundary should be discriminated first.",
+  "prohibited_claim_language": "The plant is wasting energy.",
+  "financial_exposure_if_true": [
+    "CAPEX misallocation risk",
+    "wrong dominant-variable selection",
+    "wrong peer valuation"
+  ],
+  "financial_exposure_if_false": [
+    "process-load-first framing should be downgraded",
+    "support-system waste framing may become more admissible"
+  ],
+  "tad_actions": [
+    "REQUEST_MINIMUM_EVIDENCE",
+    "VALIDATE_LOSS_PATTERN",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "process-versus-support-system boundary is bounded enough to rank the dominant driver"
+  ],
+  "escalation_conditions": [
+    "operations confirmation required if public evidence cannot discriminate throughput duty"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block waste diagnosis before process normalization",
+    "block generic efficiency capital framing"
+  ],
+  "example_outputs": [
+    "Energy may be structural to production, not waste."
+  ],
+  "tests": [
+    "manufacturing acceptance bundle should activate this when process load remains unresolved",
+    "pattern must stay bounded at L2"
+  ]
+}

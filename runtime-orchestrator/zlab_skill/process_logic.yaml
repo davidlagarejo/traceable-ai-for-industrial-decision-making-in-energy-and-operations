@@ -1,0 +1,8 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: PROCESS_LOGIC
+  pattern_ids:
+    - process_load_vs_waste
+    - hvac_schedule_drift
+notes:
+  - Dominant-variable logic is encoded through pattern specs plus runtime measurement strategy.

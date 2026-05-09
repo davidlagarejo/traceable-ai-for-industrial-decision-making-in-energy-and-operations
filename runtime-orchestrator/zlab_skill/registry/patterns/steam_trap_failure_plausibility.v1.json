@@ -1,0 +1,100 @@
+{
+  "id": "steam_trap_failure_plausibility",
+  "version": "1.0.0",
+  "name": "Steam Trap Failure Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility",
+    "thermal_process_site"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial",
+    "process_industry"
+  ],
+  "applicable_contexts": [
+    "steam system plausible",
+    "maintenance proof unresolved",
+    "thermal-duty economics visible"
+  ],
+  "trigger_conditions": [
+    "steam or condensate system plausible",
+    "trap survey evidence absent",
+    "maintenance maturity unresolved"
+  ],
+  "anti_triggers": [
+    "no steam system",
+    "recent trap survey shows strong performance",
+    "condensate and trap program already evidenced"
+  ],
+  "physical_basis": "Steam traps can fail open, closed or intermittently, creating avoidable steam, condensate and thermal losses.",
+  "operational_basis": "Trap maintenance drift often hides in plants where thermal duty is normalized as background process reality.",
+  "financial_mechanism": "Fuel use, condensate recovery and maintenance burden can all be misread if trap performance is assumed rather than evidenced.",
+  "typical_false_assumption": "Boiler or process intensity explains all thermal cost once throughput is known.",
+  "hypothesis": "Steam-trap failure or weak trap maintenance may be a material thermal-loss mode requiring local falsification.",
+  "rival_hypotheses": [
+    "trap performance is already well managed",
+    "thermal duty is structurally explained by process load",
+    "steam-trap economics are immaterial"
+  ],
+  "evidence_required": [
+    "steam-trap survey",
+    "condensate recovery evidence",
+    "maintenance records",
+    "steam-system topology",
+    "fuel bills or thermal-duty context"
+  ],
+  "minimum_evidence_to_activate": [
+    "steam system plausible",
+    "trap-performance evidence absent"
+  ],
+  "minimum_evidence_to_confirm": [
+    "trap survey or maintenance evidence shows failure risk",
+    "thermal economics indicate materiality"
+  ],
+  "falsification_conditions": [
+    "survey shows low failure rate",
+    "trap program is evidenced and current",
+    "thermal cost is structurally explained elsewhere"
+  ],
+  "allowed_claim_language": "Steam-trap failure is a plausible maintenance-linked loss mode that should be falsified locally.",
+  "prohibited_claim_language": "This plant has failing steam traps.",
+  "financial_exposure_if_true": [
+    "fuel and maintenance burden may be misread",
+    "maintenance-first action may outrank generic efficiency CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "trap-focused framing should be downgraded",
+    "attention should shift to boiler, process or recovery rivals"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE"
+  ],
+  "stop_conditions": [
+    "trap-performance evidence is bounded enough to rank materiality"
+  ],
+  "escalation_conditions": [
+    "field survey required only if documentary proof remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block local steam-trap diagnosis",
+    "block thermal CAPEX sequencing without maintenance discrimination"
+  ],
+  "example_outputs": [
+    "Before funding boiler upgrades, determine whether weak steam-trap performance is leaking value from the thermal system."
+  ],
+  "tests": [
+    "thermal-process cases should admit this when steam systems are plausible and trap evidence is absent",
+    "pattern must remain bounded at L2"
+  ]
+}

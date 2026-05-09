@@ -1,0 +1,17 @@
+{
+  "id": "source_traceability_source_basis",
+  "version": "1.0.0",
+  "validator_name": "SourceTraceabilityValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_list_non_empty",
+  "description": "A combination must declare source_basis provenance before downstream use.",
+  "target_fields": [
+    "source_basis"
+  ],
+  "message": "Combination is missing source_basis provenance.",
+  "tests": [
+    "combination rows without source_basis must be blocked"
+  ]
+}

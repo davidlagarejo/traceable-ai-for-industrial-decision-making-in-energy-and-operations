@@ -1,0 +1,24 @@
+{
+  "id": "company_memory_company_confined",
+  "version": "1.0.0",
+  "memory_type": "company_memory",
+  "name": "Company Memory Company Confined",
+  "description": "Company-specific operational context can persist within the same company boundary but cannot transfer across companies.",
+  "admissibility_scope": "company_confined",
+  "transfer_rule": "same_company_only",
+  "evidence_ceiling": "L2",
+  "use_mode": "context_only",
+  "truth_promotion_allowed": false,
+  "reversible": true,
+  "default_priority_effect": "carry_forward_company_context",
+  "required_record_fields": [
+    "company_id",
+    "source_refs",
+    "reason",
+    "scope"
+  ],
+  "tests": [
+    "company memory must be blocked for a different company_id",
+    "company memory cannot harden claim language on its own"
+  ]
+}

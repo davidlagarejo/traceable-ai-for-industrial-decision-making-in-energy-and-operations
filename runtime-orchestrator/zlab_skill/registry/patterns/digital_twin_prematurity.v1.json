@@ -1,0 +1,95 @@
+{
+  "id": "digital_twin_prematurity",
+  "version": "1.0.0",
+  "name": "Digital Twin Prematurity",
+  "knowledge_type": [
+    "MEASUREMENT_MINIMALITY_RULE"
+  ],
+  "asset_types": [
+    "all_operational_assets"
+  ],
+  "applicable_industries": [
+    "all"
+  ],
+  "applicable_contexts": [
+    "digital twin or detailed model requested",
+    "dominant variables unresolved",
+    "boundary unresolved"
+  ],
+  "trigger_conditions": [
+    "request for digital twin or detailed model exists",
+    "dominant variables are not yet discriminated",
+    "system boundary or topology remains incomplete"
+  ],
+  "anti_triggers": [
+    "model scope is narrow and decision-tied",
+    "dominant variable already known",
+    "boundary is clear and admissibly bounded"
+  ],
+  "physical_basis": "A detailed model can encode irrelevant complexity if the dominant driver and system boundary remain unresolved.",
+  "operational_basis": "Teams often model before they decide which variable actually governs the decision.",
+  "financial_mechanism": "Over-modeling creates cost and false confidence before the value-of-information path is clear.",
+  "typical_false_assumption": "More modeling automatically creates better decisions.",
+  "hypothesis": "A detailed model before driver discrimination may model irrelevant complexity.",
+  "rival_hypotheses": [
+    "a narrow model is already decision-ready",
+    "dominant variable is already known",
+    "modeling cost is justified immediately"
+  ],
+  "evidence_required": [
+    "dominant variable map",
+    "boundary definition",
+    "system topology",
+    "measurement objective",
+    "decision objective"
+  ],
+  "minimum_evidence_to_activate": [
+    "model request observed",
+    "dominant variable unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "dominant variable unresolved",
+    "boundary unresolved",
+    "model purpose not tied to a bounded decision"
+  ],
+  "falsification_conditions": [
+    "model scope is narrow and decision-bound",
+    "dominant variable already bounded",
+    "boundary and topology are adequately known"
+  ],
+  "allowed_claim_language": "A digital twin may be premature until the dominant variable and boundary are bounded.",
+  "prohibited_claim_language": "The asset needs a digital twin now.",
+  "financial_exposure_if_true": [
+    "over-modeling cost",
+    "precise nonsense risk",
+    "instrumentation and analytics waste"
+  ],
+  "financial_exposure_if_false": [
+    "modeling pathway may become admissible once the decision boundary is bounded"
+  ],
+  "tad_actions": [
+    "DO_NOT_MODEL_YET",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DEFINE_MODEL_PURPOSE"
+  ],
+  "stop_conditions": [
+    "dominant variable and model purpose are bounded"
+  ],
+  "escalation_conditions": [
+    "limited pilot model only if directly tied to a bounded decision objective"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block premature digital-twin recommendation",
+    "block broad modeling procurement"
+  ],
+  "example_outputs": [
+    "A digital twin of the wrong boundary creates precise nonsense."
+  ],
+  "tests": [
+    "warehouse and manufacturing acceptance bundles should block digital twin recommendation while dominant variables remain unresolved"
+  ]
+}

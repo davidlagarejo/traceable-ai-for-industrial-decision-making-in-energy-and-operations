@@ -1,0 +1,25 @@
+{
+  "id": "financial_output_forbidden_terms",
+  "version": "1.0.0",
+  "validator_name": "FinancialOutputValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "forbidden_terms_absent",
+  "description": "Strategic framing must not smuggle ROI, IRR, NPV or payback into bounded combination language.",
+  "target_fields": [
+    "combined_hypothesis",
+    "strategic_risk",
+    "allowed_language"
+  ],
+  "forbidden_terms": [
+    "roi",
+    "irr",
+    "npv",
+    "payback"
+  ],
+  "message": "Combination field contains forbidden financial term.",
+  "tests": [
+    "combination rows containing ROI, IRR, NPV or payback in bounded language must be blocked"
+  ]
+}

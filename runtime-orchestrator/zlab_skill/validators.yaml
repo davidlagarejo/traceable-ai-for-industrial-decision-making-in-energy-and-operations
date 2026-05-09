@@ -1,0 +1,15 @@
+prompt_section: 20
+registry_equivalence:
+  validator_ids:
+    - claim_governor_combination_minimum_evidence
+    - pattern_to_claim_allowed_language
+    - fair_comparison_prohibited_claims
+    - financial_output_forbidden_terms
+    - tad_consistency_required_tad_action
+    - memory_scope_cross_company_guard
+    - report_diversity_template_contamination
+    - report_output_template_contamination_guard
+    - source_traceability_source_basis
+    - combination_use_evidence_ceiling
+notes:
+  - Validators are loaded from registry JSON, but this file preserves the prompt-level structure contract verbatim.

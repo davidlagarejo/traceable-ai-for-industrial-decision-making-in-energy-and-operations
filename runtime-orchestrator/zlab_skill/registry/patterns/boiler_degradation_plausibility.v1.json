@@ -1,0 +1,101 @@
+{
+  "id": "boiler_degradation_plausibility",
+  "version": "1.0.0",
+  "name": "Boiler Degradation Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility",
+    "commercial_building",
+    "thermal_process_site"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial",
+    "commercial_real_estate"
+  ],
+  "applicable_contexts": [
+    "boiler duty plausible",
+    "combustion evidence unresolved",
+    "thermal economics visible"
+  ],
+  "trigger_conditions": [
+    "boiler or burner system plausible",
+    "combustion tuning evidence absent",
+    "thermal-duty explanation unresolved"
+  ],
+  "anti_triggers": [
+    "no boiler system",
+    "recent combustion evidence shows strong performance",
+    "boiler is non-material to the visible cost boundary"
+  ],
+  "physical_basis": "Boilers can lose performance through excess air, fouling, cycling, poor heat transfer and weak maintenance execution.",
+  "operational_basis": "Weak tuning or sequencing can inflate fuel use while being mistaken for unavoidable thermal duty.",
+  "financial_mechanism": "Fuel cost and maintenance burden can be misframed if boiler degradation is assumed or ignored without evidence.",
+  "typical_false_assumption": "Fuel intensity automatically proves generic thermal inefficiency or just process load.",
+  "hypothesis": "Boiler degradation or weak combustion control may be materially affecting thermal economics and should be falsified locally.",
+  "rival_hypotheses": [
+    "boiler performance is already adequate",
+    "thermal duty is structurally explained by load",
+    "another subsystem dominates the visible cost story"
+  ],
+  "evidence_required": [
+    "combustion test records",
+    "fuel bills",
+    "boiler maintenance history",
+    "cycling or sequencing evidence",
+    "throughput-normalized thermal-duty context"
+  ],
+  "minimum_evidence_to_activate": [
+    "boiler plausible",
+    "combustion or maintenance evidence absent"
+  ],
+  "minimum_evidence_to_confirm": [
+    "combustion or maintenance evidence shows degradation risk",
+    "boiler duty is materially relevant to economics"
+  ],
+  "falsification_conditions": [
+    "combustion tuning is tight and current",
+    "boiler performance is evidenced as adequate",
+    "thermal duty is fully explained by process load"
+  ],
+  "allowed_claim_language": "Boiler degradation is a plausible thermal-loss hypothesis requiring combustion and maintenance validation.",
+  "prohibited_claim_language": "This site has an inefficient boiler.",
+  "financial_exposure_if_true": [
+    "fuel cost may be misread",
+    "maintenance and sequencing action may outrank capital replacement"
+  ],
+  "financial_exposure_if_false": [
+    "boiler-first framing should be downgraded",
+    "attention should shift to other thermal rivals"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "boiler combustion and maintenance evidence are bounded enough to rank materiality"
+  ],
+  "escalation_conditions": [
+    "field combustion check required only if paper evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block local boiler-inefficiency diagnosis",
+    "block replacement-first logic without discrimination"
+  ],
+  "example_outputs": [
+    "Before replacing the boiler, determine whether weak tuning or cycling is the real economic driver."
+  ],
+  "tests": [
+    "thermal-process and building bundles should admit this when boiler evidence is unresolved",
+    "pattern must stay bounded at L2"
+  ]
+}

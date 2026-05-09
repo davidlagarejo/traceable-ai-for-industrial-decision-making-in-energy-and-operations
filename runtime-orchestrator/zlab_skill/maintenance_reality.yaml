@@ -1,0 +1,9 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: MAINTENANCE_REALITY_PATTERN
+  pattern_ids:
+    - maintenance_maturity_not_evidenced
+    - maintenance_hidden_value_driver
+    - procurement_vs_maintenance_conflict
+notes:
+  - Maintenance reality is represented both as direct patterns and as measurement strategy consequences.

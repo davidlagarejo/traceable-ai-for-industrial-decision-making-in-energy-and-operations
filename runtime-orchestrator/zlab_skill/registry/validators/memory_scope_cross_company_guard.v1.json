@@ -1,0 +1,17 @@
+{
+  "id": "memory_scope_cross_company_guard",
+  "version": "1.0.0",
+  "validator_name": "MemoryScopeValidator",
+  "scope": "memory_scope",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_text_non_empty",
+  "description": "Future memory records must declare scope before they can be promoted or transferred.",
+  "target_fields": [
+    "scope"
+  ],
+  "message": "Memory record is missing scope.",
+  "tests": [
+    "memory records without explicit scope must be blocked"
+  ]
+}

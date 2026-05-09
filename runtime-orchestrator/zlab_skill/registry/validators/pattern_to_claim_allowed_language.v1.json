@@ -1,0 +1,17 @@
+{
+  "id": "pattern_to_claim_allowed_language",
+  "version": "1.0.0",
+  "validator_name": "PatternToClaimValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_text_non_empty",
+  "description": "A combination must carry bounded allowed language before it can be used downstream.",
+  "target_fields": [
+    "allowed_language"
+  ],
+  "message": "Combination is missing bounded allowed_language.",
+  "tests": [
+    "combination rows without allowed_language must be blocked"
+  ]
+}

@@ -1,0 +1,7 @@
+prompt_section: 20
+registry_equivalence:
+  combination_ids:
+    - warehouse_tariff_boundary_area_combo
+    - manufacturing_support_utility_maintenance_combo
+notes:
+  - Combination specs remain adjudicated and never self-promote to local truth.

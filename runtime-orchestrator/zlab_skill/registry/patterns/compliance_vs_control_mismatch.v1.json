@@ -1,0 +1,102 @@
+{
+  "id": "compliance_vs_control_mismatch",
+  "version": "1.0.0",
+  "name": "Compliance Versus Control Mismatch",
+  "knowledge_type": [
+    "REGULATORY_PHYSICAL_SIGNAL",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "commercial_building",
+    "warehouse_distribution",
+    "industrial_facility",
+    "leased_asset"
+  ],
+  "applicable_industries": [
+    "commercial_real_estate",
+    "logistics",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "regulatory or filing pressure plausible",
+    "control boundary unresolved",
+    "payer and operator may differ"
+  ],
+  "trigger_conditions": [
+    "compliance or filing burden visible",
+    "dominant load-control boundary unresolved",
+    "owner-capture versus operator-control tension plausible"
+  ],
+  "anti_triggers": [
+    "control boundary fully aligned and documented",
+    "single actor captures and controls the dominant variable",
+    "compliance burden immaterial"
+  ],
+  "physical_basis": "Regulatory or filing pressure attaches to a physical system boundary, but the actor facing the pressure may not control the dominant operational variable.",
+  "operational_basis": "Schedules, charging, tenant behavior or process control can sit outside the party carrying the visible compliance burden.",
+  "financial_mechanism": "Compliance pressure can be translated into the wrong retrofit or underwriting logic if control and capture boundaries are misread.",
+  "typical_false_assumption": "The actor facing compliance pressure can automatically capture the value of the required action.",
+  "hypothesis": "Compliance burden may be real while the relevant control boundary remains unresolved, making straightforward owner-side value claims inadmissible.",
+  "rival_hypotheses": [
+    "the same actor controls and captures the dominant variable",
+    "compliance burden is minor relative to operational control",
+    "boundary and metering are already well aligned"
+  ],
+  "evidence_required": [
+    "filing or permit basis",
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator control evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "regulatory or compliance pressure plausible",
+    "control boundary unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "compliance burden evidenced",
+    "control or capture boundary remains misaligned"
+  ],
+  "falsification_conditions": [
+    "single actor clearly controls and captures the dominant variable",
+    "metering and responsibility alignment documented",
+    "compliance burden is economically immaterial"
+  ],
+  "allowed_claim_language": "Compliance pressure may be real while control and capture boundaries remain too unresolved for owner-capture claims.",
+  "prohibited_claim_language": "The owner will capture the compliance-driven savings.",
+  "financial_exposure_if_true": [
+    "compliance exposure ambiguity",
+    "boundary leakage",
+    "wrong retrofit sequencing"
+  ],
+  "financial_exposure_if_false": [
+    "boundary-mismatch framing should be downgraded",
+    "attention can shift to other dominant constraints"
+  ],
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "PROHIBIT_CLAIM"
+  ],
+  "stop_conditions": [
+    "control and capture boundary are bounded enough to rank compliance-driven action"
+  ],
+  "escalation_conditions": [
+    "operator or owner-side lease confirmation required when public evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block owner-capture claims",
+    "block straight-line compliance ROI framing"
+  ],
+  "example_outputs": [
+    "The compliance burden may be real even when the owner does not yet control the dominant efficiency lever."
+  ],
+  "tests": [
+    "building and leased-asset bundles should admit this when compliance pressure and control-boundary ambiguity coexist",
+    "pattern must not become local capture truth without case evidence"
+  ]
+}

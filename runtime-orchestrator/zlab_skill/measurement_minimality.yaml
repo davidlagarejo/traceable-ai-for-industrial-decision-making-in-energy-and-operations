@@ -1,0 +1,8 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: MEASUREMENT_MINIMALITY_RULE
+  pattern_ids:
+    - digital_twin_prematurity
+    - sensor_prematurity
+notes:
+  - These rules govern when the framework must refuse sensors or models before driver discrimination.

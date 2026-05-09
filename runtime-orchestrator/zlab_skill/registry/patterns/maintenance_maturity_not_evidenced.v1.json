@@ -1,0 +1,104 @@
+{
+  "id": "maintenance_maturity_not_evidenced",
+  "version": "1.0.0",
+  "name": "Maintenance Maturity Not Evidenced",
+  "knowledge_type": [
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility",
+    "warehouse_distribution",
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "applicable_industries": [
+    "industrial",
+    "manufacturing",
+    "logistics",
+    "commercial_real_estate",
+    "infrastructure"
+  ],
+  "applicable_contexts": [
+    "maintenance proof absent",
+    "downtime or reliability burden plausible",
+    "utility symptom visible before maintenance maturity is bounded"
+  ],
+  "trigger_conditions": [
+    "maintenance logs, PM proof or downtime history unresolved",
+    "critical equipment or support systems plausible",
+    "site economics could be reliability-sensitive"
+  ],
+  "anti_triggers": [
+    "maintenance maturity evidenced",
+    "preventive program and downtime history are already bounded",
+    "maintenance burden clearly immaterial"
+  ],
+  "physical_basis": "Weak maintenance execution can increase utility intensity, stress equipment and distort the apparent root cause of cost or performance issues.",
+  "operational_basis": "Reactive work orders, poor lubrication, weak PM and missing proof often hide behind what looks like a pure energy problem.",
+  "financial_mechanism": "Downtime, scrap, failure cost and asset stress can dominate economics before direct utility savings do.",
+  "typical_false_assumption": "Visible utility cost is the main problem, so maintenance is secondary.",
+  "hypothesis": "The visible issue may be partly or primarily a maintenance-maturity problem rather than a standalone efficiency problem.",
+  "rival_hypotheses": [
+    "maintenance maturity is already adequate",
+    "utility intensity is structurally rational for the operating duty",
+    "maintenance burden is non-material to economics"
+  ],
+  "evidence_required": [
+    "PM logs",
+    "lubrication records where relevant",
+    "downtime history",
+    "work orders",
+    "critical-spares evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "maintenance maturity unresolved",
+    "reliability-sensitive systems plausible"
+  ],
+  "minimum_evidence_to_confirm": [
+    "maintenance proof is thin or reactive",
+    "downtime or reliability burden aligns with the visible symptom"
+  ],
+  "falsification_conditions": [
+    "maintenance maturity is evidenced",
+    "downtime and work-order history do not support the framing",
+    "reliability burden is immaterial"
+  ],
+  "allowed_claim_language": "Maintenance maturity remains an admissible rival hypothesis that should be bounded before capital is framed as pure efficiency.",
+  "prohibited_claim_language": "This asset is poorly maintained.",
+  "financial_exposure_if_true": [
+    "maintenance downtime exposure",
+    "wrong retrofit sequencing",
+    "CAPEX may target a secondary symptom"
+  ],
+  "financial_exposure_if_false": [
+    "maintenance-first framing should be downgraded",
+    "attention should shift to other dominant variables"
+  ],
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "maintenance maturity is bounded enough to rank its economic relevance"
+  ],
+  "escalation_conditions": [
+    "operator or maintenance-manager confirmation required if documentary proof remains absent"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block maintenance-blame diagnosis",
+    "block energy-only capital logic until maintenance reality is bounded"
+  ],
+  "example_outputs": [
+    "Maintenance may dominate economics before energy does; bound the reliability story before underwriting the retrofit story."
+  ],
+  "tests": [
+    "manufacturing and warehouse cases with thin maintenance evidence should admit this as a rival explanation",
+    "pattern must remain non-diagnostic at L2"
+  ]
+}

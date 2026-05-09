@@ -1,0 +1,102 @@
+{
+  "id": "demand_charge_exposure_unknown",
+  "version": "1.0.0",
+  "name": "Demand Charge Exposure Unknown",
+  "knowledge_type": [
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "cold_chain_distribution",
+    "manufacturing_facility",
+    "infrastructure_node",
+    "commercial_building"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "manufacturing",
+    "commercial_real_estate",
+    "infrastructure"
+  ],
+  "applicable_contexts": [
+    "utility bills or tariff unresolved",
+    "peak-sensitive loads plausible",
+    "cost story may not track annual consumption"
+  ],
+  "trigger_conditions": [
+    "tariff unresolved",
+    "peak-forming loads plausible",
+    "annual consumption may be an incomplete cost proxy"
+  ],
+  "anti_triggers": [
+    "tariff confirms demand charges are immaterial",
+    "flat load profile documented",
+    "peak-sensitive loads negligible"
+  ],
+  "physical_basis": "A site's cost structure can be shaped by when load occurs rather than only by how much annual energy is consumed.",
+  "operational_basis": "Charging, staging, HVAC, refrigeration, process starts or dispatch duty can create concentrated peaks that do not show up in simple intensity metrics.",
+  "financial_mechanism": "Demand charges can make timing and orchestration more important than annual kWh.",
+  "typical_false_assumption": "High energy cost means high energy waste.",
+  "hypothesis": "Demand-charge exposure may be materially affecting cost, so consumption-first framing may be misreading the dominant variable.",
+  "rival_hypotheses": [
+    "annual consumption is the real dominant cost driver",
+    "tariff has little or no demand sensitivity",
+    "peak-forming loads are immaterial"
+  ],
+  "evidence_required": [
+    "utility bills",
+    "tariff schedule",
+    "interval profile if available",
+    "major peak-forming load inventory"
+  ],
+  "minimum_evidence_to_activate": [
+    "tariff unresolved",
+    "peak-forming loads plausible"
+  ],
+  "minimum_evidence_to_confirm": [
+    "bills or tariff show meaningful demand sensitivity",
+    "peak-forming load timing overlaps cost exposure"
+  ],
+  "falsification_conditions": [
+    "no relevant demand charge",
+    "flat profile or low peak concentration",
+    "load mix does not support the framing"
+  ],
+  "allowed_claim_language": "Demand-charge exposure is a plausible financial translation that should be bounded before efficiency-first underwriting.",
+  "prohibited_claim_language": "This asset has demand-charge losses.",
+  "financial_exposure_if_true": [
+    "hidden demand charge exposure",
+    "CAPEX misallocation risk",
+    "wrong retrofit sequencing"
+  ],
+  "financial_exposure_if_false": [
+    "demand-first framing should be downgraded",
+    "attention should shift to rival cost drivers"
+  ],
+  "tad_actions": [
+    "REQUEST_UTILITY_BILLS",
+    "VALIDATE_TARIFF_EXPOSURE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "utility bills and tariff are bounded enough to rank demand sensitivity"
+  ],
+  "escalation_conditions": [
+    "interval data requested only if bills and tariff still leave material ambiguity"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block efficiency-only cost diagnosis",
+    "block ROI framing before tariff validation"
+  ],
+  "example_outputs": [
+    "The cost driver may be peak timing, not annual consumption."
+  ],
+  "tests": [
+    "warehouse and manufacturing acceptance bundles should admit this when tariff and bills remain unresolved",
+    "pattern must stay bounded as a financial translation, not a local diagnosis"
+  ]
+}

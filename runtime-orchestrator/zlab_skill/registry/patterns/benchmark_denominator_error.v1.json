@@ -1,0 +1,100 @@
+{
+  "id": "benchmark_denominator_error",
+  "version": "1.0.0",
+  "name": "Benchmark Denominator Error",
+  "knowledge_type": [
+    "FAIR_COMPARISON_RULE"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "commercial_building",
+    "manufacturing_facility",
+    "industrial_facility"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "commercial_real_estate",
+    "manufacturing",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "peer or benchmark pressure visible",
+    "service or process normalization unresolved",
+    "area or simple intensity metric at risk of misuse"
+  ],
+  "trigger_conditions": [
+    "benchmark or peer comparison under consideration",
+    "throughput, service level, occupancy or process duty unresolved",
+    "simple denominator likely to misstate performance"
+  ],
+  "anti_triggers": [
+    "dominant denominator already normalized",
+    "fair peer set already bounded",
+    "simple denominator is justified by the asset family and duty"
+  ],
+  "physical_basis": "A denominator is only valid if it tracks the physical and operational burden that actually drives energy and cost.",
+  "operational_basis": "Area, occupancy or throughput shortcuts can punish assets for doing the work that gives them value.",
+  "financial_mechanism": "Wrong denominators distort peer valuation, retrofit framing and underwriting logic.",
+  "typical_false_assumption": "Any benchmark is better than no benchmark.",
+  "hypothesis": "The current benchmark denominator may be conceptually invalid for this asset until the dominant burden is normalized.",
+  "rival_hypotheses": [
+    "the chosen denominator is already fair",
+    "benchmark pressure is minor or clearly bounded",
+    "the asset family has a stable valid denominator"
+  ],
+  "evidence_required": [
+    "peer requirement register",
+    "service or throughput proxy",
+    "operating schedule",
+    "control boundary",
+    "asset subtype or duty context"
+  ],
+  "minimum_evidence_to_activate": [
+    "benchmark pressure visible",
+    "dominant denominator unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "required normalization dimensions remain missing"
+  ],
+  "falsification_conditions": [
+    "fair peer set is bounded",
+    "chosen denominator matches the dominant burden",
+    "comparison gate passes"
+  ],
+  "allowed_claim_language": "The current benchmark denominator may be invalid until the dominant burden is normalized.",
+  "prohibited_claim_language": "The benchmark proves this asset is inefficient.",
+  "financial_exposure_if_true": [
+    "wrong peer valuation",
+    "CAPEX misallocation risk",
+    "wrong underwriting premium"
+  ],
+  "financial_exposure_if_false": [
+    "denominator-error framing should be downgraded"
+  ],
+  "tad_actions": [
+    "BUILD_FAIR_PEER_SET",
+    "COMPARE_FAIRLY",
+    "PROHIBIT_CLAIM"
+  ],
+  "stop_conditions": [
+    "dominant denominator is bounded enough for fair comparison"
+  ],
+  "escalation_conditions": [
+    "operator evidence required when public comparability dimensions remain missing"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block peer superiority",
+    "block benchmark-as-local-truth"
+  ],
+  "example_outputs": [
+    "Area may be the wrong denominator."
+  ],
+  "tests": [
+    "warehouse and manufacturing bundles should admit this when simple intensity framing remains unnormalized",
+    "pattern must remain bounded at L2"
+  ]
+}

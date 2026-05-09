@@ -1,0 +1,98 @@
+{
+  "id": "procurement_vs_lifecycle_cost",
+  "version": "1.0.0",
+  "name": "Procurement Versus Lifecycle Cost",
+  "knowledge_type": [
+    "FINANCIAL_TRANSLATION",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "replacement or procurement framing visible",
+    "maintenance reality unresolved",
+    "lifecycle economics plausible"
+  ],
+  "trigger_conditions": [
+    "procurement logic visible",
+    "maintenance or reliability burden unresolved",
+    "lifecycle economics could differ from first-cost logic"
+  ],
+  "anti_triggers": [
+    "lifecycle economics already discriminated",
+    "maintenance maturity already bounded",
+    "replacement remains valid after maintenance review"
+  ],
+  "physical_basis": "Asset stress, weak maintenance and operating discipline can distort the apparent case for replacement or procurement.",
+  "operational_basis": "Teams can optimize for first-cost procurement before they bound lifecycle economics and maintenance reality.",
+  "financial_mechanism": "First-cost procurement can misallocate capital if lifecycle cost is governed by maintenance, downtime or operating discipline.",
+  "typical_false_assumption": "If procurement looks attractive, lifecycle economics must already be bounded.",
+  "hypothesis": "Procurement logic may be outrunning lifecycle-cost discrimination, making replacement-first action premature.",
+  "rival_hypotheses": [
+    "replacement remains the dominant lever after lifecycle review",
+    "maintenance maturity is adequate",
+    "lifecycle penalty is immaterial"
+  ],
+  "evidence_required": [
+    "replacement rationale",
+    "maintenance logs",
+    "downtime history",
+    "failure mode evidence",
+    "lifecycle cost assumptions"
+  ],
+  "minimum_evidence_to_activate": [
+    "procurement framing visible",
+    "lifecycle economics unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "lifecycle economics materially diverge from procurement-first framing",
+    "maintenance or reliability burden remains under-discriminated"
+  ],
+  "falsification_conditions": [
+    "lifecycle economics already bounded",
+    "replacement remains valid after maintenance review",
+    "lifecycle penalty is immaterial"
+  ],
+  "allowed_claim_language": "Procurement may be optimizing the wrong variable if lifecycle cost has not yet been bounded.",
+  "prohibited_claim_language": "The right answer is equipment replacement.",
+  "financial_exposure_if_true": [
+    "CAPEX misallocation risk",
+    "wrong retrofit sequencing",
+    "maintenance downtime exposure"
+  ],
+  "financial_exposure_if_false": [
+    "procurement-versus-lifecycle conflict should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET",
+    "REDESIGN_HYPOTHESIS"
+  ],
+  "stop_conditions": [
+    "procurement and lifecycle-cost logic are bounded enough to rank the dominant lever"
+  ],
+  "escalation_conditions": [
+    "operations or maintenance leadership confirmation required if lifecycle evidence remains thin"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block replacement-first claims",
+    "block procurement-driven ROI framing without lifecycle discrimination"
+  ],
+  "example_outputs": [
+    "Procurement may be optimizing first cost before lifecycle cost is bounded."
+  ],
+  "tests": [
+    "manufacturing acceptance bundle should activate this when procurement logic appears before lifecycle economics are bounded",
+    "pattern must remain bounded at L2"
+  ]
+}

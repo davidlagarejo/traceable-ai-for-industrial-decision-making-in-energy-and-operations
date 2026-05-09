@@ -1,0 +1,25 @@
+{
+  "id": "contradiction_memory_company_confined",
+  "version": "1.0.0",
+  "memory_type": "contradiction_memory",
+  "name": "Contradiction Memory Company Confined",
+  "description": "Contradiction memory preserves unresolved or recurrent conflicts within the same company scope to prioritize boundary resolution.",
+  "admissibility_scope": "company_confined",
+  "transfer_rule": "same_company_only",
+  "evidence_ceiling": "L2",
+  "use_mode": "context_only",
+  "truth_promotion_allowed": false,
+  "reversible": true,
+  "default_priority_effect": "prioritize_contradiction_resolution",
+  "required_record_fields": [
+    "company_id",
+    "contradiction_tags",
+    "source_refs",
+    "reason",
+    "scope"
+  ],
+  "tests": [
+    "contradiction memory must be blocked for another company",
+    "contradiction memory must remain hypothesis-and-boundary context only"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "manufacturing_support_utility_maintenance_combo",
+  "version": "1.0.0",
+  "name": "Manufacturing Support Utility Maintenance Combination",
+  "pattern_ids": [
+    "compressed_air_leak_plausibility",
+    "maintenance_maturity_not_evidenced",
+    "reactive_power_exposure"
+  ],
+  "trigger_logic": [
+    "manufacturing or industrial asset family active",
+    "support utility losses plausible",
+    "maintenance maturity unresolved",
+    "tariff or power-quality burden unresolved"
+  ],
+  "anti_triggers": [
+    "compressed air immaterial",
+    "maintenance maturity already evidenced",
+    "power factor or tariff exposure already falsified"
+  ],
+  "combined_hypothesis": "The visible energy problem may be a support-utility and maintenance problem before it is a generic production-efficiency problem.",
+  "strategic_risk": "Capital can target production-side replacement while the real value leak remains in support-utility management, maintenance discipline and hidden tariff exposure.",
+  "minimum_evidence": [
+    "utility bills and tariff",
+    "compressed air system evidence",
+    "maintenance logs",
+    "downtime history",
+    "pressure setpoints or sequencing evidence"
+  ],
+  "financial_exposure": [
+    "CAPEX misallocation risk",
+    "maintenance downtime exposure",
+    "tariff exposure hidden"
+  ],
+  "tad_action": "VALIDATE_MAINTENANCE_REALITY + VALIDATE_TARIFF_EXPOSURE + VALIDATE_LOSS_PATTERN + DO_NOT_INVEST_YET",
+  "prohibited_claims": [
+    "generic plant inefficiency",
+    "replacement-first underwriting",
+    "roi claim without maintenance and tariff discrimination"
+  ],
+  "allowed_language": "A bounded strategic framing is admissible: the economics may sit in support-utility control, maintenance discipline and tariff exposure before production-side CAPEX.",
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "adjudication_required": true,
+  "tests": [
+    "manufacturing bundles should surface this combination when compressed air, maintenance and reactive exposure remain unresolved",
+    "combination must require run-level adjudication before downstream strategic use"
+  ]
+}

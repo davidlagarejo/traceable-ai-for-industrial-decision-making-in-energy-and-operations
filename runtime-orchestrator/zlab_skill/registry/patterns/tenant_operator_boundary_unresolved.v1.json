@@ -1,0 +1,100 @@
+{
+  "id": "tenant_operator_boundary_unresolved",
+  "version": "1.0.0",
+  "name": "Tenant or Operator Boundary Unresolved",
+  "knowledge_type": [
+    "FAIR_COMPARISON_RULE",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "commercial_building",
+    "warehouse_distribution",
+    "leased_asset",
+    "industrial_facility"
+  ],
+  "applicable_industries": [
+    "commercial_real_estate",
+    "logistics",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "leased or multi-party asset plausible",
+    "payer/operator split unresolved",
+    "owner-capture claims under consideration"
+  ],
+  "trigger_conditions": [
+    "tenant or operator may control dominant loads",
+    "metering or responsibility boundary unresolved",
+    "owner-side value framing plausible"
+  ],
+  "anti_triggers": [
+    "single actor clearly controls and captures the dominant variable",
+    "lease and metering boundary fully aligned",
+    "tenant or operator boundary immaterial"
+  ],
+  "physical_basis": "A physical system boundary can sit under one actor's control while another actor carries the visible utility or compliance burden.",
+  "operational_basis": "Schedules, docks, charging, tenant behavior or process decisions may be controlled by someone other than the capital provider.",
+  "financial_mechanism": "Savings or compliance value may leak across contractual and metering boundaries.",
+  "typical_false_assumption": "The party funding improvement automatically controls and captures the dominant variable.",
+  "hypothesis": "Tenant or operator boundary ambiguity may make owner-capturable value claims inadmissible until control and capture are bounded.",
+  "rival_hypotheses": [
+    "the same actor controls and captures the dominant variable",
+    "boundary ambiguity is economically immaterial",
+    "metering and responsibility already align"
+  ],
+  "evidence_required": [
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator agreement",
+    "maintenance responsibility"
+  ],
+  "minimum_evidence_to_activate": [
+    "multi-party control plausible",
+    "boundary unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "responsibility and control remain misaligned after review"
+  ],
+  "falsification_conditions": [
+    "single actor controls and captures the variable",
+    "lease and meter map fully align",
+    "boundary ambiguity proves immaterial"
+  ],
+  "allowed_claim_language": "The tenant or operator boundary must be resolved before owner-capture or clean peer logic is admissible.",
+  "prohibited_claim_language": "The owner will capture the value.",
+  "financial_exposure_if_true": [
+    "boundary leakage",
+    "operational savings not capturable",
+    "wrong underwriting premium"
+  ],
+  "financial_exposure_if_false": [
+    "boundary-first framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "PROHIBIT_CLAIM",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "control and capture boundary are bounded enough to rank owner-side admissibility"
+  ],
+  "escalation_conditions": [
+    "operator or owner confirmation required when public evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block owner-capture claims",
+    "block peer-superiority framing when boundary drives comparability"
+  ],
+  "example_outputs": [
+    "If the operator controls the driver while another party pays, value may leak before it reaches the balance sheet."
+  ],
+  "tests": [
+    "leased or operator-driven assets should admit this when boundary evidence is unresolved",
+    "pattern must remain bounded at L2"
+  ]
+}

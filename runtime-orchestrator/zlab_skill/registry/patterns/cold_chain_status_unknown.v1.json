@@ -1,0 +1,94 @@
+{
+  "id": "cold_chain_status_unknown",
+  "version": "1.0.0",
+  "name": "Cold Chain Status Unknown",
+  "knowledge_type": [
+    "ASSET_ARCHETYPE",
+    "FAIR_COMPARISON_RULE"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "cold_chain_distribution",
+    "logistics_hub"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "warehousing",
+    "distribution"
+  ],
+  "applicable_contexts": [
+    "warehouse subtype unresolved",
+    "temperature-control status unresolved"
+  ],
+  "trigger_conditions": [
+    "warehouse-like asset family",
+    "cold-chain vs dry status unresolved"
+  ],
+  "anti_triggers": [
+    "dry-only or refrigerated status already bounded with evidence"
+  ],
+  "physical_basis": "Cold-chain duty changes refrigeration load, infiltration sensitivity, peak profile and operating economics.",
+  "operational_basis": "Dry warehouse, cold-chain, fulfillment and cross-dock nodes differ materially in service design and energy drivers.",
+  "financial_mechanism": "Misclassifying the asset family can corrupt comparison, underwriting and dominant-variable selection.",
+  "typical_false_assumption": "All warehouse-family assets are comparable enough for one benchmark logic.",
+  "hypothesis": "Cold-chain status is not a detail; it may change the asset family and the valid comparison basis.",
+  "rival_hypotheses": [
+    "the site is dry-only",
+    "temperature-controlled duty is immaterial",
+    "asset family classification is already adequate"
+  ],
+  "evidence_required": [
+    "listing or brochure evidence",
+    "operator page",
+    "permit or equipment evidence",
+    "refrigerated footprint if present",
+    "temperature-zone description"
+  ],
+  "minimum_evidence_to_activate": [
+    "warehouse-family asset",
+    "cold-chain status unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "refrigerated or temperature-controlled duty observed"
+  ],
+  "falsification_conditions": [
+    "dry-only status bounded",
+    "no refrigerated or temperature-controlled duty evidenced"
+  ],
+  "allowed_claim_language": "Cold-chain status remains a structurally important classification question and can change the valid asset family.",
+  "prohibited_claim_language": "This asset is cold-chain.",
+  "financial_exposure_if_true": [
+    "wrong peer valuation",
+    "wrong denominator error",
+    "wrong dominant-variable selection"
+  ],
+  "financial_exposure_if_false": [
+    "cold-chain-specific framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_DRY_VS_COLD_CHAIN",
+    "BUILD_FAIR_PEER_SET",
+    "PROHIBIT_GENERIC_WAREHOUSE_COMPARISON"
+  ],
+  "stop_conditions": [
+    "dry vs cold-chain status bounded"
+  ],
+  "escalation_conditions": [
+    "operator confirmation required if public evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block generic warehouse peer comparison",
+    "block asset-family closure without evidence"
+  ],
+  "example_outputs": [
+    "Cold-chain status is not a detail. It changes the asset family."
+  ],
+  "tests": [
+    "warehouse acceptance bundle should activate this when subtype and temperature-control status remain unresolved"
+  ]
+}

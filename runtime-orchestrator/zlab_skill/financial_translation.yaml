@@ -1,0 +1,10 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: FINANCIAL_TRANSLATION
+  pattern_ids:
+    - value_boundary_leakage_owner_operator
+    - reactive_power_exposure
+    - demand_charge_exposure_unknown
+    - procurement_vs_lifecycle_cost
+notes:
+  - Runtime also derives governed exposure categories in motor_053 from these registry priors.

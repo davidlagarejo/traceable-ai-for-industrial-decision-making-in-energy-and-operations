@@ -1,0 +1,17 @@
+{
+  "id": "report_diversity_template_contamination",
+  "version": "1.0.0",
+  "validator_name": "ReportDiversityValidator",
+  "scope": "report_output",
+  "enabled": true,
+  "severity": "warning",
+  "rule_type": "required_text_non_empty",
+  "description": "Future report-diversity checks must emit a scenario signature before repetitive output can be assessed.",
+  "target_fields": [
+    "scenario_signature"
+  ],
+  "message": "Report output is missing scenario_signature for diversity validation.",
+  "tests": [
+    "report-output records without scenario_signature should surface a diversity warning"
+  ]
+}

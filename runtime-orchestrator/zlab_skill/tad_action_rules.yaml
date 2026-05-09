@@ -1,0 +1,7 @@
+prompt_section: 20
+registry_equivalence:
+  source_registers:
+    - motor_054.skill_expanded_tad_action_register
+    - motor_054.authoritative_tad_action_register
+notes:
+  - Strategic TAD is registry-first even when legacy TAD remains as bounded shadow coverage.

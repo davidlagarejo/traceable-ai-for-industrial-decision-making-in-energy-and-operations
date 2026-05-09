@@ -1,0 +1,17 @@
+{
+  "id": "fair_comparison_prohibited_claims",
+  "version": "1.0.0",
+  "validator_name": "FairComparisonValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_list_non_empty",
+  "description": "A combination must declare prohibited claims so peer and benchmark shortcuts remain bounded.",
+  "target_fields": [
+    "prohibited_claims"
+  ],
+  "message": "Combination is missing prohibited_claims constraints.",
+  "tests": [
+    "combination rows without prohibited_claims must be blocked"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "maintenance_hidden_value_driver",
+  "version": "1.0.0",
+  "name": "Maintenance Hidden Value Driver",
+  "knowledge_type": [
+    "MAINTENANCE_REALITY_PATTERN",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "manufacturing_facility",
+    "industrial_facility"
+  ],
+  "applicable_industries": [
+    "manufacturing",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "maintenance proof unresolved",
+    "downtime or reliability economics plausible",
+    "energy symptom visible before maintenance reality is bounded"
+  ],
+  "trigger_conditions": [
+    "maintenance evidence unresolved",
+    "critical production or support systems plausible",
+    "downtime economics could dominate"
+  ],
+  "anti_triggers": [
+    "maintenance maturity already evidenced",
+    "downtime burden immaterial",
+    "maintenance reality already discriminated"
+  ],
+  "physical_basis": "Weak maintenance execution can elevate load, stress assets and create repeated failures that look like pure energy issues.",
+  "operational_basis": "Maintenance reality can dominate plant economics before direct utility savings do.",
+  "financial_mechanism": "Downtime, scrap, failure cost and reliability erosion can outweigh straightforward efficiency logic.",
+  "typical_false_assumption": "If energy cost is visible, maintenance is secondary.",
+  "hypothesis": "Maintenance may be a hidden value driver that dominates economics before energy does.",
+  "rival_hypotheses": [
+    "maintenance maturity is already adequate",
+    "energy intensity is structurally rational",
+    "maintenance burden is immaterial"
+  ],
+  "evidence_required": [
+    "maintenance logs",
+    "downtime history",
+    "work orders",
+    "critical-spares evidence",
+    "failure mode evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "maintenance proof unresolved",
+    "downtime-sensitive systems plausible"
+  ],
+  "minimum_evidence_to_confirm": [
+    "maintenance weakness materially explains the burden",
+    "downtime economics are non-trivial"
+  ],
+  "falsification_conditions": [
+    "maintenance maturity is evidenced",
+    "downtime burden is immaterial",
+    "maintenance reality does not explain the visible symptom"
+  ],
+  "allowed_claim_language": "Maintenance may dominate economics before energy does and should be bounded as a rival explanation.",
+  "prohibited_claim_language": "The plant is badly maintained.",
+  "financial_exposure_if_true": [
+    "maintenance downtime exposure",
+    "wrong retrofit sequencing",
+    "CAPEX may target a secondary symptom"
+  ],
+  "financial_exposure_if_false": [
+    "maintenance-first framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "maintenance economics are bounded enough to rank their materiality"
+  ],
+  "escalation_conditions": [
+    "maintenance leadership confirmation required if documentary proof remains thin"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block energy-only diagnosis",
+    "block maintenance-blame diagnosis"
+  ],
+  "example_outputs": [
+    "Maintenance may dominate economics before energy does."
+  ],
+  "tests": [
+    "manufacturing acceptance bundle should admit this when maintenance proof remains unresolved",
+    "pattern must remain bounded at L2"
+  ]
+}

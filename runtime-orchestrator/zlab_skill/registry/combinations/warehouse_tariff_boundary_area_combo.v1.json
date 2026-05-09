@@ -1,0 +1,54 @@
+{
+  "id": "warehouse_tariff_boundary_area_combo",
+  "version": "1.0.0",
+  "name": "Warehouse Tariff Boundary Area Combination",
+  "pattern_ids": [
+    "warehouse_mhe_charging_demand_peak",
+    "value_boundary_leakage_owner_operator",
+    "fair_comparison_invalid_area_metric"
+  ],
+  "trigger_logic": [
+    "logistics asset family active",
+    "tariff and charging remain unbounded",
+    "owner/operator boundary remains unresolved",
+    "area-based comparison pressure exists"
+  ],
+  "anti_triggers": [
+    "charging profile bounded and immaterial",
+    "control boundary fully aligned",
+    "fair peer set already normalized"
+  ],
+  "combined_hypothesis": "Even if visible energy cost is high, the real issue may be operator-controlled demand orchestration under an invalid denominator rather than an owner-capturable efficiency opportunity.",
+  "strategic_risk": "Capital can be underwritten against the wrong variable, the wrong denominator and the wrong value-capture boundary at the same time.",
+  "minimum_evidence": [
+    "utility bills and tariff",
+    "charging schedule",
+    "MHE inventory",
+    "lease responsibility matrix",
+    "meter boundary",
+    "dock density and service-level profile"
+  ],
+  "financial_exposure": [
+    "CAPEX misallocation risk",
+    "tariff exposure hidden",
+    "boundary leakage",
+    "wrong peer valuation"
+  ],
+  "tad_action": "BUILD FAIR PEER SET + VALIDATE TARIFF EXPOSURE + VALIDATE CONTROL BOUNDARY + PROHIBIT ROI",
+  "prohibited_claims": [
+    "peer superiority",
+    "generic warehouse EUI inefficiency",
+    "owner-capturable ROI",
+    "generic efficiency retrofit underwriting"
+  ],
+  "allowed_language": "A bounded strategic framing is admissible: the cost story may be tariff- and boundary-driven while area remains the wrong comparison basis.",
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "adjudication_required": true,
+  "tests": [
+    "warehouse acceptance bundle should surface this combination candidate when tariff, boundary and comparison remain unresolved",
+    "combination must require run-level adjudication before downstream strategic use"
+  ]
+}

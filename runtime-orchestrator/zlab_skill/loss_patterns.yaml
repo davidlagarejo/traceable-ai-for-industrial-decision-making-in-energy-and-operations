@@ -1,0 +1,15 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: LOSS_PATTERN
+  pattern_ids:
+    - warehouse_mhe_charging_demand_peak
+    - warehouse_dock_infiltration_loss
+    - reactive_power_exposure
+    - compressed_air_leak_plausibility
+    - high_bay_lighting_waste
+    - steam_trap_failure_plausibility
+    - boiler_degradation_plausibility
+    - chiller_degradation_plausibility
+    - demand_charge_exposure_unknown
+notes:
+  - Loss-pattern priors remain capped at L2 until case evidence arrives.

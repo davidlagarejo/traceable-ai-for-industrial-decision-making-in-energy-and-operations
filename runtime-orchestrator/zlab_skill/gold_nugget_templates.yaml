@@ -1,0 +1,11 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: GOLD_NUGGET_TEMPLATE
+  pattern_ids:
+    - warehouse_mhe_charging_demand_peak
+    - warehouse_dock_infiltration_loss
+    - digital_twin_prematurity
+    - process_load_vs_waste
+    - maintenance_hidden_value_driver
+notes:
+  - Gold nuggets are rendered from registry priors, combinations, and governed TAD posture.

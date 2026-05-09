@@ -1,0 +1,8 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: FAIR_COMPARISON_RULE
+  pattern_ids:
+    - fair_comparison_invalid_area_metric
+    - benchmark_denominator_error
+notes:
+  - Fair comparison remains gated in motor_051 and translated into sovereign registry-first activation rows.

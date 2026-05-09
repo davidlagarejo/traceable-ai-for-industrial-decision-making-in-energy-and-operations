@@ -1,0 +1,100 @@
+{
+  "id": "high_bay_lighting_waste",
+  "version": "1.0.0",
+  "name": "High-Bay Lighting Waste",
+  "knowledge_type": [
+    "LOSS_PATTERN"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "logistics_hub",
+    "large_commercial_building"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "warehousing",
+    "commercial_real_estate"
+  ],
+  "applicable_contexts": [
+    "high-bay floor area plausible",
+    "long runtime or intermittent occupancy plausible",
+    "lighting controls maturity unresolved"
+  ],
+  "trigger_conditions": [
+    "high-bay lighting inventory or large open floor area plausible",
+    "runtime may exceed service windows",
+    "controls strategy or zoning unresolved"
+  ],
+  "anti_triggers": [
+    "lighting already aligned to occupancy",
+    "continuous lighting is operationally required and evidenced",
+    "high-bay area negligible",
+    "advanced lighting controls confirmed and functioning"
+  ],
+  "physical_basis": "Large high-bay spaces can accumulate avoidable lighting runtime when schedule, zoning and occupancy are not aligned.",
+  "operational_basis": "Crude schedules, overrides or weak zoning can keep large lighting loads active outside productive or service-relevant windows.",
+  "financial_mechanism": "Lighting runtime can add avoidable kWh and sometimes peak contribution, creating a misleading whole-building efficiency story.",
+  "typical_false_assumption": "If lighting is visible, the right answer is immediate fixture CAPEX.",
+  "hypothesis": "High-bay lighting runtime or controls drift may create avoidable load before equipment-replacement logic is justified.",
+  "rival_hypotheses": [
+    "runtime is already aligned to occupancy and service windows",
+    "lighting is non-material relative to charging, HVAC or process duty",
+    "continuous illumination is operationally necessary"
+  ],
+  "evidence_required": [
+    "lighting type and zoning",
+    "controls strategy",
+    "occupied versus lit schedule",
+    "bay or area usage profile"
+  ],
+  "minimum_evidence_to_activate": [
+    "high-bay area plausible",
+    "runtime or controls unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "runtime materially exceeds occupied or service-relevant hours",
+    "controls absence, bypass or drift evidenced"
+  ],
+  "falsification_conditions": [
+    "lighting schedules align to occupancy",
+    "lighting already zoned and controlled to actual use",
+    "service duty requires continuous illumination"
+  ],
+  "allowed_claim_language": "High-bay lighting waste is a plausible hypothesis requiring schedule and controls validation.",
+  "prohibited_claim_language": "This asset is wasting energy through high-bay lighting.",
+  "financial_exposure_if_true": [
+    "lighting CAPEX sequencing may be misread",
+    "controls-first action may outperform equipment-first action"
+  ],
+  "financial_exposure_if_false": [
+    "lighting-first framing should be downgraded",
+    "attention should shift to rival drivers"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "lighting runtime and controls maturity are bounded enough to rank the hypothesis"
+  ],
+  "escalation_conditions": [
+    "operator schedule confirmation required if public evidence remains thin"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block local waste diagnosis",
+    "block fixture-replacement recommendation without runtime evidence"
+  ],
+  "example_outputs": [
+    "Before replacing fixtures, determine whether lighting runtime is actually following occupancy and service windows."
+  ],
+  "tests": [
+    "warehouse and logistics cases with large high-bay area should admit this as a bounded loss hypothesis",
+    "no direct local-loss statement allowed without case evidence"
+  ]
+}

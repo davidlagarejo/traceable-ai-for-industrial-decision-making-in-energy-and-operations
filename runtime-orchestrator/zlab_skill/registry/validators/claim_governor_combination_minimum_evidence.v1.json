@@ -1,0 +1,17 @@
+{
+  "id": "claim_governor_combination_minimum_evidence",
+  "version": "1.0.0",
+  "validator_name": "ClaimGovernorValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_list_non_empty",
+  "description": "A combination cannot harden strategic use if it does not declare minimum evidence.",
+  "target_fields": [
+    "minimum_evidence"
+  ],
+  "message": "Combination is missing minimum_evidence.",
+  "tests": [
+    "combination rows without minimum_evidence must be blocked"
+  ]
+}

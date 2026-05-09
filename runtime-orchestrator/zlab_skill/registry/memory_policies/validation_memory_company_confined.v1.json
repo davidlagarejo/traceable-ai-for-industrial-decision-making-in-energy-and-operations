@@ -1,0 +1,25 @@
+{
+  "id": "validation_memory_company_confined",
+  "version": "1.0.0",
+  "memory_type": "validation_memory",
+  "name": "Validation Memory Company Confined",
+  "description": "Validation and falsification outcomes from prior cases remain company-confined and may only reprioritize what to test next.",
+  "admissibility_scope": "company_confined",
+  "transfer_rule": "same_company_only",
+  "evidence_ceiling": "L2",
+  "use_mode": "priority_only",
+  "truth_promotion_allowed": false,
+  "reversible": true,
+  "default_priority_effect": "prioritize_same_company_falsification",
+  "required_record_fields": [
+    "company_id",
+    "validation_outcome",
+    "source_refs",
+    "reason",
+    "scope"
+  ],
+  "tests": [
+    "validation memory must be blocked cross-company",
+    "validation memory can raise test priority but not certainty"
+  ]
+}

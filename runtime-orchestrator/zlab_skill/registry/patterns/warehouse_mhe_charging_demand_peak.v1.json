@@ -1,0 +1,112 @@
+{
+  "id": "warehouse_mhe_charging_demand_peak",
+  "version": "1.0.0",
+  "name": "Warehouse MHE Charging Demand Peak",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "cold_chain_distribution",
+    "logistics_hub"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "warehousing",
+    "distribution"
+  ],
+  "applicable_contexts": [
+    "electric material handling plausible",
+    "tariff unknown or demand-sensitive",
+    "operating schedule unknown",
+    "charging profile unknown"
+  ],
+  "trigger_conditions": [
+    "asset_type compatible with warehouse/logistics",
+    "electric MHE is plausible",
+    "tariff or demand-charge exposure remains unbounded"
+  ],
+  "anti_triggers": [
+    "no electric MHE confirmed",
+    "charging handled off-site",
+    "no demand-sensitive tariff",
+    "negligible MHE charging load confirmed"
+  ],
+  "physical_basis": "Electric MHE charging can create concentrated kW peaks without requiring extreme annual kWh.",
+  "operational_basis": "Charging often clusters around shift transitions, return-to-dock windows or overnight staging.",
+  "financial_mechanism": "Demand charges can make charging timing economically more material than total annual consumption.",
+  "typical_false_assumption": "High electricity cost implies generic energy waste.",
+  "hypothesis": "Electricity cost may be driven by MHE charging peaks rather than annual consumption intensity.",
+  "rival_hypotheses": [
+    "HVAC or refrigeration dominates cost",
+    "lighting dominates cost",
+    "annual consumption is the main cost driver",
+    "tariff demand is not economically material"
+  ],
+  "evidence_required": [
+    "utility bills with demand charges",
+    "tariff schedule",
+    "MHE inventory",
+    "charging schedule",
+    "interval load profile if available"
+  ],
+  "minimum_evidence_to_activate": [
+    "warehouse or logistics asset type",
+    "MHE plausible",
+    "tariff exposure unknown"
+  ],
+  "minimum_evidence_to_confirm": [
+    "utility bills show demand charges",
+    "charging windows overlap or shape peak demand",
+    "MHE charging load is material"
+  ],
+  "falsification_conditions": [
+    "no electric MHE",
+    "no relevant demand charge",
+    "flat interval profile unrelated to charging windows",
+    "MHE charging load negligible"
+  ],
+  "allowed_claim_language": "MHE charging demand exposure is structurally plausible and should be falsified before annual energy use is treated as the dominant issue.",
+  "prohibited_claim_language": "This warehouse has demand losses from MHE charging.",
+  "financial_exposure_if_true": [
+    "energy CAPEX may target the wrong variable",
+    "tariff orchestration may matter more than generic efficiency CAPEX",
+    "retrofit economics may be overstated if demand dominates"
+  ],
+  "financial_exposure_if_false": [
+    "demand-driven framing should be downgraded",
+    "cost driver attention should shift back to alternative rival hypotheses"
+  ],
+  "tad_actions": [
+    "REQUEST_UTILITY_BILLS",
+    "VALIDATE_TARIFF_EXPOSURE",
+    "VALIDATE_CHARGING_PROFILE",
+    "DO_NOT_UNDERWRITE_ENERGY_RETROFIT_YET"
+  ],
+  "stop_conditions": [
+    "tariff exposure bounded with bills and tariff",
+    "charging profile bounded enough to rank the hypothesis"
+  ],
+  "escalation_conditions": [
+    "operator charging schedule needed after public search failure",
+    "interval data requested if bills alone are insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block generic efficiency-first framing",
+    "block ROI closure",
+    "block premature peer superiority language"
+  ],
+  "example_outputs": [
+    "If charging drives peak demand, this is a tariff orchestration problem disguised as energy waste."
+  ],
+  "tests": [
+    "warehouse acceptance bundle should activate this as plausible when tariff and charging are unknown",
+    "no local diagnosis language allowed without case evidence"
+  ]
+}

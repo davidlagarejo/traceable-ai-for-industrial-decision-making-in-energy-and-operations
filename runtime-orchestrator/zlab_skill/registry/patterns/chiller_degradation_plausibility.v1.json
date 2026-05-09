@@ -1,0 +1,101 @@
+{
+  "id": "chiller_degradation_plausibility",
+  "version": "1.0.0",
+  "name": "Chiller Degradation Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "commercial_building",
+    "large_commercial_building",
+    "industrial_facility",
+    "cold_chain_distribution"
+  ],
+  "applicable_industries": [
+    "commercial_real_estate",
+    "industrial",
+    "logistics"
+  ],
+  "applicable_contexts": [
+    "central cooling or refrigeration duty plausible",
+    "maintenance evidence unresolved",
+    "cooling economics visible"
+  ],
+  "trigger_conditions": [
+    "chiller or central cooling system plausible",
+    "maintenance or performance evidence absent",
+    "runtime or load profile unresolved"
+  ],
+  "anti_triggers": [
+    "no chiller or central cooling system",
+    "performance evidence shows strong operation",
+    "cooling is non-material to visible economics"
+  ],
+  "physical_basis": "Chillers can degrade through fouling, controls drift, poor sequencing, low delta-T, or weak maintenance execution.",
+  "operational_basis": "Central cooling systems can be kept online in inefficient sequences or degraded states that are mistaken for unavoidable load.",
+  "financial_mechanism": "Cooling cost and peak demand can be misread if degradation is assumed or ignored without performance evidence.",
+  "typical_false_assumption": "Visible cooling load automatically means the chiller is the main problem or definitely the right retrofit target.",
+  "hypothesis": "Chiller degradation or poor sequencing may be materially affecting cost and should be falsified before equipment-first capital logic.",
+  "rival_hypotheses": [
+    "chiller performance is already adequate",
+    "load is structurally driven by occupancy, weather or process duty",
+    "another subsystem dominates the visible economics"
+  ],
+  "evidence_required": [
+    "maintenance history",
+    "runtime or sequence evidence",
+    "approach temperatures or delta-T evidence if available",
+    "cooling-load context",
+    "utility bills"
+  ],
+  "minimum_evidence_to_activate": [
+    "chiller plausible",
+    "performance evidence unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "maintenance or runtime evidence indicates degradation or weak sequencing",
+    "cooling economics are materially relevant"
+  ],
+  "falsification_conditions": [
+    "performance evidence shows good operation",
+    "sequence and maintenance are already bounded",
+    "cooling cost is structurally explained elsewhere"
+  ],
+  "allowed_claim_language": "Chiller degradation is a plausible cooling-loss hypothesis requiring sequence and maintenance validation.",
+  "prohibited_claim_language": "This site has an inefficient chiller.",
+  "financial_exposure_if_true": [
+    "cooling CAPEX may target the wrong variable or wrong sequence",
+    "maintenance and controls action may outrank equipment replacement"
+  ],
+  "financial_exposure_if_false": [
+    "chiller-first framing should be downgraded",
+    "attention should shift to schedule, envelope or process rivals"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "performance and maintenance evidence are bounded enough to rank the hypothesis"
+  ],
+  "escalation_conditions": [
+    "field or BAS review required only if documentary evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block local chiller-inefficiency diagnosis",
+    "block replacement-first logic without discrimination"
+  ],
+  "example_outputs": [
+    "Before funding chiller replacement, determine whether sequence, fouling or weak maintenance is the real cooling problem."
+  ],
+  "tests": [
+    "building and cooling-intensive cases should admit this when chiller evidence is unresolved",
+    "pattern must stay bounded at L2"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "licensed_research_public_technical_priors",
+  "version": "1.0.0",
+  "source_family": "licensed_and_public_technical_priors",
+  "providers": [
+    "Scopus",
+    "Elsevier",
+    "IEEE",
+    "Springer",
+    "ASHRAE",
+    "DOE",
+    "EPA"
+  ],
+  "access_model": "licensed_plus_public",
+  "provenance_requirements": [
+    "record DOI or stable provider URL",
+    "record provider name and retrieval date",
+    "store local file hash when PDF or HTML snapshot is captured",
+    "keep licensed full text outside Git",
+    "link each extract to one source-basis record and one extraction record"
+  ],
+  "allowed_use": [
+    "asset-family process understanding",
+    "pattern priors",
+    "minimum-evidence design",
+    "fair-comparison priors",
+    "financial-translation priors"
+  ],
+  "prohibited_use": [
+    "local diagnosis",
+    "local savings closure",
+    "ROI closure",
+    "proof of current site-specific operating truth"
+  ],
+  "evidence_ceiling": "L2",
+  "extraction_rules": [
+    "extract structural pattern claims only as falsifiable priors",
+    "extract anti-triggers and falsification conditions explicitly",
+    "do not paraphrase literature into local truth",
+    "preserve source-to-pattern provenance"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "report_output_template_contamination_guard",
+  "version": "1.0.0",
+  "validator_name": "ReportDiversityValidator",
+  "scope": "report_output",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "allowed_values",
+  "description": "Report output must remain case-specific and free of template contamination before publication surfaces are treated as admissible.",
+  "target_fields": [
+    "template_contamination_state"
+  ],
+  "allowed_values": [
+    "clear"
+  ],
+  "message": "Report output remains template-contaminated and cannot be treated as case-specific.",
+  "tests": [
+    "report-output records with contaminated template state should be blocked",
+    "report-output records with clear template state should pass diversity validation"
+  ]
+}

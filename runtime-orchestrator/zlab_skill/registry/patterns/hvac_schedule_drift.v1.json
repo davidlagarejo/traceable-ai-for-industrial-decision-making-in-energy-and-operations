@@ -1,0 +1,98 @@
+{
+  "id": "hvac_schedule_drift",
+  "version": "1.0.0",
+  "name": "HVAC Schedule Drift",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "PROCESS_LOGIC"
+  ],
+  "asset_types": [
+    "commercial_building",
+    "warehouse_distribution",
+    "large_commercial_building"
+  ],
+  "applicable_industries": [
+    "commercial_real_estate",
+    "logistics"
+  ],
+  "applicable_contexts": [
+    "HVAC runtime plausible",
+    "occupancy or service schedule unresolved",
+    "controls maturity unresolved"
+  ],
+  "trigger_conditions": [
+    "HVAC runtime may exceed actual occupied or service-relevant windows",
+    "BMS or controls evidence unresolved",
+    "after-hours load plausible"
+  ],
+  "anti_triggers": [
+    "runtime already aligned to occupancy and service windows",
+    "HVAC systems are minor or not owner-controlled",
+    "schedule evidence shows no meaningful drift"
+  ],
+  "physical_basis": "HVAC systems consume energy whenever conditioning persists beyond the real occupied or service-relevant boundary.",
+  "operational_basis": "Schedules, overrides and weak controls governance can keep HVAC active outside useful windows.",
+  "financial_mechanism": "Runtime drift can inflate consumption and sometimes demand, while also misleading analysts toward equipment-first narratives.",
+  "typical_false_assumption": "If HVAC energy is high, equipment inefficiency must be the primary issue.",
+  "hypothesis": "Schedule drift or after-hours HVAC runtime may be creating avoidable load before deeper retrofit logic is justified.",
+  "rival_hypotheses": [
+    "runtime is already aligned to real duty",
+    "HVAC is not economically dominant",
+    "after-hours conditioning is operationally justified"
+  ],
+  "evidence_required": [
+    "BMS trend logs",
+    "occupied or service schedule",
+    "runtime profile",
+    "override or control strategy evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "HVAC plausible",
+    "schedule or controls unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "runtime materially exceeds occupied or service-relevant windows",
+    "controls evidence supports drift or weak scheduling"
+  ],
+  "falsification_conditions": [
+    "runtime aligns to occupied or service-relevant windows",
+    "after-hours conditioning is justified by real duty",
+    "HVAC is not materially relevant"
+  ],
+  "allowed_claim_language": "HVAC schedule drift is a plausible hypothesis requiring runtime and schedule validation.",
+  "prohibited_claim_language": "This asset has HVAC schedule waste.",
+  "financial_exposure_if_true": [
+    "controls-first action may outrank equipment CAPEX",
+    "consumption and demand can be misframed as equipment inefficiency"
+  ],
+  "financial_exposure_if_false": [
+    "schedule-first framing should be downgraded",
+    "attention should shift to competing HVAC or boundary drivers"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "runtime and schedule alignment are bounded enough to rank the hypothesis"
+  ],
+  "escalation_conditions": [
+    "operator or facilities confirmation required if public evidence remains insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block direct control-failure diagnosis",
+    "block equipment-first retrofit framing without schedule evidence"
+  ],
+  "example_outputs": [
+    "Before buying equipment, determine whether the building is simply conditioning beyond the real duty window."
+  ],
+  "tests": [
+    "building and warehouse cases with unresolved schedules should admit this as a bounded hypothesis",
+    "pattern must remain non-diagnostic at L2"
+  ]
+}

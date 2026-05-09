@@ -1,0 +1,24 @@
+{
+  "id": "source_memory_provider_family",
+  "version": "1.0.0",
+  "memory_type": "source_memory",
+  "name": "Source Memory Provider Family",
+  "description": "Source memory stores provider-specific routing and reliability context without acting as asset truth.",
+  "admissibility_scope": "provider_family",
+  "transfer_rule": "provider_family_only",
+  "evidence_ceiling": "L1",
+  "use_mode": "routing_only",
+  "truth_promotion_allowed": false,
+  "reversible": true,
+  "default_priority_effect": "prioritize_provider_routing",
+  "required_record_fields": [
+    "provider_key",
+    "source_refs",
+    "reason",
+    "scope"
+  ],
+  "tests": [
+    "source memory should only apply when provider family matches",
+    "source memory must remain below case-truth promotion"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pattern_memory_global_structured_prior",
+  "version": "1.0.0",
+  "memory_type": "pattern_memory",
+  "name": "Pattern Memory Global Structured Prior",
+  "description": "Pattern memory may travel across cases only as a structured prior that prioritizes hypotheses without promoting local truth.",
+  "admissibility_scope": "global_structured_prior",
+  "transfer_rule": "priority_only_cross_company",
+  "evidence_ceiling": "L2",
+  "use_mode": "priority_only",
+  "truth_promotion_allowed": false,
+  "reversible": true,
+  "default_priority_effect": "prioritize_pattern_activation",
+  "required_record_fields": [
+    "pattern_ids",
+    "source_refs",
+    "reason",
+    "scope"
+  ],
+  "tests": [
+    "pattern memory may cross company boundaries only as priority context",
+    "pattern memory must never upgrade case truth beyond L2"
+  ]
+}

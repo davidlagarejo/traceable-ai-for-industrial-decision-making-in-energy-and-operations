@@ -1,0 +1,92 @@
+{
+  "id": "sensor_prematurity",
+  "version": "1.0.0",
+  "name": "Sensor Prematurity",
+  "knowledge_type": [
+    "MEASUREMENT_MINIMALITY_RULE"
+  ],
+  "asset_types": [
+    "all_operational_assets"
+  ],
+  "applicable_industries": [
+    "all"
+  ],
+  "applicable_contexts": [
+    "new sensing or instrumentation proposed",
+    "hypothesis materiality unresolved"
+  ],
+  "trigger_conditions": [
+    "sensor deployment proposed",
+    "minimum discriminating evidence not yet exhausted",
+    "dominant hypothesis still unresolved"
+  ],
+  "anti_triggers": [
+    "cheap non-invasive evidence path already exhausted",
+    "bounded hypothesis requires instrumentation to discriminate",
+    "sensor purpose is directly tied to one admissible decision"
+  ],
+  "physical_basis": "Instrumentation only creates value if it discriminates a materially plausible hypothesis.",
+  "operational_basis": "Teams often deploy sensors before deciding what would actually falsify the leading rival hypotheses.",
+  "financial_mechanism": "Premature instrumentation creates cost and data noise before the value-of-information path is justified.",
+  "typical_false_assumption": "More sensors automatically improve diagnosis quality.",
+  "hypothesis": "Sensor deployment may be premature if minimum discriminating evidence is still cheaper and more direct.",
+  "rival_hypotheses": [
+    "instrumentation is now the cheapest valid discriminator",
+    "existing evidence paths are exhausted",
+    "sensor deployment is required by the decision objective"
+  ],
+  "evidence_required": [
+    "current minimum evidence path",
+    "dominant hypothesis register",
+    "decision objective",
+    "existing logs or bills-first path"
+  ],
+  "minimum_evidence_to_activate": [
+    "sensor proposal observed",
+    "dominant hypothesis unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "cheaper evidence path still available",
+    "sensor deployment not directly tied to bounded discrimination"
+  ],
+  "falsification_conditions": [
+    "non-invasive evidence path exhausted",
+    "instrumentation is the next cheapest valid discriminator",
+    "sensor purpose is decision-tied and bounded"
+  ],
+  "allowed_claim_language": "Sensor deployment may be premature until the minimum discriminating evidence path is exhausted.",
+  "prohibited_claim_language": "The site needs more sensors now.",
+  "financial_exposure_if_true": [
+    "instrumentation waste",
+    "over-measurement cost",
+    "data acquisition without decision value"
+  ],
+  "financial_exposure_if_false": [
+    "instrumentation may become admissible once the evidence path is exhausted"
+  ],
+  "tad_actions": [
+    "DO_NOT_SENSOR_YET",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "VALIDATE_FIRST"
+  ],
+  "stop_conditions": [
+    "cheaper evidence path exhausted or proven insufficient"
+  ],
+  "escalation_conditions": [
+    "instrumentation allowed only when linked to a bounded hypothesis and decision purpose"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block broad sensor deployment recommendation",
+    "block measurement-first reflex without hypothesis"
+  ],
+  "example_outputs": [
+    "Do not deploy sensors before you know what hypothesis they are supposed to discriminate."
+  ],
+  "tests": [
+    "manufacturing and warehouse acceptance bundles should block sensor recommendation while cheaper discriminatory evidence remains available"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "tad_consistency_required_tad_action",
+  "version": "1.0.0",
+  "validator_name": "TADConsistencyValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "required_text_non_empty",
+  "description": "A combination must declare its TAD action path before it can be admitted to strategic use.",
+  "target_fields": [
+    "tad_action"
+  ],
+  "message": "Combination is missing tad_action.",
+  "tests": [
+    "combination rows without tad_action must be blocked"
+  ]
+}

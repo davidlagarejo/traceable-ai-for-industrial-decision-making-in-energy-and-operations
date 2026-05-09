@@ -1,0 +1,99 @@
+{
+  "id": "value_boundary_leakage_owner_operator",
+  "version": "1.0.0",
+  "name": "Value Boundary Leakage Owner Operator",
+  "knowledge_type": [
+    "FINANCIAL_TRANSLATION"
+  ],
+  "asset_types": [
+    "warehouse_distribution",
+    "commercial_building",
+    "industrial_facility",
+    "leased_asset"
+  ],
+  "applicable_industries": [
+    "logistics",
+    "commercial_real_estate",
+    "industrial"
+  ],
+  "applicable_contexts": [
+    "owner/operator distinction plausible",
+    "metering boundary unknown",
+    "owner may fund CAPEX"
+  ],
+  "trigger_conditions": [
+    "owner and operator may differ",
+    "operator may control schedule, docks, charging or dominant loads",
+    "capture boundary is not evidenced"
+  ],
+  "anti_triggers": [
+    "single owner-operator controls and captures all relevant loads",
+    "full meter and responsibility alignment documented"
+  ],
+  "physical_basis": "The physical driver of value can sit behind an operational boundary not controlled by the capital provider.",
+  "operational_basis": "Schedules, equipment use, dock behavior or tenant loads may be governed by the operator instead of the owner.",
+  "financial_mechanism": "Savings, compliance value or operational improvement can leak across responsibility boundaries before reaching the funding party.",
+  "typical_false_assumption": "The party paying for improvement automatically captures the value created.",
+  "hypothesis": "The actor funding improvement may not control or capture the variable that drives value.",
+  "rival_hypotheses": [
+    "the same party controls and captures the dominant variable",
+    "boundary leakage is immaterial",
+    "metering and lease responsibilities already align"
+  ],
+  "evidence_required": [
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator agreement",
+    "maintenance responsibility"
+  ],
+  "minimum_evidence_to_activate": [
+    "owner/operator distinction plausible",
+    "control boundary unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "dominant driver controlled by operator or tenant",
+    "value capture pathway does not align with funding party"
+  ],
+  "falsification_conditions": [
+    "single owner-operator control documented",
+    "metering and responsibility alignment documented"
+  ],
+  "allowed_claim_language": "The control boundary must be resolved before claiming owner-capturable value.",
+  "prohibited_claim_language": "The owner will capture the savings.",
+  "financial_exposure_if_true": [
+    "savings capture risk",
+    "owner-side retrofit underwriting risk",
+    "boundary leakage"
+  ],
+  "financial_exposure_if_false": [
+    "boundary leakage concern can be downgraded",
+    "owner-side economic framing may become more admissible"
+  ],
+  "tad_actions": [
+    "REQUEST_CONTROL_BOUNDARY",
+    "PROHIBIT_ROI",
+    "DEFER_RETROFIT_UNDERWRITING"
+  ],
+  "stop_conditions": [
+    "responsibility matrix and meter boundary are bounded"
+  ],
+  "escalation_conditions": [
+    "operator confirmation required if public lease evidence is insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block owner-capturable ROI claims",
+    "block transferable savings claims"
+  ],
+  "example_outputs": [
+    "If the actor paying for improvement does not control the driver, value may leak before it reaches the balance sheet."
+  ],
+  "tests": [
+    "leased logistics case should activate this as plausible when meter and responsibility boundaries are unknown",
+    "no automatic owner-capture language allowed"
+  ]
+}

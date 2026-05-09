@@ -1,0 +1,7 @@
+prompt_section: 20
+registry_equivalence:
+  knowledge_type: REGULATORY_PHYSICAL_SIGNAL
+  pattern_ids:
+    - compliance_vs_control_mismatch
+notes:
+  - Regulatory signals are carried as bounded priors and cannot by themselves promote local truth.

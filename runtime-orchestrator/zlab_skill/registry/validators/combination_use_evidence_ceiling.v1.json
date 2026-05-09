@@ -1,0 +1,22 @@
+{
+  "id": "combination_use_evidence_ceiling",
+  "version": "1.0.0",
+  "validator_name": "CombinationUseValidator",
+  "scope": "combination_review",
+  "enabled": true,
+  "severity": "error",
+  "rule_type": "allowed_values",
+  "description": "Combination evidence ceilings must remain in L0/L1/L2 until case evidence upgrades them elsewhere.",
+  "target_fields": [
+    "evidence_state_ceiling"
+  ],
+  "allowed_values": [
+    "L0",
+    "L1",
+    "L2"
+  ],
+  "message": "Combination ceiling must stay in L0/L1/L2.",
+  "tests": [
+    "combination rows with evidence ceiling above L2 must be blocked"
+  ]
+}
