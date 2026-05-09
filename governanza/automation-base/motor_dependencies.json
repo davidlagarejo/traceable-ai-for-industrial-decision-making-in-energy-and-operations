@@ -515,9 +515,10 @@
       "requires": [
         "motor_012",
         "motor_037",
-        "motor_039"
+        "motor_039",
+        "motor_060"
       ],
-      "notes": "Separa variables dominantes observadas, condicionales o arquetípicas sin cerrar comportamiento del activo."
+      "notes": "Separa variables dominantes observadas, condicionales o arquetípicas sin cerrar comportamiento del activo. Consume diversity_axis_plan de motor_060 (R-56) para anotar required_themes en su output."
     },
     "motor_039": {
       "name": "Industrial / Building Archetype Library Resolver",
@@ -547,9 +548,10 @@
         "motor_037",
         "motor_038",
         "motor_040",
-        "motor_051"
+        "motor_051",
+        "motor_060"
       ],
-      "notes": "Reformula el problema cuando la pregunta del cliente es prematura o incompleta, usando contradicciones estructurales y variables dominantes."
+      "notes": "Reformula el problema cuando la pregunta del cliente es prematura o incompleta, usando contradicciones estructurales y variables dominantes. Consume diversity_axis_plan de motor_060 (R-55) para anotar required_themes en su output."
     },
     "motor_042": {
       "name": "Structural Benchmarking Engine",
@@ -662,9 +664,10 @@
       "catalog_status": "planned",
       "requires": [
         "motor_007",
-        "motor_049"
+        "motor_049",
+        "motor_060"
       ],
-      "notes": "Convierte la ruta de investigación y el intake operativo en un mapa de proceso, subsistemas, límites de control y dependencias de mantenimiento sin simular el activo ni presentar verdad local no evidenciada."
+      "notes": "Convierte la ruta de investigación y el intake operativo en un mapa de proceso, subsistemas, límites de control y dependencias de mantenimiento sin simular el activo ni presentar verdad local no evidenciada. Consume diversity_axis_plan de motor_060 (R-57) para emitir prohibited_themes (axes que no pertenecen al asset family)."
     },
     "motor_051": {
       "name": "Fair Comparison and Congruence Engine",

@@ -40,7 +40,7 @@ class Motor041Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_037", "motor_038", "motor_040", "motor_051"]
+        return ["motor_037", "motor_038", "motor_040", "motor_051", "motor_060"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         pipeline = inputs.get("__pipeline__", {})
@@ -68,7 +68,16 @@ class Motor041Adapter(BaseMotorAdapter):
             or str(register[0].get("stated_problem", "")).strip() == "asset_screening"
         ):
             register = translated
+        # R-55: surface the diversity_axis_plan from motor_060 alongside the
+        # problem framing register so downstream consumers (composer, validators)
+        # can use it to enforce per-asset thematic diversity. We attach it as
+        # metadata only; we do not re-rank or filter the existing register here.
+        diversity_axis_plan = dict(
+            inputs.get("motor_060", {}).get("diversity_axis_plan", {}) or {}
+        ) if isinstance(inputs.get("motor_060", {}), dict) else {}
         return {
             "problem_framing_register": register,
             "problem_framing_count": len(register),
+            "diversity_axis_plan": diversity_axis_plan,
+            "diversity_required_themes": list(diversity_axis_plan.get("required_themes", []) or []),
         }

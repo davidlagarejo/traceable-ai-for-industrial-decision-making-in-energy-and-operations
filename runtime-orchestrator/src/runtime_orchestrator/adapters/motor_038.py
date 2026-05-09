@@ -14,13 +14,16 @@ class Motor038Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_012", "motor_037", "motor_039"]
+        return ["motor_012", "motor_037", "motor_039", "motor_060"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         pipeline = inputs.get("__pipeline__", {})
         m12 = inputs.get("motor_012", {})
         m37 = inputs.get("motor_037", {})
         m39 = inputs.get("motor_039", {})
+        m60 = inputs.get("motor_060", {}) if isinstance(inputs.get("motor_060", {}), dict) else {}
+        diversity_axis_plan = dict(m60.get("diversity_axis_plan", {}) or {})
+        required_themes = list(diversity_axis_plan.get("required_themes", []) or [])
 
         facility_prior = dict(m12.get("facility_prior", {}) or {})
         target_definition = (
@@ -55,5 +58,10 @@ class Motor038Adapter(BaseMotorAdapter):
                     if row.get("evidence_state") in {"OBSERVED_FACT", "CONDITIONAL_HYPOTHESIS", "ARCHETYPAL_PRIOR", "WEAK_SIGNAL"}
                 ]
             ),
+            # R-56: surface the required_themes list from motor_060 so
+            # downstream consumers (composer, validators) know which axes
+            # the asset family expects to see covered. Producer-only here:
+            # we do not filter or re-rank the existing register.
+            "diversity_required_themes": required_themes,
         }
 
