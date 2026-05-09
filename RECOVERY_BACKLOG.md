@@ -36,7 +36,7 @@ Si la suite está roja al reanudar, congelar el backlog y arreglar runtime prime
 |---|---|
 | Recovery start | 2026-05-08 |
 | Active phase | **F0 → F1 unlocked** (WIP consolidated 2026-05-09) |
-| Last suite run | 2026-05-09: **833 passed**, 15 warnings, 48.72s |
+| Last suite run | 2026-05-09: **880 passed**, 15 warnings, 47.47s |
 | Last PDF run | (pendiente baseline + post) |
 | Blocking issues | none — working tree clean, all WIP consolidated into themed commits (`810844d` zlab_skill, `71c3dea` governance docs, `b58d4d3` congruence refactor, `e3a04fe` composer, `dfb6a1f` auditor, `b2206ac` phases, `c84ab1d` wiki, `22fed1e` apply scripts, `f9c66ca` gitignore PDFs). |
 | Branch convention | `recovery/<phase>-<task-id>` |
