@@ -35,10 +35,10 @@ Si la suite está roja al reanudar, congelar el backlog y arreglar runtime prime
 | Campo | Valor |
 |---|---|
 | Recovery start | 2026-05-08 |
-| Active phase | F0 — Baseline (BLOQUEADA en R-00) |
-| Last suite run | (pendiente — completar al reanudar) |
-| Last PDF run | (pendiente) |
-| Blocking issues | **R-00 blocked**: 54 archivos modificados + 40 untracked en `main` sin commit (54 files / +20,594 / −2,146 LOC). Trabajo previo del usuario no consolidado. |
+| Active phase | **F0 → F1 unlocked** (WIP consolidated 2026-05-09) |
+| Last suite run | 2026-05-09: **833 passed**, 15 warnings, 48.72s |
+| Last PDF run | (pendiente baseline + post) |
+| Blocking issues | none — working tree clean, all WIP consolidated into themed commits (`810844d` zlab_skill, `71c3dea` governance docs, `b58d4d3` congruence refactor, `e3a04fe` composer, `dfb6a1f` auditor, `b2206ac` phases, `c84ab1d` wiki, `22fed1e` apply scripts, `f9c66ca` gitignore PDFs). |
 | Branch convention | `recovery/<phase>-<task-id>` |
 
 ### Cómo desbloquear R-00 (cuando vuelvas)
@@ -70,7 +70,7 @@ Actualizar este bloque al final de cada sesión.
 
 | ID | Título | Estado | Depends on | Owner | Resume from / Notes |
 |---|---|---|---|---|---|
-| R-00 | Crear branch `recovery/phase-0-baseline` y proteger | `blocked` | — | — | **Bloqueada 2026-05-08**: working tree sucio (54 files modified + 40 untracked, +20,594/−2,146 LOC). Esperando que el usuario consolide su trabajo previo en `main`. Ver §1 "Cómo desbloquear R-00". |
+| R-00 | Crear branch `recovery/phase-0-baseline` y proteger | `done` | — | Claude | ✅ **Desbloqueada 2026-05-09**: WIP consolidado en 8 commits temáticos. Working tree limpio. Recovery puede proceder con R-W01..R-W03 (cableado composer al `congruence_claim_contract_register`) — eso destrabará el PDF visiblemente. |
 | R-01 | Capturar baseline de `pytest -q` | `todo` | R-00 | — | `cd runtime-orchestrator && pytest -q \| tee ../RECOVERY_BASELINE/pytest_2026_05_08.txt` |
 | R-02 | Generar 3 PDFs baseline (warehouse, manufacturing, building) | `todo` | R-01 | — | Identificar inputs canónicos en `runtime-orchestrator/inputs/`. Guardar en `RECOVERY_BASELINE/pdfs/` |
 | R-03 | Crear `RECOVERY_BASELINE.md` con métricas | `todo` | R-02 | — | Para cada PDF: count "NOT OBSERVED", count evidence-pack repetido, n-gram similarity por pares (`difflib.SequenceMatcher`) |
