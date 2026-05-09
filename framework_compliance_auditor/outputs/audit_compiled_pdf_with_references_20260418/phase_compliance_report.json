@@ -1,5 +1,5 @@
 {
-  "audit_run_id": "audit-20260418T220049Z-1b98a416",
+  "audit_run_id": "audit-20260419T014049Z-15e06920",
   "overall_contract_compliance_summary": {
     "gate": "fail",
     "recommended_next_action": "Revise blocked phase violations before quality polishing. Finding distribution: {'high': 32}."

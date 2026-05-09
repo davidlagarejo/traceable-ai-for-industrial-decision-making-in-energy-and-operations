@@ -1,6 +1,6 @@
 # Audit Summary
 
-Audit run: `audit-20260418T220049Z-1b98a416`
+Audit run: `audit-20260419T014049Z-15e06920`
 
 Report: `../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf`
 
@@ -68,6 +68,6 @@ Recommended next action: Revise blocked phase violations before quality polishin
 
 ## Revision Packet
 
-Revision batch: `revision-56244107e593`
+Revision batch: `revision-8212823b3e03`
 
 Grouped sections requiring revision: 9

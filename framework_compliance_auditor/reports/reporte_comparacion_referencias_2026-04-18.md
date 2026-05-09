@@ -1,8 +1,8 @@
 # Reporte PDF - Comparacion con referencias y cumplimiento de framework
 
-Generado: `2026-04-18T22:02:34+00:00`
+Generado: `2026-04-19T01:40:52+00:00`
 
-Audit run: `audit-20260418T220049Z-1b98a416`
+Audit run: `audit-20260419T014049Z-15e06920`
 
 Objeto auditado: `../runtime-orchestrator/output/motor_017_render_job_rp-5dd87342/compiled.pdf`
 
@@ -139,7 +139,7 @@ Distribucion de severidad: `{'high': 32}`
 
 ## Paquete de revision
 
-Revision batch: `revision-56244107e593`
+Revision batch: `revision-8212823b3e03`
 
 Secciones con fixes: `9`
 
