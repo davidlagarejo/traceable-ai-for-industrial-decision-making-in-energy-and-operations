@@ -69,6 +69,7 @@ from .motor_056 import Motor056Adapter
 from .motor_057 import Motor057Adapter
 from .motor_058 import Motor058Adapter
 from .motor_059 import Motor059Adapter
+from .motor_060 import Motor060Adapter
 from .stub import StubMotorAdapter
 
 # ── Real adapters (motors with executable code) ───────────────────────────────
@@ -132,6 +133,7 @@ REAL_ADAPTERS = [
     Motor057Adapter(),
     Motor058Adapter(),
     Motor059Adapter(),
+    Motor060Adapter(),
 ]
 
 # ── Stub adapters for motors without code yet ─────────────────────────────────

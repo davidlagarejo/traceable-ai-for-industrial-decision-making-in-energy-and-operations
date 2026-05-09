@@ -764,6 +764,15 @@
         "motor_054"
       ],
       "notes": "Capa F (Validation). Detecta incoherencias estructurales en outputs estratégicos: claim sin falsification, ACT NOW con claim prohibido, DO NOT MODEL coexistente con redesign ACT NOW, OBSERVED_FACT sin evidencia. Emite warnings no bloqueantes hoy; promoción a hard-block en fase posterior."
+    },
+    "motor_060": {
+      "name": "Report Diversity Engine",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007"
+      ],
+      "notes": "Capa B (Hypothesis Engine). Genera diversity_axis_plan grounded en la Pattern Library JSON (governanza/asset-operational-logic-engine_050/patterns/). Output disponible en el bus de bundles para consumers Layer-B/E que opt-in (R-55..R-57). Producer-only en este sprint."
     }
   }
 }

@@ -42,6 +42,7 @@ _LAYER_B: tuple[str, ...] = (
     "motor_046",  # Minimum Evidence for Discrimination
     "motor_050",  # Asset Operational Logic
     "motor_051",  # Fair Comparison and Congruence
+    "motor_060",  # Report Diversity Engine (RECOVERY R-52..R-57)
 )
 
 # ── Capa C: Claim Governor ──────────────────────────────────────────────────
