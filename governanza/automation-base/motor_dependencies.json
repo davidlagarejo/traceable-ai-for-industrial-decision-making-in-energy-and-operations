@@ -777,6 +777,16 @@
         "motor_007"
       ],
       "notes": "Capa B (Hypothesis Engine). Genera diversity_axis_plan grounded en la Pattern Library JSON (governanza/asset-operational-logic-engine_050/patterns/). Output disponible en el bus de bundles para consumers Layer-B/E que opt-in (R-55..R-57). Producer-only en este sprint."
+    },
+    "motor_061": {
+      "name": "Asset Family Isolation Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_054"
+      ],
+      "notes": "Capa F (Validation). Implementa Validador A del prompt RECOVERY-2026-05-09. Detecta asset-family contamination: patterns activos cross-family (process heat en warehouse, dock cycles en office, etc.) + tokens cross-family en gold nuggets. Bloquea reporte cuando contamination_detected=True (la integración con motor_017 force_render gate viene en commit posterior)."
     }
   }
 }

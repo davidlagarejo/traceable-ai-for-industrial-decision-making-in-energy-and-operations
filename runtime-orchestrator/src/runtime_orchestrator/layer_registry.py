@@ -83,6 +83,7 @@ _LAYER_F: tuple[str, ...] = (
     "motor_057",  # Gold Nugget Quality Validator (RECOVERY R-62)
     "motor_058",  # Report Uniqueness Validator (RECOVERY R-63)
     "motor_059",  # Strategic Intelligence Validator (RECOVERY R-64)
+    "motor_061",  # Asset Family Isolation Validator (RECOVERY-2026-05-09 prompt: Validator A)
 )
 
 # ── Sin capa (infraestructura / ingesta / soporte) ──────────────────────────
