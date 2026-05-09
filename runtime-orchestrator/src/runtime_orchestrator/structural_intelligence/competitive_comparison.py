@@ -73,6 +73,24 @@ def build_competitive_comparison_register(
     if target_type in {"warehouse_distribution", "cold_chain_facility"}:
         comparison_mode = "conditional_comparison" if selected_archetype_id in {"logistics_warehouse_generic", "cold_chain_generic"} else "archetypal_best_practice"
         cold_chain = target_type == "cold_chain_facility" or selected_archetype_id == "cold_chain_generic"
+        # Cold-chain comparator rests on thermal boundary + refrigeration duty
+        # rather than charging windows + dock cycles; expose a family-specific
+        # evidence_needed so the report does not inherit warehouse-defaults.
+        evidence_needed_per_family = (
+            [
+                "refrigeration duty regime",
+                "thermal boundary and door-cycle profile",
+                "defrost discipline and refrigerant inventory",
+                "control boundary and meter responsibility",
+            ]
+            if cold_chain
+            else [
+                "subtype / service model",
+                "dock density and service intensity",
+                "charging profile and tariff interval context",
+                "control boundary and meter responsibility",
+            ]
+        )
         rows.append(
             _comparison_row(
                 better_performer=(
@@ -95,12 +113,7 @@ def build_competitive_comparison_register(
                 peer_type="conditional_peer_pattern" if comparison_mode == "conditional_comparison" else "archetypal_peer_pattern",
                 what_it_proves="It proves what a valid logistics peer frame would require and which better-practice deltas could plausibly explain different cost behavior.",
                 what_it_does_not_prove="It does not prove that this asset is worse than a named warehouse, that any competitor is superior, or that the same CAPEX would transfer locally.",
-                evidence_needed=[
-                    "subtype / service model",
-                    "dock density and service intensity",
-                    "charging profile and tariff interval context",
-                    "control boundary and meter responsibility",
-                ],
+                evidence_needed=evidence_needed_per_family,
                 evidence_state=StructuralEvidenceState.CONDITIONAL_HYPOTHESIS if comparison_mode == "conditional_comparison" else StructuralEvidenceState.ARCHETYPAL_PRIOR,
                 comparison_mode=comparison_mode,
                 structural_benchmark_register=structural_benchmark_register,
