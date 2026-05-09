@@ -570,6 +570,7 @@
       "group": "B",
       "catalog_status": "planned",
       "requires": [
+        "motor_051",
         "motor_039",
         "motor_042"
       ],

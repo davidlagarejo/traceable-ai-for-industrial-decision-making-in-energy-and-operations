@@ -120,6 +120,34 @@ class Motor051Adapter(BaseMotorAdapter):
         rival_hypothesis_register = list(m49.get("rival_hypothesis_register", []) or [])
         hypothesis_discrimination_register = list(m49.get("hypothesis_discrimination_register", []) or [])
         claim_impact_register = list(m49.get("claim_impact_register", []) or [])
+        # R-58: when local comparison is not yet valid (benchmark unavailable
+        # or normalization gap), expose an archetypal-peer admissibility view.
+        # This lets the composer render bounded peer comparison under
+        # ARCHETYPAL_PRIOR instead of leaving "Peer Comparison" empty (which
+        # is the artefact visible in the Sunrise PDF cap. 8).
+        archetypal_peer_admissibility_register: list[dict[str, Any]] = []
+        for row in comparison_not_yet_valid_register:
+            if not isinstance(row, dict):
+                continue
+            archetypal_peer_admissibility_register.append({
+                "comparison_basis": str(row.get("comparison_basis", "")).strip(),
+                "blocker": str(row.get("blocker", "")).strip(),
+                "archetypal_admissibility": "allowed_under_archetypal_prior",
+                "evidence_state": "ARCHETYPAL_PRIOR",
+                "allowed_use": [
+                    "Bounded peer warning",
+                    "Structural pattern framing",
+                ],
+                "prohibited_use": [
+                    "Peer superiority claim",
+                    "Transferable ROI from peer",
+                    "Local waste diagnosis from invalid comparison",
+                ],
+                "falsification_condition": (
+                    "Asset-specific normalization evidence proves the peer "
+                    "frame is not transferable."
+                ),
+            })
         return {
             "fair_comparison_profile": fair_comparison_profile,
             "comparison_validity_register": comparison_validity_register,
@@ -156,4 +184,6 @@ class Motor051Adapter(BaseMotorAdapter):
             "rival_hypothesis_count": len(rival_hypothesis_register),
             "hypothesis_discrimination_count": len(hypothesis_discrimination_register),
             "claim_impact_count": len(claim_impact_register),
+            "archetypal_peer_admissibility_register": archetypal_peer_admissibility_register,
+            "archetypal_peer_admissibility_count": len(archetypal_peer_admissibility_register),
         }
