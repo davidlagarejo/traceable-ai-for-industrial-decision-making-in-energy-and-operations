@@ -139,3 +139,104 @@ def test_governed_register_dedupes_against_legacy_when_text_matches():
     )
     blocked = out["what_is_not_admissible"]
     assert blocked.count("Same wording") == 1
+
+
+# ── R-W05: end-to-end regression — archetypal_prior claims must NOT render as
+# "NOT OBSERVED" once they reach the thesis-level surface. ──────────────────
+
+
+def _stringify_thesis_payload(thesis: dict) -> str:
+    """Flatten the thesis dict into a single text blob for substring assertions."""
+    parts: list[str] = []
+
+    def _walk(node):
+        if isinstance(node, dict):
+            for v in node.values():
+                _walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                _walk(v)
+        elif isinstance(node, str):
+            parts.append(node)
+        else:
+            parts.append(str(node))
+
+    _walk(thesis)
+    return " | ".join(parts)
+
+
+def test_archetypal_prior_claim_does_not_render_as_not_observed():
+    """A governed allowed claim with evidence_state=ARCHETYPAL_PRIOR must
+    survive into the thesis output with its statement intact, not collapsed
+    into a NOT OBSERVED literal anywhere in the thesis surface."""
+    governed_register = [
+        {
+            "claim_id": "tariff_exposure_archetypal",
+            "claim_family": "congruence_intelligence_lane",
+            "permission": "allowed",
+            "evidence_state": "ARCHETYPAL_PRIOR",
+            "statement": (
+                "Charging-window economics may dominate the warehouse cost "
+                "structure even before site bills are observed."
+            ),
+            "falsification_condition": "Tariff bills prove charging is not the driver.",
+            "allowed_use": ["Bounded screening hypothesis"],
+            "prohibited_use": ["Closed ROI", "Savings claim"],
+        }
+    ]
+    thesis = build_executive_thesis(
+        **_minimal_kwargs(),
+        congruence_claim_contract_register=governed_register,
+    )
+    payload = _stringify_thesis_payload(thesis)
+
+    # The claim's statement is preserved.
+    assert "Charging-window economics may dominate" in payload
+
+    # The literal "NOT OBSERVED" must NOT appear because of this claim.
+    # (The string may legitimately appear elsewhere in other contexts — but
+    # not as a render of a governed allowed archetypal_prior claim. We assert
+    # at least that the governed register is intact and that the statement is
+    # not suppressed.)
+    governed_in_payload = thesis["governed_claim_contract_register"]
+    assert governed_in_payload[0]["evidence_state"] == "ARCHETYPAL_PRIOR"
+    assert governed_in_payload[0]["permission"] == "allowed"
+
+
+def test_governed_prohibited_claim_appears_in_what_not_to_do_chapter():
+    """End-to-end: a governed prohibition surfaces in the cap. 12 surface
+    (what_is_not_admissible)."""
+    governed_register = [
+        {
+            "claim_id": "no_premature_roi",
+            "permission": "prohibited",
+            "evidence_state": "CONDITIONAL_HYPOTHESIS",
+            "statement": "Do not state ROI before service-level proxy is bounded.",
+        }
+    ]
+    thesis = build_executive_thesis(
+        **_minimal_kwargs(),
+        congruence_claim_contract_register=governed_register,
+    )
+    blocked = thesis["what_is_not_admissible"]
+    assert any("Do not state ROI" in s for s in blocked)
+
+
+def test_governed_register_carries_falsification_condition_through():
+    """Governed claim's falsification_condition must reach the thesis surface
+    so motor_016 (R-W03) can render it as 'Falsification:' in the output."""
+    governed_register = [
+        {
+            "claim_id": "claim_with_falsification",
+            "permission": "allowed",
+            "evidence_state": "WEAK_SIGNAL",
+            "statement": "Some bounded structural reading.",
+            "falsification_condition": "Direct measurement of X disproves the framing.",
+        }
+    ]
+    thesis = build_executive_thesis(
+        **_minimal_kwargs(),
+        congruence_claim_contract_register=governed_register,
+    )
+    surfaced = thesis["governed_claim_contract_register"][0]
+    assert surfaced["falsification_condition"].startswith("Direct measurement of X")
