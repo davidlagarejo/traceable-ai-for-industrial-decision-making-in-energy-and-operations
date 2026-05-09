@@ -228,13 +228,25 @@ def build_cross_layer_congruence_register(
             }
         )
 
-    if asset_family in {"logistics_warehouse", "cold_chain"}:
+    if asset_family == "cold_chain":
+        rows.append(
+            {
+                "contradiction": "Area benchmark vs refrigeration duty and thermal-boundary complexity",
+                "layers": ["benchmarking", "operation", "thermal_envelope"],
+                "strategic_risk": "Area-only logic can hide that refrigeration duty, door-cycle infiltration, defrost discipline and dock thermal exchange are the real cost drivers.",
+                "evidence_needed": ["temperature zone log", "door cycle profile", "refrigeration inventory", "defrost schedule", "dock seal audit"],
+                "possible_redesign": "Normalize refrigeration duty and thermal boundary before diagnosing inefficiency.",
+                "evidence_state": "CONDITIONAL_HYPOTHESIS",
+            }
+        )
+
+    if asset_family == "logistics_warehouse":
         rows.append(
             {
                 "contradiction": "Area benchmark vs service-level complexity",
                 "layers": ["benchmarking", "operation", "logistics"],
-                "strategic_risk": "Area-only logic can hide that movement intensity, charging windows, temperature duty or dock activity are the real cost drivers.",
-                "evidence_needed": ["service-level proxy", "dock activity profile", "charging schedule", "temperature-duty map where relevant"],
+                "strategic_risk": "Area-only logic can hide that movement intensity, charging windows, dock activity and tariff structure are the real cost drivers.",
+                "evidence_needed": ["service-level proxy", "dock activity profile", "charging schedule", "utility bill intervals"],
                 "possible_redesign": "Normalize operational intensity before diagnosing inefficiency.",
                 "evidence_state": "CONDITIONAL_HYPOTHESIS",
             }
