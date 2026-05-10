@@ -5835,9 +5835,24 @@ def _decision_state_text(
     missing_clusters: list[str],
     recommended_report_type: str = "",
     language: str = "en",
+    *,
+    governed_claim_contract_count: int = 0,
+    dominant_contradiction: str = "",
+    dominant_contradiction_strategic_meaning: str = "",
 ) -> str:
     cluster_text = ", ".join(_cluster_label(cluster, language) for cluster in missing_clusters[:5]) or (
         "critical physical observable clusters" if language != "es" else "clusters físicos críticos"
+    )
+
+    # Recovery 2026-05-09 prompt §11: when governed claim contracts and a
+    # dominant structural contradiction are present, the cover should sound
+    # like structural intelligence (not "BLOCKED UNTIL clusters are
+    # clarified"). The framework "exists to detect when an organization is
+    # looking at the wrong problem", not to demand data. Promotes the
+    # contradiction language to the cover when the thesis is admissible.
+    has_structural_thesis = (
+        governed_claim_contract_count >= 2
+        and bool(str(dominant_contradiction or "").strip())
     )
     if target_admissibility_state == "issuer_context_only":
         return (
@@ -5864,6 +5879,38 @@ def _decision_state_text(
             else f"EPISTEMIC STATE: SCREENING ADMISSIBLE — {target_label} has sufficient public substrate for screening, but verification-grade clusters remain unresolved ({cluster_text}) before ROI, retrofit, or compliance-closure claims can advance."
         )
     if asset_context_readiness in {"asset_context_insufficient", "asset_context_minimal", "location_only"}:
+        # Structural override: if governed claim contracts and a dominant
+        # contradiction are present, the cover speaks structural intelligence
+        # rather than asking for data. Local clusters remain mentioned in
+        # the supporting clauses, not as the lead message.
+        if has_structural_thesis:
+            contradiction_text = str(dominant_contradiction).strip()
+            meaning_text = str(dominant_contradiction_strategic_meaning or "").strip()
+            if language == "es":
+                base = (
+                    f"ESTADO EPISTÉMICO: LECTURA ESTRUCTURAL ADMISIBLE — {target_label} "
+                    f"puede leerse a través de una contradicción estructural acotada: "
+                    f"{contradiction_text}."
+                )
+                if meaning_text:
+                    base += f" {meaning_text}"
+                base += (
+                    f" La evidencia local sigue siendo necesaria ({cluster_text}), "
+                    "pero no condiciona la inteligencia estructural ya admisible."
+                )
+                return base
+            base = (
+                f"EPISTEMIC STATE: ADMISSIBLE STRUCTURAL READING — {target_label} "
+                f"can be read through a bounded structural contradiction: "
+                f"{contradiction_text}."
+            )
+            if meaning_text:
+                base += f" {meaning_text}"
+            base += (
+                f" Local evidence is still required ({cluster_text}), "
+                "but it does not gate the structural intelligence already admissible."
+            )
+            return base
         return (
             f"ESTADO EPISTÉMICO: CONTEXTO DEL ACTIVO INSUFICIENTE — {target_label} sigue bloqueado hasta aclarar al menos estos clusters: {cluster_text}."
             if language == "es"
@@ -9207,6 +9254,19 @@ class Motor016Adapter(BaseMotorAdapter):
             sections_body_ordered + sections_appendix,
             produced_at,
         )
+        # Recovery 2026-05-09 prompt §11: surface governed claim contracts
+        # and the dominant contradiction to the cover so it can render
+        # structural intelligence instead of "BLOCKED UNTIL clusters
+        # are clarified" when the thesis carries enough governed material.
+        _thesis_for_cover = executive_thesis or {}
+        _governed_count = int(_thesis_for_cover.get("governed_claim_contract_count", 0) or 0)
+        _dominant_contradiction = str(_thesis_for_cover.get("dominant_contradiction", "") or "").strip()
+        _strategic_meaning = str(
+            _thesis_for_cover.get("dominant_loss_logic")
+            or _thesis_for_cover.get("why_it_matters")
+            or _thesis_for_cover.get("hidden_system_boundary_error")
+            or ""
+        ).strip()
         decision_state_en = _decision_state_text(
             target_label,
             runtime_target_admissibility_state,
@@ -9214,6 +9274,9 @@ class Motor016Adapter(BaseMotorAdapter):
             runtime_missing_observable_clusters,
             runtime_recommended_report_type,
             "en",
+            governed_claim_contract_count=_governed_count,
+            dominant_contradiction=_dominant_contradiction,
+            dominant_contradiction_strategic_meaning=_strategic_meaning,
         )
         decision_state_es = _decision_state_text(
             target_label,
@@ -9222,6 +9285,9 @@ class Motor016Adapter(BaseMotorAdapter):
             runtime_missing_observable_clusters,
             runtime_recommended_report_type,
             "es",
+            governed_claim_contract_count=_governed_count,
+            dominant_contradiction=_dominant_contradiction,
+            dominant_contradiction_strategic_meaning=_strategic_meaning,
         )
         report_package = {
             "package_id":    pkg_id,
