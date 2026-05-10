@@ -12,12 +12,15 @@ Output: output/{render_job_id}/{case_slug}_{document_slug}.pdf
 from __future__ import annotations
 
 import base64
+import logging
 import re
 import shutil
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+log = logging.getLogger(__name__)
 
 from ..output_taxonomy import CANONICAL_VISIBLE_OUTPUT_MODES, canonicalize_output_mode
 from .base import BaseMotorAdapter
@@ -1301,11 +1304,27 @@ class Motor017Adapter(BaseMotorAdapter):
         if context_integrity_scan and not context_integrity_scan.get("render_eligible", True):
             issues = context_integrity_scan.get("issues", [])
             issue_summary = "; ".join(issue.get("message", "integrity issue") for issue in issues[:4])
-            raise ValueError(
-                "Report rendering blocked by context integrity scan: "
-                + (issue_summary or "unknown integrity issue")
+            if not force_render_under_warnings:
+                raise ValueError(
+                    "Report rendering blocked by context integrity scan: "
+                    + (issue_summary or "unknown integrity issue")
+                )
+            log.warning(
+                "[motor_017] context integrity scan flagged %d issues but "
+                "__force_render__ is set; proceeding. Issue summary: %s",
+                len(issues),
+                issue_summary[:200],
             )
-        _validate_render_section_contract(render_section_contract, body_sections, appendix_sections)
+        try:
+            _validate_render_section_contract(render_section_contract, body_sections, appendix_sections)
+        except ValueError as exc:
+            if not force_render_under_warnings:
+                raise
+            log.warning(
+                "[motor_017] render section contract violated but "
+                "__force_render__ is set; proceeding. Reason: %s",
+                str(exc)[:300],
+            )
 
         # Output job directory
         render_id = f"motor_017_render_job_{pkg_id}"
