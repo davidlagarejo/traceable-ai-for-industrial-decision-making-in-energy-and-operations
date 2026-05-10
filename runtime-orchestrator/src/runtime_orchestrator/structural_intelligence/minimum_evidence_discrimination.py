@@ -114,6 +114,26 @@ def build_minimum_evidence_for_discrimination_register(
             ).to_dict()
         )
 
+    if target_type in {"infrastructure_node", "rail_terminal", "rail_logistics_node", "port_terminal"}:
+        rows.append(
+            MinimumEvidenceDiscriminationRecord(
+                rival_hypotheses=[
+                    "Continuity duty (always-on signaling, switching, refrigeration) dominates base load.",
+                    "Dispatch posture and traffic intensity drive movement-related cost.",
+                    "Maintenance reality of long-lived assets dominates lifecycle economics more than energy intensity.",
+                ],
+                minimum_evidence="Dispatch records + signaling and substation inventory + continuity-load metering + preventive maintenance log + traffic intensity profile",
+                source="operator dispatch, signal-engineering, traction-power and maintenance records",
+                what_it_confirms="Whether the dominant cost driver is continuity duty, dispatch traffic, or maintenance reality.",
+                what_it_falsifies="The assumption that area-EUI or generic energy intensity is a valid comparison basis for an infrastructure node.",
+                unlocks=[
+                    "continuity duty reframe",
+                    "dispatch posture audit",
+                    "lifecycle vs energy capital sequencing",
+                ],
+            ).to_dict()
+        )
+
     if target_type == "logistics_terminal":
         rows.append(
             MinimumEvidenceDiscriminationRecord(
