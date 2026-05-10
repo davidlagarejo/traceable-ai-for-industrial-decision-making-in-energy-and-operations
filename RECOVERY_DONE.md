@@ -233,15 +233,40 @@ PDFs salen en `runtime-orchestrator/output/motor_017_render_job_rp:<hash>/`.
 
 ## 7. PDFs producidos esta sesión (en escritorio)
 
+### 7.1 Iteraciones cold-chain (V1 → V5)
+
 ```
-zlab-recovery-V4-cold-chain-lakeshore-2026-05-09_en.pdf  ← LATEST (4 acciones TAD cold-chain)
-zlab-recovery-V3-cold-chain-lakeshore-2026-05-09_en.pdf  ← 3 acciones TAD cold-chain
-zlab-recovery-V2-cold-chain-lakeshore-2026-05-09_en.pdf  ← 2 acciones TAD cold-chain
-zlab-recovery-FINAL-cold-chain-lakeshore-2026-05-09_en.pdf  ← Pattern Library + validators
-zlab-recovery-cold-chain-lakeshore-2026-05-09_en.pdf      ← inicial
+zlab-recovery-cold-chain-lakeshore-2026-05-09_en.pdf       ← V1 inicial
+zlab-recovery-FINAL-cold-chain-lakeshore-2026-05-09_en.pdf ← Pattern Library + validators
+zlab-recovery-V2-cold-chain-lakeshore-2026-05-09_en.pdf    ← 2 acciones TAD cold-chain
+zlab-recovery-V3-cold-chain-lakeshore-2026-05-09_en.pdf    ← 3 acciones TAD cold-chain
+zlab-recovery-V4-cold-chain-lakeshore-2026-05-09_en.pdf    ← 4 acciones TAD cold-chain
+zlab-recovery-V5-cold-chain-lakeshore-2026-05-09_en.pdf    ← LATEST cold-chain (executive thesis específico)
 ```
 
-Cada uno demuestra una iteración incremental de la recovery.
+### 7.2 Validación cross-asset (5 asset families distintas)
+
+```
+zlab-recovery-V5-cold-chain-lakeshore-2026-05-09_en.pdf    ← Cold-Chain  (refrigeration / thermal envelope)
+zlab-recovery-V5-MANUFACTURING-wilsonart-2026-05-09_en.pdf ← Manufacturing (process load / compressed air)
+zlab-recovery-V5-WAREHOUSE-austin-2026-05-10_en.pdf        ← Warehouse   (charging / dock cycles / MHE)
+zlab-recovery-V6-DATACENTER-dlr-2026-05-10_en.pdf          ← Datacenter  (PUE / IT-load / redundancy)
+zlab-recovery-V6-BUILDING-bxp-2026-05-10_en.pdf            ← Building    (owner / tenant / BMS / LL97)
+```
+
+5 asset families × 3 hipótesis rivales cada una = **15 frames conceptuales distintos**, cero contaminación
+cruzada. Cap. 2 "Next Best Questions" de cada PDF abre con su propio set de hipótesis estructurales:
+
+| Family | [SQ-01] hipótesis rivales |
+|---|---|
+| Cold-chain | refrigeration duty / infiltration / defrost+maintenance |
+| Manufacturing | structural process load / support waste / maintenance |
+| Warehouse | charging-window peak / dock cycles / service-level |
+| Datacenter | PUE composition / cooling topology / redundancy posture |
+| Building | Owner-controllable / Tenant-driven / Compliance-driven |
+
+Goal del prompt original §8: "Si los reportes se sienten iguales → el sistema falló." **Resultado**:
+los 5 reportes se sienten 100% distintos.
 
 ---
 
