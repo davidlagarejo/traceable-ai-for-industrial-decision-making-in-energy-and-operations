@@ -94,7 +94,7 @@ def build_minimum_evidence_for_discrimination_register(
             ).to_dict()
         )
 
-    if target_type == "datacenter":
+    if target_type in {"datacenter", "data_center"}:
         rows.append(
             MinimumEvidenceDiscriminationRecord(
                 rival_hypotheses=[
