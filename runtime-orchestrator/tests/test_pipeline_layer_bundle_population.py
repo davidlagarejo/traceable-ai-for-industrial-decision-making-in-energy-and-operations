@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from runtime_orchestrator.pipeline_orchestrator import (
     _populate_layer_bundles,
+    _publish_inferred_state_bundle,
     _stable_inputs_for_hash,
 )
 
@@ -167,3 +168,77 @@ def test_stable_inputs_for_hash_handles_missing_bundles_key():
     inputs = {"__pipeline__": {"x": 1}, "__runtime__": {}}
     out = _stable_inputs_for_hash(inputs)
     assert "__bundles__" not in out  # not introduced when absent
+
+
+# ── Inferred-state bundle (god-object migration scaffolding, R-14b) ────────
+
+
+def test_publish_inferred_state_bundle_creates_bus_entry():
+    outputs = {}
+    runtime_context = {
+        "subject_definition": {"target_name": "X"},
+        "target_admissibility_state": "address_candidate_only",
+        "asset_context_readiness": "asset_context_minimal",
+        "recommended_report_type": "Exploratory Prior Brief",
+    }
+    _publish_inferred_state_bundle(outputs, runtime_context)
+    assert "pipeline_run.inferred_state" in outputs["__bundles__"]
+
+
+def test_inferred_state_bundle_has_layer_a_and_pipeline_run_producer():
+    outputs = {}
+    runtime_context = {"subject_definition": {"a": 1}}
+    _publish_inferred_state_bundle(outputs, runtime_context)
+    bundle = outputs["__bundles__"]["pipeline_run.inferred_state"]
+    assert bundle["layer_id"] == "A"
+    assert bundle["produced_by"] == "pipeline_run.inferred_state"
+
+
+def test_inferred_state_bundle_payload_includes_known_keys():
+    outputs = {}
+    runtime_context = {
+        "subject_definition": {"target_name": "X"},
+        "target_admissibility_state": "address_candidate_only",
+        "asset_context_readiness": "asset_context_minimal",
+        "recommended_report_type": "Exploratory Prior Brief",
+        "prohibited_report_types": ["Full Technical Decision Intelligence Report"],
+        "report_identity_state": "Exploratory Prior Brief",
+        "dominant_evidence_scope": "asset",
+        "missing_observable_clusters": ["geometry_size_cluster"],
+    }
+    _publish_inferred_state_bundle(outputs, runtime_context)
+    payload = outputs["__bundles__"]["pipeline_run.inferred_state"]["payload"]
+    assert payload["subject_definition"] == {"target_name": "X"}
+    assert payload["target_admissibility_state"] == "address_candidate_only"
+    assert payload["asset_context_readiness"] == "asset_context_minimal"
+    assert payload["recommended_report_type"] == "Exploratory Prior Brief"
+    assert payload["missing_observable_clusters"] == ["geometry_size_cluster"]
+
+
+def test_inferred_state_bundle_payload_keys_are_present_even_when_runtime_lacks_them():
+    """Payload includes a stable key set, with None values for unset keys."""
+    outputs = {}
+    _publish_inferred_state_bundle(outputs, {})
+    payload = outputs["__bundles__"]["pipeline_run.inferred_state"]["payload"]
+    # Stable schema: known keys are always present
+    expected_keys = {
+        "subject_definition",
+        "target_admissibility_state",
+        "asset_context_readiness",
+        "recommended_report_type",
+        "report_identity_state",
+        "dominant_evidence_scope",
+        "missing_observable_clusters",
+    }
+    assert expected_keys.issubset(set(payload.keys()))
+
+
+def test_inferred_state_bundle_does_not_clobber_existing_bundles():
+    outputs = {
+        "__bundles__": {
+            "motor_011": {"layer_id": "A", "produced_by": "motor_011", "payload": {}}
+        }
+    }
+    _publish_inferred_state_bundle(outputs, {"subject_definition": {"x": 1}})
+    assert "motor_011" in outputs["__bundles__"]
+    assert "pipeline_run.inferred_state" in outputs["__bundles__"]

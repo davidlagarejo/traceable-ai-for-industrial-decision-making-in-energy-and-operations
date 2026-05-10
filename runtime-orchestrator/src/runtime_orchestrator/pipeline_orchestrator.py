@@ -229,6 +229,11 @@ class PipelineOrchestrator:
                 # (infrastructure / ingestion / support — see layer_registry.py).
                 _populate_layer_bundles(outputs, level)
                 self._refresh_run_semantics(pipeline_run, outputs)
+                # Mirror the post-refresh inferred state into the bus so
+                # downstream consumers can opt in to bundle-reads. The
+                # __runtime__ legacy path is kept fully intact during this
+                # transition (RECOVERY_BACKLOG.md R-14b..R-23).
+                _publish_inferred_state_bundle(outputs, self._runtime_context(pipeline_run))
                 self._persist_run(pipeline_run)
 
         except _MotorFailed as exc:
@@ -727,6 +732,64 @@ def _stable_inputs_for_hash(inputs: dict[str, Any]) -> dict[str, Any]:
             if isinstance(entry, dict)
         }
     return stable
+
+
+def _publish_inferred_state_bundle(
+    outputs: dict[str, dict[str, Any]],
+    runtime_context: dict[str, Any],
+) -> None:
+    """Mirror the state mutated by _refresh_run_semantics into a LayerBundle.
+
+    `_refresh_run_semantics` propagates inferred state (subject_definition,
+    target_admissibility_state, asset_context_readiness, etc.) into the
+    PipelineRun god-object so downstream motors can read it via
+    `__runtime__`. That mutation is the legacy path; this helper publishes
+    the same payload as a versioned LayerBundle (`pipeline_run` producer,
+    layer="A") so downstream motors can opt in to the bus.
+
+    Migration policy: emit both for now. Future commits can move motors one
+    by one to read from the bundle, then retire `_refresh_run_semantics`.
+    See RECOVERY_BACKLOG.md R-14b..R-23.
+    """
+    inferred_keys = (
+        "subject_definition",
+        "subject_contract_status",
+        "subject_contract_admissibility",
+        "subject_contract_warning_register",
+        "ingestion_contract_status",
+        "subject_resolution_state",
+        "asset_authenticity_state",
+        "target_type_classification",
+        "asset_identity_status",
+        "classification_confidence",
+        "target_admissibility_state",
+        "subject_gate_passed",
+        "subject_gate_reason_register",
+        "allowed_report_classes",
+        "target_definition",
+        "asset_context_readiness",
+        "technical_substrate_readiness",
+        "asset_level_evidence_found",
+        "issuer_only_evidence_found",
+        "recommended_report_type",
+        "prohibited_report_types",
+        "report_identity_state",
+        "dominant_evidence_scope",
+        "missing_observable_clusters",
+        "evidence_maturity_summary",
+        "key_variable_bottlenecks",
+        "report_readiness_reason",
+    )
+    payload = {key: runtime_context.get(key) for key in inferred_keys}
+    bundle = LayerBundle.make(
+        layer_id="A",
+        bundle_version=_DEFAULT_BUNDLE_VERSION,
+        produced_by="pipeline_run.inferred_state",
+        produced_at=_now(),
+        payload=payload,
+    )
+    bundles: dict[str, dict[str, Any]] = outputs.setdefault("__bundles__", {})
+    bundles["pipeline_run.inferred_state"] = bundle.to_dict()
 
 
 def _populate_layer_bundles(
