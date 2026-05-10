@@ -71,8 +71,23 @@ for entry in "${CASES[@]}"; do
 
   if [[ ${HAVE_PDFTOTEXT} -eq 1 ]]; then
     text=$(pdftotext -layout "${pdf}" - 2>/dev/null)
+    cover_pass=true
+    # Cover regression (Gap #4 fix, 9bf7837): the report should NOT lead
+    # with "remains blocked until at least these clusters are clarified"
+    # when a governed thesis is present. ADMISSIBLE STRUCTURAL READING is
+    # the expected lead phrase. If neither the new admissible phrase nor a
+    # legitimate non-block fallback is present, flag it.
+    if echo "${text}" | grep -qF "remains blocked until at least these clusters are clarified" \
+       && ! echo "${text}" | grep -qF "ADMISSIBLE STRUCTURAL READING"; then
+      echo "[${family}] WARN — cover still says 'BLOCKED UNTIL clusters' (Gap #4 not closed for this case)"
+      cover_pass=false
+    fi
     if echo "${text}" | grep -qiF "${token1}" && echo "${text}" | grep -qiF "${token2}"; then
-      echo "[${family}] PASS — found '${token1}' and '${token2}' in PDF"
+      if ${cover_pass}; then
+        echo "[${family}] PASS — '${token1}' + '${token2}' in PDF + cover OK"
+      else
+        echo "[${family}] PASS-WITH-WARN — tokens OK; cover regression noted"
+      fi
       PASS=$((PASS + 1))
     else
       echo "[${family}] FAIL — expected tokens '${token1}' / '${token2}' not both present"
