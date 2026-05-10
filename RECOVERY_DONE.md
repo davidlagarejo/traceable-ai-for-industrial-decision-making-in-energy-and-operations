@@ -195,13 +195,23 @@ Las **4 acciones del cap. 11 TAD ahora rinden cold-chain específico**.
 
 ---
 
-## 5. Lo que aún hereda strings warehouse-defaults (residual)
+## 5. Residual antes de V7 — TODO RESUELTO
 
-**1 string residual en cap. 11**: `Maps To: Area benchmark vs service-level complexity`
-viene del `dominant_contradiction` central del thesis (motor_038/motor_047
-ranked_conflicts) y es la "frase de framing" no el evidence pack. Tocarlo
-requiere intervenir el thesis-state machine, fuera de scope para esta sesión
-sin riesgo de regresiones.
+Antes del commit `9bf7837` quedaban dos refinements:
+
+1. **"Maps To: Area benchmark vs service-level complexity"** en cold-chain
+   — resuelto en commit `57abe28` separando `cold_chain` y
+   `logistics_warehouse` en `congruence_engine.contradictions`.
+
+2. **Portada del PDF "BLOCKED UNTIL clusters are clarified"**
+   — resuelto en commit `9bf7837` (V7). Ahora la portada renderiza
+   "EPISTEMIC STATE: ADMISSIBLE STRUCTURAL READING" cuando
+   `governed_claim_contract_count >= 2 and dominant_contradiction != ""`,
+   exponiendo la contradicción estructural específica como lead phrase
+   y mencionando los clusters faltantes como supporting clause, no como
+   blocker. Match exacto con el goal del prompt §11.
+
+Tag final: **v2.1.0-recovery-final** (53 commits desde 9dc333c).
 
 ---
 
