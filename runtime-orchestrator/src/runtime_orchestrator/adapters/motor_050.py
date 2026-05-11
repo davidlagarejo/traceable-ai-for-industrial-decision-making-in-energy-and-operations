@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..congruence_intelligence.operational_logic import build_asset_operational_logic
+from ..knowledge_layer import knowledge_layer_summary
 from .base import BaseMotorAdapter
 
 
@@ -48,5 +49,9 @@ class Motor050Adapter(BaseMotorAdapter):
             # asset family per the Pattern Library) for validators to guard.
             "diversity_required_themes": required_themes,
             "diversity_prohibited_themes": prohibited_themes,
+            # V2-LIVE Item 4: surface the 4 Gap-F knowledge YAMLs so
+            # downstream consumers (composer, validators) can reach them
+            # through motor_050's bundle.
+            "knowledge_layer_registry": knowledge_layer_summary(),
         }
 

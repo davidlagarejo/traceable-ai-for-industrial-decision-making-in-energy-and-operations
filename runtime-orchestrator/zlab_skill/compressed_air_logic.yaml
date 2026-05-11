@@ -17,7 +17,7 @@ scope:
 governing_principles:
   - Compressed air is one of the most expensive utilities per delivered Btu; ~70% of generated air is typically lost or misused
   - Leak rate above 10% of total CFM is industry-considered material; above 30% is rarely sustainable
-  - "Inappropriate use" (open blow-down, cabinet cooling, sparging without nozzles) often dominates true demand
+  - 'Inappropriate use (open blow-down, cabinet cooling, sparging without nozzles) often dominates true demand'
   - Pressure-band reduction by 2 psi typically yields ~1% kWh savings
 falsification_anchors:
   - Recent (<12 month) compressed-air audit on file

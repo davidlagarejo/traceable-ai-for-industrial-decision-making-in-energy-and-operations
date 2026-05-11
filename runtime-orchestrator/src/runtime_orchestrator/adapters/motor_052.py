@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..congruence_intelligence.hardware_minimality import build_hardware_minimality_register
+from ..knowledge_layer import knowledge_layer_summary
 from ..congruence_intelligence.leakage_hidden_waste import build_leakage_hypothesis_register
 from ..congruence_intelligence.loss_patterns import (
     build_activated_pattern_register,
@@ -154,4 +155,7 @@ class Motor052Adapter(BaseMotorAdapter):
             "hardware_minimality_count": len(hardware_minimality_register),
             "power_quality_hypothesis_count": len(power_quality_hypothesis_register),
             "leakage_hypothesis_count": len(leakage_hypothesis_register),
+            # V2-LIVE Item 4: surface the Gap-F knowledge YAMLs for the
+            # composer + validators to reach via motor_052's bundle.
+            "knowledge_layer_registry": knowledge_layer_summary(),
         }
