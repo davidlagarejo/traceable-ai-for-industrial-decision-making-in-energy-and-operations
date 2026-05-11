@@ -2163,6 +2163,227 @@ def _build_financial_exposure_register(
     ]
 
 
+# ──────────────────────────────────────────────────────────────────────────
+# Scenario justification fields per RECOVERY_2026-05-10 §11.B (validated by
+# motor_062). Each (family, letter) → dict with the 5 mandatory fields:
+#   trigger, source, process_clue, industrial_reason, asset_family_reason
+# `source` references the industrial source catalog (Gap C).
+# ──────────────────────────────────────────────────────────────────────────
+_SCENARIO_JUSTIFICATION: dict[tuple[str, str], dict[str, str]] = {
+    # logistics (warehouse / cold-chain / DC)
+    ("logistics", "A"): {
+        "trigger": "Operating schedule + throughput profile + dock-cycle pattern not yet bounded.",
+        "source": "doe_eere_mhe; werc_dc_measures; ashrae_handbook_hvac_applications_ch24",
+        "process_clue": "MHE charging windows, dock-door cycles and refrigeration duty are the structural energy carriers in logistics assets.",
+        "industrial_reason": "Generic per-sf benchmarks misrepresent logistics energy intensity until throughput and dock cycles are characterized.",
+        "asset_family_reason": "Logistics nodes (warehouse, fulfillment, cold-chain DC) are throughput-driven assets; energy use tracks operations, not floor area.",
+    },
+    ("logistics", "B"): {
+        "trigger": "Controls/maintenance/dock-air evidence unresolved.",
+        "source": "doe_eere_mhe; epri_battery_charging; gcca_energy_excellence_toolkit",
+        "process_clue": "Avoidable losses concentrate in idle MHE charging, dock infiltration, refrigeration controls and after-hours operation.",
+        "industrial_reason": "Targeted operational corrections in logistics deliver bounded upside without redesigning the throughput envelope.",
+        "asset_family_reason": "Logistics families show repeatable controls-and-maintenance failure modes documented across DC measures benchmarks.",
+    },
+    ("logistics", "C"): {
+        "trigger": "Local compliance filing (LL97/BERDO/Title 24) status and area basis unverified.",
+        "source": "nyc_ll97; boston_berdo; ca_title24_part6; epa_ghgrp",
+        "process_clue": "Local performance/emissions standards convert kWh into either penalty exposure or compliance ceiling.",
+        "industrial_reason": "Compliance posture can dominate logistics capital logic when filings show material trigger.",
+        "asset_family_reason": "Cold-chain/warehouse facilities in regulated jurisdictions face direct emissions caps independent of operational savings.",
+    },
+    ("logistics", "D"): {
+        "trigger": "Critical observable clusters (geometry, schedule, system inventory, utility evidence) remain missing.",
+        "source": "iso_50002; ashrae_211",
+        "process_clue": "Without minimum evidence pack, dominant variable cannot be discriminated; any single-cause framing is premature.",
+        "industrial_reason": "Energy-audit standards (ISO 50002, ASHRAE 211) require minimum evidence before defendable hypothesis ranking.",
+        "asset_family_reason": "Logistics asset family is heterogeneous (dry / refrigerated / cold / fulfillment); characterization must precede comparison.",
+    },
+    # manufacturing
+    ("manufacturing", "A"): {
+        "trigger": "NAICS/SIC, process narrative, press/curing inventory, thermal-utility basis not yet bounded.",
+        "source": "doe_amo_best_practices; doe_iac_database; eia_mecs; sme_handbook",
+        "process_clue": "Thermal-process duty (presses, curing ovens, resin, thermal oil) is structural to product quality and chemistry, not adjustable through generic efficiency moves.",
+        "industrial_reason": "DOE AMO and IAC datasets show process duty dominates manufacturing energy; misreading it produces wrong-target CAPEX.",
+        "asset_family_reason": "Manufacturing facilities are process-driven; the dominant variable is the production line, not the building envelope.",
+    },
+    ("manufacturing", "B"): {
+        "trigger": "Shift calendar + compressed-air/dust-collection/VOC support inventory + downtime maintenance basis unresolved.",
+        "source": "doe_compressed_air_challenge; cagi_compressed_air_handbook; doe_steam_system_sourcebook; doe_pump_system_sourcebook",
+        "process_clue": "Support systems (compressed air, dust collection, steam traps, idle-line operation) typically waste 20-40% of generated utility before reaching production.",
+        "industrial_reason": "DOE support-system sourcebooks document repeatable, bounded operational interventions that do not redesign the core process.",
+        "asset_family_reason": "Manufacturing support systems share common failure modes (leaks, idle, mis-staged compressors) regardless of end-product.",
+    },
+    ("manufacturing", "C"): {
+        "trigger": "Air/wastewater/VOC permit basis + emissions profile + thermal-duty link unverified.",
+        "source": "epa_rmp; osha_psm; epa_ghgrp; calarp",
+        "process_clue": "Permit, abatement, and thermal-emissions exposure can dominate capital logic via avoided penalty, RMP requirements, or abatement-system retrofit.",
+        "industrial_reason": "Process safety and environmental regulations (RMP §112(r), PSM 1910.119, GHGRP) impose capital triggers independent of efficiency.",
+        "asset_family_reason": "Manufacturing facilities with thermal/chemical processes face concentrated regulatory exposure not present in commercial/logistics families.",
+    },
+    ("manufacturing", "D"): {
+        "trigger": "Process family, thermal duty, utility profile, schedule fields not yet populated.",
+        "source": "iso_50002; doe_iac_database",
+        "process_clue": "Cannot rank process-energy hypotheses without geometry + process inventory + throughput + thermal evidence.",
+        "industrial_reason": "ISO 50002 minimum-evidence requirements and DOE IAC assessment protocol both reject single-variable claims absent process characterization.",
+        "asset_family_reason": "Manufacturing characterization requires NAICS-level process logic before any cross-asset comparison is defendable.",
+    },
+    # commercial building
+    ("building", "A"): {
+        "trigger": "Lease responsibility split, central-plant inventory, common-area meter coverage not yet bounded.",
+        "source": "ashrae_90_1; ashrae_handbook_hvac_systems; boma_eer",
+        "process_clue": "Central HVAC, chillers, boilers, and common-area lighting are owner-controlled; their economics accrue to the owner P&L.",
+        "industrial_reason": "BOMA EER + ASHRAE 90.1 frame owner-controllable energy as the underwritable boundary in commercial real estate.",
+        "asset_family_reason": "Commercial buildings split economics between owner and tenant; CAPEX logic must respect the lease responsibility boundary.",
+    },
+    ("building", "B"): {
+        "trigger": "Occupancy/use mix + operating schedule + tenant utility split unresolved.",
+        "source": "uli_tenant_energy; cushman_wakefield_workplace; cbre_sustainability",
+        "process_clue": "Tenant-driven schedules, after-hours occupancy and use-mix variability frequently dominate office and mixed-use load profiles.",
+        "industrial_reason": "ULI Tenant Energy Optimization Program documents repeatable cases where tenant behavior, not building systems, drives the load.",
+        "asset_family_reason": "Commercial buildings host heterogeneous tenants; benchmark-based screening overstates owner-actionable upside when tenant load dominates.",
+    },
+    ("building", "C"): {
+        "trigger": "Local rule applicability (LL97/BERDO/BEPS/Title 24) + area thresholds + steam/gas/electrification basis unverified.",
+        "source": "nyc_ll97; nyc_ll84; boston_berdo; dc_beps; ca_title24_part6; crrem",
+        "process_clue": "Local performance standards convert carbon intensity into penalty exposure (LL97) or stranding risk (CRREM); fuel-transition triggers can dominate retrofit timing.",
+        "industrial_reason": "Real-estate decarbonization pathways are now jurisdiction-defined; compliance is no longer optional in major US markets.",
+        "asset_family_reason": "Commercial buildings face concentrated, jurisdiction-specific compliance stack absent from other asset families.",
+    },
+    ("building", "D"): {
+        "trigger": "Geometry + schedule + systems + fuel/utility evidence not yet populated.",
+        "source": "ashrae_211; energy_star_portfolio_manager; eia_cbecs",
+        "process_clue": "Cannot rank retrofit hypotheses without minimum evidence pack covering envelope, systems, and operating profile.",
+        "industrial_reason": "ASHRAE 211 (commercial-building audit standard) requires this evidence basis before defendable retrofit recommendation.",
+        "asset_family_reason": "Commercial-building heterogeneity (office vs. retail vs. mixed) demands characterization before peer comparison.",
+    },
+    # infrastructure (utility / rail / energy node)
+    ("infrastructure", "A"): {
+        "trigger": "Equipment inventory + one-line/layout + duty profile not yet bounded.",
+        "source": "ieee_c57; ieee_c37; nesc; neta_standards; ferc_form_1",
+        "process_clue": "Topology, dispatch posture, and major-equipment duty drive loss behavior more than generic efficiency levers.",
+        "industrial_reason": "NESC/NETA/IEEE standards frame infrastructure energy behavior around topology and duty, not building-style benchmarks.",
+        "asset_family_reason": "Infrastructure assets (substations, rail yards, terminals) are duty-and-topology driven, not floor-area driven.",
+    },
+    ("infrastructure", "B"): {
+        "trigger": "Redundancy obligations, outage history, operator control boundary unresolved.",
+        "source": "nerc_reliability; aar_field_manual; iso_55000",
+        "process_clue": "Resilience/redundancy requirements narrow operational upside; reliability-driven design rejects discretionary savings.",
+        "industrial_reason": "NERC reliability standards and AAR field practices constrain operating flexibility independent of efficiency.",
+        "asset_family_reason": "Infrastructure assets serve continuous-duty obligations; reliability lock-in dominates discretionary intervention budget.",
+    },
+    ("infrastructure", "C"): {
+        "trigger": "Compliance filing, equipment scope, fuel/station-service basis unverified.",
+        "source": "epa_ghgrp; nesc; nerc_reliability",
+        "process_clue": "Environmental posture and reporting (GHGRP, NESC) can drive upgrade logic ahead of pure efficiency gains.",
+        "industrial_reason": "Infrastructure environmental exposure is reported under federal frameworks distinct from building/commercial regimes.",
+        "asset_family_reason": "Utility/transport infrastructure faces sector-specific regulatory stack independent of building codes.",
+    },
+    ("infrastructure", "D"): {
+        "trigger": "Site boundary, topology, duty profile, metering basis not yet populated.",
+        "source": "iso_55000; neta_standards",
+        "process_clue": "Cannot rank reliability or capacity hypotheses without topology + duty + metering evidence.",
+        "industrial_reason": "ISO 55000 asset-management standards require condition + duty evidence before defendable lifecycle decisions.",
+        "asset_family_reason": "Infrastructure asset families demand topology-grade characterization before peer benchmarking.",
+    },
+    # oil & gas (process / refining / midstream)
+    ("oil_gas", "A"): {
+        "trigger": "Unit inventory + throughput profile + fuel/emissions basis not yet bounded.",
+        "source": "api_510; api_570; api_653; epa_ghgrp",
+        "process_clue": "Process units, thermal duty, compression, and pumping carry the bulk of energy and emissions exposure.",
+        "industrial_reason": "API inspection standards + GHGRP framing show process duty dominates oil & gas energy and emissions.",
+        "asset_family_reason": "Oil & gas processing is unit-and-throughput driven; building/commercial benchmarks do not apply.",
+    },
+    ("oil_gas", "B"): {
+        "trigger": "Reliability history + turnaround schedule + operating-unit boundary unresolved.",
+        "source": "aiche_ccps; osha_psm; api_510",
+        "process_clue": "Uptime, pressure, thermal, and safety lock-in dominate discretionary energy intervention budget.",
+        "industrial_reason": "CCPS guidelines and PSM 1910.119 enforce reliability constraints that supersede efficiency moves.",
+        "asset_family_reason": "Oil & gas units are continuous-duty with safety-critical reliability; intervention timing tied to turnaround cycle.",
+    },
+    ("oil_gas", "C"): {
+        "trigger": "Permit, emissions, reporting evidence unverified.",
+        "source": "epa_ghgrp; osha_psm; api_653",
+        "process_clue": "Permit/emissions/transition pressure can drive capital logic ahead of energy savings.",
+        "industrial_reason": "Oil & gas decarbonization pathways are jurisdiction-and-product specific (refining vs. midstream vs. upstream).",
+        "asset_family_reason": "Oil & gas faces sector-specific regulatory stack (PSM, NSPS, GHGRP) distinct from manufacturing/building regimes.",
+    },
+    ("oil_gas", "D"): {
+        "trigger": "Site boundary + unit inventory + throughput + fuel/emissions fields not yet populated.",
+        "source": "iso_50002; iso_55000",
+        "process_clue": "Cannot rank process/reliability/compliance hypotheses without unit + throughput + emissions evidence.",
+        "industrial_reason": "ISO 50002 + 55000 frame minimum evidence as prerequisite to oil & gas intervention logic.",
+        "asset_family_reason": "Oil & gas process characterization is irreducibly unit-specific; generic frames are non-defendable.",
+    },
+    # fallback (datacenter / unknown)
+    ("default", "A"): {
+        "trigger": "Owner-controlled central plant + common-area system inventory + lease responsibility not yet bounded.",
+        "source": "ashrae_tc99; ashrae_90_4; ashrae_90_1; uptime_tier_standards",
+        "process_clue": "Owner-controlled central systems (cooling topology, electrical distribution, BMS) carry the underwritable upside.",
+        "industrial_reason": "ASHRAE TC 9.9 + Uptime Tier framing place cooling/power topology at the center of asset economics.",
+        "asset_family_reason": "Datacenter and central-plant assets are owner-controlled; tenant variability is bounded by topology.",
+    },
+    ("default", "B"): {
+        "trigger": "Tenant schedule / use mix / after-hours pattern / submetering basis unresolved.",
+        "source": "uli_tenant_energy; green_grid_pue",
+        "process_clue": "Tenant variability and submetering scope can dominate load profile, weakening owner-actionable upside.",
+        "industrial_reason": "Green Grid PUE composition + ULI tenant studies show downstream load behavior is rarely bounded a priori.",
+        "asset_family_reason": "Mixed-use and tenant-rich assets require schedule-and-meter characterization before owner-CAPEX logic.",
+    },
+    ("default", "C"): {
+        "trigger": "Local rule applicability + area thresholds + steam/gas/electrification exposure unverified.",
+        "source": "nyc_ll97; boston_berdo; ca_title24_part6; epa_ghgrp",
+        "process_clue": "Local performance and fuel-transition standards convert energy posture into penalty exposure or stranding risk.",
+        "industrial_reason": "Jurisdiction-specific decarbonization pathways are now binding in major US markets.",
+        "asset_family_reason": "Asset families subject to LL97/BERDO/BEPS/Title 24 face direct emissions caps that drive capital timing.",
+    },
+    ("default", "D"): {
+        "trigger": "Geometry + schedule + systems + fuel/utility evidence not yet populated.",
+        "source": "iso_50002; ashrae_211; energy_star_portfolio_manager",
+        "process_clue": "Cannot rank hypotheses without minimum evidence pack covering structure, operation and utility behavior.",
+        "industrial_reason": "Audit-grade standards (ISO 50002, ASHRAE 211) require this evidence basis before defendable framing.",
+        "asset_family_reason": "Asset-family heterogeneity demands characterization before comparison or intervention.",
+    },
+}
+
+
+def _scenario_letter(scenario_text: str) -> str:
+    """Extract the leading letter (A/B/C/D) from a scenario heading.
+
+    'A. Energy intensity ...' → 'A'. Returns '' when no letter is found.
+    """
+    text = (scenario_text or "").strip()
+    if len(text) >= 2 and text[0].isalpha() and text[1] == ".":
+        return text[0].upper()
+    return ""
+
+
+def _justification_for(family: str, scenario_text: str, asset_name: str) -> dict[str, str]:
+    """Return the 5 RECOVERY_2026-05-10 §11.B justification fields.
+
+    Resolves (family, letter) from the scenario heading; falls back to
+    'default' family. Returns empty strings only if both keys miss
+    (safety net — should never happen given the table above is complete).
+    """
+    letter = _scenario_letter(scenario_text)
+    fields = (
+        _SCENARIO_JUSTIFICATION.get((family, letter))
+        or _SCENARIO_JUSTIFICATION.get(("default", letter))
+        or {}
+    )
+    if not fields:
+        return {
+            "trigger": "",
+            "source": "",
+            "process_clue": "",
+            "industrial_reason": "",
+            "asset_family_reason": "",
+        }
+    # Asset name substitution is currently informational; preserved for
+    # later templating when motors emit asset-specific triggers.
+    return dict(fields)
+
+
 def _build_scenario_space(
     asset_name: str,
     missing_clusters: list[str],
@@ -2393,9 +2614,13 @@ def _build_scenario_space(
         if idx < len(link_map):
             linked_front = _find_decision_front(decision_front_register, link_map[idx][0])
             linked_evidence = link_map[idx][1]
+        # RECOVERY_2026-05-10 §11.B: every scenario carries the 5
+        # justification fields validated by motor_062.
+        justification = _justification_for(family, row.get("scenario", ""), asset_name)
         enriched_rows.append(
             {
                 **row,
+                **justification,
                 "linked_decision_front": linked_front,
                 "linked_evidence_item": linked_evidence or row.get("evidence_needed", ""),
             }

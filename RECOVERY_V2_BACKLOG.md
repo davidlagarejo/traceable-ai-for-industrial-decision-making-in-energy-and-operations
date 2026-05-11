@@ -11,7 +11,41 @@ Auditoría del prompt "cerebro de congruencia operacional" (2026-05-10) vs estad
 5. **Gap E — Cold-chain patterns granulares (7 new)** ✅ DONE 2026-05-10
 6. **Gap F — Knowledge YAMLs dedicados** ✅ DONE 2026-05-10
 
-🎉 **Todos los 6 gaps cerrados.** El framework cubre 100% del prompt "cerebro de congruencia operacional" (RECOVERY_2026-05-10).
+🎉 **Todos los 6 gaps cerrados estructuralmente.** El framework cubre 100% del prompt "cerebro de congruencia operacional" (RECOVERY_2026-05-10) a nivel de construcción.
+
+## V2-LIVE — convertir "cableado pero frío" en "cableado y vivo"
+
+Los 6 gaps de V2 dejaron varios componentes correctos en aislamiento (pasan tests unitarios) pero inertes en producción porque los motores río arriba no traen los campos nuevos. Esta sección los activa.
+
+### Item 1 — motor_014 emite los 5 campos de justificación
+**Estado:** in_progress
+**Por qué importa:** motor_062 valida `trigger / source / process_clue / industrial_reason / asset_family_reason` pero motor_014 nunca rellena esos campos, así que el validador siempre ve "missing" y queda en warn permanente.
+**Pasos:** ampliar `_build_scenario_space` y branches per-family en motor_014. Citar `source_id` del catálogo Gap C. Tests para los 6 families.
+
+### Item 2 — motor_007 emite `facility_evidence_tokens` / `process_evidence_tokens`
+**Estado:** pending
+**Por qué importa:** motor_061 admite híbridos solo si encuentra estos tokens. Sin emisor, los 5 híbridos (cold_chain+food, mixed-temp DC, office+edge DC, mfg+attached DC, urban grocer) nunca se activan en producción.
+**Pasos:** en motor_007, derivar tokens de target_definition_contract + observable_cluster_register; añadir al output.
+
+### Item 3 — motor_062 consulta `source_catalog.is_known_source()`
+**Estado:** pending
+**Por qué importa:** hoy un escenario con `source: "mi tío"` pasa el validador. El catálogo de 139 fuentes existe pero motor_062 no lo consulta.
+**Pasos:** en motor_062, marcar como `critical` los escenarios cuyo `source` no aparece en el catálogo.
+
+### Item 4 — motor_050 + motor_052 cargan los 4 YAMLs Gap F
+**Estado:** pending
+**Por qué importa:** machine_logic / compressed_air_logic / control_boundary_logic / power_quality_logic están escritos pero ningún motor los lee. Son documentación viva, no comportamiento.
+**Pasos:** loader que importa los 4 YAMLs en motor_050 (asset operational logic) y motor_052 (loss pattern); expuestos en bundle.
+
+### Item 5 — switch motor_062: warn → block
+**Estado:** pending (depende de Item 1)
+**Por qué importa:** una vez que motor_014 emita los campos, motor_062 puede ser estricto y bloquear renders con justificación incompleta.
+
+### Item 6 — caso híbrido en regression script
+**Estado:** pending (depende de Item 2)
+**Por qué importa:** validar end-to-end que la ruta cold_chain+food_processing se activa con un input real, no solo en test unitario.
+
+**Tiempo estimado total:** ~2 días para los 6 items.
 
 ## Métricas globales tras Gap A + Gap C
 
