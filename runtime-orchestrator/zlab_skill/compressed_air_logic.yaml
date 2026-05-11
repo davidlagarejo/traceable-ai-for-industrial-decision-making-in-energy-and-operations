@@ -1,0 +1,28 @@
+prompt_section: 1
+prompt_reference: RECOVERY_2026-05-10 §1 Knowledge Layer (Gap F)
+registry_equivalence:
+  knowledge_type: COMPRESSED_AIR_LOGIC
+  pattern_ids:
+    - compressed_air_leak_plausibility
+  industrial_sources:
+    - cagi_compressed_air_handbook
+    - doe_compressed_air_challenge
+    - atlas_copco_compressed_air_manual
+    - ingersoll_rand_cabp
+scope:
+  - Compressor sizing, staging, and unload behavior
+  - Distribution losses and leakage (line losses, fittings, hoses, drains)
+  - Pressure-band optimization (artificial demand, regulators)
+  - End-use audit (legitimate vs. illegitimate use cases)
+governing_principles:
+  - Compressed air is one of the most expensive utilities per delivered Btu; ~70% of generated air is typically lost or misused
+  - Leak rate above 10% of total CFM is industry-considered material; above 30% is rarely sustainable
+  - "Inappropriate use" (open blow-down, cabinet cooling, sparging without nozzles) often dominates true demand
+  - Pressure-band reduction by 2 psi typically yields ~1% kWh savings
+falsification_anchors:
+  - Recent (<12 month) compressed-air audit on file
+  - Telemetry-validated leak rate
+  - Documented end-use inventory with appropriateness assessment
+notes:
+  - Compressed-air logic is a manufacturing-family pattern; activation in cold-chain/warehouse/office contexts requires explicit cross-family hybrid justification
+  - Cannot close compressed-air claims without Tier-1 or Tier-2 source citation (DOE/CAGI)

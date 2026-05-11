@@ -1,0 +1,32 @@
+prompt_section: 1
+prompt_reference: RECOVERY_2026-05-10 §1 Knowledge Layer (Gap F)
+registry_equivalence:
+  knowledge_type: CONTROL_BOUNDARY_LOGIC
+  pattern_ids:
+    - hvac_schedule_drift
+    - sensor_prematurity
+    - digital_twin_prematurity
+    - defrost_profile
+  industrial_sources:
+    - isa_handbook
+    - siemens_process_automation
+    - honeywell_building_controls
+    - trane_engineers_newsletter
+scope:
+  - Schedules, setpoints, deadbands, and overrides
+  - Sensor coverage and calibration drift
+  - Loop tuning (PID gains, anti-windup, deadtime)
+  - Sequence-of-operations integrity (commissioning vs. as-found)
+  - Operator override patterns
+governing_principles:
+  - Most "equipment efficiency problems" surfaced in pre-audit screens are actually control-boundary problems
+  - Control improvements are low-CAPEX with measurable kWh impact; missing them mis-directs capital
+  - Commissioning state degrades over time; the design intent is rarely the operating intent after 24-36 months
+  - Sensors fail silently; absence of an alarm is not absence of bad data
+falsification_anchors:
+  - Documented re-commissioning or retro-commissioning within 36 months
+  - Sensor calibration log on file
+  - BMS trend data showing setpoint/schedule discipline
+notes:
+  - Control-boundary patterns must be falsified BEFORE any equipment-CAPEX claim is permitted
+  - Pattern activation requires control_boundary_evidence_unresolved trigger

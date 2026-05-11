@@ -1,0 +1,39 @@
+prompt_section: 1
+prompt_reference: RECOVERY_2026-05-10 §1 Knowledge Layer (Gap F)
+registry_equivalence:
+  knowledge_type: POWER_QUALITY_LOGIC
+  pattern_ids:
+    - reactive_power_exposure
+    - demand_charge_exposure_unknown
+  industrial_sources:
+    - ieee_519
+    - ieee_1100
+    - ieee_c57
+    - ieee_c37
+    - nesc
+    - neta_standards
+    - schneider_power_handbook
+    - abb_drives_manual
+scope:
+  - Power factor and reactive power compensation
+  - Harmonic distortion (THD, individual harmonics)
+  - Voltage quality (sags, swells, transients, unbalance)
+  - Grounding and bonding integrity
+  - Demand charge composition (kW-peak, kVA-peak, time-of-use)
+governing_principles:
+  - Reactive power penalties materialize as kVAR billing or power-factor surcharges; visible on the utility bill, invisible on the load profile
+  - Harmonic distortion above IEEE 519 limits accelerates transformer/motor degradation and triggers utility penalties
+  - Voltage unbalance >2% reduces motor life and efficiency; >5% is a maintenance emergency
+  - Demand charges can represent 30-60% of industrial/commercial electric cost yet are routinely under-analyzed
+falsification_anchors:
+  - Power-quality study within 24 months
+  - Utility rate-tariff analysis on file
+  - Documented kVA correction (capacitor banks, active filters)
+applicable_assets:
+  - manufacturing_facility (always — driven by motor loads + VFDs)
+  - commercial_building (when chiller/elevator inverter loads dominate)
+  - datacenter (always — UPS + harmonics from rectifiers)
+  - infrastructure_node (always — large transformers and dispatch logic)
+notes:
+  - Power-quality claims require Tier-1 IEEE/ANSI citation
+  - Cannot infer harmonic distortion or power factor from kWh-only data; explicit measurement required

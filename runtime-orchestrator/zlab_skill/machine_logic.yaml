@@ -1,0 +1,29 @@
+prompt_section: 1
+prompt_reference: RECOVERY_2026-05-10 §1 Knowledge Layer (Gap F)
+registry_equivalence:
+  knowledge_type: MACHINE_LOGIC
+  pattern_ids:
+    - compressor_staging
+    - refrigeration_duty
+    - chiller_degradation_plausibility
+    - boiler_degradation_plausibility
+  industrial_sources:
+    - sme_handbook
+    - epri_motors_drives
+    - nema_mg1
+    - easa_ar100
+    - asme_ptc_4
+    - asme_ptc_23
+    - asme_ptc_30
+scope:
+  - Rotating equipment (motors, drives, fans, pumps, compressors)
+  - Process equipment (boilers, chillers, presses, ovens, mixers)
+  - Part-load behavior and staging logic
+  - Maintenance reality (degradation pathways, false-assumption traps)
+governing_principles:
+  - Equipment efficiency is part-load dependent; rated efficiency is rarely the operating efficiency
+  - Sequencing/staging is a controls-grade lever; CAPEX-first logic frequently masks a controls fix
+  - Degradation accumulates silently between maintenance events; absence of alarm is not absence of loss
+notes:
+  - Machine logic patterns must always declare anti_triggers (when the pattern does NOT apply) and falsification conditions
+  - Tier-1 source citation required for any kWh/ton-hour or kWh/MMBtu claim
