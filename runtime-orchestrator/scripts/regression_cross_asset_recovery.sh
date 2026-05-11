@@ -101,6 +101,20 @@ for entry in "${CASES[@]}"; do
 done
 
 echo ""
+echo "==== hybrid asset-family flow (V2-LIVE Item 6) ===="
+# The hybrid path (cold_chain + food_processing, mixed-temp DC, etc.)
+# threads through motor_007 (token derivation) → motor_061 (admission).
+# Run the dedicated E2E test that exercises the full chain.
+if python3 -m pytest tests/test_hybrid_end_to_end_flow.py -q > /tmp/regression_hybrid.log 2>&1; then
+  echo "[hybrid_e2e] PASS — cold_chain+food_processing dairy case activates motor_061.hybrid_admissible"
+  PASS=$((PASS + 1))
+else
+  echo "[hybrid_e2e] FAIL — hybrid path broken"
+  tail -20 /tmp/regression_hybrid.log
+  FAIL=$((FAIL + 1))
+fi
+
+echo ""
 echo "==== regression summary ===="
 echo "PASS: ${PASS}"
 echo "FAIL: ${FAIL}"

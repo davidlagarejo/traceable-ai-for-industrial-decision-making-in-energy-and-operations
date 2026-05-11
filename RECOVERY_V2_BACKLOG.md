@@ -47,6 +47,54 @@ Los 6 gaps de V2 dejaron varios componentes correctos en aislamiento (pasan test
 
 **Tiempo estimado total:** ~2 días para los 6 items.
 
+---
+
+## V2-LIVE — closure 2026-05-10
+
+Los 6 items de V2-LIVE están **completos**. El framework ha pasado de
+"100% construido / 85% vivo" a **100% vivo**.
+
+| Item | Estado | Commit |
+|---|---|---|
+| 1 — motor_014 emits 5 justification fields | ✅ | `a66c69d` |
+| 2 — motor_007 derives evidence tokens | ✅ | `0fadf8e` |
+| 3 — motor_062 SJ2 source catalog validation | ✅ | `fe24ee3` |
+| 4 — motor_050 + motor_052 surface knowledge YAMLs | ✅ | `(this batch)` |
+| 5 — motor_062 default mode flipped warn → block | ✅ | `ef1ed10` |
+| 6 — hybrid asset-family E2E flow + regression coverage | ✅ | `(this batch)` |
+
+### Métricas finales
+
+| Métrica | Pre-V2 | Post V2 estructural | Post V2-LIVE |
+|---|---|---|---|
+| Test suite | 938 | 970 | **1021** (+83) |
+| Regression checks | 6/6 | 6/6 | **7/7** (+hybrid E2E) |
+| Validators Layer F | 8 | 9 | 9 (motor_062 ahora bloquea con dientes) |
+| Industrial sources | dispersas | 139 estructuradas | 139 (motor_062 las consulta) |
+| Knowledge YAMLs Gap F | 0 | 4 (inertes) | **4 (consumidos por motor_050+052)** |
+| Hybrid asset families | 0 (bloqueadas) | 5 (cableadas frías) | **5 (activas E2E)** |
+| Scenario justification fields | 0 emitidos | 0 emitidos | **24 entries × 5 fields** |
+| motor_062 mode default | n/a | warn | **block** |
+
+### Resultado
+
+Todo el prompt "cerebro de congruencia operacional" (RECOVERY_2026-05-10)
+está **100% vivo en producción**, no solo construido:
+
+- Cada escenario activo declara `trigger / source / process_clue /
+  industrial_reason / asset_family_reason` con citación al catálogo de 139
+  fuentes.
+- motor_062 bloquea el render por defecto cuando faltan los campos o la
+  fuente no es del catálogo.
+- motor_061 admite los 5 híbridos justificables (cold_chain+food,
+  warehouse mixed-temp, office+edge DC, manufacturing+DC, urban grocer)
+  cuando motor_007 detecta los tokens en evidencia real.
+- Los 4 YAMLs de Gap F (machine/CA/control/power-quality logic) están
+  surfaced en los bundles de motor_050 y motor_052.
+
+Regression 7/7 PASS demuestra que la disciplina nueva no rompió ninguno
+de los 6 cases cross-asset existentes.
+
 ## Métricas globales tras Gap A + Gap C
 
 | Métrica | Pre-V2 | Post V2 (todos gaps) |
