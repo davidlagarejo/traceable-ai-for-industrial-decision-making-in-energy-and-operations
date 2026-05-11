@@ -121,6 +121,9 @@ def _summarize(payload: dict[str, Any]) -> dict[str, Any]:
         "rejection_reason": payload.get("__rejection_reason__", ""),
         "approved_at": payload.get("__approved_at__", ""),
         "approved_by": payload.get("__approved_by__", ""),
+        "edited_at": payload.get("__edited_at__", ""),
+        "edited_by": payload.get("__edited_by__", ""),
+        "edit_count": int(payload.get("__edit_count__", 0) or 0),
     }
 
 
@@ -230,6 +233,87 @@ def reject(combination_id: str, reviewer: str, reason: str) -> dict[str, Any]:
     src.unlink()
     _append_audit({"event": "reject", "combination_id": combination_id, "by": reviewer, "reason": reason[:200]})
     return _summarize(payload | {"__path__": str(dst), "__filename__": dst.name})
+
+
+# Fields the reviewer is allowed to edit while a combination is pending.
+# `id` is locked (it's the filename) and the system-stamped __*__ keys are
+# managed by this module. Everything else listed here is editable.
+_EDITABLE_FIELDS: tuple[str, ...] = (
+    "name",
+    "version",
+    "pattern_ids",
+    "trigger_logic",
+    "anti_triggers",
+    "combined_hypothesis",
+    "strategic_risk",
+    "minimum_evidence",
+    "financial_exposure",
+    "tad_action",
+    "prohibited_claims",
+    "confidence_ceiling",
+    "knowledge_type",
+    "claim_permissions_impact",
+    "example_outputs",
+    "tests",
+    "notes",
+)
+
+
+def editable_fields() -> tuple[str, ...]:
+    return _EDITABLE_FIELDS
+
+
+def edit(combination_id: str, reviewer: str, patch: dict[str, Any]) -> dict[str, Any]:
+    """Apply a reviewer patch to a pending combination.
+
+    Only fields in _EDITABLE_FIELDS are touched; everything else in the
+    payload is preserved (including system stamps). Stamps __edited_at__
+    + __edited_by__ + increments __edit_count__.
+
+    Raises:
+      FileNotFoundError — no pending combination with that id
+      ValueError        — patch is empty, contains no editable fields, or
+                          reviewer is empty
+    """
+    _ensure_dirs()
+    combination_id = _safe_combination_id(combination_id)
+    if not (reviewer or "").strip():
+        raise ValueError("reviewer is required")
+    if not isinstance(patch, dict) or not patch:
+        raise ValueError("patch must be a non-empty dict")
+
+    # Filter to editable fields only (silent drop of unknown / locked keys).
+    clean_patch = {k: v for k, v in patch.items() if k in _EDITABLE_FIELDS}
+    if not clean_patch:
+        raise ValueError(
+            f"patch contains no editable fields. "
+            f"Editable: {list(_EDITABLE_FIELDS)}"
+        )
+
+    fname = _filename_for(combination_id)
+    path = _PENDING_DIR / fname
+    if not path.exists():
+        raise FileNotFoundError(
+            f"no pending combination '{combination_id}' to edit"
+        )
+
+    payload = _read_json(path)
+    prev_edit_count = int(payload.get("__edit_count__", 0) or 0)
+    payload.update(clean_patch)
+    payload["__edited_at__"] = _now()
+    payload["__edited_by__"] = reviewer.strip()
+    payload["__edit_count__"] = prev_edit_count + 1
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    _append_audit(
+        {
+            "event": "edit",
+            "combination_id": combination_id,
+            "by": reviewer,
+            "fields_changed": sorted(clean_patch.keys()),
+            "edit_count": payload["__edit_count__"],
+        }
+    )
+    return _summarize(payload | {"__path__": str(path), "__filename__": path.name})
 
 
 def reset_to_pending(combination_id: str, reviewer: str) -> dict[str, Any]:

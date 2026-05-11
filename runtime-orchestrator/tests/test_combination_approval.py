@@ -229,3 +229,120 @@ def test_get_full_raises_on_unknown_state(temp_registry):
 def test_get_full_raises_when_not_present(temp_registry):
     with pytest.raises(FileNotFoundError):
         ca.get_full("ghost", state="pending")
+
+
+# ── edit ────────────────────────────────────────────────────────────────
+
+
+def test_edit_updates_allowed_fields_and_keeps_pending(temp_registry):
+    ca.propose(_proposal("edit_combo"))
+    out = ca.edit("edit_combo", reviewer="david", patch={
+        "combined_hypothesis": "Refined hypothesis",
+        "strategic_risk": "Refined risk",
+        "pattern_ids": ["pattern_a", "pattern_b", "pattern_c"],
+    })
+    assert out["edited_by"] == "david"
+    assert out["edit_count"] == 1
+    # Still pending
+    full = ca.get_full("edit_combo", state="pending")
+    assert full["combined_hypothesis"] == "Refined hypothesis"
+    assert full["pattern_ids"] == ["pattern_a", "pattern_b", "pattern_c"]
+
+
+def test_edit_increments_edit_count(temp_registry):
+    ca.propose(_proposal("counter"))
+    ca.edit("counter", reviewer="d", patch={"name": "Round 1"})
+    ca.edit("counter", reviewer="d", patch={"name": "Round 2"})
+    out = ca.edit("counter", reviewer="d", patch={"name": "Round 3"})
+    assert out["edit_count"] == 3
+
+
+def test_edit_rejects_attempt_to_change_id(temp_registry):
+    """The patch may contain 'id' but it's silently dropped (id is locked)."""
+    ca.propose(_proposal("locked"))
+    ca.edit("locked", reviewer="d", patch={
+        "id": "hijack_attempt",
+        "combined_hypothesis": "h",
+    })
+    full = ca.get_full("locked", state="pending")
+    assert full["id"] == "locked"
+    assert "hijack_attempt" not in str(full)
+
+
+def test_edit_drops_unknown_keys_silently(temp_registry):
+    """Unknown fields don't appear; only _EDITABLE_FIELDS get through."""
+    ca.propose(_proposal("filter_combo"))
+    ca.edit("filter_combo", reviewer="d", patch={
+        "name": "ok",
+        "evil_field": "should_be_dropped",
+        "another_evil": 42,
+    })
+    full = ca.get_full("filter_combo", state="pending")
+    assert full["name"] == "ok"
+    assert "evil_field" not in full
+    assert "another_evil" not in full
+
+
+def test_edit_refuses_when_patch_has_no_editable_keys(temp_registry):
+    ca.propose(_proposal("noop"))
+    with pytest.raises(ValueError, match="no editable fields"):
+        ca.edit("noop", reviewer="d", patch={"evil_only": 1})
+
+
+def test_edit_refuses_empty_patch(temp_registry):
+    ca.propose(_proposal("empty"))
+    with pytest.raises(ValueError, match="non-empty"):
+        ca.edit("empty", reviewer="d", patch={})
+
+
+def test_edit_refuses_empty_reviewer(temp_registry):
+    ca.propose(_proposal("anon"))
+    with pytest.raises(ValueError, match="reviewer is required"):
+        ca.edit("anon", reviewer="", patch={"name": "x"})
+
+
+def test_edit_raises_when_no_pending_match(temp_registry):
+    with pytest.raises(FileNotFoundError):
+        ca.edit("ghost", reviewer="d", patch={"name": "x"})
+
+
+def test_edit_preserves_proposed_metadata(temp_registry):
+    ca.propose(_proposal("preserve"), proposed_by="ai")
+    proposed_at_before = ca.get_full("preserve", state="pending")["__proposed_at__"]
+    ca.edit("preserve", reviewer="d", patch={"name": "Edited"})
+    full = ca.get_full("preserve", state="pending")
+    assert full["__proposed_by__"] == "ai"
+    assert full["__proposed_at__"] == proposed_at_before
+
+
+def test_edit_then_approve_carries_edit_metadata(temp_registry):
+    ca.propose(_proposal("flow"))
+    ca.edit("flow", reviewer="d", patch={"combined_hypothesis": "Improved"})
+    out = ca.approve("flow", reviewer="d")
+    assert out["edit_count"] == 1
+    assert out["approved_by"] == "d"
+    approved = ca.get_full("flow", state="approved")
+    assert approved["combined_hypothesis"] == "Improved"
+    assert approved["__edited_by__"] == "d"
+
+
+def test_edit_audit_log_records_changed_fields(temp_registry):
+    ca.propose(_proposal("audit"))
+    ca.edit("audit", reviewer="d", patch={
+        "combined_hypothesis": "x", "strategic_risk": "y",
+    })
+    log_path = temp_registry / "combination_approval_log.jsonl"
+    lines = log_path.read_text(encoding="utf-8").strip().splitlines()
+    edit_event = json.loads(lines[-1])
+    assert edit_event["event"] == "edit"
+    assert edit_event["fields_changed"] == ["combined_hypothesis", "strategic_risk"]
+    assert edit_event["edit_count"] == 1
+
+
+def test_editable_fields_returns_locked_list():
+    fields = ca.editable_fields()
+    assert "combined_hypothesis" in fields
+    assert "strategic_risk" in fields
+    assert "pattern_ids" in fields
+    assert "id" not in fields  # locked
+    assert "__proposed_at__" not in fields  # system stamp

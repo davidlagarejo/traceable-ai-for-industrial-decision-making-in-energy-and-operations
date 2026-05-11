@@ -184,3 +184,112 @@ def test_combinations_html_page_renders(client):
     # Endpoint references are constructed in JS as '/api/combinations/'+state
     assert "/api/combinations/" in body
     assert "loadState('pending')" in body
+
+
+# ── Edit endpoint ──────────────────────────────────────────────────────
+
+
+def test_edit_endpoint_applies_patch_and_keeps_pending(client):
+    c, ca = client
+    ca.propose(_proposal("edit_e2e"))
+    r = c.post(
+        "/api/combinations/edit",
+        json={
+            "combination_id": "edit_e2e",
+            "reviewer": "david",
+            "patch": {
+                "combined_hypothesis": "Refined via dashboard",
+                "pattern_ids": ["new_a", "new_b", "new_c"],
+            },
+        },
+    )
+    assert r.status_code == 200
+    body = r.get_json()
+    assert body["status"] == "edited"
+    assert body["combination"]["edit_count"] == 1
+    assert body["combination"]["edited_by"] == "david"
+    # Still in pending
+    pending = c.get("/api/combinations/pending").get_json()
+    assert any(row["combination_id"] == "edit_e2e" for row in pending)
+    full = c.get("/api/combinations/pending/edit_e2e").get_json()
+    assert full["combined_hypothesis"] == "Refined via dashboard"
+    assert full["pattern_ids"] == ["new_a", "new_b", "new_c"]
+
+
+def test_edit_endpoint_requires_combination_id(client):
+    c, _ = client
+    r = c.post("/api/combinations/edit", json={"patch": {"name": "x"}})
+    assert r.status_code == 400
+
+
+def test_edit_endpoint_requires_non_empty_patch(client):
+    c, ca = client
+    ca.propose(_proposal())
+    r = c.post(
+        "/api/combinations/edit",
+        json={"combination_id": "ui_test_combo", "patch": {}},
+    )
+    assert r.status_code == 400
+
+
+def test_edit_endpoint_returns_404_when_no_pending(client):
+    c, _ = client
+    r = c.post(
+        "/api/combinations/edit",
+        json={"combination_id": "ghost", "patch": {"name": "x"}},
+    )
+    assert r.status_code == 404
+
+
+def test_edit_then_approve_flow(client):
+    """Full E2E: propose → edit → approve. The approved file carries the edits."""
+    c, ca = client
+    ca.propose(_proposal("flow_combo"))
+    # Edit
+    r = c.post(
+        "/api/combinations/edit",
+        json={
+            "combination_id": "flow_combo",
+            "reviewer": "david",
+            "patch": {"strategic_risk": "Sharpened risk statement"},
+        },
+    )
+    assert r.status_code == 200
+    # Approve
+    r = c.post(
+        "/api/combinations/approve",
+        json={"combination_id": "flow_combo", "reviewer": "david"},
+    )
+    assert r.status_code == 200
+    # The approved record must carry both the edit and the approval stamps
+    full = c.get("/api/combinations/approved/flow_combo").get_json()
+    assert full["strategic_risk"] == "Sharpened risk statement"
+    assert full["__edited_by__"] == "david"
+    assert full["__approved_by__"] == "david"
+
+
+def test_editable_fields_endpoint_lists_allowed_keys(client):
+    c, _ = client
+    r = c.get("/api/combinations/editable-fields")
+    assert r.status_code == 200
+    fields = r.get_json()
+    assert "combined_hypothesis" in fields
+    assert "pattern_ids" in fields
+    assert "id" not in fields
+
+
+def test_edit_endpoint_rejects_attempt_to_change_id_silently(client):
+    """Patch may include 'id' but it gets dropped (only _EDITABLE_FIELDS pass)."""
+    c, ca = client
+    ca.propose(_proposal("locked_id"))
+    r = c.post(
+        "/api/combinations/edit",
+        json={
+            "combination_id": "locked_id",
+            "reviewer": "david",
+            "patch": {"id": "hijack", "combined_hypothesis": "ok"},
+        },
+    )
+    assert r.status_code == 200
+    full = c.get("/api/combinations/pending/locked_id").get_json()
+    assert full["id"] == "locked_id"

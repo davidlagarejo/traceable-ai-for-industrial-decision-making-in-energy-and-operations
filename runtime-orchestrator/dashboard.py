@@ -14160,6 +14160,34 @@ def api_combinations_reject():
         return jsonify({"error": str(exc)}), 400
 
 
+@app.route("/api/combinations/edit", methods=["POST"])
+def api_combinations_edit():
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    combination_id = (body.get("combination_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    patch = body.get("patch") or {}
+    if not combination_id:
+        return jsonify({"error": "combination_id required"}), 400
+    if not isinstance(patch, dict) or not patch:
+        return jsonify({"error": "patch (dict) required"}), 400
+    try:
+        out = _ca.edit(combination_id, reviewer=reviewer, patch=patch)
+        return jsonify({"status": "edited", "combination": out})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/combinations/editable-fields")
+def api_combinations_editable_fields():
+    if _ca is None:
+        return jsonify([])
+    return jsonify(list(_ca.editable_fields()))
+
+
 @app.route("/api/combinations/reset", methods=["POST"])
 def api_combinations_reset():
     if _ca is None:
@@ -14196,7 +14224,9 @@ h2{font-size:14px;margin:24px 0 8px 0;color:#7d8590;text-transform:uppercase;let
 .btn{padding:6px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:12px;margin-right:6px;}
 .btn-approve{background:#238636;color:#fff;}
 .btn-reject{background:#da3633;color:#fff;}
+.btn-edit{background:#bf8700;color:#fff;}
 .btn-reset{background:#1f6feb;color:#fff;}
+.edit-badge{display:inline-block;background:#bf8700;color:#fff;border-radius:4px;padding:1px 6px;font-size:10px;margin-left:6px;font-weight:600;}
 .empty{color:#7d8590;font-style:italic;padding:16px;}
 .summary{display:flex;gap:24px;margin-bottom:24px;}
 .stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 20px;}
@@ -14232,6 +14262,46 @@ h2{font-size:14px;margin:24px 0 8px 0;color:#7d8590;text-transform:uppercase;let
   </div>
 </div>
 
+<div class="modal" id="editModal">
+  <div class="modal-box" style="width:640px;max-height:85vh;overflow-y:auto;">
+    <h2>Edit combination</h2>
+    <p id="editId" style="color:#7d8590;font-family:monospace;"></p>
+    <div style="font-size:12px;color:#7d8590;margin-bottom:12px;">Modify the fields below; leave a field unchanged to keep its current value. After saving, the combination stays in <em>pending</em> for approval.</div>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Name</label>
+    <input type="text" id="editName" style="width:100%;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;margin-bottom:10px;">
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Pattern IDs (comma-separated)</label>
+    <input type="text" id="editPatternIds" style="width:100%;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;margin-bottom:10px;font-family:monospace;font-size:12px;">
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Combined hypothesis</label>
+    <textarea id="editHypothesis" style="width:100%;height:60px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:inherit;margin-bottom:10px;"></textarea>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Strategic risk</label>
+    <textarea id="editRisk" style="width:100%;height:60px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:inherit;margin-bottom:10px;"></textarea>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">TAD action</label>
+    <input type="text" id="editTadAction" style="width:100%;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;margin-bottom:10px;">
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Minimum evidence (one per line)</label>
+    <textarea id="editMinEvidence" style="width:100%;height:80px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:monospace;font-size:12px;margin-bottom:10px;"></textarea>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Trigger logic (one per line)</label>
+    <textarea id="editTriggerLogic" style="width:100%;height:60px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:monospace;font-size:12px;margin-bottom:10px;"></textarea>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Anti-triggers (one per line)</label>
+    <textarea id="editAntiTriggers" style="width:100%;height:60px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:monospace;font-size:12px;margin-bottom:10px;"></textarea>
+
+    <label style="font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;">Prohibited claims (one per line)</label>
+    <textarea id="editProhibitedClaims" style="width:100%;height:60px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px;font-family:monospace;font-size:12px;margin-bottom:10px;"></textarea>
+
+    <div style="margin-top:12px;">
+      <button class="btn btn-edit" onclick="confirmEdit()">Save changes</button>
+      <button class="btn" style="background:#30363d;color:#fff;" onclick="closeEdit()">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const REVIEWER = (function(){
   let r = localStorage.getItem('zlab_reviewer');
@@ -14263,6 +14333,7 @@ function renderCard(c, state) {
   let actions = '';
   if (state === 'pending') {
     actions = `<button class="btn btn-approve" onclick="doApprove('${c.combination_id}')">✓ Approve</button>` +
+              `<button class="btn btn-edit" onclick="openEdit('${c.combination_id}')">✎ Edit</button>` +
               `<button class="btn btn-reject" onclick="openReject('${c.combination_id}')">✗ Reject</button>`;
   } else if (state === 'rejected') {
     actions = `<button class="btn btn-reset" onclick="doReset('${c.combination_id}')">↺ Re-review</button>`;
@@ -14271,8 +14342,10 @@ function renderCard(c, state) {
   if (state === 'pending') metaLine = `proposed by ${c.proposed_by||'?'} at ${c.proposed_at||'?'}`;
   else if (state === 'approved') metaLine = `approved by ${c.approved_by||'?'} at ${c.approved_at||'?'}`;
   else if (state === 'rejected') metaLine = `rejected by ${c.rejected_by||'?'} at ${c.rejected_at||'?'} — reason: ${c.rejection_reason||'(none)'}`;
+  const editBadge = (c.edit_count && c.edit_count > 0)
+    ? `<span class="edit-badge">edited ${c.edit_count}× by ${c.edited_by||'?'}</span>` : '';
   return `<div class="card">
-    <h3>${c.name || c.combination_id}</h3>
+    <h3>${c.name || c.combination_id}${editBadge}</h3>
     <div class="sub">${c.combination_id} · v${c.version||'?'} · TAD: ${c.tad_action||'(none)'}</div>
     <div class="meta">${metaLine}</div>
     <div>${pids}</div>
@@ -14306,6 +14379,70 @@ async function doReset(id) {
   const r = await fetch('/api/combinations/reset', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({combination_id: id, reviewer: REVIEWER})});
   if (!r.ok) { const e = await r.json(); alert('Reset failed: ' + (e.error||r.statusText)); return; }
   await loadSummary(); await loadState(currentState);
+}
+
+let _editingId = null;
+let _editingOriginal = null;
+async function openEdit(id) {
+  _editingId = id;
+  const r = await fetch('/api/combinations/pending/' + id);
+  if (!r.ok) { alert('Could not load combination'); return; }
+  const full = await r.json();
+  _editingOriginal = full;
+  document.getElementById('editId').textContent = id;
+  document.getElementById('editName').value = full.name || '';
+  document.getElementById('editPatternIds').value = (full.pattern_ids||[]).join(', ');
+  document.getElementById('editHypothesis').value = full.combined_hypothesis || '';
+  document.getElementById('editRisk').value = full.strategic_risk || '';
+  document.getElementById('editTadAction').value = full.tad_action || '';
+  document.getElementById('editMinEvidence').value = (full.minimum_evidence||[]).join('\\n');
+  document.getElementById('editTriggerLogic').value = (full.trigger_logic||[]).join('\\n');
+  document.getElementById('editAntiTriggers').value = (full.anti_triggers||[]).join('\\n');
+  document.getElementById('editProhibitedClaims').value = (full.prohibited_claims||[]).join('\\n');
+  document.getElementById('editModal').classList.add('open');
+}
+function closeEdit() {
+  _editingId = null; _editingOriginal = null;
+  document.getElementById('editModal').classList.remove('open');
+}
+function _parseLines(v) {
+  return (v||'').split('\\n').map(s => s.trim()).filter(s => s.length);
+}
+function _parseCsv(v) {
+  return (v||'').split(',').map(s => s.trim()).filter(s => s.length);
+}
+async function confirmEdit() {
+  const patch = {};
+  const orig = _editingOriginal || {};
+  const candidates = {
+    name: document.getElementById('editName').value.trim(),
+    pattern_ids: _parseCsv(document.getElementById('editPatternIds').value),
+    combined_hypothesis: document.getElementById('editHypothesis').value.trim(),
+    strategic_risk: document.getElementById('editRisk').value.trim(),
+    tad_action: document.getElementById('editTadAction').value.trim(),
+    minimum_evidence: _parseLines(document.getElementById('editMinEvidence').value),
+    trigger_logic: _parseLines(document.getElementById('editTriggerLogic').value),
+    anti_triggers: _parseLines(document.getElementById('editAntiTriggers').value),
+    prohibited_claims: _parseLines(document.getElementById('editProhibitedClaims').value),
+  };
+  // Only include fields that actually changed.
+  for (const k in candidates) {
+    const newVal = candidates[k];
+    const oldVal = orig[k];
+    const newStr = JSON.stringify(newVal);
+    const oldStr = JSON.stringify(oldVal === undefined ? (Array.isArray(newVal) ? [] : '') : oldVal);
+    if (newStr !== oldStr) patch[k] = newVal;
+  }
+  if (Object.keys(patch).length === 0) {
+    alert('No changes to save.'); return;
+  }
+  const r = await fetch('/api/combinations/edit', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({combination_id: _editingId, reviewer: REVIEWER, patch})
+  });
+  if (!r.ok) { const e = await r.json(); alert('Edit failed: ' + (e.error||r.statusText)); return; }
+  closeEdit(); await loadSummary(); await loadState(currentState);
 }
 
 loadSummary(); loadState('pending');
