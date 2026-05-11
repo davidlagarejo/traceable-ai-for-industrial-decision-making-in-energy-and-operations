@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from ..source_catalog import all_sources, is_known_source
 from .base import BaseMotorAdapter
 
 
@@ -103,27 +104,51 @@ def _build_warnings(
     for idx, scenario in enumerate(scenarios):
         if not _is_active(scenario):
             continue
-        missing = _missing_fields(scenario)
-        if not missing:
-            continue
         scenario_label = _text(scenario.get("scenario")) or f"scenario_{idx + 1:02d}"
-        severity = "critical" if len(missing) == len(_REQUIRED_FIELDS) else "warning"
-        warnings.append(
-            {
-                "rule_id": "SJ1_scenario_missing_justification",
-                "severity": severity,
-                "scenario": scenario_label,
-                "asset_family": asset_family,
-                "missing_fields": missing,
-                "description": (
-                    f"Active scenario '{scenario_label[:80]}' is missing "
-                    f"required justification fields: {missing}. "
-                    "Per RECOVERY_2026-05-10 §11.B every active scenario "
-                    "must declare trigger, source, process_clue, "
-                    "industrial_reason, and asset_family_reason."
-                ),
-            }
-        )
+        # Rule SJ1: missing justification fields
+        missing = _missing_fields(scenario)
+        if missing:
+            severity = "critical" if len(missing) == len(_REQUIRED_FIELDS) else "warning"
+            warnings.append(
+                {
+                    "rule_id": "SJ1_scenario_missing_justification",
+                    "severity": severity,
+                    "scenario": scenario_label,
+                    "asset_family": asset_family,
+                    "missing_fields": missing,
+                    "description": (
+                        f"Active scenario '{scenario_label[:80]}' is missing "
+                        f"required justification fields: {missing}. "
+                        "Per RECOVERY_2026-05-10 §11.B every active scenario "
+                        "must declare trigger, source, process_clue, "
+                        "industrial_reason, and asset_family_reason."
+                    ),
+                }
+            )
+        # Rule SJ2: source field must reference an entry in the industrial
+        # source catalog (139 sources, Gap C). Without this, a scenario can
+        # claim "source: my uncle" and pass SJ1. We accept the source field
+        # when ANY catalog source_id or canonical name appears as a substring.
+        source_text = _text(scenario.get("source"))
+        if source_text and not is_known_source(source_text):
+            warnings.append(
+                {
+                    "rule_id": "SJ2_scenario_source_unknown",
+                    "severity": "critical",
+                    "scenario": scenario_label,
+                    "asset_family": asset_family,
+                    "source_value": source_text[:160],
+                    "description": (
+                        f"Scenario '{scenario_label[:80]}' cites source "
+                        f"'{source_text[:80]}' which does not match any "
+                        "entry in the industrial source catalog (139 "
+                        "tier-1/tier-2/tier-3 sources). Cite a catalog "
+                        "source_id (e.g. iiar_bulletin_109, ashrae_90_1, "
+                        "doe_iac_database) or add the source to "
+                        "industrial_source_catalog.json."
+                    ),
+                }
+            )
     return warnings
 
 
@@ -166,5 +191,7 @@ class Motor062Adapter(BaseMotorAdapter):
             "required_fields": list(_REQUIRED_FIELDS),
             "rules_evaluated": [
                 "SJ1_scenario_missing_justification",
+                "SJ2_scenario_source_unknown",
             ],
+            "catalog_size": len(all_sources()),
         }

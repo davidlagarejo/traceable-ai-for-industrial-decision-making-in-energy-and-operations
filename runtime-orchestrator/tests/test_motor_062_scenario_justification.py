@@ -74,13 +74,13 @@ def test_active_scenario_with_full_justification_passes():
 
 
 def test_partial_justification_emits_non_critical_warning():
-    partial = {"trigger": "x", "source": "y"}  # 3 missing
+    # Use a known catalog source so SJ2 stays silent; isolate SJ1 here.
+    partial = {"trigger": "x", "source": "iiar_bulletin_109"}  # 3 fields still missing
     out = _run(motor_014={"scenario_space": [_scenario(**partial)]})
-    assert out["warning_count"] == 1
-    assert out["critical_count"] == 0
-    warn = out["scenario_justification_warnings"][0]
-    assert warn["severity"] == "warning"
-    assert set(warn["missing_fields"]) == {
+    sj1 = [w for w in out["scenario_justification_warnings"] if w["rule_id"] == "SJ1_scenario_missing_justification"]
+    assert len(sj1) == 1
+    assert sj1[0]["severity"] == "warning"
+    assert set(sj1[0]["missing_fields"]) == {
         "process_clue",
         "industrial_reason",
         "asset_family_reason",
@@ -171,3 +171,101 @@ def test_asset_family_is_threaded_into_warnings():
     )
     assert out["asset_family_evaluated"] == "cold_chain_facility"
     assert out["scenario_justification_warnings"][0]["asset_family"] == "cold_chain_facility"
+
+
+# ── SJ2: source field must reference an industrial catalog entry ────────
+
+
+def test_sj2_unknown_source_emits_critical_warning():
+    out = _run(
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "my uncle Bob said it was fine",  # unknown
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        }
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ2_scenario_source_unknown" in rule_ids
+    sj2 = next(w for w in out["scenario_justification_warnings"] if w["rule_id"] == "SJ2_scenario_source_unknown")
+    assert sj2["severity"] == "critical"
+
+
+def test_sj2_known_catalog_source_id_passes():
+    out = _run(
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "iiar_bulletin_109",  # catalog ID
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        }
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ2_scenario_source_unknown" not in rule_ids
+
+
+def test_sj2_known_catalog_name_passes():
+    out = _run(
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "Cited per ASHRAE 90.1 Section 6",  # canonical name
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        }
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ2_scenario_source_unknown" not in rule_ids
+
+
+def test_sj2_multi_source_string_passes_if_any_match():
+    out = _run(
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "doe_iac_database; eia_mecs; sme_handbook",
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        }
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ2_scenario_source_unknown" not in rule_ids
+
+
+def test_sj2_does_not_fire_when_source_missing_sj1_handles_it():
+    """If source is empty, SJ1 reports it as missing field; SJ2 stays silent."""
+    out = _run(motor_014={"scenario_space": [_scenario()]})
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ1_scenario_missing_justification" in rule_ids
+    assert "SJ2_scenario_source_unknown" not in rule_ids
+
+
+def test_catalog_size_exposed_in_output():
+    out = _run()
+    assert out["catalog_size"] >= 100
+
+
+def test_rules_evaluated_lists_both_sj1_and_sj2():
+    out = _run()
+    assert out["rules_evaluated"] == [
+        "SJ1_scenario_missing_justification",
+        "SJ2_scenario_source_unknown",
+    ]
