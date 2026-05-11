@@ -82,5 +82,6 @@
   ],
   "tests": [
     "cold_chain bundle should activate this when door/seal evidence is missing"
-  ]
+  ],
+  "__ai_scaffolding__": "S4 in AI_SCAFFOLDING_REGISTRY.md — handwritten by Claude in V2 Gap E. Replace with extraction from IIAR Bulletins / ASHRAE Handbook Refrigeration / Danfoss handbooks via V4 Industrial Research Engine."
 }

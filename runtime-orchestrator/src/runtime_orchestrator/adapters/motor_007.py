@@ -14,6 +14,13 @@ from .base import BaseMotorAdapter
 
 
 # ──────────────────────────────────────────────────────────────────────────
+# AI-SCAFFOLDING — see AI_SCAFFOLDING_REGISTRY.md entry S2
+# Hardcoded 17-token vocabulary written by Claude in V2-LIVE. The framework
+# should derive these tokens from pattern specs' trigger_conditions +
+# asset_family_hybrids.json justification_triggers, NOT from this table.
+# DO NOT EXPAND. Frozen vocabulary. Will be removed when V4 derives tokens
+# from registry metadata.
+# ──────────────────────────────────────────────────────────────────────────
 # Evidence-token extraction (V2-LIVE Item 2 — RECOVERY_2026-05-10 §2)
 #
 # motor_061 (Asset Family Isolation Validator) admits justified hybrid

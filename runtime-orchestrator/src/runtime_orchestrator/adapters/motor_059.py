@@ -143,6 +143,124 @@ def _detect_observed_fact_without_evidence(dominant_variables: list[dict]) -> li
     return out
 
 
+# V3 G2: Governance Sync rules — detect contradictions BETWEEN layers
+# (TAD ↔ claims ↔ charts ↔ counts). R5/R6/R7 fire when the framework is
+# contradicting itself across layers; they are severity=error so motor_017
+# blocks render.
+
+
+def _detect_chart_implies_prohibited_claim(
+    chart_assets: list[dict],
+    claim_permissions: dict[str, str],
+) -> list[dict]:
+    """R5: chart's intelligence_binding references a claim_id whose
+    permission is 'prohibited'. Charts must not visually support claims
+    the claim governor has blocked from closure."""
+    out: list[dict] = []
+    prohibited_ids = {cid for cid, perm in claim_permissions.items() if perm == "prohibited"}
+    if not prohibited_ids:
+        return out
+    for asset in chart_assets:
+        if not isinstance(asset, dict):
+            continue
+        binding = asset.get("intelligence_binding") or asset.get("chart_intelligence_binding") or {}
+        if not isinstance(binding, dict):
+            continue
+        for key in ("claim_id", "hypothesis_id", "thesis_anchor"):
+            ref = _text(binding.get(key))
+            if ref and ref in prohibited_ids:
+                out.append(
+                    {
+                        "rule_id": "R5_chart_implies_prohibited_claim",
+                        "severity": "error",
+                        "chart_id": _text(asset.get("chart_id") or asset.get("asset_id")),
+                        "linked_claim": ref,
+                        "description": (
+                            f"Chart visually supports a prohibited claim "
+                            f"({ref}). The claim governor blocks closure on "
+                            "this claim; the chart must not imply admissibility."
+                        ),
+                    }
+                )
+                break
+    return out
+
+
+def _detect_nugget_implies_superiority_when_blocked(
+    nuggets: list[dict],
+    fair_comparison_state: dict,
+) -> list[dict]:
+    """R6: gold nugget uses superiority language while fair_comparison has
+    blocked peer-superiority closure for this case."""
+    out: list[dict] = []
+    superiority_blocked = bool(
+        fair_comparison_state.get("peer_superiority_blocked")
+        or fair_comparison_state.get("comparison_blocked")
+        or fair_comparison_state.get("invalid_peer_set")
+    )
+    if not superiority_blocked:
+        return out
+    superiority_markers = ("outperforms", "best-in-class", "top-quartile", "leading peer", "superior to")
+    for n in nuggets:
+        if not isinstance(n, dict):
+            continue
+        text = _text(n.get("gold_nugget") or n.get("nugget")).lower()
+        if not text:
+            continue
+        hit = next((m for m in superiority_markers if m in text), None)
+        if hit:
+            out.append(
+                {
+                    "rule_id": "R6_nugget_implies_superiority_when_blocked",
+                    "severity": "error",
+                    "nugget_id": _text(n.get("nugget_id")),
+                    "marker": hit,
+                    "description": (
+                        f"Gold nugget uses superiority language ('{hit}') "
+                        "while fair_comparison has blocked peer-superiority "
+                        "closure for this case."
+                    ),
+                }
+            )
+    return out
+
+
+def _detect_claim_count_mismatch(
+    claim_register: list[dict],
+    actions: list[dict],
+    governance_summary: dict,
+) -> list[dict]:
+    """R7: claim counts diverge across layers (claim_register, TAD-linked,
+    governance_summary). Tolerance of 1 to absorb in-flight pending claims."""
+    out: list[dict] = []
+    claim_layer_count = len(claim_register)
+    tad_linked_count = len({
+        _text(a.get("linked_claim"))
+        for a in actions
+        if isinstance(a, dict) and _text(a.get("linked_claim"))
+    })
+    governance_count = int(governance_summary.get("governed_claim_contract_count", 0) or 0)
+    counts = [claim_layer_count, tad_linked_count, governance_count]
+    if max(counts) - min(counts) > 1:
+        out.append(
+            {
+                "rule_id": "R7_claim_count_mismatch_across_layers",
+                "severity": "error",
+                "claim_layer_count": claim_layer_count,
+                "tad_linked_count": tad_linked_count,
+                "governance_count": governance_count,
+                "description": (
+                    f"Claim count diverges across layers: "
+                    f"claim_register={claim_layer_count}, "
+                    f"TAD-linked={tad_linked_count}, "
+                    f"governance_summary={governance_count}. "
+                    "Layers must agree on how many governed claims exist."
+                ),
+            }
+        )
+    return out
+
+
 class Motor059Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -150,16 +268,29 @@ class Motor059Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_033", "motor_038", "motor_054"]
+        # V3 G2: also read motor_016 (governance_summary), motor_018 (chart
+        # assets), motor_051 (fair comparison state).
+        return ["motor_016", "motor_018", "motor_033", "motor_038", "motor_051", "motor_054"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
+        m016 = inputs.get("motor_016", {}) if isinstance(inputs.get("motor_016", {}), dict) else {}
+        m018 = inputs.get("motor_018", {}) if isinstance(inputs.get("motor_018", {}), dict) else {}
         m033 = inputs.get("motor_033", {}) if isinstance(inputs.get("motor_033", {}), dict) else {}
         m038 = inputs.get("motor_038", {}) if isinstance(inputs.get("motor_038", {}), dict) else {}
+        m051 = inputs.get("motor_051", {}) if isinstance(inputs.get("motor_051", {}), dict) else {}
         m054 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
 
         claim_register = list(m054.get("congruence_claim_contract_register", []) or [])
         actions = list(m033.get("expanded_structural_tad_action_register", []) or [])
         dominant_variables = list(m038.get("dominant_variable_register", []) or [])
+        chart_assets = list(m018.get("chart_assets", []) or [])
+        report_package = m016.get("report_package", {}) if isinstance(m016.get("report_package", {}), dict) else {}
+        governance_summary = report_package.get("governance_summary", {}) if isinstance(report_package.get("governance_summary", {}), dict) else {}
+        nuggets = list(
+            m054.get("strategic_gold_nugget_register")
+            or m054.get("gold_nugget_register")
+            or []
+        )
 
         claim_permissions: dict[str, str] = {
             _text(c.get("claim_id")): _text(c.get("permission"))
@@ -169,9 +300,20 @@ class Motor059Adapter(BaseMotorAdapter):
 
         warnings: list[dict] = []
         warnings.extend(_detect_missing_falsification(claim_register))
-        warnings.extend(_detect_act_now_with_prohibited_claim(actions, claim_permissions))
-        warnings.extend(_detect_do_not_model_with_active_redesign(actions))
+        # R2 + R3 promoted to severity=error in V3 G2 (cross-layer contradictions)
+        r2_hits = _detect_act_now_with_prohibited_claim(actions, claim_permissions)
+        for w in r2_hits:
+            w["severity"] = "error"
+        warnings.extend(r2_hits)
+        r3_hits = _detect_do_not_model_with_active_redesign(actions)
+        for w in r3_hits:
+            w["severity"] = "error"
+        warnings.extend(r3_hits)
         warnings.extend(_detect_observed_fact_without_evidence(dominant_variables))
+        # V3 G2: new governance-sync rules
+        warnings.extend(_detect_chart_implies_prohibited_claim(chart_assets, claim_permissions))
+        warnings.extend(_detect_nugget_implies_superiority_when_blocked(nuggets, m051))
+        warnings.extend(_detect_claim_count_mismatch(claim_register, actions, governance_summary))
 
         return {
             "strategic_intelligence_warnings": warnings,
@@ -186,5 +328,8 @@ class Motor059Adapter(BaseMotorAdapter):
                 "R2_act_now_with_prohibited_claim",
                 "R3_do_not_model_with_active_redesign",
                 "R4_observed_fact_without_evidence",
+                "R5_chart_implies_prohibited_claim",
+                "R6_nugget_implies_superiority_when_blocked",
+                "R7_claim_count_mismatch_across_layers",
             ],
         }

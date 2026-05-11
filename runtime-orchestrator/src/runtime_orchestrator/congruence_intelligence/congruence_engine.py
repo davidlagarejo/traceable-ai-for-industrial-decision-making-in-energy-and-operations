@@ -1,3 +1,9 @@
+"""
+AI-SCAFFOLDING — see AI_SCAFFOLDING_REGISTRY.md entry S9.
+Per-asset-family `if asset_family == "..."` branches around lines 123-340
+contain handwritten language. Reduce to lookups in V4 by sourcing
+per-family text from asset_archetypes.yaml.
+"""
 from __future__ import annotations
 
 from typing import Any

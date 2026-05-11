@@ -29,3 +29,6 @@ motor-creator/runtime/
 
 # Reference PDFs (binary, not source — keep out of git history)
 /Recursos genericos/
+runtime-orchestrator/zlab_skill/registry/scenario_reviews/ZLab-*.json
+runtime-orchestrator/zlab_skill/registry/scenario_reviews/scenario_review_log.jsonl
+runtime-orchestrator/zlab_skill/registry/combination_approval_log.jsonl

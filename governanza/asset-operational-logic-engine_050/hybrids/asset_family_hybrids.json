@@ -1,6 +1,7 @@
 {
   "catalog_id": "asset_family_hybrids",
   "schema_version": "1.0.0",
+  "__ai_scaffolding__": "S3 in AI_SCAFFOLDING_REGISTRY.md — 5 hybrids handwritten by Claude in V2 Gap B. Framework must derive hybrids from observed cross-family co-occurrence in historical runs + industrial sources. DO NOT add new hybrids here; future hybrids enter via a propose_hybrid.py CLI analogous to propose_combination.py.",
   "description": "Justified hybrid asset-family combinations (RECOVERY_2026-05-10 §2 Asset Family Engine — Gap B). motor_061 (Asset Family Isolation Validator) blocks cross-family pattern activation by default. Hybrids listed here are EXEMPT from contamination block PROVIDED a justification trigger is present in the evidence. Without the trigger, the cross-family activation remains contamination.",
   "rules": {
     "trigger_match": "case_sensitive=false; trigger token must appear in any of: motor_007.target_definition_contract.facility_evidence_tokens, motor_007.target_definition_contract.process_evidence_tokens, or motor_054.industrial_evidence_register entries.",
