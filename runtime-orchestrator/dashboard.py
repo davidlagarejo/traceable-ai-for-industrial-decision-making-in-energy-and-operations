@@ -10538,9 +10538,36 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
     <div class="pill" id="status-pill"><span class="dot"></span><span id="status-txt">Cargando…</span></div>
   </div>
   <div id="hdr-right">
+    <a href="/scenarios" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;font-size:12px;font-weight:600;" title="Review center for pipeline-emitted scenarios">📋 Scenarios <span id="hdr-scenarios-count" style="display:none;background:#bf8700;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
+    <a href="/combinations" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#eff6ff;border:1px solid #bfdbfe;color:#1f6feb;font-size:12px;font-weight:600;" title="Review center for AI-proposed combinations">🧩 Combinations <span id="hdr-combinations-count" style="display:none;background:#1f6feb;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
     <button class="btn-ext" onclick="openCreateModal()" style="font-weight:600">+ Registrar target</button>
   </div>
 </div>
+
+<script>
+// Update header badge counts every 30s so the user sees pending review work
+async function _zlabUpdateReviewCounts() {
+  try {
+    const sr = await fetch('/api/scenarios/cases').then(r => r.json()).catch(() => []);
+    const pendingScenarios = (Array.isArray(sr) ? sr : []).reduce((acc, c) =>
+      acc + (c.pending_count || 0) + (c.edited_count || 0), 0);
+    const sEl = document.getElementById('hdr-scenarios-count');
+    if (sEl) {
+      if (pendingScenarios > 0) { sEl.style.display = 'inline-block'; sEl.textContent = pendingScenarios; }
+      else { sEl.style.display = 'none'; }
+    }
+    const cs = await fetch('/api/combinations/summary').then(r => r.json()).catch(() => ({}));
+    const pendingCombos = (cs && cs.pending_count) || 0;
+    const cEl = document.getElementById('hdr-combinations-count');
+    if (cEl) {
+      if (pendingCombos > 0) { cEl.style.display = 'inline-block'; cEl.textContent = pendingCombos; }
+      else { cEl.style.display = 'none'; }
+    }
+  } catch (e) {}
+}
+_zlabUpdateReviewCounts();
+setInterval(_zlabUpdateReviewCounts, 30000);
+</script>
 
 <div id="body">
 
