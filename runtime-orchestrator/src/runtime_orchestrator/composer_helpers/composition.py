@@ -221,6 +221,15 @@ def _top_scenarios(scenario_register: list[dict[str, Any]]) -> list[dict[str, st
                 or _text(row.get("evidence_state")),
                 "falsification_condition": _text(row.get("falsification_condition"))
                 or _text(row.get("falsifies_it")),
+                # V2-CRITICAL Item 1: surface the 5 justification fields
+                # (RECOVERY_2026-05-10 §11.B) for the reader to see in the
+                # rendered scenario card. motor_014 populates these via
+                # _SCENARIO_JUSTIFICATION; motor_062 validates them.
+                "trigger": _text(row.get("trigger")),
+                "source": _text(row.get("source")),
+                "process_clue": _text(row.get("process_clue")),
+                "industrial_reason": _text(row.get("industrial_reason")),
+                "asset_family_reason": _text(row.get("asset_family_reason")),
             }
         )
         if len(rows) >= 3:

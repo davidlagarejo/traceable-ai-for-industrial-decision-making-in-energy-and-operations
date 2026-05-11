@@ -83,10 +83,35 @@ for entry in "${CASES[@]}"; do
       cover_pass=false
     fi
     if echo "${text}" | grep -qiF "${token1}" && echo "${text}" | grep -qiF "${token2}"; then
-      if ${cover_pass}; then
-        echo "[${family}] PASS — '${token1}' + '${token2}' in PDF + cover OK"
+      # V2-CRITICAL Item 1: when the report includes a SCENARIO SPACE
+      # section, every scenario must render the 5 justification fields
+      # (Trigger / Source / Process Clue / Industrial Reason / Asset
+      # Family Reason). target_classification_brief reports omit the
+      # scenario section entirely, so we skip the check there.
+      justification_pass=true
+      justification_note=""
+      if echo "${text}" | grep -qi "scenario space"; then
+        # Three distinctive labels (Process Clue is the most unique;
+        # "Industrial Reason" / "Industrial Rsn." both count). The
+        # presence of any one in 3 different scenario rows is enough.
+        process_clue_hits=$(echo "${text}" | grep -c "Process Clue")
+        family_reason_hits=$(echo "${text}" | grep -c -E "Asset Family (Reason|Rsn\.)")
+        industrial_reason_hits=$(echo "${text}" | grep -c -E "Industrial (Reason|Rsn\.)")
+        if [[ ${process_clue_hits} -ge 2 && ${family_reason_hits} -ge 2 && ${industrial_reason_hits} -ge 2 ]]; then
+          justification_note=" + justification fields rendered (${process_clue_hits} scenarios)"
+        else
+          justification_pass=false
+          justification_note=" (Process Clue=${process_clue_hits}, Asset Family Reason=${family_reason_hits}, Industrial Reason=${industrial_reason_hits})"
+        fi
       else
-        echo "[${family}] PASS-WITH-WARN — tokens OK; cover regression noted"
+        justification_note=" (no SCENARIO SPACE section in this report type)"
+      fi
+      if ${cover_pass} && ${justification_pass}; then
+        echo "[${family}] PASS — '${token1}' + '${token2}' in PDF + cover OK${justification_note}"
+      elif ! ${justification_pass}; then
+        echo "[${family}] PASS-WITH-WARN — tokens OK; justification regression${justification_note}"
+      else
+        echo "[${family}] PASS-WITH-WARN — tokens OK; cover regression noted${justification_note}"
       fi
       PASS=$((PASS + 1))
     else
