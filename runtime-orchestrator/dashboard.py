@@ -14070,6 +14070,255 @@ def index():
     return render_template_string(_HTML)
 
 
+# ── Combination Approval Workflow (V2-LIVE Item 7) ─────────────────────────
+# Lifecycle: AI proposes → combinations_pending/ → user approves → combinations/
+#                                                → user rejects → combinations_rejected/
+# Rule: AI does NOT approve combinations. The dashboard owner does.
+
+try:
+    from runtime_orchestrator import combination_approval as _ca
+except Exception:  # pragma: no cover - dashboard tolerates import failure
+    _ca = None
+
+
+@app.route("/api/combinations/summary")
+def api_combinations_summary():
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    return jsonify(_ca.summary())
+
+
+@app.route("/api/combinations/pending")
+def api_combinations_pending():
+    if _ca is None:
+        return jsonify([])
+    return jsonify(_ca.list_pending())
+
+
+@app.route("/api/combinations/approved")
+def api_combinations_approved():
+    if _ca is None:
+        return jsonify([])
+    return jsonify(_ca.list_approved())
+
+
+@app.route("/api/combinations/rejected")
+def api_combinations_rejected():
+    if _ca is None:
+        return jsonify([])
+    return jsonify(_ca.list_rejected())
+
+
+@app.route("/api/combinations/<state>/<combination_id>")
+def api_combinations_get_full(state: str, combination_id: str):
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    try:
+        return jsonify(_ca.get_full(combination_id, state=state))
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/combinations/approve", methods=["POST"])
+def api_combinations_approve():
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    combination_id = (body.get("combination_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not combination_id:
+        return jsonify({"error": "combination_id required"}), 400
+    try:
+        out = _ca.approve(combination_id, reviewer=reviewer)
+        return jsonify({"status": "approved", "combination": out})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except (FileExistsError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/combinations/reject", methods=["POST"])
+def api_combinations_reject():
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    combination_id = (body.get("combination_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    reason = (body.get("reason") or "").strip()
+    if not combination_id:
+        return jsonify({"error": "combination_id required"}), 400
+    if not reason:
+        return jsonify({"error": "rejection reason required"}), 400
+    try:
+        out = _ca.reject(combination_id, reviewer=reviewer, reason=reason)
+        return jsonify({"status": "rejected", "combination": out})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/combinations/reset", methods=["POST"])
+def api_combinations_reset():
+    if _ca is None:
+        return jsonify({"error": "combination_approval module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    combination_id = (body.get("combination_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not combination_id:
+        return jsonify({"error": "combination_id required"}), 400
+    try:
+        out = _ca.reset_to_pending(combination_id, reviewer=reviewer)
+        return jsonify({"status": "reset_to_pending", "combination": out})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except (FileExistsError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+_COMBINATION_APPROVAL_HTML = """<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Combinations — ZLab</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0d1117;color:#e6edf3;margin:0;padding:24px;}
+h1{font-size:20px;margin:0 0 16px 0;}
+h2{font-size:14px;margin:24px 0 8px 0;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;}
+.tabs{display:flex;gap:8px;margin-bottom:16px;}
+.tab{padding:8px 14px;background:#161b22;border:1px solid #30363d;border-radius:6px;cursor:pointer;}
+.tab.active{background:#1f6feb;border-color:#1f6feb;color:#fff;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin-bottom:12px;}
+.card h3{margin:0 0 4px 0;font-size:16px;}
+.card .sub{color:#7d8590;font-size:12px;margin-bottom:8px;}
+.card .meta{font-size:12px;color:#7d8590;margin-bottom:8px;}
+.card .pid{display:inline-block;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:2px 8px;margin:2px 4px 2px 0;font-size:11px;font-family:monospace;}
+.card .body{font-size:13px;line-height:1.5;color:#c9d1d9;margin-bottom:8px;}
+.btn{padding:6px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:12px;margin-right:6px;}
+.btn-approve{background:#238636;color:#fff;}
+.btn-reject{background:#da3633;color:#fff;}
+.btn-reset{background:#1f6feb;color:#fff;}
+.empty{color:#7d8590;font-style:italic;padding:16px;}
+.summary{display:flex;gap:24px;margin-bottom:24px;}
+.stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 20px;}
+.stat .label{font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;}
+.stat .value{font-size:24px;font-weight:600;color:#e6edf3;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;}
+.modal.open{display:flex;}
+.modal-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px;width:480px;max-width:90vw;}
+.modal-box textarea{width:100%;height:100px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:8px;font-family:inherit;}
+</style></head>
+<body>
+<h1>Combination Approval — ZLab OTF</h1>
+
+<div class="summary" id="summary"></div>
+
+<div class="tabs">
+  <div class="tab active" data-state="pending" onclick="loadState('pending')">Pending</div>
+  <div class="tab" data-state="approved" onclick="loadState('approved')">Approved</div>
+  <div class="tab" data-state="rejected" onclick="loadState('rejected')">Rejected</div>
+</div>
+
+<div id="list"></div>
+
+<div class="modal" id="rejectModal">
+  <div class="modal-box">
+    <h2>Reject combination</h2>
+    <p id="rejectId" style="color:#7d8590;font-family:monospace;"></p>
+    <textarea id="rejectReason" placeholder="Reason for rejection (required, max 1000 chars)..."></textarea>
+    <div style="margin-top:12px;">
+      <button class="btn btn-reject" onclick="confirmReject()">Reject</button>
+      <button class="btn" style="background:#30363d;color:#fff;" onclick="closeReject()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const REVIEWER = (function(){
+  let r = localStorage.getItem('zlab_reviewer');
+  if (!r) { r = prompt('Your reviewer name:') || 'dashboard_user'; localStorage.setItem('zlab_reviewer', r); }
+  return r;
+})();
+
+let currentState = 'pending';
+
+async function loadSummary() {
+  const r = await fetch('/api/combinations/summary'); const d = await r.json();
+  document.getElementById('summary').innerHTML =
+    `<div class="stat"><div class="label">Pending</div><div class="value">${d.pending_count||0}</div></div>` +
+    `<div class="stat"><div class="label">Approved</div><div class="value">${d.approved_count||0}</div></div>` +
+    `<div class="stat"><div class="label">Rejected</div><div class="value">${d.rejected_count||0}</div></div>`;
+}
+
+async function loadState(state) {
+  currentState = state;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.state===state));
+  const r = await fetch('/api/combinations/'+state); const rows = await r.json();
+  const list = document.getElementById('list');
+  if (!rows.length) { list.innerHTML = '<div class="empty">No combinations in this state.</div>'; return; }
+  list.innerHTML = rows.map(c => renderCard(c, state)).join('');
+}
+
+function renderCard(c, state) {
+  const pids = (c.pattern_ids||[]).map(p => `<span class="pid">${p}</span>`).join('');
+  let actions = '';
+  if (state === 'pending') {
+    actions = `<button class="btn btn-approve" onclick="doApprove('${c.combination_id}')">✓ Approve</button>` +
+              `<button class="btn btn-reject" onclick="openReject('${c.combination_id}')">✗ Reject</button>`;
+  } else if (state === 'rejected') {
+    actions = `<button class="btn btn-reset" onclick="doReset('${c.combination_id}')">↺ Re-review</button>`;
+  }
+  let metaLine = '';
+  if (state === 'pending') metaLine = `proposed by ${c.proposed_by||'?'} at ${c.proposed_at||'?'}`;
+  else if (state === 'approved') metaLine = `approved by ${c.approved_by||'?'} at ${c.approved_at||'?'}`;
+  else if (state === 'rejected') metaLine = `rejected by ${c.rejected_by||'?'} at ${c.rejected_at||'?'} — reason: ${c.rejection_reason||'(none)'}`;
+  return `<div class="card">
+    <h3>${c.name || c.combination_id}</h3>
+    <div class="sub">${c.combination_id} · v${c.version||'?'} · TAD: ${c.tad_action||'(none)'}</div>
+    <div class="meta">${metaLine}</div>
+    <div>${pids}</div>
+    <div class="body"><strong>Hypothesis:</strong> ${c.combined_hypothesis||'(none)'}</div>
+    <div class="body"><strong>Strategic risk:</strong> ${c.strategic_risk||'(none)'}</div>
+    <div class="body"><strong>Min evidence items:</strong> ${c.minimum_evidence_count}</div>
+    <div>${actions}</div>
+  </div>`;
+}
+
+async function doApprove(id) {
+  if (!confirm(`Approve "${id}"? It will be loaded by the skill on the next pipeline run.`)) return;
+  const r = await fetch('/api/combinations/approve', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({combination_id: id, reviewer: REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Approve failed: ' + (e.error||r.statusText)); return; }
+  await loadSummary(); await loadState(currentState);
+}
+
+let _rejectingId = null;
+function openReject(id) { _rejectingId = id; document.getElementById('rejectId').textContent = id; document.getElementById('rejectReason').value = ''; document.getElementById('rejectModal').classList.add('open'); }
+function closeReject() { _rejectingId = null; document.getElementById('rejectModal').classList.remove('open'); }
+async function confirmReject() {
+  const reason = document.getElementById('rejectReason').value.trim();
+  if (!reason) { alert('Reason required'); return; }
+  const r = await fetch('/api/combinations/reject', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({combination_id: _rejectingId, reviewer: REVIEWER, reason})});
+  if (!r.ok) { const e = await r.json(); alert('Reject failed: ' + (e.error||r.statusText)); return; }
+  closeReject(); await loadSummary(); await loadState(currentState);
+}
+
+async function doReset(id) {
+  if (!confirm(`Move "${id}" back to pending for re-review?`)) return;
+  const r = await fetch('/api/combinations/reset', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({combination_id: id, reviewer: REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Reset failed: ' + (e.error||r.statusText)); return; }
+  await loadSummary(); await loadState(currentState);
+}
+
+loadSummary(); loadState('pending');
+setInterval(()=>{loadSummary();loadState(currentState);}, 30000);
+</script>
+</body></html>"""
+
+
+@app.route("/combinations")
+def combinations_page():
+    return render_template_string(_COMBINATION_APPROVAL_HTML)
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():
