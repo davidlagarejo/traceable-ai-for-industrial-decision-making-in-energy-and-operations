@@ -22,6 +22,15 @@ API consumed by dashboard.py:
 Each move records a decision in `combination_approval_log.jsonl` (audit
 trail). The functions are filesystem-pure and return JSON-serializable
 dicts so the dashboard can return them directly to the UI.
+
+CANONICAL PROPOSAL ENTRY POINTS (V2-CRITICAL Item 2):
+  - Programmatic:  combination_approval.propose(payload, proposed_by='ai')
+  - CLI:           python3 scripts/propose_combination.py path/to/combo.json
+
+DO NOT write JSON files directly to combinations/. That bypasses human
+approval. Any AI / automated flow that needs to register a new
+combination MUST go through one of the entry points above so the file
+lands in combinations_pending/ and waits for review.
 """
 from __future__ import annotations
 

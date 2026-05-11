@@ -277,9 +277,118 @@ def test_catalog_size_exposed_in_output():
     assert out["catalog_size"] >= 100
 
 
-def test_rules_evaluated_lists_both_sj1_and_sj2():
+def test_rules_evaluated_lists_sj1_sj2_sj3():
     out = _run()
     assert out["rules_evaluated"] == [
         "SJ1_scenario_missing_justification",
         "SJ2_scenario_source_unknown",
+        "SJ3_source_family_mismatch",
     ]
+
+
+# ── SJ3: source must apply to the case asset family ─────────────────────
+
+
+def test_sj3_iiar_bulletin_in_warehouse_case_flagged():
+    """iiar_bulletin_109 is cold_chain-only; flagging in warehouse case."""
+    out = _run(
+        motor_007={"target_definition_contract": {"asset_family": "warehouse_distribution"}},
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "iiar_bulletin_109",  # cold-chain only
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        },
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ3_source_family_mismatch" in rule_ids
+
+
+def test_sj3_passes_when_source_applies_to_case_family():
+    """iiar_bulletin_109 in cold_chain case is correct → no SJ3 warning."""
+    out = _run(
+        motor_007={"target_definition_contract": {"asset_family": "cold_chain_facility"}},
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "iiar_bulletin_109",
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        },
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ3_source_family_mismatch" not in rule_ids
+
+
+def test_sj3_silent_for_general_standards():
+    """ISO 50001 covers many asset families (energy management) — never blocked."""
+    out = _run(
+        motor_007={"target_definition_contract": {"asset_family": "warehouse_distribution"}},
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "iso_50001",
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        },
+    )
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    assert "SJ3_source_family_mismatch" not in rule_ids
+
+
+def test_sj3_silent_for_prose_citation_not_matching_source_id():
+    """Authors who cite 'Per ASHRAE Standard 90.1 Section 6' don't trip SJ3
+    (it triggers only when an explicit source_id substring matches)."""
+    out = _run(
+        motor_007={"target_definition_contract": {"asset_family": "manufacturing_facility"}},
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "ASHRAE Standard 90.1 Section 6 commentary",
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        },
+    )
+    # ashrae_90_1 IS in the catalog with multiple families; warehouse-specific
+    # narrow citations are rare. This case should NOT trip SJ3.
+    rule_ids = [w["rule_id"] for w in out["scenario_justification_warnings"]]
+    # SJ2 passes (ashrae 90.1 is recognized); SJ3 should also pass.
+    assert "SJ3_source_family_mismatch" not in rule_ids
+
+
+def test_sj3_multi_source_string_flags_only_offending_ids():
+    """Author cites two source_ids; only the bad one trips SJ3."""
+    out = _run(
+        motor_007={"target_definition_contract": {"asset_family": "warehouse_distribution"}},
+        motor_014={
+            "scenario_space": [
+                _scenario(**{
+                    "trigger": "x",
+                    "source": "doe_eere_mhe; iiar_bulletin_109",  # 2nd is cold-chain
+                    "process_clue": "x",
+                    "industrial_reason": "x",
+                    "asset_family_reason": "x",
+                })
+            ]
+        },
+    )
+    sj3 = [w for w in out["scenario_justification_warnings"] if w["rule_id"] == "SJ3_source_family_mismatch"]
+    assert len(sj3) == 1
+    assert sj3[0]["source_id"] == "iiar_bulletin_109"

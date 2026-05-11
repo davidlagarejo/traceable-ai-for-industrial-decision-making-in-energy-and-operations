@@ -95,6 +95,45 @@ está **100% vivo en producción**, no solo construido:
 Regression 7/7 PASS demuestra que la disciplina nueva no rompió ninguno
 de los 6 cases cross-asset existentes.
 
+---
+
+## V2-CRITICAL — los 3 huecos reales que faltan
+
+Tras V2-LIVE auditoría honesta detecta 3 puntos donde el cerebro está
+construido + cableado + activo pero **no llega al humano** o **deja
+escapar epistemología falsa**.
+
+### Critical 1 — Composer renderiza los 5 campos de justificación en el PDF
+**Estado:** in_progress
+**Por qué importa:** motor_014 emite trigger/source/process_clue/
+industrial_reason/asset_family_reason. motor_062 los valida. Pero el
+composer no los imprime en el reporte final — el reader que abre el
+PDF solo ve la versión vieja del escenario (plausibility + evidence).
+El cerebro tiene la información pero el humano nunca la lee.
+**Trabajo:** modificar `composer_helpers/composition.py` para que la
+sección Scenario Space imprima los 5 campos debajo de cada scenario.
+
+### Critical 2 — combination_engine escribe a pending/ en vez de approved/
+**Estado:** pending
+**Por qué importa:** el dashboard de aprobación existe pero ningún
+flujo automático escribe a `combinations_pending/`. Cuando AI propone
+una combinación nueva (vía `zlab_skill/combination_engine.py`), va
+directo a approved. La regla "AI no aprueba" se viola en cuanto AI
+quiera registrar algo.
+**Trabajo:** en `zlab_skill/combination_engine.py` (y/o sus callers),
+sustituir cualquier escritura directa a `combinations/` por
+`combination_approval.propose(payload, proposed_by='ai')`.
+
+### Critical 3 — SJ3 validator: source apropiado para asset family
+**Estado:** pending
+**Por qué importa:** motor_062 SJ2 verifica que el `source` está en
+el catálogo. Pero un escenario para **warehouse** podría citar
+`iiar_bulletin_109` (cold-chain only) y pasaría. Hay que cross-check
+`source.asset_families` con el `asset_family` del caso.
+**Trabajo:** añadir rule SJ3 a motor_062 que llama
+`source_catalog.source_by_id(...)` y compara `asset_families` con el
+case family.
+
 ## Métricas globales tras Gap A + Gap C
 
 | Métrica | Pre-V2 | Post V2 (todos gaps) |

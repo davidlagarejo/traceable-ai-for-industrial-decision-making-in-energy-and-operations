@@ -26,7 +26,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from ..source_catalog import all_sources, is_known_source
+from ..source_catalog import all_sources, is_known_source, source_by_id
 from .base import BaseMotorAdapter
 
 
@@ -149,7 +149,67 @@ def _build_warnings(
                     ),
                 }
             )
+        # Rule SJ3: when the source field cites a catalog source_id directly,
+        # cross-check that source.asset_families covers the case asset_family.
+        # Examples blocked: iiar_bulletin_109 in a warehouse scenario,
+        # mhi_reports in a cold_chain scenario. We only enforce SJ3 when the
+        # citation is an explicit source_id (so prose citations don't trip it).
+        if source_text and asset_family:
+            cited_ids = _extract_cited_source_ids(source_text)
+            for sid in cited_ids:
+                entry = source_by_id(sid)
+                if not entry:
+                    continue
+                source_families = {
+                    str(f).strip().lower()
+                    for f in entry.get("asset_families", []) or []
+                }
+                if not source_families:
+                    continue
+                # "cross-asset" sources (international / general) appear in
+                # most families; we accept those silently. Block only when
+                # the source has a SHORT family list that does NOT include
+                # the case family.
+                case_family = asset_family.strip().lower()
+                if case_family in source_families:
+                    continue
+                # Heuristic: if the source applies to 4+ families it's a
+                # general standard (ASHRAE Handbook, ISO 50001, NFPA 70).
+                # Block only for narrowly-scoped sources.
+                if len(source_families) >= 4:
+                    continue
+                warnings.append(
+                    {
+                        "rule_id": "SJ3_source_family_mismatch",
+                        "severity": "critical",
+                        "scenario": scenario_label,
+                        "asset_family": asset_family,
+                        "source_id": sid,
+                        "source_families": sorted(source_families),
+                        "description": (
+                            f"Scenario '{scenario_label[:80]}' for asset_family "
+                            f"'{asset_family}' cites '{sid}' which applies to "
+                            f"{sorted(source_families)}. The cited source does "
+                            "not cover this asset family — pick a different "
+                            "catalog source whose asset_families include "
+                            f"'{asset_family}'."
+                        ),
+                    }
+                )
     return warnings
+
+
+def _extract_cited_source_ids(source_text: str) -> list[str]:
+    """Pull lower-snake-case tokens that look like catalog source_ids.
+
+    Authors typically cite as 'iiar_bulletin_109' or
+    'doe_iac_database; eia_mecs'. We extract candidates and let the caller
+    verify against the catalog.
+    """
+    if not source_text:
+        return []
+    import re
+    return re.findall(r"\b[a-z][a-z0-9_]{3,}\b", source_text.lower())
 
 
 class Motor062Adapter(BaseMotorAdapter):
@@ -197,6 +257,7 @@ class Motor062Adapter(BaseMotorAdapter):
             "rules_evaluated": [
                 "SJ1_scenario_missing_justification",
                 "SJ2_scenario_source_unknown",
+                "SJ3_source_family_mismatch",
             ],
             "catalog_size": len(all_sources()),
         }
