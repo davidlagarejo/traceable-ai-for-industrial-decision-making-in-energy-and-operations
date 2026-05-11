@@ -14456,6 +14456,325 @@ def combinations_page():
     return render_template_string(_COMBINATION_APPROVAL_HTML)
 
 
+# ── Scenario Review Workflow (V2-CRITICAL course correction) ───────────────
+# Dashboard is the review center. The PDF only renders after the user
+# approves every active scenario for the case.
+
+try:
+    from runtime_orchestrator import scenario_review as _sr
+except Exception:  # pragma: no cover
+    _sr = None
+
+
+@app.route("/api/scenarios/cases")
+def api_scenarios_cases():
+    if _sr is None:
+        return jsonify([])
+    return jsonify(_sr.list_cases())
+
+
+@app.route("/api/scenarios/<path:case_id>")
+def api_scenarios_get_case(case_id: str):
+    if _sr is None:
+        return jsonify({"error": "scenario_review module unavailable"}), 503
+    try:
+        return jsonify(_sr.get_case(case_id))
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/scenarios/approve", methods=["POST"])
+def api_scenarios_approve():
+    if _sr is None:
+        return jsonify({"error": "scenario_review module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    case_id = (body.get("case_id") or "").strip()
+    scenario_id = (body.get("scenario_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not case_id or not scenario_id:
+        return jsonify({"error": "case_id and scenario_id required"}), 400
+    try:
+        return jsonify({"status": "approved", "case": _sr.approve(case_id, scenario_id, reviewer)})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/scenarios/reject", methods=["POST"])
+def api_scenarios_reject():
+    if _sr is None:
+        return jsonify({"error": "scenario_review module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    case_id = (body.get("case_id") or "").strip()
+    scenario_id = (body.get("scenario_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    reason = (body.get("reason") or "").strip()
+    if not case_id or not scenario_id:
+        return jsonify({"error": "case_id and scenario_id required"}), 400
+    if not reason:
+        return jsonify({"error": "rejection reason required"}), 400
+    try:
+        return jsonify({"status": "rejected", "case": _sr.reject(case_id, scenario_id, reviewer, reason)})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/scenarios/edit", methods=["POST"])
+def api_scenarios_edit():
+    if _sr is None:
+        return jsonify({"error": "scenario_review module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    case_id = (body.get("case_id") or "").strip()
+    scenario_id = (body.get("scenario_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    patch = body.get("patch") or {}
+    if not case_id or not scenario_id:
+        return jsonify({"error": "case_id and scenario_id required"}), 400
+    if not isinstance(patch, dict) or not patch:
+        return jsonify({"error": "patch (dict) required"}), 400
+    try:
+        return jsonify({"status": "edited", "case": _sr.edit(case_id, scenario_id, reviewer, patch)})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/scenarios/approve-all", methods=["POST"])
+def api_scenarios_approve_all():
+    if _sr is None:
+        return jsonify({"error": "scenario_review module unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    case_id = (body.get("case_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not case_id:
+        return jsonify({"error": "case_id required"}), 400
+    try:
+        return jsonify({"status": "all_approved", "case": _sr.approve_all(case_id, reviewer)})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+_SCENARIO_REVIEW_HTML = """<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Scenarios — ZLab Review Center</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0d1117;color:#e6edf3;margin:0;padding:24px;}
+h1{font-size:20px;margin:0 0 8px 0;}
+.subtitle{color:#7d8590;font-size:13px;margin-bottom:20px;}
+.case{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:18px;margin-bottom:18px;}
+.case h2{font-size:16px;margin:0 0 4px 0;}
+.case .meta{color:#7d8590;font-size:12px;margin-bottom:14px;}
+.case.ready{border-left:4px solid #238636;}
+.case.pending{border-left:4px solid #bf8700;}
+.scenario{background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:14px;margin-bottom:10px;}
+.scenario h3{font-size:14px;margin:0 0 8px 0;}
+.state{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;text-transform:uppercase;font-weight:600;letter-spacing:.5px;margin-left:8px;}
+.state.pending{background:#bf8700;color:#fff;}
+.state.approved{background:#238636;color:#fff;}
+.state.rejected{background:#da3633;color:#fff;}
+.state.edited{background:#1f6feb;color:#fff;}
+.field{font-size:12px;line-height:1.5;margin-bottom:4px;}
+.field .lbl{color:#7d8590;display:inline-block;width:130px;}
+.btn{padding:5px 11px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:11px;margin-right:6px;}
+.btn-approve{background:#238636;color:#fff;}
+.btn-reject{background:#da3633;color:#fff;}
+.btn-edit{background:#bf8700;color:#fff;}
+.btn-approve-all{background:#238636;color:#fff;padding:7px 14px;font-size:12px;}
+.empty{color:#7d8590;font-style:italic;padding:24px;text-align:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:1000;}
+.modal.open{display:flex;}
+.modal-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:24px;width:540px;max-width:90vw;max-height:85vh;overflow-y:auto;}
+.modal-box label{display:block;font-size:11px;color:#7d8590;text-transform:uppercase;letter-spacing:.5px;margin-top:10px;}
+.modal-box textarea,.modal-box input{width:100%;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:7px;font-family:inherit;font-size:13px;}
+.modal-box textarea{height:60px;}
+.summary-bar{display:flex;gap:12px;margin-bottom:20px;}
+.chip{background:#161b22;border:1px solid #30363d;border-radius:18px;padding:6px 14px;font-size:12px;color:#7d8590;}
+.chip.pending{color:#bf8700;}
+.chip.approved{color:#238636;}
+.chip.rejected{color:#da3633;}
+</style></head>
+<body>
+<h1>Scenario Review — ZLab Operations Center</h1>
+<div class="subtitle">Pipeline runs seed scenarios here. PDF only renders when every scenario is approved or rejected.</div>
+
+<div id="cases"></div>
+
+<div class="modal" id="rejectModal"><div class="modal-box">
+  <h2>Reject scenario</h2>
+  <p id="rejectLabel" style="color:#7d8590;font-size:12px;font-family:monospace;"></p>
+  <label>Reason (required, max 1000 chars)</label>
+  <textarea id="rejectReason"></textarea>
+  <div style="margin-top:14px;">
+    <button class="btn btn-reject" onclick="confirmReject()">Reject</button>
+    <button class="btn" style="background:#30363d;color:#fff;" onclick="closeReject()">Cancel</button>
+  </div>
+</div></div>
+
+<div class="modal" id="editModal"><div class="modal-box">
+  <h2>Edit justification</h2>
+  <p id="editLabel" style="color:#7d8590;font-size:12px;font-family:monospace;"></p>
+  <label>Trigger</label><textarea id="editTrigger"></textarea>
+  <label>Source (catalog source_ids)</label><textarea id="editSource"></textarea>
+  <label>Process Clue</label><textarea id="editProcessClue"></textarea>
+  <label>Industrial Reason</label><textarea id="editIndustrialReason"></textarea>
+  <label>Asset Family Reason</label><textarea id="editAssetFamilyReason"></textarea>
+  <div style="margin-top:14px;">
+    <button class="btn btn-edit" onclick="confirmEdit()">Save changes</button>
+    <button class="btn" style="background:#30363d;color:#fff;" onclick="closeEdit()">Cancel</button>
+  </div>
+</div></div>
+
+<script>
+const REVIEWER = (function(){
+  let r = localStorage.getItem('zlab_reviewer');
+  if (!r) { r = prompt('Your reviewer name:') || 'dashboard_user'; localStorage.setItem('zlab_reviewer', r); }
+  return r;
+})();
+
+let _cases = [];
+
+async function load() {
+  const r = await fetch('/api/scenarios/cases');
+  _cases = await r.json();
+  render();
+}
+
+function render() {
+  const root = document.getElementById('cases');
+  if (!_cases.length) { root.innerHTML = '<div class="empty">No cases under review yet. Run a pipeline to seed scenarios.</div>'; return; }
+  root.innerHTML = _cases.map(renderCase).join('');
+  _cases.forEach(c => loadCaseDetail(c.case_id));
+}
+
+async function loadCaseDetail(caseId) {
+  const r = await fetch('/api/scenarios/' + encodeURIComponent(caseId));
+  if (!r.ok) return;
+  const data = await r.json();
+  const el = document.getElementById('case-' + cssEscape(caseId));
+  if (!el) return;
+  const scenarios = data.scenarios || {};
+  const ordered = Object.keys(scenarios).sort();
+  const items = ordered.map(sid => renderScenario(caseId, sid, scenarios[sid])).join('');
+  el.querySelector('.scenarios').innerHTML = items || '<div class="empty">No scenarios.</div>';
+}
+
+function cssEscape(s) { return s.replace(/[^a-zA-Z0-9_-]/g, '_'); }
+
+function renderCase(c) {
+  const cls = c.ready_to_render ? 'ready' : 'pending';
+  const banner = c.ready_to_render
+    ? '<span style="color:#238636;font-weight:600;">✓ Ready to render</span>'
+    : '<span style="color:#bf8700;font-weight:600;">⏳ ' + (c.pending_count + c.edited_count) + ' awaiting review</span>';
+  return `<div class="case ${cls}" id="case-${cssEscape(c.case_id)}">
+    <h2>${c.case_id}</h2>
+    <div class="meta">${c.asset_family||'?'} · ${c.scenario_count} scenarios · updated ${c.updated_at||'never'} · ${banner}</div>
+    <div class="summary-bar">
+      <div class="chip pending">${c.pending_count} pending</div>
+      <div class="chip" style="color:#1f6feb;">${c.edited_count} edited</div>
+      <div class="chip approved">${c.approved_count} approved</div>
+      <div class="chip rejected">${c.rejected_count} rejected</div>
+      <button class="btn btn-approve-all" onclick="approveAll('${c.case_id}')">✓ Approve all remaining</button>
+    </div>
+    <div class="scenarios"><div class="empty">Loading...</div></div>
+  </div>`;
+}
+
+function renderScenario(caseId, sid, sc) {
+  const state = sc.state || 'pending';
+  let actions = '';
+  if (state !== 'rejected') {
+    actions = `<button class="btn btn-approve" onclick="approveScenario('${caseId}','${sid}')">✓ Approve</button>` +
+              `<button class="btn btn-edit" onclick="openEdit('${caseId}','${sid}')">✎ Edit</button>` +
+              `<button class="btn btn-reject" onclick="openReject('${caseId}','${sid}')">✗ Reject</button>`;
+  }
+  let footer = '';
+  if (sc.reviewer) footer += `<div class="field" style="color:#7d8590;margin-top:8px;">reviewed by ${sc.reviewer} at ${sc.reviewed_at||'?'}`;
+  if (sc.rejection_reason) footer += ` — reason: ${escapeHtml(sc.rejection_reason)}`;
+  if (sc.edit_count > 0) footer += ` (edited ${sc.edit_count}×)`;
+  footer += '</div>';
+  return `<div class="scenario">
+    <h3>${escapeHtml(sc.scenario || sid)}<span class="state ${state}">${state}</span></h3>
+    <div class="field"><span class="lbl">Trigger:</span> ${escapeHtml(sc.trigger||'(missing)')}</div>
+    <div class="field"><span class="lbl">Source:</span> <code>${escapeHtml(sc.source||'(missing)')}</code></div>
+    <div class="field"><span class="lbl">Process clue:</span> ${escapeHtml(sc.process_clue||'(missing)')}</div>
+    <div class="field"><span class="lbl">Industrial reason:</span> ${escapeHtml(sc.industrial_reason||'(missing)')}</div>
+    <div class="field"><span class="lbl">Asset-family reason:</span> ${escapeHtml(sc.asset_family_reason||'(missing)')}</div>
+    ${footer}
+    <div style="margin-top:10px;">${actions}</div>
+  </div>`;
+}
+
+function escapeHtml(s) { return String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]); }
+
+async function approveScenario(caseId, sid) {
+  const r = await fetch('/api/scenarios/approve', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({case_id:caseId, scenario_id:sid, reviewer:REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Approve failed: '+(e.error||r.statusText)); return; }
+  load();
+}
+
+async function approveAll(caseId) {
+  if (!confirm(`Approve every remaining scenario in "${caseId}"?`)) return;
+  const r = await fetch('/api/scenarios/approve-all', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({case_id:caseId, reviewer:REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Approve-all failed: '+(e.error||r.statusText)); return; }
+  load();
+}
+
+let _rejecting = null;
+function openReject(caseId, sid) { _rejecting = {caseId, sid}; document.getElementById('rejectLabel').textContent = `${caseId} / ${sid}`; document.getElementById('rejectReason').value=''; document.getElementById('rejectModal').classList.add('open'); }
+function closeReject() { _rejecting = null; document.getElementById('rejectModal').classList.remove('open'); }
+async function confirmReject() {
+  const reason = document.getElementById('rejectReason').value.trim();
+  if (!reason) { alert('Reason required'); return; }
+  const r = await fetch('/api/scenarios/reject', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({case_id:_rejecting.caseId, scenario_id:_rejecting.sid, reviewer:REVIEWER, reason})});
+  if (!r.ok) { const e = await r.json(); alert('Reject failed: '+(e.error||r.statusText)); return; }
+  closeReject(); load();
+}
+
+let _editing = null;
+async function openEdit(caseId, sid) {
+  _editing = {caseId, sid};
+  const r = await fetch('/api/scenarios/' + encodeURIComponent(caseId));
+  if (!r.ok) { alert('Could not load case'); return; }
+  const data = await r.json();
+  const sc = (data.scenarios||{})[sid] || {};
+  document.getElementById('editLabel').textContent = `${caseId} / ${sid}`;
+  document.getElementById('editTrigger').value = sc.trigger || '';
+  document.getElementById('editSource').value = sc.source || '';
+  document.getElementById('editProcessClue').value = sc.process_clue || '';
+  document.getElementById('editIndustrialReason').value = sc.industrial_reason || '';
+  document.getElementById('editAssetFamilyReason').value = sc.asset_family_reason || '';
+  document.getElementById('editModal').classList.add('open');
+}
+function closeEdit() { _editing = null; document.getElementById('editModal').classList.remove('open'); }
+async function confirmEdit() {
+  const patch = {
+    trigger: document.getElementById('editTrigger').value.trim(),
+    source: document.getElementById('editSource').value.trim(),
+    process_clue: document.getElementById('editProcessClue').value.trim(),
+    industrial_reason: document.getElementById('editIndustrialReason').value.trim(),
+    asset_family_reason: document.getElementById('editAssetFamilyReason').value.trim(),
+  };
+  const r = await fetch('/api/scenarios/edit', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({case_id:_editing.caseId, scenario_id:_editing.sid, reviewer:REVIEWER, patch})});
+  if (!r.ok) { const e = await r.json(); alert('Edit failed: '+(e.error||r.statusText)); return; }
+  closeEdit(); load();
+}
+
+load();
+setInterval(load, 30000);
+</script>
+</body></html>"""
+
+
+@app.route("/scenarios")
+def scenarios_page():
+    return render_template_string(_SCENARIO_REVIEW_HTML)
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():

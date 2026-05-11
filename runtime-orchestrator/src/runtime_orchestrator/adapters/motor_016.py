@@ -2581,45 +2581,26 @@ def _compose_client_facing_body_sections(  # noqa: PLR0913
                 content_en += ["  No thesis-priority scenarios were selected.", ""]
                 content_es += ["  No se seleccionaron escenarios prioritarios para la tesis.", ""]
             for row in top_scenarios:
+                # V2-CRITICAL course correction: the 5 justification fields
+                # (trigger / source / process_clue / industrial_reason /
+                # asset_family_reason) are review metadata for the dashboard
+                # operations center, NOT for the rendered PDF. The PDF is the
+                # clean final deliverable; review happens in the dashboard
+                # before render is approved.
                 content_en += [
                     f"  Scenario            : {_text(row.get('scenario'))}",
                     f"  Financial Meaning   : {_text(row.get('financial_meaning'))}",
                     f"  Evidence Needed     : {_text(row.get('evidence_needed'))}",
                     f"  Falsification       : {_text(row.get('falsification_condition'))}",
+                    "",
                 ]
-                # V2-CRITICAL Item 1: render the 5 justification fields
-                # (RECOVERY_2026-05-10 §11.B) so the reader sees the
-                # epistemic anchor for every scenario, not just the
-                # financial framing.
-                _trigger = _text(row.get('trigger'))
-                _source = _text(row.get('source'))
-                _process_clue = _text(row.get('process_clue'))
-                _industrial_reason = _text(row.get('industrial_reason'))
-                _asset_family_reason = _text(row.get('asset_family_reason'))
-                if any([_trigger, _source, _process_clue, _industrial_reason, _asset_family_reason]):
-                    content_en += [
-                        f"  Trigger             : {_trigger}",
-                        f"  Source              : {_source}",
-                        f"  Process Clue        : {_process_clue}",
-                        f"  Industrial Reason   : {_industrial_reason}",
-                        f"  Asset Family Reason : {_asset_family_reason}",
-                    ]
-                content_en += [""]
                 content_es += [
                     f"  Escenario           : {_text(row.get('scenario'))}",
                     f"  Sentido Financiero  : {_text(row.get('financial_meaning'))}",
                     f"  Evidencia Necesaria : {_text(row.get('evidence_needed'))}",
                     f"  Falsación           : {_text(row.get('falsification_condition'))}",
+                    "",
                 ]
-                if any([_trigger, _source, _process_clue, _industrial_reason, _asset_family_reason]):
-                    content_es += [
-                        f"  Disparador           : {_trigger}",
-                        f"  Fuente               : {_source}",
-                        f"  Pista Operacional    : {_process_clue}",
-                        f"  Razón Industrial     : {_industrial_reason}",
-                        f"  Razón Por Familia    : {_asset_family_reason}",
-                    ]
-                content_es += [""]
         elif section_key == "financial_exposure":
             financial_support_rows = _constellation_rows_for_pack(
                 _text(financial_logic_pack.get("pack_family")),
@@ -5142,6 +5123,8 @@ def _build_structural_primary_body_sections(  # noqa: PLR0913
     if not scenario_space:
         c8 += ["  No scenario rows were produced.", ""]
     for row in scenario_space:
+        # V2-CRITICAL course correction: justification fields are
+        # dashboard-review metadata, not PDF content.
         c8 += [
             f"  Scenario            : {row.get('scenario', '')}",
             f"  Plausibility        : {row.get('plausibility_status', '')}",
@@ -5151,25 +5134,8 @@ def _build_structural_primary_body_sections(  # noqa: PLR0913
             f"  Evidence Needed     : {row.get('evidence_needed', '')}",
             f"  Evidence Link       : {row.get('linked_evidence_item', '')}",
             f"  Decision Front      : {row.get('linked_decision_front', '')}",
+            "",
         ]
-        # V2-CRITICAL Item 1: render the 5 justification fields per
-        # RECOVERY_2026-05-10 §11.B so the reader sees the epistemic
-        # anchor (trigger, source, mechanism, industrial + family
-        # justification) under every scenario.
-        _t = row.get('trigger', '')
-        _src = row.get('source', '')
-        _pc = row.get('process_clue', '')
-        _ir = row.get('industrial_reason', '')
-        _afr = row.get('asset_family_reason', '')
-        if any([_t, _src, _pc, _ir, _afr]):
-            c8 += [
-                f"  Trigger             : {_t}",
-                f"  Source              : {_src}",
-                f"  Process Clue        : {_pc}",
-                f"  Industrial Reason   : {_ir}",
-                f"  Asset Family Reason : {_afr}",
-            ]
-        c8 += [""]
 
     c9 = [_sep("="), "FINANCIAL EXPOSURE UNDER UNCERTAINTY", _sep("="), ""]
     if not structural_financial_exposure_register:
@@ -6222,6 +6188,9 @@ def _build_decision_admissibility_sections(  # noqa: PLR0913
         "",
     ]
     for row in scenario_block.get("rows", []):
+        # V2-CRITICAL course correction: justification fields are
+        # dashboard-review metadata, not PDF content. See motor_016 c2
+        # branch for the rationale.
         c6 += [
             f"  {row.get('scenario','')}",
             f"    Plausibility   : {row.get('plausibility_status','')}",
@@ -6231,25 +6200,8 @@ def _build_decision_admissibility_sections(  # noqa: PLR0913
             f"    Decision front : {row.get('linked_decision_front','')}",
             f"    Evidence link  : {row.get('linked_evidence_item','')}",
             f"    Evidence needed: {row.get('evidence_needed','')}",
+            "",
         ]
-        # V2-CRITICAL Item 1: surface the 5 justification fields
-        # (RECOVERY_2026-05-10 §11.B). motor_014 populates these via
-        # _SCENARIO_JUSTIFICATION; motor_062 validates them. Without
-        # rendering them, the reader never sees the epistemic anchor.
-        _t = row.get('trigger', '')
-        _src = row.get('source', '')
-        _pc = row.get('process_clue', '')
-        _ir = row.get('industrial_reason', '')
-        _afr = row.get('asset_family_reason', '')
-        if any([_t, _src, _pc, _ir, _afr]):
-            c6 += [
-                f"    Trigger        : {_t}",
-                f"    Source         : {_src}",
-                f"    Process Clue   : {_pc}",
-                f"    Industrial Rsn.: {_ir}",
-                f"    Asset Family Rsn.: {_afr}",
-            ]
-        c6 += [""]
 
     c7 = [
         _sep("="),

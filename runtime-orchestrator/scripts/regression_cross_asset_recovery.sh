@@ -21,6 +21,11 @@ RUNTIME_DIR="${REPO_ROOT}/runtime-orchestrator"
 INPUTS_DIR="${RUNTIME_DIR}/inputs"
 OUTPUT_DIR="${RUNTIME_DIR}/output"
 
+# V2-CRITICAL course correction: production runs gate PDF rendering on
+# dashboard scenario approval. Regression bypasses the gate via this env
+# var so CI can validate the pipeline end-to-end without manual review.
+export ZLAB_AUTO_APPROVE_SCENARIOS=1
+
 cd "${RUNTIME_DIR}" || { echo "cannot cd to ${RUNTIME_DIR}"; exit 2; }
 
 declare -a CASES=(
@@ -83,35 +88,13 @@ for entry in "${CASES[@]}"; do
       cover_pass=false
     fi
     if echo "${text}" | grep -qiF "${token1}" && echo "${text}" | grep -qiF "${token2}"; then
-      # V2-CRITICAL Item 1: when the report includes a SCENARIO SPACE
-      # section, every scenario must render the 5 justification fields
-      # (Trigger / Source / Process Clue / Industrial Reason / Asset
-      # Family Reason). target_classification_brief reports omit the
-      # scenario section entirely, so we skip the check there.
-      justification_pass=true
-      justification_note=""
-      if echo "${text}" | grep -qi "scenario space"; then
-        # Three distinctive labels (Process Clue is the most unique;
-        # "Industrial Reason" / "Industrial Rsn." both count). The
-        # presence of any one in 3 different scenario rows is enough.
-        process_clue_hits=$(echo "${text}" | grep -c "Process Clue")
-        family_reason_hits=$(echo "${text}" | grep -c -E "Asset Family (Reason|Rsn\.)")
-        industrial_reason_hits=$(echo "${text}" | grep -c -E "Industrial (Reason|Rsn\.)")
-        if [[ ${process_clue_hits} -ge 2 && ${family_reason_hits} -ge 2 && ${industrial_reason_hits} -ge 2 ]]; then
-          justification_note=" + justification fields rendered (${process_clue_hits} scenarios)"
-        else
-          justification_pass=false
-          justification_note=" (Process Clue=${process_clue_hits}, Asset Family Reason=${family_reason_hits}, Industrial Reason=${industrial_reason_hits})"
-        fi
+      # V2-CRITICAL course correction: justification fields are review
+      # metadata for the dashboard, NOT PDF content. The PDF is the
+      # clean reader deliverable; review happens before render.
+      if ${cover_pass}; then
+        echo "[${family}] PASS — '${token1}' + '${token2}' in PDF + cover OK"
       else
-        justification_note=" (no SCENARIO SPACE section in this report type)"
-      fi
-      if ${cover_pass} && ${justification_pass}; then
-        echo "[${family}] PASS — '${token1}' + '${token2}' in PDF + cover OK${justification_note}"
-      elif ! ${justification_pass}; then
-        echo "[${family}] PASS-WITH-WARN — tokens OK; justification regression${justification_note}"
-      else
-        echo "[${family}] PASS-WITH-WARN — tokens OK; cover regression noted${justification_note}"
+        echo "[${family}] PASS-WITH-WARN — tokens OK; cover regression noted"
       fi
       PASS=$((PASS + 1))
     else

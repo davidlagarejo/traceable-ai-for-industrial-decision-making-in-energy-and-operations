@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import base64
 import logging
+import os
 import re
 import shutil
 import subprocess
@@ -1207,7 +1208,7 @@ class Motor017Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_016", "motor_036", "motor_061", "motor_062", "motor_063"]
+        return ["motor_014", "motor_016", "motor_036", "motor_061", "motor_062", "motor_063"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         report_package = inputs.get("motor_016", {}).get("report_package")
@@ -1261,6 +1262,68 @@ class Motor017Adapter(BaseMotorAdapter):
                 + "; ".join(str(w.get("description", "")) for w in warns[:2])
             )
 
+        # V2-CRITICAL course correction: dashboard review gate.
+        # Seed the per-case scenario_review file with this run's scenarios
+        # so the dashboard can show them, then check whether the user has
+        # approved them. Render is blocked until ready_to_render=True
+        # unless the regression / CI runner opts into auto-approval.
+        from .. import scenario_review as _sr
+        m014 = inputs.get("motor_014", {}) if isinstance(inputs.get("motor_014", {}), dict) else {}
+        case_meta_for_review = report_package.get("case_metadata", {}) if isinstance(report_package.get("case_metadata", {}), dict) else {}
+        case_id_for_review = str(case_meta_for_review.get("case_id") or "").strip()
+        case_family_for_review = ""
+        m061_safe = inputs.get("motor_061", {}) if isinstance(inputs.get("motor_061", {}), dict) else {}
+        case_family_for_review = str(m061_safe.get("asset_family_evaluated") or "").strip()
+        scenarios_for_review = list(m014.get("scenario_space", []) or [])
+        # Detect bypass mode (regression / CI). Two ways to bypass:
+        #   1. __pipeline__.scenario_review_mode = "auto"
+        #   2. env var ZLAB_AUTO_APPROVE_SCENARIOS=1
+        review_mode = str(pipeline_inputs.get("scenario_review_mode") or "").strip().lower()
+        env_bypass = os.environ.get("ZLAB_AUTO_APPROVE_SCENARIOS", "").strip() == "1"
+        auto_approve = review_mode == "auto" or env_bypass
+        scenario_review_blocked = False
+        scenario_review_summary: dict[str, Any] = {}
+        if case_id_for_review and scenarios_for_review:
+            try:
+                if auto_approve:
+                    review_state = _sr.auto_approve_for_regression(
+                        case_id_for_review,
+                        scenarios_for_review,
+                        asset_family=case_family_for_review,
+                    )
+                else:
+                    review_state = _sr.upsert_scenarios(
+                        case_id_for_review,
+                        scenarios_for_review,
+                        asset_family=case_family_for_review,
+                    )
+                    review_state = _sr.get_case(case_id_for_review)
+                ready = bool(review_state.get("ready_to_render"))
+                pending_count = sum(
+                    1 for sc in (review_state.get("scenarios") or {}).values()
+                    if str(sc.get("state") or "pending") in {"pending", "edited"}
+                )
+                scenario_review_summary = {
+                    "case_id": case_id_for_review,
+                    "ready_to_render": ready,
+                    "pending_count": pending_count,
+                    "mode": "auto" if auto_approve else "manual",
+                }
+                if not ready:
+                    scenario_review_blocked = True
+                    block_reasons.append(
+                        f"Scenario review pending — {pending_count} scenario(s) "
+                        f"awaiting human approval in the dashboard. Open "
+                        f"http://localhost:7474/scenarios and approve/reject/edit "
+                        f"each one. Case: {case_id_for_review}."
+                    )
+            except Exception as exc:  # noqa: BLE001 - never crash the pipeline on review errors
+                log.warning(
+                    "[motor_017] scenario_review seeding/check failed for case %s: %s",
+                    case_id_for_review,
+                    exc,
+                )
+
         if block_reasons and not force_render_under_warnings:
             return {
                 "pdf_path": "",
@@ -1289,6 +1352,7 @@ class Motor017Adapter(BaseMotorAdapter):
                     "critical_count": int(m062.get("critical_count", 0) or 0),
                     "mode": str(m062.get("mode") or "warn"),
                 },
+                "scenario_review_summary": scenario_review_summary,
             }
 
         meta      = report_package.get("case_metadata", {})
