@@ -138,6 +138,7 @@ _ALLOWED_VALIDATOR_SCOPES = {
     "combination_review",
     "report_output",
     "memory_scope",
+    "scenario_review",
 }
 
 _ALLOWED_VALIDATOR_RULE_TYPES = {

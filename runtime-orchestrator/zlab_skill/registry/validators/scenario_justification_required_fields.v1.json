@@ -1,0 +1,27 @@
+{
+  "id": "scenario_justification_required_fields",
+  "version": "1.0.0",
+  "validator_name": "ScenarioJustificationValidator",
+  "scope": "scenario_review",
+  "enabled": true,
+  "severity": "error",
+  "default_mode": "warn",
+  "rule_type": "required_text_non_empty",
+  "description": "Every active scenario in the report must declare trigger, source, process_clue, industrial_reason, and asset_family_reason. Enforced by motor_062 (Layer F). Default mode is 'warn' until upstream generators populate the fields; switch __pipeline__.scenario_justification_mode='block' to enforce.",
+  "target_fields": [
+    "trigger",
+    "source",
+    "process_clue",
+    "industrial_reason",
+    "asset_family_reason"
+  ],
+  "applies_to": "scenario_space[].plausibility_status in {plausible*, currently dominant*, not ruled out*, possible*}",
+  "message": "Active scenario is missing one or more required justification fields.",
+  "implementing_motor": "motor_062",
+  "prompt_reference": "RECOVERY_2026-05-10 §11.B Scenario Justification Validator",
+  "tests": [
+    "active scenarios without all 5 fields must produce a warning",
+    "falsified/reduced scenarios must be excluded from audit",
+    "mode=block + critical_count>=3 must set scenario_justification_failed=true"
+  ]
+}

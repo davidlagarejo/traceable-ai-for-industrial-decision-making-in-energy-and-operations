@@ -213,9 +213,10 @@
         "motor_016",
         "motor_036",
         "motor_061",
+        "motor_062",
         "motor_063"
       ],
-      "notes": "Renderiza documentos desde paquetes ensamblados. Gates: motor_036 (system consistency), motor_061 (asset family isolation), motor_063 (chart validity). Bypass via __pipeline__.__force_render__=true."
+      "notes": "Renderiza documentos desde paquetes ensamblados. Gates: motor_036 (system consistency), motor_061 (asset family isolation), motor_062 (scenario justification), motor_063 (chart validity). Bypass via __pipeline__.__force_render__=true."
     },
     "motor_018": {
       "name": "Chart Generation Engine",
@@ -789,6 +790,17 @@
         "motor_054"
       ],
       "notes": "Capa F (Validation). Implementa Validador A del prompt RECOVERY-2026-05-09. Detecta asset-family contamination: patterns activos cross-family (process heat en warehouse, dock cycles en office, etc.) + tokens cross-family en gold nuggets. Bloquea reporte cuando contamination_detected=True (la integración con motor_017 force_render gate viene en commit posterior)."
+    },
+    "motor_062": {
+      "name": "Scenario Justification Validator",
+      "group": "B",
+      "catalog_status": "planned",
+      "requires": [
+        "motor_007",
+        "motor_014",
+        "motor_047"
+      ],
+      "notes": "Capa F (Validation). Implementa Validador B del prompt RECOVERY-2026-05-10 (cerebro de congruencia operacional). Cada escenario activo en scenario_space debe declarar trigger, source, process_clue, industrial_reason, asset_family_reason. Default mode='warn' (no bloquea). Configurar __pipeline__.scenario_justification_mode='block' para activar gate; bloquea si critical_count>=3."
     },
     "motor_063": {
       "name": "Chart Validity Engine",

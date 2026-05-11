@@ -1207,7 +1207,7 @@ class Motor017Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_016", "motor_036", "motor_061", "motor_063"]
+        return ["motor_016", "motor_036", "motor_061", "motor_062", "motor_063"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         report_package = inputs.get("motor_016", {}).get("report_package")
@@ -1229,8 +1229,10 @@ class Motor017Adapter(BaseMotorAdapter):
         # Their critical_count > 0 signals contamination that would degrade
         # report quality. Honors the same __force_render__ escape.
         m061 = inputs.get("motor_061", {}) if isinstance(inputs.get("motor_061", {}), dict) else {}
+        m062 = inputs.get("motor_062", {}) if isinstance(inputs.get("motor_062", {}), dict) else {}
         m063 = inputs.get("motor_063", {}) if isinstance(inputs.get("motor_063", {}), dict) else {}
         family_contamination = bool(m061.get("contamination_detected", False))
+        scenario_justification_failed = bool(m062.get("scenario_justification_failed", False))
         chart_contamination = bool(m063.get("chart_contamination_detected", False))
 
         block_reasons: list[str] = []
@@ -1250,6 +1252,12 @@ class Motor017Adapter(BaseMotorAdapter):
             warns = list(m063.get("chart_validity_warnings", []) or [])
             block_reasons.append(
                 "Chart-validity contamination detected by motor_063: "
+                + "; ".join(str(w.get("description", "")) for w in warns[:2])
+            )
+        if scenario_justification_failed:
+            warns = list(m062.get("scenario_justification_warnings", []) or [])
+            block_reasons.append(
+                "Scenario justification failure detected by motor_062: "
                 + "; ".join(str(w.get("description", "")) for w in warns[:2])
             )
 
@@ -1274,6 +1282,12 @@ class Motor017Adapter(BaseMotorAdapter):
                     "chart_contamination_detected": chart_contamination,
                     "warning_count": int(m063.get("warning_count", 0) or 0),
                     "critical_count": int(m063.get("critical_count", 0) or 0),
+                },
+                "scenario_justification_summary": {
+                    "scenario_justification_failed": scenario_justification_failed,
+                    "warning_count": int(m062.get("warning_count", 0) or 0),
+                    "critical_count": int(m062.get("critical_count", 0) or 0),
+                    "mode": str(m062.get("mode") or "warn"),
                 },
             }
 
