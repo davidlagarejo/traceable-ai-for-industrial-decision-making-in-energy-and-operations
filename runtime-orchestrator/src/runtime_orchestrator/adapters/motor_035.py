@@ -3,7 +3,51 @@ from __future__ import annotations
 from typing import Any
 
 from ..public_data_routing import build_routing_bundle
+from ..source_catalog import routing_for_family
 from .base import BaseMotorAdapter
+
+
+# Per-tier caps prevent the routing payload from ballooning when a family
+# matches many vendor sources. tier_1 (regulatory/standards) is allowed the
+# most because each item is materially distinct evidence.
+_INDUSTRIAL_AUTHORITY_TIER_CAPS = {1: 40, 2: 25, 3: 15}
+
+
+def _build_industrial_authority_routing(asset_family: str) -> dict[str, Any]:
+    """Gap D: bucket industrial sources by authority_tier for this family.
+
+    Returns a compact projection of the 139-source catalog (tier_1 first):
+      {
+        "asset_family": "cold_chain_facility",
+        "tier_1": [{source_id, name, publisher, citation_format}, ...],
+        "tier_2": [...],
+        "tier_3": [...],
+        "total_sources": N,
+      }
+
+    Empty when asset_family is unknown or carries no matching entries.
+    """
+    if not asset_family:
+        return {}
+    buckets = routing_for_family(asset_family)
+    projection: dict[str, Any] = {"asset_family": asset_family}
+    total = 0
+    for tier_int, key in ((1, "tier_1"), (2, "tier_2"), (3, "tier_3")):
+        entries = buckets.get(tier_int, [])[: _INDUSTRIAL_AUTHORITY_TIER_CAPS[tier_int]]
+        projection[key] = [
+            {
+                "source_id": e.get("source_id", ""),
+                "name": e.get("name", ""),
+                "publisher": e.get("publisher", ""),
+                "type": e.get("type", ""),
+                "topic_tags": list(e.get("topic_tags", []) or []),
+                "citation_format": e.get("citation_format", ""),
+            }
+            for e in entries
+        ]
+        total += len(entries)
+    projection["total_sources"] = total
+    return projection
 
 
 class Motor035Adapter(BaseMotorAdapter):
@@ -53,6 +97,12 @@ class Motor035Adapter(BaseMotorAdapter):
             upstream_prohibited_report_types=list(m7.get("prohibited_report_types", []) or []),
         )
 
+        asset_family_for_routing = (
+            str(target_definition_contract.get("asset_family") or "").strip()
+            or str(target_definition_contract.get("target_type") or "").strip()
+        )
+        industrial_authority_routing = _build_industrial_authority_routing(asset_family_for_routing)
+
         source_plan = bundle.get("source_routing_plan", {})
         report_switch = bundle.get("report_type_switch_recommendation", {})
         target_classification_result = bundle.get("target_classification_result", {})
@@ -75,4 +125,5 @@ class Motor035Adapter(BaseMotorAdapter):
             "missing_critical_fields": critical_field_summary.get("missing_critical_fields", 0),
             "report_type_allowed": report_switch.get("recommended_report_type", ""),
             "report_type_prohibited": report_switch.get("prohibited_report_types", []),
+            "industrial_authority_routing": industrial_authority_routing,
         }
