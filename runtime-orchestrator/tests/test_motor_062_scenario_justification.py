@@ -133,11 +133,25 @@ def test_falls_back_to_motor_047_scenario_register_when_m014_missing():
 # ── Mode toggle (warn vs block) ──────────────────────────────────────────────
 
 
-def test_default_mode_is_warn_and_does_not_block():
-    scenarios = [_scenario() for _ in range(5)]  # 5 critical
+def test_default_mode_is_block_after_v2_live_item_5():
+    """V2-LIVE Item 5 flipped the default mode warn→block now that
+    motor_014 emits the 5 justification fields (Item 1) and motor_062
+    validates source against catalog (Item 3)."""
+    scenarios = [_scenario() for _ in range(5)]  # 5 critical (no justification)
     out = _run(motor_014={"scenario_space": scenarios})
-    assert out["mode"] == "warn"
+    assert out["mode"] == "block"
     assert out["critical_count"] == 5
+    assert out["scenario_justification_failed"] is True
+
+
+def test_explicit_warn_mode_does_not_block_even_with_critical_scenarios():
+    """Pipelines that haven't migrated yet can opt back into warn mode."""
+    scenarios = [_scenario() for _ in range(5)]
+    out = _run(
+        motor_014={"scenario_space": scenarios},
+        pipeline={"scenario_justification_mode": "warn"},
+    )
+    assert out["mode"] == "warn"
     assert out["scenario_justification_failed"] is False
 
 

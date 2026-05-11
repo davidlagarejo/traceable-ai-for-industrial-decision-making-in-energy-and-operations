@@ -169,9 +169,14 @@ class Motor062Adapter(BaseMotorAdapter):
         warnings = _build_warnings(scenarios, asset_family)
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
 
-        # Pipeline-level mode toggle: warn (default) vs block.
+        # Pipeline-level mode toggle. After V2-LIVE Item 1 + Item 3,
+        # motor_014 emits the 5 justification fields for every scenario
+        # and motor_062 validates the source against the 139-source
+        # catalog, so `block` is now safe as the default. Cases that
+        # have not yet been updated can opt back into warn mode via
+        # __pipeline__.scenario_justification_mode='warn'.
         pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
-        mode = _text(pipeline_inputs.get("scenario_justification_mode") or "warn").lower()
+        mode = _text(pipeline_inputs.get("scenario_justification_mode") or "block").lower()
         enforce_block = mode == "block"
 
         # Failed = enough critical scenarios to justify blocking the render.
