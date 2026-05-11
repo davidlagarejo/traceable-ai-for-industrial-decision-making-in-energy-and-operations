@@ -1,0 +1,91 @@
+{
+  "id": "refrigeration_duty",
+  "version": "1.0.0",
+  "name": "Refrigeration Duty Characterization",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "ASSET_ARCHETYPE"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "food_processing",
+    "supermarket"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_processing",
+    "food_retail"
+  ],
+  "applicable_contexts": [
+    "cold-chain or refrigerated facility confirmed",
+    "refrigeration system inventory unresolved"
+  ],
+  "trigger_conditions": [
+    "refrigerated or frozen zone present",
+    "compressor or condenser inventory unresolved",
+    "operating temperature setpoints unknown"
+  ],
+  "anti_triggers": [
+    "no refrigerated load present",
+    "refrigeration duty already characterized with evidence"
+  ],
+  "physical_basis": "Refrigeration duty is the dominant electrical load in cold-chain assets. It is driven by product turnover, setpoint, ambient conditions, infiltration, and defrost strategy \u2014 not by floor area alone.",
+  "operational_basis": "Refrigeration plant can be oversized, mis-staged, or running on degraded controls. Without duty characterization, retrofit logic targets the wrong variable.",
+  "financial_mechanism": "Mis-characterizing refrigeration duty leads to wrong CAPEX prioritization (compressor swap vs. controls vs. envelope vs. defrost).",
+  "typical_false_assumption": "Refrigerated kWh/sf benchmarks alone determine refrigeration efficiency.",
+  "hypothesis": "Refrigeration duty must be decomposed (product pull-down vs. holding vs. defrost vs. infiltration) before any equipment replacement logic.",
+  "rival_hypotheses": [
+    "refrigeration is sized correctly and operating well",
+    "envelope/infiltration dominates and refrigeration is responding correctly",
+    "defrost strategy is the primary degradation pathway"
+  ],
+  "evidence_required": [
+    "compressor inventory (count, type, kW)",
+    "setpoint and zone temperature evidence",
+    "operating schedule and product throughput",
+    "refrigerant type and charge"
+  ],
+  "minimum_evidence_to_activate": [
+    "cold-chain or refrigerated asset confirmed",
+    "refrigeration plant inventory unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "compressor staging evidence + temperature profile"
+  ],
+  "falsification_conditions": [
+    "refrigeration duty already bounded with evidence"
+  ],
+  "allowed_claim_language": "Refrigeration duty is the structurally dominant load and must be decomposed before equipment-first logic.",
+  "prohibited_claim_language": "This facility's refrigeration is inefficient.",
+  "financial_exposure_if_true": [
+    "wrong CAPEX target without duty decomposition"
+  ],
+  "financial_exposure_if_false": [
+    "refrigeration-first framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "DECOMPOSE_REFRIGERATION_DUTY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "stop_conditions": [
+    "refrigeration duty decomposition bounded"
+  ],
+  "escalation_conditions": [
+    "field walk-through if documentary evidence insufficient"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block refrigeration-CAPEX-first logic without duty decomposition"
+  ],
+  "example_outputs": [
+    "Refrigeration duty composition (pull-down vs holding vs defrost) is the deciding question."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when compressor inventory is unresolved"
+  ]
+}

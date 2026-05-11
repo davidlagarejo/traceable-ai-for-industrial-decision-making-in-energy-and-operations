@@ -1,0 +1,86 @@
+{
+  "id": "compressor_staging",
+  "version": "1.0.0",
+  "name": "Compressor Staging Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "food_processing"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_processing"
+  ],
+  "applicable_contexts": [
+    "multi-compressor refrigeration plant present",
+    "sequencing strategy and part-load behavior unresolved"
+  ],
+  "trigger_conditions": [
+    "two or more compressors in service",
+    "VFD vs. on/off control unknown",
+    "head pressure floating strategy unknown"
+  ],
+  "anti_triggers": [
+    "single fixed-speed plant",
+    "staging already characterized by telemetry"
+  ],
+  "physical_basis": "Compressor part-load efficiency depends on staging order, VFD use, head pressure float, and economizer use. Wrong staging at low load wastes 20\u201340% of refrigeration kWh.",
+  "operational_basis": "Default staging logic from commissioning rarely matches actual load profile; operators leave it alone.",
+  "financial_mechanism": "Staging is a controls-grade fix with high ROI; missing it directs CAPEX toward replacement instead of tuning.",
+  "typical_false_assumption": "All compressors run at high efficiency at any load.",
+  "hypothesis": "Compressor staging may be misaligned with the actual load profile and should be falsified before replacement logic.",
+  "rival_hypotheses": [
+    "staging is tuned correctly",
+    "load matches single-compressor sizing"
+  ],
+  "evidence_required": [
+    "compressor inventory with VFD/fixed indicator",
+    "head pressure setpoints",
+    "load profile (kW vs ton-hour)"
+  ],
+  "minimum_evidence_to_activate": [
+    "multi-compressor plant confirmed",
+    "staging strategy unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "fixed-speed compressors at low load or head pressure not floating"
+  ],
+  "falsification_conditions": [
+    "VFD lead/lag with floating head pressure tuned"
+  ],
+  "allowed_claim_language": "Compressor staging is a plausible controls-grade loss-pattern requiring tuning evidence.",
+  "prohibited_claim_language": "This facility's compressors are mis-staged.",
+  "financial_exposure_if_true": [
+    "tuning/controls intervention outranks compressor CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "staging framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_COMPRESSOR_STAGING"
+  ],
+  "stop_conditions": [
+    "staging strategy bounded by evidence"
+  ],
+  "escalation_conditions": [
+    "controls walk-through with refrigeration service provider"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block compressor-replacement-first logic"
+  ],
+  "example_outputs": [
+    "Compressor staging is a controls-grade falsification target before CAPEX."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when multi-compressor staging strategy missing"
+  ]
+}

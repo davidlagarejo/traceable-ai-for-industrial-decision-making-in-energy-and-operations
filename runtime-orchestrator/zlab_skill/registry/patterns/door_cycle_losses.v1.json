@@ -1,0 +1,84 @@
+{
+  "id": "door_cycle_losses",
+  "version": "1.0.0",
+  "name": "Door Cycle Losses",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_retail"
+  ],
+  "applicable_contexts": [
+    "high-traffic doors between zones at different temperatures",
+    "rapid-close or interlock evidence unresolved"
+  ],
+  "trigger_conditions": [
+    "frequent door cycles between conditioned zones",
+    "rapid-close or air-lock mechanism condition unknown"
+  ],
+  "anti_triggers": [
+    "doors interlocked and rapid-close confirmed",
+    "infiltration already bounded"
+  ],
+  "physical_basis": "Each door cycle exchanges air between zones; for cold\u2192ambient transitions the latent and sensible exchange is substantial and cumulative.",
+  "operational_basis": "Operators prop doors open or disable interlocks for productivity. The behavior is rarely logged but drives a measurable share of refrigeration kWh.",
+  "financial_mechanism": "Door discipline interventions are low-CAPEX with high return; missing this loss means CAPEX targets the wrong variable.",
+  "typical_false_assumption": "Door cycles are small compared to total refrigeration duty.",
+  "hypothesis": "Door cycle losses may be material and warrant operational falsification before equipment retrofits.",
+  "rival_hypotheses": [
+    "door discipline is already enforced",
+    "cycle frequency is too low to matter"
+  ],
+  "evidence_required": [
+    "door inventory and locations",
+    "interlock/rapid-close mechanism evidence",
+    "shift count and cycle frequency"
+  ],
+  "minimum_evidence_to_activate": [
+    "high-throughput cold-chain",
+    "door interlock evidence unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "operator interview or BMS log confirms open-door behavior"
+  ],
+  "falsification_conditions": [
+    "interlocks operational and cycle count low"
+  ],
+  "allowed_claim_language": "Door-cycle losses are a plausible operational loss-pattern requiring operational verification.",
+  "prohibited_claim_language": "This facility wastes energy through open doors.",
+  "financial_exposure_if_true": [
+    "operational discipline interventions outrank equipment CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "door-discipline framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DOOR_DISCIPLINE"
+  ],
+  "stop_conditions": [
+    "door-cycle behavior bounded by evidence"
+  ],
+  "escalation_conditions": [
+    "site walk-through to observe behavior"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block equipment-CAPEX-first when operational losses unresolved"
+  ],
+  "example_outputs": [
+    "Door-cycle losses are a low-CAPEX falsification target before refrigeration retrofits."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when door interlock evidence missing"
+  ]
+}

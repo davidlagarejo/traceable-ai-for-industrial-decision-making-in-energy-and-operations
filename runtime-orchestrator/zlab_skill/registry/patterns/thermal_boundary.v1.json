@@ -1,0 +1,88 @@
+{
+  "id": "thermal_boundary",
+  "version": "1.0.0",
+  "name": "Thermal Boundary Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "ASSET_ARCHETYPE"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "manufacturing_facility"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_processing"
+  ],
+  "applicable_contexts": [
+    "refrigerated envelope present",
+    "insulation system age, type or condition unresolved"
+  ],
+  "trigger_conditions": [
+    "refrigerated envelope older than 20 years",
+    "insulation type (PUR/PIR/PS) unknown",
+    "vapor barrier condition unknown",
+    "thermal bridging at floor/wall/roof joints unresolved"
+  ],
+  "anti_triggers": [
+    "recent envelope retrofit",
+    "thermal imaging audit on file"
+  ],
+  "physical_basis": "Envelope conductance, vapor barrier integrity and thermal bridging set the floor of refrigeration duty. Degradation accumulates silently.",
+  "operational_basis": "Vapor migration causes insulation to wet and lose R-value; thermal bridges at structural connections form persistent loss paths.",
+  "financial_mechanism": "Envelope interventions are capital-grade, long-lived, and outrank equipment retrofits when conductance is degraded.",
+  "typical_false_assumption": "Envelope is fine because it looks fine.",
+  "hypothesis": "Thermal boundary integrity may be degraded and should be falsified before refrigeration CAPEX logic.",
+  "rival_hypotheses": [
+    "envelope is performing as designed",
+    "operational losses dominate over envelope"
+  ],
+  "evidence_required": [
+    "envelope age",
+    "insulation type and R-value",
+    "vapor barrier evidence",
+    "thermal imaging or audit"
+  ],
+  "minimum_evidence_to_activate": [
+    "refrigerated envelope confirmed",
+    "envelope condition unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "thermal imaging or moisture survey shows degradation"
+  ],
+  "falsification_conditions": [
+    "recent commissioning or audit confirms envelope integrity"
+  ],
+  "allowed_claim_language": "Thermal boundary degradation is a plausible loss-pattern requiring envelope evidence.",
+  "prohibited_claim_language": "This facility's insulation is failing.",
+  "financial_exposure_if_true": [
+    "envelope CAPEX may outrank refrigeration replacement"
+  ],
+  "financial_exposure_if_false": [
+    "envelope framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_ENVELOPE_AUDIT"
+  ],
+  "stop_conditions": [
+    "envelope condition bounded by evidence"
+  ],
+  "escalation_conditions": [
+    "thermal imaging survey if no documentary evidence"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block refrigeration-CAPEX-first while envelope unresolved"
+  ],
+  "example_outputs": [
+    "Thermal boundary integrity should be falsified before refrigeration retrofits."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when envelope evidence missing"
+  ]
+}

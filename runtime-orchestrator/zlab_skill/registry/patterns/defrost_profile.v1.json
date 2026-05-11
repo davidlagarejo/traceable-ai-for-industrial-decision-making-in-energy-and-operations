@@ -1,0 +1,84 @@
+{
+  "id": "defrost_profile",
+  "version": "1.0.0",
+  "name": "Defrost Profile Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "MAINTENANCE_REALITY_PATTERN"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "applicable_industries": [
+    "cold_chain"
+  ],
+  "applicable_contexts": [
+    "evaporator coils in freezer or cooler zones",
+    "defrost strategy (electric/gas/hot-gas) and schedule unresolved"
+  ],
+  "trigger_conditions": [
+    "freezer or cooler zone present",
+    "defrost initiation method (time/demand/ambient) unknown",
+    "defrost duration or frequency not characterized"
+  ],
+  "anti_triggers": [
+    "defrost on demand-initiation with telemetry",
+    "defrost already bounded"
+  ],
+  "physical_basis": "Defrost cycles add heat into the refrigerated space, must be removed again, and constitute a non-trivial share of refrigeration kWh. Time-initiated defrost runs whether ice has accumulated or not.",
+  "operational_basis": "Demand-initiated defrost saves energy but requires sensors and controls maintenance. Default time-initiated schedules persist in older systems.",
+  "financial_mechanism": "Defrost optimization is a controls-grade intervention with measurable kWh impact; missing it means equipment-first CAPEX masks a controls fix.",
+  "typical_false_assumption": "Defrost is small and unchangeable.",
+  "hypothesis": "Defrost profile is a plausible loss-pattern that may be addressable with controls, not CAPEX.",
+  "rival_hypotheses": [
+    "defrost already optimized",
+    "infiltration drives defrost frequency"
+  ],
+  "evidence_required": [
+    "defrost initiation method",
+    "defrost frequency and duration logs",
+    "coil inspection evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "freezer/cooler present",
+    "defrost strategy unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "time-initiated defrost confirmed or excessive defrost duration"
+  ],
+  "falsification_conditions": [
+    "demand-initiated defrost with telemetry and tuned dwell"
+  ],
+  "allowed_claim_language": "Defrost profile is a plausible controls-grade loss-pattern requiring validation.",
+  "prohibited_claim_language": "This facility's defrost is wasteful.",
+  "financial_exposure_if_true": [
+    "controls intervention outranks equipment CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "defrost framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DEFROST_CONTROLS"
+  ],
+  "stop_conditions": [
+    "defrost strategy bounded by evidence"
+  ],
+  "escalation_conditions": [
+    "controls/BAS review if no documentary evidence"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block equipment-CAPEX-first while defrost strategy unresolved"
+  ],
+  "example_outputs": [
+    "Defrost initiation method is a controls-grade falsification target."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when defrost strategy is missing"
+  ]
+}

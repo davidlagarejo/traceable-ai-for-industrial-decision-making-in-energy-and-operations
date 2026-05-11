@@ -1,0 +1,90 @@
+{
+  "id": "refrigerant_integrity",
+  "version": "1.0.0",
+  "name": "Refrigerant Integrity Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN",
+    "REGULATORY_PHYSICAL_SIGNAL"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "supermarket",
+    "commercial_building"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_retail",
+    "commercial_real_estate"
+  ],
+  "applicable_contexts": [
+    "refrigeration plant present",
+    "leak-rate history or refrigerant type unresolved"
+  ],
+  "trigger_conditions": [
+    "refrigerant type (HFC/HFO/NH3/CO2) unknown",
+    "annual leak rate undocumented",
+    "AIM/SNAP phasedown exposure unclear"
+  ],
+  "anti_triggers": [
+    "recent leak audit on file",
+    "refrigerant already characterized with telemetry"
+  ],
+  "physical_basis": "Refrigerant loss degrades capacity, raises kWh per ton-hour, and creates regulatory exposure (AIM Act phasedown for HFCs, SNAP rules, GHG reporting).",
+  "operational_basis": "Top-up cylinders disguise loss-rate; the plant runs hotter and longer without visible alarm until capacity falls.",
+  "financial_mechanism": "Leak-rate determines refrigerant CAPEX/OPEX trajectory under AIM, and operational kWh penalty. Misreading it skews retrofit timing.",
+  "typical_false_assumption": "Refrigerant choice is permanent and not material to economics.",
+  "hypothesis": "Refrigerant integrity is a plausible material loss-pattern requiring leak-rate evidence and regulatory phasedown framing.",
+  "rival_hypotheses": [
+    "plant is tight and refrigerant choice is future-proof",
+    "refrigerant exposure is immaterial"
+  ],
+  "evidence_required": [
+    "refrigerant type and charge",
+    "leak-rate history",
+    "AIM/SNAP applicability",
+    "GHGRP exposure"
+  ],
+  "minimum_evidence_to_activate": [
+    "refrigeration plant confirmed",
+    "refrigerant evidence unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "leak rate above industry threshold or HFC phasedown applies"
+  ],
+  "falsification_conditions": [
+    "natural refrigerant (NH3/CO2) confirmed and audit on file"
+  ],
+  "allowed_claim_language": "Refrigerant integrity and regulatory phasedown exposure are plausible material issues requiring evidence.",
+  "prohibited_claim_language": "This facility's refrigerant leaks.",
+  "financial_exposure_if_true": [
+    "refrigerant replacement CAPEX accelerates under phasedown",
+    "kWh penalty accumulates"
+  ],
+  "financial_exposure_if_false": [
+    "refrigerant framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_REGULATORY_EXPOSURE",
+    "REQUEST_LEAK_AUDIT"
+  ],
+  "stop_conditions": [
+    "leak rate and refrigerant choice bounded"
+  ],
+  "escalation_conditions": [
+    "service provider leak audit if no documentary evidence"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block refrigerant-agnostic financial logic when phasedown applies"
+  ],
+  "example_outputs": [
+    "Refrigerant integrity and AIM Act phasedown require leak-rate evidence before CAPEX framing."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when refrigerant type/leak rate unresolved"
+  ]
+}

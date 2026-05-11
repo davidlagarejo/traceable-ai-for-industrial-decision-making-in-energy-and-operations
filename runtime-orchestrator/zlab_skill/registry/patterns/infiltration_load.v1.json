@@ -1,0 +1,86 @@
+{
+  "id": "infiltration_load",
+  "version": "1.0.0",
+  "name": "Infiltration Load Plausibility",
+  "knowledge_type": [
+    "LOSS_PATTERN"
+  ],
+  "asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "supermarket"
+  ],
+  "applicable_industries": [
+    "cold_chain",
+    "food_retail"
+  ],
+  "applicable_contexts": [
+    "refrigerated envelope present",
+    "door-cycle or air-curtain evidence unresolved"
+  ],
+  "trigger_conditions": [
+    "refrigerated zone with door traffic",
+    "air-curtain or strip-curtain condition unknown",
+    "envelope insulation age or condition unresolved"
+  ],
+  "anti_triggers": [
+    "no refrigerated envelope",
+    "infiltration already bounded by air-balance evidence"
+  ],
+  "physical_basis": "Infiltration through doors, dock seals and envelope leaks adds latent and sensible load that the refrigeration plant must continuously offset. Latent load drives defrost frequency.",
+  "operational_basis": "Door discipline, air-curtain operation and dock-seal condition typically deteriorate without visible signal. The plant compensates silently until it cannot.",
+  "financial_mechanism": "Infiltration load is misattributed to refrigeration inefficiency, leading to wrong CAPEX (compressor) instead of envelope/door discipline.",
+  "typical_false_assumption": "Refrigeration kWh rise means the compressor is the problem.",
+  "hypothesis": "Infiltration load may be a major share of refrigeration duty and should be falsified before compressor-first logic.",
+  "rival_hypotheses": [
+    "envelope is tight and infiltration is immaterial",
+    "compressor sizing/staging dominates"
+  ],
+  "evidence_required": [
+    "door count and traffic profile",
+    "air-curtain inventory and condition",
+    "dock-seal age and condition",
+    "envelope insulation evidence"
+  ],
+  "minimum_evidence_to_activate": [
+    "refrigerated envelope confirmed",
+    "infiltration controls condition unresolved"
+  ],
+  "minimum_evidence_to_confirm": [
+    "dock-seal or air-curtain degradation visible"
+  ],
+  "falsification_conditions": [
+    "envelope tightness bounded by recent commissioning"
+  ],
+  "allowed_claim_language": "Infiltration load is a plausible loss-pattern that must be falsified before refrigeration-CAPEX logic.",
+  "prohibited_claim_language": "This facility leaks cold air.",
+  "financial_exposure_if_true": [
+    "envelope/door interventions outrank compressor CAPEX"
+  ],
+  "financial_exposure_if_false": [
+    "infiltration framing should be downgraded"
+  ],
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DOORS_AND_SEALS"
+  ],
+  "stop_conditions": [
+    "infiltration bounded by evidence"
+  ],
+  "escalation_conditions": [
+    "walk-through to evaluate seal/curtain condition"
+  ],
+  "source_basis": [
+    "licensed_research_public_technical_priors"
+  ],
+  "confidence_ceiling": "L2",
+  "claim_permissions_impact": [
+    "block compressor-CAPEX-first logic until envelope is falsified"
+  ],
+  "example_outputs": [
+    "Before funding compressor work, falsify dock-seal and door-traffic infiltration."
+  ],
+  "tests": [
+    "cold_chain bundle should activate this when door/seal evidence is missing"
+  ]
+}
