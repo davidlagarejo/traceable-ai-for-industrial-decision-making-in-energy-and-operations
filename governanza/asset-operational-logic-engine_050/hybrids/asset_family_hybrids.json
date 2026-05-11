@@ -1,0 +1,96 @@
+{
+  "catalog_id": "asset_family_hybrids",
+  "schema_version": "1.0.0",
+  "description": "Justified hybrid asset-family combinations (RECOVERY_2026-05-10 §2 Asset Family Engine — Gap B). motor_061 (Asset Family Isolation Validator) blocks cross-family pattern activation by default. Hybrids listed here are EXEMPT from contamination block PROVIDED a justification trigger is present in the evidence. Without the trigger, the cross-family activation remains contamination.",
+  "rules": {
+    "trigger_match": "case_sensitive=false; trigger token must appear in any of: motor_007.target_definition_contract.facility_evidence_tokens, motor_007.target_definition_contract.process_evidence_tokens, or motor_054.industrial_evidence_register entries.",
+    "secondary_can_unlock_patterns": "When a hybrid is admitted, patterns from the secondary family's allowed_patterns are no longer flagged as contamination by motor_061 AF1_pattern_contamination — provided the pattern_id is listed in hybrid.shared_patterns."
+  },
+  "hybrids": [
+    {
+      "hybrid_id": "cold_chain_food_processing",
+      "primary": "cold_chain_facility",
+      "secondary": "manufacturing_facility",
+      "justification_triggers": [
+        "cook_chill_present",
+        "sanitation_steam_present",
+        "process_heat_signature",
+        "meat_processing_evidence",
+        "dairy_processing_evidence",
+        "blast_freezer_with_cook_line"
+      ],
+      "shared_patterns": [
+        "process_load_vs_waste",
+        "steam_trap_failure_plausibility",
+        "boiler_degradation_plausibility"
+      ],
+      "rationale": "Dairy, meat, ready-meal and bakery facilities frequently combine cold-chain storage with on-site thermal processing (cook, pasteurize, retort, sanitation steam). Process heat and refrigeration coexist by design; flagging process patterns as contamination would block valid cross-system intelligence."
+    },
+    {
+      "hybrid_id": "warehouse_mixed_temperature",
+      "primary": "warehouse_distribution",
+      "secondary": "cold_chain_facility",
+      "justification_triggers": [
+        "refrigerated_zone_present",
+        "frozen_zone_present",
+        "multi_temperature_dc",
+        "cooler_and_freezer_evidence"
+      ],
+      "shared_patterns": [
+        "cold_chain_status_unknown",
+        "refrigeration_duty",
+        "defrost_profile"
+      ],
+      "rationale": "Modern omnichannel DCs combine ambient, refrigerated and frozen zones in a single building. Cold-chain patterns apply to the conditioned zones without invalidating warehouse logic (MHE charging, dock cycles)."
+    },
+    {
+      "hybrid_id": "office_with_edge_datacenter",
+      "primary": "commercial_building",
+      "secondary": "datacenter",
+      "justification_triggers": [
+        "edge_dc_tenant_present",
+        "dedicated_crac_room",
+        "server_room_above_25kw",
+        "tier_iii_certified_space_inside_office"
+      ],
+      "shared_patterns": [
+        "pue_composition_unknown",
+        "cooling_topology_uncertainty"
+      ],
+      "rationale": "Class-A office buildings increasingly house edge DC or telco hub tenants. The DC load and cooling topology must be characterized independently from the office HVAC schedule, but coexist in one asset."
+    },
+    {
+      "hybrid_id": "manufacturing_with_attached_dc",
+      "primary": "manufacturing_facility",
+      "secondary": "warehouse_distribution",
+      "justification_triggers": [
+        "attached_distribution_center",
+        "finished_goods_dc_evidence",
+        "shipping_dock_count_above_threshold",
+        "high_bay_storage_volume_dominant"
+      ],
+      "shared_patterns": [
+        "warehouse_mhe_charging_demand_peak",
+        "warehouse_dock_infiltration_loss",
+        "high_bay_lighting_waste"
+      ],
+      "rationale": "Plants with attached finished-goods warehouses (FMCG, automotive Tier-1, building products) present both process loads and DC loads in one footprint. Warehouse patterns are legitimate when the DC is operationally distinct from production lines."
+    },
+    {
+      "hybrid_id": "urban_grocer_or_food_retail",
+      "primary": "commercial_building",
+      "secondary": "cold_chain_facility",
+      "justification_triggers": [
+        "supermarket_tenant_present",
+        "food_retail_below_grade_refrigeration",
+        "restaurant_kitchen_evidence"
+      ],
+      "shared_patterns": [
+        "refrigeration_duty",
+        "refrigerant_integrity",
+        "compressor_staging"
+      ],
+      "rationale": "Mixed-use commercial buildings hosting supermarkets, food retail, or commercial kitchens carry refrigeration loads that dominate base electrical consumption. Refrigeration logic applies despite the dominant office/retail building envelope."
+    }
+  ]
+}

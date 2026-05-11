@@ -31,6 +31,7 @@ from __future__ import annotations
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
 
 
 # Per asset_family, the set of pattern_ids that signal CONTAMINATION when
@@ -121,10 +122,17 @@ def _resolve_asset_family(inputs: dict[str, Any]) -> str:
 def _detect_pattern_contamination(
     asset_family: str,
     activated_combinations: list[dict],
+    hybrid_shared_patterns: set[str] | None = None,
 ) -> list[dict]:
     contamination_set = _CROSS_FAMILY_CONTAMINATION.get(asset_family, set())
     if not contamination_set:
         return []
+    # Gap B: when a justified hybrid is active, its shared_patterns are
+    # exempt from contamination detection. Without the hybrid trigger they
+    # remain blocked.
+    exempt = hybrid_shared_patterns or set()
+    if exempt:
+        contamination_set = contamination_set - exempt
     out: list[dict] = []
     for combo in activated_combinations:
         if not isinstance(combo, dict):
@@ -148,6 +156,24 @@ def _detect_pattern_contamination(
                 }
             )
     return out
+
+
+def _collect_evidence_tokens(inputs: dict[str, Any]) -> set[str]:
+    """Pull hybrid-justification candidate tokens from m007 + m054."""
+    tokens: set[str] = set()
+    m007 = inputs.get("motor_007", {}) if isinstance(inputs.get("motor_007", {}), dict) else {}
+    contract = m007.get("target_definition_contract", {}) if isinstance(m007.get("target_definition_contract", {}), dict) else {}
+    for key in ("facility_evidence_tokens", "process_evidence_tokens", "hybrid_evidence_tokens"):
+        for tok in contract.get(key, []) or []:
+            if tok:
+                tokens.add(str(tok).strip())
+    m054 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
+    for entry in m054.get("industrial_evidence_register", []) or []:
+        if isinstance(entry, dict):
+            tag = entry.get("trigger") or entry.get("token") or entry.get("evidence_token")
+            if tag:
+                tokens.add(str(tag).strip())
+    return tokens
 
 
 def _detect_nugget_token_contamination(
@@ -204,8 +230,14 @@ class Motor061Adapter(BaseMotorAdapter):
             or []
         )
 
+        # Gap B: detect justified hybrid (cold_chain + food_processing, etc.)
+        evidence_tokens = _collect_evidence_tokens(inputs)
+        hybrid = find_admissible_hybrid(asset_family, evidence_tokens)
+        hybrid_id = _text(hybrid.get("hybrid_id")) if hybrid else ""
+        shared_patterns = shared_patterns_for_hybrid(hybrid) if hybrid else set()
+
         warnings: list[dict] = []
-        warnings.extend(_detect_pattern_contamination(asset_family, activated_combinations))
+        warnings.extend(_detect_pattern_contamination(asset_family, activated_combinations, shared_patterns))
         warnings.extend(_detect_nugget_token_contamination(asset_family, nuggets))
 
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
@@ -217,6 +249,10 @@ class Motor061Adapter(BaseMotorAdapter):
             "contamination_detected": critical_count > 0,
             "asset_family_evaluated": asset_family,
             "activated_combinations_count": len(activated_combinations),
+            "hybrid_admissible": bool(hybrid),
+            "hybrid_id": hybrid_id,
+            "hybrid_secondary": _text(hybrid.get("secondary")) if hybrid else "",
+            "hybrid_shared_patterns": sorted(shared_patterns),
             "rules_evaluated": [
                 "AF1_pattern_contamination",
                 "AF2_nugget_token_contamination",
