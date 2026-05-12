@@ -84,10 +84,27 @@ def build_combination_activation_register(
     registry_bundle: dict[str, Any],
     active_pattern_ids: list[str] | set[str] | tuple[str, ...],
     anti_trigger_signals: list[str] | set[str] | tuple[str, ...] | None = None,
+    bounded_pattern_ids: list[str] | set[str] | tuple[str, ...] | None = None,
 ) -> list[dict[str, Any]]:
+    """Build the combination activation register.
+
+    Parameters:
+      registry_bundle: bundle from zlab_skill.loader.load_registry_bundle()
+      active_pattern_ids: pattern_ids currently activated for the case
+      anti_trigger_signals: signals that suppress combinations matching
+        them as anti_triggers
+      bounded_pattern_ids: V3 G8 — pattern_ids whose evidence is BOUNDED
+        (resolved). A combination_spec.preconditions list (v2 schema)
+        requires every listed pattern_id to appear in bounded_pattern_ids;
+        otherwise the combination is held back as a candidate with
+        validator_state='precondition_unbounded'. When `bounded_pattern_ids`
+        is None or empty, preconditions cannot be evaluated and behave as
+        if absent (preserves V1/V2 behavior).
+    """
     combinations = list((registry_bundle or {}).get("combinations", []) or [])
     pattern_ids = _normalized_set(active_pattern_ids)
     anti_triggers = _normalized_set(anti_trigger_signals)
+    bounded_ids = _normalized_set(bounded_pattern_ids)
     rows: list[dict[str, Any]] = []
 
     for spec in combinations:
@@ -99,12 +116,42 @@ def build_combination_activation_register(
         matched_anti_triggers = sorted(combination_anti_triggers.intersection(anti_triggers))
         if matched_anti_triggers:
             continue
+
+        # V3 G8: preconditions check. A combination with preconditions
+        # only activates when every listed pattern_id is in bounded_ids.
+        # If bounded_ids is empty (caller didn't provide), we honor
+        # preconditions as "unevaluable" and mark validator_state so motor_054
+        # / downstream can see the latent state without crashing.
+        preconditions = [
+            _text(p).lower()
+            for p in list(spec.get("preconditions", []) or [])
+            if _text(p)
+        ]
+        precondition_state = "n/a"
+        unbounded_preconditions: list[str] = []
+        if preconditions:
+            if not bounded_ids:
+                precondition_state = "unevaluable"
+            else:
+                unbounded_preconditions = sorted(set(preconditions) - bounded_ids)
+                precondition_state = (
+                    "satisfied" if not unbounded_preconditions else "unbounded"
+                )
+
+        validator_state = "not_run"
+        activation_state = "candidate"
+        if precondition_state == "unbounded":
+            validator_state = "precondition_unbounded"
+            activation_state = "latent"
+        elif precondition_state == "unevaluable":
+            validator_state = "precondition_unevaluable"
+
         rows.append(
             {
                 "combination_id": _text(spec.get("id")),
                 "combination_name": _text(spec.get("name")),
                 "pattern_ids": required_ids,
-                "activation_state": "candidate",
+                "activation_state": activation_state,
                 "combined_hypothesis": _text(spec.get("combined_hypothesis")),
                 "strategic_risk": _text(spec.get("strategic_risk")),
                 "minimum_evidence": list(spec.get("minimum_evidence", []) or []),
@@ -115,9 +162,13 @@ def build_combination_activation_register(
                 "source_basis": list(spec.get("source_basis", []) or []),
                 "evidence_state_ceiling": _text(spec.get("confidence_ceiling")),
                 "adjudication_required": bool(spec.get("adjudication_required", False)),
-                "validator_state": "not_run",
+                "validator_state": validator_state,
                 "matched_anti_triggers": matched_anti_triggers,
                 "candidate_origin": "registry_exact",
+                # V3 G8 surfaces (only emitted when preconditions are declared)
+                "preconditions_declared": preconditions,
+                "preconditions_state": precondition_state,
+                "preconditions_unbounded": unbounded_preconditions,
             }
         )
     return rows

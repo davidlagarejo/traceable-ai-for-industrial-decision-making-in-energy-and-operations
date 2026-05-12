@@ -134,7 +134,9 @@ def test_r3_flags_do_not_model_with_concurrent_redesign_act_now():
     info_warning = next(
         w for w in out["strategic_intelligence_warnings"] if w["rule_id"] == "R3_do_not_model_with_active_redesign"
     )
-    assert info_warning["severity"] == "info"
+    # V3 G2 (motor_059): R3 promoted from "info" → "error" because
+    # DO NOT MODEL + ACT NOW redesign is a cross-layer contradiction.
+    assert info_warning["severity"] == "error"
     assert "Advance bounded redesign hypothesis" in info_warning["concurrent_act_now_actions"]
 
 
@@ -212,14 +214,19 @@ def test_severity_breakdown_in_output():
         },
     )
     assert out["warning_count_by_severity"]["warning"] >= 1  # R1
-    assert out["warning_count_by_severity"]["info"] >= 1  # R3
+    # V3 G2: R3 promoted from "info" → "error"
+    assert out["warning_count_by_severity"]["error"] >= 1  # R3
 
 
 def test_rules_evaluated_is_stable_list():
     out = _run()
+    # V3 G2: expanded from 4 → 7 rules (added R5, R6, R7 governance sync)
     assert out["rules_evaluated"] == [
         "R1_missing_falsification",
         "R2_act_now_with_prohibited_claim",
         "R3_do_not_model_with_active_redesign",
         "R4_observed_fact_without_evidence",
+        "R5_chart_implies_prohibited_claim",
+        "R6_nugget_implies_superiority_when_blocked",
+        "R7_claim_count_mismatch_across_layers",
     ]

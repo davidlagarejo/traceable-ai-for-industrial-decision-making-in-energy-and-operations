@@ -1,3 +1,11 @@
+"""
+AI-SCAFFOLDING — see AI_SCAFFOLDING_REGISTRY.md entry S9.
+This module contains per-asset-family `if family == "..."` branches with
+hardcoded language strings written by Claude during V1 RECOVERY. The
+framework should derive this language from asset_archetypes.yaml +
+process_logic.yaml + active pattern specs. DO NOT add new families here;
+add them to asset_archetypes.yaml. Will be reduced to lookups in V4.
+"""
 from __future__ import annotations
 
 from .schemas import MinimumEvidenceDiscriminationRecord

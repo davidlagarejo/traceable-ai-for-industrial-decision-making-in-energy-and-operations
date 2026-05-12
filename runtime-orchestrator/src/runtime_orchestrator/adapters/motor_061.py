@@ -253,6 +253,13 @@ class Motor061Adapter(BaseMotorAdapter):
             "hybrid_id": hybrid_id,
             "hybrid_secondary": _text(hybrid.get("secondary")) if hybrid else "",
             "hybrid_shared_patterns": sorted(shared_patterns),
+            # V3 G4: surface the hybrid rationale text so the composer can
+            # render a "Hybrid Asset Family Justification" block. The
+            # rationale comes from asset_family_hybrids.json (scaffolding
+            # S3); V4 will regenerate it from sources.
+            "hybrid_rationale": _text(hybrid.get("rationale")) if hybrid else "",
+            "hybrid_primary": _text(hybrid.get("primary")) if hybrid else "",
+            "hybrid_justification_triggers": list(hybrid.get("justification_triggers", []) or []) if hybrid else [],
             "rules_evaluated": [
                 "AF1_pattern_contamination",
                 "AF2_nugget_token_contamination",

@@ -30,7 +30,7 @@
     "no refrigerated load present",
     "refrigeration duty already characterized with evidence"
   ],
-  "physical_basis": "Refrigeration duty is the dominant electrical load in cold-chain assets. It is driven by product turnover, setpoint, ambient conditions, infiltration, and defrost strategy \u2014 not by floor area alone.",
+  "physical_basis": "Refrigeration duty is the dominant electrical load in cold-chain assets. It is driven by product turnover, setpoint, ambient conditions, infiltration, and defrost strategy — not by floor area alone.",
   "operational_basis": "Refrigeration plant can be oversized, mis-staged, or running on degraded controls. Without duty characterization, retrofit logic targets the wrong variable.",
   "financial_mechanism": "Mis-characterizing refrigeration duty leads to wrong CAPEX prioritization (compressor swap vs. controls vs. envelope vs. defrost).",
   "typical_false_assumption": "Refrigerated kWh/sf benchmarks alone determine refrigeration efficiency.",
@@ -87,5 +87,6 @@
   ],
   "tests": [
     "cold_chain bundle should activate this when compressor inventory is unresolved"
-  ]
+  ],
+  "__ai_scaffolding__": "S4 in AI_SCAFFOLDING_REGISTRY.md — handwritten by Claude in V2 Gap E. Replace with extraction from IIAR Bulletins / ASHRAE Handbook Refrigeration / Danfoss handbooks via V4 Industrial Research Engine."
 }

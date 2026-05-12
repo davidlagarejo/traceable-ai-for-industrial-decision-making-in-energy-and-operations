@@ -1,3 +1,8 @@
+"""
+AI-SCAFFOLDING — see AI_SCAFFOLDING_REGISTRY.md entry S9.
+Per-asset-family branches with handwritten language. Reduce to lookups in
+V4 by sourcing per-family text from asset_archetypes.yaml.
+"""
 from __future__ import annotations
 
 from .schemas import ConditionalRedesignRecord, StructuralEvidenceState

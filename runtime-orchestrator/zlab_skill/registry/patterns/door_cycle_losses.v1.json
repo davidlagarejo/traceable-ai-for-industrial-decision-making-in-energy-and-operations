@@ -26,7 +26,7 @@
     "doors interlocked and rapid-close confirmed",
     "infiltration already bounded"
   ],
-  "physical_basis": "Each door cycle exchanges air between zones; for cold\u2192ambient transitions the latent and sensible exchange is substantial and cumulative.",
+  "physical_basis": "Each door cycle exchanges air between zones; for cold→ambient transitions the latent and sensible exchange is substantial and cumulative.",
   "operational_basis": "Operators prop doors open or disable interlocks for productivity. The behavior is rarely logged but drives a measurable share of refrigeration kWh.",
   "financial_mechanism": "Door discipline interventions are low-CAPEX with high return; missing this loss means CAPEX targets the wrong variable.",
   "typical_false_assumption": "Door cycles are small compared to total refrigeration duty.",
@@ -80,5 +80,6 @@
   ],
   "tests": [
     "cold_chain bundle should activate this when door interlock evidence missing"
-  ]
+  ],
+  "__ai_scaffolding__": "S4 in AI_SCAFFOLDING_REGISTRY.md — handwritten by Claude in V2 Gap E. Replace with extraction from IIAR Bulletins / ASHRAE Handbook Refrigeration / Danfoss handbooks via V4 Industrial Research Engine."
 }

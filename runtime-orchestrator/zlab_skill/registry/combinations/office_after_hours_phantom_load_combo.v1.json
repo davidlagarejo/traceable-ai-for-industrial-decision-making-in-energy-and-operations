@@ -52,5 +52,6 @@
     "commercial-building acceptance bundle should surface this combination when BMS drift, tenant boundary and after-hours load remain unresolved",
     "must NOT activate in warehouse, manufacturing, cold-chain cases (anti-pattern protection by tenant_operator_boundary_unresolved)",
     "combination must require run-level adjudication before downstream strategic use"
-  ]
+  ],
+  "__ai_scaffolding__": "S7 in AI_SCAFFOLDING_REGISTRY.md — Claude-authored combination from recovery commit 2051b27. Future combinations enter via combination_engine.py proposals + dashboard approval, never written directly by Claude."
 }

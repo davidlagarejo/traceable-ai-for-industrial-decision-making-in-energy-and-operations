@@ -1208,7 +1208,11 @@ class Motor017Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_014", "motor_016", "motor_036", "motor_061", "motor_062", "motor_063"]
+        return [
+            "motor_014", "motor_016", "motor_036",
+            "motor_055", "motor_056", "motor_057", "motor_058", "motor_059",
+            "motor_061", "motor_062", "motor_063",
+        ]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         report_package = inputs.get("motor_016", {}).get("report_package")
@@ -1260,6 +1264,64 @@ class Motor017Adapter(BaseMotorAdapter):
             block_reasons.append(
                 "Scenario justification failure detected by motor_062: "
                 + "; ".join(str(w.get("description", "")) for w in warns[:2])
+            )
+
+        # V3 G1: wire validators 055-059 into the render gate.
+        # Each emits warnings only (no critical_count today). We promote
+        # specific rules to "blocking" when their semantic implies the
+        # report would mislead a reader if rendered. Thresholds are
+        # configurable via __pipeline__.validator_thresholds (dict) so the
+        # regression / CI can keep its behavior while production tightens.
+        thresholds = pipeline_inputs.get("validator_thresholds") or {}
+
+        def _rule_hits(warnings: list[dict], rule_id: str) -> int:
+            return sum(1 for w in warnings if isinstance(w, dict) and w.get("rule_id") == rule_id)
+
+        m055 = inputs.get("motor_055", {}) if isinstance(inputs.get("motor_055", {}), dict) else {}
+        m056 = inputs.get("motor_056", {}) if isinstance(inputs.get("motor_056", {}), dict) else {}
+        m057 = inputs.get("motor_057", {}) if isinstance(inputs.get("motor_057", {}), dict) else {}
+        m058 = inputs.get("motor_058", {}) if isinstance(inputs.get("motor_058", {}), dict) else {}
+        m059 = inputs.get("motor_059", {}) if isinstance(inputs.get("motor_059", {}), dict) else {}
+
+        m055_w = list(m055.get("hypothesis_diversity_warnings", []) or [])
+        m056_w = list(m056.get("evidence_repetition_warnings", []) or [])
+        m057_w = list(m057.get("gold_nugget_quality_warnings", []) or [])
+        m058_w = list(m058.get("report_uniqueness_warnings", []) or [])
+        m059_w = list(m059.get("strategic_intelligence_warnings", []) or [])
+
+        # motor_055 — Hypothesis Diversity: block on duplicate claim signature
+        if _rule_hits(m055_w, "HD2_duplicate_claim_signature") >= int(thresholds.get("m055_HD2", 1)):
+            block_reasons.append(
+                "Hypothesis diversity failure (motor_055.HD2): duplicate claim signature in output."
+            )
+        # motor_056 — Evidence Repetition: block when evidence packs are reused across patterns
+        if _rule_hits(m056_w, "ER1_pack_repetition") >= int(thresholds.get("m056_ER1", 2)):
+            block_reasons.append(
+                "Evidence repetition (motor_056.ER1): same evidence pack reused ≥2 times across patterns."
+            )
+        # motor_057 — Gold Nugget Quality: block on archetype replay (verbatim reuse from prior)
+        if _rule_hits(m057_w, "GN1_archetype_replay") >= int(thresholds.get("m057_GN1", 1)):
+            block_reasons.append(
+                "Gold nugget archetype replay (motor_057.GN1): nugget reused verbatim from a prior archetype."
+            )
+        # motor_057.GN4 — Nugget count out of range. Default off (threshold 999)
+        # so V3 Day 3 ships without breaking regression cases that don't reach
+        # the 5-nugget floor yet. Production can enable via pipeline threshold.
+        if _rule_hits(m057_w, "GN4_nugget_count_out_of_range") >= int(thresholds.get("m057_GN4", 999)):
+            block_reasons.append(
+                "Gold nugget count out of range (motor_057.GN4): see threshold __pipeline__.validator_thresholds.m057_GN4."
+            )
+        # motor_058 — Report Uniqueness: block on verbatim nugget reuse across runs
+        if _rule_hits(m058_w, "RU2_verbatim_nugget_reuse") >= int(thresholds.get("m058_RU2", 1)):
+            block_reasons.append(
+                "Report uniqueness failure (motor_058.RU2): nugget reused verbatim from a prior run."
+            )
+        # motor_059 — Strategic Intelligence: block on severity=error (warnings/info pass)
+        m059_errors = [w for w in m059_w if isinstance(w, dict) and w.get("severity") == "error"]
+        if m059_errors:
+            block_reasons.append(
+                "Strategic intelligence error (motor_059): "
+                + "; ".join(str(w.get("description", "")) for w in m059_errors[:2])
             )
 
         # V2-CRITICAL course correction: dashboard review gate.
@@ -1324,6 +1386,54 @@ class Motor017Adapter(BaseMotorAdapter):
                     exc,
                 )
 
+        # V3 G6 + Day 4: Report State Machine. Compute the high-level state
+        # of the report (client_safe / publish_bounded / decision_blocked /
+        # internal_debug_only / etc.) so the dashboard can show the user the
+        # exact state in one symbol. The default render gate is
+        # ("client_safe",) — only the strict state renders. Pipelines can
+        # widen via __pipeline__.allowed_render_states.
+        from .. import report_state_machine as _rsm
+        allowed_states_input = pipeline_inputs.get("allowed_render_states")
+        if isinstance(allowed_states_input, (list, tuple)):
+            allowed_states = tuple(
+                str(s).strip() for s in allowed_states_input if str(s).strip()
+            )
+        else:
+            allowed_states = _rsm.DEFAULT_ALLOWED_RENDER_STATES
+        report_state_inputs = {
+            "motor_036": consistency_summary,
+            "motor_054": inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {},
+            "motor_055": m055,
+            "motor_056": m056,
+            "motor_057": m057,
+            "motor_058": m058,
+            "motor_059": m059,
+            "motor_061": m061,
+            "motor_062": m062,
+            "motor_063": m063,
+            "scenario_review_summary": scenario_review_summary or {},
+        }
+        report_state_diag = _rsm.diagnosis_from_motor_outputs(report_state_inputs)
+        report_state_result = _rsm.derive_state(
+            report_state_diag, allowed_render_states=allowed_states
+        )
+        report_state_summary = {
+            "state": report_state_result.state,
+            "reason": report_state_result.reason,
+            "signals": list(report_state_result.signals),
+            "can_render": report_state_result.can_render,
+            "allowed_render_states": list(report_state_result.allowed_render_states),
+        }
+        # If the state machine says NOT can_render, add a block reason so
+        # the existing block_reasons-driven path uniformly blocks. The
+        # force_render escape hatch below still applies.
+        if not report_state_result.can_render:
+            block_reasons.append(
+                f"Report state '{report_state_result.state}' is not in "
+                f"allowed_render_states {report_state_result.allowed_render_states}. "
+                f"{report_state_result.reason}"
+            )
+
         if block_reasons and not force_render_under_warnings:
             return {
                 "pdf_path": "",
@@ -1353,6 +1463,31 @@ class Motor017Adapter(BaseMotorAdapter):
                     "mode": str(m062.get("mode") or "warn"),
                 },
                 "scenario_review_summary": scenario_review_summary,
+                # V3 G1: surface validator 055-059 summaries when blocking
+                "hypothesis_diversity_summary": {
+                    "warning_count": int(m055.get("warning_count", 0) or 0),
+                    "rules_evaluated": list(m055.get("rules_evaluated", []) or []),
+                },
+                "evidence_repetition_summary": {
+                    "warning_count": int(m056.get("warning_count", 0) or 0),
+                    "rules_evaluated": list(m056.get("rules_evaluated", []) or []),
+                },
+                "gold_nugget_quality_summary": {
+                    "warning_count": int(m057.get("warning_count", 0) or 0),
+                    "nugget_count_evaluated": int(m057.get("nugget_count_evaluated", 0) or 0),
+                    "rules_evaluated": list(m057.get("rules_evaluated", []) or []),
+                },
+                "report_uniqueness_summary": {
+                    "warning_count": int(m058.get("warning_count", 0) or 0),
+                    "prior_runs_compared": int(m058.get("prior_runs_compared", 0) or 0),
+                    "rules_evaluated": list(m058.get("rules_evaluated", []) or []),
+                },
+                "strategic_intelligence_summary": {
+                    "warning_count": int(m059.get("warning_count", 0) or 0),
+                    "warning_count_by_severity": dict(m059.get("warning_count_by_severity", {}) or {}),
+                    "rules_evaluated": list(m059.get("rules_evaluated", []) or []),
+                },
+                "report_state_summary": report_state_summary,
             }
 
         meta      = report_package.get("case_metadata", {})
@@ -1585,4 +1720,8 @@ class Motor017Adapter(BaseMotorAdapter):
             "gold_nugget_authority_state": gold_nugget_authority_state,
             "gold_nugget_source_register": gold_nugget_source_register,
             "written_chapter_inventory": _written_chapter_inventory(job_dir / "Chapters"),
+            # V3 G6 Day 4: surface the report state so the dashboard / audit
+            # tools see what state the rendered PDF was emitted under.
+            "report_state_summary": report_state_summary,
+            "scenario_review_summary": scenario_review_summary,
         }

@@ -52,5 +52,6 @@
     "manufacturing acceptance bundle should surface this combination when process heat duty is unbounded and the framework presents area-normalized benchmark",
     "must NOT activate in warehouse, cold-chain, office cases (anti-pattern protection by required process-heat patterns)",
     "combination must require run-level adjudication before downstream strategic use"
-  ]
+  ],
+  "__ai_scaffolding__": "S7 in AI_SCAFFOLDING_REGISTRY.md — Claude-authored combination from recovery commit 2051b27. Future combinations enter via combination_engine.py proposals + dashboard approval, never written directly by Claude."
 }

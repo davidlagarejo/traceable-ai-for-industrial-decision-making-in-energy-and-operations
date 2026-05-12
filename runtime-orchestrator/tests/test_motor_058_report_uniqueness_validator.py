@@ -97,7 +97,11 @@ def test_no_artifact_store_means_no_warnings():
 
 def test_rules_evaluated_stable():
     out = _run()
+    # V3 G15: expanded from 2 → 5 reuse dimensions
     assert out["rules_evaluated"] == [
         "RU1_high_jaccard_overlap",
         "RU2_verbatim_nugget_reuse",
+        "RU3_tad_action_set_reuse",
+        "RU4_chart_set_reuse",
+        "RU5_evidence_pack_set_reuse",
     ]

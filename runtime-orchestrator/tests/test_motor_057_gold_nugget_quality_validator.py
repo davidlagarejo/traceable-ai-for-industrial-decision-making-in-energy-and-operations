@@ -9,9 +9,13 @@ def _run(motor_007=None, motor_054=None):
     return adapter.run({"motor_007": motor_007 or {}, "motor_054": motor_054 or {}})
 
 
-def test_no_inputs_no_warnings():
+def test_no_inputs_emits_only_gn4_count_violation():
+    """V3 G16: GN4 fires when there are 0 nuggets (below the min of 5).
+    GN1/GN2/GN3 stay silent. Pre-V3 behavior: warning_count == 0 — now == 1."""
     out = _run()
-    assert out["warning_count"] == 0
+    rule_ids = [w["rule_id"] for w in out["gold_nugget_quality_warnings"]]
+    assert rule_ids == ["GN4_nugget_count_out_of_range"]
+    assert out["warning_count"] == 1
 
 
 def test_gn1_flags_warehouse_nugget_without_family_token():
@@ -88,8 +92,10 @@ def test_asset_family_reflected_in_output():
 
 def test_rules_evaluated_stable():
     out = _run()
+    # V3 G16: GN4 added
     assert out["rules_evaluated"] == [
         "GN1_archetype_replay",
         "GN2_thin_nugget",
         "GN3_template_fill",
+        "GN4_nugget_count_out_of_range",
     ]

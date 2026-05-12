@@ -28,7 +28,7 @@
     "single fixed-speed plant",
     "staging already characterized by telemetry"
   ],
-  "physical_basis": "Compressor part-load efficiency depends on staging order, VFD use, head pressure float, and economizer use. Wrong staging at low load wastes 20\u201340% of refrigeration kWh.",
+  "physical_basis": "Compressor part-load efficiency depends on staging order, VFD use, head pressure float, and economizer use. Wrong staging at low load wastes 20–40% of refrigeration kWh.",
   "operational_basis": "Default staging logic from commissioning rarely matches actual load profile; operators leave it alone.",
   "financial_mechanism": "Staging is a controls-grade fix with high ROI; missing it directs CAPEX toward replacement instead of tuning.",
   "typical_false_assumption": "All compressors run at high efficiency at any load.",
@@ -82,5 +82,6 @@
   ],
   "tests": [
     "cold_chain bundle should activate this when multi-compressor staging strategy missing"
-  ]
+  ],
+  "__ai_scaffolding__": "S4 in AI_SCAFFOLDING_REGISTRY.md — handwritten by Claude in V2 Gap E. Replace with extraction from IIAR Bulletins / ASHRAE Handbook Refrigeration / Danfoss handbooks via V4 Industrial Research Engine."
 }
