@@ -91,6 +91,12 @@ from .anthropic_llm_extractor import (
     make_anthropic_extractor,
     DEFAULT_MODEL as ANTHROPIC_DEFAULT_MODEL,
 )
+from .url_pdf_fetcher import (
+    FetchedPDF,
+    URLFetchError,
+    fetch_pdf,
+    is_url,
+)
 
 __all__ = [
     # schemas
@@ -147,4 +153,9 @@ __all__ = [
     "AnthropicSettings",
     "make_anthropic_extractor",
     "ANTHROPIC_DEFAULT_MODEL",
+    # V4 P3 URL fetcher
+    "FetchedPDF",
+    "URLFetchError",
+    "fetch_pdf",
+    "is_url",
 ]
