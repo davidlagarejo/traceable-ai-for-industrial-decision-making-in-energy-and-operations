@@ -41,6 +41,24 @@ from .pdf_extraction_interface import (
     PDFExtractionResult,
     default_pdf_extractor,
 )
+from .validators import KnowledgeValidationError, validate_knowledge, validate_combination
+
+
+# V4 P3: multi-shot retry on validation failure.
+DEFAULT_MAX_RETRIES = 2  # initial call + up to 2 corrections = 3 total attempts
+_RETRY_FEEDBACK_PROMPT = """\
+The PREVIOUS extraction was rejected by the framework schema validator
+with the error below. Please produce a corrected JSON object that fixes
+the error while preserving the intent. Output ONLY the JSON object.
+
+PREVIOUS PAYLOAD:
+{previous_payload}
+
+VALIDATOR ERROR:
+{error_message}
+
+Re-output the corrected JSON now:
+"""
 
 
 @dataclass
@@ -62,6 +80,9 @@ class ExtractionResult:
     llm_payload: dict[str, Any] | None = None
     propose_result: dict[str, Any] | None = None
     error: str = ""
+    # V4 P3: retry telemetry
+    retry_count: int = 0
+    validation_errors: list[str] = field(default_factory=list)
 
 
 class ExtractionOrchestrator:
@@ -126,6 +147,7 @@ class ExtractionOrchestrator:
         target_kind: str = "pattern",
         asset_families_hint: list[str] | None = None,
         proposed_by: str = "industrial_research_engine",
+        max_retries: int = DEFAULT_MAX_RETRIES,
     ) -> ExtractionResult:
         plan = self._plan(
             source_id=source_id,
@@ -135,33 +157,80 @@ class ExtractionOrchestrator:
             asset_families_hint=asset_families_hint,
         )
 
-        # Stage 2: PDF
-        pdf_result = self.pdf_extractor.extract(source_url)  # raises in V4 P1
+        # Stage 2: PDF (single shot — re-fetching makes no sense)
+        pdf_result = self.pdf_extractor.extract(source_url)
 
-        # Stage 3: LLM
-        llm_result = self.llm_extractor.extract(
-            LLMExtractionRequest(
-                raw_text=pdf_result.text,
-                topic=topic,
-                source_id=source_id,
-                target_kind=target_kind,
-                asset_families_hint=plan.asset_families_hint,
-            )
-        )
+        # Stage 3 + 4: LLM extract → validate. Retry on validation
+        # failure with feedback prompt (V4 P3).
+        attempts = 0
+        last_error = ""
+        last_payload: dict[str, Any] = {}
+        validation_errors: list[str] = []
 
-        # Stage 4: validate + propose
-        propose_result = propose_knowledge(
-            llm_result.knowledge_payload,
-            kind=target_kind,
-            proposed_by=proposed_by,
-        )
+        while attempts <= max_retries:
+            if attempts == 0:
+                req = LLMExtractionRequest(
+                    raw_text=pdf_result.text,
+                    topic=topic,
+                    source_id=source_id,
+                    target_kind=target_kind,
+                    asset_families_hint=plan.asset_families_hint,
+                )
+            else:
+                # Retry with validation feedback.
+                feedback_text = pdf_result.text + "\n\n" + _RETRY_FEEDBACK_PROMPT.format(
+                    previous_payload=str(last_payload)[:4000],
+                    error_message=last_error,
+                )
+                req = LLMExtractionRequest(
+                    raw_text=feedback_text,
+                    topic=topic,
+                    source_id=source_id,
+                    target_kind=target_kind,
+                    asset_families_hint=plan.asset_families_hint,
+                    metadata={"retry_attempt": attempts, "previous_error": last_error},
+                )
 
-        return ExtractionResult(
-            plan=plan,
-            pdf_result=pdf_result,
-            llm_payload=llm_result.knowledge_payload,
-            propose_result=propose_result,
-        )
+            llm_result = self.llm_extractor.extract(req)
+            last_payload = llm_result.knowledge_payload
+
+            # Pre-validation: catch KnowledgeValidationError without
+            # writing to disk yet (propose_knowledge writes).
+            try:
+                if target_kind == "combination":
+                    validate_combination(last_payload)
+                else:
+                    last_payload_with_kind = {**last_payload, "knowledge_kind": target_kind}
+                    validate_knowledge(last_payload_with_kind)
+                # Validation passed — propose and return
+                propose_result = propose_knowledge(
+                    last_payload,
+                    kind=target_kind,
+                    proposed_by=proposed_by,
+                )
+                return ExtractionResult(
+                    plan=plan,
+                    pdf_result=pdf_result,
+                    llm_payload=last_payload,
+                    propose_result=propose_result,
+                    retry_count=attempts,
+                    validation_errors=validation_errors,
+                )
+            except KnowledgeValidationError as exc:
+                last_error = str(exc)
+                validation_errors.append(f"attempt {attempts + 1}: {last_error}")
+                attempts += 1
+                if attempts > max_retries:
+                    # Exhausted retries — re-raise so the caller knows.
+                    raise KnowledgeValidationError(
+                        f"extraction failed after {attempts} attempt(s). "
+                        f"Last validator error: {last_error}. "
+                        f"All errors: {validation_errors}"
+                    ) from exc
+                # else: loop again with feedback
+
+        # Defensive — should be unreachable
+        raise RuntimeError("orchestrator exited retry loop without returning")
 
     # ── Manual / paste-in path (used by the CLI in V4 P1) ─────────
 
