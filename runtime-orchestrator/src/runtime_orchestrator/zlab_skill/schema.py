@@ -104,6 +104,24 @@ _REQUIRED_COMBINATION_FIELDS = {
     "tests",
 }
 
+# V3 G7: combination schema v2 — optional fields that, when present,
+# unlock richer activation semantics. All retro-compatible: existing
+# combinations without these fields still validate.
+_OPTIONAL_COMBINATION_FIELDS_V2 = {
+    "evidence_pack",       # dict: {cheapest_valid_path, escalation_path, stop_condition, local_intake_trigger}
+    "falsification",       # str — what would falsify the combined_hypothesis
+    "gold_nugget",         # str — generated nugget when combination activates
+    "comparison_impact",   # str — what fair-comparison rule this changes
+    "preconditions",       # list[str] — pattern_ids that must be bounded BEFORE this combination activates
+    "conditional_clause",  # str — natural-language "matters only if X is bounded"
+    "layers_combined",     # list[str] — subset of [physics, ops, maintenance, finance, tariffs, reliability, control, regulation]
+}
+
+_ALLOWED_COMBINATION_LAYERS = {
+    "physics", "ops", "maintenance", "finance",
+    "tariffs", "reliability", "control", "regulation",
+}
+
 _REQUIRED_SOURCE_BASIS_FIELDS = {
     "id",
     "version",
@@ -278,6 +296,33 @@ def validate_combination_spec(payload: Mapping[str, Any]) -> dict[str, Any]:
     normalized["confidence_ceiling"] = confidence_ceiling
     normalized["adjudication_required"] = adjudication_required
     normalized["tests"] = _ensure_list_of_text(name, "tests", payload.get("tests"))
+
+    # V3 G7: validate optional v2 fields if present. Silently ignored when absent.
+    if "evidence_pack" in payload:
+        ep = payload.get("evidence_pack")
+        if not isinstance(ep, dict):
+            raise RegistryValidationError(f"{name}.evidence_pack must be a dict")
+        normalized["evidence_pack"] = ep
+    if "falsification" in payload:
+        normalized["falsification"] = _ensure_non_empty_text(name, "falsification", payload.get("falsification"))
+    if "gold_nugget" in payload:
+        normalized["gold_nugget"] = _ensure_non_empty_text(name, "gold_nugget", payload.get("gold_nugget"))
+    if "comparison_impact" in payload:
+        normalized["comparison_impact"] = _ensure_non_empty_text(name, "comparison_impact", payload.get("comparison_impact"))
+    if "preconditions" in payload:
+        normalized["preconditions"] = _ensure_list_of_text(name, "preconditions", payload.get("preconditions"))
+    if "conditional_clause" in payload:
+        normalized["conditional_clause"] = _ensure_non_empty_text(name, "conditional_clause", payload.get("conditional_clause"))
+    if "layers_combined" in payload:
+        layers = _ensure_list_of_text(name, "layers_combined", payload.get("layers_combined"))
+        unknown = sorted(set(layers) - _ALLOWED_COMBINATION_LAYERS)
+        if unknown:
+            raise RegistryValidationError(
+                f"{name}.layers_combined contains unknown layer(s): {unknown}. "
+                f"Allowed: {sorted(_ALLOWED_COMBINATION_LAYERS)}"
+            )
+        normalized["layers_combined"] = layers
+
     return normalized
 
 
