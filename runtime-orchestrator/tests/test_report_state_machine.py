@@ -28,9 +28,23 @@ def test_states_constant_includes_all_8_states():
     assert set(STATES) == expected
 
 
-def test_default_render_gate_only_allows_client_safe():
-    """Strict default per user decision: only client_safe renders."""
-    assert DEFAULT_ALLOWED_RENDER_STATES == ("client_safe",)
+def test_default_render_gate_allows_non_blocking_states():
+    """Default preserves V2 behavior: any non-decision_blocked /
+    non-internal_debug_only state renders. Strict client_safe-only is
+    opt-in via STRICT_CLIENT_SAFE_RENDER_STATES."""
+    assert set(DEFAULT_ALLOWED_RENDER_STATES) == {
+        "exploratory_prior", "structural_hypothesis", "bounded_peer_analysis",
+        "evidence_discrimination", "publish_bounded", "client_safe",
+    }
+    # Confirm internal_debug_only and decision_blocked are NEVER in default
+    assert "internal_debug_only" not in DEFAULT_ALLOWED_RENDER_STATES
+    assert "decision_blocked" not in DEFAULT_ALLOWED_RENDER_STATES
+
+
+def test_strict_mode_constant_only_allows_client_safe():
+    """Opt-in strict mode for production deliverables."""
+    from runtime_orchestrator.report_state_machine import STRICT_CLIENT_SAFE_RENDER_STATES
+    assert STRICT_CLIENT_SAFE_RENDER_STATES == ("client_safe",)
 
 
 # ── Terminal contamination states ───────────────────────────────────────
@@ -189,7 +203,7 @@ def test_fully_clean_with_nugget_in_range_is_client_safe():
     assert "all_validators_clean" in out.signals
 
 
-def test_warnings_present_routes_to_publish_bounded_not_client_safe():
+def test_warnings_present_routes_to_publish_bounded_renders_by_default():
     diag = ReportStateDiagnosis(
         cluster_count=10,
         peer_set_valid=True,
@@ -199,7 +213,23 @@ def test_warnings_present_routes_to_publish_bounded_not_client_safe():
     )
     out = derive_state(diag)
     assert out.state == "publish_bounded"
-    # Default gate doesn't allow publish_bounded
+    # V3 Day 4: default allowed_render_states includes publish_bounded
+    assert out.can_render is True
+
+
+def test_strict_mode_blocks_publish_bounded():
+    """Production deliverables opt into STRICT_CLIENT_SAFE_RENDER_STATES
+    to refuse anything below client_safe."""
+    from runtime_orchestrator.report_state_machine import STRICT_CLIENT_SAFE_RENDER_STATES
+    diag = ReportStateDiagnosis(
+        cluster_count=10,
+        peer_set_valid=True,
+        minimum_evidence_pack_ready=True,
+        nugget_count=8,
+        total_warning_count=5,
+    )
+    out = derive_state(diag, allowed_render_states=STRICT_CLIENT_SAFE_RENDER_STATES)
+    assert out.state == "publish_bounded"
     assert out.can_render is False
 
 

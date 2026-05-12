@@ -191,7 +191,11 @@ def test_m059_warning_severity_does_not_block():
 
 
 def test_thresholds_can_relax_m056_for_specific_pipelines():
-    """A CI/regression pipeline can raise ER1 threshold to 99 to ignore it."""
+    """A CI/regression pipeline can raise ER1 threshold to 99 to ignore the
+    motor_017 G1 gate. The independent state-machine gate (V3 Day 4) also
+    sees pack repetition ≥2 and routes to decision_blocked; that's a
+    separate signal — assert that the *G1 motor_056 block reason* is
+    absent, even though state-machine block may still apply."""
     out = _run(
         motor_056={
             "evidence_repetition_warnings": [
@@ -203,7 +207,11 @@ def test_thresholds_can_relax_m056_for_specific_pipelines():
         **{"__pipeline__": {"validator_thresholds": {"m056_ER1": 99}}},
     )
     blocking = out.get("blocking_reason", "") or ""
-    assert "motor_056" not in blocking
+    # G1 motor_056.ER1 block reason carries the literal "(motor_056.ER1)"
+    # marker; the state-machine block reason mentions "motor_056.ER1" too
+    # but inside a "Quality validators..." description that lists multiple
+    # validators. Check specifically that the G1-style reason is absent.
+    assert "Evidence repetition (motor_056.ER1)" not in blocking
 
 
 # ── Blocked payload exposes new summaries ───────────────────────────────

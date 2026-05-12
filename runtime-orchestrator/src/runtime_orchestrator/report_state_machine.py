@@ -42,8 +42,24 @@ STATES = (
     "internal_debug_only",
 )
 
-# Strict render gate by default: only client_safe renders.
-DEFAULT_ALLOWED_RENDER_STATES: tuple[str, ...] = ("client_safe",)
+# V3 Day 4 default: allow anything that V2 already permitted. V2 blocked
+# only when validators / contamination / scenario_review failed; the state
+# machine maps those to `internal_debug_only` and `decision_blocked`. By
+# defaulting allowed_render_states to "everything else", we preserve V2
+# behavior. Strict mode (client_safe only) is opt-in via
+# __pipeline__.allowed_render_states = ("client_safe",) — recommended for
+# production client-facing deliverables.
+DEFAULT_ALLOWED_RENDER_STATES: tuple[str, ...] = (
+    "exploratory_prior",
+    "structural_hypothesis",
+    "bounded_peer_analysis",
+    "evidence_discrimination",
+    "publish_bounded",
+    "client_safe",
+)
+
+# Strict mode constant for production use.
+STRICT_CLIENT_SAFE_RENDER_STATES: tuple[str, ...] = ("client_safe",)
 
 
 @dataclass

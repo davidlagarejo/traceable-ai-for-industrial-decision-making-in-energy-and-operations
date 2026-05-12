@@ -1386,6 +1386,54 @@ class Motor017Adapter(BaseMotorAdapter):
                     exc,
                 )
 
+        # V3 G6 + Day 4: Report State Machine. Compute the high-level state
+        # of the report (client_safe / publish_bounded / decision_blocked /
+        # internal_debug_only / etc.) so the dashboard can show the user the
+        # exact state in one symbol. The default render gate is
+        # ("client_safe",) — only the strict state renders. Pipelines can
+        # widen via __pipeline__.allowed_render_states.
+        from .. import report_state_machine as _rsm
+        allowed_states_input = pipeline_inputs.get("allowed_render_states")
+        if isinstance(allowed_states_input, (list, tuple)):
+            allowed_states = tuple(
+                str(s).strip() for s in allowed_states_input if str(s).strip()
+            )
+        else:
+            allowed_states = _rsm.DEFAULT_ALLOWED_RENDER_STATES
+        report_state_inputs = {
+            "motor_036": consistency_summary,
+            "motor_054": inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {},
+            "motor_055": m055,
+            "motor_056": m056,
+            "motor_057": m057,
+            "motor_058": m058,
+            "motor_059": m059,
+            "motor_061": m061,
+            "motor_062": m062,
+            "motor_063": m063,
+            "scenario_review_summary": scenario_review_summary or {},
+        }
+        report_state_diag = _rsm.diagnosis_from_motor_outputs(report_state_inputs)
+        report_state_result = _rsm.derive_state(
+            report_state_diag, allowed_render_states=allowed_states
+        )
+        report_state_summary = {
+            "state": report_state_result.state,
+            "reason": report_state_result.reason,
+            "signals": list(report_state_result.signals),
+            "can_render": report_state_result.can_render,
+            "allowed_render_states": list(report_state_result.allowed_render_states),
+        }
+        # If the state machine says NOT can_render, add a block reason so
+        # the existing block_reasons-driven path uniformly blocks. The
+        # force_render escape hatch below still applies.
+        if not report_state_result.can_render:
+            block_reasons.append(
+                f"Report state '{report_state_result.state}' is not in "
+                f"allowed_render_states {report_state_result.allowed_render_states}. "
+                f"{report_state_result.reason}"
+            )
+
         if block_reasons and not force_render_under_warnings:
             return {
                 "pdf_path": "",
@@ -1439,6 +1487,7 @@ class Motor017Adapter(BaseMotorAdapter):
                     "warning_count_by_severity": dict(m059.get("warning_count_by_severity", {}) or {}),
                     "rules_evaluated": list(m059.get("rules_evaluated", []) or []),
                 },
+                "report_state_summary": report_state_summary,
             }
 
         meta      = report_package.get("case_metadata", {})
@@ -1671,4 +1720,8 @@ class Motor017Adapter(BaseMotorAdapter):
             "gold_nugget_authority_state": gold_nugget_authority_state,
             "gold_nugget_source_register": gold_nugget_source_register,
             "written_chapter_inventory": _written_chapter_inventory(job_dir / "Chapters"),
+            # V3 G6 Day 4: surface the report state so the dashboard / audit
+            # tools see what state the rendered PDF was emitted under.
+            "report_state_summary": report_state_summary,
+            "scenario_review_summary": scenario_review_summary,
         }
