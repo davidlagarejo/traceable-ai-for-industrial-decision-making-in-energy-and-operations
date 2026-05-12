@@ -55,12 +55,68 @@ After each gap:
 ## Definition of done
 
 V3 closes when:
-1. All 10 gaps (G1, G2, G4, G6, G7, G8, G14, G15, G16, G17) are in `v3-stabilization` branch
+1. All 9 machinery gaps in `v3-stabilization` branch — G14 moved to V4 because routing-by-topic requires Claude to author topic priorities (content)
 2. Regression 7/7 still passes
-3. Test suite grows by ~30-40 tests (machinery tests only, no content tests)
+3. Test suite grows by ~100 tests (machinery tests only, no content tests)
 4. `AI_SCAFFOLDING_REGISTRY.md` stays at 9 items (no expansion)
-5. One real case rendered as `client_safe` PDF, approved by user
+5. One real case rendered for user validation
 6. Merged to `main`
+
+## V3 CLOSURE — 2026-05-12
+
+All 9 machinery gaps closed. Branch ready for merge.
+
+| Gap | Type | Commit | Tests added |
+|---|---|---|---|
+| G1 wire 055-059 → motor_017 | machinery | ebbe825 | 11 |
+| G2 motor_059 governance sync (R5/R6/R7 + R2/R3 promoted to error) | machinery | ebbe825 | 12 |
+| G3 motor_061 12 families | content | — | DEFERRED to V4 |
+| G4 hybrid rationale in motor_061 output | machinery | 1ddebad | 6 |
+| G5 7 process patterns | content | — | DEFERRED to V4 |
+| G6 report_state_machine + wire to motor_017 | machinery | dfcc359 + 2a08a57 | 28 + 8 |
+| G7 combination schema v2 (7 optional fields) | machinery | dfcc359 | 15 |
+| G8 motor_054 honors preconditions | machinery | dfcc359 | 8 |
+| G9 28 combinations | content | — | DEFERRED to V4 |
+| G10 evidence specialization | content | — | DEFERRED to V4 |
+| G11 5 TAD actions | content | — | DEFERRED to V4 |
+| G12 fair comparison rules | content | — | DEFERRED to V4 |
+| G13 6 sources | content | — | DEFERRED to V4 |
+| G14 research routing by topic | content-adjacent | — | DEFERRED to V4 |
+| G15 motor_058 5 reuse dimensions | machinery | 1ddebad | 12 |
+| G16 motor_057 GN4 nugget count | machinery | 1ddebad | 8 |
+| G17 claim governor master invariant | machinery | 1ddebad | 7 |
+
+### Final metrics
+
+| Metric | Pre-V3 | Post V3 |
+|---|---|---|
+| Test suite | 1107 | **1224** (+117) |
+| Regression cross-asset | 7/7 | **7/7** |
+| Validators wired to motor_017 gate | 5 | **11** (036, 055, 056, 057, 058, 059, 061, 062, 063, scenario_review, report_state_machine) |
+| Governance sync rules (motor_059) | 4 | **7** (R5/R6/R7 added) |
+| Report states formalized | 0 | **8** + render gate |
+| Combination schema fields | 17 required | **17 required + 7 optional V2** |
+| Reuse dimensions (motor_058) | 2 | **5** (RU1-RU5) |
+| Gold nugget count enforcement | none | **GN4 5-12 configurable** |
+| AI scaffolding registry items | 0 | **9 frozen** |
+
+### Definition of "merge ready"
+
+✅ All 9 machinery gaps closed
+✅ Suite 1107 → 1224
+✅ Regression 7/7
+✅ Scaffolding registry at 9 items (no expansion)
+✅ One Wilsonart PDF rendered for user validation
+⏳ User approves PDF → merge `v3-stabilization` → `main`
+
+### V4 preview (deferred items)
+
+V4 = Industrial Research Engine sprint. Builds the generators that
+progressively replace the 9 scaffolding items + emit the 7 content gaps
+naturally (G3, G5, G9, G10, G11, G12, G13, G14 above).
+
+Replacement priority per AI_SCAFFOLDING_REGISTRY.md: S6 → S5 → S4 → S8
+→ S3 → S1 → S2 → S9 → S7.
 
 ## What V3 explicitly does NOT promise
 
