@@ -10540,6 +10540,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
   <div id="hdr-right">
     <a href="/scenarios" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;font-size:12px;font-weight:600;" title="Review center for pipeline-emitted scenarios">📋 Scenarios <span id="hdr-scenarios-count" style="display:none;background:#bf8700;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
     <a href="/combinations" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#eff6ff;border:1px solid #bfdbfe;color:#1f6feb;font-size:12px;font-weight:600;" title="Review center for AI-proposed combinations">🧩 Combinations <span id="hdr-combinations-count" style="display:none;background:#1f6feb;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
+    <a href="/knowledge" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#f0fdf4;border:1px solid #bbf7d0;color:#16a34a;font-size:12px;font-weight:600;" title="Industrial Research Engine knowledge review">📚 Knowledge <span id="hdr-knowledge-count" style="display:none;background:#16a34a;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
     <button class="btn-ext" onclick="openCreateModal()" style="font-weight:600">+ Registrar target</button>
   </div>
 </div>
@@ -10562,6 +10563,13 @@ async function _zlabUpdateReviewCounts() {
     if (cEl) {
       if (pendingCombos > 0) { cEl.style.display = 'inline-block'; cEl.textContent = pendingCombos; }
       else { cEl.style.display = 'none'; }
+    }
+    const ks = await fetch('/api/knowledge/summary').then(r => r.json()).catch(() => ({}));
+    const pendingKnow = (ks && ks.pending_count) || 0;
+    const kEl = document.getElementById('hdr-knowledge-count');
+    if (kEl) {
+      if (pendingKnow > 0) { kEl.style.display = 'inline-block'; kEl.textContent = pendingKnow; }
+      else { kEl.style.display = 'none'; }
     }
   } catch (e) {}
 }
@@ -14800,6 +14808,308 @@ setInterval(load, 30000);
 @app.route("/scenarios")
 def scenarios_page():
     return render_template_string(_SCENARIO_REVIEW_HTML)
+
+
+# ── Industrial Research Engine knowledge review (V4 P0 item 10) ─────────
+# Routes knowledge proposals from knowledge_pending/<kind>/ through human
+# approval into knowledge_memory/approved/. Mirrors the combinations
+# workflow but for the full taxonomy (12 kinds).
+
+try:
+    from runtime_orchestrator.industrial_research_engine import (
+        KNOWLEDGE_KINDS as _IRE_KINDS,
+        MemoryState as _IRE_MemoryState,
+        list_in_state as _ire_list_in_state,
+    )
+    from runtime_orchestrator.industrial_research_engine.memory import (
+        deprecate as _ire_deprecate,
+        list_pending as _ire_list_pending,
+        promote_to_memory as _ire_promote,
+        reject as _ire_reject,
+        restore_from_deprecated as _ire_restore,
+        supersede as _ire_supersede,
+    )
+    _ire_available = True
+except Exception:  # pragma: no cover
+    _ire_available = False
+
+
+@app.route("/api/knowledge/summary")
+def api_knowledge_summary():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    counts = {state.value: len(_ire_list_in_state(state)) for state in _IRE_MemoryState}
+    pending_total = sum(len(_ire_list_pending(kind)) for kind in _IRE_KINDS)
+    return jsonify({"pending_count": pending_total, **counts})
+
+
+@app.route("/api/knowledge/pending")
+def api_knowledge_pending():
+    if not _ire_available:
+        return jsonify([])
+    out: list = []
+    for kind in _IRE_KINDS:
+        for row in _ire_list_pending(kind):
+            row["kind"] = kind
+            out.append(row)
+    return jsonify(out)
+
+
+@app.route("/api/knowledge/state/<state>")
+def api_knowledge_state(state: str):
+    if not _ire_available:
+        return jsonify([])
+    try:
+        ms = _IRE_MemoryState(state)
+    except ValueError:
+        return jsonify({"error": f"unknown state: {state}"}), 400
+    return jsonify(_ire_list_in_state(ms))
+
+
+@app.route("/api/knowledge/approve", methods=["POST"])
+def api_knowledge_approve():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    knowledge_id = (body.get("knowledge_id") or "").strip()
+    kind = (body.get("kind") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not knowledge_id or not kind:
+        return jsonify({"error": "knowledge_id and kind required"}), 400
+    try:
+        out = _ire_promote(knowledge_id, kind=kind, reviewer=reviewer)
+        return jsonify({"status": "approved", "knowledge": out})
+    except FileNotFoundError as exc:
+        return jsonify({"error": str(exc)}), 404
+    except (FileExistsError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/knowledge/reject", methods=["POST"])
+def api_knowledge_reject():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    knowledge_id = (body.get("knowledge_id") or "").strip()
+    kind = (body.get("kind") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    reason = (body.get("reason") or "").strip()
+    if not knowledge_id or not kind:
+        return jsonify({"error": "knowledge_id and kind required"}), 400
+    if not reason:
+        return jsonify({"error": "rejection reason required"}), 400
+    try:
+        out = _ire_reject(knowledge_id, kind=kind, reviewer=reviewer, reason=reason)
+        return jsonify({"status": "rejected", "knowledge": out})
+    except (FileNotFoundError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/knowledge/deprecate", methods=["POST"])
+def api_knowledge_deprecate():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    knowledge_id = (body.get("knowledge_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    reason = (body.get("reason") or "").strip()
+    if not knowledge_id:
+        return jsonify({"error": "knowledge_id required"}), 400
+    try:
+        out = _ire_deprecate(knowledge_id, reviewer=reviewer, reason=reason)
+        return jsonify({"status": "deprecated", "knowledge": out})
+    except (FileNotFoundError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/knowledge/restore", methods=["POST"])
+def api_knowledge_restore():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    knowledge_id = (body.get("knowledge_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not knowledge_id:
+        return jsonify({"error": "knowledge_id required"}), 400
+    try:
+        out = _ire_restore(knowledge_id, reviewer=reviewer)
+        return jsonify({"status": "restored", "knowledge": out})
+    except (FileNotFoundError, FileExistsError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.route("/api/knowledge/supersede", methods=["POST"])
+def api_knowledge_supersede():
+    if not _ire_available:
+        return jsonify({"error": "industrial_research_engine unavailable"}), 503
+    body = request.get_json(silent=True) or {}
+    old_id = (body.get("old_id") or "").strip()
+    new_id = (body.get("new_id") or "").strip()
+    reviewer = (body.get("reviewer") or "dashboard_user").strip()
+    if not old_id or not new_id:
+        return jsonify({"error": "old_id and new_id required"}), 400
+    try:
+        out = _ire_supersede(old_id, new_id, reviewer=reviewer)
+        return jsonify({"status": "superseded", "knowledge": out})
+    except (FileNotFoundError, ValueError) as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+_KNOWLEDGE_REVIEW_HTML = """<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Knowledge — ZLab Industrial Research</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0d1117;color:#e6edf3;margin:0;padding:24px;}
+h1{font-size:20px;margin:0 0 8px 0;}
+.subtitle{color:#7d8590;font-size:13px;margin-bottom:20px;}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.tab{padding:7px 14px;background:#161b22;border:1px solid #30363d;border-radius:6px;cursor:pointer;font-size:12px;}
+.tab.active{background:#1f6feb;border-color:#1f6feb;color:#fff;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;margin-bottom:10px;}
+.card h3{margin:0 0 4px 0;font-size:14px;}
+.card .meta{color:#7d8590;font-size:11px;margin-bottom:6px;}
+.card .families{display:inline-block;font-size:10px;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:1px 6px;margin-right:4px;font-family:monospace;}
+.kind-tag{display:inline-block;font-size:10px;font-weight:600;padding:1px 8px;border-radius:4px;background:#bf8700;color:#fff;margin-right:6px;text-transform:uppercase;}
+.btn{padding:5px 11px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:11px;margin-right:6px;}
+.btn-approve{background:#238636;color:#fff;}
+.btn-reject{background:#da3633;color:#fff;}
+.btn-deprecate{background:#bf8700;color:#fff;}
+.btn-restore{background:#1f6feb;color:#fff;}
+.summary{display:flex;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+.stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px 14px;font-size:11px;}
+.stat .label{color:#7d8590;text-transform:uppercase;letter-spacing:.5px;font-size:10px;}
+.stat .value{font-size:20px;font-weight:600;}
+.empty{color:#7d8590;font-style:italic;padding:18px;text-align:center;}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;z-index:1000;}
+.modal.open{display:flex;}
+.modal-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;width:480px;max-width:90vw;}
+.modal-box textarea{width:100%;height:80px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:8px;font-family:inherit;}
+</style></head>
+<body>
+<h1>Knowledge Review — Industrial Research Engine</h1>
+<div class="subtitle">V4 Phase 0 infrastructure: knowledge proposed by the framework lands here. Real extraction = NotImplementedError until V4 Phase 1.</div>
+
+<div class="summary" id="summary"></div>
+
+<div class="tabs">
+  <div class="tab active" data-state="pending" onclick="loadState('pending')">Pending</div>
+  <div class="tab" data-state="approved" onclick="loadState('approved')">Approved</div>
+  <div class="tab" data-state="deprecated" onclick="loadState('deprecated')">Deprecated</div>
+  <div class="tab" data-state="superseded" onclick="loadState('superseded')">Superseded</div>
+  <div class="tab" data-state="rejected" onclick="loadState('rejected')">Rejected</div>
+</div>
+
+<div id="list"></div>
+
+<div class="modal" id="rejectModal"><div class="modal-box">
+  <h2>Reject knowledge</h2>
+  <p id="rejectLabel" style="color:#7d8590;font-size:12px;font-family:monospace;"></p>
+  <textarea id="rejectReason" placeholder="Reason (required, max 1000 chars)"></textarea>
+  <div style="margin-top:12px;">
+    <button class="btn btn-reject" onclick="confirmReject()">Reject</button>
+    <button class="btn" style="background:#30363d;color:#fff;" onclick="closeReject()">Cancel</button>
+  </div>
+</div></div>
+
+<script>
+const REVIEWER = (function(){
+  let r = localStorage.getItem('zlab_reviewer');
+  if (!r) { r = prompt('Your reviewer name:') || 'dashboard_user'; localStorage.setItem('zlab_reviewer', r); }
+  return r;
+})();
+
+let currentState = 'pending';
+
+async function loadSummary() {
+  const r = await fetch('/api/knowledge/summary'); const d = await r.json();
+  document.getElementById('summary').innerHTML =
+    `<div class="stat"><div class="label">Pending</div><div class="value">${d.pending_count||0}</div></div>` +
+    `<div class="stat"><div class="label">Approved</div><div class="value">${d.approved||0}</div></div>` +
+    `<div class="stat"><div class="label">Deprecated</div><div class="value">${d.deprecated||0}</div></div>` +
+    `<div class="stat"><div class="label">Superseded</div><div class="value">${d.superseded||0}</div></div>` +
+    `<div class="stat"><div class="label">Rejected</div><div class="value">${d.rejected||0}</div></div>`;
+}
+
+async function loadState(state) {
+  currentState = state;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.state===state));
+  const r = state === 'pending'
+    ? await fetch('/api/knowledge/pending')
+    : await fetch('/api/knowledge/state/' + state);
+  const rows = await r.json();
+  const list = document.getElementById('list');
+  if (!Array.isArray(rows) || !rows.length) { list.innerHTML = '<div class="empty">Empty.</div>'; return; }
+  list.innerHTML = rows.map(c => renderCard(c, state)).join('');
+}
+
+function escapeHtml(s) { return String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]); }
+
+function renderCard(c, state) {
+  const families = (c.asset_families||[]).map(f => `<span class="families">${escapeHtml(f)}</span>`).join('');
+  const kind = c.kind || c.knowledge_kind || '?';
+  let actions = '';
+  if (state === 'pending') {
+    actions = `<button class="btn btn-approve" onclick="doApprove('${c.id}','${kind}')">✓ Approve</button>` +
+              `<button class="btn btn-reject" onclick="openReject('${c.id}','${kind}')">✗ Reject</button>`;
+  } else if (state === 'approved') {
+    actions = `<button class="btn btn-deprecate" onclick="doDeprecate('${c.id}')">↓ Deprecate</button>`;
+  } else if (state === 'deprecated') {
+    actions = `<button class="btn btn-restore" onclick="doRestore('${c.id}')">↺ Restore</button>`;
+  }
+  let meta = '';
+  if (state === 'pending') meta = `proposed by ${c.proposed_by||'?'} at ${c.proposed_at||'?'}`;
+  else if (state === 'approved') meta = `approved by ${c.approved_by||'?'} at ${c.approved_at||'?'}`;
+  else if (state === 'deprecated') meta = `deprecated at ${c.deprecated_at||'?'}`;
+  else if (state === 'rejected') meta = `rejected by ${c.rejected_by||'?'} — ${escapeHtml(c.rejection_reason||'')}`;
+  else if (state === 'superseded') meta = `superseded by ${c.superseded_by_id||'?'}`;
+  return `<div class="card">
+    <h3><span class="kind-tag">${escapeHtml(kind)}</span>${escapeHtml(c.id)} <span style="color:#7d8590;font-weight:400;font-size:11px;">v${c.version||'?'}</span></h3>
+    <div class="meta">${meta} · claim_ceiling=${c.claim_ceiling||'?'}</div>
+    <div>${families}</div>
+    <div style="margin-top:8px;">${actions}</div>
+  </div>`;
+}
+
+async function doApprove(id, kind) {
+  if (!confirm(`Approve "${id}" (${kind})? It will move to knowledge_memory/approved/.`)) return;
+  const r = await fetch('/api/knowledge/approve', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({knowledge_id:id,kind,reviewer:REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Approve failed: '+(e.error||r.statusText)); return; }
+  loadSummary(); loadState(currentState);
+}
+
+let _rejecting = null;
+function openReject(id, kind) { _rejecting={id,kind}; document.getElementById('rejectLabel').textContent = `${kind}/${id}`; document.getElementById('rejectReason').value=''; document.getElementById('rejectModal').classList.add('open'); }
+function closeReject() { _rejecting=null; document.getElementById('rejectModal').classList.remove('open'); }
+async function confirmReject() {
+  const reason = document.getElementById('rejectReason').value.trim();
+  if (!reason) { alert('Reason required'); return; }
+  const r = await fetch('/api/knowledge/reject', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({knowledge_id:_rejecting.id,kind:_rejecting.kind,reviewer:REVIEWER,reason})});
+  if (!r.ok) { const e = await r.json(); alert('Reject failed: '+(e.error||r.statusText)); return; }
+  closeReject(); loadSummary(); loadState(currentState);
+}
+
+async function doDeprecate(id) {
+  if (!confirm(`Deprecate "${id}"? It will move to knowledge_memory/deprecated/ but remain auditable.`)) return;
+  const r = await fetch('/api/knowledge/deprecate', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({knowledge_id:id,reviewer:REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Deprecate failed: '+(e.error||r.statusText)); return; }
+  loadSummary(); loadState(currentState);
+}
+
+async function doRestore(id) {
+  if (!confirm(`Restore "${id}" to approved memory?`)) return;
+  const r = await fetch('/api/knowledge/restore', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({knowledge_id:id,reviewer:REVIEWER})});
+  if (!r.ok) { const e = await r.json(); alert('Restore failed: '+(e.error||r.statusText)); return; }
+  loadSummary(); loadState(currentState);
+}
+
+loadSummary(); loadState('pending');
+setInterval(()=>{loadSummary();loadState(currentState);}, 30000);
+</script>
+</body></html>"""
+
+
+@app.route("/knowledge")
+def knowledge_page():
+    return render_template_string(_KNOWLEDGE_REVIEW_HTML)
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
