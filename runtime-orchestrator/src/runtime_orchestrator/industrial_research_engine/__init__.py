@@ -63,6 +63,24 @@ from .engine import (
     extract_knowledge,  # STUB — raises NotImplementedError
     propose_knowledge,
 )
+from .pdf_extraction_interface import (
+    NotImplementedPDFExtractor,
+    PDFExtractionResult,
+    PDFExtractor,
+    default_pdf_extractor,
+)
+from .llm_extraction_interface import (
+    LLMExtractionRequest,
+    LLMExtractionResult,
+    LLMExtractor,
+    NotImplementedLLMExtractor,
+    default_llm_extractor,
+)
+from .extraction_orchestrator import (
+    ExtractionOrchestrator,
+    ExtractionPlan,
+    ExtractionResult,
+)
 
 __all__ = [
     # schemas
@@ -99,4 +117,17 @@ __all__ = [
     # engine
     "extract_knowledge",
     "propose_knowledge",
+    # V4 P1 extraction infrastructure
+    "PDFExtractor",
+    "PDFExtractionResult",
+    "NotImplementedPDFExtractor",
+    "default_pdf_extractor",
+    "LLMExtractor",
+    "LLMExtractionRequest",
+    "LLMExtractionResult",
+    "NotImplementedLLMExtractor",
+    "default_llm_extractor",
+    "ExtractionOrchestrator",
+    "ExtractionPlan",
+    "ExtractionResult",
 ]

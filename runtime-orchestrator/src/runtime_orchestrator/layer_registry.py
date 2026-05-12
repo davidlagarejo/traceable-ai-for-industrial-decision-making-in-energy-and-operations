@@ -30,6 +30,7 @@ _LAYER_A: tuple[str, ...] = (
     "motor_039",  # Industrial / Building Archetype Library Resolver
     "motor_052",  # Loss Pattern and Maintenance Reality Engine
     "motor_053",  # Regulatory, Finance and Context Translation Engine
+    "motor_065",  # Industrial Knowledge Extractor (V4 P1)
 )
 
 # ── Capa B: Hypothesis Engine ───────────────────────────────────────────────
