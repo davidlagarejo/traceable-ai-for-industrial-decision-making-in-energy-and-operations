@@ -1304,6 +1304,13 @@ class Motor017Adapter(BaseMotorAdapter):
             block_reasons.append(
                 "Gold nugget archetype replay (motor_057.GN1): nugget reused verbatim from a prior archetype."
             )
+        # motor_057.GN4 — Nugget count out of range. Default off (threshold 999)
+        # so V3 Day 3 ships without breaking regression cases that don't reach
+        # the 5-nugget floor yet. Production can enable via pipeline threshold.
+        if _rule_hits(m057_w, "GN4_nugget_count_out_of_range") >= int(thresholds.get("m057_GN4", 999)):
+            block_reasons.append(
+                "Gold nugget count out of range (motor_057.GN4): see threshold __pipeline__.validator_thresholds.m057_GN4."
+            )
         # motor_058 — Report Uniqueness: block on verbatim nugget reuse across runs
         if _rule_hits(m058_w, "RU2_verbatim_nugget_reuse") >= int(thresholds.get("m058_RU2", 1)):
             block_reasons.append(

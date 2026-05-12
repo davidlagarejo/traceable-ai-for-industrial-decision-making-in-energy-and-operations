@@ -143,6 +143,47 @@ def _detect_template_fill(nuggets: list[dict]) -> list[dict]:
     return out
 
 
+# V3 G16: nugget count enforcement (5-12 per RECOVERY_V3_BACKLOG).
+# Configurable via __pipeline__.nugget_count_thresholds.
+_DEFAULT_NUGGET_COUNT_MIN = 5
+_DEFAULT_NUGGET_COUNT_MAX = 12
+
+
+def _detect_nugget_count_out_of_range(
+    nuggets: list[dict],
+    min_count: int,
+    max_count: int,
+) -> list[dict]:
+    """GN4: emit critical when the rendered report has too few or too many
+    gold nuggets. Per V3 prompt §6.B: 5-10 unique nuggets is the target;
+    we use 5-12 to allow 2-nugget headroom for diverse cases."""
+    n = len(nuggets)
+    if min_count <= n <= max_count:
+        return []
+    if n < min_count:
+        description = (
+            f"Report has {n} gold nuggets — below the minimum of {min_count}. "
+            "Reports with fewer nuggets read as thin and miss decision-grade signal. "
+            "Either generate more nuggets or surface why this case cannot reach the minimum."
+        )
+    else:
+        description = (
+            f"Report has {n} gold nuggets — above the maximum of {max_count}. "
+            "Reports with too many nuggets read as noisy and dilute decision-grade signal. "
+            "Curate the strongest nuggets and drop the rest."
+        )
+    return [
+        {
+            "rule_id": "GN4_nugget_count_out_of_range",
+            "severity": "critical",
+            "nugget_count": n,
+            "min_required": min_count,
+            "max_allowed": max_count,
+            "description": description,
+        }
+    ]
+
+
 class Motor057Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -165,19 +206,29 @@ class Motor057Adapter(BaseMotorAdapter):
             or []
         )
 
+        # V3 G16: configurable thresholds
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        thresholds = pipeline_inputs.get("nugget_count_thresholds", {}) if isinstance(pipeline_inputs.get("nugget_count_thresholds", {}), dict) else {}
+        min_count = int(thresholds.get("min", _DEFAULT_NUGGET_COUNT_MIN) or _DEFAULT_NUGGET_COUNT_MIN)
+        max_count = int(thresholds.get("max", _DEFAULT_NUGGET_COUNT_MAX) or _DEFAULT_NUGGET_COUNT_MAX)
+
         warnings: list[dict] = []
         warnings.extend(_detect_archetype_replay(nuggets, asset_family))
         warnings.extend(_detect_thin_nuggets(nuggets))
         warnings.extend(_detect_template_fill(nuggets))
+        warnings.extend(_detect_nugget_count_out_of_range(nuggets, min_count, max_count))
 
         return {
             "gold_nugget_quality_warnings": warnings,
             "warning_count": len(warnings),
             "asset_family_evaluated": asset_family,
             "nugget_count_evaluated": len(nuggets),
+            "nugget_count_min": min_count,
+            "nugget_count_max": max_count,
             "rules_evaluated": [
                 "GN1_archetype_replay",
                 "GN2_thin_nugget",
                 "GN3_template_fill",
+                "GN4_nugget_count_out_of_range",
             ],
         }
