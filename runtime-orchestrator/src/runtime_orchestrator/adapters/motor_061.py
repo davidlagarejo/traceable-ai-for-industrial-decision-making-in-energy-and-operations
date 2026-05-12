@@ -32,6 +32,7 @@ from typing import Any
 
 from .base import BaseMotorAdapter
 from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
+from ..industrial_research_engine.family_scope import ALL_KNOWN_ASSET_FAMILIES
 
 
 # Per asset_family, the set of pattern_ids that signal CONTAMINATION when
@@ -106,6 +107,32 @@ def _text(value: Any) -> str:
     return str(value or "").strip()
 
 
+def _contamination_set_for(asset_family: str) -> set[str]:
+    """V3 G3 closure: return the contamination set for any KNOWN canonical
+    asset family. Families with no explicit rules (e.g., new V4 families
+    declared in family_scope but not yet covered here) return an empty
+    set — meaning no contamination is detected for them YET.
+
+    This decouples motor_061's runtime check from the hardcoded V2 table:
+    new families enter the canonical taxonomy via family_scope and motor_061
+    accepts them gracefully without raising. When real V4 rules are
+    derived for those new families, they extend _CROSS_FAMILY_CONTAMINATION
+    naturally.
+
+    Unknown families (not in ALL_KNOWN_ASSET_FAMILIES) ALSO return empty
+    set here — motor_007 + asset_archetypes are the source of truth for
+    which families exist, not motor_061.
+    """
+    return _CROSS_FAMILY_CONTAMINATION.get(asset_family, set())
+
+
+def is_family_canonically_known(asset_family: str) -> bool:
+    """Whether the family is in the canonical taxonomy (family_scope).
+    motor_061 uses this only for logging; the contamination check itself
+    is permissive (unknown family → empty contamination set, no block)."""
+    return (asset_family or "").strip() in ALL_KNOWN_ASSET_FAMILIES
+
+
 def _resolve_asset_family(inputs: dict[str, Any]) -> str:
     m007 = inputs.get("motor_007", {}) if isinstance(inputs.get("motor_007", {}), dict) else {}
     target_definition = (
@@ -124,7 +151,7 @@ def _detect_pattern_contamination(
     activated_combinations: list[dict],
     hybrid_shared_patterns: set[str] | None = None,
 ) -> list[dict]:
-    contamination_set = _CROSS_FAMILY_CONTAMINATION.get(asset_family, set())
+    contamination_set = _contamination_set_for(asset_family)
     if not contamination_set:
         return []
     # Gap B: when a justified hybrid is active, its shared_patterns are
@@ -248,6 +275,12 @@ class Motor061Adapter(BaseMotorAdapter):
             "critical_count": critical_count,
             "contamination_detected": critical_count > 0,
             "asset_family_evaluated": asset_family,
+            # V3 G3 closure: declare whether this family is in the V4
+            # canonical taxonomy (family_scope.ALL_KNOWN_ASSET_FAMILIES).
+            # When False, motor_061 still ran but with no contamination
+            # rules defined for this family (graceful permissive default).
+            "asset_family_in_canonical_taxonomy": is_family_canonically_known(asset_family),
+            "canonical_asset_family_count": len(ALL_KNOWN_ASSET_FAMILIES),
             "activated_combinations_count": len(activated_combinations),
             "hybrid_admissible": bool(hybrid),
             "hybrid_id": hybrid_id,
