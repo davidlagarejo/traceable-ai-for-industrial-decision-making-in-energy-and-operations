@@ -81,6 +81,16 @@ from .extraction_orchestrator import (
     ExtractionPlan,
     ExtractionResult,
 )
+from .pdfplumber_extractor import (
+    PDFPlumberExtractor,
+    make_pdfplumber_extractor,
+)
+from .anthropic_llm_extractor import (
+    AnthropicLLMExtractor,
+    AnthropicSettings,
+    make_anthropic_extractor,
+    DEFAULT_MODEL as ANTHROPIC_DEFAULT_MODEL,
+)
 
 __all__ = [
     # schemas
@@ -130,4 +140,11 @@ __all__ = [
     "ExtractionOrchestrator",
     "ExtractionPlan",
     "ExtractionResult",
+    # V4 P2 real extractors
+    "PDFPlumberExtractor",
+    "make_pdfplumber_extractor",
+    "AnthropicLLMExtractor",
+    "AnthropicSettings",
+    "make_anthropic_extractor",
+    "ANTHROPIC_DEFAULT_MODEL",
 ]

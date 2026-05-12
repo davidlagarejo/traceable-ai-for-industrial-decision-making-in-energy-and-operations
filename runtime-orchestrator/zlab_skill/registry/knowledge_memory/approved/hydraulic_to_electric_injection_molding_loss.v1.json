@@ -1,0 +1,75 @@
+{
+  "id": "hydraulic_to_electric_injection_molding_loss",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "anti_families": [
+    "commercial_building",
+    "datacenter",
+    "warehouse_distribution"
+  ],
+  "trigger_conditions": [
+    "injection molding equipment present in plant inventory",
+    "hydraulic-driven press technology indicated or unresolved",
+    "production hours per shift unresolved"
+  ],
+  "anti_triggers": [
+    "all-electric press fleet already in service",
+    "injection molding not in scope (e.g., assembly-only plant)",
+    "press fleet less than 10 years old AND already electric"
+  ],
+  "falsification_conditions": [
+    "press fleet inventory confirms electric servo presses across all relevant production lines",
+    "production hours below threshold where capital replacement economics make sense",
+    "hold-phase parasitic load already measured and bounded as immaterial share"
+  ],
+  "evidence_required": [
+    "press fleet inventory with drive technology (hydraulic / hybrid / electric servo)",
+    "press cycle counts and production hours per machine",
+    "annual energy intensity baseline (kWh per ton of product or per shift-hour)",
+    "capital replacement schedule for press equipment"
+  ],
+  "financial_translation": "Hydraulic injection molding carries parasitic pumping losses during hold phase that electric servo presses do not. When production hours are high, the hydraulic-to-electric swap is a capital-grade efficiency lever whose payback depends on cycle counts and electricity price. Conservative framing: lever is plausible but evidence-bounded.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "DO_NOT_INVEST_YET",
+    "REQUEST_UTILITY_BILLS"
+  ],
+  "allowed_language": "Hydraulic-to-electric injection molding upgrade is a plausible capital-grade efficiency lever requiring press inventory and cycle-count evidence before underwriting.",
+  "prohibited_language": [
+    "guaranteed savings",
+    "ROI from electric press swap",
+    "this saves X kWh per machine"
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "doe_better_plants_manufacturing",
+      "confidence": "high",
+      "specific_reference": "DOE Better Plants 2022 Progress Update, p. 4 — Legrand North & Central America case study: 'replacing aging hydraulic injection molding units with more energy efficient electric units' listed among notable energy-saving projects"
+    },
+    {
+      "source_id": "doe_amo_best_practices",
+      "confidence": "medium-high"
+    }
+  ],
+  "extraction_metadata": {
+    "extracted_from_pdf": "2022 Better Plants Progress Update_0.pdf",
+    "extraction_date": "2026-05-12",
+    "extracted_by": "claude_v4_p1_manual_demo",
+    "page_reference": "p. 4 (Legrand case)",
+    "notes": "Demo extraction for V4 P1 manual CLI path. Pattern needs user review in dashboard /knowledge before promotion.",
+    "topic": "thermal_process",
+    "source_id": "doe_better_plants_manufacturing",
+    "extraction_path": "manual_orchestrator"
+  },
+  "notes": "V4 P1 demo extraction. Demonstrates the manual orchestrator path from real DOE publication. NOT yet validated by user in dashboard.",
+  "__proposed_at__": "2026-05-12T18:24:56+00:00",
+  "__proposed_by__": "claude_v4_p1_demo",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-12T18:29:58+00:00",
+  "__approved_by__": "davidsan",
+  "__source_pending_kind__": "pattern"
+}
