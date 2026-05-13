@@ -3,74 +3,32 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-13 (V6 CERRADO — 1650 tests, regression 7/7)**
+**Última actualización: 2026-05-13 (entrando V7 — Final Execution Hardening)**
 
 ---
 
-## 0. Doctrina actual: V6 STABILITY HARDENING (cerrado)
+## 0. Doctrina actual: V7 — FINAL EXECUTION HARDENING
 
-V6 está **cerrado**. Ver `RECOVERY_DONE_V6.md` para el cierre completo.
+V6 cerrado. Ver `RECOVERY_DONE_V6.md`. El cerebro está estabilizado modularmente y los módulos están **cableados** al pipeline en caliente (P13).
 
-Resumen:
-- **1650 tests passing** (+167 desde el baseline V5 de 1483).
-- **Regression 7/7** verde en cada subfase.
-- 14 commits V6 en `main` local (P0..P12).
-- Reglas inviolables ahora **enforced en código**, no sólo en docs.
+**V7 no añade inteligencia. V7 endurece la EJECUCIÓN.**
 
-**V6 NO añadió inteligencia. V6 estabilizó el cerebro.**
+V7 transforma el framework de:
+> "sistema inteligente pero frágil"
 
-El problema actual NO es:
-- falta de hipótesis
-- falta de patterns
-- falta de combinations
-- falta de arquitectura conceptual
+a:
+> "sistema operacionalmente confiable y epistemológicamente endurecido".
 
-El problema actual ES:
-- validators detectan PERO NO bloquean
-- contamination cross-asset-family aún posible
-- fallbacks silenciosos degradan outputs
-- rendering todavía acoplado a lógica analítica
-- claim counts inconsistentes entre motores
-- reportes generan aún cuando hay contamination
+**El objetivo final NO es hacer PDFs. Es detectar cuándo una organización está comparando mal, midiendo mal, modelando mal, invirtiendo mal, o interpretando mal la economía física de su activo.**
 
-**Doctrina V6:**
-> "Estabilizar antes de añadir. Las mismas reglas, los mismos validators, los mismos patterns, las mismas combinations deben producir outputs CONSISTENTES, LIMPIOS, GOBERNADOS y libres de CONTAMINATION."
-
-**Reglas absolutas V6** (NUNCA romper):
-1. No agregar más inteligencia hasta cerrar V6.
-2. No relajar epistemología.
-3. No permitir rendering thinking (motor_017/019 no introducen lógica analítica).
-4. No permitir chart reuse cross-asset-family.
-5. No permitir unsupported hybrid activation.
-6. No permitir report generation después de validator failure.
-7. No permitir fallback silencioso.
+Plan completo: `RECOVERY_V7_BACKLOG.md` (10 sub-fases · ~7 días).
 
 ---
 
-## 1. Ancla constitucional permanente (heredada V5)
+## 1. Reglas inviolables V7 (NUNCA romper)
 
-**8 fases canónicas** (`Phases/phase-0..8/docs/es/`):
-
-| Fase | Unidad canónica | Motor productor | Status depth |
-|---|---|---|---|
-| 0 | constitutional rules + 9-state ladder | motor_001/002/024/025/026 | ✅ |
-| 1 | `facility_prior` | motor_012 + motor_028 (discovery US-only) | ✅ |
-| 2 | `inference_case` | motor_014 (6 atributos canónicos) | ✅ V5 P2 |
-| 3 | `output_block` + `report_package` | motor_015/016/017/019 | ✅ V5 P5/P6 (con maturity) |
-| 4 | `claim_upgrade_candidate` | motor_034 | ✅ V5 P10 depth |
-| 5 | `financial_exposure_case` | motor_045 | ✅ V5 P13 depth |
-| 6 | `compliance_applicability_case` | motor_053 | ✅ V5 P12 depth |
-| 7 | `belief_revision_event` | motor_054 | ⚠️ V5 P2 superficial (depth pendiente) |
-| 8 | `decision_admissibility_case` | motor_033 | ✅ V5 P11 depth |
-
-Phase 0 GOBIERNA cualquier conflicto. **El LLM NO es soberano — sólo motor_019 (narrador).**
-
----
-
-## 2. Reglas inviolables enforced en código
-
-1. **El LLM aparece en EXACTAMENTE UN motor** (`motor_019` — narrador, no analista). Con `narrator_validator.check_orphan_claims` desde V5 P7.
-2. **Extracción de PDFs es DETERMINISTA.** `zlab_skill/local_pdf_autodraft.py` + keyword rules + V5 P9 derivador automático. NO Anthropic/OpenAI/Ollama en el path analítico.
+1. **El LLM aparece en EXACTAMENTE UN motor** (`motor_019` — narrador, no analista).
+2. **Extracción de PDFs es DETERMINISTA** (`zlab_skill/local_pdf_autodraft.py` + V5 P9). No Anthropic/OpenAI/Ollama en el path analítico.
 3. **AI NO autoría contenido.** `AI_SCAFFOLDING_REGISTRY.md` FROZEN en 9 items.
 4. **AI NO aprueba combinations.** Sólo el usuario en `/combinations` o `/revisar`.
 5. **NUNCA escribir JSON a `combinations/` directo.** Usar `scripts/propose_combination.py`.
@@ -78,61 +36,88 @@ Phase 0 GOBIERNA cualquier conflicto. **El LLM NO es soberano — sólo motor_01
 7. **NUNCA `git add -A`** con WIP del usuario sin consolidar.
 8. **SIEMPRE responder en español al usuario.**
 9. **SIEMPRE contrastar cambios contra los Master Docs.** Phase 0 gobierna.
+10. **V7 doctrine**: cada flip de defaults es hacia MÁS estricto, no menos. Diagnostic mode es opt-out.
+11. **No relajar epistemología jamás.** Cualquier validator promovido a blocking no vuelve a warning.
+12. **No silent fallback.** Todo fallback registrado, clasificado, gobernado.
+13. **No client-facing output con state ≠ client_safe** en hard mode.
 
 ---
 
-## 3. Doble registro: cada motor está en DOS clasificaciones paralelas
+## 2. Ancla constitucional permanente
+
+**8 fases canónicas** (`Phases/phase-0..8/docs/es/`):
+
+| Fase | Unidad canónica | Motor productor | Status depth |
+|---|---|---|---|
+| 0 | constitutional rules + 9-state ladder | motor_001/002/024/025/026 | ✅ |
+| 1 | `facility_prior` | motor_012 + motor_028 (discovery US-only) | ✅ |
+| 2 | `inference_case` | motor_014 | ✅ V5 P2 |
+| 3 | `output_block` + `report_package` | motor_015/016/017/019 | ✅ V5 P5/P6 |
+| 4 | `claim_upgrade_candidate` | motor_034 | ✅ V5 P10 |
+| 5 | `financial_exposure_case` | motor_045 | ✅ V5 P13 |
+| 6 | `compliance_applicability_case` | motor_053 | ✅ V5 P12 |
+| 7 | `belief_revision_event` | motor_054 | ⚠️ V5 P2 superficial (depth = V8) |
+| 8 | `decision_admissibility_case` | motor_033 | ✅ V5 P11 |
+
+Phase 0 GOBIERNA cualquier conflicto. **El LLM NO es soberano — sólo motor_019 (narrador).**
+
+---
+
+## 3. Doble registro: cada motor en DOS clasificaciones paralelas
 
 | Registro | Eje | Archivo |
 |---|---|---|
-| **`layer_registry.py`** | Bus técnico A-F | A:Knowledge / B:Hypothesis / C:Claim Governor / D:TAD / E:Composer / F:Validators |
-| **`phase_registry.py`** (V5) | Constitucional 0-8 | 0:Governance / 1:PIML / 2:Decision Core / 3:Reporting / 4:Verification / 5:Finance / 6:Regulatory / 7:Cognitive / 8:TAD |
+| `layer_registry.py` | Bus técnico A-F | A:Knowledge / B:Hypothesis / C:Claim Governor / D:TAD / E:Composer / F:Validators |
+| `phase_registry.py` (V5) | Constitucional 0-8 | 0:Governance / 1:PIML / 2:Decision Core / 3:Reporting / 4:Verification / 5:Finance / 6:Regulatory / 7:Cognitive / 8:TAD |
 
 APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 
 ---
 
-## 4. Estado post-V6 (2026-05-13)
+## 4. Estado entrando V7 (2026-05-13)
 
-- **64 motores** en `governanza/automation-base/motor_dependencies.json`
-- **1650 tests passing** (`pytest tests/`)
-- **Regression cross-asset 7/7** (6 representative + hybrid)
-- **192 fuentes industriales** en catálogo (78/87/27 tier-1/2/3)
-- **30 patterns** + **4 combinations approved** + **144 approved knowledge** (143 batch + 1 manual)
-- **16 commits V5 + 14 commits V6** en `main` local (no pushed)
+- **64 motores** · **30 patterns** · **4 combinations approved** (a migrar en V7 P2) · **144 approved knowledge**
+- **1650 tests passing** · regression cross-asset **7/7 PASS**
+- **31 commits V5+V6+V6P13** pusheados a `origin/main`
 - **Jurisdicción**: US-only para case discovery; combinations universales
-- **V6 modules nuevos**: `fallback_policy`, `source_execution_auditor`, `qa_score`,
-  `validator_severity_policy`, `pattern_isolation`, `claim_synchronization_auditor`,
-  `render_gate`, `validate_combination_v6_strict`, R8-R11 en motor_059.
+- **192 fuentes industriales** en catálogo (78/87/27 tier-1/2/3)
+
+**Módulos V6 vivos en el pipeline (P13 cableados):**
+
+| Módulo | Verdict emitido en | Hard-block opt-in actual |
+|---|---|---|
+| `validator_severity_policy.py` | motor_055..063 wired | `ZLAB_VALIDATORS_HARD_BLOCK=1` |
+| `fallback_policy.py` | motor_024 → `fallback_policy_verdict` | autoclasifica |
+| `source_execution_auditor.py` | motor_028 → `source_audit_verdict` | autoclasifica |
+| `claim_synchronization_auditor.py` | motor_016 → `claim_sync_verdict` | autoclasifica |
+| `pattern_isolation.py` | motor_061 → `pattern_isolation_violations` | autoclasifica |
+| `qa_score.py` | callable (qa_card) | — |
+| `render_gate.py` | motor_017 → `render_gate_verdict` | `ZLAB_RENDER_STRICT_DEFAULT=1` |
+| `validate_combination_v6_strict` | engine.py write-path | flag-gated |
+
+**Gap V7 principal**: ambos env flags son **opt-in**. V7 P1 los flippea a default ON.
 
 ---
 
-## 5. V6 STABILITY HARDENING — los 18 items y su estado
+## 5. V7 — 10 sub-fases (resumen)
 
-Auditado 2026-05-13. La mayoría ya existe estructuralmente. **El trabajo V6 es PROMOTION de warn→BLOCK + 3 piezas nuevas pequeñas.**
+Detalle completo en `RECOVERY_V7_BACKLOG.md`.
 
-| # | Item | Status V6 | Módulo / commit |
-|---|---|---|---|
-| 1 | System State Machine | ✅ V6 P9 strict default | `render_gate.py` |
-| 2 | Hard Block Validation Layer | ✅ V6 P4 + P4.1-4.8 | `validator_severity_policy.py` + 7 motores cableados |
-| 3 | Asset Family Isolation Engine | ✅ V6 P5 | `pattern_isolation.py` |
-| 4 | Hybrid Justification Engine | ✅ V6 P4 (SJ1/SJ2/SJ3 promovidas) | `validator_severity_policy.py` |
-| 5 | DUMB_RENDER (composer) | ✅ V6 P10 | `test_v6_dumb_render_invariants.py` |
-| 6 | Chart Validity Engine | ✅ V6 P4 (CV1/CV3 promovidas) | motor_063 wired |
-| 7 | Combination Governance | ✅ V6 P6 | `validate_combination_v6_strict()` |
-| 8 | Evidence Specialization | ✅ V6 P4 (ER1-ER3 promovidas) | motor_056 wired |
-| 9 | Report Uniqueness Engine | ✅ V6 P4 (RU2 promovida) | motor_058 wired |
-| 10 | Fallback Governance | ✅ V6 P1 | `fallback_policy.py` |
-| 11 | Claim Synchronization | ✅ V6 P7 | `claim_synchronization_auditor.py` |
-| 12 | TAD Consistency Engine | ✅ V6 P8 | motor_059 R8-R11 |
-| 13 | Source Execution Auditor | ✅ V6 P2 | `source_execution_auditor.py` |
-| 14 | CLIENT_SAFE_MODE | ✅ V6 P9 | `render_gate.py` strict default |
-| 15 | QA Score Engine | ✅ V6 P3 | `qa_score.py` |
-| 16 | Stability Test Suite | ✅ V6 P11 | `test_v6_stability_suite.py` (9 escenarios) |
-| 17 | Resultado final | ✅ | 1650 tests, regression 7/7 |
-| 18 | Entregable | ✅ | `RECOVERY_DONE_V6.md` |
+| # | Trabajo | Riesgo |
+|---|---|---|
+| P0 | Baseline freeze + audit | Bajo |
+| P1 | **Hard mode defaults flippeados a ON** | **Alto** |
+| P2 | Migrar 4 combinaciones pre-V6 al schema V6 strict | Medio |
+| P3 | Anti-asset-types explícitos en pattern_isolation | Bajo |
+| P4 | Hybrid Justification Narrative Emitter | Medio |
+| P5 | motor_059 R12 (`local_truth_from_archetypal_prior`) + R13 (`benchmark_as_truth`) | Bajo |
+| P6 | motor_058 RU4 evidence pack uniqueness | Bajo |
+| P7 | motor_063 CV5 chart cross-asset-family | Bajo |
+| P8 | Final stability suite — CLIENT_SAFE end-to-end (8 escenarios) | Medio |
+| P9 | Documentation curation (archivar histórico) | Bajo |
+| P10 | Final regression + commit + push | Bajo |
 
-**Resultado**: los 18 items cerrados. V6 totalmente entregado.
+**Aceptación V7**: hard mode default ON, 1680+ tests verde, regression 7/7 en hard mode default, docs limpios.
 
 ---
 
@@ -142,8 +127,20 @@ Auditado 2026-05-13. La mayoría ya existe estructuralmente. **El trabajo V6 es 
 cd runtime-orchestrator
 python3 cli.py run --pipeline-id <id> --inputs inputs/<case>.json --no-cache
 
-# Dashboard: http://localhost:7474/revisar
-# Regression: bash scripts/regression_cross_asset_recovery.sh
+# Dashboard:   http://localhost:7474/revisar
+# Regression:  bash scripts/regression_cross_asset_recovery.sh
+```
+
+**Hard mode hoy (opt-in hasta V7 P1)**:
+```bash
+export ZLAB_VALIDATORS_HARD_BLOCK=1   # warn → BLOCK en 14 reglas
+export ZLAB_RENDER_STRICT_DEFAULT=1   # refuse render si state ≠ client_safe
+```
+
+**Hard mode tras V7 P1**: activo por defecto. Diagnostic se opta vía:
+```bash
+export ZLAB_VALIDATORS_HARD_BLOCK=0
+export ZLAB_RENDER_STRICT_DEFAULT=0
 ```
 
 ---
@@ -152,28 +149,33 @@ python3 cli.py run --pipeline-id <id> --inputs inputs/<case>.json --no-cache
 
 1. `Phases/phase-{N}/docs/es/` — constitución (gobierna conflictos)
 2. `CLAUDE.md` (este archivo) — doctrina operativa actual
-3. `AGENTS.md` — guía operativa (heredado, ahora subordinado a CLAUDE.md)
-4. `runtime-orchestrator/` + suite de tests
-5. `phase_registry.py` + `phase_units.py` (V5)
-6. `AI_SCAFFOLDING_REGISTRY.md` (FROZEN en 9 items)
+3. `RECOVERY_V7_BACKLOG.md` — plan de trabajo actual
+4. `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres históricos
+5. `AGENTS.md` — guía operativa (subordinado a CLAUDE.md)
+6. `runtime-orchestrator/` + suite de tests
+7. `phase_registry.py` + `phase_units.py` (V5)
+8. `AI_SCAFFOLDING_REGISTRY.md` (FROZEN en 9 items)
 
 ---
 
-## 8. Pendiente post-V6
+## 8. Pendiente post-V7 (V8 candidato)
 
-V6 cerrado. Próximas líneas (V7):
-- V7 — Phase 7 depth (motor_054 belief_revision_event desde eventos reales)
-- V7 — Cascade S1-S9 scaffolding registry (regenerar S4 patterns desde IIAR, S5 YAMLs, etc.)
-- V7 — Procesar 105 PDFs restantes
-- V7 — motor_017 opt-in a `enforce_render_gate()` para refuse-by-default
-- V7 — Dashboard surface para QAScoreCard + RenderGateVerdict
-- `git push` al remote (14 commits V6 + 16 V5 pendientes)
+V7 cierra el endurecimiento. V8 (cuando llegue) puede retomar:
 
-## 9. V6 hard mode (opt-in)
+- **Phase 7 depth**: motor_054 belief_revision_event desde eventos reales (única fase superficial).
+- **Cascade S1-S9**: regenerar AI_SCAFFOLDING_REGISTRY items desde extracción determinista (143 approved + V4 extractor).
+- **Procesar 105 PDFs restantes** de la library.
+- **Dashboard QA**: exponer QAScoreCard + RenderGateVerdict en `/revisar`.
+- **CI smoke hard mode**: job que corra la suite con flags ON.
 
-```bash
-export ZLAB_VALIDATORS_HARD_BLOCK=1   # warn → BLOCK en 14 reglas canónicas
-export ZLAB_RENDER_STRICT_DEFAULT=1   # refuse render si state != client_safe
-```
+---
 
-Ver `RECOVERY_DONE_V6.md` para la lista completa.
+## 9. Lo que V7 NO hace (por doctrina)
+
+- No añade más patterns, combinations, motores o prompts.
+- No añade LLM en ningún lado que no sea motor_019.
+- No regenera el AI_SCAFFOLDING_REGISTRY.
+- No procesa los 105 PDFs restantes.
+- No expone dashboard QA.
+
+**V7 = endurecimiento del cerebro existente. Nada más.**
