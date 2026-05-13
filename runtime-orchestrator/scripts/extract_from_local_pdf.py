@@ -150,9 +150,17 @@ def _process_pdf(
             "rule_source": rule_source,
         })
 
-        bridged_id = (
-            f"{pattern_id}__{id_suffix}" if id_suffix else f"{pattern_id}__from_{source_id}"
-        )
+        # V5: ensure unique ids per (pattern, PDF) so batches with many
+        # PDFs sharing the same source_id (e.g. CORPOEMA's 24 sessions
+        # under one training source_id) don't collide.
+        pdf_slug = "".join(
+            c if (c.isalnum() or c in "_-") else "_"
+            for c in pdf_path.stem.lower()
+        )[:40].strip("_")
+        if id_suffix:
+            bridged_id = f"{pattern_id}__{id_suffix}__{pdf_slug}"
+        else:
+            bridged_id = f"{pattern_id}__from_{source_id}__{pdf_slug}"
 
         try:
             proposed = propose_extracted_pattern(
