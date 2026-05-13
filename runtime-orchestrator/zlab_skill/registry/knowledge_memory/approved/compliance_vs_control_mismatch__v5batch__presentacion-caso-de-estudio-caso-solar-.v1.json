@@ -1,0 +1,70 @@
+{
+  "id": "compliance_vs_control_mismatch__v5batch__presentacion-caso-de-estudio-caso-solar-",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "compliance or filing burden visible",
+    "dominant load-control boundary unresolved",
+    "owner-capture versus operator-control tension plausible"
+  ],
+  "anti_triggers": [
+    "control boundary fully aligned and documented",
+    "single actor captures and controls the dominant variable",
+    "compliance burden immaterial"
+  ],
+  "falsification_conditions": [
+    "single actor clearly controls and captures the dominant variable",
+    "metering and responsibility alignment documented",
+    "compliance burden is economically immaterial"
+  ],
+  "evidence_required": [
+    "filing or permit basis",
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator control evidence"
+  ],
+  "financial_translation": "Compliance pressure can be translated into the wrong retrofit or underwriting logic if control and capture boundaries are misread.",
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "PROHIBIT_CLAIM"
+  ],
+  "allowed_language": "Compliance pressure may be real while control and capture boundaries remain too unresolved for owner-capture claims.",
+  "prohibited_language": [
+    "The owner will capture the compliance-driven savings."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "acto\npor colombia”. art. 180: inversor de energía para sistema de\nenergía solar con paneles; paneles solares; controlador de carga\npara sistema de energía solar con paneles.\n• circular externa 018-2019 upme (junio 2019)\n• incen",
+      "source_locator": "local_pdf::Presentacion-caso-de-estudio-Caso-Solar-51-sesion-11- SOLAR.pdf::compliance_vs_control_mismatch"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Presentacion-caso-de-estudio-Caso-Solar-51-sesion-11- SOLAR.pdf",
+    "matched_terms": [
+      "control"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "acto\npor colombia”. art. 180: inversor de energía para sistema de\nenergía solar con paneles; paneles solares; controlador de carga\npara sistema de energía solar con paneles.\n• circular externa 018-2019 upme (junio 2019)\n• incen",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:42+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

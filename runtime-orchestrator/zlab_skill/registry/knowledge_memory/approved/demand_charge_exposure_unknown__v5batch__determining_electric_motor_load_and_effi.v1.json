@@ -1,0 +1,72 @@
+{
+  "id": "demand_charge_exposure_unknown__v5batch__determining_electric_motor_load_and_effi",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "cold_chain_distribution",
+    "manufacturing_facility",
+    "infrastructure_node",
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "tariff unresolved",
+    "peak-forming loads plausible",
+    "annual consumption may be an incomplete cost proxy"
+  ],
+  "anti_triggers": [
+    "tariff confirms demand charges are immaterial",
+    "flat load profile documented",
+    "peak-sensitive loads negligible"
+  ],
+  "falsification_conditions": [
+    "no relevant demand charge",
+    "flat profile or low peak concentration",
+    "load mix does not support the framing"
+  ],
+  "evidence_required": [
+    "utility bills",
+    "tariff schedule",
+    "interval profile if available",
+    "major peak-forming load inventory"
+  ],
+  "financial_translation": "Demand charges can make timing and orchestration more important than annual kWh.",
+  "tad_actions": [
+    "REQUEST_UTILITY_BILLS",
+    "VALIDATE_TARIFF_EXPOSURE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "Demand-charge exposure is a plausible financial translation that should be bounded before efficiency-first underwriting.",
+  "prohibited_language": [
+    "This asset has demand-charge losses."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "nergy rate ($/kwh) ________________ hours 1st shift ________ ________\nper 2nd shift ________ ________\nmonthly demand charge ($/kw/mo.)__________\nday 3rd shift ________ ________\napplication_______________________________\ntype of equip",
+      "source_locator": "local_pdf::Determining electric motor load and efficiency.pdf::demand_charge_exposure_unknown"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Determining electric motor load and efficiency.pdf",
+    "matched_terms": [
+      "demand charge",
+      "kw"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "nergy rate ($/kwh) ________________ hours 1st shift ________ ________\nper 2nd shift ________ ________\nmonthly demand charge ($/kw/mo.)__________\nday 3rd shift ________ ________\napplication_______________________________\ntype of equip",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 2 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

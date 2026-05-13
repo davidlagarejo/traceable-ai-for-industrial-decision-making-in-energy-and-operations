@@ -1,0 +1,71 @@
+{
+  "id": "high_bay_lighting_waste__v5batch__examen_mo_dulo_1-_david_lagarejo",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "logistics_terminal",
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "high-bay lighting inventory or large open floor area plausible",
+    "runtime may exceed service windows",
+    "controls strategy or zoning unresolved"
+  ],
+  "anti_triggers": [
+    "lighting already aligned to occupancy",
+    "continuous lighting is operationally required and evidenced",
+    "high-bay area negligible",
+    "advanced lighting controls confirmed and functioning"
+  ],
+  "falsification_conditions": [
+    "lighting schedules align to occupancy",
+    "lighting already zoned and controlled to actual use",
+    "service duty requires continuous illumination"
+  ],
+  "evidence_required": [
+    "lighting type and zoning",
+    "controls strategy",
+    "occupied versus lit schedule",
+    "bay or area usage profile"
+  ],
+  "financial_translation": "Lighting runtime can add avoidable kWh and sometimes peak contribution, creating a misleading whole-building efficiency story.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "High-bay lighting waste is a plausible hypothesis requiring schedule and controls validation.",
+  "prohibited_language": [
+    "This asset is wasting energy through high-bay lighting."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "ica.\n¿qué tipo de certificación para auditores se enfoca más en los planes de1/1\ninversión? *\nclep - certined lighting efciency professional\ncem - certined energy manager\ncmvp - certined measurement & verincation professional\nce",
+      "source_locator": "local_pdf::Examen Módulo 1- David Lagarejo.pdf::high_bay_lighting_waste"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Examen Módulo 1- David Lagarejo.pdf",
+    "matched_terms": [
+      "lighting"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "ica.\n¿qué tipo de certificación para auditores se enfoca más en los planes de1/1\ninversión? *\nclep - certined lighting efciency professional\ncem - certined energy manager\ncmvp - certined measurement & verincation professional\nce",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

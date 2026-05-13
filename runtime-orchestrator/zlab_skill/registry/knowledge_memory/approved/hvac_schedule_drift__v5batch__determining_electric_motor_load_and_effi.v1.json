@@ -1,0 +1,69 @@
+{
+  "id": "hvac_schedule_drift__v5batch__determining_electric_motor_load_and_effi",
+  "version": "1.0.0",
+  "knowledge_kind": "process_logic",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "HVAC runtime may exceed actual occupied or service-relevant windows",
+    "BMS or controls evidence unresolved",
+    "after-hours load plausible"
+  ],
+  "anti_triggers": [
+    "runtime already aligned to occupancy and service windows",
+    "HVAC systems are minor or not owner-controlled",
+    "schedule evidence shows no meaningful drift"
+  ],
+  "falsification_conditions": [
+    "runtime aligns to occupied or service-relevant windows",
+    "after-hours conditioning is justified by real duty",
+    "HVAC is not materially relevant"
+  ],
+  "evidence_required": [
+    "BMS trend logs",
+    "occupied or service schedule",
+    "runtime profile",
+    "override or control strategy evidence"
+  ],
+  "financial_translation": "Runtime drift can inflate consumption and sometimes demand, while also misleading analysts toward equipment-first narratives.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "HVAC schedule drift is a plausible hypothesis requiring runtime and schedule validation.",
+  "prohibited_language": [
+    "This asset has HVAC schedule waste."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "oversized and underloaded—replace with more efficient, properly sized models at\nthe next opportunity, such as scheduled plant downtime.\n• motors that are moderately oversized and underloaded—replace with more efficient, properly",
+      "source_locator": "local_pdf::Determining electric motor load and efficiency.pdf::hvac_schedule_drift"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Determining electric motor load and efficiency.pdf",
+    "matched_terms": [
+      "schedule",
+      "operating hours"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "oversized and underloaded—replace with more efficient, properly sized models at\nthe next opportunity, such as scheduled plant downtime.\n• motors that are moderately oversized and underloaded—replace with more efficient, properly",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 2 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "process_logic",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "process_logic"
+}

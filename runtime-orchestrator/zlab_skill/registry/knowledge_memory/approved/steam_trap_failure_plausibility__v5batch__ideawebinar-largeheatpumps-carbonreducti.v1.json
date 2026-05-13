@@ -1,0 +1,69 @@
+{
+  "id": "steam_trap_failure_plausibility__v5batch__ideawebinar-largeheatpumps-carbonreducti",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "thermal_process_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "steam or condensate system plausible",
+    "trap survey evidence absent",
+    "maintenance maturity unresolved"
+  ],
+  "anti_triggers": [
+    "no steam system",
+    "recent trap survey shows strong performance",
+    "condensate and trap program already evidenced"
+  ],
+  "falsification_conditions": [
+    "survey shows low failure rate",
+    "trap program is evidenced and current",
+    "thermal cost is structurally explained elsewhere"
+  ],
+  "evidence_required": [
+    "steam-trap survey",
+    "condensate recovery evidence",
+    "maintenance records",
+    "steam-system topology",
+    "fuel bills or thermal-duty context"
+  ],
+  "financial_translation": "Fuel use, condensate recovery and maintenance burden can all be misread if trap performance is assumed rather than evidenced.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE"
+  ],
+  "allowed_language": "Steam-trap failure is a plausible maintenance-linked loss mode that should be falsified locally.",
+  "prohibited_language": [
+    "This plant has failing steam traps."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idea_large_heat_pumps_part2",
+      "confidence": "high",
+      "supporting_excerpt": "ed for\nmaximum carbon emission reduction\n9 johnson controls | york\n\nthe path to electrify existing facilities\nsteam system example\nhot water system return hot water supply 170ºf (77ºc)\nsteam in\n150ºf (66ºc) 170ºf (77ºc)\nsteam to wat",
+      "source_locator": "local_pdf::IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf::steam_trap_failure_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Large Heat Pumps/IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf",
+    "matched_terms": [
+      "steam system"
+    ],
+    "source_id": "idea_large_heat_pumps_part2",
+    "supporting_excerpt": "ed for\nmaximum carbon emission reduction\n9 johnson controls | york\n\nthe path to electrify existing facilities\nsteam system example\nhot water system return hot water supply 170ºf (77ºc)\nsteam in\n150ºf (66ºc) 170ºf (77ºc)\nsteam to wat",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:27+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

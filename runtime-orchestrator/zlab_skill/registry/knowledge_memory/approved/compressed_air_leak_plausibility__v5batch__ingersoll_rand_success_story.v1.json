@@ -1,0 +1,70 @@
+{
+  "id": "compressed_air_leak_plausibility__v5batch__ingersoll_rand_success_story",
+  "version": "1.0.0",
+  "knowledge_kind": "process_logic",
+  "asset_families": [
+    "manufacturing_facility",
+    "thermal_process_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "compressed air system plausible or observed",
+    "pressure setpoints or sequencing unknown",
+    "leak survey evidence absent"
+  ],
+  "anti_triggers": [
+    "compressed air absent or negligible",
+    "recent leak survey shows low leakage",
+    "pressure already right-sized and evidenced",
+    "compressed air economics immaterial"
+  ],
+  "falsification_conditions": [
+    "survey shows low leakage",
+    "pressure is right-sized and evidenced",
+    "compressed air use is structurally process-critical and already optimized"
+  ],
+  "evidence_required": [
+    "leak survey evidence",
+    "compressor sequencing logic",
+    "pressure setpoints",
+    "utility bills or demand profile",
+    "compressor inventory"
+  ],
+  "financial_translation": "Support-utility waste can inflate energy and maintenance cost while masquerading as structural process intensity.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_SENSOR_YET"
+  ],
+  "allowed_language": "Compressed-air leakage or pressure overuse is a recurring industrial pattern that should be falsified locally.",
+  "prohibited_language": [
+    "This plant has compressed-air leaks."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "ingersoll_rand_success_story",
+      "confidence": "high",
+      "supporting_excerpt": "• typical projects include lighting system upgrades and process heating optimization.\n1 audits and a level 3 compressed air • also identifies whether projects may be appropriate for six-sigma or kaizen events.\naudit were completed du",
+      "source_locator": "local_pdf::ingersoll_rand_success_story.pdf::compressed_air_leak_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/ingersoll_rand_success_story.pdf",
+    "matched_terms": [
+      "compressed air"
+    ],
+    "source_id": "ingersoll_rand_success_story",
+    "supporting_excerpt": "• typical projects include lighting system upgrades and process heating optimization.\n1 audits and a level 3 compressed air • also identifies whether projects may be appropriate for six-sigma or kaizen events.\naudit were completed du",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:29+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "process_logic",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "process_logic"
+}

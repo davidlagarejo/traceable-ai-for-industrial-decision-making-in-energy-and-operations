@@ -1,0 +1,75 @@
+{
+  "id": "fair_comparison_invalid_area_metric__v5batch__sector_alimentos_y_bebidas_-_evaluacio_n",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "cold_chain_distribution",
+    "logistics_terminal"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "area-based comparison proposed",
+    "key comparability dimensions missing"
+  ],
+  "anti_triggers": [
+    "dry vs cold-chain classification bounded",
+    "dock density bounded",
+    "operating hours bounded",
+    "charging profile bounded",
+    "owner/operator boundary bounded"
+  ],
+  "falsification_conditions": [
+    "required comparison dimensions are sufficiently bounded to support a fair peer set"
+  ],
+  "evidence_required": [
+    "dry vs cold-chain status",
+    "dock density",
+    "operating hours",
+    "MHE profile",
+    "charging profile",
+    "climate zone",
+    "utility tariff",
+    "service-level intensity",
+    "automation level",
+    "owner/operator boundary"
+  ],
+  "financial_translation": "Using the wrong denominator can distort valuation, underwriting and retrofit sequencing.",
+  "tad_actions": [
+    "BUILD_FAIR_PEER_SET",
+    "COMPARE_FAIRLY",
+    "PROHIBIT_PEER_SUPERIORITY"
+  ],
+  "allowed_language": "Fair comparison is not yet valid until the comparison basis is normalized.",
+  "prohibited_language": [
+    "This asset is inefficient compared to peers."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "upme_sector_alimentos_evaluacion_financiera",
+      "confidence": "high",
+      "supporting_excerpt": "hectolitros.\n7 http://www.unido.org/fileadmin/user_media/services/energy_and_climate_change/energy_efficiency/benchmarking_%20energy_%20policy_tool.pdf\nmanual para la evaluación de proyectos de eficiencia energética para el secto",
+      "source_locator": "local_pdf::Sector Alimentos y Bebidas - Evaluación Instituciones financieras de Proy EE .pdf::fair_comparison_invalid_area_metric"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Biblioteca M/Sector Alimentos y Bebidas - Evaluación Instituciones financieras de Proy EE .pdf",
+    "matched_terms": [
+      "benchmark"
+    ],
+    "source_id": "upme_sector_alimentos_evaluacion_financiera",
+    "supporting_excerpt": "hectolitros.\n7 http://www.unido.org/fileadmin/user_media/services/energy_and_climate_change/energy_efficiency/benchmarking_%20energy_%20policy_tool.pdf\nmanual para la evaluación de proyectos de eficiencia energética para el secto",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:13+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

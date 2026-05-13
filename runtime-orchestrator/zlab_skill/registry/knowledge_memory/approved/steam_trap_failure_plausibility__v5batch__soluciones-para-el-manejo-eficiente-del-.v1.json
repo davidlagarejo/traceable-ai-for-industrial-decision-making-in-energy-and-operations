@@ -1,0 +1,69 @@
+{
+  "id": "steam_trap_failure_plausibility__v5batch__soluciones-para-el-manejo-eficiente-del-",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "thermal_process_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "steam or condensate system plausible",
+    "trap survey evidence absent",
+    "maintenance maturity unresolved"
+  ],
+  "anti_triggers": [
+    "no steam system",
+    "recent trap survey shows strong performance",
+    "condensate and trap program already evidenced"
+  ],
+  "falsification_conditions": [
+    "survey shows low failure rate",
+    "trap program is evidenced and current",
+    "thermal cost is structurally explained elsewhere"
+  ],
+  "evidence_required": [
+    "steam-trap survey",
+    "condensate recovery evidence",
+    "maintenance records",
+    "steam-system topology",
+    "fuel bills or thermal-duty context"
+  ],
+  "financial_translation": "Fuel use, condensate recovery and maintenance burden can all be misread if trap performance is assumed rather than evidenced.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE"
+  ],
+  "allowed_language": "Steam-trap failure is a plausible maintenance-linked loss mode that should be falsified locally.",
+  "prohibited_language": [
+    "This plant has failing steam traps."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "idad.\n\ncircuito básico de recuperación de\ncondensados\nsteam\nspace\nheating\nprocess vessel\nmeter pan pan system\ncondensate return\nr\ne\nsteam\nd\na meter\ne\nh\nvat\nmake-up water\nsteam\nmeter\ncondensate return\nmeter\nfeed water tank\nagua y\nb",
+      "source_locator": "local_pdf::Soluciones-para-el-manejo-eficiente-del-vapor.pdf::steam_trap_failure_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Soluciones-para-el-manejo-eficiente-del-vapor.pdf",
+    "matched_terms": [
+      "condensate"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "idad.\n\ncircuito básico de recuperación de\ncondensados\nsteam\nspace\nheating\nprocess vessel\nmeter pan pan system\ncondensate return\nr\ne\nsteam\nd\na meter\ne\nh\nvat\nmake-up water\nsteam\nmeter\ncondensate return\nmeter\nfeed water tank\nagua y\nb",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:44+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

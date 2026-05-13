@@ -1,0 +1,67 @@
+{
+  "id": "defrost_profile__v5batch__la-domotica-como-solucion-de-futuro-fene",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "freezer or cooler zone present",
+    "defrost initiation method (time/demand/ambient) unknown",
+    "defrost duration or frequency not characterized"
+  ],
+  "anti_triggers": [
+    "defrost on demand-initiation with telemetry",
+    "defrost already bounded"
+  ],
+  "falsification_conditions": [
+    "demand-initiated defrost with telemetry and tuned dwell"
+  ],
+  "evidence_required": [
+    "defrost initiation method",
+    "defrost frequency and duration logs",
+    "coil inspection evidence"
+  ],
+  "financial_translation": "Defrost optimization is a controls-grade intervention with measurable kWh impact; missing it means equipment-first CAPEX masks a controls fix.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DEFROST_CONTROLS"
+  ],
+  "allowed_language": "Defrost profile is a plausible controls-grade loss-pattern requiring validation.",
+  "prohibited_language": [
+    "This facility's defrost is wasteful."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "fenercom_domotica",
+      "confidence": "high",
+      "supporting_excerpt": "n su plena expansión, gracias a su\ncomodidad, facilidad de uso y precio cada vez más competitivo.\npor estas razones, se precisa que los instaladores, constructores, proyectistas,\narquitectos y diseñadores adquieran una rápid",
+      "source_locator": "local_pdf::la-domotica-como-solucion-de-futuro-fenercom-2.pdf::defrost_profile"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/la-domotica-como-solucion-de-futuro-fenercom-2.pdf",
+    "matched_terms": [
+      "zone",
+      "time",
+      "not",
+      "zones",
+      "electric"
+    ],
+    "source_id": "fenercom_domotica",
+    "supporting_excerpt": "n su plena expansión, gracias a su\ncomodidad, facilidad de uso y precio cada vez más competitivo.\npor estas razones, se precisa que los instaladores, constructores, proyectistas,\narquitectos y diseñadores adquieran una rápid",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 5 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:19+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

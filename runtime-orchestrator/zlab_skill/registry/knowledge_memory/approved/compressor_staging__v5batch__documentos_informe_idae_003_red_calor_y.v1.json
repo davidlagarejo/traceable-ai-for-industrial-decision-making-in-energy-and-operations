@@ -1,0 +1,66 @@
+{
+  "id": "compressor_staging__v5batch__documentos_informe_idae_003_red_calor_y",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "food_processing"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "two or more compressors in service",
+    "VFD vs. on/off control unknown",
+    "head pressure floating strategy unknown"
+  ],
+  "anti_triggers": [
+    "single fixed-speed plant",
+    "staging already characterized by telemetry"
+  ],
+  "falsification_conditions": [
+    "VFD lead/lag with floating head pressure tuned"
+  ],
+  "evidence_required": [
+    "compressor inventory with VFD/fixed indicator",
+    "head pressure setpoints",
+    "load profile (kW vs ton-hour)"
+  ],
+  "financial_translation": "Staging is a controls-grade fix with high ROI; missing it directs CAPEX toward replacement instead of tuning.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_COMPRESSOR_STAGING"
+  ],
+  "allowed_language": "Compressor staging is a plausible controls-grade loss-pattern requiring tuning evidence.",
+  "prohibited_language": [
+    "This facility's compressors are mis-staged."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idae_red_calor_frio_jaen",
+      "confidence": "high",
+      "supporting_excerpt": "300\nringkøbing, 2010 - extensión\nringkøbing 30.000 21.000\ndenmark 2014\n2 http://www.solar-district-heating.eu/servicestools/plantdatabase.aspx\n12\n\ninformes técnicos idae\nárea apertura capacidad\nplanta localización operación\n(m2",
+      "source_locator": "local_pdf::documentos_Informe_IDAE_003_Red_Calor_y_Frio_Jaen_73af635d.pdf::compressor_staging"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/documentos_Informe_IDAE_003_Red_Calor_y_Frio_Jaen_73af635d.pdf",
+    "matched_terms": [
+      "service",
+      "control",
+      "plant"
+    ],
+    "source_id": "idae_red_calor_frio_jaen",
+    "supporting_excerpt": "300\nringkøbing, 2010 - extensión\nringkøbing 30.000 21.000\ndenmark 2014\n2 http://www.solar-district-heating.eu/servicestools/plantdatabase.aspx\n12\n\ninformes técnicos idae\nárea apertura capacidad\nplanta localización operación\n(m2",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 3 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:02+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

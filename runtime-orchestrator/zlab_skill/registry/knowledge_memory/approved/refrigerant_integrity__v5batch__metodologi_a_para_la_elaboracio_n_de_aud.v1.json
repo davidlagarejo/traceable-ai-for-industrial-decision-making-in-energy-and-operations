@@ -1,0 +1,68 @@
+{
+  "id": "refrigerant_integrity__v5batch__metodologi_a_para_la_elaboracio_n_de_aud",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "supermarket",
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "refrigerant type (HFC/HFO/NH3/CO2) unknown",
+    "annual leak rate undocumented",
+    "AIM/SNAP phasedown exposure unclear"
+  ],
+  "anti_triggers": [
+    "recent leak audit on file",
+    "refrigerant already characterized with telemetry"
+  ],
+  "falsification_conditions": [
+    "natural refrigerant (NH3/CO2) confirmed and audit on file"
+  ],
+  "evidence_required": [
+    "refrigerant type and charge",
+    "leak-rate history",
+    "AIM/SNAP applicability",
+    "GHGRP exposure"
+  ],
+  "financial_translation": "Leak-rate determines refrigerant CAPEX/OPEX trajectory under AIM, and operational kWh penalty. Misreading it skews retrofit timing.",
+  "tad_actions": [
+    "VALIDATE_REGULATORY_EXPOSURE",
+    "REQUEST_LEAK_AUDIT"
+  ],
+  "allowed_language": "Refrigerant integrity and regulatory phasedown exposure are plausible material issues requiring evidence.",
+  "prohibited_language": [
+    "This facility's refrigerant leaks."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idae_metodologia_auditorias_industria",
+      "confidence": "high",
+      "supporting_excerpt": "– 200ºc vapor saturado, agua sobrecalentada, aire\n0 – 90ºc agua, aire\n-30 – 0ºc salmueras, glicoles, freones, nh3, so2\n-100 – (-30)ºc metano, propano\n1.2.4. equipos finales de proceso\nse podría entender por equipos de proce",
+      "source_locator": "local_pdf::Metodología para la elaboración de auditorías energéticas en la industria_Agencia Andaluza de la energía.pdf::refrigerant_integrity"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/Metodología para la elaboración de auditorías energéticas en la industria_Agencia Andaluza de la energía.pdf",
+    "matched_terms": [
+      "nh3",
+      "rate",
+      "plant"
+    ],
+    "source_id": "idae_metodologia_auditorias_industria",
+    "supporting_excerpt": "– 200ºc vapor saturado, agua sobrecalentada, aire\n0 – 90ºc agua, aire\n-30 – 0ºc salmueras, glicoles, freones, nh3, so2\n-100 – (-30)ºc metano, propano\n1.2.4. equipos finales de proceso\nse podría entender por equipos de proce",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 3 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:01+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

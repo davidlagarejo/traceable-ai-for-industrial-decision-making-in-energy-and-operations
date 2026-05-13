@@ -1,0 +1,67 @@
+{
+  "id": "sensor_prematurity__v5batch__celulosa_y_papel_guia_metodologica_exten",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "sensor deployment proposed",
+    "minimum discriminating evidence not yet exhausted",
+    "dominant hypothesis still unresolved"
+  ],
+  "anti_triggers": [
+    "cheap non-invasive evidence path already exhausted",
+    "bounded hypothesis requires instrumentation to discriminate",
+    "sensor purpose is directly tied to one admissible decision"
+  ],
+  "falsification_conditions": [
+    "non-invasive evidence path exhausted",
+    "instrumentation is the next cheapest valid discriminator",
+    "sensor purpose is decision-tied and bounded"
+  ],
+  "evidence_required": [
+    "current minimum evidence path",
+    "dominant hypothesis register",
+    "decision objective",
+    "existing logs or bills-first path"
+  ],
+  "financial_translation": "Premature instrumentation creates cost and data noise before the value-of-information path is justified.",
+  "tad_actions": [
+    "DO_NOT_SENSOR_YET",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "VALIDATE_FIRST"
+  ],
+  "allowed_language": "Sensor deployment may be premature until the minimum discriminating evidence path is exhausted.",
+  "prohibited_language": [
+    "The site needs more sensors now."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "upme_guia_celulosa_papel",
+      "confidence": "high",
+      "supporting_excerpt": "ergética.\npayback período de retorno de la inversión.\np&id diagrama de tuberías e instrumentación\n(piping and instrumentation diagram).\nsec superintendencia de electricidad y combustible.\nsge sistema de gestión de la energía.\nsst siste",
+      "source_locator": "local_pdf::Celulosa_y_Papel_Guia_Metodologica_Extendida_Energuías.pdf::sensor_prematurity"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Biblioteca M/Celulosa_y_Papel_Guia_Metodologica_Extendida_Energuías.pdf",
+    "matched_terms": [
+      "instrumentation"
+    ],
+    "source_id": "upme_guia_celulosa_papel",
+    "supporting_excerpt": "ergética.\npayback período de retorno de la inversión.\np&id diagrama de tuberías e instrumentación\n(piping and instrumentation diagram).\nsec superintendencia de electricidad y combustible.\nsge sistema de gestión de la energía.\nsst siste",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:01+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

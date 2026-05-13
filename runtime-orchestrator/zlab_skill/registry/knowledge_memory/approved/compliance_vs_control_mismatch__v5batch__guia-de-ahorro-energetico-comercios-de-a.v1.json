@@ -1,0 +1,70 @@
+{
+  "id": "compliance_vs_control_mismatch__v5batch__guia-de-ahorro-energetico-comercios-de-a",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "compliance or filing burden visible",
+    "dominant load-control boundary unresolved",
+    "owner-capture versus operator-control tension plausible"
+  ],
+  "anti_triggers": [
+    "control boundary fully aligned and documented",
+    "single actor captures and controls the dominant variable",
+    "compliance burden immaterial"
+  ],
+  "falsification_conditions": [
+    "single actor clearly controls and captures the dominant variable",
+    "metering and responsibility alignment documented",
+    "compliance burden is economically immaterial"
+  ],
+  "evidence_required": [
+    "filing or permit basis",
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator control evidence"
+  ],
+  "financial_translation": "Compliance pressure can be translated into the wrong retrofit or underwriting logic if control and capture boundaries are misread.",
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "PROHIBIT_CLAIM"
+  ],
+  "allowed_language": "Compliance pressure may be real while control and capture boundaries remain too unresolved for owner-capture claims.",
+  "prohibited_language": [
+    "The owner will capture the compliance-driven savings."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "fenercom_alimentacion_comercios",
+      "confidence": "high",
+      "supporting_excerpt": "cionando durante los últimos años hacia\ntasas de crecimiento anual superiores a la media europea, lo que está\npermitiendo un avance significativo en convergencia real. no obstante, esta\nevolución también se ha visto acompañada",
+      "source_locator": "local_pdf::guia-de-ahorro-energetico-comercios-de-alimentacion-fenercom.pdf::compliance_vs_control_mismatch"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/guia-de-ahorro-energetico-comercios-de-alimentacion-fenercom.pdf",
+    "matched_terms": [
+      "permit"
+    ],
+    "source_id": "fenercom_alimentacion_comercios",
+    "supporting_excerpt": "cionando durante los últimos años hacia\ntasas de crecimiento anual superiores a la media europea, lo que está\npermitiendo un avance significativo en convergencia real. no obstante, esta\nevolución también se ha visto acompañada",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:04+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

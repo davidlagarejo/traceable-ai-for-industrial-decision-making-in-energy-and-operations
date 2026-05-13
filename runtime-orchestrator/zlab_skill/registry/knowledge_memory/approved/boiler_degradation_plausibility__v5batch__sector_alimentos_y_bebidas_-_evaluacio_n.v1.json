@@ -1,0 +1,70 @@
+{
+  "id": "boiler_degradation_plausibility__v5batch__sector_alimentos_y_bebidas_-_evaluacio_n",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "thermal_process_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "boiler or burner system plausible",
+    "combustion tuning evidence absent",
+    "thermal-duty explanation unresolved"
+  ],
+  "anti_triggers": [
+    "no boiler system",
+    "recent combustion evidence shows strong performance",
+    "boiler is non-material to the visible cost boundary"
+  ],
+  "falsification_conditions": [
+    "combustion tuning is tight and current",
+    "boiler performance is evidenced as adequate",
+    "thermal duty is fully explained by process load"
+  ],
+  "evidence_required": [
+    "combustion test records",
+    "fuel bills",
+    "boiler maintenance history",
+    "cycling or sequencing evidence",
+    "throughput-normalized thermal-duty context"
+  ],
+  "financial_translation": "Fuel cost and maintenance burden can be misframed if boiler degradation is assumed or ignored without evidence.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "Boiler degradation is a plausible thermal-loss hypothesis requiring combustion and maintenance validation.",
+  "prohibited_language": [
+    "This site has an inefficient boiler."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "upme_sector_alimentos_evaluacion_financiera",
+      "confidence": "high",
+      "supporting_excerpt": "del uso del transporte y la industria,\nla producción de energía eléctrica, la agricultura y la deforestación.\nboiler horse power (bhp): un caballo de vapor es una unidad de\nmedida de potencia de calderas que equivale a 33.471",
+      "source_locator": "local_pdf::Sector Alimentos y Bebidas - Evaluación Instituciones financieras de Proy EE .pdf::boiler_degradation_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Biblioteca M/Sector Alimentos y Bebidas - Evaluación Instituciones financieras de Proy EE .pdf",
+    "matched_terms": [
+      "boiler"
+    ],
+    "source_id": "upme_sector_alimentos_evaluacion_financiera",
+    "supporting_excerpt": "del uso del transporte y la industria,\nla producción de energía eléctrica, la agricultura y la deforestación.\nboiler horse power (bhp): un caballo de vapor es una unidad de\nmedida de potencia de calderas que equivale a 33.471",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:13+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

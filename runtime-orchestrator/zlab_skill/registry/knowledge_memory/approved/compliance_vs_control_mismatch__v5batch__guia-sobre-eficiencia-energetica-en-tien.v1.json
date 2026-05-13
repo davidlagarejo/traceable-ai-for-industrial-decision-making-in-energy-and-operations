@@ -1,0 +1,70 @@
+{
+  "id": "compliance_vs_control_mismatch__v5batch__guia-sobre-eficiencia-energetica-en-tien",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "compliance or filing burden visible",
+    "dominant load-control boundary unresolved",
+    "owner-capture versus operator-control tension plausible"
+  ],
+  "anti_triggers": [
+    "control boundary fully aligned and documented",
+    "single actor captures and controls the dominant variable",
+    "compliance burden immaterial"
+  ],
+  "falsification_conditions": [
+    "single actor clearly controls and captures the dominant variable",
+    "metering and responsibility alignment documented",
+    "compliance burden is economically immaterial"
+  ],
+  "evidence_required": [
+    "filing or permit basis",
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator control evidence"
+  ],
+  "financial_translation": "Compliance pressure can be translated into the wrong retrofit or underwriting logic if control and capture boundaries are misread.",
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "PROHIBIT_CLAIM"
+  ],
+  "allowed_language": "Compliance pressure may be real while control and capture boundaries remain too unresolved for owner-capture claims.",
+  "prohibited_language": [
+    "The owner will capture the compliance-driven savings."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "fenercom_electrodomesticos",
+      "confidence": "high",
+      "supporting_excerpt": "hemos tenido, en este país, la lógica aspiración de\nrodearnos de aquellos que nos dieran más comodidad y nos permitiesen una vida\nmás confortable en nuestros domicilios.\nconsecuentemente, varios millones de estos aparatos se",
+      "source_locator": "local_pdf::guia-sobre-eficiencia-energetica-en-tiendas-de-electrodomesticos-fenercom.pdf::compliance_vs_control_mismatch"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/guia-sobre-eficiencia-energetica-en-tiendas-de-electrodomesticos-fenercom.pdf",
+    "matched_terms": [
+      "permit"
+    ],
+    "source_id": "fenercom_electrodomesticos",
+    "supporting_excerpt": "hemos tenido, en este país, la lógica aspiración de\nrodearnos de aquellos que nos dieran más comodidad y nos permitiesen una vida\nmás confortable en nuestros domicilios.\nconsecuentemente, varios millones de estos aparatos se",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:10+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

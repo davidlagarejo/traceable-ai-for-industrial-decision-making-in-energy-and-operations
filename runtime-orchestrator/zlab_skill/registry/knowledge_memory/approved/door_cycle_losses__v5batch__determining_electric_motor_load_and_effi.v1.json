@@ -1,0 +1,64 @@
+{
+  "id": "door_cycle_losses__v5batch__determining_electric_motor_load_and_effi",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "frequent door cycles between conditioned zones",
+    "rapid-close or air-lock mechanism condition unknown"
+  ],
+  "anti_triggers": [
+    "doors interlocked and rapid-close confirmed",
+    "infiltration already bounded"
+  ],
+  "falsification_conditions": [
+    "interlocks operational and cycle count low"
+  ],
+  "evidence_required": [
+    "door inventory and locations",
+    "interlock/rapid-close mechanism evidence",
+    "shift count and cycle frequency"
+  ],
+  "financial_translation": "Door discipline interventions are low-CAPEX with high return; missing this loss means CAPEX targets the wrong variable.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DOOR_DISCIPLINE"
+  ],
+  "allowed_language": "Door-cycle losses are a plausible operational loss-pattern requiring operational verification.",
+  "prohibited_language": [
+    "This facility wastes energy through open doors."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "near. in the low load region, current measurements are not\na useful indicator of load.\nfigure 3 relationships between power, current, power factor and motor load\n\n5\nnameplate full-load current value applies only at the rated mo",
+      "source_locator": "local_pdf::Determining electric motor load and efficiency.pdf::door_cycle_losses"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Determining electric motor load and efficiency.pdf",
+    "matched_terms": [
+      "between",
+      "condition",
+      "different"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "near. in the low load region, current measurements are not\na useful indicator of load.\nfigure 3 relationships between power, current, power factor and motor load\n\n5\nnameplate full-load current value applies only at the rated mo",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 3 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "defrost_profile__v5batch__guia-de-ahorro-y-eficiencia-energetica-e",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "freezer or cooler zone present",
+    "defrost initiation method (time/demand/ambient) unknown",
+    "defrost duration or frequency not characterized"
+  ],
+  "anti_triggers": [
+    "defrost on demand-initiation with telemetry",
+    "defrost already bounded"
+  ],
+  "falsification_conditions": [
+    "demand-initiated defrost with telemetry and tuned dwell"
+  ],
+  "evidence_required": [
+    "defrost initiation method",
+    "defrost frequency and duration logs",
+    "coil inspection evidence"
+  ],
+  "financial_translation": "Defrost optimization is a controls-grade intervention with measurable kWh impact; missing it means equipment-first CAPEX masks a controls fix.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DEFROST_CONTROLS"
+  ],
+  "allowed_language": "Defrost profile is a plausible controls-grade loss-pattern requiring validation.",
+  "prohibited_language": [
+    "This facility's defrost is wasteful."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "fenercom_concesionarios_auto",
+      "confidence": "high",
+      "supporting_excerpt": "la tecnología led? 58\n3.3. tecnologías de iluminación instaladas en concesionarios de au-\ntomóviles 59\n3.4. razones para cambiar a tecnología led 60\n3.5. preguntas frecuentes sobre la tecnología led 63\n¿para qué? 63\n¿cuándo",
+      "source_locator": "local_pdf::Guia-de-Ahorro-y-Eficiencia-Energetica-en-Concesionarios-de-Automoviles-fenercom-2014.pdf::defrost_profile"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/Guia-de-Ahorro-y-Eficiencia-Energetica-en-Concesionarios-de-Automoviles-fenercom-2014.pdf",
+    "matched_terms": [
+      "zone",
+      "demand",
+      "not",
+      "zones",
+      "electric",
+      "gas"
+    ],
+    "source_id": "fenercom_concesionarios_auto",
+    "supporting_excerpt": "la tecnología led? 58\n3.3. tecnologías de iluminación instaladas en concesionarios de au-\ntomóviles 59\n3.4. razones para cambiar a tecnología led 60\n3.5. preguntas frecuentes sobre la tecnología led 63\n¿para qué? 63\n¿cuándo",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 6 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:56+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

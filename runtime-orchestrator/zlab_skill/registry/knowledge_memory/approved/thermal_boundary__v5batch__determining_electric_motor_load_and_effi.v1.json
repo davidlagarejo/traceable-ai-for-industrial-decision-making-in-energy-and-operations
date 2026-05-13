@@ -1,0 +1,70 @@
+{
+  "id": "thermal_boundary__v5batch__determining_electric_motor_load_and_effi",
+  "version": "1.0.0",
+  "knowledge_kind": "archetype",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "refrigerated envelope older than 20 years",
+    "insulation type (PUR/PIR/PS) unknown",
+    "vapor barrier condition unknown",
+    "thermal bridging at floor/wall/roof joints unresolved"
+  ],
+  "anti_triggers": [
+    "recent envelope retrofit",
+    "thermal imaging audit on file"
+  ],
+  "falsification_conditions": [
+    "recent commissioning or audit confirms envelope integrity"
+  ],
+  "evidence_required": [
+    "envelope age",
+    "insulation type and R-value",
+    "vapor barrier evidence",
+    "thermal imaging or audit"
+  ],
+  "financial_translation": "Envelope interventions are capital-grade, long-lived, and outrank equipment retrofits when conductance is degraded.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_ENVELOPE_AUDIT"
+  ],
+  "allowed_language": "Thermal boundary degradation is a plausible loss-pattern requiring envelope evidence.",
+  "prohibited_language": [
+    "This facility's insulation is failing."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "an existing motor is identified as a 40-hp, 1800 rpm unit with an\nopen drip-proof enclosure. the motor is 12-years old and has\nnot been rewound.\nthe electrician makes the following measurements:\nmeasured values:\nv = 467v i =",
+      "source_locator": "local_pdf::Determining electric motor load and efficiency.pdf::thermal_boundary"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Determining electric motor load and efficiency.pdf",
+    "matched_terms": [
+      "years",
+      "insulation",
+      "condition",
+      "system",
+      "age,"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "an existing motor is identified as a 40-hp, 1800 rpm unit with an\nopen drip-proof enclosure. the motor is 12-years old and has\nnot been rewound.\nthe electrician makes the following measurements:\nmeasured values:\nv = 467v i =",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 5 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "archetype",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "archetype"
+}

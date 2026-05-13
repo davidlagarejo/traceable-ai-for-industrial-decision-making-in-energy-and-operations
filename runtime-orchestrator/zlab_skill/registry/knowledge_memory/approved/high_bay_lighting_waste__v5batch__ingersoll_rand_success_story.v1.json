@@ -1,0 +1,72 @@
+{
+  "id": "high_bay_lighting_waste__v5batch__ingersoll_rand_success_story",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "logistics_terminal",
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "high-bay lighting inventory or large open floor area plausible",
+    "runtime may exceed service windows",
+    "controls strategy or zoning unresolved"
+  ],
+  "anti_triggers": [
+    "lighting already aligned to occupancy",
+    "continuous lighting is operationally required and evidenced",
+    "high-bay area negligible",
+    "advanced lighting controls confirmed and functioning"
+  ],
+  "falsification_conditions": [
+    "lighting schedules align to occupancy",
+    "lighting already zoned and controlled to actual use",
+    "service duty requires continuous illumination"
+  ],
+  "evidence_required": [
+    "lighting type and zoning",
+    "controls strategy",
+    "occupied versus lit schedule",
+    "bay or area usage profile"
+  ],
+  "financial_translation": "Lighting runtime can add avoidable kWh and sometimes peak contribution, creating a misleading whole-building efficiency story.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "High-bay lighting waste is a plausible hypothesis requiring schedule and controls validation.",
+  "prohibited_language": [
+    "This asset is wasting energy through high-bay lighting."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "ingersoll_rand_success_story",
+      "confidence": "high",
+      "supporting_excerpt": "eaks, and temperature set-points.\nupgrade compressors and install more\n• modeled on kaizen process.\nefficient lighting. these projects together\n• generally uses site-based employees who volunteer to participate.\ngenerated more t",
+      "source_locator": "local_pdf::ingersoll_rand_success_story.pdf::high_bay_lighting_waste"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/ingersoll_rand_success_story.pdf",
+    "matched_terms": [
+      "lighting",
+      "occupancy sensor"
+    ],
+    "source_id": "ingersoll_rand_success_story",
+    "supporting_excerpt": "eaks, and temperature set-points.\nupgrade compressors and install more\n• modeled on kaizen process.\nefficient lighting. these projects together\n• generally uses site-based employees who volunteer to participate.\ngenerated more t",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 2 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:29+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

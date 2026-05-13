@@ -1,0 +1,71 @@
+{
+  "id": "maintenance_hidden_value_driver__v5batch__goodyearassessmentsavings",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "maintenance evidence unresolved",
+    "critical production or support systems plausible",
+    "downtime economics could dominate"
+  ],
+  "anti_triggers": [
+    "maintenance maturity already evidenced",
+    "downtime burden immaterial",
+    "maintenance reality already discriminated"
+  ],
+  "falsification_conditions": [
+    "maintenance maturity is evidenced",
+    "downtime burden is immaterial",
+    "maintenance reality does not explain the visible symptom"
+  ],
+  "evidence_required": [
+    "maintenance logs",
+    "downtime history",
+    "work orders",
+    "critical-spares evidence",
+    "failure mode evidence"
+  ],
+  "financial_translation": "Downtime, scrap, failure cost and reliability erosion can outweigh straightforward efficiency logic.",
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "Maintenance may dominate economics before energy does and should be bounded as a rival explanation.",
+  "prohibited_language": [
+    "The plant is badly maintained."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "goodyear_doe_assessment",
+      "confidence": "high",
+      "supporting_excerpt": "g and processing. because\nmany of the steam traps are located next to each\nof the plant’s presses, steam trap maintenance\nis critical to ensuring that the presses operate\nreliably. the plant has an aggressive energy\nmanagement prog",
+      "source_locator": "local_pdf::goodyearassessmentsavings.pdf::maintenance_hidden_value_driver"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/goodyearassessmentsavings.pdf",
+    "matched_terms": [
+      "maintenance",
+      "critical",
+      "reliability",
+      "energy"
+    ],
+    "source_id": "goodyear_doe_assessment",
+    "supporting_excerpt": "g and processing. because\nmany of the steam traps are located next to each\nof the plant’s presses, steam trap maintenance\nis critical to ensuring that the presses operate\nreliably. the plant has an aggressive energy\nmanagement prog",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 4 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:29+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

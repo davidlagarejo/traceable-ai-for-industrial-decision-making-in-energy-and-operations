@@ -1,0 +1,71 @@
+{
+  "id": "thermal_boundary__v5batch__ideawebinar-largeheatpumps-carbonreducti",
+  "version": "1.0.0",
+  "knowledge_kind": "archetype",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "refrigerated envelope older than 20 years",
+    "insulation type (PUR/PIR/PS) unknown",
+    "vapor barrier condition unknown",
+    "thermal bridging at floor/wall/roof joints unresolved"
+  ],
+  "anti_triggers": [
+    "recent envelope retrofit",
+    "thermal imaging audit on file"
+  ],
+  "falsification_conditions": [
+    "recent commissioning or audit confirms envelope integrity"
+  ],
+  "evidence_required": [
+    "envelope age",
+    "insulation type and R-value",
+    "vapor barrier evidence",
+    "thermal imaging or audit"
+  ],
+  "financial_translation": "Envelope interventions are capital-grade, long-lived, and outrank equipment retrofits when conductance is degraded.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_ENVELOPE_AUDIT"
+  ],
+  "allowed_language": "Thermal boundary degradation is a plausible loss-pattern requiring envelope evidence.",
+  "prohibited_language": [
+    "This facility's insulation is failing."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idea_large_heat_pumps_part2",
+      "confidence": "high",
+      "supporting_excerpt": "d a heat\npump where\nupgrade the\n>5 years >2013 paybacks make\nyes\nbas or\nsense\ncontrollers\nno\nhas the building\nenvelope been\nlook to update replace\nreviewed for\nfenestration, <5 years yes equipment with\nimprovements to no\ninsulat",
+      "source_locator": "local_pdf::IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf::thermal_boundary"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Large Heat Pumps/IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf",
+    "matched_terms": [
+      "envelope",
+      "insulation",
+      "vapor",
+      "condition",
+      "thermal",
+      "system"
+    ],
+    "source_id": "idea_large_heat_pumps_part2",
+    "supporting_excerpt": "d a heat\npump where\nupgrade the\n>5 years >2013 paybacks make\nyes\nbas or\nsense\ncontrollers\nno\nhas the building\nenvelope been\nlook to update replace\nreviewed for\nfenestration, <5 years yes equipment with\nimprovements to no\ninsulat",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 6 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:27+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "archetype",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "archetype"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "refrigerant_integrity__v5batch__presentacion-modulo-2-sesion-16-_biomasa",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "supermarket",
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "refrigerant type (HFC/HFO/NH3/CO2) unknown",
+    "annual leak rate undocumented",
+    "AIM/SNAP phasedown exposure unclear"
+  ],
+  "anti_triggers": [
+    "recent leak audit on file",
+    "refrigerant already characterized with telemetry"
+  ],
+  "falsification_conditions": [
+    "natural refrigerant (NH3/CO2) confirmed and audit on file"
+  ],
+  "evidence_required": [
+    "refrigerant type and charge",
+    "leak-rate history",
+    "AIM/SNAP applicability",
+    "GHGRP exposure"
+  ],
+  "financial_translation": "Leak-rate determines refrigerant CAPEX/OPEX trajectory under AIM, and operational kWh penalty. Misreading it skews retrofit timing.",
+  "tad_actions": [
+    "VALIDATE_REGULATORY_EXPOSURE",
+    "REQUEST_LEAK_AUDIT"
+  ],
+  "allowed_language": "Refrigerant integrity and regulatory phasedown exposure are plausible material issues requiring evidence.",
+  "prohibited_language": [
+    "This facility's refrigerant leaks."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "tales,\nsociales y económicas desastrosas.\n5\n\ncalentamiento del planeta\nenergía fósil  liberación de carbono (co2) en la\natmósfera  calentamiento del planeta\nel calentamiento no se debe únicamente al co2\nliberado por las e",
+      "source_locator": "local_pdf::Presentacion-modulo-2-sesion-16- BIOMASA.pdf::refrigerant_integrity"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Presentacion-modulo-2-sesion-16- BIOMASA.pdf",
+    "matched_terms": [
+      "co2",
+      "rate"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "tales,\nsociales y económicas desastrosas.\n5\n\ncalentamiento del planeta\nenergía fósil  liberación de carbono (co2) en la\natmósfera  calentamiento del planeta\nel calentamiento no se debe únicamente al co2\nliberado por las e",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 2 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:42+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

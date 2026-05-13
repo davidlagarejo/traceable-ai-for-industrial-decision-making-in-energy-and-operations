@@ -1,0 +1,70 @@
+{
+  "id": "chiller_degradation_plausibility__v5batch__ideawebinar-largeheatpumps-carbonreducti",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "manufacturing_facility",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "chiller or central cooling system plausible",
+    "maintenance or performance evidence absent",
+    "runtime or load profile unresolved"
+  ],
+  "anti_triggers": [
+    "no chiller or central cooling system",
+    "performance evidence shows strong operation",
+    "cooling is non-material to visible economics"
+  ],
+  "falsification_conditions": [
+    "performance evidence shows good operation",
+    "sequence and maintenance are already bounded",
+    "cooling cost is structurally explained elsewhere"
+  ],
+  "evidence_required": [
+    "maintenance history",
+    "runtime or sequence evidence",
+    "approach temperatures or delta-T evidence if available",
+    "cooling-load context",
+    "utility bills"
+  ],
+  "financial_translation": "Cooling cost and peak demand can be misread if degradation is assumed or ignored without performance evidence.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "Chiller degradation is a plausible cooling-loss hypothesis requiring sequence and maintenance validation.",
+  "prohibited_language": [
+    "This site has an inefficient chiller."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idea_large_heat_pumps_part2",
+      "confidence": "high",
+      "supporting_excerpt": "stem\nsteam header return\nis possible!\ncondensate out\nsteam boiler\nheat pump\n• central utility heat pump plant\nchiller plant\n• eliminate legacy steam piping\nevaporator losses\n• allows for the ability to do hot\nwater reset option",
+      "source_locator": "local_pdf::IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf::chiller_degradation_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Large Heat Pumps/IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf",
+    "matched_terms": [
+      "chiller"
+    ],
+    "source_id": "idea_large_heat_pumps_part2",
+    "supporting_excerpt": "stem\nsteam header return\nis possible!\ncondensate out\nsteam boiler\nheat pump\n• central utility heat pump plant\nchiller plant\n• eliminate legacy steam piping\nevaporator losses\n• allows for the ability to do hot\nwater reset option",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:27+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

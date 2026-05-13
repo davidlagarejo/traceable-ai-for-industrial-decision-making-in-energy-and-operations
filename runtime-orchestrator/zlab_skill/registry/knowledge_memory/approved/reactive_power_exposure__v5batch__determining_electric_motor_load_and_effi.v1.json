@@ -1,0 +1,73 @@
+{
+  "id": "reactive_power_exposure__v5batch__determining_electric_motor_load_and_effi",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "warehouse_distribution",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "motors, compressors, chillers, pumps, conveyors or chargers plausible",
+    "tariff or bill structure unresolved",
+    "power-factor correction not evidenced"
+  ],
+  "anti_triggers": [
+    "high power factor documented",
+    "no PF penalties",
+    "active compensation installed",
+    "low inductive load confirmed"
+  ],
+  "falsification_conditions": [
+    "high PF documented",
+    "no PF penalties or reactive charges",
+    "active compensation documented",
+    "load mix not materially inductive"
+  ],
+  "evidence_required": [
+    "utility bills showing kW, kWh, kvar, PF or demand structure",
+    "tariff",
+    "one-line diagram",
+    "capacitor bank or filter inventory",
+    "power-quality report if available"
+  ],
+  "financial_translation": "PF penalties, kvar charges or demand interactions can create a cost story invisible to aggregate EUI analysis.",
+  "tad_actions": [
+    "REQUEST_UTILITY_BILLS",
+    "VALIDATE_PF_TARIFF_EXPOSURE",
+    "DO_NOT_RECOMMEND_CAPACITOR_BANK_YET"
+  ],
+  "allowed_language": "Power-quality exposure is a plausible hypothesis requiring tariff and utility-bill validation.",
+  "prohibited_language": [
+    "The facility has reactive power losses."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "confidence": "high",
+      "supporting_excerpt": "aded when it is in the range where efficiency drops significantly with decreasing load. fig-\nure 2 shows that power factor tends to drop off sooner, but less steeply than efficiency, as load\ndecreases.\n100%\ny\nc\nn\ne\nci 80%\neffi\nd 60%",
+      "source_locator": "local_pdf::Determining electric motor load and efficiency.pdf::reactive_power_exposure"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Curso CORPOEMA/Determining electric motor load and efficiency.pdf",
+    "matched_terms": [
+      "power factor"
+    ],
+    "source_id": "corpoema_curso_ee_2020_2021",
+    "supporting_excerpt": "aded when it is in the range where efficiency drops significantly with decreasing load. fig-\nure 2 shows that power factor tends to drop off sooner, but less steeply than efficiency, as load\ndecreases.\n100%\ny\nc\nn\ne\nci 80%\neffi\nd 60%",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:00:25+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "sensor_prematurity__v5batch__la-domotica-como-solucion-de-futuro-fene",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "sensor deployment proposed",
+    "minimum discriminating evidence not yet exhausted",
+    "dominant hypothesis still unresolved"
+  ],
+  "anti_triggers": [
+    "cheap non-invasive evidence path already exhausted",
+    "bounded hypothesis requires instrumentation to discriminate",
+    "sensor purpose is directly tied to one admissible decision"
+  ],
+  "falsification_conditions": [
+    "non-invasive evidence path exhausted",
+    "instrumentation is the next cheapest valid discriminator",
+    "sensor purpose is decision-tied and bounded"
+  ],
+  "evidence_required": [
+    "current minimum evidence path",
+    "dominant hypothesis register",
+    "decision objective",
+    "existing logs or bills-first path"
+  ],
+  "financial_translation": "Premature instrumentation creates cost and data noise before the value-of-information path is justified.",
+  "tad_actions": [
+    "DO_NOT_SENSOR_YET",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "VALIDATE_FIRST"
+  ],
+  "allowed_language": "Sensor deployment may be premature until the minimum discriminating evidence path is exhausted.",
+  "prohibited_language": [
+    "The site needs more sensors now."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "fenercom_domotica",
+      "confidence": "high",
+      "supporting_excerpt": "de la seguridad en el hogar 39\n1.6.1.1. vigilancia interna/externa 39\n1.6.2. centrales de alarma 42\n1.6.2.1. sensores 44\ncapítulo 2. normativa y normalización 49\n2.1. introducción 49\n2.2. definiciones 49\n2.2.1. norma 49\n2.3.",
+      "source_locator": "local_pdf::la-domotica-como-solucion-de-futuro-fenercom-2.pdf::sensor_prematurity"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Guías/la-domotica-como-solucion-de-futuro-fenercom-2.pdf",
+    "matched_terms": [
+      "sensor"
+    ],
+    "source_id": "fenercom_domotica",
+    "supporting_excerpt": "de la seguridad en el hogar 39\n1.6.1.1. vigilancia interna/externa 39\n1.6.2. centrales de alarma 42\n1.6.2.1. sensores 44\ncapítulo 2. normativa y normalización 49\n2.1. introducción 49\n2.2. definiciones 49\n2.2.1. norma 49\n2.3.",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:19+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}

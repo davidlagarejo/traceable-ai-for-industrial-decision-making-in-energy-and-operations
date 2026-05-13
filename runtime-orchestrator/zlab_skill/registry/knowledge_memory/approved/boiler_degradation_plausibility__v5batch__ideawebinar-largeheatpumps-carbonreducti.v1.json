@@ -1,0 +1,70 @@
+{
+  "id": "boiler_degradation_plausibility__v5batch__ideawebinar-largeheatpumps-carbonreducti",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "thermal_process_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "boiler or burner system plausible",
+    "combustion tuning evidence absent",
+    "thermal-duty explanation unresolved"
+  ],
+  "anti_triggers": [
+    "no boiler system",
+    "recent combustion evidence shows strong performance",
+    "boiler is non-material to the visible cost boundary"
+  ],
+  "falsification_conditions": [
+    "combustion tuning is tight and current",
+    "boiler performance is evidenced as adequate",
+    "thermal duty is fully explained by process load"
+  ],
+  "evidence_required": [
+    "combustion test records",
+    "fuel bills",
+    "boiler maintenance history",
+    "cycling or sequencing evidence",
+    "throughput-normalized thermal-duty context"
+  ],
+  "financial_translation": "Fuel cost and maintenance burden can be misframed if boiler degradation is assumed or ignored without evidence.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "Boiler degradation is a plausible thermal-loss hypothesis requiring combustion and maintenance validation.",
+  "prohibited_language": [
+    "This site has an inefficient boiler."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "idea_large_heat_pumps_part2",
+      "confidence": "high",
+      "supporting_excerpt": "changer\ncondenser\nsystems to hot water\nhot water\nsystem\nsteam header return\nis possible!\ncondensate out\nsteam boiler\nheat pump\n• central utility heat pump plant\nchiller plant\n• eliminate legacy steam piping\nevaporator losses\n•",
+      "source_locator": "local_pdf::IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf::boiler_degradation_plausibility"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/Eficiencia energética/Recursos y cursos/Large Heat Pumps/IDEAWebinar-LargeHeatPumps-CarbonReductionwithGreatEconomics__Part_IIai_.pdf",
+    "matched_terms": [
+      "boiler"
+    ],
+    "source_id": "idea_large_heat_pumps_part2",
+    "supporting_excerpt": "changer\ncondenser\nsystems to hot water\nhot water\nsystem\nsteam header return\nis possible!\ncondensate out\nsteam boiler\nheat pump\n• central utility heat pump plant\nchiller plant\n• eliminate legacy steam piping\nevaporator losses\n•",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-13T13:01:27+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern",
+  "__approved_at__": "2026-05-13T13:09:07+00:00",
+  "__approved_by__": "bulk_v5batch_user",
+  "__source_pending_kind__": "pattern"
+}
