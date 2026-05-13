@@ -3,25 +3,29 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-13 (entrando V7 — Final Execution Hardening)**
+**Última actualización: 2026-05-13 (V7 CERRADO — 1721 tests, regression 7/7 bajo hard mode default)**
 
 ---
 
-## 0. Doctrina actual: V7 — FINAL EXECUTION HARDENING
+## 0. Doctrina actual: V7 — FINAL EXECUTION HARDENING (cerrado)
 
-V6 cerrado. Ver `RECOVERY_DONE_V6.md`. El cerebro está estabilizado modularmente y los módulos están **cableados** al pipeline en caliente (P13).
+V7 cerrado. Ver `RECOVERY_DONE_V7.md` para el cierre completo.
 
-**V7 no añade inteligencia. V7 endurece la EJECUCIÓN.**
+Resumen:
+- **1721 tests passing** (+71 desde V6 baseline 1650).
+- **Regression cross-asset 7/7** verde **con hard mode default ON**.
+- 10 commits V7 (P0..P9) + cierre pendiente P10 (push).
+- Defaults flippeados: la ejecución es hard-by-default, soft es opt-out.
 
-V7 transforma el framework de:
+**V7 no añadió inteligencia. V7 endureció la EJECUCIÓN.**
+
+V7 transformó el framework de:
 > "sistema inteligente pero frágil"
 
 a:
 > "sistema operacionalmente confiable y epistemológicamente endurecido".
 
 **El objetivo final NO es hacer PDFs. Es detectar cuándo una organización está comparando mal, midiendo mal, modelando mal, invirtiendo mal, o interpretando mal la economía física de su activo.**
-
-Plan completo: `RECOVERY_V7_BACKLOG.md` (10 sub-fases · ~7 días).
 
 ---
 
@@ -74,50 +78,49 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 
 ---
 
-## 4. Estado entrando V7 (2026-05-13)
+## 4. Estado post-V7 (2026-05-13)
 
-- **64 motores** · **30 patterns** · **4 combinations approved** (a migrar en V7 P2) · **144 approved knowledge**
-- **1650 tests passing** · regression cross-asset **7/7 PASS**
-- **31 commits V5+V6+V6P13** pusheados a `origin/main`
+- **64 motores** · **30 patterns** (6 con `anti_asset_types` explícitos) · **4 combinations V6-strict-migradas** · **144 approved knowledge**
+- **1721 tests passing** · regression cross-asset **7/7 PASS bajo hard mode default ON**
+- **42 commits V5+V6+V7** en `main` local (V7 P10 pendiente de push)
 - **Jurisdicción**: US-only para case discovery; combinations universales
-- **192 fuentes industriales** en catálogo (78/87/27 tier-1/2/3)
+- **192 fuentes industriales** en catálogo
 
-**Módulos V6 vivos en el pipeline (P13 cableados):**
+**Módulos V6/V7 vivos en el pipeline (cableados + hard-by-default):**
 
-| Módulo | Verdict emitido en | Hard-block opt-in actual |
+| Módulo | Verdict emitido en | Default V7 |
 |---|---|---|
-| `validator_severity_policy.py` | motor_055..063 wired | `ZLAB_VALIDATORS_HARD_BLOCK=1` |
-| `fallback_policy.py` | motor_024 → `fallback_policy_verdict` | autoclasifica |
-| `source_execution_auditor.py` | motor_028 → `source_audit_verdict` | autoclasifica |
-| `claim_synchronization_auditor.py` | motor_016 → `claim_sync_verdict` | autoclasifica |
-| `pattern_isolation.py` | motor_061 → `pattern_isolation_violations` | autoclasifica |
-| `qa_score.py` | callable (qa_card) | — |
-| `render_gate.py` | motor_017 → `render_gate_verdict` | `ZLAB_RENDER_STRICT_DEFAULT=1` |
-| `validate_combination_v6_strict` | engine.py write-path | flag-gated |
+| `validator_severity_policy.py` | motor_055..063 wired | **hard ON** (env=0 opt-out) |
+| `fallback_policy.py` | motor_024 → `fallback_policy_verdict` | always |
+| `source_execution_auditor.py` | motor_028 → `source_audit_verdict` | always |
+| `claim_synchronization_auditor.py` | motor_016 → `claim_sync_verdict` | always |
+| `pattern_isolation.py` | motor_061 → `pattern_isolation_violations` + anti-asset | always |
+| `hybrid_justification.py` | motor_061 → `hybrid_justification_narrative` | always |
+| `qa_score.py` | callable (qa_card) | always |
+| `render_gate.py` | motor_017 → `render_gate_verdict` | **strict ON** |
+| `validate_combination_v6_strict` | engine.py write-path en hard mode | hard mode gated |
 
-**Gap V7 principal**: ambos env flags son **opt-in**. V7 P1 los flippea a default ON.
+**V6 blocking set V7 = 18 reglas**: R1/R2/R4 + R8-R13 (motor_059), AF1/AF2 (motor_061), GN1 (motor_057), RU2/RU6 (motor_058), SJ1/SJ2/SJ3 (motor_062), CV1/CV3/CV5 (motor_063).
 
 ---
 
-## 5. V7 — 10 sub-fases (resumen)
+## 5. V7 — 10 sub-fases (entregadas)
 
-Detalle completo en `RECOVERY_V7_BACKLOG.md`.
+Detalle completo en `RECOVERY_DONE_V7.md`.
 
-| # | Trabajo | Riesgo |
+| # | Trabajo | Status |
 |---|---|---|
-| P0 | Baseline freeze + audit | Bajo |
-| P1 | **Hard mode defaults flippeados a ON** | **Alto** |
-| P2 | Migrar 4 combinaciones pre-V6 al schema V6 strict | Medio |
-| P3 | Anti-asset-types explícitos en pattern_isolation | Bajo |
-| P4 | Hybrid Justification Narrative Emitter | Medio |
-| P5 | motor_059 R12 (`local_truth_from_archetypal_prior`) + R13 (`benchmark_as_truth`) | Bajo |
-| P6 | motor_058 RU4 evidence pack uniqueness | Bajo |
-| P7 | motor_063 CV5 chart cross-asset-family | Bajo |
-| P8 | Final stability suite — CLIENT_SAFE end-to-end (8 escenarios) | Medio |
-| P9 | Documentation curation (archivar histórico) | Bajo |
-| P10 | Final regression + commit + push | Bajo |
-
-**Aceptación V7**: hard mode default ON, 1680+ tests verde, regression 7/7 en hard mode default, docs limpios.
+| P0 | Baseline freeze + audit | ✅ |
+| P1 | Hard mode defaults flippeados a ON | ✅ |
+| P2 | Migrar 4 combinaciones al schema V6 strict | ✅ |
+| P3 | `anti_asset_types` explícitos (6 patterns) | ✅ |
+| P4 | Hybrid Justification Narrative Emitter | ✅ |
+| P5 | motor_059 R12 + R13 | ✅ |
+| P6 | motor_058 RU6 intra-run pack repetition | ✅ |
+| P7 | motor_063 CV5 chart cross-asset-family | ✅ |
+| P8 | Stability suite CLIENT_SAFE end-to-end (8 escenarios) | ✅ |
+| P9 | Documentation curation (archivar histórico) | ✅ |
+| P10 | Final regression + commit + push | ⏳ |
 
 ---
 
@@ -131,16 +134,10 @@ python3 cli.py run --pipeline-id <id> --inputs inputs/<case>.json --no-cache
 # Regression:  bash scripts/regression_cross_asset_recovery.sh
 ```
 
-**Hard mode hoy (opt-in hasta V7 P1)**:
+**Hard mode tras V7 P1: activo por defecto.** Soft / diagnostic mode es opt-out:
 ```bash
-export ZLAB_VALIDATORS_HARD_BLOCK=1   # warn → BLOCK en 14 reglas
-export ZLAB_RENDER_STRICT_DEFAULT=1   # refuse render si state ≠ client_safe
-```
-
-**Hard mode tras V7 P1**: activo por defecto. Diagnostic se opta vía:
-```bash
-export ZLAB_VALIDATORS_HARD_BLOCK=0
-export ZLAB_RENDER_STRICT_DEFAULT=0
+export ZLAB_VALIDATORS_HARD_BLOCK=0   # opt-out: severities vuelven a warning/critical
+export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier state verde
 ```
 
 ---
@@ -149,12 +146,13 @@ export ZLAB_RENDER_STRICT_DEFAULT=0
 
 1. `Phases/phase-{N}/docs/es/` — constitución (gobierna conflictos)
 2. `CLAUDE.md` (este archivo) — doctrina operativa actual
-3. `RECOVERY_V7_BACKLOG.md` — plan de trabajo actual
-4. `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres históricos
+3. `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
+4. `RECOVERY_V7_BACKLOG.md` — plan V7 (entregado)
 5. `AGENTS.md` — guía operativa (subordinado a CLAUDE.md)
 6. `runtime-orchestrator/` + suite de tests
 7. `phase_registry.py` + `phase_units.py` (V5)
 8. `AI_SCAFFOLDING_REGISTRY.md` (FROZEN en 9 items)
+9. `docs/history/` — backlogs y planes antiguos archivados (V2-V6)
 
 ---
 
