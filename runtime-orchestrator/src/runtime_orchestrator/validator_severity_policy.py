@@ -57,6 +57,9 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     ("motor_059", "R9_roi_claim_with_unresolved_control_boundary"),
     ("motor_059", "R10_peer_superiority_with_incomplete_normalization"),
     ("motor_059", "R11_verified_savings_with_soft_baseline"),
+    # V7 P5 epistemic guardrails — claim/action level.
+    ("motor_059", "R12_local_truth_from_archetypal_prior"),
+    ("motor_059", "R13_benchmark_as_truth"),
 
     # motor_061 Asset Family Isolation — ALL critical contamination
     # findings block. Cross-family pattern activation is the V6 priority.

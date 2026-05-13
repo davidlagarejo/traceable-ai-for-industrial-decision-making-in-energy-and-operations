@@ -288,6 +288,29 @@ _VERIFIED_SAVINGS_TOKENS: frozenset[str] = frozenset({
     "performance verified", "verified retrofit savings",
 })
 
+# V7 P5 — R12 local-truth-from-archetypal-prior detection tokens.
+# A claim that states a LOCAL truth ("this facility consumes X kWh/sf",
+# "this site is X% inefficient") is forbidden when the only support is
+# an archetypal prior (no observed evidence locally).
+_LOCAL_TRUTH_TOKENS: frozenset[str] = frozenset({
+    "this facility consumes", "this site consumes", "this facility uses",
+    "this facility is", "this site is", "this facility's eui",
+    "this site's eui", "this asset consumes", "facility-level intensity",
+    "site-level intensity", "this building consumes",
+})
+
+# V7 P5 — R13 benchmark-as-truth detection tokens.
+# A claim that invokes "industry benchmark" as proof of inefficiency or
+# savings opportunity is forbidden — benchmarks are reference distributions,
+# not local-truth oracles.
+_BENCHMARK_AS_TRUTH_TOKENS: frozenset[str] = frozenset({
+    "below benchmark", "below industry benchmark", "below the benchmark",
+    "underperforms benchmark", "benchmark says", "benchmark proves",
+    "benchmark shows inefficiency", "vs industry benchmark", "industry-benchmark gap",
+    "benchmark gap means savings", "below median", "below the median benchmark",
+    "above benchmark suggests waste",
+})
+
 
 def _action_mentions_any(action: dict, tokens: frozenset[str]) -> bool:
     """True if any action text field contains any of the given tokens."""
@@ -438,6 +461,108 @@ def _detect_R11_verified_savings_when_baseline_soft(
     return out
 
 
+def _detect_R12_local_truth_from_archetypal_prior(
+    claims: list[dict],
+    actions: list[dict],
+) -> list[dict]:
+    """R12: forbid local-truth claims (e.g. "this facility consumes X kWh/sf")
+    when the supporting evidence state is ARCHETYPAL_PRIOR or WEAK_SIGNAL.
+
+    Detection: any claim or TAD action whose text contains a local-truth
+    token AND whose evidence_state (or supporting evidence_state on the
+    linked claim) is in the archetypal/weak set.
+    """
+    archetypal_states = {"ARCHETYPAL_PRIOR", "WEAK_SIGNAL", "UNRESOLVED"}
+    out: list[dict] = []
+    # Scan claims directly.
+    for claim in claims or []:
+        if not isinstance(claim, dict):
+            continue
+        blob = " ".join(
+            _text(claim.get(f, "")).lower()
+            for f in ("claim_text", "claim_language", "narrative",
+                      "description", "permission_rationale")
+        )
+        if not any(t in blob for t in _LOCAL_TRUTH_TOKENS):
+            continue
+        ev_state = _text(claim.get("evidence_state")).upper()
+        if ev_state in archetypal_states or ev_state == "":
+            out.append({
+                "rule_id": "R12_local_truth_from_archetypal_prior",
+                "severity": "warning",
+                "claim_id": _text(claim.get("claim_id") or claim.get("case_id")),
+                "evidence_state": ev_state or "UNRESOLVED",
+                "description": (
+                    "Claim asserts a LOCAL truth about this facility "
+                    "without observed evidence — only an archetypal / "
+                    "weak prior supports it. Local-truth framings require "
+                    "hardened evidence, not archetypal inheritance."
+                ),
+            })
+    # Scan TAD actions too (some local-truth language leaks into TAD posture).
+    for action in actions or []:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _LOCAL_TRUTH_TOKENS):
+            ev_state = _text(action.get("evidence_state")).upper()
+            if ev_state in archetypal_states or ev_state == "":
+                out.append({
+                    "rule_id": "R12_local_truth_from_archetypal_prior",
+                    "severity": "warning",
+                    "action_id": _text(action.get("action_id") or action.get("case_id")),
+                    "evidence_state": ev_state or "UNRESOLVED",
+                    "description": (
+                        "TAD action carries local-truth framing without "
+                        "observed evidence to support it."
+                    ),
+                })
+    return out
+
+
+def _detect_R13_benchmark_as_truth(
+    claims: list[dict],
+    actions: list[dict],
+) -> list[dict]:
+    """R13: forbid claims that invoke industry benchmark as proof of
+    local inefficiency or savings opportunity. Benchmarks describe
+    distributions; they are not local-truth oracles."""
+    out: list[dict] = []
+    for claim in claims or []:
+        if not isinstance(claim, dict):
+            continue
+        blob = " ".join(
+            _text(claim.get(f, "")).lower()
+            for f in ("claim_text", "claim_language", "narrative",
+                      "description", "permission_rationale")
+        )
+        if any(t in blob for t in _BENCHMARK_AS_TRUTH_TOKENS):
+            out.append({
+                "rule_id": "R13_benchmark_as_truth",
+                "severity": "warning",
+                "claim_id": _text(claim.get("claim_id") or claim.get("case_id")),
+                "description": (
+                    "Claim invokes industry benchmark as proof of local "
+                    "inefficiency or savings. Benchmarks are reference "
+                    "distributions — they do NOT establish local truth. "
+                    "Rephrase as a fair-comparison hypothesis or remove."
+                ),
+            })
+    for action in actions or []:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _BENCHMARK_AS_TRUTH_TOKENS):
+            out.append({
+                "rule_id": "R13_benchmark_as_truth",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "description": (
+                    "TAD action treats industry benchmark as truth signal. "
+                    "Benchmark gap is not equivalent to a local inefficiency."
+                ),
+            })
+    return out
+
+
 class Motor059Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -501,6 +626,10 @@ class Motor059Adapter(BaseMotorAdapter):
         warnings.extend(_detect_R11_verified_savings_when_baseline_soft(
             actions, list(m045.get("financial_exposure_case_register", []) or [])
         ))
+        # V7 P5: epistemic guardrails — local truth from archetypal prior +
+        # benchmark-as-truth.
+        warnings.extend(_detect_R12_local_truth_from_archetypal_prior(claim_register, actions))
+        warnings.extend(_detect_R13_benchmark_as_truth(claim_register, actions))
 
         # V6 P4.8: apply validator_severity_policy gate (soft-mode no-op).
         # R2/R3 already promoted to "error" in V3 G2 above; gate respects
