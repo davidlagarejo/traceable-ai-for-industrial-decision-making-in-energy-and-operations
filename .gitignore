@@ -32,3 +32,7 @@ motor-creator/runtime/
 runtime-orchestrator/zlab_skill/registry/scenario_reviews/ZLab-*.json
 runtime-orchestrator/zlab_skill/registry/scenario_reviews/scenario_review_log.jsonl
 runtime-orchestrator/zlab_skill/registry/combination_approval_log.jsonl
+
+# V5 audit logs (mutable per-run state)
+runtime-orchestrator/zlab_skill/registry/knowledge_pending/knowledge_proposal_log.jsonl
+runtime-orchestrator/zlab_skill/registry/knowledge_memory/knowledge_memory_log.jsonl
