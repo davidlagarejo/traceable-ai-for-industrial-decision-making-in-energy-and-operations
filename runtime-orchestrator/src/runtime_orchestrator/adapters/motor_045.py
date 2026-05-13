@@ -44,10 +44,17 @@ class Motor045Adapter(BaseMotorAdapter):
             competitive_comparison_register=list(inputs.get("motor_043", {}).get("competitive_comparison_register", []) or []),
             structural_financial_exposure_register=register,
         )
-        # V5 P2: canonical Phase 5 unit (Master Doc §4) — projection of
-        # structural_financial_exposure_register into financial_exposure_case
-        # with explicit decision_finance_posture ladder.
-        financial_exposure_case_register = to_financial_exposure_case_register(register)
+        # V5 P2 + V5 P13: canonical Phase 5 unit (Master Doc §4 + §7).
+        # V5 P13 enriches by passing target_asset_family and by structurally
+        # computing baseline_dependency_state, tariff_basis_state,
+        # cost_basis_state, benefit_driver_family, regulatory_dependency_state,
+        # and publication_ceiling from the row's own evidence_state +
+        # evidence_needed + allowed_financial_output (instead of empty
+        # placeholders).
+        financial_exposure_case_register = to_financial_exposure_case_register(
+            register,
+            target_asset_family=str(target_definition.get("target_type", "")),
+        )
         return {
             "structural_financial_exposure_register": register,
             "structural_financial_exposure_count": len(register),

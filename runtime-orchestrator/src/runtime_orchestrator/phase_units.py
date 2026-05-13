@@ -335,14 +335,71 @@ _FINANCE_READINESS_LADDER = (
 )
 
 
+# V5 P13: tokens used to detect tariff- / cost- relevance in evidence_needed.
+_TARIFF_TOKENS: frozenset[str] = frozenset({
+    "tariff", "rate schedule", "demand charge", "utility bill",
+    "kw", "kwh", "billing", "time-of-use", "tou", "ratchet",
+})
+_COST_BASIS_TOKENS: frozenset[str] = frozenset({
+    "capex", "cost", "opex", "lifecycle", "spending", "expenditure",
+    "investment", "replacement cost",
+})
+_REGULATORY_DEPENDENCY_TOKENS: frozenset[str] = frozenset({
+    "ll97", "ll84", "epa", "compliance", "permit", "regulatory",
+    "code", "ordinance", "rule",
+})
+
+
+def _evidence_state_to_basis_state(evidence_state: str) -> str:
+    """Map motor_054 4-state Claim Governor enum (Phase 7) to Phase 5
+    basis-state ladder."""
+    s = (evidence_state or "").strip().upper()
+    if s == "OBSERVED_FACT":
+        return "hardened"
+    if s in ("CONDITIONAL_HYPOTHESIS",):
+        return "preliminary"
+    if s in ("WEAK_SIGNAL",):
+        return "screening_only"
+    if s == "ARCHETYPAL_PRIOR":
+        return "prior_only"
+    return "unknown"
+
+
+def _scan_tokens(haystack_terms: list[str], needles: frozenset[str]) -> bool:
+    """True if any item in haystack_terms contains any of the needle tokens."""
+    flat = " ".join(str(t).lower() for t in haystack_terms or [])
+    return any(token in flat for token in needles)
+
+
+def _publication_ceiling_phase5(posture: str) -> str:
+    """Phase 5 §7 publication ceiling per finance posture."""
+    return {
+        "screening_only": "screening_only",
+        "range_bound_preliminary": "screening_only",
+        "decision_grade_range": "decision_grade_range",
+        "partially_hardened_finance": "bounded_finance",
+        "verification_ready_finance": "bounded_finance",
+        "verification_supported_finance": "verification_supported",
+        "verified_finance": "verified_bounded",
+    }.get(posture, "screening_only")
+
+
 def to_financial_exposure_case_register(
     financial_exposure_register: list[dict[str, Any]],
+    target_asset_family: str = "",
 ) -> list[dict[str, Any]]:
     """Project motor_045 financial exposure register into Phase 5 unit.
+
+    V5 P13: now STRUCTURALLY computes Master Doc §4+§7 fields from the
+    motor_045 row's existing data (structural_assumption,
+    evidence_state, financial_exposure_if_wrong, evidence_needed,
+    allowed_financial_output) instead of leaving them as placeholders.
 
     The decision_finance_posture is derived from the row's existing
     `support_state` if present, defaulting to `screening_only` for
     sparse data.
+
+    target_asset_family populates the asset_boundary field.
     """
     out: list[dict[str, Any]] = []
     for row in financial_exposure_register or []:
@@ -350,7 +407,7 @@ def to_financial_exposure_case_register(
             continue
         support = str(row.get("support_state", "")).lower()
         # Map support_state to finance ladder
-        if "verified" in support:
+        if "verified" in support and "supported" not in support and "ready" not in support:
             posture = "verified_finance"
         elif "verification_supported" in support:
             posture = "verification_supported_finance"
@@ -360,24 +417,65 @@ def to_financial_exposure_case_register(
             posture = "partially_hardened_finance"
         elif "decision" in support:
             posture = "decision_grade_range"
-        elif "range" in support or "screening" not in support and support:
+        elif "range" in support or ("screening" not in support and support):
             posture = "range_bound_preliminary"
         else:
             posture = "screening_only"
 
+        # V5 P13: structural enrichment.
+        evidence_state = str(row.get("evidence_state", "")).strip()
+        # If evidence_state comes as an enum-style value like
+        # "StructuralEvidenceState.CONDITIONAL_HYPOTHESIS", strip prefix.
+        if "." in evidence_state:
+            evidence_state = evidence_state.split(".")[-1]
+        basis_state = _evidence_state_to_basis_state(evidence_state)
+        evidence_needed = list(row.get("evidence_needed", []) or [])
+        allowed_outputs = list(row.get("allowed_financial_output", []) or [])
+        structural_assumption = str(row.get("structural_assumption", "")).strip()
+        exposure_if_wrong = str(row.get("financial_exposure_if_wrong", "")).strip()
+
+        tariff_basis_state = "evidence_required" if _scan_tokens(
+            evidence_needed, _TARIFF_TOKENS
+        ) else basis_state
+        cost_basis_state = "evidence_required" if _scan_tokens(
+            evidence_needed, _COST_BASIS_TOKENS
+        ) else basis_state
+        # baseline_dependency_state: bound by the same evidence_state
+        baseline_dependency_state = basis_state
+        # regulatory_dependency_state: detect compliance signals
+        haystack = evidence_needed + [structural_assumption, exposure_if_wrong]
+        regulatory_dependency_state = (
+            "regulatory_exposure_plausible"
+            if _scan_tokens(haystack, _REGULATORY_DEPENDENCY_TOKENS)
+            else "not_evident"
+        )
+        # benefit_driver_family: pull from allowed_financial_output
+        benefit_driver_family = allowed_outputs[:5]
+        # publication_ceiling: derived from posture
+        publication_ceiling = (
+            str(row.get("publication_ceiling", "")).strip()
+            or _publication_ceiling_phase5(posture)
+        )
+
         out.append({
-            "exposure_case_id": str(row.get("case_id") or row.get("exposure_id") or ""),
-            "decision_front": str(row.get("decision_front", "")),
-            "asset_boundary": str(row.get("asset_boundary", "")),
-            "baseline_dependency_state": str(row.get("baseline_dependency_state", "unknown")),
-            "tariff_basis_state": str(row.get("tariff_basis_state", "unknown")),
-            "cost_basis_state": str(row.get("cost_basis_state", "unknown")),
-            "benefit_driver_family": list(row.get("benefit_driver_family", []) or []),
+            "exposure_case_id": str(
+                row.get("case_id")
+                or row.get("exposure_id")
+                or (structural_assumption[:60] if structural_assumption else "phase5_case")
+            ),
+            "decision_front": str(row.get("decision_front", "")) or structural_assumption,
+            "asset_boundary": str(row.get("asset_boundary", "")) or target_asset_family,
+            "baseline_dependency_state": baseline_dependency_state,
+            "tariff_basis_state": tariff_basis_state,
+            "cost_basis_state": cost_basis_state,
+            "benefit_driver_family": benefit_driver_family,
             "horizon_basis": str(row.get("horizon_basis", "")),
             "discount_basis_rule": str(row.get("discount_basis_rule", "")),
-            "regulatory_dependency_state": str(row.get("regulatory_dependency_state", "")),
-            "publication_ceiling": str(row.get("publication_ceiling", "")),
+            "regulatory_dependency_state": regulatory_dependency_state,
+            "publication_ceiling": publication_ceiling,
             "decision_finance_posture": posture,
+            "exposure_if_wrong": exposure_if_wrong,
+            "evidence_needed": evidence_needed,
             "raw_row": row,  # preserve full source row for narrator/audit
             "__phase__": 5,
             "__canonical_unit__": "financial_exposure_case",
