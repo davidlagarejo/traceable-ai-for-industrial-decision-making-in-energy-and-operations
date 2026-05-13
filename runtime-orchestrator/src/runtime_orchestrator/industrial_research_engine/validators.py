@@ -233,3 +233,129 @@ def validate_combination(payload: dict[str, Any]) -> CombinationObject:
         name, "layers_combined", payload.get("layers_combined", [])
     )
     return CombinationObject.from_dict(normalized)
+
+
+# V6 P6 — Combination Governance schema gate.
+#
+# Per V6 Stability prompt item 7: every combination must declare an
+# extended schema before propose-time. Existing 4 combinations may not
+# have all V6 fields (they were authored pre-V6); strict mode rejects
+# any new combination that doesn't.
+
+# 8 canonical action families (V5 P11 Phase 8 §7.2)
+_CANONICAL_ACTION_FAMILIES: frozenset[str] = frozenset({
+    "inspect", "measure", "classify", "pilot",
+    "design", "procure", "implement", "defer",
+})
+
+_VALID_RENDER_MODES: frozenset[str] = frozenset({
+    "exploratory_prior", "structural_hypothesis", "bounded_peer_analysis",
+    "evidence_discrimination", "decision_blocked",
+    "publish_bounded", "client_safe", "internal_debug_only",
+})
+
+
+def validate_combination_v6_strict(payload: dict[str, Any]) -> CombinationObject:
+    """V6 P6 strict schema gate. Every combination MUST declare:
+
+      - required_patterns (≥2)               ← validate_combination already
+      - required_asset_family (str)          ← NEW V6
+      - allowed_claim_ceiling ∈ {L0,L1,L2}   ← NEW V6
+      - required_evidence_pack (str ref)     ← NEW V6
+      - financial_translation (non-empty)    ← NEW V6
+      - tad_mapping (list of action_family)  ← NEW V6, ∈ 8 canónicos
+      - allowed_render_modes (list)          ← NEW V6
+      - forbidden_render_modes (list)        ← NEW V6
+      - combined_hypothesis (non-empty)      ← validate_combination already
+
+    Reject if any field missing or malformed. Used by
+    scripts/propose_combination.py at write-time so new combinations
+    can never leak unchecked into combinations_pending/.
+
+    The existing `validate_combination()` keeps its current behavior
+    for backward compat with pre-V6 combinations (4 in registry today).
+    """
+    base = validate_combination(payload)  # delegates to standard validator
+    name = base.id
+
+    # NEW V6 fields:
+    family = str(payload.get("required_asset_family", "")).strip()
+    if not family:
+        raise KnowledgeValidationError(
+            f"{name}.required_asset_family is required (V6 P6 schema)"
+        )
+
+    ceiling = str(payload.get("allowed_claim_ceiling", "")).strip()
+    if ceiling not in ("L0", "L1", "L2"):
+        raise KnowledgeValidationError(
+            f"{name}.allowed_claim_ceiling must be one of {{L0,L1,L2}} (got {ceiling!r})"
+        )
+
+    pack = str(payload.get("required_evidence_pack", "")).strip()
+    if not pack:
+        raise KnowledgeValidationError(
+            f"{name}.required_evidence_pack is required (V6 P6 schema). "
+            f"Provide an evidence_pack identifier (e.g., 'mhe_charging_pack')."
+        )
+
+    fin = str(payload.get("financial_translation", "")).strip()
+    if not fin:
+        raise KnowledgeValidationError(
+            f"{name}.financial_translation is required (V6 P6 schema)"
+        )
+
+    tad_mapping = list(payload.get("tad_mapping", []) or [])
+    if not tad_mapping:
+        raise KnowledgeValidationError(
+            f"{name}.tad_mapping is required (V6 P6 schema). "
+            f"List of action_family values ∈ {sorted(_CANONICAL_ACTION_FAMILIES)}."
+        )
+    invalid_actions = [
+        a for a in tad_mapping
+        if str(a).strip().lower() not in _CANONICAL_ACTION_FAMILIES
+    ]
+    if invalid_actions:
+        raise KnowledgeValidationError(
+            f"{name}.tad_mapping contains non-canonical action families: "
+            f"{invalid_actions}. Valid: {sorted(_CANONICAL_ACTION_FAMILIES)}"
+        )
+
+    allowed_modes = list(payload.get("allowed_render_modes", []) or [])
+    if not allowed_modes:
+        raise KnowledgeValidationError(
+            f"{name}.allowed_render_modes is required (V6 P6 schema). "
+            f"Valid modes: {sorted(_VALID_RENDER_MODES)}"
+        )
+    invalid_modes = [
+        m for m in allowed_modes if str(m).strip() not in _VALID_RENDER_MODES
+    ]
+    if invalid_modes:
+        raise KnowledgeValidationError(
+            f"{name}.allowed_render_modes contains invalid modes: {invalid_modes}. "
+            f"Valid: {sorted(_VALID_RENDER_MODES)}"
+        )
+
+    forbidden_modes = list(payload.get("forbidden_render_modes", []) or [])
+    invalid_forbidden = [
+        m for m in forbidden_modes if str(m).strip() not in _VALID_RENDER_MODES
+    ]
+    if invalid_forbidden:
+        raise KnowledgeValidationError(
+            f"{name}.forbidden_render_modes contains invalid modes: {invalid_forbidden}. "
+            f"Valid: {sorted(_VALID_RENDER_MODES)}"
+        )
+    overlap = set(allowed_modes) & set(forbidden_modes)
+    if overlap:
+        raise KnowledgeValidationError(
+            f"{name} has render modes in BOTH allowed and forbidden lists: {overlap}"
+        )
+
+    # required_patterns must have ≥2 (combination by definition)
+    if len(base.required_patterns) < 2:
+        raise KnowledgeValidationError(
+            f"{name}.required_patterns must have ≥2 patterns (got {len(base.required_patterns)}). "
+            "A combination by definition needs multiple co-occurring patterns."
+        )
+
+    return base
+

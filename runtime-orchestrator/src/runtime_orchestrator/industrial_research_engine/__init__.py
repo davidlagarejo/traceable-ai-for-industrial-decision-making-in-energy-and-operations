@@ -48,6 +48,7 @@ from .validators import (
     KnowledgeValidationError,
     validate_knowledge,
     validate_combination,
+    validate_combination_v6_strict,
 )
 from .family_scope import (
     enforce_family_scope,
@@ -101,6 +102,7 @@ __all__ = [
     "KnowledgeValidationError",
     "validate_knowledge",
     "validate_combination",
+    "validate_combination_v6_strict",
     # family scope
     "enforce_family_scope",
     "families_conflict",
