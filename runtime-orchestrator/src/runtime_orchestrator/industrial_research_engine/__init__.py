@@ -85,6 +85,10 @@ from .deterministic_bridge import (
     pattern_spec_to_knowledge_object,
     propose_extracted_pattern,
 )
+from .authority_classifier import (
+    audit_catalog_against_classifier,
+    classify_authority_tier,
+)
 
 __all__ = [
     # schemas
@@ -126,4 +130,7 @@ __all__ = [
     "load_pattern_spec",
     "pattern_spec_to_knowledge_object",
     "propose_extracted_pattern",
+    # authority_tier classifier (V5 P4)
+    "classify_authority_tier",
+    "audit_catalog_against_classifier",
 ]
