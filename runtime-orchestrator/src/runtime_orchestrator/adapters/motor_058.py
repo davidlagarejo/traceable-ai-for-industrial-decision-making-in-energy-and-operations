@@ -112,6 +112,83 @@ def _collect_evidence_pack(register: list[dict]) -> set[str]:
     return out
 
 
+# V7 P6 — intra-run evidence pack repetition threshold (Jaccard).
+_INTRA_RUN_PACK_REPETITION_THRESHOLD: float = 0.80
+
+
+def _per_row_evidence_set(row: dict) -> set[str]:
+    """Single row's evidence set (not unioned across rows)."""
+    s: set[str] = set()
+    if not isinstance(row, dict):
+        return s
+    for key in ("minimum_evidence", "minimum_evidence_to_activate", "evidence_required"):
+        for item in row.get(key, []) or []:
+            t = _text(item)
+            if t:
+                s.add(t.lower())
+    return s
+
+
+def _jaccard(a: set[str], b: set[str]) -> float:
+    if not a and not b:
+        return 0.0
+    union = a | b
+    if not union:
+        return 0.0
+    return len(a & b) / len(union)
+
+
+def _detect_RU6_intra_run_evidence_pack_repetition(
+    register: list[dict],
+    threshold: float = _INTRA_RUN_PACK_REPETITION_THRESHOLD,
+) -> list[dict]:
+    """RU6 — within a single run, two activation rows must NOT carry
+    near-identical evidence packs. If they do, the framework is reusing
+    a generic pack across distinct cases (Phase 0 violation: each case
+    deserves its specialized evidence path).
+
+    Detection: Jaccard(evidence_items_i, evidence_items_j) > threshold
+    AND both sides are non-empty.
+    """
+    out: list[dict] = []
+    rows: list[tuple[str, set[str]]] = []
+    for row in register or []:
+        if not isinstance(row, dict):
+            continue
+        case_id = _text(
+            row.get("case_id") or row.get("id") or row.get("pattern_id")
+            or row.get("combination_id") or row.get("claim_id")
+        )
+        ev_set = _per_row_evidence_set(row)
+        if ev_set:
+            rows.append((case_id or f"row_{len(rows)}", ev_set))
+    seen_pairs: set[tuple[str, str]] = set()
+    for i in range(len(rows)):
+        for j in range(i + 1, len(rows)):
+            a_id, a_set = rows[i]
+            b_id, b_set = rows[j]
+            key = tuple(sorted((a_id, b_id)))
+            if key in seen_pairs:
+                continue
+            seen_pairs.add(key)
+            sim = _jaccard(a_set, b_set)
+            if sim > threshold:
+                out.append({
+                    "rule_id": "RU6_intra_run_evidence_pack_repetition",
+                    "severity": "warning",
+                    "case_a": a_id,
+                    "case_b": b_id,
+                    "jaccard": round(sim, 3),
+                    "description": (
+                        f"Evidence packs for {a_id!r} and {b_id!r} are "
+                        f"{sim:.0%} similar — both cases demand near-identical "
+                        "evidence. Each case must have a specialized evidence "
+                        "path; generic packs across cases are forbidden."
+                    ),
+                })
+    return out
+
+
 def _scan_prior_runs(
     artifact_store_dir: Path,
     asset_family: str,
@@ -318,6 +395,10 @@ class Motor058Adapter(BaseMotorAdapter):
             current_evidence_pack=current_evidence_pack,
         )
         warnings = _evaluate(comparisons)
+
+        # V7 P6 — RU6 intra-run evidence pack repetition (within this run,
+        # detect duplicated evidence packs across cases).
+        warnings.extend(_detect_RU6_intra_run_evidence_pack_repetition(register))
 
         # V6 P4.7: apply validator_severity_policy gate (soft-mode no-op).
         pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}

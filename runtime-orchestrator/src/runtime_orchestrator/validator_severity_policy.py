@@ -45,6 +45,8 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     # motor_058 Report Uniqueness — block on verbatim nugget reuse.
     # RU1 (jaccard threshold) stays warn (probabilistic). RU3 stays warn.
     ("motor_058", "RU2_verbatim_nugget_reuse"),
+    # V7 P6 — intra-run evidence pack repetition (≥2 cases share pack).
+    ("motor_058", "RU6_intra_run_evidence_pack_repetition"),
 
     # motor_059 Strategic Intelligence — block on allowed-claim-without-
     # falsification AND TAD ACT-NOW on prohibited claim AND OBSERVED_FACT
