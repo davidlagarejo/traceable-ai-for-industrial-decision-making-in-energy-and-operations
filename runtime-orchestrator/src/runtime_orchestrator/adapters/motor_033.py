@@ -27,6 +27,10 @@ from typing import Any
 
 from .base import BaseMotorAdapter
 from runtime_orchestrator.evidence_maturity.decision_templates import get_decision_template
+from runtime_orchestrator.phase_units import (
+    derive_defer_investigate_act_map,
+    to_decision_admissibility_case_register,
+)
 
 
 _EFFORT_THRESHOLDS = {
@@ -586,11 +590,23 @@ class Motor033Adapter(BaseMotorAdapter):
             "high_actions":              [a for a in tad_action_plan if a["effort_tier"] == "high"],
         }
 
+        # V5 P2: canonical Phase 8 unit (Master Doc §4 + §7.2) — projection
+        # of tad_action_plan into decision_admissibility_case rows. Maps
+        # free-form action labels to the 8 canonical action families
+        # (inspect/measure/classify/pilot/design/procure/implement/defer).
+        decision_admissibility_case_register = to_decision_admissibility_case_register(
+            tad_action_plan
+        )
+        defer_investigate_act_map = derive_defer_investigate_act_map(
+            decision_admissibility_case_register
+        )
         return {
             "tad_preliminary":           tad_preliminary,
             "tad_action_count":          len(tad_action_plan),
             "blocking_conflict_count":   len(conflict_register),
             "information_deficit_score": deficit_score,
             "expanded_structural_tad_action_register": expanded_structural_tad_action_register,
+            "decision_admissibility_case_register": decision_admissibility_case_register,
+            "defer_investigate_act_map": defer_investigate_act_map,
             "produced_at":               produced_at,
         }

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from ..phase_units import to_belief_revision_event_register
 from ..congruence_intelligence.claim_governor import build_congruence_claim_contract_register
 from ..congruence_intelligence.gold_nuggets import (
     build_gold_nugget_strength_register,
@@ -285,6 +286,28 @@ class Motor054Adapter(BaseMotorAdapter):
             "gold_nugget_authority_state": gold_nugget_authority_state,
             "prohibited_action_register": prohibited_action_register,
             "congruence_claim_contract_register": congruence_claim_contract_register,
+            # V5 P2: canonical Phase 7 unit (Master Doc §4) — projection of
+            # claim contracts + congruence enrichments into
+            # belief_revision_event records. Sparse data → empty register.
+            "belief_revision_event_register": to_belief_revision_event_register(
+                belief_revision_log=[
+                    {
+                        "event_id": f"BRE-{contract.get('claim_id', i)}",
+                        "target_object": contract.get("claim_id", ""),
+                        "prior_state": contract.get("prior_state", "unsupported"),
+                        "trigger_event": "claim_contract_assigned",
+                        "dependency_type": "claim_governance",
+                        "causal_statement": contract.get("rationale", ""),
+                        "scope_impact": contract.get("scope_impact", "claim_visibility_only"),
+                        "propagation_scope": list(contract.get("affected_claims", []) or []),
+                        "publication_consequence": contract.get("publication_consequence", ""),
+                        "lifecycle_action": contract.get("lifecycle_action", "maintain"),
+                    }
+                    for i, contract in enumerate(congruence_claim_contract_register or [])
+                    if isinstance(contract, dict)
+                ],
+                contradiction_register=None,
+            ),
             "gold_nugget_count": len(gold_nugget_register),
             "gold_nugget_strength_count": len(gold_nugget_strength_register),
             "strategic_gold_nugget_count": len(gold_nugget_register),

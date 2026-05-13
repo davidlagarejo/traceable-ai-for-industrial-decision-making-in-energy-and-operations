@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..asset_contracts import derive_target_definition
+from ..phase_units import to_financial_exposure_case_register
 from ..structural_intelligence import (
     build_evidence_state_by_layer_register,
     build_structural_financial_exposure_register,
@@ -43,9 +44,14 @@ class Motor045Adapter(BaseMotorAdapter):
             competitive_comparison_register=list(inputs.get("motor_043", {}).get("competitive_comparison_register", []) or []),
             structural_financial_exposure_register=register,
         )
+        # V5 P2: canonical Phase 5 unit (Master Doc §4) — projection of
+        # structural_financial_exposure_register into financial_exposure_case
+        # with explicit decision_finance_posture ladder.
+        financial_exposure_case_register = to_financial_exposure_case_register(register)
         return {
             "structural_financial_exposure_register": register,
             "structural_financial_exposure_count": len(register),
             "evidence_state_by_layer_register": evidence_by_layer,
             "evidence_state_by_layer_count": len(evidence_by_layer),
+            "financial_exposure_case_register": financial_exposure_case_register,
         }

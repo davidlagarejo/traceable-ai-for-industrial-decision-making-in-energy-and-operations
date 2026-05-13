@@ -22,6 +22,7 @@ from datetime import datetime, timezone
 import re
 from typing import Any
 
+from ..phase_units import to_inference_case_register
 from .base import BaseMotorAdapter
 
 
@@ -2865,6 +2866,11 @@ class Motor014Adapter(BaseMotorAdapter):
 
         return {
             "inference_records": inference_records,
+            # V5 P2: canonical Phase 2 unit (Master Doc §15) — projection of
+            # inference_records with the 6 mandatory attributes named
+            # canonically. Downstream consumers should prefer this register
+            # over the raw inference_records.
+            "inference_case_register_canonical": to_inference_case_register(inference_records),
             "tension_records": tension_records,
             "conflict_register": conflict_register,
             "opportunity_candidates": opportunity_candidates,

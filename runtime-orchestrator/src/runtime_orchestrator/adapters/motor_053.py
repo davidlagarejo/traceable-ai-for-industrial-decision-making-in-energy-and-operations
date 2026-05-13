@@ -20,6 +20,7 @@ from ..congruence_intelligence.regulatory_physics import (
     build_regulatory_constraint_register,
     build_regulatory_physics_register,
 )
+from ..phase_units import to_compliance_applicability_case_register
 from ..zlab_skill.runtime_bridge import build_registry_financial_exposure_register
 from .base import BaseMotorAdapter
 
@@ -139,10 +140,17 @@ class Motor053Adapter(BaseMotorAdapter):
             ),
             "authority_state": financial_exposure_authority_state,
         }
+        # V5 P2: canonical Phase 6 unit (Master Doc §4) — projection of
+        # regulatory_constraint_register into compliance_applicability_case
+        # with explicit applicability_state ladder.
+        compliance_applicability_case_register = to_compliance_applicability_case_register(
+            regulatory_constraint_register
+        )
         return {
             "regulatory_physics_register": regulatory_physics_register,
             "permit_signal_register": permit_signal_register,
             "regulatory_constraint_register": regulatory_constraint_register,
+            "compliance_applicability_case_register": compliance_applicability_case_register,
             "finance_physics_dependency_register": finance_physics_dependency_register,
             "cost_driver_dependency_register": cost_driver_dependency_register,
             "capital_logic_register": capital_logic_register,

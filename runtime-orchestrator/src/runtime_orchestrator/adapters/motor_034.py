@@ -21,6 +21,7 @@ from ..evidence_maturity import (
     expand_dependency_variables,
 )
 from ..evidence_maturity.domain_packs import NYC_DATASETS
+from ..phase_units import to_claim_upgrade_candidate_register
 from .base import BaseMotorAdapter
 
 
@@ -2259,6 +2260,12 @@ class Motor034Adapter(BaseMotorAdapter):
             "cluster_report_readiness_profile": cluster_report_readiness_profile,
             "canonical_asset_context_summary": canonical_asset_context_summary,
             "claim_permission_register": [record.to_dict() for record in claim_permissions],
+            # V5 P2: canonical Phase 4 unit (Master Doc §5) — projection
+            # of claim permissions into claim_upgrade_candidate with
+            # explicit hardening route fields.
+            "claim_upgrade_candidate_register": to_claim_upgrade_candidate_register(
+                [record.to_dict() for record in claim_permissions]
+            ),
             "structural_claim_permission_register": structural_claim_permission_register,
             "claim_contract_register": claim_contract_register,
             "decision_permission_register": [record.to_dict() for record in decision_permissions],
