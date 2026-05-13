@@ -62,6 +62,10 @@ import requests
 from openpyxl import load_workbook
 
 from ..asset_contracts import derive_target_definition
+from ..source_execution_auditor import (
+    audit_source_execution,
+    gaps_block_render,
+)
 from ..congruence_intelligence.evidence_attempts import (
     build_search_attempt_ledger,
     build_search_attempt_outcome_register,
@@ -1227,9 +1231,28 @@ class Motor028Adapter(BaseMotorAdapter):
             json.dumps({"target": target_definition.get("target_identifier"), "cik": cik, "at": produced_at}, sort_keys=True).encode()
         ).hexdigest()[:16]
 
+        # V6 P13.2 — source execution audit. ADDITIVE: emits a verdict
+        # for the render_gate downstream. Does not mutate any other field.
+        source_audit_report = audit_source_execution(
+            routing_plan_compliance=routing_plan_compliance,
+            routing_plan=source_routing_plan if isinstance(source_routing_plan, dict) else None,
+            fallback_events=None,
+        )
+        source_audit_verdict = {
+            "passed":                  source_audit_report.passed,
+            "blocks_render":           gaps_block_render(source_audit_report),
+            "mandatory_total":         source_audit_report.mandatory_total,
+            "mandatory_missing":       source_audit_report.mandatory_missing,
+            "executed_ratio":          source_audit_report.executed_ratio,
+            "justified_gap_count":     len(source_audit_report.justified_gaps),
+            "unjustified_gap_count":   len(source_audit_report.unjustified_gaps),
+            "unjustified_source_keys": [g.source_key for g in source_audit_report.unjustified_gaps],
+        }
+
         return {
             "discovery_candidates": candidates,
             "discovery_attempts":   attempts,
+            "source_audit_verdict": source_audit_verdict,
             "discovery_summary":    _summarize_attempts(
                 attempts,
                 candidates,

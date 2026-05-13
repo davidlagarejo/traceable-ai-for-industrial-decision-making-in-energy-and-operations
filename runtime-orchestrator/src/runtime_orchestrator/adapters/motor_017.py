@@ -24,6 +24,7 @@ from typing import Any
 log = logging.getLogger(__name__)
 
 from ..output_taxonomy import CANONICAL_VISIBLE_OUTPUT_MODES, canonicalize_output_mode
+from ..render_gate import evaluate_render_gate
 from .base import BaseMotorAdapter
 
 _TEMPLATE_DIR = Path(__file__).resolve().parents[3] / \
@@ -1212,6 +1213,9 @@ class Motor017Adapter(BaseMotorAdapter):
             "motor_014", "motor_016", "motor_025", "motor_036",
             "motor_055", "motor_056", "motor_057", "motor_058", "motor_059",
             "motor_061", "motor_062", "motor_063",
+            # V6 P13.6 — render_gate consolidator reads these verdicts:
+            "motor_024",  # fallback_policy_verdict
+            "motor_028",  # source_audit_verdict
         ]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
@@ -1441,11 +1445,66 @@ class Motor017Adapter(BaseMotorAdapter):
                 f"{report_state_result.reason}"
             )
 
+        # V6 P13.6 — consult render_gate consolidator. Pulls every V6
+        # verdict surfaced by upstream motors (motor_016 claim_sync_verdict,
+        # motor_028 source_audit_verdict, motor_024 fallback_policy_verdict,
+        # motor_061 pattern_isolation_violations) and emits ONE binary
+        # allow/refuse decision. By default we evaluate in SOFT MODE so the
+        # 1650 regression continues to pass; operators opt into strict mode
+        # via pipeline_inputs.__render_strict_default__ = True (or env
+        # ZLAB_RENDER_STRICT_DEFAULT=1 when explicitly set). When strict mode
+        # is on AND the verdict refuses, the refusal is appended to
+        # block_reasons (the existing escape hatch via __force_render__ still
+        # applies).
+        m016_for_gate = inputs.get("motor_016", {}) if isinstance(inputs.get("motor_016", {}), dict) else {}
+        m028_for_gate = inputs.get("motor_028", {}) if isinstance(inputs.get("motor_028", {}), dict) else {}
+        m024_for_gate = inputs.get("motor_024", {}) if isinstance(inputs.get("motor_024", {}), dict) else {}
+        gate_pipeline_inputs = dict(pipeline_inputs)
+        # Default to soft unless the operator has explicitly opted in.
+        if (
+            "__render_strict_default__" not in gate_pipeline_inputs
+            and not gate_pipeline_inputs.get("__render_soft_mode__")
+            and (os.environ.get("ZLAB_RENDER_STRICT_DEFAULT", "") or "").lower().strip()
+                not in ("1", "true", "yes", "on")
+        ):
+            gate_pipeline_inputs["__render_soft_mode__"] = True
+        render_gate_verdict = evaluate_render_gate(
+            state=report_state_result.state,
+            qa_card=None,  # qa_score is not part of motor_017's input chain today
+            fallback_verdict=m024_for_gate.get("fallback_policy_verdict"),
+            source_audit=None,  # source_audit_verdict is a dict, not the dataclass; skipped
+            claim_sync=None,    # same — claim_sync_verdict already dict-form
+            isolation_violations=list(m061.get("pattern_isolation_violations", []) or []),
+            pipeline_inputs=gate_pipeline_inputs,
+        )
+        # Soft signals from dict-form verdicts (claim_sync, source_audit) that
+        # the render_gate skipped above — apply them manually as block reasons
+        # only in strict mode.
+        if render_gate_verdict.strict_mode:
+            cs_verdict = m016_for_gate.get("claim_sync_verdict") or {}
+            if cs_verdict.get("blocks_render"):
+                block_reasons.append(
+                    f"Claim synchronization inconsistent across motors "
+                    f"(baseline={cs_verdict.get('expected_baseline')}, "
+                    f"max_divergence={cs_verdict.get('max_divergence')})"
+                )
+            sa_verdict = m028_for_gate.get("source_audit_verdict") or {}
+            if sa_verdict.get("blocks_render"):
+                block_reasons.append(
+                    f"Source execution audit failed: "
+                    f"{sa_verdict.get('unjustified_gap_count', 0)} unjustified mandatory gap(s)"
+                )
+            if not render_gate_verdict.allowed:
+                block_reasons.extend(
+                    f"render_gate: {r}" for r in render_gate_verdict.reasons
+                )
+
         if block_reasons and not force_render_under_warnings:
             return {
                 "pdf_path": "",
                 "pdf_paths": {},
                 "compilation_status": "blocked",
+                "render_gate_verdict": render_gate_verdict.as_dict(),
                 "render_job_id": "",
                 "package_id": report_package.get("package_id", "unknown"),
                 "available_languages": ["en"],
@@ -1736,4 +1795,7 @@ class Motor017Adapter(BaseMotorAdapter):
             # topic). Dashboard / audit tools should display this alongside
             # `recommended_report_type` from motor_007.
             "report_maturity_type": report_maturity_type,
+            # V6 P13.6 — render_gate consolidated verdict (always emitted,
+            # even on success-path, so downstream auditors can read it).
+            "render_gate_verdict": render_gate_verdict.as_dict(),
         }

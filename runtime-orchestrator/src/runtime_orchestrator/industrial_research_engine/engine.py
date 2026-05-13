@@ -39,6 +39,7 @@ from .schemas import KNOWLEDGE_KINDS, CombinationObject, KnowledgeObject
 from .validators import (
     KnowledgeValidationError,
     validate_combination,
+    validate_combination_v6_strict,
     validate_knowledge,
 )
 
@@ -186,9 +187,18 @@ def propose_knowledge(
             f"unknown knowledge_kind: {target_kind!r}. Valid: {KNOWLEDGE_KINDS}"
         )
 
-    # Validate via the appropriate validator
+    # Validate via the appropriate validator.
+    # V6 P13.5 — if hard-block mode is active, route combinations through
+    # the V6 strict validator (required_evidence_pack, tad_mapping, render
+    # modes, ≥2 patterns, etc.). Soft mode keeps the V5 validator for
+    # backward compat with the 4 pre-V6 approved combinations.
     if target_kind == "combination":
-        validated: KnowledgeObject = validate_combination(payload)
+        import os
+        _v6_strict = (os.environ.get("ZLAB_VALIDATORS_HARD_BLOCK", "") or "").lower().strip() in ("1", "true", "yes", "on")
+        if _v6_strict:
+            validated: KnowledgeObject = validate_combination_v6_strict(payload)
+        else:
+            validated = validate_combination(payload)
     else:
         # Ensure the payload reflects the target kind even if caller
         # passed a different declared kind by mistake.

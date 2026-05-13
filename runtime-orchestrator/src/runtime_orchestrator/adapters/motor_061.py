@@ -34,6 +34,7 @@ from .base import BaseMotorAdapter
 from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
 from ..industrial_research_engine.family_scope import ALL_KNOWN_ASSET_FAMILIES
 from ..validator_severity_policy import effective_severity
+from ..pattern_isolation import audit_isolation_violations
 
 
 # Per asset_family, the set of pattern_ids that signal CONTAMINATION when
@@ -282,12 +283,32 @@ class Motor061Adapter(BaseMotorAdapter):
                 self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
             )
 
+        # V6 P13.4 — pattern_isolation consultation. Build an activations
+        # batch from motor_054's activated combinations and audit against
+        # each pattern's isolation contract (derived from spec.asset_types).
+        # ADDITIVE: emits an audit list; does not change existing warnings.
+        activations_batch: list[dict[str, Any]] = []
+        for combo in activated_combinations:
+            if not isinstance(combo, dict):
+                continue
+            for pid in combo.get("pattern_ids", []) or []:
+                if not pid:
+                    continue
+                activations_batch.append({
+                    "pattern_id": str(pid),
+                    "asset_family": asset_family,
+                })
+        isolation_violations = audit_isolation_violations(activations_batch)
+
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
         blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
         warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
 
         return {
             "asset_family_isolation_warnings": warnings,
+            # V6 P13.4 — pattern_isolation audit verdict (additive).
+            "pattern_isolation_violations": isolation_violations,
+            "pattern_isolation_violation_count": len(isolation_violations),
             "warning_count": len(warnings),
             "critical_count": critical_count,
             # V6 P4.1: surface V6-grade counts for downstream qa_score consumer.

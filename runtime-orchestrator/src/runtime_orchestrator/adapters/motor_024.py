@@ -24,6 +24,16 @@ from datetime import datetime, timezone
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..fallback_policy import FallbackEvent, FallbackTier, assess, classify
+
+
+# V6 P13.3 — map governance event_type → fallback_policy kind token.
+# Conservative: only types we're CERTAIN match a fallback kind.
+_EVENT_TYPE_TO_FALLBACK_KIND: dict[str, str] = {
+    "llm_fallback_registered":         "narrator_used_structured_fallback",
+    "mandatory_source_execution_gap":  "source_coverage_gap_logged",
+    "ingestion_contamination_detected":"cross_family_pattern_leak",
+}
 from ..ingestion_learning import (
     build_case_delta_register,
     build_ingestion_learning_register,
@@ -1815,8 +1825,39 @@ class Motor024Adapter(BaseMotorAdapter):
 
         audit_id = _audit_hash(sorted_events)
 
+        # V6 P13.3 — derive a fallback_policy verdict from the event log.
+        # ADDITIVE: emits an extra field; does not mutate events.
+        fb_events: list[FallbackEvent] = []
+        for ev in sorted_events:
+            kind = _EVENT_TYPE_TO_FALLBACK_KIND.get(ev.get("event_type", ""))
+            if not kind:
+                continue
+            fb_events.append(FallbackEvent(
+                motor_id=str(ev.get("motor_id", "") or ""),
+                kind=kind,
+                reason=str(ev.get("description", "") or ""),
+                metadata=ev.get("traceable_inputs") or {},
+            ))
+        # State is unknown at motor_024 time; classify against the most
+        # permissive ("internal_debug_only") to surface the raw tier counts
+        # without artificial blocking. The render_gate downstream applies
+        # the real state.
+        fb_verdict = assess("internal_debug_only", fb_events)
+        fallback_policy_verdict = {
+            "total_events":       fb_verdict.total_events,
+            "safe_count":         fb_verdict.safe_count,
+            "degraded_count":     fb_verdict.degraded_count,
+            "prohibited_count":   fb_verdict.prohibited_count,
+            "fallback_events":    [
+                {"motor_id": e.motor_id, "kind": e.kind, "reason": e.reason,
+                 "tier": classify(e.kind).value}
+                for e in fb_events
+            ],
+        }
+
         return {
             "governance_event_log": sorted_events,
+            "fallback_policy_verdict": fallback_policy_verdict,
             "exception_register": error_events,
             "stub_execution_register": stub_register,
             "pipeline_health_summary": pipeline_health,

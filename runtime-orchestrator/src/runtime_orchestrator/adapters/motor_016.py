@@ -37,6 +37,10 @@ from datetime import datetime, timezone
 from typing import Any
 
 from ..asset_contracts import derive_effective_case_id
+from ..claim_synchronization_auditor import (
+    audit_claim_synchronization,
+    claim_sync_blocks_render,
+)
 from ..congruence_intelligence.case_isolation import (
     build_case_namespace_register,
     build_chart_case_match_register,
@@ -6675,6 +6679,7 @@ class Motor016Adapter(BaseMotorAdapter):
         return [
             "motor_015", "motor_014", "motor_012", "motor_034",
             "motor_018", "motor_019", "motor_028", "motor_001",
+            "motor_025",  # V6 P13.1 — claim_sync audit
             "motor_033", "motor_035",
             "motor_037", "motor_038", "motor_039", "motor_040",
             "motor_041", "motor_042", "motor_043", "motor_044",
@@ -9450,6 +9455,32 @@ class Motor016Adapter(BaseMotorAdapter):
         }
         report_package["report_traceability"] = report_traceability
 
+        # V6 P13.1 — cross-motor claim cardinality audit.
+        # Reads motor_014/034/054 + motor_025 (if loaded) and emits a
+        # report that downstream render_gate consumes. ADDITIVE: does
+        # not change the report_package payload itself.
+        m25 = inputs.get("motor_025", {}) if isinstance(inputs.get("motor_025", {}), dict) else {}
+        claim_sync_report = audit_claim_synchronization(
+            motor_014_output=m14 if isinstance(m14, dict) else None,
+            motor_034_output=m34 if isinstance(m34, dict) else None,
+            motor_054_output=m54 if isinstance(m54, dict) else None,
+            motor_025_output=m25 or None,
+            motor_016_output={"report_package": report_package},
+        )
+        claim_sync_verdict = {
+            "consistent":             claim_sync_report.consistent,
+            "expected_baseline":      claim_sync_report.expected_baseline,
+            "max_divergence":         claim_sync_report.max_divergence,
+            "blocks_render":          claim_sync_blocks_render(claim_sync_report),
+            "motor_014_count":        claim_sync_report.motor_014_count,
+            "motor_034_count":        claim_sync_report.motor_034_count,
+            "motor_054_count":        claim_sync_report.motor_054_count,
+            "motor_025_count":        claim_sync_report.motor_025_count,
+            "governance_summary_count": claim_sync_report.governance_summary_count,
+            "divergence_breakdown":   dict(claim_sync_report.divergence_breakdown),
+            "divergent_ids_by_motor": dict(claim_sync_report.divergent_ids_by_motor),
+        }
+
         return {
             "report_package":          report_package,
             "total_sections":          len(sections),
@@ -9459,4 +9490,5 @@ class Motor016Adapter(BaseMotorAdapter):
             "motor_014_enrichment_state": motor_014_enrichment_state,
             "motor_015_enrichment_state": motor_015_enrichment_state,
             "legacy_enrichment_dependency_state": legacy_enrichment_dependency_state,
+            "claim_sync_verdict":      claim_sync_verdict,
         }
