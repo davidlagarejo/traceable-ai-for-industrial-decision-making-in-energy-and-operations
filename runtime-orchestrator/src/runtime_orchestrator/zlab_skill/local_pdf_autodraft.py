@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Mapping
 
+from .autodraft_rule_derivation import derive_autodraft_rule_from_pattern_spec
 from .extractor import build_extraction_seed_from_manifest
 
 try:
@@ -155,7 +156,14 @@ def _build_structured_prior_candidates(
     matched_patterns: list[dict[str, Any]] = []
     for pattern_spec in list(registry.get("patterns", []) or []):
         pattern_id = _text(pattern_spec.get("id"))
+        # V5 P9: hand-authored rule first; fall back to deterministic
+        # derivation from the pattern_spec's own trigger_conditions when
+        # no hand-authored rule exists. This unlocks the 10 registry
+        # patterns (cold-chain S4 + manufacturing) that previously had
+        # no autodraft rule and would skip in V5 P3 smoke tests.
         rule = _AUTO_PATTERN_RULES.get(pattern_id)
+        if rule is None:
+            rule = derive_autodraft_rule_from_pattern_spec(pattern_spec)
         if not rule or not search_text:
             continue
         evaluation = _evaluate_pattern_rule(search_text, rule)

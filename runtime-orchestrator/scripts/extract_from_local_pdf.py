@@ -44,6 +44,9 @@ from runtime_orchestrator.industrial_research_engine import (  # noqa: E402
     load_pattern_spec,
     propose_extracted_pattern,
 )
+from runtime_orchestrator.zlab_skill.autodraft_rule_derivation import (  # noqa: E402
+    derive_autodraft_rule_from_pattern_spec,
+)
 from runtime_orchestrator.zlab_skill.local_pdf_autodraft import (  # noqa: E402
     _AUTO_PATTERN_RULES,
     _evaluate_pattern_rule,
@@ -51,6 +54,49 @@ from runtime_orchestrator.zlab_skill.local_pdf_autodraft import (  # noqa: E402
     extract_bounded_pdf_text,
     pdfplumber,
 )
+
+
+_REGISTRY_PATTERNS_DIR = (
+    _REPO_ROOT / "zlab_skill" / "registry" / "patterns"
+)
+
+
+def _all_registry_pattern_ids() -> list[str]:
+    """Return every pattern_id present in the registry (filesystem)."""
+    if not _REGISTRY_PATTERNS_DIR.exists():
+        return []
+    ids = set()
+    for f in _REGISTRY_PATTERNS_DIR.glob("*.json"):
+        # Filename format: <id>.v<N>.json
+        # Use the spec's own id to be robust
+        try:
+            import json as _json
+            d = _json.loads(f.read_text(encoding="utf-8"))
+            if d.get("id"):
+                ids.add(d["id"])
+        except Exception:
+            pass
+    return sorted(ids)
+
+
+def _resolve_rule_for_pattern(pattern_id: str) -> tuple[dict | None, dict | None, str]:
+    """Return (rule, pattern_spec, source) for a pattern_id.
+
+    Source is one of:
+      'hand_authored' — rule from _AUTO_PATTERN_RULES (V5 P3 vocabulary)
+      'derived'       — rule auto-derived from pattern_spec (V5 P9)
+      'none'          — no rule and derivation failed
+    """
+    spec = load_pattern_spec(pattern_id)
+    rule = _AUTO_PATTERN_RULES.get(pattern_id)
+    if rule is not None:
+        return rule, spec, "hand_authored"
+    if spec is None:
+        return None, None, "none"
+    derived = derive_autodraft_rule_from_pattern_spec(spec)
+    if derived is None:
+        return None, spec, "none"
+    return derived, spec, "derived"
 
 
 def _process_pdf(
@@ -84,7 +130,14 @@ def _process_pdf(
         return result
     search_text = text_result["visible_text"].lower()
 
-    for pattern_id, rule in _AUTO_PATTERN_RULES.items():
+    # V5 P9: iterate ALL registry pattern_ids (not just _AUTO_PATTERN_RULES).
+    # For each, use the hand-authored rule if present, else derive one
+    # from the pattern_spec's own trigger_conditions.
+    all_ids = _all_registry_pattern_ids()
+    for pattern_id in all_ids:
+        rule, spec, rule_source = _resolve_rule_for_pattern(pattern_id)
+        if rule is None or spec is None:
+            continue
         evaluation = _evaluate_pattern_rule(search_text, rule)
         if not evaluation:
             continue
@@ -94,14 +147,8 @@ def _process_pdf(
             "pattern_id": pattern_id,
             "matched_terms": matched_terms,
             "score": evaluation["score"],
+            "rule_source": rule_source,
         })
-
-        spec = load_pattern_spec(pattern_id)
-        if not spec:
-            result["errors"].append(
-                f"pattern_id {pattern_id!r} has autodraft rule but no registry spec"
-            )
-            continue
 
         bridged_id = (
             f"{pattern_id}__{id_suffix}" if id_suffix else f"{pattern_id}__from_{source_id}"
