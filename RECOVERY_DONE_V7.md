@@ -27,8 +27,8 @@ V7 cierra la **ejecución**: defaults flippeados, catálogo migrado, governance 
 | P6 | motor_058 RU6 intra-run evidence pack repetition| ✅ | 1701 | `a4a3af7` |
 | P7 | motor_063 CV5 chart cross-asset-family          | ✅ | 1711 | `b71b24e` |
 | P8 | CLIENT_SAFE end-to-end stability suite (8)      | ✅ | 1721 | `cda1edc` |
-| P9 | Docs curation (archive history)                 | ✅ | 1721 | (this) |
-| P10| Final regression + push                         | ⏳ | —    | — |
+| P9 | Docs curation (archive history)                 | ✅ | 1721 | `21267f5` |
+| P10| Final regression + push                         | ✅ | 1721 | (this)    |
 
 ---
 
