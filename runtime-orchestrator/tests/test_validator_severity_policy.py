@@ -49,9 +49,17 @@ def test_is_v6_blocking_rule_negative_case():
 # ── hard_mode_active resolution ─────────────────────────────────────
 
 
-def test_hard_mode_default_off(monkeypatch):
+def test_hard_mode_default_on_v7(monkeypatch):
+    """V7 doctrine: hard mode is the default. Diagnostic mode is opt-out."""
     monkeypatch.delenv(_ENV_FLAG, raising=False)
-    assert hard_mode_active() is False
+    assert hard_mode_active() is True
+
+
+def test_hard_mode_env_can_disable(monkeypatch):
+    """Env "0"/"false"/"off" opts out of hard mode (diagnostic runs)."""
+    for value in ("0", "false", "no", "off"):
+        monkeypatch.setenv(_ENV_FLAG, value)
+        assert hard_mode_active() is False, value
 
 
 def test_hard_mode_env_flag_activates(monkeypatch):
@@ -93,7 +101,8 @@ def test_hard_mode_explicit_override_takes_precedence(monkeypatch):
 
 
 def test_effective_severity_soft_mode_returns_default(monkeypatch):
-    monkeypatch.delenv(_ENV_FLAG, raising=False)
+    """V7: soft mode is opt-out via env "0" or pipeline_inputs.__validators_soft_mode__."""
+    monkeypatch.setenv(_ENV_FLAG, "0")
     assert effective_severity(
         "motor_061", "asset_family_contamination_critical", "warning"
     ) == "warning"

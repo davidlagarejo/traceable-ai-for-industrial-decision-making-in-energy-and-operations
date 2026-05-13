@@ -83,13 +83,17 @@ _ENV_FLAG = "ZLAB_VALIDATORS_HARD_BLOCK"
 
 
 def hard_mode_active(pipeline_inputs: Mapping | None = None) -> bool:
-    """True iff V6 hard-block mode is requested.
+    """True iff V6 hard-block mode is active.
+
+    V7 doctrine: hard mode is the DEFAULT. Diagnostic / soft mode is opt-out.
 
     Lookup order:
       1. pipeline_inputs.__validators_hard_block__ (explicit per-run override)
       2. pipeline_inputs.__validators_soft_mode__ → if True, forces False
-      3. environment variable ZLAB_VALIDATORS_HARD_BLOCK ("1"/"true"/"yes")
-      4. default: False (soft mode — preserves regression backward compat)
+      3. environment variable ZLAB_VALIDATORS_HARD_BLOCK:
+           - "0"/"false"/"no"/"off" → soft mode (opt-out)
+           - anything else (including unset) → hard mode
+      4. default: True (V7 hard-by-default).
     """
     if pipeline_inputs:
         explicit = pipeline_inputs.get("__validators_hard_block__")
@@ -98,7 +102,10 @@ def hard_mode_active(pipeline_inputs: Mapping | None = None) -> bool:
         if pipeline_inputs.get("__validators_soft_mode__"):
             return False
     env = (os.environ.get(_ENV_FLAG, "") or "").lower().strip()
-    return env in ("1", "true", "yes", "on")
+    if env in ("0", "false", "no", "off"):
+        return False
+    # V7 default: hard mode ON.
+    return True
 
 
 def is_v6_blocking_rule(motor_id: str, rule_id: str) -> bool:

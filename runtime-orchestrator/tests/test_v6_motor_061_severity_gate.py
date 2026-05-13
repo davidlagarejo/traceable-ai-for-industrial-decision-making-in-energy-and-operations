@@ -57,8 +57,9 @@ def _inputs_clean() -> dict:
 
 
 def test_soft_mode_keeps_severity_critical(monkeypatch):
-    """In soft mode, motor_061 must emit severity='critical' exactly as before."""
-    monkeypatch.delenv(_ENV, raising=False)
+    """In soft mode (V7 opt-out via env=0), motor_061 must emit
+    severity='critical' exactly as before V6."""
+    monkeypatch.setenv(_ENV, "0")
     out = Motor061Adapter().run(_inputs_with_contamination())
     warnings = out["asset_family_isolation_warnings"]
     assert len(warnings) > 0

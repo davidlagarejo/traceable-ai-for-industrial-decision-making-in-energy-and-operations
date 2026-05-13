@@ -5,7 +5,15 @@ required justification fields per RECOVERY_2026-05-10 §11.B.
 """
 from __future__ import annotations
 
+import pytest
+
 from runtime_orchestrator.adapters.motor_062 import Motor062Adapter
+
+
+@pytest.fixture(autouse=True)
+def _force_soft_mode(monkeypatch):
+    """V7: legacy severity assertions assume soft mode."""
+    monkeypatch.setenv("ZLAB_VALIDATORS_HARD_BLOCK", "0")
 
 
 def _run(motor_007=None, motor_014=None, motor_047=None, pipeline=None):

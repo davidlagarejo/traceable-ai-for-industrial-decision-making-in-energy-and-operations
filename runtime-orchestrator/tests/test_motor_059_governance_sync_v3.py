@@ -8,7 +8,17 @@ R3 — DO NOT MODEL + active redesign — now severity=error (was informational)
 """
 from __future__ import annotations
 
+import pytest
+
 from runtime_orchestrator.adapters.motor_059 import Motor059Adapter
+
+
+@pytest.fixture(autouse=True)
+def _force_soft_mode(monkeypatch):
+    """V7: these legacy tests verify default severity ('error'/'warning')
+    semantics. Force soft mode so hard-mode promotion (V7 P1 default ON)
+    does not turn them into 'blocking'."""
+    monkeypatch.setenv("ZLAB_VALIDATORS_HARD_BLOCK", "0")
 
 
 def _run(**overrides) -> dict:

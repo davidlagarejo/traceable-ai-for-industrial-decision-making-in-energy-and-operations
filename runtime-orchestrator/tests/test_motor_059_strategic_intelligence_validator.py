@@ -1,7 +1,15 @@
 """Tests for motor_059 — Strategic Intelligence Validator."""
 from __future__ import annotations
 
+import pytest
+
 from runtime_orchestrator.adapters.motor_059 import Motor059Adapter
+
+
+@pytest.fixture(autouse=True)
+def _force_soft_mode(monkeypatch):
+    """V7: legacy severity assertions assume soft mode."""
+    monkeypatch.setenv("ZLAB_VALIDATORS_HARD_BLOCK", "0")
 
 
 def _run(motor_033=None, motor_038=None, motor_054=None):

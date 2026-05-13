@@ -132,8 +132,8 @@ def test_S3_hard_mode_promotes_blocking_rule_severity(monkeypatch):
 
 
 def test_S3_soft_mode_keeps_default_severity(monkeypatch):
-    """Without the env flag and without pipeline override, severity stays soft."""
-    monkeypatch.delenv("ZLAB_VALIDATORS_HARD_BLOCK", raising=False)
+    """V7: diagnostic / soft mode is opt-out via env=0 or pipeline_inputs."""
+    monkeypatch.setenv("ZLAB_VALIDATORS_HARD_BLOCK", "0")
     assert hard_mode_active(pipeline_inputs={}) is False
     sev = effective_severity(
         motor_id="motor_059",
