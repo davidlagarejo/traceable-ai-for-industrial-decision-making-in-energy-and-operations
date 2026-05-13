@@ -17,6 +17,12 @@
     "food_processing",
     "food_retail"
   ],
+  "anti_asset_types": [
+    "datacenter",
+    "commercial_building",
+    "infrastructure_node",
+    "manufacturing_facility"
+  ],
   "applicable_contexts": [
     "cold-chain or refrigerated facility confirmed",
     "refrigeration system inventory unresolved"

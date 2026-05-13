@@ -14,6 +14,12 @@
     "cold_chain",
     "food_retail"
   ],
+  "anti_asset_types": [
+    "datacenter",
+    "commercial_building",
+    "infrastructure_node",
+    "manufacturing_facility"
+  ],
   "applicable_contexts": [
     "high-traffic doors between zones at different temperatures",
     "rapid-close or interlock evidence unresolved"

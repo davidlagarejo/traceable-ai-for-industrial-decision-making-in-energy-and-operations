@@ -15,6 +15,14 @@
     "commercial_real_estate",
     "logistics"
   ],
+  "anti_asset_types": [
+    "manufacturing_facility",
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "datacenter",
+    "infrastructure_node",
+    "thermal_process_facility"
+  ],
   "applicable_contexts": [
     "HVAC runtime plausible",
     "occupancy or service schedule unresolved",

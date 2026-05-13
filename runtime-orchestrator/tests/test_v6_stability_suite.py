@@ -255,7 +255,9 @@ def test_S8_isolation_audit_flags_cross_family_batch():
     assert len(violations) == 1
     assert violations[0]["pattern_id"] == "compressor_staging"
     assert violations[0]["target_family"] == "datacenter"
-    assert violations[0]["reason"] == "forbidden_family"
+    # V7 P3: compressor_staging now declares explicit anti_asset_types
+    # that include datacenter, so reason is "explicit_anti_family".
+    assert violations[0]["reason"] == "explicit_anti_family"
 
 
 # ── S9: DUMB render layer remains pure ─────────────────────────────

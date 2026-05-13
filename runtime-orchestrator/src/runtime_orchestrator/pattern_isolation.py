@@ -48,6 +48,11 @@ class IsolationContract:
     allowed_families: frozenset[str]
     forbidden_families: frozenset[str]
     declared_asset_types: tuple[str, ...]
+    # V7 P3 — when the pattern spec declares `anti_asset_types` explicitly,
+    # `forbidden_families` is the curated declaration (not the complement of
+    # allowed). `declared_anti_asset_types` carries the raw declaration.
+    declared_anti_asset_types: tuple[str, ...] = ()
+    explicit_anti_declared: bool = False
 
     def allows(self, family: str) -> bool:
         return (family or "").strip() in self.allowed_families
@@ -98,19 +103,37 @@ def pattern_isolation_contract(
     declared = tuple(
         str(f).strip() for f in (spec.get("asset_types") or []) if str(f).strip()
     )
+    # V7 P3 — explicit anti_asset_types declaration. When present, it
+    # *replaces* the complement-derived forbidden set. This lets a pattern
+    # say "I am for warehouse, but explicitly NOT for office or cold_chain"
+    # while leaving other families neutral (not allowed, but not flagged
+    # as contamination either).
+    declared_anti = tuple(
+        str(f).strip() for f in (spec.get("anti_asset_types") or []) if str(f).strip()
+    )
+
     # Sentinel for universally-applicable patterns (e.g. digital_twin_prematurity,
     # sensor_prematurity). These activate on ANY operational asset family.
     if _UNIVERSAL_SENTINEL in declared:
         allowed = frozenset(ALL_KNOWN_ASSET_FAMILIES)
     else:
         allowed = frozenset(declared) & ALL_KNOWN_ASSET_FAMILIES
-    forbidden = ALL_KNOWN_ASSET_FAMILIES - allowed
+
+    if declared_anti:
+        forbidden = frozenset(declared_anti) & ALL_KNOWN_ASSET_FAMILIES
+        explicit = True
+    else:
+        forbidden = ALL_KNOWN_ASSET_FAMILIES - allowed
+        explicit = False
+
     pid = str(spec.get("id") or pattern if isinstance(pattern, str) else spec.get("id", ""))
     return IsolationContract(
         pattern_id=pid,
         allowed_families=allowed,
         forbidden_families=forbidden,
         declared_asset_types=declared,
+        declared_anti_asset_types=declared_anti,
+        explicit_anti_declared=explicit,
     )
 
 
@@ -167,7 +190,19 @@ def audit_isolation_violations(
                 "reason": "unknown_pattern_id",
             })
             continue
-        if not contract.allows(str(fam)):
+        if contract.explicit_anti_declared:
+            # When the pattern declares an explicit anti list, only the
+            # explicit anti families are contamination. Other non-allowed
+            # families are "neutral" — pattern doesn't apply but it's not
+            # a leak event.
+            if contract.forbids(str(fam)):
+                violations.append({
+                    "pattern_id": contract.pattern_id,
+                    "target_family": str(fam),
+                    "allowed_families": sorted(contract.allowed_families),
+                    "reason": "explicit_anti_family",
+                })
+        elif not contract.allows(str(fam)):
             violations.append({
                 "pattern_id": contract.pattern_id,
                 "target_family": str(fam),

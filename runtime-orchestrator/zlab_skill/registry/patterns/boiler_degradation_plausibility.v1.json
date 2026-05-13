@@ -17,6 +17,13 @@
     "industrial",
     "commercial_real_estate"
   ],
+  "anti_asset_types": [
+    "cold_chain_facility",
+    "cold_chain_distribution",
+    "datacenter",
+    "warehouse_distribution",
+    "fulfillment_center"
+  ],
   "applicable_contexts": [
     "boiler duty plausible",
     "combustion evidence unresolved",

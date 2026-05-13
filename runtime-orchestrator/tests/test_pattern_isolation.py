@@ -50,7 +50,12 @@ def test_contract_for_refrigeration_duty_allows_cold_chain():
 
 
 def test_contract_allowed_plus_forbidden_partition_universe():
-    c = pattern_isolation_contract("refrigeration_duty")
+    """V6 behavior: patterns WITHOUT anti_asset_types still partition the
+    universe (allowed + forbidden = ALL_KNOWN). V7 P3 introduced explicit
+    anti for 6 patterns where forbidden is a curated subset only."""
+    # Use a pattern that did NOT receive V7 P3 explicit anti.
+    c = pattern_isolation_contract("high_bay_lighting_waste")
+    assert c.explicit_anti_declared is False
     union = c.allowed_families | c.forbidden_families
     assert union == ALL_KNOWN_ASSET_FAMILIES
     assert not (c.allowed_families & c.forbidden_families)
@@ -108,7 +113,10 @@ def test_audit_flags_cross_family_contamination():
     v = violations[0]
     assert v["pattern_id"] == "refrigeration_duty"
     assert v["target_family"] == "datacenter"
-    assert v["reason"] == "forbidden_family"
+    # V7 P3: refrigeration_duty now has explicit anti list including
+    # datacenter, so reason is "explicit_anti_family" (curated declaration)
+    # instead of "forbidden_family" (derived complement).
+    assert v["reason"] == "explicit_anti_family"
     assert "cold_chain_facility" in v["allowed_families"]
 
 

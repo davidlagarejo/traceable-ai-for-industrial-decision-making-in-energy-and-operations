@@ -13,6 +13,12 @@
   "applicable_industries": [
     "cold_chain"
   ],
+  "anti_asset_types": [
+    "datacenter",
+    "commercial_building",
+    "infrastructure_node",
+    "manufacturing_facility"
+  ],
   "applicable_contexts": [
     "evaporator coils in freezer or cooler zones",
     "defrost strategy (electric/gas/hot-gas) and schedule unresolved"

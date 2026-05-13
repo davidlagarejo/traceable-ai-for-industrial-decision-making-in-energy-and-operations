@@ -15,6 +15,12 @@
     "cold_chain",
     "food_processing"
   ],
+  "anti_asset_types": [
+    "datacenter",
+    "commercial_building",
+    "infrastructure_node",
+    "manufacturing_facility"
+  ],
   "applicable_contexts": [
     "multi-compressor refrigeration plant present",
     "sequencing strategy and part-load behavior unresolved"
