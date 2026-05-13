@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
@@ -318,9 +319,22 @@ class Motor058Adapter(BaseMotorAdapter):
         )
         warnings = _evaluate(comparisons)
 
+        # V6 P4.7: apply validator_severity_policy gate (soft-mode no-op).
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
+
         return {
             "report_uniqueness_warnings": warnings,
             "warning_count": len(warnings),
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "asset_family_evaluated": asset_family,
             "prior_runs_compared": len(comparisons),
             "current_tad_action_count": len(current_tad_ids),

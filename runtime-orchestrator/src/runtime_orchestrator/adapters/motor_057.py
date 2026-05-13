@@ -18,6 +18,7 @@ from typing import Any
 
 from ..pattern_library import asset_family_concept_markers
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 # Conservative fallback used only if the Pattern Library JSON file for an
@@ -218,9 +219,22 @@ class Motor057Adapter(BaseMotorAdapter):
         warnings.extend(_detect_template_fill(nuggets))
         warnings.extend(_detect_nugget_count_out_of_range(nuggets, min_count, max_count))
 
+        # V6 P4.6: apply validator_severity_policy gate (soft-mode no-op).
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
+
         return {
             "gold_nugget_quality_warnings": warnings,
             "warning_count": len(warnings),
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "asset_family_evaluated": asset_family,
             "nugget_count_evaluated": len(nuggets),
             "nugget_count_min": min_count,

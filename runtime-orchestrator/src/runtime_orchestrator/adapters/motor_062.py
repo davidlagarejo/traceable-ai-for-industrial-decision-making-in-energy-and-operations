@@ -27,6 +27,7 @@ from __future__ import annotations
 from typing import Any
 
 from ..source_catalog import all_sources, is_known_source, source_by_id
+from ..validator_severity_policy import effective_severity
 from .base import BaseMotorAdapter
 
 
@@ -227,7 +228,18 @@ class Motor062Adapter(BaseMotorAdapter):
         active_count = sum(1 for s in scenarios if _is_active(s))
 
         warnings = _build_warnings(scenarios, asset_family)
+        # V6 P4.3: apply validator_severity_policy gate. Soft mode keeps
+        # the original severities; hard mode promotes SJ1/SJ2/SJ3 to "blocking".
+        pipeline_inputs_for_policy = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs_for_policy
+            )
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
 
         # Pipeline-level mode toggle. After V2-LIVE Item 1 + Item 3,
         # motor_014 emits the 5 justification fields for every scenario
@@ -248,6 +260,9 @@ class Motor062Adapter(BaseMotorAdapter):
             "scenario_justification_warnings": warnings,
             "warning_count": len(warnings),
             "critical_count": critical_count,
+            # V6 P4.3: surface counts for downstream qa_score consumer.
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "active_scenario_count": active_count,
             "total_scenario_count": len(scenarios),
             "asset_family_evaluated": asset_family,

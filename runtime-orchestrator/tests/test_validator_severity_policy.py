@@ -26,7 +26,7 @@ def test_blocking_set_contains_expected_rules():
         ("motor_062", "SJ1_scenario_missing_justification"),
         ("motor_063", "CV1_decorative_risk_chart"),
         ("motor_058", "RU2_verbatim_nugget_reuse"),
-        ("motor_055", "HD1_fewer_than_2_active_claims"),
+        ("motor_055", "HD1_low_claim_count"),
     }
     blocking = set(list_v6_blocking_rules())
     for entry in expected:
@@ -36,7 +36,7 @@ def test_blocking_set_contains_expected_rules():
 def test_is_v6_blocking_rule_positive_case():
     assert is_v6_blocking_rule("motor_061", "AF1_pattern_contamination")
     assert is_v6_blocking_rule("motor_061", "AF2_nugget_token_contamination")
-    assert is_v6_blocking_rule("motor_063", "CV3_decorative_ratio_contamination")
+    assert is_v6_blocking_rule("motor_063", "CV3_decorative_ratio_critical")
 
 
 def test_is_v6_blocking_rule_negative_case():

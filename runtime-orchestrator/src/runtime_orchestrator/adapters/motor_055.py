@@ -21,6 +21,7 @@ from collections import Counter
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 def _text(value: Any) -> str:
@@ -124,9 +125,22 @@ class Motor055Adapter(BaseMotorAdapter):
         warnings.extend(_detect_duplicate_signatures(claim_register))
         warnings.extend(_detect_tad_action_convergence(actions))
 
+        # V6 P4.4: apply validator_severity_policy gate (soft-mode no-op).
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
+
         return {
             "hypothesis_diversity_warnings": warnings,
             "warning_count": len(warnings),
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "rules_evaluated": [
                 "HD1_low_claim_count",
                 "HD2_duplicate_claim_signature",

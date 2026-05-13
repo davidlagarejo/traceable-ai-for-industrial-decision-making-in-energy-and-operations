@@ -15,6 +15,7 @@ from __future__ import annotations
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 _ACT_NOW_STATUSES = {"ACT NOW"}
@@ -315,9 +316,25 @@ class Motor059Adapter(BaseMotorAdapter):
         warnings.extend(_detect_nugget_implies_superiority_when_blocked(nuggets, m051))
         warnings.extend(_detect_claim_count_mismatch(claim_register, actions, governance_summary))
 
+        # V6 P4.8: apply validator_severity_policy gate (soft-mode no-op).
+        # R2/R3 already promoted to "error" in V3 G2 above; gate respects
+        # explicit severity if already non-warning. Hard mode promotes
+        # R1, R2, R4 (per V6 blocking set) further to "blocking".
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
+
         return {
             "strategic_intelligence_warnings": warnings,
             "warning_count": len(warnings),
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "warning_count_by_severity": {
                 "warning": sum(1 for w in warnings if w.get("severity") == "warning"),
                 "info": sum(1 for w in warnings if w.get("severity") == "info"),

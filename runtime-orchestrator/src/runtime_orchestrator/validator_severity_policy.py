@@ -31,8 +31,8 @@ from typing import Mapping
 _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     # motor_055 Hypothesis Diversity — block on <2 active claims or
     # duplicate signatures. HD3 stays warn (TAD convergence is informational).
-    ("motor_055", "HD1_fewer_than_2_active_claims"),
-    ("motor_055", "HD2_duplicate_signature"),
+    ("motor_055", "HD1_low_claim_count"),
+    ("motor_055", "HD2_duplicate_claim_signature"),
 
     # motor_056 Evidence Repetition — block on pack repetition (the
     # "service-level proxy in 5+ sections" symptom). ER2/ER3 stay warn.
@@ -40,7 +40,7 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
 
     # motor_057 Gold Nugget Quality — block when nugget has zero
     # asset-family token (archetype-replay). GN2/GN3 stay warn.
-    ("motor_057", "GN1_no_asset_family_token"),
+    ("motor_057", "GN1_archetype_replay"),
 
     # motor_058 Report Uniqueness — block on verbatim nugget reuse.
     # RU1 (jaccard threshold) stays warn (probabilistic). RU3 stays warn.
@@ -49,8 +49,8 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     # motor_059 Strategic Intelligence — block on allowed-claim-without-
     # falsification AND TAD ACT-NOW on prohibited claim AND OBSERVED_FACT
     # without supporting evidence. R3 informational stays warn.
-    ("motor_059", "R1_allowed_claim_empty_falsification"),
-    ("motor_059", "R2_tad_act_now_on_prohibited_claim"),
+    ("motor_059", "R1_missing_falsification"),
+    ("motor_059", "R2_act_now_with_prohibited_claim"),
     ("motor_059", "R4_observed_fact_without_evidence"),
 
     # motor_061 Asset Family Isolation — ALL critical contamination
@@ -65,9 +65,9 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     ("motor_062", "SJ3_source_family_mismatch"),
 
     # motor_063 Chart Validity — block on decorative-risk charts (CV1)
-    # and decorative-ratio contamination tier (CV3).
+    # and decorative-ratio critical tier (CV3).
     ("motor_063", "CV1_decorative_risk_chart"),
-    ("motor_063", "CV3_decorative_ratio_contamination"),
+    ("motor_063", "CV3_decorative_ratio_critical"),
 })
 
 

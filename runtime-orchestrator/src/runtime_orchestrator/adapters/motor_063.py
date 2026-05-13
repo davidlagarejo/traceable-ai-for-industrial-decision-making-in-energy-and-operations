@@ -29,6 +29,7 @@ from __future__ import annotations
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 _DECORATIVE_RATIO_CRITICAL = 0.30
@@ -182,13 +183,28 @@ class Motor063Adapter(BaseMotorAdapter):
         warnings.extend(_detect_decorative_ratio(chart_assets, summary))
         warnings.extend(_detect_no_charts_with_active_thesis(chart_assets, thesis_state))
 
+        # V6 P4.2: apply validator_severity_policy gate. Soft mode keeps
+        # the original severities; hard mode promotes CV1 and CV3 to "blocking".
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
 
         return {
             "chart_validity_warnings": warnings,
             "warning_count": len(warnings),
             "critical_count": critical_count,
-            "chart_contamination_detected": critical_count > 0,
+            # V6 P4.2: surface counts for downstream qa_score consumer.
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
+            "chart_contamination_detected": (critical_count + blocking_count) > 0,
             "total_charts_evaluated": len(chart_assets),
             "rules_evaluated": [
                 "CV1_decorative_risk_chart",

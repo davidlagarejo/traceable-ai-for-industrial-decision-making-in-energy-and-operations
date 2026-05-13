@@ -16,6 +16,7 @@ from collections import Counter
 from typing import Any
 
 from .base import BaseMotorAdapter
+from ..validator_severity_policy import effective_severity
 
 
 def _text(value: Any) -> str:
@@ -129,9 +130,22 @@ class Motor056Adapter(BaseMotorAdapter):
         warnings.extend(_detect_minimum_measurement_repetition(min_evidence))
         warnings.extend(_detect_empty_evidence_in_actionable(actions))
 
+        # V6 P4.5: apply validator_severity_policy gate (soft-mode no-op).
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
+
         return {
             "evidence_repetition_warnings": warnings,
             "warning_count": len(warnings),
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
             "rules_evaluated": [
                 "ER1_pack_repetition",
                 "ER2_minimum_measurement_repetition",
