@@ -538,6 +538,36 @@ def _normalize_action_family(raw_action: str) -> str:
     return "classify"  # safe default — needs more triage
 
 
+_REGULATORY_DEPENDENT_FAMILIES: frozenset[str] = frozenset({
+    "compliance", "regulatory", "permit", "emissions", "code",
+})
+
+
+def _derive_publication_ceiling_phase8(
+    plausibility: float | None, posture: str, no_go: str,
+) -> str:
+    """Phase 8 publication_ceiling: bound the strength of any decision
+    statement the report can carry.
+
+    Heuristic mapping (Master Doc §4 + §7):
+      no_go present                 → "no_go"
+      posture = 'do_not_invest_yet'  → "screening_only"
+      plausibility < 0.55           → "screening_only"
+      plausibility < 0.75           → "decision_grade"
+      plausibility >= 0.75          → "bounded_decision"
+    """
+    if no_go:
+        return "no_go"
+    p = plausibility if isinstance(plausibility, (int, float)) else 0.0
+    if str(posture or "").lower() in ("do_not_invest_yet", "defer", "block"):
+        return "screening_only"
+    if p < 0.55:
+        return "screening_only"
+    if p < 0.75:
+        return "decision_grade"
+    return "bounded_decision"
+
+
 def to_decision_admissibility_case_register(
     tad_action_plan: list[dict[str, Any]] | None,
     no_go_signals: list[dict[str, Any]] | None = None,
@@ -549,6 +579,12 @@ def to_decision_admissibility_case_register(
     irreversibility_class, regulatory_dependency, unresolved_blockers,
     required_evidence_burden, publication_ceiling.
 
+    V5 P11: STRUCTURALLY maps motor_033's existing rich row fields
+    (downside_profile, irreversibility_profile, no_go_condition,
+    burden_level, recommended_posture, plausibility, claim_family) to
+    the canonical Phase 8 schema. Previously these mapped to empty
+    placeholders because the field names didn't align.
+
     Also produces a derived `defer_investigate_act_map` and `no_go_register`
     via the action_family taxonomy.
     """
@@ -559,18 +595,90 @@ def to_decision_admissibility_case_register(
         action_family = _normalize_action_family(
             str(row.get("action_family") or row.get("action") or "")
         )
+        # V5 P11: map motor_033's rich fields to canonical Phase 8 names
+        downside_class = str(
+            row.get("downside_class")
+            or row.get("downside_profile", "")
+        )
+        irreversibility_class = str(
+            row.get("irreversibility_class")
+            or row.get("irreversibility_profile", "")
+        )
+        # current_support_posture: combine plausibility band + posture
+        plausibility = row.get("plausibility")
+        if isinstance(plausibility, (int, float)):
+            if plausibility >= 0.75:
+                support_band = "supported_for_decision"
+            elif plausibility >= 0.55:
+                support_band = "supported_for_screening"
+            else:
+                support_band = "preliminary"
+        else:
+            support_band = str(row.get("current_support") or row.get("evidence_state", "")) or "preliminary"
+        current_support_posture = support_band
+        # required_evidence_burden: motor_033 stores `evidence_needed` as
+        # a string. Wrap into a list, or use the existing list-shaped
+        # field name when present.
+        evidence_needed = row.get("required_evidence_burden") or row.get("evidence_needed", "")
+        if isinstance(evidence_needed, list):
+            required_evidence_burden = list(evidence_needed)
+        elif isinstance(evidence_needed, str) and evidence_needed.strip():
+            required_evidence_burden = [evidence_needed.strip()]
+        else:
+            required_evidence_burden = []
+        # unresolved_blockers: prefer the no_go_condition + sequencing
+        # hints. If motor_033 already has a list, use it.
+        explicit_blockers = row.get("unresolved_blockers") or row.get("blockers", [])
+        if isinstance(explicit_blockers, list) and explicit_blockers:
+            unresolved_blockers = list(explicit_blockers)
+        else:
+            unresolved_blockers = []
+            no_go_str = str(row.get("no_go_condition", "")).strip()
+            if no_go_str:
+                unresolved_blockers.append(no_go_str)
+        # regulatory_dependency: inferred from claim_family
+        claim_family = str(row.get("claim_family", "")).lower()
+        if any(token in claim_family for token in _REGULATORY_DEPENDENT_FAMILIES):
+            regulatory_dependency = f"claim_family={claim_family} carries regulatory exposure"
+        else:
+            regulatory_dependency = str(row.get("regulatory_dependency", ""))
+        # publication_ceiling: prefer explicit, else derive
+        explicit_ceiling = row.get("publication_ceiling")
+        if explicit_ceiling and isinstance(explicit_ceiling, str) and explicit_ceiling.strip():
+            publication_ceiling = explicit_ceiling.strip()
+        else:
+            publication_ceiling = _derive_publication_ceiling_phase8(
+                plausibility=plausibility if isinstance(plausibility, (int, float)) else None,
+                posture=str(row.get("recommended_posture", "")),
+                no_go=str(row.get("no_go_condition", "")),
+            )
+
         out.append({
-            "decision_case_id": str(row.get("action_id") or row.get("tad_id") or ""),
+            "decision_case_id": str(
+                row.get("action_id")
+                or row.get("tad_id")
+                or row.get("case_id", "")
+            ),
             "target_action_family": action_family,
-            "action_scope": str(row.get("action_scope") or row.get("scope", "")),
-            "current_support_posture": str(row.get("current_support") or row.get("evidence_state", "")),
-            "downside_class": str(row.get("downside_class", "")),
-            "irreversibility_class": str(row.get("irreversibility_class", "")),
-            "regulatory_dependency": str(row.get("regulatory_dependency", "")),
-            "unresolved_blockers": list(row.get("unresolved_blockers") or row.get("blockers", []) or []),
-            "required_evidence_burden": list(row.get("required_evidence_burden") or row.get("evidence_needed", []) or []),
-            "publication_ceiling": str(row.get("publication_ceiling", "")),
-            "linked_claim_id": str(row.get("linked_claim") or row.get("linked_claim_id", "")),
+            "action_scope": str(
+                row.get("action_scope")
+                or row.get("scope")
+                or row.get("action_title", "")
+            ),
+            "current_support_posture": current_support_posture,
+            "downside_class": downside_class,
+            "irreversibility_class": irreversibility_class,
+            "regulatory_dependency": regulatory_dependency,
+            "unresolved_blockers": unresolved_blockers,
+            "required_evidence_burden": required_evidence_burden,
+            "publication_ceiling": publication_ceiling,
+            "linked_claim_id": str(
+                row.get("linked_claim")
+                or row.get("linked_claim_id")
+                or row.get("case_id", "")
+            ),
+            "voi_score": row.get("voi_score"),
+            "effort_tier": str(row.get("effort_tier", "")),
             "__phase__": 8,
             "__canonical_unit__": "decision_admissibility_case",
         })
