@@ -1,233 +1,243 @@
 # AGENTS.md — ZLab Operational Truth Framework
 
 > Lee este archivo completo antes de ejecutar cualquier comando.
-> Es la guia operativa actual para reanudar el framework sin perder la logica vigente.
+> Es la guía operativa actual del framework.
+
+**Última actualización: 2026-05-13 (V5 Constitutional Realignment)**
 
 ---
 
-## 1. Que es este proyecto hoy
+## 0. Ancla constitucional NO NEGOCIABLE
 
-ZLab Operational Truth Framework ya no es solo el sistema historico de 33 motores.
+El framework está gobernado por **8 fases canónicas** definidas en los Master Docs:
 
-El estado real del proyecto al `3 de mayo de 2026` es este:
+```
+Phases/phase-0/docs/es/0_Documento_Maestro_Fase_0.md   ← Constitución
+Phases/phase-1/docs/es/...                              ← Public Data + PIML
+Phases/phase-2/docs/es/2_Documento_Maestro_Fase_2.md   ← Decision Core
+Phases/phase-3/docs/es/3_Documento_Maestro_Fase_3.md   ← Reporting
+Phases/phase-4/docs/es/4_Documento_Maestro_Fase_4.md   ← Verification Bridge
+Phases/phase-5/docs/es/5_Documento_Maestro_Fase_5.md   ← Probabilistic Finance
+Phases/phase-6/docs/es/6_Documento_Maestro_Fase_6.md   ← Computable Regulatory
+Phases/phase-7/docs/es/7_Documento_Maestro_Fase_7.md   ← Cognitive / Belief Update
+Phases/phase-8/docs/es/8_Documento_Maestro_Fase_8.md   ← TAD Final Decision
+```
 
-- existe un catalogo de `54` motores en `governanza/automation-base/motor_dependencies.json`;
-- `runtime-orchestrator/` implementa y cubre esos `54` motores;
-- `governanza/` ya quedo reconciliada contra ese catalogo;
-- `motor-creator` ya refleja `54 closed`;
-- la cola documental post-cierre ya no esta abierta.
+Si Phase 0 entra en conflicto con cualquier otra fase, **Phase 0 gobierna**.
 
-Arquitectura cardinal:
+**Ley rectora**: *"claridad financiera y decisional bajo incertidumbre física, sin delegar la verdad final al LLM ni permitir que la narrativa sustituya la evidencia."*
 
-- determinismo primero;
-- la IA es subordinada, nunca motor soberano;
-- `governanza/automation-base/` contiene los documentos de autoridad;
-- `runtime-orchestrator/` es la verdad operativa del sistema ejecutable;
-- `motor-creator/` vuelve a ser consistente con el framework expandido.
+### Reglas inviolables (enforced en código, no en docs)
 
----
-
-## 2. Fuente de verdad actual
-
-Para retomar el trabajo, usa este orden de verdad:
-
-1. `runtime-orchestrator/` + su suite de tests
-2. certificaciones y matrices en `governanza/automation-base/`
-3. `runtime_motor_reconciliation_snapshot_latest.md`
-4. `motor_dependencies.json`, `motor_registry.md` y `motor-creator/`
-
-No uses el backlog dinamico ni un estado viejo de `motor-creator` para inferir que la expansion sigue abierta.
-
-Al `3 de mayo de 2026`, el estado consolidado es:
-
-- `runtime-orchestrator`: expandido y operativo;
-- ultima verdad de suite completa: `455 passed, 15 warnings` con `pytest -q` el `2026-05-03`;
-- `motor-creator`: `54 closed`;
-- `runtime_motor_reconciliation_snapshot_latest.md`: `54` motores en catalogo, `54` adapters runtime, `54` dirs esperados presentes, `54` cierres formales alineados y `0` motores runtime-ahead;
-- los directorios legacy `validation-data-bridge_018` y `verification-bridge-engine_019` siguen preservados como historia, pero no representan mismatch actual.
-
-Importante:
-
-- ese rerun completo ya ocurrio despues de cerrar la ultima ola documental;
-- por eso la verdad runtime y la reconciliacion de gobernanza ya quedaron alineadas en el mismo punto de reentrada.
+1. **El LLM NO es soberano.** Aparece en exactamente UN motor (`motor_019` — narrador, no analista). Cualquier otro uso de LLM en código analítico viola Phase 0.
+2. **La extracción de PDFs es DETERMINISTA.** `runtime_orchestrator/zlab_skill/local_pdf_autodraft.py` + keyword rules. NO Anthropic / OpenAI / Ollama en el path analítico.
+3. **AI NO autoría contenido.** `AI_SCAFFOLDING_REGISTRY.md` está FROZEN en 9 items. No añadir.
+4. **AI NO aprueba combinations.** Solo el usuario en `/combinations` o `/revisar`.
+5. **NUNCA escribir JSON a `combinations/` directo.** Usar `scripts/propose_combination.py`.
+6. **NUNCA meter metadata de review en el PDF.** El PDF es deliverable final limpio. Review center = dashboard.
+7. **NUNCA `git add -A`** con WIP del usuario sin consolidar.
+8. **SIEMPRE responder en español al usuario.**
+9. **SIEMPRE contrastar cambios contra los Master Docs de fase.**
 
 ---
 
-## 3. Documentos que mandan para la reentrada
+## 1. Estado del proyecto
 
-Lee estos documentos antes de decidir que sigue:
+### Métricas (post V5 P6, 2026-05-13)
 
-- `governanza/automation-base/runtime_reentry_status_latest.md`
-- `governanza/automation-base/runtime_may_2_closure_boundary_latest.md`
-- `governanza/automation-base/runtime_motor_reconciliation_snapshot_latest.md`
-- `governanza/automation-base/post_closure_governance_documentation_order_latest.md`
-- `governanza/automation-base/versioning_reentry_boundary_latest.md`
-- `governanza/automation-base/legacy_governance_dir_disposition_latest.md`
-- `governanza/automation-base/industrial_asset_congruence_prompt_closure_matrix.md`
-- `governanza/automation-base/dynamic_congruence_intelligence_multicase_certification_latest.md`
-- `governanza/automation-base/congruence_intelligence_multicase_certification_latest.md`
-- `governanza/automation-base/congruence_intelligence_100_percent_closure_certification.md`
+- **64 motores** en `governanza/automation-base/motor_dependencies.json`
+- **runtime-orchestrator/** implementa los 64 con adapters
+- **1387 tests passing** (`pytest tests/`)
+- **Regression cross-asset 7/7 PASS** (6 representative cases + hybrid E2E)
+- **192 fuentes industriales** en catálogo (`industrial_source_catalog.json`)
+- **30 patterns** + **4 combinations approved** + **1 approved knowledge real** (`hydraulic_to_electric_injection_molding_loss`)
 
-Lectura correcta:
+### Doble registro: cada motor está en DOS clasificaciones paralelas
 
-- `DCI-01`–`DCI-20` estan declarados e implementados;
-- la clausura del `2 de mayo de 2026` corresponde a runtime + tests + artefactos de autoridad;
-- la reconciliacion documental posterior ya tambien quedo cerrada;
-- el siguiente trabajo legitimo ya no es "seguir cerrando motores".
+| Registro | Eje | Archivo |
+|---|---|---|
+| **`layer_registry.py`** | Bus técnico A-F | A: Knowledge / B: Hypothesis / C: Claim Governor / D: TAD / E: Composer / F: Validation |
+| **`phase_registry.py`** (V5) | Constitucional 0-8 | 0: Governance / 1: PIML / 2: Decision Core / 3: Reporting / 4: Verification / 5: Finance / 6: Regulatory / 7: Cognitive / 8: TAD |
+
+APIs canónicas: `phase_of(motor_id)`, `motors_in_phase(phase_id)`, `PHASE_CANONICAL_UNIT`, `phase_name(phase_id)`.
+
+### Unidades canónicas por fase (V5 P2)
+
+| Fase | Unidad canónica | Motor productor | Emite |
+|---|---|---|---|
+| 1 | `facility_prior` (12 bundles) | motor_012 | `facility_prior` dict |
+| 2 | `inference_case` (6 atributos) | motor_014 | `inference_case_register_canonical` |
+| 3 | `output_block` + `report_package` | motor_015 + motor_016 | 9 block types + C1-C9+A1-A3 sections |
+| 4 | `claim_upgrade_candidate` | motor_034 | `claim_upgrade_candidate_register` |
+| 5 | `financial_exposure_case` | motor_045 | `financial_exposure_case_register` |
+| 6 | `compliance_applicability_case` | motor_053 | `compliance_applicability_case_register` |
+| 7 | `belief_revision_event` | motor_054 | `belief_revision_event_register` |
+| 8 | `decision_admissibility_case` | motor_033 | `decision_admissibility_case_register` + `defer_investigate_act_map` |
+
+Cada row lleva `__phase__` y `__canonical_unit__` para auditoría.
+
+### Familia de 6 entregables (Phase 0 §10)
+
+`report_maturity.py` clasifica el Report Package en 6 grados:
+
+| Maturity grade | Se desbloquea cuando max claim_support_state ≥ |
+|---|---|
+| Integrated Preliminary Report | `unsupported / hypothesis / indication` |
+| Decision-Grade Report | `screening_grade / decision_grade` |
+| Hardened Decision Report | `partially_hardened` |
+| Validation-Oriented Report | `verification_ready` |
+| Verification-Supported Report | `verification_supported` |
+| Verified Report | `verified` |
+
+motor_025 emite `report_maturity_type`. motor_017 lo lleva al manifest del PDF.
 
 ---
 
-## 4. Mision actual
+## 2. Cómo correr el framework
 
-La mision actual no es inventar mas motores ni seguir una cola de reconciliacion por motor.
-
-La mision es:
-
-1. preservar la clausura funcional ya certificada;
-2. mantener el runtime en verde;
-3. conservar sincronizados runtime, gobernanza y `motor-creator`;
-4. dejar una ruta de reentrada estable para futuras sesiones;
-5. decidir con criterio si el siguiente paso es limpieza, versionado, archivado de legacy dirs o hardening opcional.
-
-No reabras por defecto:
-
-- backlog dinamico ya cerrado;
-- expansiones del prompt ya certificadas;
-- reconciliacion por motor como si siguiera pendiente.
-
----
-
-## 5. Entry points correctos
-
-### Runtime real
+### Pipeline E2E (caso real)
 
 ```bash
 cd /Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator
-pytest -q
+
+# 1) Pipeline produce scenarios + BLOQUEA render hasta aprobación
+unset ZLAB_AUTO_APPROVE_SCENARIOS
+python3 cli.py run --pipeline-id <id> --inputs inputs/<case>.json --no-cache
+
+# 2) Dashboard → http://localhost:7474/scenarios → approve/edit/reject
+#    Cada scenario lleva trigger/source/process_clue/industrial_reason/asset_family_reason
+
+# 3) Re-correr → ahora SÍ genera el PDF
+python3 cli.py run --pipeline-id <id> --inputs inputs/<case>.json --no-cache
+
+# Bypass para CI / regression
+export ZLAB_AUTO_APPROVE_SCENARIOS=1
+bash scripts/regression_cross_asset_recovery.sh
 ```
 
-Ese comando es el chequeo primario de salud del sistema ejecutable.
-
-### Gobernanza por motor
+### Extractor determinista de PDFs locales (V5 P3)
 
 ```bash
-cd /Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/motor-creator
-.venv/bin/python cli.py status
+# Single PDF
+python3 scripts/extract_from_local_pdf.py \
+  --pdf-path "/path/to/file.pdf" \
+  --source-id <catalog_source_id> \
+  --id-suffix v5p3_run1
+
+# Batch + manifest
+echo '{"file1.pdf":"source_id_1","file2.pdf":"source_id_2"}' > /tmp/manifest.json
+python3 scripts/extract_from_local_pdf.py \
+  --batch-dir /path/to/pdfs \
+  --manifest /tmp/manifest.json \
+  --id-suffix v5p3_batch \
+  --out /tmp/batch_result.json
 ```
 
-Ahora ese estado ya es consistente con el runtime expandido, pero sigue siendo secundario frente a una suite runtime roja.
+Los candidatos caen en `knowledge_pending/<kind>/`. Aprobar en **http://localhost:7474/revisar** (UI simple en español).
+
+### Dashboard
+
+```bash
+python3 runtime-orchestrator/dashboard.py
+# → http://localhost:7474
+# Entrada principal: /revisar (V5)
+# Otras: /scenarios, /combinations, /knowledge
+```
+
+App dock: `/Applications/ZLab Dashboard.app`
 
 ---
 
-## 6. Procedimiento de reentrada
+## 3. Fuente de verdad (orden estricto)
 
-Cuando se retome el proyecto tras una interrupcion, sigue este orden:
+1. `Phases/phase-{N}/docs/es/` — **constitución, gobierna todo conflicto**
+2. `runtime-orchestrator/` + suite de tests (1387 verde)
+3. `runtime-orchestrator/src/runtime_orchestrator/phase_registry.py` — mapeo motor↔fase canónico
+4. `runtime-orchestrator/src/runtime_orchestrator/phase_units.py` — proyecciones canónicas por fase
+5. `governanza/automation-base/motor_dependencies.json` — catálogo de 64 motores
+6. `AI_SCAFFOLDING_REGISTRY.md` — contenido Claude-autorado pendiente de regenerar (FROZEN en 9 items)
 
-1. leer `governanza/automation-base/runtime_reentry_status_latest.md`;
-2. leer `governanza/automation-base/runtime_may_2_closure_boundary_latest.md`;
-3. leer `governanza/automation-base/runtime_motor_reconciliation_snapshot_latest.md`;
-4. leer `governanza/automation-base/post_closure_governance_documentation_order_latest.md`;
-5. leer `governanza/automation-base/versioning_reentry_boundary_latest.md`;
-6. leer `governanza/automation-base/legacy_governance_dir_disposition_latest.md`;
-7. correr `pytest -q` en `runtime-orchestrator/`;
-8. si la suite esta verde, tratar el framework como runtime-and-governance closed;
-9. decidir despues si el trabajo pendiente es:
-   - cleanup/versioning,
-   - archivado de legacy dirs,
-   - hardening opcional,
-   - o nuevas capacidades explicitamente nuevas;
-10. si la suite falla, tratar el runtime como prioridad absoluta;
-11. no tocar certificaciones o docs de cierre como sustituto de arreglar el runtime.
+No usar el backlog dinámico para inferir estado actual.
 
 ---
 
-## 7. Estado operativo consolidado
+## 4. Recovery history
 
-Resumen real:
+- **V1 (2026-05-09)** — 6-layer arch + LayerBundle bus + motor_055-063. 938 tests.
+- **V2 estructural (2026-05-10)** — Gaps A-F: motor_062 scenario validator, 139-source catalog, hybrids, source routing, cold-chain patterns, knowledge YAMLs. 970 tests.
+- **V2-LIVE / V2-CRITICAL / Course correction (2026-05-10/11)** — dashboard review center, 5 scenario fields, hybrid E2E. 1107 tests.
+- **V3 stabilization + V3 residual (2026-05-11/12)** — 11 items machinery. 1289 tests.
+- **V4 P0/P1 (2026-05-12)** — Industrial Research Engine infrastructure (schemas, validators, taxonomy, family_scope, routing, memory, propose_knowledge). 1313 tests.
+- **V4 P2/P3 (2026-05-12) — CERRADAS CON DEUDA**: cableé LLM-extractor Anthropic que VIOLABA Phase 0. Eliminado en V5 P0.
+- **V5 Constitutional Realignment (2026-05-12/13)** — 6 sub-fases entregadas:
+  - V5 P0+P1 — Cleanup + `phase_registry.py` (commit `ce2a898`)
+  - V5 P2 — `phase_units.py` + 6 motores patchados (commit `23e61db`)
+  - V5 P3 — `deterministic_bridge.py` + CLI `extract_from_local_pdf.py` (commit `8153937`)
+  - V5 P4 — `authority_classifier.py` (commit `4976a19`)
+  - V5 P5 — `report_maturity.py` (commit `4f2c032`)
+  - V5 P5b — wire motor_025 (commit `6f515a0`)
+  - V5 P6 — wire motor_017 manifest (commit `88edd37`)
 
-- congruence intelligence: cerrada por certificacion;
-- dynamic congruence intelligence: cerrada por certificacion;
-- public data routing v1: `PASS`;
-- system consistency certification: `accepted`;
-- structural intelligence lane: implementada con cleanup residual;
-- runtime suite completa: ultima verdad `455 passed, 15 warnings`;
-- `motor-creator`: `54 closed`;
-- snapshot de reconciliacion: `54 aligned_closed`, `0 runtime_ahead_of_governance`, `0 identity mismatches`;
-- permanecen `2` directorios legacy historicos preservados:
-  - `governanza/validation-data-bridge_018`
-  - `governanza/verification-bridge-engine_019`
-
-Esto implica:
-
-- no hay que seguir expandiendo ciegamente `motor_034`–`motor_054` como si faltaran;
-- no hay una cola documental por motor todavia abierta;
-- si algo falla ahora, debe leerse como regresion o trabajo nuevo, no como "cierre pendiente del backlog del 2 de mayo".
+Último commit: `88edd37` (recovery v5p6).
 
 ---
 
-## 8. Trabajo legitimo desde aqui
+## 5. Pendiente — V5 P7, P8 + scaffolding registry
 
-Los siguientes frentes si son validos:
+### V5 todavía abierto
 
-1. limpieza del worktree y versionado serio del estado actual;
-2. decidir si se preservan o archivan los dirs legacy de `018` y `019`;
-3. reruns de certificacion si se quiere actualizar evidencia formal;
-4. hardening opcional:
-   - mas profundidad de extraccion documental;
-   - superficies visuales o apendices tecnicos mas ricos;
-   - ampliaciones nuevas explicitamente separadas del cierre ya logrado.
+- **V5 P7** Narrator hardening — cite-per-paragraph en motor_019 + validator de orphan claims
+- **V5 P8** Docs final — RECOVERY_DONE_V5.md (parcialmente cubierto por este archivo)
 
-Helper local para versionado acotado:
+### AI_SCAFFOLDING_REGISTRY cascade (S1-S9)
 
-- `./stage_framework_closure_sources.sh --dry-run`
-- `./stage_framework_closure_sources.sh`
+Orden de regeneración recomendado (lowest risk → highest):
 
-No hagas lo siguiente sin razon explicita:
+1. **S6** — Catálogo de fuentes. `audit_catalog_against_classifier` detecta 40 divergencias. Decidir si aplicar.
+2. **S5** — 4 knowledge YAMLs regenerados desde S6.
+3. **S4** — 7 cold-chain patterns extraídos de IIAR/ASHRAE/Danfoss. Requiere PDFs autoritativos.
+4. **S8** — tad_actions caen gratis cuando S4 se regenera.
+5. **S3** — Hybrids emergentes por co-ocurrencia.
+6. **S1 + S2** — Derivar de S4+S6+S3.
+7. **S9** — Refactor per-family branches en `structural_intelligence/`.
+8. **S7** — `combination_engine` propone, usuario aprueba.
 
-- reescribir el backlog dinamico como si siguiera abierto;
-- usar dirs legacy como prueba de mismatch actual;
-- volver a tratar `motor-creator` como unica verdad del sistema;
-- hacer `git add .` en el root sin separar fuente de stores regenerables;
-- editar docs de cierre para ocultar una regresion runtime.
+### Profundidad de las unidades canónicas
 
----
+V5 P2 cubre la superficie. Pendiente que cada motor **construya** todos los campos:
 
-## 9. Regla de oro
-
-Si hay conflicto entre:
-
-- una certificacion que dice "closed",
-- y una suite runtime que falla,
-
-manda la suite runtime.
-
-Si la suite runtime esta verde y `motor-creator` tambien esta cerrado,
-el framework debe tratarse como reconciliado.
-
-Los dirs legacy preservados no invalidan ese cierre.
+- Phase 4 — motor_034 computar `baseline_hardening_state`, `instrument_dependency`, `validity_domain`
+- Phase 5 — motor_045 los 6 objetos operativos (`financial_assumption_register`, `tariff_basis_record`, etc.)
+- Phase 6 — motor_053 los registers `trigger_field_register`, `threshold_register`, `exception_register`
+- Phase 7 — motor_054 belief_revision events de eventos reales de evidencia (no synth de claim_contract)
+- Phase 8 — motor_033 `irreversibility_profile`, `downside_profile`, `no_go_condition_register`
 
 ---
 
-## 10. Que hacer si algo falla
+## 6. Mapeo motor → fase canónica (referencia rápida)
 
-| Situacion | Accion |
-|---|---|
-| `pytest -q` falla en `runtime-orchestrator/` | arreglar runtime antes de tocar docs de cierre |
-| certificacion dice "closed" pero el runtime rompe | tratarlo como regresion de reconciliacion |
-| aparecen dudas por dirs legacy `018/019` | tratarlos como historia preservada, no como mismatch activo |
-| dudas sobre que documento manda | usar `runtime_reentry_status_latest.md` y luego las certificaciones del `2 de mayo de 2026` |
-| worktree sucio o no versionado | no borrar; inspeccionar y preservar |
+```
+Phase 0 (Governance):  001 002 024 025 026
+Phase 1 (PIML):        003 004 005 006 007 008 009 010 011 012
+                       028 035 039 049 050 065
+Phase 2 (Decision):    013 014 029 037 038 040 041 042 046 052
+Phase 3 (Reporting):   015 016 017 018 019 027 047 048 060
+Phase 4 (Verification): 021 022 034 043 044
+Phase 5 (Finance):     045
+Phase 6 (Regulatory):  053
+Phase 7 (Cognitive):   020 054
+Phase 8 (TAD):         033 051
+Validators (crosscut): 036 055 056 057 058 059 061 062 063
+ML extension:          030 031 032
+Infra:                 023
+```
 
 ---
 
-## 11. Regla de edicion
+## 7. Tests + regression rápido
 
-No modifiques a mano estados de cierre para simular progreso.
-
-Si vas a mover el estado formal del framework:
-
-1. primero valida runtime;
-2. luego actualiza documentos de autoridad;
-3. luego reconcilia `motor-creator` si aplica.
-
-Ese es el orden correcto.
+```bash
+cd runtime-orchestrator
+python3 -m pytest tests/ -q                          # 1387 expected
+bash scripts/regression_cross_asset_recovery.sh      # 7/7 expected (~10 min)
+```
