@@ -42,8 +42,8 @@ sys.path.insert(0, str(_REPO_ROOT / "src"))
 
 from runtime_orchestrator.industrial_research_engine import (  # noqa: E402
     KNOWLEDGE_KINDS,
-    ExtractionOrchestrator,
     KnowledgeValidationError,
+    propose_knowledge_from_manual_text,
 )
 
 
@@ -112,9 +112,8 @@ def main() -> int:
     # Ensure the payload's knowledge_kind matches the CLI flag (or set it).
     payload["knowledge_kind"] = args.kind
 
-    orchestrator = ExtractionOrchestrator()
     try:
-        result = orchestrator.orchestrate_from_manual_text(
+        proposed = propose_knowledge_from_manual_text(
             source_id=args.source_id,
             topic=args.topic,
             target_kind=args.kind,
@@ -131,13 +130,12 @@ def main() -> int:
         print(f"invalid: {exc}", file=sys.stderr)
         return 2
 
-    proposed = result.propose_result or {}
     print(
         f"extracted (manual): id={proposed.get('id','?')} "
         f"kind={args.kind} source={args.source_id} topic={args.topic} "
         f"by={proposed.get('__proposed_by__','?')} at={proposed.get('__proposed_at__','?')}"
     )
-    print("Review and approve at: http://localhost:7474/knowledge")
+    print("Review and approve at: http://localhost:7474/revisar")
     return 0
 
 

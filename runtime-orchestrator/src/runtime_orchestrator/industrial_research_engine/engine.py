@@ -1,20 +1,29 @@
-"""Engine entry points (V4 P0 item 1).
+"""Engine entry points — knowledge proposal canonical write path.
 
-The Industrial Research Engine surface from the outside. Two public
-functions:
-
-  extract_knowledge(source_url, topic, source_type) — STUB. Raises
-    NotImplementedError in V4 Phase 0. Real implementation lands in
-    V4 Phase 1 with PDF parsing + LLM structuring.
+This module is the canonical write path for the Industrial Research Engine.
+Three public functions:
 
   propose_knowledge(payload, kind, proposed_by) — fully implemented.
     Validates payload via the schema validator, writes it to
     knowledge_pending/<kind>/ for human approval in the dashboard.
 
-This module is the canonical entry point — both the CLI
-(scripts/propose_knowledge.py) and any future motor (motor_028
-discovery → research engine) MUST route through these functions.
-NO bypassing.
+  propose_knowledge_from_manual_text(source_id, topic, target_kind, payload, ...)
+    — convenience wrapper that auto-stamps source_basis + extraction_metadata
+    when a human is pasting a hand-authored draft. Used by the
+    scripts/extract_knowledge.py CLI.
+
+  extract_knowledge(source_url, topic, source_type) — INTENTIONAL STUB.
+    Automated extraction lives in `zlab_skill.local_pdf_autodraft` and
+    `zlab_skill.extractor` (deterministic, rule-based, no LLM in the
+    analytical path). This entrypoint exists only to fail loud if a
+    caller assumes there is an LLM-driven extractor here.
+
+Phase 0 law: the LLM is never the analytical engine. The extraction
+machinery is deterministic. The LLM only appears in motor_019 as a
+post-framework narrator.
+
+All callers (CLIs, motors, dashboard) MUST route writes through
+propose_knowledge[ _from_manual_text ]. NO bypassing.
 """
 from __future__ import annotations
 
@@ -24,6 +33,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from ..source_catalog import source_by_id
 from .routing import NotImplementedExtractor
 from .schemas import KNOWLEDGE_KINDS, CombinationObject, KnowledgeObject
 from .validators import (
@@ -76,14 +86,69 @@ def _append_audit(event: dict[str, Any]) -> None:
 def extract_knowledge(
     source_url: str, topic: str, source_type: str = "pdf"
 ) -> dict[str, Any]:
-    """V4 Phase 0 stub. Raises NotImplementedError.
+    """INTENTIONAL STUB — automated extraction lives elsewhere.
 
-    The signature is locked so V4 Phase 1 plugs in the real implementation
-    without changing callers. Returns (when implemented) a dict that
-    passes validate_knowledge() or validate_combination().
+    Automated PDF/source extraction is implemented as a deterministic
+    rule-based pipeline in:
+        - runtime_orchestrator.zlab_skill.local_pdf_autodraft
+        - runtime_orchestrator.zlab_skill.extractor
+        - runtime_orchestrator.zlab_skill.research_loop_controller
+
+    This entrypoint raises NotImplementedError on purpose so any caller
+    that wrongly assumes an LLM-driven extractor lives here fails loud
+    and is redirected to the correct (deterministic) path.
     """
     extractor = NotImplementedExtractor()
     return extractor.extract(source_url, topic, source_type)
+
+
+def propose_knowledge_from_manual_text(
+    *,
+    source_id: str,
+    topic: str,
+    target_kind: str,
+    knowledge_payload: dict[str, Any],
+    proposed_by: str = "manual_extraction",
+) -> dict[str, Any]:
+    """Hand-authored draft path — stamps provenance + proposes.
+
+    Used when a human reads an authoritative source and types the
+    KnowledgeObject JSON by hand. The function:
+      1. Verifies source_id exists in the industrial_source_catalog
+      2. Auto-stamps source_basis (if the payload didn't include it)
+      3. Auto-stamps extraction_metadata (topic, source_id, path)
+      4. Routes through propose_knowledge for validation + landing
+
+    Returns the stamped, validated payload (same shape as
+    propose_knowledge). Raises KnowledgeValidationError on schema
+    failure, ValueError if source_id is unknown, FileExistsError on
+    duplicate id.
+    """
+    if not source_by_id(source_id):
+        raise ValueError(
+            f"source_id {source_id!r} is not in the industrial_source_catalog. "
+            "Add it to the catalog (or propose it as new knowledge of kind "
+            "'source') before submitting manual drafts that cite it."
+        )
+
+    # Source provenance — append if not already present
+    sb = list(knowledge_payload.get("source_basis", []) or [])
+    if not any(
+        isinstance(s, dict) and s.get("source_id") == source_id for s in sb
+    ):
+        sb.append({"source_id": source_id, "confidence": "manual"})
+        knowledge_payload = {**knowledge_payload, "source_basis": sb}
+
+    # Extraction metadata stamp
+    em = dict(knowledge_payload.get("extraction_metadata", {}) or {})
+    em.setdefault("topic", topic)
+    em.setdefault("source_id", source_id)
+    em.setdefault("extraction_path", "manual")
+    knowledge_payload = {**knowledge_payload, "extraction_metadata": em}
+
+    return propose_knowledge(
+        knowledge_payload, kind=target_kind, proposed_by=proposed_by
+    )
 
 
 def propose_knowledge(

@@ -1,6 +1,16 @@
 # AI Scaffolding Registry
 
-**Status:** FROZEN as of 2026-05-11. No new entries by any Claude session.
+**Status:** FROZEN at 9 items as of 2026-05-11. V5 P0 (2026-05-12) cleaned up
+the V4 P2/P3 LLM-extractor that violated Phase 0 ("LLM no es soberano"). No
+new entries by any Claude session.
+
+**V5 update (2026-05-12):** S6 source catalog extended by 53 entries (139→192)
+to cover the local PDF library at `/Volumes/ZLab_Documents/.../Recursos y cursos`
+(UPME, CREG, IDAE, Fenercom, IDEA, CORPOEMA, OLADE, Goodyear, Ingersoll Rand,
+EMFALU thesis). These 53 are part of S6 — the references themselves are real
+industrial publications; the CURATION (tier/family/topic_tags) remains
+scaffolding that the framework must regenerate via motor_028 + zlab_skill
+authority-signal classification.
 
 ## Principle
 

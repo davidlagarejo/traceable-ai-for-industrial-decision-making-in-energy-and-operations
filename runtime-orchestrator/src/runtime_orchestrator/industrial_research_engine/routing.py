@@ -1,4 +1,4 @@
-"""Research routing engine skeleton (V4 P0 item 9).
+"""Research routing — structural topic + source priority planner.
 
 Decides what to investigate given:
   - asset_family
@@ -8,10 +8,16 @@ Decides what to investigate given:
   - utility clues
   - logistics clues
 
-In V4 Phase 0 the routing returns a structural priority list (topics +
-sources to consult) but does NOT perform extraction — that is
-NotImplementedExtractor, a stub that raises NotImplementedError when
-called. V4 Phase 1 will implement it.
+The routing returns a structural priority list (topics + sources to
+consult) but does NOT perform extraction itself. Real extraction is
+deterministic and lives in `runtime_orchestrator.zlab_skill`:
+  - local_pdf_autodraft (rule-based PDF pattern matcher)
+  - extractor (seed builder)
+  - research_loop_controller (loop policies, stop conditions)
+
+Phase 0 law: the LLM is never the analytical engine. The extraction
+machinery is deterministic. The LLM only appears in motor_019 as a
+post-framework narrator.
 
 The skeleton is testable: given inputs, returns deterministic ordered
 topic lists + source recommendations from the catalog.
@@ -25,16 +31,25 @@ from .taxonomy import INDUSTRIAL_TAXONOMY, topics_for_family
 
 
 class NotImplementedExtractor:
-    """Placeholder for the real extractor. V4 P0 ships this stub so any
-    caller (CLI, dashboard, motor_028) explicitly fails if it tries to
-    use extraction before V4 Phase 1 lands."""
+    """Fail-loud placeholder — redirects callers to the real extractors.
+
+    Deterministic extraction lives in `runtime_orchestrator.zlab_skill`:
+      - `local_pdf_autodraft.py` — rule-based PDF pattern matching
+      - `extractor.py` — extraction seed builder
+      - `research_loop_controller.py` — loop policies + stop conditions
+
+    This stub exists so any code path that wrongly assumes an
+    LLM-driven extractor sits behind the Industrial Research Engine
+    fails loud and gets redirected. Phase 0 law: the LLM is never the
+    analytical engine."""
 
     def extract(self, source_url: str, topic: str, source_type: str = "pdf") -> dict[str, Any]:
         raise NotImplementedError(
-            "Industrial Research Engine extraction is not implemented in V4 Phase 0. "
-            "The infrastructure rails are in place; real extraction (PDF parsing, "
-            "LLM-driven structuring) lands in V4 Phase 1. "
-            f"Asked to extract from {source_url!r} on topic {topic!r}."
+            "industrial_research_engine.extract_knowledge is intentionally a stub. "
+            "Automated extraction is deterministic and lives in "
+            "runtime_orchestrator.zlab_skill (local_pdf_autodraft / extractor / "
+            "research_loop_controller). "
+            f"Caller asked to extract from {source_url!r} on topic {topic!r}."
         )
 
 

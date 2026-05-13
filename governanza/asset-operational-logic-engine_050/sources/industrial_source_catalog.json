@@ -2259,6 +2259,913 @@
       ],
       "jurisdiction": "international",
       "citation_format": "J. Cleaner Production"
+    },
+    {
+      "source_id": "upme_guia_agroindustria",
+      "name": "UPME — Guía Metodológica Extendida Agroindustria (Energuías)",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "process_heat",
+        "energy_audit",
+        "loss_patterns"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Agroindustria"
+    },
+    {
+      "source_id": "upme_guia_alimentos_bebidas",
+      "name": "UPME — Guía Metodológica Extendida Alimentos (Energuías)",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "cold_chain_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "refrigeration_duty",
+        "process_heat",
+        "steam_systems"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Alimentos"
+    },
+    {
+      "source_id": "upme_guia_celulosa_papel",
+      "name": "UPME — Guía Metodológica Extendida Celulosa y Papel",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "process_heat",
+        "steam_systems",
+        "compressed_air"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Celulosa"
+    },
+    {
+      "source_id": "upme_guia_cementos",
+      "name": "UPME — Guía Metodológica Extendida Cementos",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "process_heat",
+        "motor_drives"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Cementos"
+    },
+    {
+      "source_id": "upme_guia_edificacion",
+      "name": "UPME — Guía Metodológica Extendida Edificación",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "lighting",
+        "building_envelope",
+        "buildings_efficiency"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Edificación"
+    },
+    {
+      "source_id": "upme_guia_mineria",
+      "name": "UPME — Guía Metodológica Extendida Minería",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "motor_drives",
+        "compressed_air",
+        "pump_systems"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Minería"
+    },
+    {
+      "source_id": "upme_guia_pesca",
+      "name": "UPME — Guía Metodológica Extendida Pesca",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "cold_chain_facility",
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "refrigeration_duty",
+        "industrial_efficiency"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Pesca"
+    },
+    {
+      "source_id": "upme_guia_acero_galvanotecnia",
+      "name": "UPME — Guía Metodológica EE Sector Acero y Galvanotecnia",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "process_heat",
+        "motor_drives"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Acero/Galvanotecnia"
+    },
+    {
+      "source_id": "upme_guia_transporte",
+      "name": "UPME — Guía Metodológica Extendida Transporte",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "logistics_terminal"
+      ],
+      "topic_tags": [
+        "freight_data",
+        "logistics_benchmark",
+        "loss_patterns"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Energuías Transporte"
+    },
+    {
+      "source_id": "upme_guia_ee_proyectos_inversion",
+      "name": "UPME — Guía Metodológica EE en Proyectos de Inversión",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lifecycle_cost",
+        "measurement_and_verification",
+        "energy_management"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME EE-Inversión"
+    },
+    {
+      "source_id": "upme_guia_implementacion_pgee",
+      "name": "UPME — Guía Implementación Plan de Gestión Energética Empresarial",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_management",
+        "measurement_and_verification"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME PGEE"
+    },
+    {
+      "source_id": "upme_guia_sgie",
+      "name": "UPME — Guía Implementación Sistemas Gestión Integral Energía (ISO 50001)",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_management",
+        "performance_standards"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME SGIE"
+    },
+    {
+      "source_id": "upme_caracterizacion_energetica_iii",
+      "name": "UPME — Informe III Caracterización Energética",
+      "publisher": "UPME Colombia",
+      "type": "report",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building",
+        "cold_chain_facility"
+      ],
+      "topic_tags": [
+        "benchmark",
+        "energy_intensity_benchmark",
+        "energy_consumption_data"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME Caracterización III"
+    },
+    {
+      "source_id": "upme_pen_2020_2050",
+      "name": "UPME — Plan Energético Nacional 2020-2050",
+      "publisher": "UPME Colombia",
+      "type": "policy",
+      "authority_tier": 1,
+      "asset_families": [
+        "infrastructure_node",
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "decarbonization_pathway",
+        "utility_finance",
+        "grid_reliability"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME PEN 2020-2050"
+    },
+    {
+      "source_id": "upme_sector_alimentos_evaluacion_financiera",
+      "name": "UPME — Sector Alimentos y Bebidas: Evaluación Instituciones Financieras Proyectos EE",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "cold_chain_facility"
+      ],
+      "topic_tags": [
+        "lifecycle_cost",
+        "utility_finance",
+        "measurement_and_verification"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME AlimentosFin"
+    },
+    {
+      "source_id": "creg_resolucion_075_2021",
+      "name": "CREG — Resolución 075 de 2021 (tarifas/regulación)",
+      "publisher": "CREG Colombia",
+      "type": "regulation",
+      "authority_tier": 1,
+      "asset_families": [
+        "infrastructure_node",
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "utility_finance",
+        "grid_reliability",
+        "regulatory_physical_signals"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "CREG 075/2021"
+    },
+    {
+      "source_id": "idae_bombas_calor",
+      "name": "IDAE — Bombas de Calor (con errata feb 2019)",
+      "publisher": "IDAE España",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "heat_transfer",
+        "thermal_systems"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "IDAE Bombas de Calor 2019"
+    },
+    {
+      "source_id": "idae_red_calor_frio_jaen",
+      "name": "IDAE — Informe Red Calor y Frío Jaén",
+      "publisher": "IDAE España",
+      "type": "report",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "topic_tags": [
+        "thermal_systems",
+        "hvac_distribution",
+        "cooling_topology"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "IDAE Red Jaén"
+    },
+    {
+      "source_id": "idae_biocarburantes",
+      "name": "IDAE — Biocarburantes (Guía)",
+      "publisher": "IDAE España",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "logistics_terminal",
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "process_heat",
+        "decarbonization_pathway"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "IDAE Biocarburantes"
+    },
+    {
+      "source_id": "idae_factores_eleccion_calor_frio",
+      "name": "IDAE — Factores decisivos en la elección de sistemas calor-frío",
+      "publisher": "IDAE España",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_design",
+        "system_design",
+        "thermal_systems"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "IDAE Calor/Frío"
+    },
+    {
+      "source_id": "idae_metodologia_auditorias_industria",
+      "name": "Agencia Andaluza de la Energía / IDAE — Metodología Auditorías Energéticas Industria",
+      "publisher": "Agencia Andaluza de la Energía",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "energy_audit",
+        "measurement_and_verification",
+        "industrial_efficiency"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "AAE Metodología Auditorías Industria"
+    },
+    {
+      "source_id": "auditorias_energeticas_edificios_i",
+      "name": "Auditorías Energéticas en Edificios — Tomo I",
+      "publisher": "Comunidad de Madrid / Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_audit",
+        "buildings_efficiency",
+        "hvac_efficiency"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Auditorías Edificios I"
+    },
+    {
+      "source_id": "auditorias_energeticas_edificios_ii",
+      "name": "Auditorías Energéticas en Edificios — Tomo II",
+      "publisher": "Comunidad de Madrid / Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_audit",
+        "buildings_efficiency",
+        "hvac_efficiency"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Auditorías Edificios II"
+    },
+    {
+      "source_id": "garrigues_manual_enerargen",
+      "name": "Garrigues / EnerArgen — Manual EE Empresas",
+      "publisher": "Garrigues",
+      "type": "handbook",
+      "authority_tier": 3,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_management",
+        "lifecycle_cost"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Garrigues EnerArgen"
+    },
+    {
+      "source_id": "fenercom_guia_iluminacion",
+      "name": "Fenercom — Guía Iluminación",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Iluminación"
+    },
+    {
+      "source_id": "fenercom_guia_termica",
+      "name": "Fenercom — Guía Térmica",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "thermal_systems"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Térmica"
+    },
+    {
+      "source_id": "fenercom_canteras",
+      "name": "Fenercom — EE en Canteras",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "motor_drives",
+        "industrial_efficiency"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Canteras"
+    },
+    {
+      "source_id": "fenercom_concesionarios_auto",
+      "name": "Fenercom — EE en Concesionarios de Automóviles",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lighting",
+        "hvac_efficiency"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Concesionarios"
+    },
+    {
+      "source_id": "fenercom_hospitales",
+      "name": "Fenercom — EE en Hospitales",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "thermal_systems",
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Hospitales"
+    },
+    {
+      "source_id": "fenercom_emisores_calefaccion_lt",
+      "name": "Fenercom — Emisores Calefacción Baja Temperatura",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_distribution",
+        "thermal_comfort"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Emisores LT"
+    },
+    {
+      "source_id": "fenercom_estructuras_termoactivas",
+      "name": "Fenercom — Estructuras Termoactivas y Sistemas Inerciales",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "thermal_systems",
+        "building_envelope"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Termoactivas"
+    },
+    {
+      "source_id": "fenercom_aislantes",
+      "name": "Fenercom — Materiales Aislantes y EE",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "building_envelope"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Aislantes"
+    },
+    {
+      "source_id": "fenercom_aparatos_elevadores",
+      "name": "Fenercom — Manual Aparatos Elevadores",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "motor_drives"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Elevadores"
+    },
+    {
+      "source_id": "fenercom_circuitos_hidraulicos",
+      "name": "Fenercom — Medidas Ahorro Circuitos Hidráulicos",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "pump_systems",
+        "hvac_distribution"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Hidráulicos"
+    },
+    {
+      "source_id": "fenercom_alimentacion_comercios",
+      "name": "Fenercom — Comercios de Alimentación",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "cold_chain_facility"
+      ],
+      "topic_tags": [
+        "refrigeration_duty",
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Alimentación"
+    },
+    {
+      "source_id": "fenercom_restauracion",
+      "name": "Fenercom — Empresas de Restauración",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "process_heat"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Restauración"
+    },
+    {
+      "source_id": "fenercom_talleres_auto",
+      "name": "Fenercom — Talleres de Automóviles",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "compressed_air",
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Talleres"
+    },
+    {
+      "source_id": "fenercom_instalaciones_industriales",
+      "name": "Fenercom — Instalaciones Industriales",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "industrial_efficiency",
+        "motor_drives",
+        "compressed_air"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Industriales"
+    },
+    {
+      "source_id": "fenercom_oficinas",
+      "name": "Fenercom — Oficinas y Despachos",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "office_benchmark",
+        "hvac_efficiency",
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Oficinas"
+    },
+    {
+      "source_id": "fenercom_panaderias",
+      "name": "Fenercom — Pastelerías y Panaderías",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "process_heat",
+        "refrigeration_duty"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Panaderías"
+    },
+    {
+      "source_id": "fenercom_alumbrado_publico",
+      "name": "Fenercom — Gestión Energética Alumbrado Público",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "infrastructure_node"
+      ],
+      "topic_tags": [
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Alumbrado"
+    },
+    {
+      "source_id": "fenercom_hoteles",
+      "name": "Fenercom — Gestión Energética Sector Hotelero",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "lighting",
+        "thermal_systems"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Hoteles"
+    },
+    {
+      "source_id": "fenercom_electrodomesticos",
+      "name": "Fenercom — EE en Tiendas de Electrodomésticos",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Electrodomésticos"
+    },
+    {
+      "source_id": "fenercom_iluminacion_residencial_terciario",
+      "name": "Fenercom — Guía Técnica Iluminación Eficiente Residencial/Terciario",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lighting"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Iluminación R/T"
+    },
+    {
+      "source_id": "fenercom_domotica",
+      "name": "Fenercom — La Domótica como Solución de Futuro",
+      "publisher": "Fenercom",
+      "type": "handbook",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "controls",
+        "bms"
+      ],
+      "jurisdiction": "ES",
+      "citation_format": "Fenercom Domótica"
+    },
+    {
+      "source_id": "corpoema_curso_ee_2020_2021",
+      "name": "CORPOEMA — Curso Eficiencia Energética 2020-2021 (módulos 1-4)",
+      "publisher": "CORPOEMA",
+      "type": "training",
+      "authority_tier": 2,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_management",
+        "industrial_efficiency",
+        "hvac_efficiency",
+        "motor_drives",
+        "steam_systems"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "CORPOEMA EE 2020-2021"
+    },
+    {
+      "source_id": "olade_get_2022",
+      "name": "OLADE — Curso Gestión Energética Territorial 2022 (S1-S9)",
+      "publisher": "OLADE",
+      "type": "training",
+      "authority_tier": 1,
+      "asset_families": [
+        "infrastructure_node",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "energy_management",
+        "decarbonization_pathway",
+        "utility_finance"
+      ],
+      "jurisdiction": "Latam",
+      "citation_format": "OLADE GET 2022"
+    },
+    {
+      "source_id": "idea_large_heat_pumps_part1",
+      "name": "IDEA — Large Heat Pumps Webinar (Part I)",
+      "publisher": "IDEA International District Energy Association",
+      "type": "webinar",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "heat_transfer",
+        "thermal_systems",
+        "decarbonization_pathway"
+      ],
+      "jurisdiction": "US",
+      "citation_format": "IDEA Large HP I"
+    },
+    {
+      "source_id": "idea_large_heat_pumps_part2",
+      "name": "IDEA — Large Heat Pumps Webinar (Part II)",
+      "publisher": "IDEA International District Energy Association",
+      "type": "webinar",
+      "authority_tier": 2,
+      "asset_families": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "topic_tags": [
+        "hvac_efficiency",
+        "heat_transfer",
+        "thermal_systems",
+        "decarbonization_pathway"
+      ],
+      "jurisdiction": "US",
+      "citation_format": "IDEA Large HP II"
+    },
+    {
+      "source_id": "goodyear_doe_assessment",
+      "name": "Goodyear — DOE Industrial Assessment Savings Case",
+      "publisher": "US DOE / Goodyear",
+      "type": "case_study",
+      "authority_tier": 3,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "case_study",
+        "industrial_efficiency",
+        "compressed_air",
+        "motor_drives"
+      ],
+      "jurisdiction": "US",
+      "citation_format": "Goodyear DOE Assessment"
+    },
+    {
+      "source_id": "ingersoll_rand_success_story",
+      "name": "Ingersoll Rand — Compressed Air Success Story",
+      "publisher": "Ingersoll Rand",
+      "type": "case_study",
+      "authority_tier": 3,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "case_study",
+        "compressed_air",
+        "compressed_air_leak"
+      ],
+      "jurisdiction": "US",
+      "citation_format": "IR Success Story"
+    },
+    {
+      "source_id": "upme_emfalu_thesis_pyme",
+      "name": "Trabajo de Grado — Programa Gestión Energética Inteligente PYME EMFALU",
+      "publisher": "Universidad / EMFALU",
+      "type": "thesis",
+      "authority_tier": 2,
+      "asset_families": [
+        "manufacturing_facility"
+      ],
+      "topic_tags": [
+        "case_study",
+        "energy_management",
+        "industrial_efficiency"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "Tesis EMFALU"
+    },
+    {
+      "source_id": "upme_esco_modelo_negocio",
+      "name": "Guía F — Modelo de Negocio ESCO y Contratos de Servicios Energéticos por Desempeño",
+      "publisher": "UPME Colombia",
+      "type": "guideline",
+      "authority_tier": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "commercial_building"
+      ],
+      "topic_tags": [
+        "lifecycle_cost",
+        "utility_finance",
+        "measurement_and_verification"
+      ],
+      "jurisdiction": "CO",
+      "citation_format": "UPME ESCO"
     }
   ],
   "__ai_scaffolding__": "S6 in AI_SCAFFOLDING_REGISTRY.md — 139 sources curated by Claude in V2 Gap C. The references themselves are real; the CURATION (tier assignment, asset_families mapping, topic_tags) is scaffolding. Replace via motor_028 discovery + authority signals."

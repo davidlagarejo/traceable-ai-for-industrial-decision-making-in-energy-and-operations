@@ -1,27 +1,29 @@
-"""Adapter for motor_065 — Industrial Knowledge Extractor (Layer A).
+"""Adapter for motor_065 — Industrial Knowledge Extractor surface (Phase 1).
 
-V4 Phase 1 wires the industrial_research_engine.ExtractionOrchestrator
-into the pipeline. motor_065 is Layer A (knowledge production) and
-emits an extraction REPORT (what would be extracted, what stub status
-is, what pending proposals exist) — but does NOT itself call the real
-PDF/LLM extractors during a pipeline run.
+motor_065 is the Phase 1 surface motor that reports the EXTRACTION
+SURFACE of a case to downstream consumers (dashboard, motor_054):
 
-Real extraction happens out-of-band (via the CLI or future motor_028
-+ motor_065 + extraction_orchestrator chain). motor_065's role in V4
-P1 is to surface the EXTRACTION SURFACE of the case: which sources
-the case touches, which topics would be investigated, what's pending
-in knowledge_pending/ that the dashboard should review.
+  - which research topics are prioritised for the case's asset family
+    (via industrial_research_engine.routing.research_priority_for)
+  - the source catalogue priority list per topic
+  - the count of knowledge proposals currently pending human review
+  - the count of approved/rejected/deprecated knowledge entries
 
-This adapter is intentionally low-touch in V4 P1: it does NOT inject
-extracted knowledge into the case run. That decoupling matters — the
-human approves knowledge ONCE at the dashboard, not per case.
+motor_065 does NOT itself perform extraction during a pipeline run.
+Extraction is deterministic and lives in `runtime_orchestrator.zlab_skill`
+(local_pdf_autodraft / extractor / research_loop_controller). Those
+modules run out-of-band; their outputs land in `knowledge_pending/<kind>/`
+and are reviewed via the dashboard `/revisar` page.
+
+This decoupling matters constitutionally: human approval of knowledge
+happens ONCE at the dashboard, never per case. The case pipeline only
+reads APPROVED knowledge (already in `knowledge_memory/approved/`).
 """
 from __future__ import annotations
 
 from typing import Any
 
 from ..industrial_research_engine import (
-    ExtractionOrchestrator,
     KNOWLEDGE_KINDS,
     MemoryState,
     list_in_state,
@@ -55,7 +57,7 @@ class Motor065Adapter(BaseMotorAdapter):
         facility_clues = list(target_definition.get("facility_evidence_tokens", []) or [])
         process_clues = list(target_definition.get("process_evidence_tokens", []) or [])
 
-        # Stage 1: routing plan (uses V4 P0 routing + source catalog).
+        # Stage 1: routing plan (uses the catalog + taxonomy).
         research_plan = research_priority_for(
             asset_family,
             process_clues=process_clues + facility_clues,
@@ -66,16 +68,18 @@ class Motor065Adapter(BaseMotorAdapter):
             "clue_weights": {},
         }
 
-        # Stage 2: extraction orchestrator status. Real extractor stubs in V4 P1.
-        orchestrator = ExtractionOrchestrator()
+        # Stage 2: extraction surface status. The actual extraction is
+        # done by zlab_skill (deterministic) out-of-band, not here.
         extractor_status = {
-            "pdf_extractor": type(orchestrator.pdf_extractor).__name__,
-            "llm_extractor": type(orchestrator.llm_extractor).__name__,
-            "real_extraction_enabled": False,  # flips to True in V4 P2
+            "extraction_path": "deterministic_via_zlab_skill",
+            "pdf_pattern_matcher": "zlab_skill.local_pdf_autodraft",
+            "extraction_seed_builder": "zlab_skill.extractor",
+            "research_loop": "zlab_skill.research_loop_controller",
+            "llm_in_extraction": False,
         }
 
-        # Stage 3: pending knowledge by kind (so dashboard / motor_054 see
-        # what's queued for human review).
+        # Stage 3: pending knowledge by kind (so dashboard / motor_054
+        # can see what's queued for human review).
         pending_summary: dict[str, int] = {}
         pending_total = 0
         for kind in KNOWLEDGE_KINDS:
@@ -101,6 +105,5 @@ class Motor065Adapter(BaseMotorAdapter):
             "knowledge_pending_summary": pending_summary,
             "knowledge_pending_total": pending_total,
             "knowledge_memory_counts": memory_counts,
-            "motor_065_phase": "v4_phase_1_infrastructure_only",
-            "real_extraction_invocations": 0,  # increments when V4 P2 wires real run-time extraction
+            "motor_065_phase": "phase_1_surface_reporter",
         }

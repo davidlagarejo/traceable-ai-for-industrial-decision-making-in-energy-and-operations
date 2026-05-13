@@ -1,23 +1,39 @@
-"""Industrial Research Engine — V4 Phase 0 infrastructure.
+"""Industrial Research Engine — Knowledge Schema + Proposal Layer.
 
-Per RECOVERY_V4_PHASE0_BACKLOG.md: this package defines the rails for
-the framework to extract industrial knowledge from authoritative sources
-(IIAR / ASHRAE / DOE / EPA / vendor handbooks) and route it through
-human approval into the operational registries.
+This package is the canonical SCHEMA + WRITE PATH for industrial
+knowledge entering the framework. It defines what a valid
+KnowledgeObject / CombinationObject looks like, validates them, and
+lands proposals in `knowledge_pending/<kind>/` for human review at
+the dashboard.
 
-In V4 Phase 0 the actual extraction is a STUB (NotImplementedError).
-Everything else — schemas, validators, family scope, source confidence,
-routing taxonomy, approval workflow, memory states — is real and
-testable.
+What this package IS:
+  - Schemas (KnowledgeObject, CombinationObject) and dataclasses
+  - Validators (validate_knowledge, validate_combination,
+    enforce_family_scope, source confidence bands)
+  - Taxonomy (11 canonical industrial topics × keywords/machines/systems)
+  - Family scope (16 canonical asset families)
+  - Routing (research_priority_for: structural priority plan)
+  - Memory state machine (5 states: pending/approved/deprecated/
+    superseded/rejected)
+  - Engine entrypoints (propose_knowledge, propose_knowledge_from_manual_text)
 
-Public surface (what other modules import):
+What this package IS NOT:
+  - Not an extractor. Automated extraction is deterministic and lives
+    in `runtime_orchestrator.zlab_skill` (local_pdf_autodraft, extractor,
+    research_loop_controller). The Phase 0 constitution forbids the LLM
+    from being the analytical engine.
+  - Not a writer. Report writing happens in motor_019 (LLM-as-narrator,
+    bounded by upstream objects) and motor_017 (LaTeX render).
 
-  from runtime_orchestrator.industrial_research_engine import (
-      KnowledgeKind, KnowledgeObject, CombinationObject,
-      validate_knowledge, validate_combination,
-      enforce_family_scope, route_research_for_family,
-      promote_to_memory, deprecate, supersede, reject,
-  )
+Public surface — what other modules import:
+
+    from runtime_orchestrator.industrial_research_engine import (
+        KnowledgeKind, KnowledgeObject, CombinationObject,
+        validate_knowledge, validate_combination,
+        enforce_family_scope, route_research_for_family,
+        promote_to_memory, deprecate, supersede, reject,
+        propose_knowledge, propose_knowledge_from_manual_text,
+    )
 """
 from __future__ import annotations
 
@@ -60,42 +76,9 @@ from .memory import (
     list_in_state,
 )
 from .engine import (
-    extract_knowledge,  # STUB — raises NotImplementedError
+    extract_knowledge,  # INTENTIONAL STUB — redirects to zlab_skill
     propose_knowledge,
-)
-from .pdf_extraction_interface import (
-    NotImplementedPDFExtractor,
-    PDFExtractionResult,
-    PDFExtractor,
-    default_pdf_extractor,
-)
-from .llm_extraction_interface import (
-    LLMExtractionRequest,
-    LLMExtractionResult,
-    LLMExtractor,
-    NotImplementedLLMExtractor,
-    default_llm_extractor,
-)
-from .extraction_orchestrator import (
-    ExtractionOrchestrator,
-    ExtractionPlan,
-    ExtractionResult,
-)
-from .pdfplumber_extractor import (
-    PDFPlumberExtractor,
-    make_pdfplumber_extractor,
-)
-from .anthropic_llm_extractor import (
-    AnthropicLLMExtractor,
-    AnthropicSettings,
-    make_anthropic_extractor,
-    DEFAULT_MODEL as ANTHROPIC_DEFAULT_MODEL,
-)
-from .url_pdf_fetcher import (
-    FetchedPDF,
-    URLFetchError,
-    fetch_pdf,
-    is_url,
+    propose_knowledge_from_manual_text,
 )
 
 __all__ = [
@@ -133,29 +116,5 @@ __all__ = [
     # engine
     "extract_knowledge",
     "propose_knowledge",
-    # V4 P1 extraction infrastructure
-    "PDFExtractor",
-    "PDFExtractionResult",
-    "NotImplementedPDFExtractor",
-    "default_pdf_extractor",
-    "LLMExtractor",
-    "LLMExtractionRequest",
-    "LLMExtractionResult",
-    "NotImplementedLLMExtractor",
-    "default_llm_extractor",
-    "ExtractionOrchestrator",
-    "ExtractionPlan",
-    "ExtractionResult",
-    # V4 P2 real extractors
-    "PDFPlumberExtractor",
-    "make_pdfplumber_extractor",
-    "AnthropicLLMExtractor",
-    "AnthropicSettings",
-    "make_anthropic_extractor",
-    "ANTHROPIC_DEFAULT_MODEL",
-    # V4 P3 URL fetcher
-    "FetchedPDF",
-    "URLFetchError",
-    "fetch_pdf",
-    "is_url",
+    "propose_knowledge_from_manual_text",
 ]

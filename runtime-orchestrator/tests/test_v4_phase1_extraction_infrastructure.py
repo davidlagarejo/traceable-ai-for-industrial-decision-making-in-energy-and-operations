@@ -1,11 +1,18 @@
-"""V4 Phase 1 extraction infrastructure tests.
+"""Knowledge proposal infrastructure tests (post V5 cleanup).
 
-Covers:
-  - PDF + LLM extraction interfaces (stub contracts)
-  - ExtractionOrchestrator: full path raises NotImplementedError;
-    manual path works and routes through validation
-  - motor_065 adapter surfaces extraction surface in pipeline output
-  - CLI extract_knowledge.py wraps orchestrator correctly
+Originally V4 P1 introduced an LLM-extractor scaffold; V5 P0 removed it
+because the Phase 0 constitution forbids the LLM from being the
+analytical engine. The path that SURVIVES from V4 P1 is the manual /
+hand-authored draft path: a human reads an authoritative source, types
+the JSON, and the framework validates + lands it in
+knowledge_pending/<kind>/ for human approval at the dashboard.
+
+This test file exercises that surviving path plus the motor_065
+surface reporter and the extract_knowledge CLI.
+
+Constitutional anchor: motor_019 is the ONLY LLM in the framework; it
+is a narrator, not an analyst. The IRE here is schema + write path.
+Automated extraction lives in `runtime_orchestrator.zlab_skill`.
 """
 from __future__ import annotations
 
@@ -17,70 +24,29 @@ import pytest
 
 from runtime_orchestrator.industrial_research_engine import (
     KNOWLEDGE_KINDS,
-    ExtractionOrchestrator,
-    ExtractionPlan,
     KnowledgeValidationError,
-    LLMExtractionRequest,
-    LLMExtractor,
     MemoryState,
-    NotImplementedLLMExtractor,
-    NotImplementedPDFExtractor,
-    PDFExtractionResult,
-    PDFExtractor,
+    NotImplementedExtractor,
+    extract_knowledge,
+    propose_knowledge_from_manual_text,
 )
 
 
-# ── Interface stubs ─────────────────────────────────────────────────────
+# ── Stubs / fail-loud entrypoints ─────────────────────────────────────
 
 
-def test_pdf_extractor_stub_raises():
-    with pytest.raises(NotImplementedError, match="PDF extraction is not implemented"):
-        NotImplementedPDFExtractor().extract("https://example.com/x.pdf")
+def test_extract_knowledge_is_fail_loud_stub():
+    """extract_knowledge() is intentionally a stub that redirects to zlab_skill."""
+    with pytest.raises(NotImplementedError, match=r"zlab_skill"):
+        extract_knowledge("https://example.com/x.pdf", "refrigeration")
 
 
-def test_llm_extractor_stub_raises():
-    req = LLMExtractionRequest(
-        raw_text="hello",
-        topic="refrigeration",
-        source_id="iiar_bulletin_109",
-    )
-    with pytest.raises(NotImplementedError, match="LLM extraction is not implemented"):
-        NotImplementedLLMExtractor().extract(req)
+def test_not_implemented_extractor_redirects_to_zlab_skill():
+    with pytest.raises(NotImplementedError, match=r"zlab_skill"):
+        NotImplementedExtractor().extract("http://x", "refrigeration")
 
 
-def test_pdf_extraction_result_dataclass_defaults():
-    r = PDFExtractionResult(source_url="x", text="hi")
-    assert r.page_count == 0
-    assert r.page_texts == []
-    assert r.metadata == {}
-
-
-# ── Orchestrator: full path raises (stubs in play) ─────────────────────
-
-
-def test_orchestrator_full_path_raises_until_real_extractors_wired():
-    orch = ExtractionOrchestrator()
-    with pytest.raises(NotImplementedError):
-        orch.orchestrate(
-            source_id="iiar_bulletin_109",
-            source_url="https://example.com/bulletin.pdf",
-            topic="refrigeration",
-            target_kind="pattern",
-        )
-
-
-def test_orchestrator_rejects_unknown_source_id():
-    orch = ExtractionOrchestrator()
-    with pytest.raises(ValueError, match="not in the industrial_source_catalog"):
-        orch.orchestrate(
-            source_id="unicorn_handbook",
-            source_url="x",
-            topic="refrigeration",
-            target_kind="pattern",
-        )
-
-
-# ── Orchestrator: manual path WORKS end-to-end ──────────────────────────
+# ── Manual / paste-in path WORKS end-to-end ──────────────────────────
 
 
 @pytest.fixture
@@ -114,71 +80,69 @@ def _good_pattern_payload() -> dict:
         "evidence_required": ["test evidence"],
         "financial_translation": "Test financial framing.",
         "tad_actions": ["VALIDATE_LOSS_PATTERN"],
-        "allowed_language": "Test claim language for V4 P1 extraction.",
+        "allowed_language": "Test claim language for V5 manual path.",
         "prohibited_language": ["ROI"],
         "claim_ceiling": "L2",
         "source_basis": [{"source_id": "iiar_bulletin_109", "confidence": "high"}],
     }
 
 
-def test_orchestrator_manual_path_lands_in_pending(tmp_pending):
-    tmp_path, pending, mem = tmp_pending
-    orch = ExtractionOrchestrator()
+def test_manual_path_lands_in_pending(tmp_pending):
+    _tmp, pending, _mem = tmp_pending
     payload = _good_pattern_payload()
-    result = orch.orchestrate_from_manual_text(
+    proposed = propose_knowledge_from_manual_text(
         source_id="iiar_bulletin_109",
         topic="refrigeration",
         target_kind="pattern",
         knowledge_payload=payload,
         proposed_by="test_extractor",
     )
-    assert result.propose_result is not None
+    assert proposed is not None
     file_path = pending / "pattern" / "manual_extracted_pattern_a.v1.json"
     assert file_path.exists()
+    on_disk = json.loads(file_path.read_text(encoding="utf-8"))
+    assert on_disk["__proposed_by__"] == "test_extractor"
 
 
-def test_orchestrator_manual_path_stamps_source_basis_if_missing(tmp_pending):
-    """If the caller omitted source_basis entirely, the orchestrator
+def test_manual_path_stamps_source_basis_when_missing(tmp_pending):
+    """If the caller omitted source_basis entirely, the engine
     auto-stamps it with the source_id passed in."""
     payload = _good_pattern_payload()
     payload["id"] = "manual_no_sourcebasis"
-    payload["source_basis"] = [{"source_id": "iiar_bulletin_109", "confidence": "manual"}]
-    orch = ExtractionOrchestrator()
-    result = orch.orchestrate_from_manual_text(
+    # Wipe source_basis so the auto-stamp is what proves the test
+    payload["source_basis"] = []
+    proposed = propose_knowledge_from_manual_text(
         source_id="iiar_bulletin_109",
         topic="refrigeration",
         target_kind="pattern",
         knowledge_payload=payload,
     )
-    landed = result.propose_result
-    assert landed is not None
-    assert any(s.get("source_id") == "iiar_bulletin_109" for s in landed.get("source_basis", []))
+    assert any(
+        s.get("source_id") == "iiar_bulletin_109"
+        for s in proposed.get("source_basis", [])
+    )
 
 
-def test_orchestrator_manual_path_stamps_extraction_metadata(tmp_pending):
+def test_manual_path_stamps_extraction_metadata(tmp_pending):
     payload = _good_pattern_payload()
     payload["id"] = "manual_meta_check"
-    orch = ExtractionOrchestrator()
-    result = orch.orchestrate_from_manual_text(
+    proposed = propose_knowledge_from_manual_text(
         source_id="iiar_bulletin_109",
         topic="refrigeration",
         target_kind="pattern",
         knowledge_payload=payload,
     )
-    landed = result.propose_result
-    assert landed is not None
-    em = landed.get("extraction_metadata", {})
+    em = proposed.get("extraction_metadata", {})
     assert em.get("source_id") == "iiar_bulletin_109"
     assert em.get("topic") == "refrigeration"
-    assert em.get("extraction_path") == "manual_orchestrator"
+    assert em.get("extraction_path") == "manual"
 
 
-def test_orchestrator_manual_path_validates_payload(tmp_pending):
+def test_manual_path_validates_payload(tmp_pending):
     payload = _good_pattern_payload()
     payload["falsification_conditions"] = []  # invalid — schema requires
-    orch = ExtractionOrchestrator()
     with pytest.raises(KnowledgeValidationError):
-        orch.orchestrate_from_manual_text(
+        propose_knowledge_from_manual_text(
             source_id="iiar_bulletin_109",
             topic="refrigeration",
             target_kind="pattern",
@@ -186,68 +150,33 @@ def test_orchestrator_manual_path_validates_payload(tmp_pending):
         )
 
 
-# ── Orchestrator with INJECTED real-looking extractors ─────────────────
-
-
-class _StubLLMExtractor:
-    """Test double: returns a fixed knowledge payload."""
-
-    def __init__(self, payload: dict) -> None:
-        self._payload = payload
-
-    def extract(self, request: LLMExtractionRequest):
-        from runtime_orchestrator.industrial_research_engine import LLMExtractionResult
-        return LLMExtractionResult(
-            knowledge_payload=self._payload,
-            confidence_self_assessment=0.85,
-            model_id="test_stub",
-        )
-
-
-class _StubPDFExtractor:
-    def extract(self, source_url: str, **opts):
-        return PDFExtractionResult(
-            source_url=source_url,
-            text="extracted text content here",
-            page_count=1,
-            extraction_method="test_stub",
-        )
-
-
-def test_orchestrator_full_path_works_when_extractors_injected(tmp_pending):
-    """Proves the full orchestrate() path is plug-and-play: when V4 P2
-    swaps in real extractors, no orchestrator code changes."""
+def test_manual_path_rejects_unknown_source_id(tmp_pending):
     payload = _good_pattern_payload()
-    payload["id"] = "full_path_test"
-    orch = ExtractionOrchestrator(
-        pdf_extractor=_StubPDFExtractor(),
-        llm_extractor=_StubLLMExtractor(payload),
-    )
-    result = orch.orchestrate(
-        source_id="iiar_bulletin_109",
-        source_url="https://example.com/bulletin.pdf",
-        topic="refrigeration",
-        target_kind="pattern",
-    )
-    assert result.propose_result is not None
-    assert result.pdf_result is not None
-    assert result.pdf_result.extraction_method == "test_stub"
+    payload["id"] = "manual_unknown_source"
+    with pytest.raises(ValueError, match="not in the industrial_source_catalog"):
+        propose_knowledge_from_manual_text(
+            source_id="unicorn_handbook",
+            topic="refrigeration",
+            target_kind="pattern",
+            knowledge_payload=payload,
+        )
 
 
-# ── motor_065 adapter ────────────────────────────────────────────────
+# ── motor_065 surface reporter ───────────────────────────────────────
 
 
-def test_motor_065_surfaces_extraction_status():
+def test_motor_065_reports_deterministic_extraction_path():
     from runtime_orchestrator.adapters.motor_065 import Motor065Adapter
     out = Motor065Adapter().run({
         "motor_007": {"target_definition_contract": {"target_type": "cold_chain_facility"}},
         "motor_035": {},
     })
-    assert out["motor_065_phase"] == "v4_phase_1_infrastructure_only"
+    assert out["motor_065_phase"] == "phase_1_surface_reporter"
     assert out["asset_family_evaluated"] == "cold_chain_facility"
-    assert out["extractor_status"]["real_extraction_enabled"] is False
-    assert out["extractor_status"]["pdf_extractor"] == "NotImplementedPDFExtractor"
-    assert out["extractor_status"]["llm_extractor"] == "NotImplementedLLMExtractor"
+    status = out["extractor_status"]
+    assert status["llm_in_extraction"] is False
+    assert status["extraction_path"] == "deterministic_via_zlab_skill"
+    assert "zlab_skill.local_pdf_autodraft" in status["pdf_pattern_matcher"]
 
 
 def test_motor_065_surfaces_research_priority_plan():
@@ -271,7 +200,6 @@ def test_motor_065_emits_pending_summary_per_kind():
         "motor_035": {},
     })
     summary = out["knowledge_pending_summary"]
-    # Every canonical kind must appear in the summary (count ≥ 0)
     for kind in KNOWLEDGE_KINDS:
         assert kind in summary
 

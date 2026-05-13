@@ -10538,6 +10538,7 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
     <div class="pill" id="status-pill"><span class="dot"></span><span id="status-txt">Cargando…</span></div>
   </div>
   <div id="hdr-right">
+    <a href="/revisar" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;background:#16a34a;border:1px solid #15803d;color:#fff;font-size:13px;font-weight:700;" title="Revisión simple en español — aprobar/rechazar conocimiento">✓ Revisar</a>
     <a href="/scenarios" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#fffbeb;border:1px solid #fde68a;color:#b45309;font-size:12px;font-weight:600;" title="Review center for pipeline-emitted scenarios">📋 Scenarios <span id="hdr-scenarios-count" style="display:none;background:#bf8700;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
     <a href="/combinations" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#eff6ff;border:1px solid #bfdbfe;color:#1f6feb;font-size:12px;font-weight:600;" title="Review center for AI-proposed combinations">🧩 Combinations <span id="hdr-combinations-count" style="display:none;background:#1f6feb;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
     <a href="/knowledge" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;background:#f0fdf4;border:1px solid #bbf7d0;color:#16a34a;font-size:12px;font-weight:600;" title="Industrial Research Engine knowledge review">📚 Knowledge <span id="hdr-knowledge-count" style="display:none;background:#16a34a;color:#fff;border-radius:9px;padding:0 6px;font-size:10px;">0</span></a>
@@ -14955,6 +14956,563 @@ def api_knowledge_supersede():
         return jsonify({"error": str(exc)}), 400
 
 
+# ─────────────────────────────────────────────────────────────────────
+# /revisar — Simple Spanish review page (V5 — Knowledge Review).
+# Side-by-side PDF + plain-language summary + approve/reject/edit.
+# Reuses /api/knowledge/* underneath; adds enriched payload endpoint.
+# ─────────────────────────────────────────────────────────────────────
+
+_RECURSOS_ROOT = Path(
+    "/Volumes/ZLab_Documents/Zlab_Documents/Documents/Zircular/"
+    "Eficiencia energética/Recursos y cursos"
+)
+_BATCH_MANIFEST = Path("/tmp/zlab_batch_extract_manifest.json")
+
+
+def _revisar_load_manifest() -> dict[str, dict]:
+    """source_id → manifest entry (most recent wins)."""
+    if not _BATCH_MANIFEST.exists():
+        return {}
+    try:
+        rows = json.loads(_BATCH_MANIFEST.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    out: dict[str, dict] = {}
+    for r in rows:
+        if isinstance(r, dict) and r.get("source_id"):
+            out[r["source_id"]] = r
+    return out
+
+
+def _revisar_load_full_payload(knowledge_id: str, kind: str) -> dict | None:
+    if not _ire_available:
+        return None
+    from runtime_orchestrator.industrial_research_engine import memory as _mem
+    candidates: list[Path] = []
+    for d in [_mem._PENDING_ROOT / kind, _mem._MEMORY_ROOT / "approved",
+              _mem._MEMORY_ROOT / "rejected", _mem._MEMORY_ROOT / "deprecated",
+              _mem._MEMORY_ROOT / "superseded"]:
+        for p in d.glob(f"{knowledge_id}*.json"):
+            candidates.append(p)
+    if not candidates:
+        return None
+    try:
+        return json.loads(candidates[0].read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def _revisar_resolve_pdf_path(payload: dict, source_id: str) -> str | None:
+    """Try to map a pending knowledge to its source PDF on disk."""
+    em = payload.get("extraction_metadata") or {}
+    for key in ("source_pdf_path", "extracted_from_pdf", "pdf_path"):
+        v = em.get(key)
+        if v:
+            p = Path(v)
+            if not p.is_absolute():
+                p = _RECURSOS_ROOT / v
+            if p.exists():
+                return str(p)
+    # Fallback to batch manifest lookup
+    mf = _revisar_load_manifest().get(source_id)
+    if mf and mf.get("pdf") and Path(mf["pdf"]).exists():
+        return mf["pdf"]
+    return None
+
+
+def _revisar_simple_summary(payload: dict) -> dict:
+    """Plain-Spanish projection of a KnowledgeObject for the UI."""
+    fam = payload.get("asset_families") or []
+    trig = payload.get("trigger_conditions") or []
+    ev = payload.get("evidence_required") or []
+    fal = payload.get("falsification_conditions") or []
+    src = payload.get("source_basis") or []
+    src_ids = [s.get("source_id") for s in src if isinstance(s, dict) and s.get("source_id")]
+    return {
+        "id": payload.get("id", ""),
+        "kind": payload.get("knowledge_kind", ""),
+        "claim_ceiling": payload.get("claim_ceiling", ""),
+        "asset_families": fam,
+        "de_que_trata": (payload.get("financial_translation")
+                         or payload.get("allowed_language") or ""),
+        "como_decirlo": payload.get("allowed_language", ""),
+        "no_decir": payload.get("prohibited_language", []),
+        "cuando_aplica": trig,
+        "cuando_no_aplica": payload.get("anti_triggers", []),
+        "evidencia_requerida": ev,
+        "como_se_descarta": fal,
+        "acciones": payload.get("tad_actions", []),
+        "fuentes": src_ids,
+        "proposed_by": payload.get("__proposed_by__", ""),
+        "proposed_at": payload.get("__proposed_at__", ""),
+    }
+
+
+@app.route("/api/revisar/health")
+def api_revisar_health():
+    """Single-glance status: research/model/motors."""
+    out = {"research_ok": True, "model_ok": True, "motors_ok": True,
+           "problems": []}
+    # Batch extraction manifest
+    if _BATCH_MANIFEST.exists():
+        try:
+            rows = json.loads(_BATCH_MANIFEST.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            rows = []
+        bad_statuses = {"exception", "validation_failed",
+                        "pdf_extract_error", "llm_error"}
+        bad = [r for r in rows if isinstance(r, dict)
+               and r.get("status") in bad_statuses]
+        if bad:
+            out["research_ok"] = False
+            for r in bad[:5]:
+                out["problems"].append({
+                    "where": "investigación",
+                    "source_id": r.get("source_id", ""),
+                    "status": r.get("status", ""),
+                    "error": (r.get("error") or "")[:200],
+                })
+        out["batch_total"] = len(rows)
+        out["batch_ok"] = sum(1 for r in rows if r.get("status") == "ok")
+        out["batch_failed"] = len(bad)
+    else:
+        out["batch_total"] = 0
+        out["batch_ok"] = 0
+        out["batch_failed"] = 0
+    # Knowledge pending / approved counts
+    if _ire_available:
+        pending = sum(len(_ire_list_pending(k)) for k in _IRE_KINDS)
+        approved = len(_ire_list_in_state(_IRE_MemoryState.APPROVED))
+        rejected = len(_ire_list_in_state(_IRE_MemoryState.REJECTED))
+        out["pendientes"] = pending
+        out["aprobados"] = approved
+        out["rechazados"] = rejected
+    else:
+        out["motors_ok"] = False
+        out["problems"].append({"where": "motores",
+                                "error": "industrial_research_engine no disponible"})
+    out["overall"] = ("ok" if (out["research_ok"] and out["model_ok"]
+                               and out["motors_ok"]) else "problemas")
+    return jsonify(out)
+
+
+@app.route("/api/revisar/pending")
+def api_revisar_pending():
+    """List pending with enriched simple-Spanish summary."""
+    if not _ire_available:
+        return jsonify([])
+    out: list = []
+    for kind in _IRE_KINDS:
+        for row in _ire_list_pending(kind):
+            full = _revisar_load_full_payload(row["id"], kind) or {}
+            summary = _revisar_simple_summary(full)
+            sid = (summary.get("fuentes") or [""])[0]
+            out.append({
+                "id": row["id"],
+                "kind": kind,
+                "titulo": (full.get("allowed_language") or row["id"])[:120],
+                "asset_families": row.get("asset_families", []),
+                "claim_ceiling": row.get("claim_ceiling", ""),
+                "proposed_by": row.get("proposed_by", ""),
+                "proposed_at": row.get("proposed_at", ""),
+                "source_id": sid,
+                "tiene_pdf": _revisar_resolve_pdf_path(full, sid) is not None,
+            })
+    out.sort(key=lambda r: r.get("proposed_at", ""), reverse=True)
+    return jsonify(out)
+
+
+@app.route("/api/revisar/detail/<kind>/<knowledge_id>")
+def api_revisar_detail(kind: str, knowledge_id: str):
+    if not _ire_available:
+        return jsonify({"error": "engine unavailable"}), 503
+    full = _revisar_load_full_payload(knowledge_id, kind)
+    if not full:
+        return jsonify({"error": "not found"}), 404
+    summary = _revisar_simple_summary(full)
+    sid = (summary.get("fuentes") or [""])[0]
+    pdf_path = _revisar_resolve_pdf_path(full, sid)
+    return jsonify({
+        "summary": summary,
+        "raw_payload": full,
+        "source_id": sid,
+        "pdf_available": pdf_path is not None,
+    })
+
+
+@app.route("/api/revisar/pdf/<kind>/<knowledge_id>")
+def api_revisar_pdf(kind: str, knowledge_id: str):
+    if not _ire_available:
+        return jsonify({"error": "engine unavailable"}), 503
+    full = _revisar_load_full_payload(knowledge_id, kind)
+    if not full:
+        return jsonify({"error": "not found"}), 404
+    sid = ""
+    for s in full.get("source_basis", []) or []:
+        if isinstance(s, dict) and s.get("source_id"):
+            sid = s["source_id"]
+            break
+    pdf_path = _revisar_resolve_pdf_path(full, sid)
+    if not pdf_path:
+        return jsonify({"error": "PDF no localizado en disco"}), 404
+    # Security: must live under _RECURSOS_ROOT
+    try:
+        Path(pdf_path).resolve().relative_to(_RECURSOS_ROOT.resolve())
+    except ValueError:
+        return jsonify({"error": "PDF fuera del directorio permitido"}), 403
+    return send_file(pdf_path, mimetype="application/pdf")
+
+
+_REVISAR_PAGE_HTML = """<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Revisar — ZLab</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+     background:#f7f7f8;color:#18181b;margin:0;padding:0;height:100vh;
+     display:flex;flex-direction:column;overflow:hidden;}
+header{padding:12px 20px;background:#fff;border-bottom:1px solid #e4e4e7;
+       display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+h1{margin:0;font-size:18px;font-weight:600;}
+.health{display:flex;align-items:center;gap:8px;padding:6px 12px;
+        border-radius:6px;font-size:13px;font-weight:600;}
+.h-ok{background:#dcfce7;color:#166534;}
+.h-warn{background:#fef3c7;color:#92400e;}
+.h-bad{background:#fee2e2;color:#991b1b;}
+.stats{display:flex;gap:14px;color:#52525b;font-size:13px;}
+.stats span b{color:#18181b;}
+main{flex:1;display:flex;overflow:hidden;}
+aside{width:320px;border-right:1px solid #e4e4e7;background:#fff;
+      overflow-y:auto;}
+aside .item{padding:12px 16px;border-bottom:1px solid #f4f4f5;cursor:pointer;
+            transition:background .12s;}
+aside .item:hover{background:#fafafa;}
+aside .item.active{background:#eff6ff;border-left:3px solid #2563eb;
+                   padding-left:13px;}
+aside .item .t{font-size:13px;font-weight:600;line-height:1.35;
+               color:#18181b;margin-bottom:4px;}
+aside .item .m{font-size:11px;color:#71717a;}
+aside .item .kind{display:inline-block;font-size:10px;font-weight:700;
+                  padding:1px 6px;border-radius:3px;background:#fef3c7;
+                  color:#92400e;text-transform:uppercase;margin-right:4px;}
+aside .empty{padding:40px 20px;text-align:center;color:#a1a1aa;font-style:italic;}
+section.detail{flex:1;display:flex;overflow:hidden;}
+.pdf-pane{flex:1;background:#27272a;border-right:1px solid #e4e4e7;}
+.pdf-pane iframe{width:100%;height:100%;border:0;}
+.pdf-pane .empty-pdf{color:#a1a1aa;text-align:center;padding:80px 20px;
+                     font-style:italic;}
+.review-pane{width:46%;max-width:560px;overflow-y:auto;padding:22px;
+             background:#fff;}
+.review-pane h2{margin:0 0 4px 0;font-size:17px;font-weight:600;}
+.review-pane .meta{color:#71717a;font-size:12px;margin-bottom:18px;}
+.review-pane .block{margin-bottom:16px;}
+.review-pane .label{font-size:11px;font-weight:700;text-transform:uppercase;
+                    letter-spacing:.5px;color:#71717a;margin-bottom:5px;}
+.review-pane .value{font-size:14px;line-height:1.55;color:#27272a;}
+.review-pane ul{margin:4px 0 0 0;padding-left:18px;font-size:13px;
+                color:#3f3f46;}
+.review-pane ul li{margin-bottom:2px;}
+.tag{display:inline-block;font-size:11px;background:#f4f4f5;border:1px solid #e4e4e7;
+     border-radius:4px;padding:1px 7px;margin:1px 3px 1px 0;}
+.actions{position:sticky;bottom:0;background:#fff;padding:14px 0 0 0;
+         border-top:1px solid #e4e4e7;display:flex;gap:8px;flex-wrap:wrap;
+         margin-top:24px;}
+.btn{padding:9px 16px;border:0;border-radius:6px;cursor:pointer;
+     font-size:13px;font-weight:600;}
+.btn-ok{background:#16a34a;color:#fff;}
+.btn-ok:hover{background:#15803d;}
+.btn-no{background:#dc2626;color:#fff;}
+.btn-no:hover{background:#b91c1c;}
+.btn-ed{background:#2563eb;color:#fff;}
+.btn-ed:hover{background:#1d4ed8;}
+.btn:disabled{opacity:.5;cursor:wait;}
+.placeholder{flex:1;display:flex;align-items:center;justify-content:center;
+             color:#a1a1aa;font-style:italic;text-align:center;padding:40px;}
+.problems{background:#fef2f2;border:1px solid #fecaca;border-radius:6px;
+          padding:10px 14px;margin:0 20px 12px 20px;font-size:12px;
+          color:#991b1b;}
+.problems b{display:block;margin-bottom:4px;}
+.problems ul{margin:2px 0 0 0;padding-left:20px;}
+.editor{position:fixed;top:0;left:0;width:100%;height:100%;
+        background:rgba(0,0,0,.5);display:none;align-items:center;
+        justify-content:center;z-index:1000;}
+.editor.open{display:flex;}
+.editor-box{background:#fff;border-radius:8px;width:760px;max-width:95vw;
+            max-height:90vh;display:flex;flex-direction:column;}
+.editor-box header{flex-shrink:0;}
+.editor-box textarea{flex:1;width:100%;border:0;font-family:ui-monospace,
+                     SFMono-Regular,monospace;font-size:12px;padding:14px;
+                     outline:none;resize:none;}
+.editor-box footer{padding:12px 16px;display:flex;gap:8px;justify-content:flex-end;
+                   border-top:1px solid #e4e4e7;}
+.btn-soft{background:#f4f4f5;color:#27272a;}
+.toast{position:fixed;bottom:20px;right:20px;padding:10px 16px;border-radius:6px;
+       background:#18181b;color:#fff;font-size:13px;z-index:2000;
+       opacity:0;transition:opacity .25s;}
+.toast.show{opacity:1;}
+.toast.err{background:#dc2626;}
+.toast.ok{background:#16a34a;}
+</style></head><body>
+
+<header>
+  <h1>ZLab · Revisar conocimiento</h1>
+  <div id="health" class="health h-ok">Cargando…</div>
+  <div class="stats">
+    <span>📥 <b id="s-pending">·</b> pendientes</span>
+    <span>✅ <b id="s-approved">·</b> aprobados</span>
+    <span>❌ <b id="s-rejected">·</b> rechazados</span>
+    <span>📚 <b id="s-batch">·</b> PDFs procesados</span>
+  </div>
+</header>
+
+<div id="problems-bar"></div>
+
+<main>
+  <aside id="list">
+    <div class="empty">Cargando pendientes…</div>
+  </aside>
+  <section class="detail">
+    <div id="pdf-pane" class="pdf-pane">
+      <div class="empty-pdf">Selecciona un ítem para ver su PDF.</div>
+    </div>
+    <div id="review-pane" class="placeholder">
+      Selecciona un pendiente a la izquierda
+    </div>
+  </section>
+</main>
+
+<div id="editor" class="editor">
+  <div class="editor-box">
+    <header><b>Editar propuesta (JSON)</b></header>
+    <textarea id="editor-body"></textarea>
+    <footer>
+      <button class="btn btn-soft" onclick="closeEditor()">Cancelar</button>
+      <button class="btn btn-ed" onclick="saveEditor()">Guardar y aprobar</button>
+    </footer>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+let current = null;  // {id, kind}
+let currentDetail = null;
+
+const $ = (id) => document.getElementById(id);
+
+function toast(msg, kind) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + (kind || '');
+  setTimeout(() => { t.className = 'toast'; }, 2400);
+}
+
+async function loadHealth() {
+  const r = await fetch('/api/revisar/health');
+  const h = await r.json();
+  const el = $('health');
+  if (h.overall === 'ok') {
+    el.className = 'health h-ok';
+    el.textContent = '✓ Todo OK';
+  } else {
+    el.className = 'health h-warn';
+    el.textContent = '⚠ Hay ' + (h.problems || []).length + ' problema(s)';
+  }
+  $('s-pending').textContent = h.pendientes ?? 0;
+  $('s-approved').textContent = h.aprobados ?? 0;
+  $('s-rejected').textContent = h.rechazados ?? 0;
+  $('s-batch').textContent = (h.batch_ok ?? 0) + ' / ' + (h.batch_total ?? 0);
+  const pb = $('problems-bar');
+  if (h.problems && h.problems.length > 0) {
+    pb.innerHTML = '<div class="problems"><b>Problemas detectados:</b><ul>' +
+      h.problems.map(p =>
+        '<li><b>' + (p.where||'') + '</b> · ' + (p.source_id||'') + ' · ' +
+        (p.status||p.error||'') + '</li>'
+      ).join('') + '</ul></div>';
+  } else {
+    pb.innerHTML = '';
+  }
+}
+
+async function loadList() {
+  const r = await fetch('/api/revisar/pending');
+  const items = await r.json();
+  const el = $('list');
+  if (items.length === 0) {
+    el.innerHTML = '<div class="empty">No hay pendientes 🎉</div>';
+    return;
+  }
+  el.innerHTML = items.map(it => {
+    const klass = (current && current.id === it.id) ? 'item active' : 'item';
+    return `<div class="${klass}" onclick="select('${it.id}','${it.kind}')">
+      <div class="t"><span class="kind">${it.kind}</span>${escapeHtml(it.titulo)}</div>
+      <div class="m">${(it.asset_families||[]).join(', ')||'sin familia'} ·
+           ${it.source_id||'sin fuente'} ·
+           ${it.tiene_pdf?'📄 PDF':'(sin PDF)'}</div>
+    </div>`;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+async function select(id, kind) {
+  current = {id, kind};
+  document.querySelectorAll('aside .item').forEach(e => e.classList.remove('active'));
+  event && event.currentTarget && event.currentTarget.classList.add('active');
+  const r = await fetch(`/api/revisar/detail/${kind}/${id}`);
+  const d = await r.json();
+  if (d.error) { toast(d.error, 'err'); return; }
+  currentDetail = d;
+  renderDetail(d);
+  renderPdf(d);
+}
+
+function renderPdf(d) {
+  if (d.pdf_available) {
+    $('pdf-pane').innerHTML =
+      `<iframe src="/api/revisar/pdf/${current.kind}/${current.id}"></iframe>`;
+  } else {
+    $('pdf-pane').innerHTML =
+      `<div class="empty-pdf">PDF no disponible para este ítem.<br><br>
+        Fuente: <code>${d.source_id||'?'}</code></div>`;
+  }
+}
+
+function ul(items) {
+  if (!items || items.length === 0) return '<div class="value" style="color:#a1a1aa;font-style:italic;">—</div>';
+  return '<ul>' + items.map(x => '<li>' + escapeHtml(String(x)) + '</li>').join('') + '</ul>';
+}
+
+function renderDetail(d) {
+  const s = d.summary;
+  $('review-pane').className = 'review-pane';
+  $('review-pane').innerHTML = `
+    <h2>${escapeHtml(s.id)}</h2>
+    <div class="meta">
+      <span class="tag">${s.kind}</span>
+      <span class="tag">Nivel ${s.claim_ceiling||'?'}</span>
+      ${(s.asset_families||[]).map(f=>`<span class="tag">${f}</span>`).join('')}
+    </div>
+
+    <div class="block">
+      <div class="label">De qué trata</div>
+      <div class="value">${escapeHtml(s.de_que_trata) || '<i style="color:#a1a1aa;">(sin descripción)</i>'}</div>
+    </div>
+
+    <div class="block">
+      <div class="label">Cómo se puede decir</div>
+      <div class="value">${escapeHtml(s.como_decirlo) || '—'}</div>
+    </div>
+
+    <div class="block">
+      <div class="label">Qué NO se debe decir</div>
+      ${ul(s.no_decir)}
+    </div>
+
+    <div class="block">
+      <div class="label">Cuándo aplica</div>
+      ${ul(s.cuando_aplica)}
+    </div>
+
+    <div class="block">
+      <div class="label">Cuándo NO aplica</div>
+      ${ul(s.cuando_no_aplica)}
+    </div>
+
+    <div class="block">
+      <div class="label">Evidencia que pide</div>
+      ${ul(s.evidencia_requerida)}
+    </div>
+
+    <div class="block">
+      <div class="label">Cómo se descarta (falsificación)</div>
+      ${ul(s.como_se_descarta)}
+    </div>
+
+    <div class="block">
+      <div class="label">Acciones recomendadas</div>
+      ${ul(s.acciones)}
+    </div>
+
+    <div class="block">
+      <div class="label">Fuentes</div>
+      ${ul(s.fuentes)}
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-ok" onclick="doApprove()">✓ Aprobar</button>
+      <button class="btn btn-no" onclick="doReject()">✗ Rechazar</button>
+      <button class="btn btn-ed" onclick="openEditor()">✎ Editar</button>
+    </div>
+  `;
+}
+
+async function doApprove() {
+  if (!current) return;
+  const r = await fetch('/api/knowledge/approve', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({knowledge_id: current.id, kind: current.kind,
+                          reviewer:'dashboard_user'})
+  });
+  const j = await r.json();
+  if (!r.ok) { toast('Error al aprobar: ' + (j.error||r.status), 'err'); return; }
+  toast('Aprobado ✓', 'ok');
+  current = null; currentDetail = null;
+  $('review-pane').className = 'placeholder';
+  $('review-pane').textContent = 'Selecciona un pendiente a la izquierda';
+  $('pdf-pane').innerHTML = '<div class="empty-pdf">Selecciona un ítem para ver su PDF.</div>';
+  await Promise.all([loadHealth(), loadList()]);
+}
+
+async function doReject() {
+  if (!current) return;
+  const reason = prompt('Motivo del rechazo (obligatorio):');
+  if (!reason || !reason.trim()) return;
+  const r = await fetch('/api/knowledge/reject', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({knowledge_id: current.id, kind: current.kind,
+                          reviewer:'dashboard_user', reason: reason.trim()})
+  });
+  const j = await r.json();
+  if (!r.ok) { toast('Error: ' + (j.error||r.status), 'err'); return; }
+  toast('Rechazado', 'ok');
+  current = null; currentDetail = null;
+  $('review-pane').className = 'placeholder';
+  $('review-pane').textContent = 'Selecciona un pendiente a la izquierda';
+  $('pdf-pane').innerHTML = '<div class="empty-pdf">Selecciona un ítem para ver su PDF.</div>';
+  await Promise.all([loadHealth(), loadList()]);
+}
+
+function openEditor() {
+  if (!currentDetail) return;
+  $('editor-body').value = JSON.stringify(currentDetail.raw_payload, null, 2);
+  $('editor').classList.add('open');
+}
+function closeEditor() { $('editor').classList.remove('open'); }
+async function saveEditor() {
+  try { JSON.parse($('editor-body').value); }
+  catch(e){ toast('JSON inválido: ' + e.message, 'err'); return; }
+  // Editor path: for now, treat as "approve with edits": user is told to
+  // copy the JSON and rerun propose_knowledge with edits, OR we accept
+  // as-is. Minimal viable: just close editor and tell user to use
+  // approve. Real edit flow would need /api/knowledge/edit endpoint.
+  toast('Edición todavía no aplicada — usa Aprobar tras revisar', 'err');
+  closeEditor();
+}
+
+loadHealth(); loadList();
+setInterval(() => { loadHealth(); loadList(); }, 30000);
+</script>
+</body></html>"""
+
+
+@app.route("/revisar")
+def revisar_page():
+    return render_template_string(_REVISAR_PAGE_HTML)
+
+
 _KNOWLEDGE_REVIEW_HTML = """<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><title>Knowledge — ZLab Industrial Research</title>
 <style>
@@ -14986,7 +15544,7 @@ h1{font-size:20px;margin:0 0 8px 0;}
 </style></head>
 <body>
 <h1>Knowledge Review — Industrial Research Engine</h1>
-<div class="subtitle">V4 Phase 0 infrastructure: knowledge proposed by the framework lands here. Real extraction = NotImplementedError until V4 Phase 1.</div>
+<div class="subtitle">V5 — Knowledge Review. Conocimiento extraído deterministamente por zlab_skill (sin LLM en la cadena analítica) cae aquí. Aprueba/rechaza/edita; sólo lo aprobado pasa a knowledge_memory/approved.</div>
 
 <div class="summary" id="summary"></div>
 

@@ -276,7 +276,8 @@ def test_routing_sources_per_topic_uses_catalog():
 
 
 def test_not_implemented_extractor_raises():
-    with pytest.raises(NotImplementedError, match="not implemented in V4 Phase 0"):
+    # V5: stub redirects callers to the real deterministic extractors in zlab_skill.
+    with pytest.raises(NotImplementedError, match=r"zlab_skill"):
         NotImplementedExtractor().extract("http://x", "thermal_process")
 
 
