@@ -32,6 +32,10 @@ from typing import Any
 
 from .base import BaseMotorAdapter
 from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
+from ..hybrid_justification import (
+    build_hybrid_narrative,
+    match_evidence_against_hybrid,
+)
 from ..industrial_research_engine.family_scope import ALL_KNOWN_ASSET_FAMILIES
 from ..validator_severity_policy import effective_severity
 from ..pattern_isolation import audit_isolation_violations
@@ -265,6 +269,19 @@ class Motor061Adapter(BaseMotorAdapter):
         hybrid_id = _text(hybrid.get("hybrid_id")) if hybrid else ""
         shared_patterns = shared_patterns_for_hybrid(hybrid) if hybrid else set()
 
+        # V7 P4 — emit the canonical WHY_THIS_LOGIC_IS_ACTIVE narrative
+        # whenever a hybrid is admitted. motor_019 narrator MUST use this
+        # verbatim; no free justification allowed.
+        if hybrid:
+            matched_triggers = match_evidence_against_hybrid(hybrid, evidence_tokens)
+            hybrid_justification_narrative = build_hybrid_narrative(
+                hybrid=hybrid,
+                matched_evidence_tokens=matched_triggers,
+            )
+        else:
+            matched_triggers = []
+            hybrid_justification_narrative = ""
+
         warnings: list[dict] = []
         warnings.extend(_detect_pattern_contamination(asset_family, activated_combinations, shared_patterns))
         warnings.extend(_detect_nugget_token_contamination(asset_family, nuggets))
@@ -333,6 +350,11 @@ class Motor061Adapter(BaseMotorAdapter):
             "hybrid_id": hybrid_id,
             "hybrid_secondary": _text(hybrid.get("secondary")) if hybrid else "",
             "hybrid_shared_patterns": sorted(shared_patterns),
+            # V7 P4 — canonical WHY_THIS_LOGIC_IS_ACTIVE narrative. Empty
+            # string when no hybrid is admitted. motor_019 narrator uses
+            # this verbatim — Phase 0: framework dicta la WHY, no el LLM.
+            "hybrid_justification_narrative": hybrid_justification_narrative,
+            "hybrid_matched_evidence_triggers": list(matched_triggers),
             # V3 G4: surface the hybrid rationale text so the composer can
             # render a "Hybrid Asset Family Justification" block. The
             # rationale comes from asset_family_hybrids.json (scaffolding
