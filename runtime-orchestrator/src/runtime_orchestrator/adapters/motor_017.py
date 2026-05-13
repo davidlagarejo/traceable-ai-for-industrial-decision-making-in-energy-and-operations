@@ -1209,7 +1209,7 @@ class Motor017Adapter(BaseMotorAdapter):
     @property
     def input_motor_ids(self) -> list[str]:
         return [
-            "motor_014", "motor_016", "motor_036",
+            "motor_014", "motor_016", "motor_025", "motor_036",
             "motor_055", "motor_056", "motor_057", "motor_058", "motor_059",
             "motor_061", "motor_062", "motor_063",
         ]
@@ -1220,6 +1220,13 @@ class Motor017Adapter(BaseMotorAdapter):
             raise ValueError("motor_016 did not produce a report_package")
         gold_nugget_authority_state, gold_nugget_source_register = _resolve_gold_nugget_authority(report_package)
         consistency_summary = inputs.get("motor_036", {}) if isinstance(inputs.get("motor_036", {}), dict) else {}
+        # V5 P6: read the canonical 6-type maturity grade from motor_025
+        # (Phase 0 / Epistemic Governance Layer). This is the maturity
+        # axis for the deliverable, orthogonal to its topic axis.
+        m025 = inputs.get("motor_025", {}) if isinstance(inputs.get("motor_025", {}), dict) else {}
+        report_maturity_type = str(
+            m025.get("report_maturity_type", "Integrated Preliminary Report")
+        ).strip() or "Integrated Preliminary Report"
         # Recovery R-66: allow opt-in render under warnings via pipeline input.
         # Set `__pipeline__.__force_render__ = true` to bypass motor_036's
         # can_render_pdf=False gate. The render proceeds and the resulting
@@ -1724,4 +1731,9 @@ class Motor017Adapter(BaseMotorAdapter):
             # tools see what state the rendered PDF was emitted under.
             "report_state_summary": report_state_summary,
             "scenario_review_summary": scenario_review_summary,
+            # V5 P6: canonical 6-type maturity grade per Phase 0 §10.
+            # This is the maturity AXIS of the deliverable (orthogonal to
+            # topic). Dashboard / audit tools should display this alongside
+            # `recommended_report_type` from motor_007.
+            "report_maturity_type": report_maturity_type,
         }
