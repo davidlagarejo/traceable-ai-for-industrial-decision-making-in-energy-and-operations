@@ -31,6 +31,7 @@ from ..output_taxonomy import (
     canonicalize_output_mode_list,
     output_mode_alias_policy,
 )
+from ..report_maturity import aggregate_maturity_type
 from .base import BaseMotorAdapter
 
 # ── Axis definitions ──────────────────────────────────────────────────────────
@@ -888,5 +889,13 @@ class Motor025Adapter(BaseMotorAdapter):
             "report_output_mode_classifier_table": report_output_mode_classifier_table,
             "structural_primary_promotion_gate": structural_primary_promotion_gate,
             "total_outputs_registered": len(epistemic_status_register),
+            # V5 P5: canonical 6-type report maturity (Phase 0 §10).
+            # Aggregate over all registered outputs' claim_support_state.
+            "report_maturity_type": aggregate_maturity_type(
+                [
+                    str(entry.get("claim_support_state", "")).strip()
+                    for entry in epistemic_status_register.values()
+                ]
+            ),
             "produced_at": produced_at,
         }
