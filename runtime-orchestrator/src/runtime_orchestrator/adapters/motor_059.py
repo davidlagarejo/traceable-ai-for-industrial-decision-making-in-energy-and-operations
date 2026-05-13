@@ -262,6 +262,182 @@ def _detect_claim_count_mismatch(
     return out
 
 
+# V6 P8 — Hard precedence rules R8-R11.
+# These enforce that certain TAD actions / claim types are forbidden
+# until specific upstream conditions resolve. Phase 0 anchor: prevent
+# epistemic jumps (benchmark → savings verified, etc.).
+
+
+_DIGITAL_TWIN_TOKENS: frozenset[str] = frozenset({
+    "digital twin", "digital_twin", "twin model", "simulation model",
+    "build twin", "deploy twin",
+})
+
+_ROI_CLAIM_TOKENS: frozenset[str] = frozenset({
+    "roi", "payback", "savings", "irr", "npv", "bankable",
+    "verified savings",
+})
+
+_PEER_SUPERIORITY_TOKENS: frozenset[str] = frozenset({
+    "outperform", "better than peer", "superior to peer", "peer superiority",
+    "best in class", "top quartile",
+})
+
+_VERIFIED_SAVINGS_TOKENS: frozenset[str] = frozenset({
+    "verified savings", "guaranteed savings", "savings verified",
+    "performance verified", "verified retrofit savings",
+})
+
+
+def _action_mentions_any(action: dict, tokens: frozenset[str]) -> bool:
+    """True if any action text field contains any of the given tokens."""
+    blob = " ".join(
+        _text(action.get(f, "")).lower()
+        for f in ("action_title", "action_family", "recommended_posture",
+                  "decision_unlock", "evidence_needed", "sequencing_note")
+    )
+    return any(t in blob for t in tokens)
+
+
+def _detect_R8_digital_twin_when_dominant_unresolved(
+    actions: list[dict],
+    dominant_variables: list[dict],
+) -> list[dict]:
+    """R8: forbid digital_twin TAD actions when ≥1 dominant variable
+    is unresolved (evidence_state in {ARCHETYPAL_PRIOR, WEAK_SIGNAL,
+    CONDITIONAL_HYPOTHESIS} and no supporting evidence)."""
+    unresolved = [
+        v for v in dominant_variables
+        if isinstance(v, dict)
+        and _text(v.get("evidence_state")) not in ("OBSERVED_FACT", "")
+    ]
+    if not unresolved:
+        return []
+    out: list[dict] = []
+    for action in actions:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _DIGITAL_TWIN_TOKENS):
+            out.append({
+                "rule_id": "R8_digital_twin_with_unresolved_dominant_variable",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "unresolved_variable_count": len(unresolved),
+                "description": (
+                    f"TAD action proposes digital twin / simulation work but "
+                    f"{len(unresolved)} dominant variable(s) are still unresolved. "
+                    "Digital twin work is forbidden until dominant variables harden."
+                ),
+            })
+    return out
+
+
+def _detect_R9_roi_when_control_boundary_unresolved(
+    actions: list[dict],
+    dominant_variables: list[dict],
+) -> list[dict]:
+    """R9: forbid ROI/payback/savings claims when control_boundary is
+    unresolved. Detection: dominant_variable name contains 'control' or
+    'boundary' AND evidence_state != OBSERVED_FACT."""
+    control_boundary_resolved = False
+    for v in dominant_variables:
+        if not isinstance(v, dict):
+            continue
+        name = _text(v.get("variable")).lower()
+        if "control" in name or "boundary" in name or "tenant" in name:
+            if _text(v.get("evidence_state")) == "OBSERVED_FACT":
+                control_boundary_resolved = True
+                break
+    if control_boundary_resolved:
+        return []
+    out: list[dict] = []
+    for action in actions:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _ROI_CLAIM_TOKENS):
+            out.append({
+                "rule_id": "R9_roi_claim_with_unresolved_control_boundary",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "description": (
+                    "TAD action references ROI/payback/savings but the asset's "
+                    "control boundary (owner vs tenant / metering responsibility) "
+                    "is not yet resolved. ROI claims are forbidden until the "
+                    "control boundary is observed locally."
+                ),
+            })
+    return out
+
+
+def _detect_R10_peer_superiority_when_normalization_incomplete(
+    actions: list[dict],
+    motor_051: dict,
+) -> list[dict]:
+    """R10: forbid peer_superiority claims when fair comparison
+    normalization is incomplete (motor_051 reports invalid comparison
+    risks or missing peer-set normalization)."""
+    invalid_risks = list(motor_051.get("invalid_comparison_risk_register", []) or [])
+    not_yet_valid = list(motor_051.get("comparison_not_yet_valid_register", []) or [])
+    normalization_incomplete = bool(invalid_risks) or bool(not_yet_valid)
+    if not normalization_incomplete:
+        return []
+    out: list[dict] = []
+    for action in actions:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _PEER_SUPERIORITY_TOKENS):
+            out.append({
+                "rule_id": "R10_peer_superiority_with_incomplete_normalization",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "invalid_risk_count": len(invalid_risks),
+                "not_yet_valid_count": len(not_yet_valid),
+                "description": (
+                    "TAD action implies peer superiority / best-in-class but the "
+                    "fair-comparison normalization is incomplete. Peer superiority "
+                    "claims are forbidden until normalization completes."
+                ),
+            })
+    return out
+
+
+def _detect_R11_verified_savings_when_baseline_soft(
+    actions: list[dict],
+    financial_exposure_register: list[dict],
+) -> list[dict]:
+    """R11: forbid verified_savings claims when baseline_dependency_state
+    is not 'hardened' (V5 P13 Phase 5 financial_exposure_case). Detection:
+    any motor_045 financial_exposure_case has baseline_dependency_state
+    != 'hardened' AND a TAD action mentions verified-savings tokens."""
+    baseline_hardened = False
+    for row in financial_exposure_register or []:
+        if not isinstance(row, dict):
+            continue
+        state = _text(row.get("baseline_dependency_state")).lower()
+        if state == "hardened":
+            baseline_hardened = True
+            break
+    if baseline_hardened:
+        return []
+    out: list[dict] = []
+    for action in actions:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, _VERIFIED_SAVINGS_TOKENS):
+            out.append({
+                "rule_id": "R11_verified_savings_with_soft_baseline",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "description": (
+                    "TAD action carries verified-savings / guaranteed-savings "
+                    "language but no Phase 5 financial_exposure_case reports "
+                    "a 'hardened' baseline_dependency_state. Verified savings "
+                    "claims are forbidden until baseline is locally hardened."
+                ),
+            })
+    return out
+
+
 class Motor059Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -271,13 +447,16 @@ class Motor059Adapter(BaseMotorAdapter):
     def input_motor_ids(self) -> list[str]:
         # V3 G2: also read motor_016 (governance_summary), motor_018 (chart
         # assets), motor_051 (fair comparison state).
-        return ["motor_016", "motor_018", "motor_033", "motor_038", "motor_051", "motor_054"]
+        # V6 P8: also read motor_045 for Phase 5 financial_exposure_case_register
+        # to enforce R11 (verified_savings_when_baseline_soft).
+        return ["motor_016", "motor_018", "motor_033", "motor_038", "motor_045", "motor_051", "motor_054"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         m016 = inputs.get("motor_016", {}) if isinstance(inputs.get("motor_016", {}), dict) else {}
         m018 = inputs.get("motor_018", {}) if isinstance(inputs.get("motor_018", {}), dict) else {}
         m033 = inputs.get("motor_033", {}) if isinstance(inputs.get("motor_033", {}), dict) else {}
         m038 = inputs.get("motor_038", {}) if isinstance(inputs.get("motor_038", {}), dict) else {}
+        m045 = inputs.get("motor_045", {}) if isinstance(inputs.get("motor_045", {}), dict) else {}
         m051 = inputs.get("motor_051", {}) if isinstance(inputs.get("motor_051", {}), dict) else {}
         m054 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054", {}), dict) else {}
 
@@ -315,6 +494,13 @@ class Motor059Adapter(BaseMotorAdapter):
         warnings.extend(_detect_chart_implies_prohibited_claim(chart_assets, claim_permissions))
         warnings.extend(_detect_nugget_implies_superiority_when_blocked(nuggets, m051))
         warnings.extend(_detect_claim_count_mismatch(claim_register, actions, governance_summary))
+        # V6 P8: hard precedence rules R8-R11.
+        warnings.extend(_detect_R8_digital_twin_when_dominant_unresolved(actions, dominant_variables))
+        warnings.extend(_detect_R9_roi_when_control_boundary_unresolved(actions, dominant_variables))
+        warnings.extend(_detect_R10_peer_superiority_when_normalization_incomplete(actions, m051))
+        warnings.extend(_detect_R11_verified_savings_when_baseline_soft(
+            actions, list(m045.get("financial_exposure_case_register", []) or [])
+        ))
 
         # V6 P4.8: apply validator_severity_policy gate (soft-mode no-op).
         # R2/R3 already promoted to "error" in V3 G2 above; gate respects
