@@ -157,4 +157,5 @@ def test_rules_evaluated_stable():
         "CV2_chart_without_intelligence_binding",
         "CV3_decorative_ratio_critical",
         "CV4_no_charts_with_admissible_thesis",
+        "CV5_chart_cross_asset_family",  # V7 P7
     ]

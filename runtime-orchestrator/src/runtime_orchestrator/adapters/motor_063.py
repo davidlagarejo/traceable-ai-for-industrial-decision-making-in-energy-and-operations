@@ -159,6 +159,59 @@ def _detect_no_charts_with_active_thesis(
     ]
 
 
+def _detect_CV5_chart_cross_asset_family(
+    chart_assets: list[dict],
+    target_asset_family: str,
+) -> list[dict]:
+    """V7 P7 — Chart-binding asset_family must match the target's
+    asset_family. A chart whose intelligence_binding declares a different
+    family is cross-asset contamination (the most common silent leak:
+    reusing a peer-set chart from a different family).
+
+    Detection:
+      - Chart has intelligence_binding.asset_family declared.
+      - That family ≠ target asset_family (case-insensitive).
+
+    Charts without a declared asset_family are handled by CV2
+    (unbound chart) — CV5 only fires when a binding exists AND mismatches.
+    """
+    out: list[dict] = []
+    tgt = (target_asset_family or "").strip().lower()
+    if not tgt:
+        return out  # no target context; cannot judge
+    for asset in chart_assets or []:
+        if not isinstance(asset, dict):
+            continue
+        binding = (
+            asset.get("intelligence_binding")
+            or asset.get("chart_intelligence_binding")
+            or {}
+        )
+        if not isinstance(binding, dict):
+            continue
+        bound_family = _text(
+            binding.get("asset_family")
+            or binding.get("asset_type")
+            or binding.get("target_family")
+        ).lower()
+        if not bound_family or bound_family == tgt:
+            continue
+        out.append({
+            "rule_id": "CV5_chart_cross_asset_family",
+            "severity": "warning",
+            "chart_id": _text(asset.get("chart_id") or asset.get("id")),
+            "target_asset_family": target_asset_family,
+            "bound_asset_family": bound_family,
+            "description": (
+                f"Chart {asset.get('chart_id', '?')!r} is bound to "
+                f"asset_family {bound_family!r} but target is "
+                f"{target_asset_family!r}. Cross-asset chart reuse is "
+                "contamination — remove or rebind to the correct family."
+            ),
+        })
+    return out
+
+
 class Motor063Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -166,9 +219,11 @@ class Motor063Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_018", "motor_047"]
+        # V7 P7: motor_007 added so CV5 can read the target asset_family.
+        return ["motor_007", "motor_018", "motor_047"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
+        m007 = inputs.get("motor_007", {}) if isinstance(inputs.get("motor_007", {}), dict) else {}
         m018 = inputs.get("motor_018", {}) if isinstance(inputs.get("motor_018", {}), dict) else {}
         m047 = inputs.get("motor_047", {}) if isinstance(inputs.get("motor_047", {}), dict) else {}
 
@@ -176,12 +231,18 @@ class Motor063Adapter(BaseMotorAdapter):
         summary = dict(m018.get("chart_strategic_value_summary", {}) or {})
         thesis = m047.get("executive_thesis", {}) if isinstance(m047.get("executive_thesis", {}), dict) else {}
         thesis_state = _text(thesis.get("thesis_state"))
+        target_def = m007.get("target_definition_contract", {}) if isinstance(m007.get("target_definition_contract", {}), dict) else {}
+        target_asset_family = _text(
+            target_def.get("asset_family") or target_def.get("target_type")
+        )
 
         warnings: list[dict] = []
         warnings.extend(_detect_decorative_risk(chart_assets))
         warnings.extend(_detect_unbound_charts(chart_assets))
         warnings.extend(_detect_decorative_ratio(chart_assets, summary))
         warnings.extend(_detect_no_charts_with_active_thesis(chart_assets, thesis_state))
+        # V7 P7 — CV5 cross-asset chart contamination
+        warnings.extend(_detect_CV5_chart_cross_asset_family(chart_assets, target_asset_family))
 
         # V6 P4.2: apply validator_severity_policy gate. Soft mode keeps
         # the original severities; hard mode promotes CV1 and CV3 to "blocking".
@@ -211,5 +272,6 @@ class Motor063Adapter(BaseMotorAdapter):
                 "CV2_chart_without_intelligence_binding",
                 "CV3_decorative_ratio_critical",
                 "CV4_no_charts_with_admissible_thesis",
+                "CV5_chart_cross_asset_family",
             ],
         }

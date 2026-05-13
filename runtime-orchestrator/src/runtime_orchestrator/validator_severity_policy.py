@@ -78,6 +78,8 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     # and decorative-ratio critical tier (CV3).
     ("motor_063", "CV1_decorative_risk_chart"),
     ("motor_063", "CV3_decorative_ratio_critical"),
+    # V7 P7 — chart cross-asset-family contamination.
+    ("motor_063", "CV5_chart_cross_asset_family"),
 })
 
 
