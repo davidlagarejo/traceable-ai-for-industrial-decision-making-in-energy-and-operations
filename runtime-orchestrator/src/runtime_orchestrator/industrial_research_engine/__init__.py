@@ -80,6 +80,11 @@ from .engine import (
     propose_knowledge,
     propose_knowledge_from_manual_text,
 )
+from .deterministic_bridge import (
+    load_pattern_spec,
+    pattern_spec_to_knowledge_object,
+    propose_extracted_pattern,
+)
 
 __all__ = [
     # schemas
@@ -117,4 +122,8 @@ __all__ = [
     "extract_knowledge",
     "propose_knowledge",
     "propose_knowledge_from_manual_text",
+    # deterministic bridge (V5 P3)
+    "load_pattern_spec",
+    "pattern_spec_to_knowledge_object",
+    "propose_extracted_pattern",
 ]
