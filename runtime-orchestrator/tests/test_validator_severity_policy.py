@@ -18,9 +18,11 @@ from runtime_orchestrator.validator_severity_policy import (
 
 
 def test_blocking_set_contains_expected_rules():
-    """The canonical V6 set must include the named contamination signals."""
+    """The canonical V6 set must include the named contamination signals.
+    Rule ids align with the motors' actual emitted rule_id values."""
     expected = {
-        ("motor_061", "asset_family_contamination_critical"),
+        ("motor_061", "AF1_pattern_contamination"),
+        ("motor_061", "AF2_nugget_token_contamination"),
         ("motor_062", "SJ1_scenario_missing_justification"),
         ("motor_063", "CV1_decorative_risk_chart"),
         ("motor_058", "RU2_verbatim_nugget_reuse"),
@@ -32,7 +34,8 @@ def test_blocking_set_contains_expected_rules():
 
 
 def test_is_v6_blocking_rule_positive_case():
-    assert is_v6_blocking_rule("motor_061", "asset_family_contamination_critical")
+    assert is_v6_blocking_rule("motor_061", "AF1_pattern_contamination")
+    assert is_v6_blocking_rule("motor_061", "AF2_nugget_token_contamination")
     assert is_v6_blocking_rule("motor_063", "CV3_decorative_ratio_contamination")
 
 
@@ -103,7 +106,7 @@ def test_effective_severity_hard_mode_promotes_v6_blocking(monkeypatch):
     monkeypatch.setenv(_ENV_FLAG, "1")
     # rule in V6 blocking set + hard mode → "blocking"
     assert effective_severity(
-        "motor_061", "asset_family_contamination_critical", "warning"
+        "motor_061", "AF1_pattern_contamination", "critical"
     ) == "blocking"
     assert effective_severity(
         "motor_062", "SJ1_scenario_missing_justification", "warning"
@@ -123,7 +126,7 @@ def test_effective_severity_per_pipeline_override(monkeypatch):
     monkeypatch.delenv(_ENV_FLAG, raising=False)
     inputs = {"__validators_hard_block__": True}
     assert effective_severity(
-        "motor_061", "asset_family_contamination_critical", "warning",
+        "motor_061", "AF1_pattern_contamination", "critical",
         pipeline_inputs=inputs,
     ) == "blocking"
 
@@ -133,9 +136,9 @@ def test_effective_severity_pipeline_soft_mode_keeps_default(monkeypatch):
     inputs = {"__validators_soft_mode__": True}
     # Env says hard but pipeline says soft → soft wins
     assert effective_severity(
-        "motor_061", "asset_family_contamination_critical", "warning",
+        "motor_061", "AF1_pattern_contamination", "critical",
         pipeline_inputs=inputs,
-    ) == "warning"
+    ) == "critical"
 
 
 # ── list_v6_blocking_rules ──────────────────────────────────────────

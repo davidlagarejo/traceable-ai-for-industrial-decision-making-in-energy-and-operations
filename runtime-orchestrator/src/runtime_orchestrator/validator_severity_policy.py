@@ -55,7 +55,8 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
 
     # motor_061 Asset Family Isolation — ALL critical contamination
     # findings block. Cross-family pattern activation is the V6 priority.
-    ("motor_061", "asset_family_contamination_critical"),
+    ("motor_061", "AF1_pattern_contamination"),
+    ("motor_061", "AF2_nugget_token_contamination"),
 
     # motor_062 Scenario Justification — ALL three SJ rules block when
     # the global gate is on (overrides motor_062's own mode="warn" default).

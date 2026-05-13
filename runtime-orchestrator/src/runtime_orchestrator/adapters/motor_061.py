@@ -33,6 +33,7 @@ from typing import Any
 from .base import BaseMotorAdapter
 from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
 from ..industrial_research_engine.family_scope import ALL_KNOWN_ASSET_FAMILIES
+from ..validator_severity_policy import effective_severity
 
 
 # Per asset_family, the set of pattern_ids that signal CONTAMINATION when
@@ -267,13 +268,38 @@ class Motor061Adapter(BaseMotorAdapter):
         warnings.extend(_detect_pattern_contamination(asset_family, activated_combinations, shared_patterns))
         warnings.extend(_detect_nugget_token_contamination(asset_family, nuggets))
 
+        # V6 P4.1: apply validator_severity_policy gate. Under soft mode
+        # (regression default), severity stays "critical" exactly as before.
+        # Under hard mode (ZLAB_VALIDATORS_HARD_BLOCK=1 or pipeline opt-in),
+        # the policy promotes V6-blocking-set rule_ids from critical/warning
+        # to "blocking", and downstream consumers (motor_036, qa_score)
+        # treat them as render-blocking.
+        pipeline_inputs = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        for w in warnings:
+            rid = str(w.get("rule_id", ""))
+            sev = str(w.get("severity", "warning"))
+            w["severity"] = effective_severity(
+                self.motor_id, rid, sev, pipeline_inputs=pipeline_inputs
+            )
+
         critical_count = sum(1 for w in warnings if w.get("severity") == "critical")
+        blocking_count = sum(1 for w in warnings if w.get("severity") == "blocking")
+        warning_count_pure = sum(1 for w in warnings if w.get("severity") == "warning")
 
         return {
             "asset_family_isolation_warnings": warnings,
             "warning_count": len(warnings),
             "critical_count": critical_count,
-            "contamination_detected": critical_count > 0,
+            # V6 P4.1: surface V6-grade counts for downstream qa_score consumer.
+            "blocking_violations": blocking_count,
+            "warning_violations": warning_count_pure,
+            "cross_family_violations": sum(
+                1 for w in warnings if w.get("rule_id") == "AF1_pattern_contamination"
+            ),
+            "contamination_count": sum(
+                1 for w in warnings if w.get("rule_id") == "AF2_nugget_token_contamination"
+            ),
+            "contamination_detected": (critical_count + blocking_count) > 0,
             "asset_family_evaluated": asset_family,
             # V3 G3 closure: declare whether this family is in the V4
             # canonical taxonomy (family_scope.ALL_KNOWN_ASSET_FAMILIES).
