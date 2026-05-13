@@ -93,10 +93,89 @@ _HARDENING_HINT_FROM_PERMISSION = {
 }
 
 
+# Phase 4 baseline_hardening_state ladder (subset of motor_025 §5.2 support
+# ladder relevant to baseline hardening).
+_BASELINE_HARDENING_FROM_MATURITY = {
+    "unknown": "unsupported",
+    "absent": "unsupported",
+    "hypothesis": "preliminary",
+    "indication": "preliminary",
+    "screening_grade": "screening_baseline",
+    "decision_grade": "decision_grade_baseline",
+    "partially_hardened": "partially_hardened",
+    "verification_ready": "verification_ready",
+    "verification_supported": "verification_supported",
+    "verified": "verified_baseline",
+}
+
+
+def _compute_baseline_hardening_state(
+    claim_row: dict[str, Any],
+    variable_maturity_by_name: dict[str, dict[str, Any]],
+) -> str:
+    """Phase 4 §5: compute baseline_hardening_state from the maturity
+    of the claim's required_variables. The MIN maturity across required
+    variables sets the ceiling (weakest link)."""
+    required = claim_row.get("required_variables") or claim_row.get("dependency_variables", [])
+    if not required:
+        return "unsupported"
+    ladder = (
+        "unknown", "absent", "hypothesis", "indication", "screening_grade",
+        "decision_grade", "partially_hardened", "verification_ready",
+        "verification_supported", "verified",
+    )
+    min_idx: int | None = None
+    for var_name in required:
+        var = variable_maturity_by_name.get(str(var_name), {})
+        level = str(var.get("maturity_level", "")).lower()
+        if level in ladder:
+            idx = ladder.index(level)
+            if min_idx is None or idx < min_idx:
+                min_idx = idx
+    if min_idx is None:
+        return "unsupported"
+    weakest_level = ladder[min_idx]
+    return _BASELINE_HARDENING_FROM_MATURITY.get(weakest_level, "preliminary")
+
+
+def _compute_instrument_dependency(
+    claim_row: dict[str, Any],
+    variable_maturity_by_name: dict[str, dict[str, Any]],
+) -> list[str]:
+    """Phase 4 §5: collect the instrument / source identifiers from each
+    required variable's `evidence_source` field. These are the
+    instruments the framework needs to confirm to harden the claim."""
+    required = claim_row.get("required_variables") or claim_row.get("dependency_variables", [])
+    if not required:
+        return []
+    out: list[str] = []
+    for var_name in required:
+        var = variable_maturity_by_name.get(str(var_name), {})
+        ev_src = str(var.get("evidence_source", "")).strip()
+        if ev_src and ev_src not in out:
+            out.append(ev_src)
+    return out
+
+
+def _compute_validity_domain(
+    claim_row: dict[str, Any],
+    target_asset_family: str = "",
+) -> str:
+    """Phase 4 §5: validity_domain = the bounded scope within which a
+    successful upgrade applies. Derived from the claim's variable_family
+    and the case's target_asset_family."""
+    family = str(claim_row.get("variable_family") or claim_row.get("claim_family", "")).strip()
+    if target_asset_family and family:
+        return f"{target_asset_family}/{family}"
+    return target_asset_family or family or "case-scoped"
+
+
 def to_claim_upgrade_candidate_register(
     claim_permission_register: list[dict[str, Any]] | dict[str, Any],
     evidence_gap_register: list[dict[str, Any]] | None = None,
     validation_queue: list[dict[str, Any]] | None = None,
+    variable_maturity_register: list[dict[str, Any]] | None = None,
+    target_asset_family: str = "",
 ) -> list[dict[str, Any]]:
     """Project motor_014/motor_034 claim permission rows into the
     canonical Phase 4 unit (claim_upgrade_candidate).
@@ -106,10 +185,19 @@ def to_claim_upgrade_candidate_register(
     state, contrast/observation/measurement routes, instrument dependency,
     validity domain, upgrade condition, hold/degrade/block reason.
 
+    V5 P10: baseline_hardening_state, instrument_dependency, and
+    validity_domain are now COMPUTED from variable_maturity_register +
+    target_asset_family, not read from optional row fields. The Master
+    Doc §5 fields are populated structurally instead of being
+    placeholders.
+
     Inputs:
       claim_permission_register — motor_014/motor_034 permission rows
-      evidence_gap_register — motor_014 evidence gaps to derive evidence_local_required
+      evidence_gap_register — motor_014 evidence gaps → evidence_local_required
       validation_queue — motor_014 validation entries for hardening routes
+      variable_maturity_register — motor_034 variable rows → baseline +
+        instrument_dependency
+      target_asset_family — motor_007 target_type → validity_domain prefix
     """
     rows = (
         claim_permission_register
@@ -130,12 +218,30 @@ def to_claim_upgrade_candidate_register(
             if cid:
                 queue_by_claim.setdefault(cid, []).append(item)
 
+    # Index variable_maturity rows by variable_name for fast lookup
+    variable_maturity_by_name: dict[str, dict[str, Any]] = {}
+    for var in variable_maturity_register or []:
+        if isinstance(var, dict):
+            name = str(var.get("variable_name", ""))
+            if name:
+                variable_maturity_by_name[name] = var
+
     out: list[dict[str, Any]] = []
     for row in rows:
         if not isinstance(row, dict):
             continue
-        claim_id = str(row.get("claim_id") or row.get("case_id") or "")
-        permission = str(row.get("permission") or row.get("permission_state") or "").lower()
+        claim_id = str(
+            row.get("claim_id")
+            or row.get("claim_name")
+            or row.get("case_id")
+            or ""
+        )
+        permission = str(
+            row.get("permission")
+            or row.get("current_permission")
+            or row.get("permission_state")
+            or ""
+        ).lower()
         hardening_hint = _HARDENING_HINT_FROM_PERMISSION.get(permission, "")
         gaps = gaps_by_claim.get(claim_id, [])
         queue = queue_by_claim.get(claim_id, [])
@@ -144,6 +250,9 @@ def to_claim_upgrade_candidate_register(
             for g in gaps
             if str(g.get("missing_evidence") or g.get("description") or "").strip()
         ]
+        # Fall back to the claim's own required_evidence if no gap-derived list
+        if not evidence_local_required:
+            evidence_local_required = list(row.get("required_evidence", []) or [])
         # Route hints from queue items: measurement / observation / contrast
         measurement_route = [
             str(q.get("validation_requirement", "")).strip()
@@ -161,6 +270,16 @@ def to_claim_upgrade_candidate_register(
             if "contrast" in str(q.get("validation_requirement", "")).lower()
             or "compare" in str(q.get("validation_requirement", "")).lower()
         ]
+        # V5 P10: structurally compute the 3 canonical fields previously
+        # left as placeholders.
+        baseline_hardening_state = _compute_baseline_hardening_state(
+            row, variable_maturity_by_name
+        )
+        instrument_dependency = _compute_instrument_dependency(
+            row, variable_maturity_by_name
+        )
+        validity_domain = _compute_validity_domain(row, target_asset_family)
+
         upgrade_condition = ""
         hold_reason = ""
         if hardening_hint == "do_not_upgrade":
@@ -179,15 +298,20 @@ def to_claim_upgrade_candidate_register(
         else:
             upgrade_condition = "evidence already present supports upgrade attempt"
 
+        # Append upstream upgrade_path if motor_034 already computed it
+        upstream_path = list(row.get("upgrade_path", []) or [])
+        if upstream_path and upgrade_condition:
+            upgrade_condition = upgrade_condition + " · " + " → ".join(upstream_path)
+
         out.append({
             "claim_id": claim_id,
             "evidence_local_required": evidence_local_required,
-            "baseline_hardening_state": str(row.get("baseline_hardening_state", "")),
+            "baseline_hardening_state": baseline_hardening_state,
             "contrast_route": contrast_route,
             "observation_route": observation_route,
             "measurement_route": measurement_route,
-            "instrument_dependency": list(row.get("instrument_dependency", []) or []),
-            "validity_domain": str(row.get("validity_domain", "")),
+            "instrument_dependency": instrument_dependency,
+            "validity_domain": validity_domain,
             "upgrade_condition": upgrade_condition,
             "hold_degrade_block_reason": hold_reason,
             "permission_state": permission,

@@ -2260,11 +2260,17 @@ class Motor034Adapter(BaseMotorAdapter):
             "cluster_report_readiness_profile": cluster_report_readiness_profile,
             "canonical_asset_context_summary": canonical_asset_context_summary,
             "claim_permission_register": [record.to_dict() for record in claim_permissions],
-            # V5 P2: canonical Phase 4 unit (Master Doc §5) — projection
-            # of claim permissions into claim_upgrade_candidate with
-            # explicit hardening route fields.
+            # V5 P2 + V5 P10: canonical Phase 4 unit (Master Doc §5) —
+            # projection of claim permissions into claim_upgrade_candidate
+            # with explicit hardening route fields. V5 P10 enriches the
+            # projection by passing variable_maturity_register +
+            # target_asset_family so baseline_hardening_state,
+            # instrument_dependency, and validity_domain are STRUCTURALLY
+            # computed (not placeholders).
             "claim_upgrade_candidate_register": to_claim_upgrade_candidate_register(
-                [record.to_dict() for record in claim_permissions]
+                [record.to_dict() for record in claim_permissions],
+                variable_maturity_register=[record.to_dict() for record in variable_records],
+                target_asset_family=str(target_definition.get("target_type", "")),
             ),
             "structural_claim_permission_register": structural_claim_permission_register,
             "claim_contract_register": claim_contract_register,
