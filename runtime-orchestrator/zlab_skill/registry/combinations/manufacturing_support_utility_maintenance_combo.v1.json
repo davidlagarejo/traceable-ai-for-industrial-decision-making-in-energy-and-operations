@@ -44,6 +44,13 @@
   ],
   "confidence_ceiling": "L2",
   "adjudication_required": true,
+  "required_asset_family": "manufacturing_facility",
+  "allowed_claim_ceiling": "L2",
+  "required_evidence_pack": "support_utility_maintenance_pack",
+  "tad_mapping": ["inspect", "measure", "classify", "design", "defer"],
+  "allowed_render_modes": ["exploratory_prior", "structural_hypothesis", "bounded_peer_analysis", "publish_bounded"],
+  "forbidden_render_modes": ["client_safe"],
+  "falsification": "compressed-air losses immaterial, maintenance maturity evidenced, AND tariff/power-quality exposure quantified — all three independently.",
   "tests": [
     "manufacturing bundles should surface this combination when compressed air, maintenance and reactive exposure remain unresolved",
     "combination must require run-level adjudication before downstream strategic use"

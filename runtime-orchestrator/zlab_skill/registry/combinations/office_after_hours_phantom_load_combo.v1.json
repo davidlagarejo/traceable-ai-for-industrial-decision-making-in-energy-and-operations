@@ -48,6 +48,13 @@
   ],
   "confidence_ceiling": "L2",
   "adjudication_required": true,
+  "required_asset_family": "commercial_building",
+  "allowed_claim_ceiling": "L2",
+  "required_evidence_pack": "office_phantom_load_governance_pack",
+  "tad_mapping": ["measure", "inspect", "classify", "defer"],
+  "allowed_render_modes": ["exploratory_prior", "structural_hypothesis", "bounded_peer_analysis", "publish_bounded"],
+  "forbidden_render_modes": ["client_safe"],
+  "falsification": "BMS schedule documented and trended, tenant boundary aligned with metering, AND after-hours phantom load characterized below threshold.",
   "tests": [
     "commercial-building acceptance bundle should surface this combination when BMS drift, tenant boundary and after-hours load remain unresolved",
     "must NOT activate in warehouse, manufacturing, cold-chain cases (anti-pattern protection by tenant_operator_boundary_unresolved)",

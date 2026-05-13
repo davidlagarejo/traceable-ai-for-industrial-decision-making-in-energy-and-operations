@@ -48,6 +48,13 @@
   ],
   "confidence_ceiling": "L2",
   "adjudication_required": true,
+  "required_asset_family": "thermal_process_facility",
+  "allowed_claim_ceiling": "L2",
+  "required_evidence_pack": "process_heat_inventory_pack",
+  "tad_mapping": ["measure", "inspect", "classify", "defer"],
+  "allowed_render_modes": ["exploratory_prior", "structural_hypothesis", "bounded_peer_analysis", "publish_bounded"],
+  "forbidden_render_modes": ["client_safe"],
+  "falsification": "process-heat duty has been independently metered and bounded against production schedule, or the asset has been confirmed as non-thermal-process.",
   "tests": [
     "manufacturing acceptance bundle should surface this combination when process heat duty is unbounded and the framework presents area-normalized benchmark",
     "must NOT activate in warehouse, cold-chain, office cases (anti-pattern protection by required process-heat patterns)",

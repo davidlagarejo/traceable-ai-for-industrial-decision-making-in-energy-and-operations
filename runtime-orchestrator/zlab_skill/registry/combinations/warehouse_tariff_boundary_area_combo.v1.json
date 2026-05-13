@@ -47,6 +47,13 @@
   ],
   "confidence_ceiling": "L2",
   "adjudication_required": true,
+  "required_asset_family": "warehouse_distribution",
+  "allowed_claim_ceiling": "L2",
+  "required_evidence_pack": "warehouse_tariff_boundary_pack",
+  "tad_mapping": ["classify", "measure", "inspect", "defer"],
+  "allowed_render_modes": ["exploratory_prior", "structural_hypothesis", "bounded_peer_analysis", "publish_bounded"],
+  "forbidden_render_modes": ["client_safe"],
+  "falsification": "charging-demand profile bounded and immaterial, AND owner/operator boundary fully aligned with metering, AND a fair non-area peer set established.",
   "tests": [
     "warehouse acceptance bundle should surface this combination candidate when tariff, boundary and comparison remain unresolved",
     "combination must require run-level adjudication before downstream strategic use"
