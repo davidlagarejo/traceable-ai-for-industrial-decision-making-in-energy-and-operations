@@ -38,6 +38,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from ..narrator_validator import check_orphan_claims, summarize_orphan_findings
 from .base import BaseMotorAdapter
 
 _CODEX_CLI = os.environ.get("ZLAB_CODEX_CLI", "codex")
@@ -473,9 +474,30 @@ def _lint_text(packet: dict[str, Any], text: str) -> dict[str, Any]:
     )
     if unsupported_tokens:
         violations.append("unsupported_numeric_tokens:" + ",".join(unsupported_tokens[:6]))
+
+    # V5 P7: orphan-claim detection. Each sentence whose significant
+    # tokens share NO overlap with source_facts is flagged as a candidate
+    # hallucination. This is the Phase 0 "the LLM doesn't invent"
+    # enforcement at sentence granularity.
+    orphan_findings = check_orphan_claims(
+        packet.get("source_facts", {}),
+        text,
+        allow_list=[
+            str(packet.get("target_type", "")),
+            str(packet.get("asset_family", "")),
+            str(packet.get("case_id", "")),
+        ],
+    )
+    if orphan_findings:
+        summary = summarize_orphan_findings(orphan_findings)
+        if summary:
+            violations.append(summary)
     return {
         "status": "failed" if violations else "passed",
         "violations": violations,
+        # Surface the structured findings so downstream audit (motor_017
+        # render gate, dashboard) can inspect each orphan in detail.
+        "orphan_claim_findings": orphan_findings,
     }
 
 
