@@ -140,11 +140,17 @@ class Motor053Adapter(BaseMotorAdapter):
             ),
             "authority_state": financial_exposure_authority_state,
         }
-        # V5 P2: canonical Phase 6 unit (Master Doc §4) — projection of
-        # regulatory_constraint_register into compliance_applicability_case
-        # with explicit applicability_state ladder.
+        # V5 P2 + V5 P12: canonical Phase 6 unit (Master Doc §4 + §7.2).
+        # V5 P12 enriches by also passing the richer regulatory_physics_register
+        # (which carries regulatory_signal + physical_implication + evidence_state
+        # per row) plus target_asset_family. This makes jurisdiction,
+        # rule_family, applicability_state, and publication_ceiling
+        # STRUCTURALLY computed instead of empty placeholders.
         compliance_applicability_case_register = to_compliance_applicability_case_register(
-            regulatory_constraint_register
+            regulatory_constraint_register,
+            regulatory_physics_register=regulatory_physics_register,
+            target_asset_family=str(target_definition.get("target_type", "")),
+            default_jurisdiction="US",
         )
         return {
             "regulatory_physics_register": regulatory_physics_register,

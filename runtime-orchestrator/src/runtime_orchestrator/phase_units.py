@@ -399,52 +399,161 @@ _COMPLIANCE_LADDER = (
 )
 
 
+# Phase 6 jurisdiction tokens for parsing regulatory_signal strings.
+_JURISDICTION_TOKENS: dict[str, str] = {
+    "nyc": "US/NY/NYC",
+    "new york city": "US/NY/NYC",
+    "new york": "US/NY",
+    "california": "US/CA",
+    "texas": "US/TX",
+    "epa": "US/Federal/EPA",
+    "doe": "US/Federal/DOE",
+    "ferc": "US/Federal/FERC",
+    "osha": "US/Federal/OSHA",
+    "federal": "US/Federal",
+    # Per current user direction: case discovery is US-only. International
+    # tokens kept for catalog-side metadata but rarely hit at runtime.
+    "colombia": "CO",
+    "upme": "CO",
+    "creg": "CO",
+    "españa": "ES",
+    "spain": "ES",
+    "ue": "EU",
+    "european": "EU",
+}
+
+
+def _parse_jurisdiction(text: str) -> str:
+    """Lowercase-scan a regulatory_signal string for jurisdiction tokens."""
+    if not text:
+        return ""
+    lowered = text.lower()
+    for token, juris in _JURISDICTION_TOKENS.items():
+        if token in lowered:
+            return juris
+    return ""
+
+
+def _map_evidence_state_to_applicability(evidence_state: str) -> str:
+    """Map motor_053's evidence_state (4-state Claim Governor) to the
+    Phase 6 7-state applicability ladder (Master Doc §7.2)."""
+    s = (evidence_state or "").strip().upper()
+    if s == "OBSERVED_FACT":
+        return "trigger_confirmed"
+    if s in ("CONDITIONAL_HYPOTHESIS", "WEAK_SIGNAL"):
+        return "trigger_plausible"
+    if s == "ARCHETYPAL_PRIOR":
+        return "rule_family_relevant"
+    return "rule_family_relevant"
+
+
+def _publication_ceiling_phase6(applicability_state: str) -> str:
+    """Phase 6 §7.2 publication ceiling by applicability state."""
+    return {
+        "rule_family_relevant": "screening_only",
+        "trigger_plausible": "screening_only",
+        "trigger_partially_supported": "screening_plus_flag",
+        "trigger_confirmed": "decision_grade",
+        "applicability_likely": "decision_grade",
+        "applicability_confirmed": "bounded_compliance",
+        "compliance_open": "screening_only",
+    }.get(applicability_state, "screening_only")
+
+
 def to_compliance_applicability_case_register(
     regulatory_flag_bundle: list[dict[str, Any]] | dict[str, Any] | None,
+    regulatory_physics_register: list[dict[str, Any]] | None = None,
+    target_asset_family: str = "",
+    default_jurisdiction: str = "US",
 ) -> list[dict[str, Any]]:
-    """Project motor_053 / motor_012 regulatory bundle into Phase 6 unit.
+    """Project motor_053 regulatory bundle into Phase 6 canonical unit.
+
+    V5 P12: also accepts the richer `regulatory_physics_register` from
+    motor_053. When that register is available, it's the primary source
+    (rule_family from regulatory_signal, applicability_state from
+    evidence_state). The original `regulatory_flag_bundle` path is kept
+    for callers that pass pre-structured flags.
 
     Sparse data → `rule_family_relevant` as default posture.
-    """
-    if not regulatory_flag_bundle:
-        return []
-    flags = (
-        regulatory_flag_bundle
-        if isinstance(regulatory_flag_bundle, list)
-        else list(regulatory_flag_bundle.get("flags", []) or [])
-    )
-    out: list[dict[str, Any]] = []
-    for flag in flags:
-        if not isinstance(flag, dict):
-            continue
-        trigger_fields_missing = list(flag.get("missing_trigger_fields", []) or [])
-        confirmed = bool(flag.get("trigger_confirmed", False))
-        if confirmed:
-            state = "trigger_confirmed"
-        elif trigger_fields_missing and len(trigger_fields_missing) < 3:
-            state = "trigger_partially_supported"
-        elif flag.get("trigger_plausible", False):
-            state = "trigger_plausible"
-        else:
-            state = "rule_family_relevant"
+    Master Doc §7.2 7-state applicability ladder is used.
 
+    Per user direction: case discovery is US-only. default_jurisdiction
+    defaults to "US"; finer jurisdiction is parsed from regulatory_signal
+    text when present (e.g. "NYC" → "US/NY/NYC").
+    """
+    out: list[dict[str, Any]] = []
+
+    # Path A: richer regulatory_physics_register (V5 P12 primary)
+    for row in regulatory_physics_register or []:
+        if not isinstance(row, dict):
+            continue
+        signal = str(row.get("regulatory_signal", "")).strip()
+        implication = str(row.get("physical_implication", "")).strip()
+        evidence_state_raw = str(row.get("evidence_state", "")).strip()
+        applicability_state = _map_evidence_state_to_applicability(evidence_state_raw)
+        # Derive jurisdiction from signal text or fall back to default
+        juris = _parse_jurisdiction(signal) or _parse_jurisdiction(implication) or default_jurisdiction
+        # Use what_it_does_not_support as a proxy for missing_trigger_fields
+        not_supported = list(row.get("what_it_does_not_support", []) or [])
         out.append({
-            "compliance_case_id": str(flag.get("flag_id") or flag.get("rule_id") or ""),
-            "jurisdiction": str(flag.get("jurisdiction", "")),
-            "authority_source": str(flag.get("authority_source", "")),
-            "rule_family": str(flag.get("rule_family") or flag.get("rule_name") or ""),
-            "rule_version": str(flag.get("rule_version", "")),
-            "asset_boundary": str(flag.get("asset_boundary", "")),
-            "subsystem_boundary": str(flag.get("subsystem_boundary", "")),
-            "missing_trigger_fields": trigger_fields_missing,
-            "threshold_dependency": str(flag.get("threshold_dependency", "")),
-            "exception_path": str(flag.get("exception_path", "")),
-            "publication_ceiling": str(flag.get("publication_ceiling", "screening_only")),
-            "applicability_state": state,
-            "raw_flag": flag,
+            "compliance_case_id": signal[:60] or "phase6_case",
+            "jurisdiction": juris,
+            "authority_source": "regulatory_physics_register",
+            "rule_family": signal,
+            "rule_version": "",
+            "asset_boundary": target_asset_family or "",
+            "subsystem_boundary": "",
+            "missing_trigger_fields": [
+                f"gap: {item}" for item in not_supported[:5]
+            ],
+            "threshold_dependency": implication[:200],
+            "exception_path": "",
+            "publication_ceiling": _publication_ceiling_phase6(applicability_state),
+            "applicability_state": applicability_state,
+            "evidence_state_raw": evidence_state_raw,
+            "what_it_supports": list(row.get("what_it_supports", []) or []),
             "__phase__": 6,
             "__canonical_unit__": "compliance_applicability_case",
         })
+
+    # Path B: legacy regulatory_flag_bundle (preserved for backwards compat)
+    if regulatory_flag_bundle:
+        flags = (
+            regulatory_flag_bundle
+            if isinstance(regulatory_flag_bundle, list)
+            else list(regulatory_flag_bundle.get("flags", []) or [])
+        )
+        for flag in flags:
+            if not isinstance(flag, dict):
+                continue
+            trigger_fields_missing = list(flag.get("missing_trigger_fields", []) or [])
+            confirmed = bool(flag.get("trigger_confirmed", False))
+            if confirmed:
+                state = "trigger_confirmed"
+            elif trigger_fields_missing and len(trigger_fields_missing) < 3:
+                state = "trigger_partially_supported"
+            elif flag.get("trigger_plausible", False):
+                state = "trigger_plausible"
+            else:
+                state = "rule_family_relevant"
+
+            out.append({
+                "compliance_case_id": str(flag.get("flag_id") or flag.get("rule_id") or ""),
+                "jurisdiction": str(flag.get("jurisdiction", "")) or default_jurisdiction,
+                "authority_source": str(flag.get("authority_source", "")),
+                "rule_family": str(flag.get("rule_family") or flag.get("rule_name") or ""),
+                "rule_version": str(flag.get("rule_version", "")),
+                "asset_boundary": str(flag.get("asset_boundary", "")) or target_asset_family,
+                "subsystem_boundary": str(flag.get("subsystem_boundary", "")),
+                "missing_trigger_fields": trigger_fields_missing,
+                "threshold_dependency": str(flag.get("threshold_dependency", "")),
+                "exception_path": str(flag.get("exception_path", "")),
+                "publication_ceiling": str(flag.get("publication_ceiling", "")) or _publication_ceiling_phase6(state),
+                "applicability_state": state,
+                "raw_flag": flag,
+                "__phase__": 6,
+                "__canonical_unit__": "compliance_applicability_case",
+            })
     return out
 
 
