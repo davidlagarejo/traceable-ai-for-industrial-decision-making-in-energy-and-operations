@@ -650,7 +650,10 @@ def test_motor_033_emits_expanded_structural_tad_actions():
     assert "ACT NOW" in statuses
     assert "COMPARE TO PEERS" in statuses
     assert "REDESIGN HYPOTHESIS" in statuses
-    assert "DO NOT MODEL YET" in statuses
+    # V8 P4: tad_claim_sync canonical-izes status to DO_NOT_MODEL_YET
+    # (underscore form from tad_action_registry). Accept either form
+    # (some upstream code still emits the spaced label).
+    assert ("DO_NOT_MODEL_YET" in statuses) or ("DO NOT MODEL YET" in statuses)
 
 
 def test_motor_036_blocks_structural_lane_contract_failures():

@@ -27,6 +27,7 @@ from typing import Any
 
 from .base import BaseMotorAdapter
 from runtime_orchestrator.evidence_maturity.decision_templates import get_decision_template
+from runtime_orchestrator.tad_claim_sync import enforce_tad_action_postures
 from runtime_orchestrator.phase_units import (
     derive_defer_investigate_act_map,
     to_decision_admissibility_case_register,
@@ -514,6 +515,35 @@ class Motor033Adapter(BaseMotorAdapter):
             structural_financial_exposure_register=list(inputs.get("motor_045", {}).get("structural_financial_exposure_register", []) or []),
             minimum_evidence_for_discrimination_register=list(inputs.get("motor_046", {}).get("minimum_evidence_for_discrimination_register", []) or []),
             dominant_variable_register=list(inputs.get("motor_038", {}).get("dominant_variable_register", []) or []),
+        )
+
+        # V8 P4 — TAD ↔ Claim Governor sync enforcement.
+        # Reescribe el status / posture de cada acción cuando prerequisites
+        # están unmet: digital_twin con dominant_variables unresolved →
+        # DO_NOT_MODEL_YET, ROI con claim prohibido → DO_NOT_UNDERWRITE_*,
+        # etc. Aplica AFTER el TAD ya determinó la posture base.
+        dominant_variables = list(
+            inputs.get("motor_038", {}).get("dominant_variable_register", []) or []
+        )
+        # Build claim_permissions map from motor_034 structural_claim_permission_register
+        _claim_perms: dict[str, str] = {}
+        for row in m34.get("structural_claim_permission_register", []) or []:
+            if not isinstance(row, dict):
+                continue
+            cid = str(row.get("claim_id") or row.get("claim_name") or "").strip()
+            perm = str(row.get("permission") or row.get("decision_permission") or "").strip()
+            if cid and perm:
+                _claim_perms[cid] = perm
+        # Normalization completeness signal from motor_051 (fair comparison)
+        m51 = inputs.get("motor_051", {}) if isinstance(inputs.get("motor_051", {}), dict) else {}
+        _normalization_complete = bool(
+            m51.get("normalization_complete", True)
+        )
+        expanded_structural_tad_action_register = enforce_tad_action_postures(
+            expanded_structural_tad_action_register,
+            dominant_variables=dominant_variables,
+            claim_permissions=_claim_perms,
+            normalization_complete=_normalization_complete,
         )
         front_posture_summary = {
             "act_now": len([a for a in decision_front_actions if a["recommended_posture"] == "act_now"]),
