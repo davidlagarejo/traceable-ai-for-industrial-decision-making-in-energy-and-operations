@@ -263,6 +263,92 @@ def _detect_CV6_chart_wrong_source_case_id(
     return out
 
 
+def _detect_CV7_chart_without_section_id(
+    chart_assets: list[dict],
+) -> list[dict]:
+    """V9 P2 — Chart artifact safety § 9: each chart must declare a
+    `section_id` in its intelligence_binding. Without it, the chart
+    cannot be traced to a report section and may surface anywhere.
+
+    Detection:
+      - Chart has an intelligence_binding (CV2 covers truly unbound).
+      - intelligence_binding lacks section_id field.
+    """
+    out: list[dict] = []
+    for asset in chart_assets or []:
+        if not isinstance(asset, dict):
+            continue
+        binding = (
+            asset.get("intelligence_binding")
+            or asset.get("chart_intelligence_binding")
+            or {}
+        )
+        if not isinstance(binding, dict) or not binding:
+            continue
+        section_id = _text(
+            binding.get("section_id")
+            or binding.get("section")
+            or binding.get("output_block_id")
+        )
+        if section_id:
+            continue
+        out.append({
+            "rule_id": "CV7_chart_without_section_id",
+            "severity": "warning",
+            "chart_id": _text(asset.get("chart_id") or asset.get("id")),
+            "description": (
+                f"Chart {asset.get('chart_id', '?')!r} has intelligence_binding "
+                "but no section_id declared. Charts must trace to a specific "
+                "report section (Chief Systems Architect § 9)."
+            ),
+        })
+    return out
+
+
+def _detect_CV8_chart_without_hypothesis_supported(
+    chart_assets: list[dict],
+) -> list[dict]:
+    """V9 P2 — Chart artifact safety § 9: each chart must declare which
+    hypothesis it supports (or claim_id / thesis_id). A chart that
+    doesn't change the interpretation should be removed.
+
+    Detection:
+      - Chart has an intelligence_binding (CV2 covers truly unbound).
+      - intelligence_binding lacks hypothesis_supported / claim_id / thesis_id.
+    """
+    out: list[dict] = []
+    for asset in chart_assets or []:
+        if not isinstance(asset, dict):
+            continue
+        binding = (
+            asset.get("intelligence_binding")
+            or asset.get("chart_intelligence_binding")
+            or {}
+        )
+        if not isinstance(binding, dict) or not binding:
+            continue
+        supported = _text(
+            binding.get("hypothesis_supported")
+            or binding.get("hypothesis_id")
+            or binding.get("claim_id")
+            or binding.get("thesis_id")
+        )
+        if supported:
+            continue
+        out.append({
+            "rule_id": "CV8_chart_without_hypothesis_supported",
+            "severity": "warning",
+            "chart_id": _text(asset.get("chart_id") or asset.get("id")),
+            "description": (
+                f"Chart {asset.get('chart_id', '?')!r} declares binding but no "
+                "hypothesis_supported / claim_id / thesis_id. Charts that don't "
+                "change the interpretation should be removed (Chief Systems "
+                "Architect § 9: 'no charts decorativos')."
+            ),
+        })
+    return out
+
+
 class Motor063Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -302,6 +388,10 @@ class Motor063Adapter(BaseMotorAdapter):
         warnings.extend(_detect_CV5_chart_cross_asset_family(chart_assets, target_asset_family))
         # V8 P2 — CV6 chart wrong source_case_id provenance
         warnings.extend(_detect_CV6_chart_wrong_source_case_id(chart_assets, target_case_id))
+        # V9 P2 — CV7 section_id + CV8 hypothesis_supported (Chief Systems
+        # Architect § 9: artifact / chart safety).
+        warnings.extend(_detect_CV7_chart_without_section_id(chart_assets))
+        warnings.extend(_detect_CV8_chart_without_hypothesis_supported(chart_assets))
 
         # V6 P4.2: apply validator_severity_policy gate. Soft mode keeps
         # the original severities; hard mode promotes CV1 and CV3 to "blocking".
@@ -333,5 +423,7 @@ class Motor063Adapter(BaseMotorAdapter):
                 "CV4_no_charts_with_admissible_thesis",
                 "CV5_chart_cross_asset_family",
                 "CV6_chart_wrong_source_case_id",  # V8 P2
+                "CV7_chart_without_section_id",  # V9 P2
+                "CV8_chart_without_hypothesis_supported",  # V9 P2
             ],
         }

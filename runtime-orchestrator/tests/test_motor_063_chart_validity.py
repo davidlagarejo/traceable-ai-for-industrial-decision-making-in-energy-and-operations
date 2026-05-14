@@ -159,4 +159,6 @@ def test_rules_evaluated_stable():
         "CV4_no_charts_with_admissible_thesis",
         "CV5_chart_cross_asset_family",  # V7 P7
         "CV6_chart_wrong_source_case_id",  # V8 P2
+        "CV7_chart_without_section_id",  # V9 P2
+        "CV8_chart_without_hypothesis_supported",  # V9 P2
     ]

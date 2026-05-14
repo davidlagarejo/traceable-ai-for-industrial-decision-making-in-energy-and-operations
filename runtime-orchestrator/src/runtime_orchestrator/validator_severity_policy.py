@@ -84,6 +84,9 @@ _V6_BLOCKING_RULES: frozenset[tuple[str, str]] = frozenset({
     ("motor_063", "CV5_chart_cross_asset_family"),
     # V8 P2 — chart with wrong source_case_id (heritage from another case).
     ("motor_063", "CV6_chart_wrong_source_case_id"),
+    # V9 P2 — chart artifact safety § 9: section_id + hypothesis_supported.
+    ("motor_063", "CV7_chart_without_section_id"),
+    ("motor_063", "CV8_chart_without_hypothesis_supported"),
 })
 
 
