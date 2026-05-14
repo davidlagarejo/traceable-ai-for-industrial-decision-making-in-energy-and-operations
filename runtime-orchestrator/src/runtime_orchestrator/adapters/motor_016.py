@@ -1273,6 +1273,18 @@ def _build_case_adaptation_memo(
     if comparison_summary.get("comparison_failure"):
         failure_reasons.append(str(comparison_summary.get("failure_reason", "")).strip())
 
+    # V8 P1 — distinguish two flavors of template contamination:
+    # (a) "insufficient_data" (missing dimensions, missing fronts, no
+    #     source coverage) — flag stays True but does NOT block render
+    #     because the problem is "we have nothing", not "we have wrong";
+    # (b) "heritage_from_other_case" (comparison_summary detects real
+    #     similarity to a prior case OR diversity_failure with the
+    #     fingerprint signaling stale heritage) — this BLOCKS render.
+    # `template_contamination_is_blocking` is the narrow signal that
+    # render_gate consumes; `template_contamination_failure` retains its
+    # broader V5 meaning for backward compat with motor_024/motor_027.
+    heritage_signal = bool(comparison_summary.get("comparison_failure"))
+
     return {
         "rows": rows,
         "diversity_register": diversity_register,
@@ -1282,6 +1294,7 @@ def _build_case_adaptation_memo(
         "substantive_dimension_count": len(present_dimensions),
         "required_dimension_count": len(required_dimensions),
         "template_contamination_failure": bool(failure_reasons),
+        "template_contamination_is_blocking": heritage_signal,
         "failure_reasons": failure_reasons,
         "adaptation_fingerprint": adaptation_fingerprint,
         "comparison_summary": comparison_summary,

@@ -1468,6 +1468,20 @@ class Motor017Adapter(BaseMotorAdapter):
                 not in ("1", "true", "yes", "on")
         ):
             gate_pipeline_inputs["__render_soft_mode__"] = True
+        # V8 P1 — template contamination hard block. Two signals coexist:
+        # 1. template_contamination_failure (broad: missing dims OR heritage)
+        # 2. template_contamination_is_blocking (narrow: heritage detected)
+        # V8 P1 doctrine: only the NARROW signal blocks render. The broad
+        # signal continues to be observable for diagnostics but is not a
+        # hard block (would over-fire on synthetic / minimal inputs).
+        case_adaptation_memo = (
+            report_package.get("case_adaptation_memo")
+            if isinstance(report_package, dict) else None
+        ) or {}
+        template_contamination_failure = bool(
+            case_adaptation_memo.get("template_contamination_is_blocking", False)
+        )
+
         render_gate_verdict = evaluate_render_gate(
             state=report_state_result.state,
             qa_card=None,  # qa_score is not part of motor_017's input chain today
@@ -1475,6 +1489,7 @@ class Motor017Adapter(BaseMotorAdapter):
             source_audit=None,  # source_audit_verdict is a dict, not the dataclass; skipped
             claim_sync=None,    # same — claim_sync_verdict already dict-form
             isolation_violations=list(m061.get("pattern_isolation_violations", []) or []),
+            template_contamination_failure=template_contamination_failure,
             pipeline_inputs=gate_pipeline_inputs,
         )
         # Soft signals from dict-form verdicts (claim_sync, source_audit) that
@@ -1498,6 +1513,18 @@ class Motor017Adapter(BaseMotorAdapter):
                 block_reasons.extend(
                     f"render_gate: {r}" for r in render_gate_verdict.reasons
                 )
+
+        # V8 P1 — template contamination is hard block in BOTH soft and
+        # strict modes. Only the explicit force flag bypasses it.
+        force_template = bool(
+            gate_pipeline_inputs.get("__template_contamination_force_render__")
+        )
+        if template_contamination_failure and not force_template:
+            block_reasons.append(
+                "template_contamination_failure: report assembled from "
+                "another case's heritage without local specialization "
+                "(V8 P1 hard block)"
+            )
 
         if block_reasons and not force_render_under_warnings:
             return {

@@ -86,19 +86,22 @@ class RenderGateVerdict:
     no_unjustified_sources: bool = True
     claims_in_sync: bool = True
     no_isolation_violations: bool = True
+    # V8 P1 — template contamination hard block
+    no_template_contamination: bool = True
 
     def as_dict(self) -> dict[str, Any]:
         return {
-            "allowed":                  self.allowed,
-            "strict_mode":              self.strict_mode,
-            "state":                    self.state,
-            "reasons":                  list(self.reasons),
-            "qa_client_safe":           self.qa_client_safe,
-            "state_in_allowed":         self.state_in_allowed,
-            "no_prohibited_fallback":   self.no_prohibited_fallback,
-            "no_unjustified_sources":   self.no_unjustified_sources,
-            "claims_in_sync":           self.claims_in_sync,
-            "no_isolation_violations":  self.no_isolation_violations,
+            "allowed":                   self.allowed,
+            "strict_mode":               self.strict_mode,
+            "state":                     self.state,
+            "reasons":                   list(self.reasons),
+            "qa_client_safe":            self.qa_client_safe,
+            "state_in_allowed":          self.state_in_allowed,
+            "no_prohibited_fallback":    self.no_prohibited_fallback,
+            "no_unjustified_sources":    self.no_unjustified_sources,
+            "claims_in_sync":            self.claims_in_sync,
+            "no_isolation_violations":   self.no_isolation_violations,
+            "no_template_contamination": self.no_template_contamination,
         }
 
 
@@ -110,6 +113,7 @@ def evaluate_render_gate(
     source_audit: SourceExecutionAuditReport | None = None,
     claim_sync: ClaimSyncReport | None = None,
     isolation_violations: list[Mapping[str, Any]] | None = None,
+    template_contamination_failure: bool = False,
     pipeline_inputs: Mapping[str, Any] | None = None,
 ) -> RenderGateVerdict:
     """Evaluate ALL V6 gates and return a single allow/refuse verdict.
@@ -186,7 +190,24 @@ def evaluate_render_gate(
             f"violation(s) (first: {isolation_violations[0].get('pattern_id')})"
         )
 
+    # ── 7. V8 P1 template contamination hard block ────────────────
+    # motor_016 / case_adaptation_memo flags this when the report is
+    # being assembled from a template heritage that was never specialized
+    # for the current case. V8 doctrine: this is ALWAYS a hard block
+    # (even in soft mode), unless caller explicitly says
+    # __template_contamination_force_render__ = True (debug only).
+    no_template_contamination = not bool(template_contamination_failure)
+    force_template = bool(
+        (pipeline_inputs or {}).get("__template_contamination_force_render__")
+    )
+    if template_contamination_failure and not force_template:
+        reasons.append(
+            "template_contamination_failure=True (case_adaptation_memo carries "
+            "heritage from another case; render blocked per V8 P1 doctrine)"
+        )
+
     # ── Final verdict ─────────────────────────────────────────────
+    template_ok = no_template_contamination or force_template
     if strict:
         allowed = (
             state_in_allowed
@@ -195,15 +216,18 @@ def evaluate_render_gate(
             and no_unjustified_sources
             and claims_in_sync
             and no_isolation_violations
+            and template_ok
         )
     else:
         # Soft mode: allow render if state is in soft allowed states AND no
-        # hard contamination (prohibited fallback or claim_sync divergence).
+        # hard contamination (prohibited fallback, claim_sync, isolation,
+        # or template). Template contamination is hard-block in BOTH modes.
         allowed = (
             state_in_allowed
             and no_prohibited_fallback
             and claims_in_sync
             and no_isolation_violations
+            and template_ok
         )
 
     return RenderGateVerdict(
@@ -217,6 +241,7 @@ def evaluate_render_gate(
         no_unjustified_sources=no_unjustified_sources,
         claims_in_sync=claims_in_sync,
         no_isolation_violations=no_isolation_violations,
+        no_template_contamination=no_template_contamination,
     )
 
 
