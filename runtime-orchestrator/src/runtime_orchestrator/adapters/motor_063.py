@@ -212,6 +212,57 @@ def _detect_CV5_chart_cross_asset_family(
     return out
 
 
+def _detect_CV6_chart_wrong_source_case_id(
+    chart_assets: list[dict],
+    target_case_id: str,
+) -> list[dict]:
+    """V8 P2 — Chart provenance: each chart's intelligence_binding.source_case_id
+    must match the current case_id, unless `reusable_generic=True`.
+
+    Rationale: V7 P7 (CV5) blocks cross-asset-family chart leaks. CV6
+    closes a tighter gap: a chart from the SAME asset family but from a
+    DIFFERENT case is also contamination (e.g., warehouse Austin's dock
+    chart appearing in warehouse Memphis's report).
+
+    Detection:
+      - Chart binding declares `source_case_id`.
+      - It is not the current case_id AND not marked `reusable_generic`.
+    """
+    out: list[dict] = []
+    tgt = (target_case_id or "").strip().lower()
+    if not tgt:
+        return out  # no case context; cannot judge
+    for asset in chart_assets or []:
+        if not isinstance(asset, dict):
+            continue
+        binding = (
+            asset.get("intelligence_binding")
+            or asset.get("chart_intelligence_binding")
+            or {}
+        )
+        if not isinstance(binding, dict):
+            continue
+        if bool(binding.get("reusable_generic")):
+            continue
+        src = _text(binding.get("source_case_id")).lower()
+        if not src or src == tgt:
+            continue
+        out.append({
+            "rule_id": "CV6_chart_wrong_source_case_id",
+            "severity": "warning",
+            "chart_id": _text(asset.get("chart_id") or asset.get("id")),
+            "target_case_id": target_case_id,
+            "source_case_id": src,
+            "description": (
+                f"Chart {asset.get('chart_id', '?')!r} carries source_case_id "
+                f"{src!r} but target case is {target_case_id!r}. Chart was "
+                "inherited from another case without being marked "
+                "reusable_generic. Remove or rebuild for the current case."
+            ),
+        })
+    return out
+
+
 class Motor063Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -235,6 +286,12 @@ class Motor063Adapter(BaseMotorAdapter):
         target_asset_family = _text(
             target_def.get("asset_family") or target_def.get("target_type")
         )
+        # V8 P2 — target case_id for chart provenance.
+        target_case_id = _text(
+            target_def.get("case_id")
+            or target_def.get("target_id")
+            or target_def.get("target_identifier")
+        )
 
         warnings: list[dict] = []
         warnings.extend(_detect_decorative_risk(chart_assets))
@@ -243,6 +300,8 @@ class Motor063Adapter(BaseMotorAdapter):
         warnings.extend(_detect_no_charts_with_active_thesis(chart_assets, thesis_state))
         # V7 P7 — CV5 cross-asset chart contamination
         warnings.extend(_detect_CV5_chart_cross_asset_family(chart_assets, target_asset_family))
+        # V8 P2 — CV6 chart wrong source_case_id provenance
+        warnings.extend(_detect_CV6_chart_wrong_source_case_id(chart_assets, target_case_id))
 
         # V6 P4.2: apply validator_severity_policy gate. Soft mode keeps
         # the original severities; hard mode promotes CV1 and CV3 to "blocking".
@@ -273,5 +332,6 @@ class Motor063Adapter(BaseMotorAdapter):
                 "CV3_decorative_ratio_critical",
                 "CV4_no_charts_with_admissible_thesis",
                 "CV5_chart_cross_asset_family",
+                "CV6_chart_wrong_source_case_id",  # V8 P2
             ],
         }
