@@ -153,18 +153,39 @@ def evaluate_render_gate(
 
     # ── 3. Fallback verdict — no prohibited events ────────────────
     no_prohibited_fallback = True
+    # V8 P7 — high-value section downgrades. Even one downgrade in
+    # {Executive Thesis, TAD, Financial Exposure, Peer Comparison,
+    # Conditional Redesign, Case Adaptation Memo} refuses client_safe.
+    high_value_downgrades = 0
     if isinstance(fallback_verdict, FallbackPolicyVerdict):
         no_prohibited_fallback = fallback_verdict.prohibited_count == 0
+        high_value_downgrades = fallback_verdict.high_value_section_downgrades
         if not no_prohibited_fallback:
             reasons.append(
                 f"fallback_verdict has {fallback_verdict.prohibited_count} "
                 f"prohibited event(s)"
             )
+        if strict and high_value_downgrades > 0:
+            no_prohibited_fallback = False
+            reasons.append(
+                f"V8 P7: {high_value_downgrades} high-value section(s) "
+                f"downgraded ({list(fallback_verdict.affected_high_value_sections)})"
+            )
     elif isinstance(fallback_verdict, Mapping):
         prohibited_n = int(fallback_verdict.get("prohibited_count", 0) or 0)
+        high_value_downgrades = int(
+            fallback_verdict.get("high_value_section_downgrades", 0) or 0
+        )
         no_prohibited_fallback = prohibited_n == 0
         if not no_prohibited_fallback:
             reasons.append(f"fallback verdict reports {prohibited_n} prohibited event(s)")
+        if strict and high_value_downgrades > 0:
+            no_prohibited_fallback = False
+            affected = fallback_verdict.get("affected_high_value_sections", []) or []
+            reasons.append(
+                f"V8 P7: {high_value_downgrades} high-value section(s) "
+                f"downgraded ({list(affected)})"
+            )
 
     # ── 4. Source audit — no unjustified mandatory gaps ───────────
     no_unjustified_sources = True

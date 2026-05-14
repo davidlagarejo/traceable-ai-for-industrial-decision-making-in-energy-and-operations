@@ -107,6 +107,19 @@ _KIND_TO_TIER: dict[str, FallbackTier] = {
 }
 
 
+# V8 P7 — high-value sections per Chief QA Architect § G. If ANY of
+# these sections is downgraded to a fallback, client_safe is refused
+# (the reader treats them as the spine of the deliverable).
+HIGH_VALUE_SECTIONS: frozenset[str] = frozenset({
+    "executive_structural_thesis",
+    "tad",
+    "financial_exposure",
+    "peer_comparison",
+    "conditional_redesign",
+    "case_adaptation_memo",
+})
+
+
 @dataclass(frozen=True)
 class FallbackEvent:
     """A single fallback event recorded by a motor during pipeline run."""
@@ -114,9 +127,15 @@ class FallbackEvent:
     kind: str          # the lookup key for _KIND_TO_TIER
     reason: str = ""   # human-readable detail
     metadata: dict[str, Any] = field(default_factory=dict)
+    # V8 P7 — section_id (optional). When present and the event downgrades
+    # a high-value section, render_gate refuses client_safe.
+    section_id: str = ""
 
     def tier(self) -> FallbackTier:
         return _KIND_TO_TIER.get(self.kind, FallbackTier.DEGRADED)
+
+    def is_high_value_section(self) -> bool:
+        return (self.section_id or "").strip().lower() in HIGH_VALUE_SECTIONS
 
 
 @dataclass(frozen=True)
@@ -129,6 +148,9 @@ class FallbackPolicyVerdict:
     prohibited_count: int
     blocking_events: tuple[FallbackEvent, ...]   # events that BLOCK in this state
     out_of_policy_events: tuple[FallbackEvent, ...]  # blocking + non-allowed degraded
+    # V8 P7 — count of fallback events affecting high-value sections.
+    high_value_section_downgrades: int = 0
+    affected_high_value_sections: tuple[str, ...] = field(default_factory=tuple)
 
     @property
     def passed(self) -> bool:
@@ -180,6 +202,10 @@ def assess(
     out_of_policy: list[FallbackEvent] = []
     total = 0
 
+    # V8 P7 — track high-value section downgrades.
+    high_value_downgrades = 0
+    affected_sections: set[str] = set()
+
     for raw in events or []:
         if isinstance(raw, FallbackEvent):
             ev = raw
@@ -189,6 +215,7 @@ def assess(
                 kind=str(raw.get("kind", "")),
                 reason=str(raw.get("reason", "")),
                 metadata=dict(raw.get("metadata", {}) or {}),
+                section_id=str(raw.get("section_id", "") or ""),
             )
         else:
             continue
@@ -204,6 +231,11 @@ def assess(
         # Out-of-policy = event whose tier is not allowed in this state
         if state_norm not in _TIER_ALLOWED_STATES.get(tier, frozenset()):
             out_of_policy.append(ev)
+        # V8 P7 — high-value section impact (only DEGRADED/PROHIBITED count;
+        # SAFE markers in a high-value section are informational).
+        if ev.is_high_value_section() and tier != FallbackTier.SAFE:
+            high_value_downgrades += 1
+            affected_sections.add(ev.section_id.strip().lower())
 
     return FallbackPolicyVerdict(
         state=state_norm,
@@ -213,6 +245,8 @@ def assess(
         prohibited_count=prohibited,
         blocking_events=tuple(blocking),
         out_of_policy_events=tuple(out_of_policy),
+        high_value_section_downgrades=high_value_downgrades,
+        affected_high_value_sections=tuple(sorted(affected_sections)),
     )
 
 
