@@ -107,6 +107,88 @@ class RenderGateVerdict:
             "no_template_contamination": self.no_template_contamination,
         }
 
+    def publication_mode(self) -> str:
+        """V8 P8 — publication_mode synthesis for the Final Delivery Gate.
+
+        Returns one of:
+          - "client_safe"
+          - "publish_with_degradation"
+          - "internal_debug_only"
+          - "blocked"
+        """
+        if self.allowed and self.state == "client_safe":
+            return "client_safe"
+        if self.allowed:
+            return "publish_with_degradation"
+        # Not allowed. Severity hierarchy:
+        #   1. template contamination ⇒ internal_debug_only
+        if not self.no_template_contamination:
+            return "internal_debug_only"
+        #   2. contamination / sync / fallback / source ⇒ blocked
+        if (
+            not self.claims_in_sync
+            or not self.no_isolation_violations
+            or not self.no_prohibited_fallback
+            or not self.no_unjustified_sources
+        ):
+            return "blocked"
+        #   3. only state mismatch (strict refused because state != client_safe
+        #      but all other gates green) ⇒ publish_with_degradation
+        if not self.state_in_allowed:
+            return "publish_with_degradation"
+        # Fallback (QA card insufficient etc.)
+        return "internal_debug_only"
+
+    def as_yaml_block(self) -> str:
+        """V8 P8 — emit the canonical Final Delivery Gate YAML block per
+        Chief QA Architect § Required Output Changes.
+
+        Format:
+
+            final_delivery_gate:
+              client_safe: true/false
+              publication_mode: client_safe / publish_with_degradation / internal_debug_only / blocked
+              strict_mode: true/false
+              state: <state>
+              blocking_failures: [...]
+              chart_validation: passed/failed
+              tad_claim_sync: passed/failed
+              hybrid_logic_governance: passed/failed
+              source_execution_status: passed/failed
+              template_contamination: passed/failed
+        """
+        cs = "true" if (self.allowed and self.state == "client_safe") else "false"
+        sm = "true" if self.strict_mode else "false"
+        pm = self.publication_mode()
+        # Top-level gate booleans → passed/failed labels
+        def _pf(ok: bool) -> str:
+            return "passed" if ok else "failed"
+        lines = [
+            "final_delivery_gate:",
+            f"  client_safe: {cs}",
+            f"  publication_mode: {pm}",
+            f"  strict_mode: {sm}",
+            f"  state: {self.state}",
+        ]
+        if self.reasons:
+            lines.append("  blocking_failures:")
+            for r in self.reasons:
+                # Escape colons + newlines defensively.
+                clean = str(r).replace("\n", " ").replace('"', "'")
+                lines.append(f'    - "{clean}"')
+        else:
+            lines.append("  blocking_failures: []")
+        lines.extend([
+            f"  chart_validation: {_pf(self.no_isolation_violations)}",
+            f"  tad_claim_sync: {_pf(self.claims_in_sync)}",
+            f"  hybrid_logic_governance: {_pf(self.no_isolation_violations)}",
+            f"  source_execution_status: {_pf(self.no_unjustified_sources)}",
+            f"  template_contamination: {_pf(self.no_template_contamination)}",
+            f"  fallback_governance: {_pf(self.no_prohibited_fallback)}",
+            f"  qa_score_client_safe: {_pf(self.qa_client_safe)}",
+        ])
+        return "\n".join(lines)
+
 
 def evaluate_render_gate(
     *,

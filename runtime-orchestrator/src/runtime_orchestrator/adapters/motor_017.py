@@ -1532,6 +1532,8 @@ class Motor017Adapter(BaseMotorAdapter):
                 "pdf_paths": {},
                 "compilation_status": "blocked",
                 "render_gate_verdict": render_gate_verdict.as_dict(),
+                "final_delivery_gate_yaml": render_gate_verdict.as_yaml_block(),
+                "publication_mode": render_gate_verdict.publication_mode(),
                 "render_job_id": "",
                 "package_id": report_package.get("package_id", "unknown"),
                 "available_languages": ["en"],
