@@ -15472,7 +15472,14 @@ aside.cases .item:hover{background:#fafafa;}
 aside.cases .item.active{background:#eff6ff;border-left:3px solid #2563eb;padding-left:11px;}
 aside.cases .t{font-size:12.5px;font-weight:600;color:#18181b;line-height:1.35;}
 aside.cases .m{font-size:10.5px;color:#71717a;margin-top:3px;}
-aside.cases .empty{padding:40px 16px;text-align:center;color:#a1a1aa;font-style:italic;}
+aside.cases .empty{padding:40px 16px;text-align:center;color:#a1a1aa;font-style:italic;line-height:1.5;}
+aside.cases .modebadge{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;text-transform:uppercase;letter-spacing:.04em;}
+aside.cases .mode-client_safe{background:#dcfce7;color:#166534;}
+aside.cases .mode-publish_with_degradation{background:#fef3c7;color:#92400e;}
+aside.cases .mode-internal_debug_only{background:#fee2e2;color:#991b1b;}
+aside.cases .mode-blocked{background:#fee2e2;color:#991b1b;}
+aside.cases .mode-exploratory_prior{background:#dbeafe;color:#1e40af;}
+aside.cases .mode-structural_hypothesis{background:#e0e7ff;color:#3730a3;}
 /* CENTER — curation workspace */
 section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border-right:1px solid #e4e4e7;min-width:0;}
 .banner{padding:10px 14px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:18px;}
@@ -15656,14 +15663,16 @@ async function loadCases() {
 function renderCases(cases) {
   const el = $("cases");
   if (!cases.length) {
-    el.innerHTML = '<div class="empty">No hay casos completados</div>';
+    el.innerHTML = '<div class="empty">No hay runs con PDF.<br><br><small>Corre el framework y aparecerá aquí.</small></div>';
     return;
   }
   el.innerHTML = cases.map(c => {
     const klass = (c.run_id === currentRunId) ? "item active" : "item";
+    const mode = c.publication_mode || "";
+    const modeBadge = mode ? `<span class="modebadge mode-${mode}">${mode.replace(/_/g,' ')}</span>` : "";
     return `<div class="${klass}" onclick="selectCase('${c.run_id}')">
       <div class="t">${escapeHtml(c.label || c.run_id)}</div>
-      <div class="m">${escapeHtml(c.pipeline_id || "")} · ${escapeHtml(c.completed_at || "")}</div>
+      <div class="m">${escapeHtml(c.completed_at || "")} ${modeBadge}</div>
     </div>`;
   }).join("");
 }
@@ -15883,7 +15892,12 @@ def curar_page():
 
 @app.route("/api/curation/cases")
 def api_curation_cases():
-    """List recent completed runs for the cases sidebar."""
+    """List recent completed runs THAT PRODUCED A PDF.
+
+    Curation only makes sense for runs that actually emitted a deliverable.
+    Filters: status=completed AND motor_017 output has a PDF on disk.
+    Sorted by completed_at descending. Caps at 50 most recent.
+    """
     if not _curation_available:
         return jsonify({"error": "curation_layer unavailable"}), 503
     cases: list[dict] = []
@@ -15893,8 +15907,10 @@ def api_curation_cases():
         _RUNS_DIR.glob("run:*.json"),
         key=lambda p: p.stat().st_mtime,
         reverse=True,
-    )[:50]
+    )
     for p in paths:
+        if len(cases) >= 50:
+            break
         try:
             m = json.loads(p.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
@@ -15902,13 +15918,52 @@ def api_curation_cases():
         if m.get("status") != "completed":
             continue
         rid = m.get("run_id", p.stem)
-        target = (m.get("target_definition") or {}).get("target_identifier", "")
-        label = target or rid
+        # Cheap pre-filter: motor_017 must have completed status.
+        m017_entry = (m.get("motor_results") or {}).get("motor_017", {})
+        if m017_entry.get("status") != "completed":
+            continue
+        # Authoritative filter: actual PDF must exist on disk.
+        m017_out = _curation_load_motor_output(rid, "motor_017")
+        pdf_path = m017_out.get("pdf_path", "") or next(
+            iter((m017_out.get("pdf_paths") or {}).values()), ""
+        )
+        if not pdf_path:
+            continue
+        try:
+            if not Path(pdf_path).exists():
+                continue
+        except (OSError, ValueError):
+            continue
+
+        # Build a useful label.
+        target_def = m.get("target_definition") or {}
+        target_id = (
+            target_def.get("target_identifier")
+            or target_def.get("declared_asset_name")
+            or target_def.get("address_raw")
+            or ""
+        )
+        asset_family = target_def.get("asset_family") or target_def.get("target_type") or ""
+        # Prefer "cold_chain_facility · Lakeshore Cold Storage" over raw run_id.
+        if target_id and asset_family:
+            label = f"{asset_family} · {target_id}"
+        elif target_id:
+            label = target_id
+        else:
+            label = m.get("pipeline_id", "") or rid
+
+        # publication_mode for at-a-glance badge in the sidebar.
+        pub_mode = m017_out.get("publication_mode") or (
+            m017_out.get("render_gate_verdict") or {}
+        ).get("state", "")
+
         cases.append({
-            "run_id":       rid,
-            "label":        label,
-            "pipeline_id":  m.get("pipeline_id", ""),
-            "completed_at": (m.get("completed_at", "") or "")[:19].replace("T", " "),
+            "run_id":           rid,
+            "label":            label,
+            "pipeline_id":      m.get("pipeline_id", ""),
+            "completed_at":     (m.get("completed_at", "") or "")[:19].replace("T", " "),
+            "publication_mode": pub_mode,
+            "pdf_basename":     Path(pdf_path).name,
         })
     return jsonify({"cases": cases})
 
