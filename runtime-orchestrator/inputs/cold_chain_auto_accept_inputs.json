@@ -1,0 +1,262 @@
+{
+  "produced_at": "2026-05-01T09:45:00+00:00",
+  "case_id": "ZLab-asset-cold-chain-lakeshore-cold-storage-campus-2026",
+  "case_title": "Asset Context Prior",
+  "case_subtitle": "Bounded asset seed | Cold-Chain Facility",
+  "organization": "ZLab Operational Truth Framework",
+  "analyst": "Autonomous Research System",
+  "subject_definition_contract": {
+    "subject_kind": "bounded_asset",
+    "subject_scope": "asset",
+    "subject_origin": "bounded_asset_seed",
+    "seed_state": "asset_seeded",
+    "asset_anchor_type": "operator_declared_asset",
+    "asset_anchor_value": "lakeshore-cold-storage-campus",
+    "asset_anchor_confidence": "high",
+    "asset_identity_evidence_class": "operator_bounded_asset_seed",
+    "owner_context_optional": "Lakeshore Temperature Logistics REIT",
+    "operator_context_optional": "Lakeshore Cold Storage Operations LLC",
+    "declared_asset_name": "Lakeshore Cold Storage Campus",
+    "declared_asset_identifier": "lakeshore-cold-storage-campus",
+    "address_raw": "2500 South Damen Avenue, Chicago, IL 60608",
+    "contract_status": "declared"
+  },
+  "target_definition_contract": {
+    "target_scope": "asset",
+    "target_type": "cold_chain_facility",
+    "target_identifier": "lakeshore-cold-storage-campus",
+    "target_name": "Lakeshore Cold Storage Campus",
+    "target_label": "Lakeshore Cold Storage Campus",
+    "target_slug": "lakeshore-cold-storage-campus",
+    "target_id": "asset-cold-chain-lakeshore-cold-storage-campus",
+    "address_raw": "2500 South Damen Avenue, Chicago, IL 60608",
+    "geocode_status": "address_declared",
+    "jurisdiction_scope": [
+      "US-IL"
+    ],
+    "owner_entity": "Lakeshore Temperature Logistics REIT",
+    "operator_entity": "Lakeshore Cold Storage Operations LLC",
+    "report_intent": "asset_preverification_screening",
+    "decision_intent": "asset_screening",
+    "case_mode": "asset_seeded",
+    "subject_kind": "bounded_asset",
+    "subject_seed_state": "asset_seeded",
+    "target_scope_basis": "declared_target_contract",
+    "contract_status": "declared"
+  },
+  "facility_inputs": {
+    "input_01_location": {
+      "address": "2500 South Damen Avenue, Chicago, IL 60608",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US",
+      "jurisdiction_codes": [
+        "US-IL"
+      ]
+    },
+    "input_02_facility_type": {
+      "classification": "Cold Chain Facility",
+      "primary_classification": "Cold Chain Facility",
+      "asset_category": "Temperature-controlled warehouse",
+      "ownership_structure": "owner_operator_split",
+      "issuer_sector_seed": "Cold Chain Logistics"
+    },
+    "input_03_sector": {
+      "sector": "Cold Chain Logistics",
+      "ownership_structure": "owner_operator_split",
+      "owner_name": "Lakeshore Temperature Logistics REIT",
+      "operator_name": "Lakeshore Cold Storage Operations LLC"
+    },
+    "input_04_primary_use": {
+      "uses": [
+        "Frozen storage",
+        "Chilled storage",
+        "Temperature-controlled dock operations"
+      ]
+    },
+    "input_05_size": {
+      "gross_sqft": 438000,
+      "dock_doors": 48,
+      "freezer_volume_cuft": 17800000
+    },
+    "input_06_vintage": {
+      "year_built": 2016
+    },
+    "input_07_operating_schedule": {
+      "operating_pattern": "24/7",
+      "temperature_bands": [
+        "-10F frozen",
+        "34F chilled"
+      ],
+      "peak_door_opening_windows": "05:00-09:00 / 15:00-20:00"
+    },
+    "input_08_energy_fuel": {
+      "primary_energy": "electricity",
+      "refrigeration_signal": "ammonia refrigeration plant",
+      "material_tariff_question": "demand_exposure"
+    },
+    "input_09_known_systems": {
+      "known_systems": [
+        "ammonia refrigeration plant",
+        "defrost controls",
+        "dock air management",
+        "insulated envelope",
+        "battery charging"
+      ]
+    },
+    "input_10_main_concern": {
+      "primary_concern": "operational_performance",
+      "decision_type": "asset_screening"
+    },
+    "input_11_congruence_diligence": {
+      "packs": {
+        "utility_bill_pack": {
+          "title": "Operator-provided electric bills",
+          "source_families": [
+            "utility_bill_record"
+          ],
+          "records": [
+            {
+              "source_id": "bill::lakeshore::2026-01-demand",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "demand_charge",
+              "charge_amount": "29870",
+              "demand_kw": "3890",
+              "billing_period": "2026-01"
+            },
+            {
+              "source_id": "bill::lakeshore::2026-01-energy",
+              "statement_name": "Electric utility statement",
+              "service_type": "electricity",
+              "charge_type": "energy_charge",
+              "charge_amount": "41260",
+              "billing_period": "2026-01"
+            }
+          ]
+        },
+        "utility_tariff_pack": {
+          "title": "Operator tariff summary",
+          "source_families": [
+            "utility_tariff_record"
+          ],
+          "records": [
+            {
+              "source_id": "tariff::lakeshore::primary",
+              "tariff_name": "Large Power Service",
+              "rate_class": "LPS",
+              "service_class": "on-peak demand",
+              "next_best_binding": "refrigeration load interval profile"
+            }
+          ]
+        },
+        "throughput_schedule_pack": {
+          "title": "Operator throughput, dwell and door profile",
+          "source_families": [
+            "schedule_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "service_level": "frozen and chilled outbound distribution",
+              "daily_pallet_throughput": "5400",
+              "dock_turns_per_day": "126",
+              "door_traffic_profile": "high during inbound and outbound windows"
+            }
+          ]
+        },
+        "equipment_inventory_pack": {
+          "title": "Refrigeration and cold-room inventory",
+          "source_families": [
+            "equipment_inventory_record"
+          ],
+          "records": [
+            {
+              "critical_system": "ammonia refrigeration plant",
+              "compressor_count": "6",
+              "evaporator_zones": "14",
+              "blast_cells": "4",
+              "battery_charging_rooms": "2"
+            }
+          ]
+        },
+        "metering_boundary_pack": {
+          "title": "Metering boundary and refrigeration note",
+          "source_families": [
+            "submetering_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "metering_scope": "whole-site fiscal meter plus refrigeration plant submeter and battery charging submeter",
+              "shared_loads": "dock lighting and office HVAC remain on house meter"
+            }
+          ]
+        },
+        "maintenance_proof_pack": {
+          "title": "Refrigeration maintenance proof",
+          "source_families": [
+            "maintenance_log_record",
+            "maintenance_contract_record"
+          ],
+          "records": [
+            {
+              "pm_program": "monthly oil analysis and quarterly defrost verification",
+              "leak_checks": "documented refrigerant leak survey",
+              "critical_spares": "compressor valves, sensors and VFD stock"
+            }
+          ]
+        },
+        "bms_or_controls_pack": {
+          "title": "Controls and defrost sequence note",
+          "source_families": [
+            "bms_trend_record",
+            "operator_input_record"
+          ],
+          "records": [
+            {
+              "control_scope": "refrigeration supervisory controls",
+              "defrost_schedule": "staggered by zone",
+              "temperature_bands": "-10F frozen / 34F chilled"
+            }
+          ]
+        },
+        "cmms_or_workorder_pack": {
+          "title": "CMMS workorder summary",
+          "source_families": [
+            "cmms_record"
+          ],
+          "records": [
+            {
+              "open_workorders": "9",
+              "repeat_failures": "dock door seal wear and freezer evaporator fan issues"
+            }
+          ]
+        },
+        "permit_detail_pack": {
+          "title": "Local refrigerant / safety permit note",
+          "source_families": [
+            "permit_record"
+          ],
+          "records": [
+            {
+              "permit_id": "permit::lakeshore::refrigeration-safety",
+              "permit_type": "refrigeration safety permit",
+              "permit_summary": "ammonia refrigeration systems and safety management"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "phase_contracts": [],
+  "taxonomy": {
+    "version": "taxonomy_asset_first_v1",
+    "produced_by": "motor_003",
+    "terms": []
+  },
+  "source_declarations": [],
+  "sources": [],
+  "__force_render__": true,
+  "__auto_accept_combinations__": true
+}

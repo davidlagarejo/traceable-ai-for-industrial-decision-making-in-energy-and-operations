@@ -12,7 +12,7 @@ Rules implemented (RECOVERY_ARCHITECTURE_PLAN.md §10.A):
 """
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Mapping
 
 from .base import BaseMotorAdapter
 from ..validator_severity_policy import effective_severity
@@ -563,6 +563,52 @@ def _detect_R13_benchmark_as_truth(
     return out
 
 
+def _detect_R14_peer_ranking_with_incomplete_comparability(
+    actions: list[dict],
+    fair_comparison_summary: Mapping[str, Any] | None,
+) -> list[dict]:
+    """R14 (V9 P1): forbid peer-ranking actions when fair-comparison
+    summary reports `peer_set_admissible=False` (incomplete 10-dim
+    comparability contract).
+
+    Detection:
+      - Action mentions peer ranking / superiority / comparison tokens.
+      - motor_051 emits peer_set_admissible=False (no peer in set
+        has full 10-dim declaration + score ≥ threshold).
+    """
+    if not isinstance(fair_comparison_summary, Mapping):
+        return []
+    if bool(fair_comparison_summary.get("peer_set_admissible", True)):
+        return []  # peer set OK, nothing to block
+    rank_tokens = {
+        "peer rank", "peer set", "rank against", "peer superiority",
+        "top quartile", "outperform peer", "compare to peer",
+    }
+    out: list[dict] = []
+    for action in actions or []:
+        if not isinstance(action, dict):
+            continue
+        if _action_mentions_any(action, frozenset(rank_tokens)):
+            out.append({
+                "rule_id": "R14_peer_ranking_with_incomplete_comparability",
+                "severity": "warning",
+                "action_id": _text(action.get("action_id") or action.get("case_id")),
+                "incomplete_peer_count": int(
+                    fair_comparison_summary.get("incomplete_peer_count", 0) or 0
+                ),
+                "admissible_peer_count": int(
+                    fair_comparison_summary.get("admissible_peer_count", 0) or 0
+                ),
+                "description": (
+                    "TAD action invokes peer ranking but motor_051 reports "
+                    "peer_set_admissible=False — peer set lacks complete "
+                    "10-dimensional comparability contract. Block until peer "
+                    "set is normalized (V9 P1 doctrine)."
+                ),
+            })
+    return out
+
+
 class Motor059Adapter(BaseMotorAdapter):
     @property
     def motor_id(self) -> str:
@@ -630,6 +676,14 @@ class Motor059Adapter(BaseMotorAdapter):
         # benchmark-as-truth.
         warnings.extend(_detect_R12_local_truth_from_archetypal_prior(claim_register, actions))
         warnings.extend(_detect_R13_benchmark_as_truth(claim_register, actions))
+        # V9 P1: R14 peer ranking with incomplete 10-dim comparability contract.
+        fair_comparison_summary = (
+            m051.get("fair_comparison_summary")
+            or m051.get("peer_comparability_summary")
+        )
+        warnings.extend(_detect_R14_peer_ranking_with_incomplete_comparability(
+            actions, fair_comparison_summary
+        ))
 
         # V6 P4.8: apply validator_severity_policy gate (soft-mode no-op).
         # R2/R3 already promoted to "error" in V3 G2 above; gate respects

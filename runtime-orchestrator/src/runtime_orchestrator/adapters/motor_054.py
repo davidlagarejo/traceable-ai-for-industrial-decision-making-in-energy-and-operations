@@ -46,6 +46,14 @@ class Motor054Adapter(BaseMotorAdapter):
         m52 = dict(inputs.get("motor_052", {}) or {})
         m53 = dict(inputs.get("motor_053", {}) or {})
 
+        # V8 demo helper — accept admissible combinations automatically
+        # for this single run. Opt-in via pipeline_inputs flag (does NOT
+        # bypass any gate, just sets default_decision to "accepted" for
+        # candidates that already passed validators).
+        _pipeline = inputs.get("__pipeline__", {}) if isinstance(inputs.get("__pipeline__", {}), dict) else {}
+        _auto_accept = bool(_pipeline.get("__auto_accept_combinations__", False))
+        _combo_default_decision = "accepted" if _auto_accept else "needs_review"
+
         asset_family_research_profile = (
             dict(inputs.get("motor_049", {}).get("asset_family_research_profile", {}) or {})
             if isinstance(inputs.get("motor_049"), dict)
@@ -118,7 +126,7 @@ class Motor054Adapter(BaseMotorAdapter):
         )
         skill_combination_review_register = build_combination_review_register(
             combination_activation_register=skill_combination_activation_register,
-            default_decision="needs_review",
+            default_decision=_combo_default_decision,
         )
         full_skill_pattern_activation_register = build_registry_pattern_activation_register(
             registry_bundle=registry_bundle,
@@ -142,7 +150,7 @@ class Motor054Adapter(BaseMotorAdapter):
         )
         skill_admissible_combination_review_register = build_admissible_combination_review_register(
             latent_combination_candidate_register=skill_latent_combination_candidate_register,
-            default_decision="needs_review",
+            default_decision=_combo_default_decision,
         )
         skill_expanded_tad_action_register = build_registry_tad_action_register(
             combination_review_register=skill_combination_review_register,
