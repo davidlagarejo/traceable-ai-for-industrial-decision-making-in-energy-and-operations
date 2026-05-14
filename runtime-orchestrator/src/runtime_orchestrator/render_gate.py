@@ -43,7 +43,10 @@ from .report_state_machine import (
     DEFAULT_ALLOWED_RENDER_STATES,
     STRICT_CLIENT_SAFE_RENDER_STATES,
 )
-from .source_execution_auditor import SourceExecutionAuditReport
+from .source_execution_auditor import (
+    SourceExecutionAuditReport,
+    client_safe_compatible,
+)
 
 
 _STRICT_ENV_FLAG = "ZLAB_RENDER_STRICT_DEFAULT"
@@ -167,9 +170,22 @@ def evaluate_render_gate(
     no_unjustified_sources = True
     if source_audit is not None:
         unjustified_n = len(source_audit.unjustified_gaps)
-        no_unjustified_sources = unjustified_n == 0
-        if not no_unjustified_sources:
-            reasons.append(f"source_audit has {unjustified_n} unjustified mandatory gap(s)")
+        # V8 P6 — tier-aware: only IDENTITY / PERMIT_EMISSIONS gaps block
+        # client_safe by default. BENCHMARK / REFERENCE / OTHER tolerable.
+        cs_compatible, blocking_reasons = client_safe_compatible(source_audit)
+        no_unjustified_sources = unjustified_n == 0 if not strict else (
+            cs_compatible and unjustified_n == 0
+        )
+        # In strict mode, blocking-tier gaps refuse render even if total
+        # unjustified count is small. In soft mode, only any gap fires.
+        if strict and not cs_compatible:
+            reasons.extend(blocking_reasons)
+            no_unjustified_sources = False
+        elif unjustified_n > 0:
+            reasons.append(
+                f"source_audit has {unjustified_n} unjustified mandatory gap(s)"
+            )
+            no_unjustified_sources = False
 
     # ── 5. Claim synchronization across motors ────────────────────
     claims_in_sync = True
