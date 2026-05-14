@@ -3,33 +3,36 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-13 (V7 CERRADO — 1721 tests, regression 7/7 bajo hard mode default)**
+**Última actualización: 2026-05-13 (entrando V8 — Final Release Hardening · ajuste fino final)**
 
 ---
 
-## 0. Doctrina actual: V7 — FINAL EXECUTION HARDENING (cerrado)
+## 0. Doctrina actual: V8 — FINAL RELEASE HARDENING (en curso)
 
-V7 cerrado. Ver `RECOVERY_DONE_V7.md` para el cierre completo.
+V7 cerrado (1721 tests, regression 7/7 hard mode default). Ver `RECOVERY_DONE_V7.md`.
+V8 arranca con el prompt Chief QA Architect / Epistemic Governance Engineer / Final-Release Auditor.
 
-Resumen:
-- **1721 tests passing** (+71 desde V6 baseline 1650).
-- **Regression cross-asset 7/7** verde **con hard mode default ON**.
-- 10 commits V7 (P0..P9) + cierre pendiente P10 (push).
-- Defaults flippeados: la ejecución es hard-by-default, soft es opt-out.
+**V8 lleva el framework de ~85-90% post-V7 a 98-99% client-deliverable.**
+No reinventa, no añade inteligencia, no añade motores nuevos. Sólo cierra 8 gaps concretos:
 
-**V7 no añadió inteligencia. V7 endureció la EJECUCIÓN.**
+1. `template_contamination_failure` flag detectado pero NO bloqueado por render_gate → conectar como hard block.
+2. Chart sin `source_case_id` ⇒ no se detectan charts heredados de otro caso → CV6 nuevo.
+3. Hybrid Justification narrative (V7) ⇒ falta el objeto estructurado de 10 campos del prompt → extender `hybrid_justification.py` + JSON.
+4. TAD detecta digital_twin prematuro pero NO reescribe status → enforce `DO_NOT_MODEL_YET` real.
+5. Evidence packs repetidos detectados (RU6) pero NO se emite per-hypothesis matrix → evidence_branching_engine nuevo.
+6. Source audit 3 channels ⇒ falta authority tier (identity/permit/emissions/benchmark) → extender auditor.
+7. Fallback tri-modal pero NO section-level ⇒ Executive Thesis downgrade silenciosa no bloquea client_safe → high-value sections.
+8. render_gate verdict en dict pero NO YAML block visible en PDF → embed `final_delivery_gate` block.
 
-V7 transformó el framework de:
-> "sistema inteligente pero frágil"
+Plan completo: `RECOVERY_V8_BACKLOG.md` (10 sub-fases · ~7 días).
 
-a:
-> "sistema operacionalmente confiable y epistemológicamente endurecido".
+**Objetivo V8**: cero gráficos contaminados, cero secciones heredadas, cero TAD incompatible con claim permissions, cero fallback en sección crítica que se publique como client-safe.
 
 **El objetivo final NO es hacer PDFs. Es detectar cuándo una organización está comparando mal, midiendo mal, modelando mal, invirtiendo mal, o interpretando mal la economía física de su activo.**
 
 ---
 
-## 1. Reglas inviolables V7 (NUNCA romper)
+## 1. Reglas inviolables V8 (NUNCA romper)
 
 1. **El LLM aparece en EXACTAMENTE UN motor** (`motor_019` — narrador, no analista).
 2. **Extracción de PDFs es DETERMINISTA** (`zlab_skill/local_pdf_autodraft.py` + V5 P9). No Anthropic/OpenAI/Ollama en el path analítico.
@@ -40,10 +43,20 @@ a:
 7. **NUNCA `git add -A`** con WIP del usuario sin consolidar.
 8. **SIEMPRE responder en español al usuario.**
 9. **SIEMPRE contrastar cambios contra los Master Docs.** Phase 0 gobierna.
-10. **V7 doctrine**: cada flip de defaults es hacia MÁS estricto, no menos. Diagnostic mode es opt-out.
+10. **Cada flip de defaults es hacia MÁS estricto, no menos.** Diagnostic mode es opt-out.
 11. **No relajar epistemología jamás.** Cualquier validator promovido a blocking no vuelve a warning.
 12. **No silent fallback.** Todo fallback registrado, clasificado, gobernado.
 13. **No client-facing output con state ≠ client_safe** en hard mode.
+
+### Reglas V8 nuevas (Chief QA Architect)
+
+14. **template_contamination_failure ⇒ hard block.** Si detectado y strict mode → render refused, no "publish_with_degradation".
+15. **Cada chart debe declarar `source_case_id`.** Chart con case_id distinto al actual sin `reusable_generic=True` ⇒ blocked.
+16. **Hybrid asset logic requiere objeto estructurado completo** (10 campos: primary, secondary, trigger, why_allowed, scope_allowed, scope_prohibited, evidence_to_confirm, evidence_to_falsify, sections_allowed, sections_blocked, tad_impact). Sin él ⇒ no se activa lógica secundaria.
+17. **TAD ↔ Claim Governor sync enforced.** Si dominant_variables unresolved AND action = digital_twin/sensor/retrofit → motor_033 reescribe status a `DO_NOT_MODEL_YET` / `DO_NOT_SENSOR_YET` / `DO_NOT_UNDERWRITE_*`. No "INVESTIGATE" prematuro.
+18. **Source authority tier gobierna client_safe.** Identity/Permit/Emissions tier unqueried ⇒ client_safe=False. Benchmark unqueried ⇒ allowed sólo en screening.
+19. **High-value section downgrades bloquean client_safe.** {Executive Thesis, TAD, Financial Exposure, Peer Comparison, Conditional Redesign, Case Adaptation Memo}. Si > 0 downgraded ⇒ refuse client_safe.
+20. **PRESERVAR sin tocar** (lista del prompt): reframing estratégico, combination intelligence, peer logic, capital allocation logic, no-false-closure (no ROI/savings/bankability/peer superiority/final redesign).
 
 ---
 
@@ -82,7 +95,7 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 
 - **64 motores** · **30 patterns** (6 con `anti_asset_types` explícitos) · **4 combinations V6-strict-migradas** · **144 approved knowledge**
 - **1721 tests passing** · regression cross-asset **7/7 PASS bajo hard mode default ON**
-- **42 commits V5+V6+V7** en `main` local (V7 P10 pendiente de push)
+- **43 commits V5+V6+V7** pusheados a `origin/main`
 - **Jurisdicción**: US-only para case discovery; combinations universales
 - **192 fuentes industriales** en catálogo
 
@@ -104,23 +117,30 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 
 ---
 
-## 5. V7 — 10 sub-fases (entregadas)
+## 5. V8 — 10 sub-fases (en curso)
 
-Detalle completo en `RECOVERY_DONE_V7.md`.
+Detalle completo en `RECOVERY_V8_BACKLOG.md`.
 
-| # | Trabajo | Status |
-|---|---|---|
-| P0 | Baseline freeze + audit | ✅ |
-| P1 | Hard mode defaults flippeados a ON | ✅ |
-| P2 | Migrar 4 combinaciones al schema V6 strict | ✅ |
-| P3 | `anti_asset_types` explícitos (6 patterns) | ✅ |
-| P4 | Hybrid Justification Narrative Emitter | ✅ |
-| P5 | motor_059 R12 + R13 | ✅ |
-| P6 | motor_058 RU6 intra-run pack repetition | ✅ |
-| P7 | motor_063 CV5 chart cross-asset-family | ✅ |
-| P8 | Stability suite CLIENT_SAFE end-to-end (8 escenarios) | ✅ |
-| P9 | Documentation curation (archivar histórico) | ✅ |
-| P10 | Final regression + commit + push | ⏳ |
+| # | Trabajo | Status | Riesgo |
+|---|---|---|---|
+| P0  | Baseline freeze + plan anchor                              | ⏳ | Bajo |
+| P1  | `template_contamination_failure` hard block en render_gate | ⏳ | Bajo |
+| P2  | CV6 chart `source_case_id` provenance                      | ⏳ | Medio |
+| P3  | Hybrid Governance Object completo (10 campos)              | ⏳ | Medio |
+| P4  | TAD Claim Sync rewrite (`DO_NOT_MODEL_YET`, etc.)          | ⏳ | Medio |
+| P5  | Evidence Branching Engine (per-hypothesis matrix)          | ⏳ | Bajo |
+| P6  | Source Authority Tier classification                       | ⏳ | Bajo |
+| P7  | Section-level Fallback Governance (high-value sections)    | ⏳ | Bajo |
+| P8  | Final Delivery Gate YAML block en motor_017                | ⏳ | Bajo |
+| P9  | Stability suite V8 end-to-end (8 escenarios + control)     | ⏳ | Medio |
+| P10 | Docs + final regression + push                             | ⏳ | Bajo |
+
+### V7 (entregado) — referencia rápida
+
+Detalle completo en `RECOVERY_DONE_V7.md`. 11 sub-fases (P0..P10) cerradas:
+hard mode defaults ON, 4 combos migradas, 6 patterns con anti_asset_types,
+hybrid narrative emitter, R12/R13 (motor_059), RU6 (motor_058), CV5
+(motor_063), stability suite client_safe e2e, docs curados.
 
 ---
 
@@ -146,19 +166,19 @@ export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier s
 
 1. `Phases/phase-{N}/docs/es/` — constitución (gobierna conflictos)
 2. `CLAUDE.md` (este archivo) — doctrina operativa actual
-3. `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
-4. `RECOVERY_V7_BACKLOG.md` — plan V7 (entregado)
+3. `RECOVERY_V8_BACKLOG.md` — plan V8 (en curso)
+4. `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
 5. `AGENTS.md` — guía operativa (subordinado a CLAUDE.md)
 6. `runtime-orchestrator/` + suite de tests
 7. `phase_registry.py` + `phase_units.py` (V5)
 8. `AI_SCAFFOLDING_REGISTRY.md` (FROZEN en 9 items)
-9. `docs/history/` — backlogs y planes antiguos archivados (V2-V6)
+9. `docs/history/` — backlogs y planes antiguos archivados (V2-V7)
 
 ---
 
-## 8. Pendiente post-V7 (V8 candidato)
+## 8. Pendiente post-V8 (V9 candidato)
 
-V7 cierra el endurecimiento. V8 (cuando llegue) puede retomar:
+V8 cierra el ajuste fino. V9 (si se requiere) puede retomar:
 
 - **Phase 7 depth**: motor_054 belief_revision_event desde eventos reales (única fase superficial).
 - **Cascade S1-S9**: regenerar AI_SCAFFOLDING_REGISTRY items desde extracción determinista (143 approved + V4 extractor).
@@ -168,12 +188,12 @@ V7 cierra el endurecimiento. V8 (cuando llegue) puede retomar:
 
 ---
 
-## 9. Lo que V7 NO hace (por doctrina)
+## 9. Lo que V8 NO hace (por doctrina)
 
-- No añade más patterns, combinations, motores o prompts.
+- No añade motores, patterns o combinations nuevas.
 - No añade LLM en ningún lado que no sea motor_019.
 - No regenera el AI_SCAFFOLDING_REGISTRY.
 - No procesa los 105 PDFs restantes.
 - No expone dashboard QA.
 
-**V7 = endurecimiento del cerebro existente. Nada más.**
+**V8 = ajuste fino final para entrega cliente. Nada más.**
