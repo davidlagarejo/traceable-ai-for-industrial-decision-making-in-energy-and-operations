@@ -3,30 +3,30 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-13 (entrando V8 — Final Release Hardening · ajuste fino final)**
+**Última actualización: 2026-05-14 (V8 CERRADO — 1806 tests, regression 7/7 hard mode default)**
 
 ---
 
-## 0. Doctrina actual: V8 — FINAL RELEASE HARDENING (en curso)
+## 0. Doctrina actual: V8 — FINAL RELEASE HARDENING (cerrado)
 
-V7 cerrado (1721 tests, regression 7/7 hard mode default). Ver `RECOVERY_DONE_V7.md`.
-V8 arranca con el prompt Chief QA Architect / Epistemic Governance Engineer / Final-Release Auditor.
+V8 cerrado. Ver `RECOVERY_DONE_V8.md` para el cierre completo.
+
+Resumen:
+- **1806 tests passing** (+85 desde V7 baseline 1650 → ahora 1721).
+- **Regression cross-asset 7/7** verde bajo V8 hard mode default ON.
+- 11 commits V8 (P0..P10).
+- 8 gaps residuales del prompt Chief QA Architect cerrados:
+  1. `template_contamination_failure` ahora hard block en render_gate.
+  2. CV6 chart `source_case_id` provenance.
+  3. Hybrid Governance Object completo (10 campos).
+  4. TAD Claim Sync rewrite (`DO_NOT_MODEL_YET` enforcement).
+  5. Evidence Branching Engine per-hypothesis matrix.
+  6. Source Authority Tier classification.
+  7. Section-level Fallback Governance (high-value sections).
+  8. Final Delivery Gate YAML block en motor_017 output.
 
 **V8 lleva el framework de ~85-90% post-V7 a 98-99% client-deliverable.**
-No reinventa, no añade inteligencia, no añade motores nuevos. Sólo cierra 8 gaps concretos:
-
-1. `template_contamination_failure` flag detectado pero NO bloqueado por render_gate → conectar como hard block.
-2. Chart sin `source_case_id` ⇒ no se detectan charts heredados de otro caso → CV6 nuevo.
-3. Hybrid Justification narrative (V7) ⇒ falta el objeto estructurado de 10 campos del prompt → extender `hybrid_justification.py` + JSON.
-4. TAD detecta digital_twin prematuro pero NO reescribe status → enforce `DO_NOT_MODEL_YET` real.
-5. Evidence packs repetidos detectados (RU6) pero NO se emite per-hypothesis matrix → evidence_branching_engine nuevo.
-6. Source audit 3 channels ⇒ falta authority tier (identity/permit/emissions/benchmark) → extender auditor.
-7. Fallback tri-modal pero NO section-level ⇒ Executive Thesis downgrade silenciosa no bloquea client_safe → high-value sections.
-8. render_gate verdict en dict pero NO YAML block visible en PDF → embed `final_delivery_gate` block.
-
-Plan completo: `RECOVERY_V8_BACKLOG.md` (10 sub-fases · ~7 días).
-
-**Objetivo V8**: cero gráficos contaminados, cero secciones heredadas, cero TAD incompatible con claim permissions, cero fallback en sección crítica que se publique como client-safe.
+No reinventó, no añadió inteligencia, no añadió motores. Sólo cerró los 8 gaps con extensiones quirúrgicas.
 
 **El objetivo final NO es hacer PDFs. Es detectar cuándo una organización está comparando mal, midiendo mal, modelando mal, invirtiendo mal, o interpretando mal la economía física de su activo.**
 
@@ -94,8 +94,8 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 ## 4. Estado post-V7 (2026-05-13)
 
 - **64 motores** · **30 patterns** (6 con `anti_asset_types` explícitos) · **4 combinations V6-strict-migradas** · **144 approved knowledge**
-- **1721 tests passing** · regression cross-asset **7/7 PASS bajo hard mode default ON**
-- **43 commits V5+V6+V7** pusheados a `origin/main`
+- **1806 tests passing** · regression cross-asset **7/7 PASS bajo V8 hard mode default ON**
+- **54 commits V5+V6+V7+V8** en `main` local (V8 P10 pendiente de push)
 - **Jurisdicción**: US-only para case discovery; combinations universales
 - **192 fuentes industriales** en catálogo
 
@@ -113,34 +113,34 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 | `render_gate.py` | motor_017 → `render_gate_verdict` | **strict ON** |
 | `validate_combination_v6_strict` | engine.py write-path en hard mode | hard mode gated |
 
-**V6 blocking set V7 = 18 reglas**: R1/R2/R4 + R8-R13 (motor_059), AF1/AF2 (motor_061), GN1 (motor_057), RU2/RU6 (motor_058), SJ1/SJ2/SJ3 (motor_062), CV1/CV3/CV5 (motor_063).
+**V6 blocking set V8 = 20 reglas**: R1/R2/R4 + R8-R13 (motor_059, 10), AF1/AF2 (motor_061), GN1 (motor_057), RU2/RU6 (motor_058), SJ1/SJ2/SJ3 (motor_062), CV1/CV3/CV5/**CV6** (motor_063, 4). CV6 V8 = chart wrong source_case_id.
+
+**Módulos V8 nuevos / extendidos**: `tad_claim_sync.py` (P4), `evidence_branching.py` (P5), `hybrid_justification.build_hybrid_governance_object` (P3), `source_execution_auditor.SourceAuthorityTier` (P6), `fallback_policy.HIGH_VALUE_SECTIONS` (P7), `render_gate.as_yaml_block` + `publication_mode` (P8).
 
 ---
 
-## 5. V8 — 10 sub-fases (en curso)
+## 5. V8 — 10 sub-fases (entregadas)
 
-Detalle completo en `RECOVERY_V8_BACKLOG.md`.
+Detalle completo en `RECOVERY_DONE_V8.md`.
 
-| # | Trabajo | Status | Riesgo |
-|---|---|---|---|
-| P0  | Baseline freeze + plan anchor                              | ⏳ | Bajo |
-| P1  | `template_contamination_failure` hard block en render_gate | ⏳ | Bajo |
-| P2  | CV6 chart `source_case_id` provenance                      | ⏳ | Medio |
-| P3  | Hybrid Governance Object completo (10 campos)              | ⏳ | Medio |
-| P4  | TAD Claim Sync rewrite (`DO_NOT_MODEL_YET`, etc.)          | ⏳ | Medio |
-| P5  | Evidence Branching Engine (per-hypothesis matrix)          | ⏳ | Bajo |
-| P6  | Source Authority Tier classification                       | ⏳ | Bajo |
-| P7  | Section-level Fallback Governance (high-value sections)    | ⏳ | Bajo |
-| P8  | Final Delivery Gate YAML block en motor_017                | ⏳ | Bajo |
-| P9  | Stability suite V8 end-to-end (8 escenarios + control)     | ⏳ | Medio |
-| P10 | Docs + final regression + push                             | ⏳ | Bajo |
+| # | Trabajo | Status |
+|---|---|---|
+| P0  | Baseline freeze + plan anchor                              | ✅ |
+| P1  | `template_contamination_failure` hard block en render_gate | ✅ |
+| P2  | CV6 chart `source_case_id` provenance                      | ✅ |
+| P3  | Hybrid Governance Object completo (10 campos)              | ✅ |
+| P4  | TAD Claim Sync rewrite (`DO_NOT_MODEL_YET`, etc.)          | ✅ |
+| P5  | Evidence Branching Engine (per-hypothesis matrix)          | ✅ |
+| P6  | Source Authority Tier classification                       | ✅ |
+| P7  | Section-level Fallback Governance (high-value sections)    | ✅ |
+| P8  | Final Delivery Gate YAML block en motor_017                | ✅ |
+| P9  | Stability suite V8 end-to-end (8 escenarios + control)     | ✅ |
+| P10 | Docs + final regression + push                             | ⏳ |
 
-### V7 (entregado) — referencia rápida
+### V7 + V6 (entregados) — referencia rápida
 
-Detalle completo en `RECOVERY_DONE_V7.md`. 11 sub-fases (P0..P10) cerradas:
-hard mode defaults ON, 4 combos migradas, 6 patterns con anti_asset_types,
-hybrid narrative emitter, R12/R13 (motor_059), RU6 (motor_058), CV5
-(motor_063), stability suite client_safe e2e, docs curados.
+- V7 (`RECOVERY_DONE_V7.md`): hard mode defaults ON, 4 combos migradas, 6 patterns con anti_asset_types, hybrid narrative emitter, R12/R13 (motor_059), RU6 (motor_058), CV5 (motor_063), stability suite client_safe e2e.
+- V6 (`RECOVERY_DONE_V6.md`): 8 módulos governance creados y cableados, render_gate strict default, 14 V6 blocking rules.
 
 ---
 
@@ -166,8 +166,7 @@ export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier s
 
 1. `Phases/phase-{N}/docs/es/` — constitución (gobierna conflictos)
 2. `CLAUDE.md` (este archivo) — doctrina operativa actual
-3. `RECOVERY_V8_BACKLOG.md` — plan V8 (en curso)
-4. `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
+3. `RECOVERY_DONE_V8.md` · `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
 5. `AGENTS.md` — guía operativa (subordinado a CLAUDE.md)
 6. `runtime-orchestrator/` + suite de tests
 7. `phase_registry.py` + `phase_units.py` (V5)
