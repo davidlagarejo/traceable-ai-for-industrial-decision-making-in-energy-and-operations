@@ -15163,6 +15163,281 @@ def api_revisar_pdf(kind: str, knowledge_id: str):
     return send_file(pdf_path, mimetype="application/pdf")
 
 
+# ────────────────────────────────────────────────────────────────────
+# Curation API — dashboard refresh (human curation layer)
+# Reads/writes go through src/runtime_orchestrator/curation_layer.py
+# ────────────────────────────────────────────────────────────────────
+
+try:
+    from runtime_orchestrator import curation_layer as _curation
+    _curation_available = True
+except Exception:  # pragma: no cover — defensive
+    _curation_available = False
+    _curation = None  # type: ignore[assignment]
+
+
+_ARTIFACT_STORE = _HERE / "artifact-store"
+
+
+def _curation_latest_run_id() -> str:
+    """Return the most recent run_id from run-registry, or '' if none."""
+    if not _RUNS_DIR.exists():
+        return ""
+    candidates = sorted(
+        _RUNS_DIR.glob("run:*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    if not candidates:
+        return ""
+    return candidates[0].stem  # e.g. "run:abc123"
+
+
+def _curation_load_motor_output(run_id: str, motor_id: str) -> dict:
+    """Load a motor's output dict for a given run via run-registry manifest +
+    artifact-store hash. Returns {} if anything is missing."""
+    manifest_path = _RUNS_DIR / f"{run_id}.json"
+    if not manifest_path.exists():
+        return {}
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    motor_entry = (manifest.get("motor_results") or {}).get(motor_id, {})
+    output_hash = motor_entry.get("output_hash", "")
+    if not output_hash:
+        return {}
+    artifact_path = _ARTIFACT_STORE / motor_id / f"{output_hash}.json"
+    if not artifact_path.exists():
+        return {}
+    try:
+        return json.loads(artifact_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def _curation_simple_combo_explanation(combo: dict) -> str:
+    """Build a one-paragraph plain-language explanation of a combination
+    for the curator. Reads strategic_risk + combined_hypothesis if available."""
+    if not isinstance(combo, dict):
+        return ""
+    bits: list[str] = []
+    hypo = str(combo.get("combined_hypothesis") or "").strip()
+    if hypo:
+        bits.append(hypo)
+    risk = str(combo.get("strategic_risk") or "").strip()
+    if risk:
+        bits.append(f"Riesgo: {risk}")
+    tad = str(combo.get("tad_action") or "").strip()
+    if tad:
+        bits.append(f"TAD: {tad}")
+    if not bits:
+        # Fallback: first 1-2 minimum_evidence items
+        evid = combo.get("minimum_evidence", []) or []
+        if evid:
+            bits.append("Evidencia mínima: " + "; ".join(str(e) for e in evid[:2]))
+    return "  ".join(bits)
+
+
+@app.route("/api/curation/run-status")
+def api_curation_run_status():
+    """Return a compact run health summary for the center-column banner.
+
+    Query params:
+      run_id (optional) — defaults to most recent run.
+
+    Response:
+      {
+        run_id: "...",
+        status: "ok" | "warn" | "blocked" | "unknown",
+        publication_mode: "client_safe" | ...,
+        completed_motors: 64,
+        total_motors: 64,
+        message: "Framework corrió sin problemas",
+        final_delivery_gate: { ... raw verdict dict ... } | null,
+      }
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    if not run_id:
+        return jsonify({"status": "unknown", "message": "no runs found"})
+
+    manifest_path = _RUNS_DIR / f"{run_id}.json"
+    if not manifest_path.exists():
+        return jsonify({"status": "unknown", "message": "run manifest not found",
+                        "run_id": run_id})
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return jsonify({"status": "unknown", "message": "run manifest unreadable",
+                        "run_id": run_id})
+
+    motor_results = manifest.get("motor_results", {}) or {}
+    total_motors = len(motor_results)
+    completed = sum(1 for v in motor_results.values()
+                    if isinstance(v, dict) and v.get("status") == "completed")
+    pipeline_status = manifest.get("status", "")
+
+    # Pull the render gate verdict from motor_017's output dict
+    m017 = _curation_load_motor_output(run_id, "motor_017")
+    verdict = m017.get("render_gate_verdict") or {}
+    publication_mode = m017.get("publication_mode") or verdict.get("state") or ""
+
+    # Map to traffic light
+    if pipeline_status == "completed" and completed == total_motors and total_motors > 0:
+        if verdict.get("allowed") is True:
+            status = "ok"
+            message = "Framework corrió sin problemas"
+        elif verdict.get("allowed") is False:
+            status = "warn"
+            message = f"Framework completó pero render gate refused — modo: {publication_mode}"
+        else:
+            status = "ok"
+            message = "Framework corrió completo"
+    elif pipeline_status == "completed":
+        status = "warn"
+        message = f"Pipeline completado con motores incompletos ({completed}/{total_motors})"
+    else:
+        status = "blocked"
+        message = f"Pipeline status: {pipeline_status or 'unknown'}"
+
+    return jsonify({
+        "run_id":             run_id,
+        "status":             status,
+        "publication_mode":   publication_mode,
+        "completed_motors":   completed,
+        "total_motors":       total_motors,
+        "message":            message,
+        "final_delivery_gate": verdict or None,
+    })
+
+
+@app.route("/api/curation/run-combinations")
+def api_curation_run_combinations():
+    """List combinations activated in this specific run + their explanation
+    + persisted curator decisions (if any).
+
+    Query: run_id (optional, default = latest)
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    if not run_id:
+        return jsonify({"run_id": "", "combinations": []})
+
+    m054 = _curation_load_motor_output(run_id, "motor_054")
+    register = (
+        m054.get("skill_combination_review_register")
+        or m054.get("skill_combination_activation_register")
+        or []
+    )
+    decisions_by_id = _curation.latest_combination_decisions(run_id) if _curation else {}
+
+    rows: list[dict] = []
+    for combo in register:
+        if not isinstance(combo, dict):
+            continue
+        cid = str(combo.get("combination_id") or combo.get("id") or "")
+        if not cid:
+            continue
+        existing = decisions_by_id.get(cid) or {}
+        rows.append({
+            "combination_id":     cid,
+            "combination_name":   str(combo.get("combination_name", cid)),
+            "explanation":        _curation_simple_combo_explanation(combo),
+            "pattern_ids":        list(combo.get("pattern_ids", []) or []),
+            "current_decision":   existing.get("decision", ""),
+            "modify_instruction": existing.get("modify_instruction", ""),
+            "curator":            existing.get("curator", ""),
+        })
+    return jsonify({"run_id": run_id, "combinations": rows})
+
+
+@app.route("/api/curation/combination-decision", methods=["POST"])
+def api_curation_combination_decision():
+    """Persist a combination decision (accept / reject / modify).
+
+    Body JSON:
+      { run_id, combination_id, decision, modify_instruction?, curator? }
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    try:
+        record = _curation.record_combination_decision(
+            run_id=str(data.get("run_id") or "").strip(),
+            combination_id=str(data.get("combination_id") or "").strip(),
+            decision=str(data.get("decision") or "").strip(),
+            modify_instruction=str(data.get("modify_instruction") or ""),
+            curator=str(data.get("curator") or "anonymous"),
+        )
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"ok": True, "decision": record.as_dict()})
+
+
+@app.route("/api/curation/pdf-annotation", methods=["POST"])
+def api_curation_pdf_annotation():
+    """Persist a PDF annotation (track-changes style).
+
+    Body JSON:
+      { run_id, pdf_path, page, region?, comment, suggested_change?, curator? }
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    try:
+        record = _curation.record_pdf_annotation(
+            run_id=str(data.get("run_id") or "").strip(),
+            pdf_path=str(data.get("pdf_path") or "").strip(),
+            page=data.get("page", 1),
+            region=data.get("region") or {},
+            comment=str(data.get("comment") or ""),
+            suggested_change=str(data.get("suggested_change") or ""),
+            curator=str(data.get("curator") or "anonymous"),
+        )
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    return jsonify({"ok": True, "annotation": record.as_dict()})
+
+
+@app.route("/api/curation/pdf-annotations")
+def api_curation_pdf_annotations():
+    """List PDF annotations for a run."""
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    if not run_id:
+        return jsonify({"run_id": "", "annotations": []})
+    annots = _curation.load_pdf_annotations(run_id)
+    return jsonify({"run_id": run_id, "annotations": annots})
+
+
+@app.route("/api/curation/pdf-annotation/<annotation_id>", methods=["DELETE"])
+def api_curation_pdf_annotation_delete(annotation_id: str):
+    """Remove a single annotation by id."""
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip()
+    if not run_id:
+        return jsonify({"error": "run_id query param required"}), 400
+    ok = _curation.delete_pdf_annotation(run_id, annotation_id)
+    return jsonify({"ok": ok})
+
+
+@app.route("/api/curation/export-bundle")
+def api_curation_export_bundle():
+    """Single dict ready for the future translation skill to consume."""
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    if not run_id:
+        return jsonify({"error": "run_id required"}), 400
+    bundle = _curation.export_curation_bundle(run_id)
+    return jsonify(bundle)
+
+
 _REVISAR_PAGE_HTML = """<!doctype html>
 <html lang="es"><head><meta charset="utf-8">
 <title>Revisar — ZLab</title>
