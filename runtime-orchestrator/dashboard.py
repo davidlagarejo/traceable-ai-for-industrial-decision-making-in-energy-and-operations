@@ -15204,16 +15204,28 @@ def _curation_load_motor_output(run_id: str, motor_id: str) -> dict:
     except json.JSONDecodeError:
         return {}
     motor_entry = (manifest.get("motor_results") or {}).get(motor_id, {})
-    output_hash = motor_entry.get("output_hash", "")
-    if not output_hash:
+    # Artifact-store is keyed by inputs_hash (cache key for re-execution).
+    # Fall back to output_hash for legacy / pre-cache artifacts.
+    cache_key = motor_entry.get("inputs_hash", "") or motor_entry.get("output_hash", "")
+    if not cache_key:
         return {}
-    artifact_path = _ARTIFACT_STORE / motor_id / f"{output_hash}.json"
+    artifact_path = _ARTIFACT_STORE / motor_id / f"{cache_key}.json"
     if not artifact_path.exists():
-        return {}
+        # Try the alternate key as a last resort.
+        alt = motor_entry.get("output_hash", "") if cache_key == motor_entry.get("inputs_hash") else motor_entry.get("inputs_hash", "")
+        if alt:
+            artifact_path = _ARTIFACT_STORE / motor_id / f"{alt}.json"
+        if not artifact_path.exists():
+            return {}
     try:
-        return json.loads(artifact_path.read_text(encoding="utf-8"))
+        raw = json.loads(artifact_path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
+    # Artifact-store envelopes wrap the motor output under .output;
+    # legacy artifacts may have the payload at root.
+    if isinstance(raw, dict) and isinstance(raw.get("output"), dict):
+        return raw["output"]
+    return raw if isinstance(raw, dict) else {}
 
 
 def _curation_simple_combo_explanation(combo: dict) -> str:
@@ -15327,8 +15339,11 @@ def api_curation_run_combinations():
         return jsonify({"run_id": "", "combinations": []})
 
     m054 = _curation_load_motor_output(run_id, "motor_054")
+    # Prefer admissible_combination_review_register: 20-item curation queue
+    # with operator_decision field. Fall back to activation registers.
     register = (
-        m054.get("skill_combination_review_register")
+        m054.get("skill_admissible_combination_review_register")
+        or m054.get("skill_combination_review_register")
         or m054.get("skill_combination_activation_register")
         or []
     )
@@ -15436,6 +15451,521 @@ def api_curation_export_bundle():
         return jsonify({"error": "run_id required"}), 400
     bundle = _curation.export_curation_bundle(run_id)
     return jsonify(bundle)
+
+
+_CURAR_PAGE_HTML = r"""<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Curar — ZLab</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+     background:#f7f7f8;color:#18181b;margin:0;padding:0;height:100vh;
+     display:flex;flex-direction:column;overflow:hidden;}
+header{padding:10px 18px;background:#fff;border-bottom:1px solid #e4e4e7;
+       display:flex;align-items:center;gap:14px;}
+h1{margin:0;font-size:16px;font-weight:600;}
+main{flex:1;display:flex;overflow:hidden;}
+/* LEFT — cases (runs) */
+aside.cases{width:280px;border-right:1px solid #e4e4e7;background:#fff;overflow-y:auto;}
+aside.cases .item{padding:11px 14px;border-bottom:1px solid #f4f4f5;cursor:pointer;}
+aside.cases .item:hover{background:#fafafa;}
+aside.cases .item.active{background:#eff6ff;border-left:3px solid #2563eb;padding-left:11px;}
+aside.cases .t{font-size:12.5px;font-weight:600;color:#18181b;line-height:1.35;}
+aside.cases .m{font-size:10.5px;color:#71717a;margin-top:3px;}
+aside.cases .empty{padding:40px 16px;text-align:center;color:#a1a1aa;font-style:italic;}
+/* CENTER — curation workspace */
+section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border-right:1px solid #e4e4e7;min-width:0;}
+.banner{padding:10px 14px;border-radius:8px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.banner-ok{background:#dcfce7;color:#166534;border:1px solid #bbf7d0;}
+.banner-warn{background:#fef3c7;color:#92400e;border:1px solid #fde68a;}
+.banner-bad{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.banner-empty{background:#f4f4f5;color:#52525b;}
+.banner .dot{width:10px;height:10px;border-radius:50%;}
+.banner-ok .dot{background:#16a34a;}
+.banner-warn .dot{background:#d97706;}
+.banner-bad .dot{background:#dc2626;}
+.banner-empty .dot{background:#a1a1aa;}
+.banner .meta{margin-left:auto;font-size:11px;font-weight:500;opacity:.78;}
+.section-head{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+              color:#52525b;margin:8px 0 10px 0;display:flex;align-items:center;gap:8px;}
+.section-head .count{background:#f4f4f5;color:#52525b;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:600;}
+.combo{border:1px solid #e4e4e7;border-radius:9px;padding:13px 15px;margin-bottom:12px;background:#fcfcfc;}
+.combo h3{margin:0 0 6px 0;font-size:14px;font-weight:700;color:#18181b;}
+.combo .explain{font-size:12.5px;color:#3f3f46;line-height:1.5;margin-bottom:10px;}
+.combo .patterns{font-size:10.5px;color:#71717a;margin-bottom:10px;}
+.combo .patterns .tag{display:inline-block;font-size:10px;background:#f4f4f5;border:1px solid #e4e4e7;
+                      border-radius:4px;padding:1px 6px;margin:1px 3px 1px 0;font-family:ui-monospace,monospace;}
+.combo .btnrow{display:flex;gap:7px;flex-wrap:wrap;}
+.btn{padding:7px 13px;border:0;border-radius:6px;cursor:pointer;font-size:12.5px;font-weight:600;transition:opacity .15s;}
+.btn-ok{background:#16a34a;color:#fff;}
+.btn-ok:hover{background:#15803d;}
+.btn-no{background:#dc2626;color:#fff;}
+.btn-no:hover{background:#b91c1c;}
+.btn-ed{background:#2563eb;color:#fff;}
+.btn-ed:hover{background:#1d4ed8;}
+.btn:disabled{opacity:.5;cursor:wait;}
+.btn-soft{background:#f4f4f5;color:#27272a;}
+.combo .decided{font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:5px;display:inline-block;margin-bottom:8px;}
+.decided-accept{background:#dcfce7;color:#166534;}
+.decided-reject{background:#fee2e2;color:#991b1b;}
+.decided-modify{background:#dbeafe;color:#1d4ed8;}
+.combo .modifybox{display:none;margin-top:10px;}
+.combo .modifybox.open{display:block;}
+.combo .modifybox textarea{width:100%;min-height:80px;border:1px solid #d4d4d8;border-radius:6px;
+                            padding:9px 11px;font-size:12.5px;font-family:inherit;resize:vertical;}
+.combo .modifybox .actions{margin-top:8px;display:flex;gap:8px;}
+.empty-block{padding:24px;color:#a1a1aa;font-style:italic;text-align:center;font-size:13px;}
+/* Annotations */
+.annot{border:1px solid #e4e4e7;border-radius:8px;padding:10px 13px;margin-bottom:8px;background:#fcfcfc;font-size:12px;}
+.annot .head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:5px;}
+.annot .pg{font-size:10.5px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.annot .com{color:#27272a;line-height:1.5;}
+.annot .sug{color:#1d4ed8;font-style:italic;margin-top:4px;}
+.annot .del{background:none;color:#a1a1aa;border:0;cursor:pointer;font-size:12px;}
+.annot .del:hover{color:#dc2626;}
+/* RIGHT — PDF preview */
+section.pdfpane{width:52%;max-width:780px;background:#27272a;display:flex;flex-direction:column;min-width:0;}
+section.pdfpane .pdfhead{padding:8px 14px;background:#3f3f46;color:#e4e4e7;font-size:12px;
+                          display:flex;justify-content:space-between;align-items:center;}
+section.pdfpane iframe{flex:1;width:100%;border:0;background:#fff;}
+section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-style:italic;}
+.pdfpane .annotate-btn{padding:5px 11px;background:#16a34a;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:11.5px;font-weight:600;}
+.pdfpane .annotate-btn:hover{background:#15803d;}
+/* Annotation modal */
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);
+       display:none;align-items:center;justify-content:center;z-index:1000;}
+.modal.open{display:flex;}
+.modalbox{background:#fff;border-radius:10px;width:560px;max-width:92vw;padding:20px;}
+.modalbox h3{margin:0 0 12px 0;font-size:15px;}
+.modalbox label{display:block;font-size:11px;font-weight:700;color:#52525b;
+                text-transform:uppercase;letter-spacing:.05em;margin:10px 0 4px 0;}
+.modalbox input,.modalbox textarea{width:100%;border:1px solid #d4d4d8;border-radius:6px;
+                                    padding:8px 11px;font-size:13px;font-family:inherit;}
+.modalbox textarea{min-height:60px;resize:vertical;}
+.modalbox .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modalbox .actions{margin-top:16px;display:flex;gap:8px;justify-content:flex-end;}
+.toast{position:fixed;bottom:20px;right:20px;padding:9px 15px;border-radius:6px;background:#18181b;
+       color:#fff;font-size:12.5px;z-index:2000;opacity:0;transition:opacity .25s;}
+.toast.show{opacity:1;}
+.toast.ok{background:#16a34a;}
+.toast.err{background:#dc2626;}
+</style></head><body>
+
+<header>
+  <h1>ZLab · Curar entregable</h1>
+  <span style="font-size:11.5px;color:#71717a;">human curation surface — runs + combos + PDF mark-up</span>
+</header>
+
+<main>
+  <!-- LEFT: cases (runs) -->
+  <aside class="cases" id="cases">
+    <div class="empty">Cargando casos…</div>
+  </aside>
+
+  <!-- CENTER: curation workspace -->
+  <section class="curation" id="curation">
+    <div id="banner" class="banner banner-empty">
+      <span class="dot"></span>
+      <span>Selecciona un caso a la izquierda</span>
+    </div>
+
+    <div class="section-head">
+      Aprobaciones <span class="count" id="combo-count">0</span>
+    </div>
+    <div id="approvals">
+      <div class="empty-block">Selecciona un caso para ver sus combinaciones.</div>
+    </div>
+
+    <div class="section-head" style="margin-top:22px;">
+      Anotaciones del PDF <span class="count" id="annot-count">0</span>
+    </div>
+    <div id="annotations">
+      <div class="empty-block">Selecciona un caso y haz clic en "+ Anotar PDF" arriba a la derecha.</div>
+    </div>
+  </section>
+
+  <!-- RIGHT: PDF preview -->
+  <section class="pdfpane" id="pdfpane">
+    <div class="pdfhead">
+      <span id="pdfhead-label">PDF</span>
+      <button class="annotate-btn" id="annot-add-btn" onclick="openAnnotateModal()" disabled>+ Anotar</button>
+    </div>
+    <div class="empty" id="pdf-empty">Selecciona un caso para previsualizar el PDF.</div>
+    <iframe id="pdf-frame" style="display:none;"></iframe>
+  </section>
+</main>
+
+<!-- Annotation modal -->
+<div class="modal" id="annot-modal">
+  <div class="modalbox">
+    <h3>Anotar PDF (track-changes)</h3>
+    <div class="row">
+      <div>
+        <label>Página</label>
+        <input id="annot-page" type="number" min="1" value="1">
+      </div>
+      <div>
+        <label>Curador</label>
+        <input id="annot-curator" type="text" value="anonymous">
+      </div>
+    </div>
+    <label>Comentario (qué está mal)</label>
+    <textarea id="annot-comment" placeholder="Ej: este gráfico no corresponde al caso cold-chain"></textarea>
+    <label>Cambio sugerido (opcional)</label>
+    <textarea id="annot-suggest" placeholder="Ej: eliminar el chart CHT-002 o reemplazar con refrigeration duty"></textarea>
+    <div class="actions">
+      <button class="btn btn-soft" onclick="closeAnnotateModal()">Cancelar</button>
+      <button class="btn btn-ok" onclick="saveAnnotation()">Guardar anotación</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+let currentRunId = "";
+let currentPdfPath = "";
+
+const $ = (id) => document.getElementById(id);
+
+function toast(msg, kind) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.className = "toast show " + (kind || "");
+  setTimeout(() => { t.className = "toast"; }, 2400);
+}
+
+function escapeHtml(s) {
+  return String(s || "").replace(/[&<>"']/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+}
+
+async function loadCases() {
+  // Reuse /api/live to find runs with PDFs. Falls back to listing all runs
+  // in run-registry via a thin helper.
+  try {
+    const r = await fetch("/api/curation/cases");
+    const data = await r.json();
+    renderCases(data.cases || []);
+  } catch (e) {
+    // Fallback: ask run-status with no arg to learn latest, build minimal list
+    $("cases").innerHTML = '<div class="empty">No se pudieron cargar los casos</div>';
+  }
+}
+
+function renderCases(cases) {
+  const el = $("cases");
+  if (!cases.length) {
+    el.innerHTML = '<div class="empty">No hay casos completados</div>';
+    return;
+  }
+  el.innerHTML = cases.map(c => {
+    const klass = (c.run_id === currentRunId) ? "item active" : "item";
+    return `<div class="${klass}" onclick="selectCase('${c.run_id}')">
+      <div class="t">${escapeHtml(c.label || c.run_id)}</div>
+      <div class="m">${escapeHtml(c.pipeline_id || "")} · ${escapeHtml(c.completed_at || "")}</div>
+    </div>`;
+  }).join("");
+}
+
+async function selectCase(runId) {
+  currentRunId = runId;
+  // Re-render case list active state
+  await loadCases();
+  await Promise.all([loadBanner(), loadApprovals(), loadAnnotations(), loadPdf()]);
+  $("annot-add-btn").disabled = !currentPdfPath;
+}
+
+async function loadBanner() {
+  const r = await fetch(`/api/curation/run-status?run_id=${encodeURIComponent(currentRunId)}`);
+  const s = await r.json();
+  const b = $("banner");
+  const cls = s.status === "ok" ? "banner-ok" : (s.status === "warn" ? "banner-warn" : (s.status === "blocked" ? "banner-bad" : "banner-empty"));
+  const icon = s.status === "ok" ? "✓" : (s.status === "warn" ? "⚠" : (s.status === "blocked" ? "✗" : "·"));
+  b.className = "banner " + cls;
+  b.innerHTML = `<span class="dot"></span>
+    <span><b>${icon}</b> ${escapeHtml(s.message || "")}</span>
+    <span class="meta">${s.completed_motors || 0}/${s.total_motors || 0} motores · ${escapeHtml(s.publication_mode || "—")}</span>`;
+}
+
+async function loadApprovals() {
+  const r = await fetch(`/api/curation/run-combinations?run_id=${encodeURIComponent(currentRunId)}`);
+  const data = await r.json();
+  const combos = data.combinations || [];
+  $("combo-count").textContent = combos.length;
+  const el = $("approvals");
+  if (!combos.length) {
+    el.innerHTML = '<div class="empty-block">Sin combinaciones activadas en este run.</div>';
+    return;
+  }
+  el.innerHTML = combos.map(c => {
+    const dec = c.current_decision || "";
+    const decBadge = dec ? `<div class="decided decided-${dec}">${dec.toUpperCase()}</div>` : "";
+    const patterns = (c.pattern_ids || []).map(p => `<span class="tag">${escapeHtml(p)}</span>`).join("");
+    const modInstr = c.modify_instruction || "";
+    return `
+      <div class="combo" id="combo-${escapeHtml(c.combination_id)}">
+        <h3>${escapeHtml(c.combination_name)}</h3>
+        ${decBadge}
+        <div class="explain">${escapeHtml(c.explanation || "—")}</div>
+        <div class="patterns">Patrones: ${patterns || "—"}</div>
+        <div class="btnrow">
+          <button class="btn btn-ok" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'accept')">✅ Aceptar</button>
+          <button class="btn btn-no" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'reject')">❌ Rechazar</button>
+          <button class="btn btn-ed" onclick="toggleModify('${escapeHtml(c.combination_id)}')">✏️ Modificar</button>
+        </div>
+        <div class="modifybox" id="modify-${escapeHtml(c.combination_id)}">
+          <textarea id="modtext-${escapeHtml(c.combination_id)}" placeholder="Explica qué quieres cambiar. La skill traductora leerá esto.">${escapeHtml(modInstr)}</textarea>
+          <div class="actions">
+            <button class="btn btn-soft" onclick="toggleModify('${escapeHtml(c.combination_id)}')">Cancelar</button>
+            <button class="btn btn-ed" onclick="submitModify('${escapeHtml(c.combination_id)}')">Guardar modificación</button>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+function toggleModify(comboId) {
+  const box = $("modify-" + comboId);
+  if (box) box.classList.toggle("open");
+}
+
+async function decideCombo(comboId, decision) {
+  if (!currentRunId) return;
+  const r = await fetch("/api/curation/combination-decision", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      run_id: currentRunId, combination_id: comboId,
+      decision: decision, curator: "anonymous"
+    })
+  });
+  const j = await r.json();
+  if (j.ok) {
+    toast(`Combinación ${decision === "accept" ? "aceptada" : "rechazada"}`, "ok");
+    loadApprovals();
+  } else {
+    toast(j.error || "error", "err");
+  }
+}
+
+async function submitModify(comboId) {
+  const txt = $("modtext-" + comboId).value.trim();
+  if (!txt) {
+    toast("Escribe la instrucción de modificación", "err");
+    return;
+  }
+  const r = await fetch("/api/curation/combination-decision", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      run_id: currentRunId, combination_id: comboId,
+      decision: "modify", modify_instruction: txt,
+      curator: "anonymous"
+    })
+  });
+  const j = await r.json();
+  if (j.ok) {
+    toast("Modificación guardada", "ok");
+    loadApprovals();
+  } else {
+    toast(j.error || "error", "err");
+  }
+}
+
+async function loadAnnotations() {
+  const r = await fetch(`/api/curation/pdf-annotations?run_id=${encodeURIComponent(currentRunId)}`);
+  const data = await r.json();
+  const annots = data.annotations || [];
+  $("annot-count").textContent = annots.length;
+  const el = $("annotations");
+  if (!annots.length) {
+    el.innerHTML = '<div class="empty-block">Sin anotaciones todavía. Usa el botón "+ Anotar" arriba.</div>';
+    return;
+  }
+  el.innerHTML = annots.map(a => `
+    <div class="annot">
+      <div class="head">
+        <span class="pg">Pág. ${a.page} · ${escapeHtml(a.curator)}</span>
+        <button class="del" onclick="deleteAnnot('${a.annotation_id}')">×</button>
+      </div>
+      <div class="com">${escapeHtml(a.comment)}</div>
+      ${a.suggested_change ? `<div class="sug">→ ${escapeHtml(a.suggested_change)}</div>` : ""}
+    </div>`).join("");
+}
+
+async function deleteAnnot(id) {
+  const r = await fetch(`/api/curation/pdf-annotation/${id}?run_id=${encodeURIComponent(currentRunId)}`, {method: "DELETE"});
+  const j = await r.json();
+  if (j.ok) {
+    toast("Anotación borrada", "ok");
+    loadAnnotations();
+  } else {
+    toast("No se pudo borrar", "err");
+  }
+}
+
+async function loadPdf() {
+  const r = await fetch(`/api/curation/run-pdf?run_id=${encodeURIComponent(currentRunId)}`);
+  if (!r.ok) {
+    currentPdfPath = "";
+    $("pdf-frame").style.display = "none";
+    $("pdf-empty").style.display = "flex";
+    $("pdfhead-label").textContent = "PDF no disponible";
+    return;
+  }
+  const data = await r.json();
+  currentPdfPath = data.pdf_path || "";
+  if (!currentPdfPath) {
+    $("pdf-frame").style.display = "none";
+    $("pdf-empty").style.display = "flex";
+    return;
+  }
+  $("pdf-frame").src = data.pdf_url;
+  $("pdf-frame").style.display = "block";
+  $("pdf-empty").style.display = "none";
+  $("pdfhead-label").textContent = (data.pdf_basename || "PDF") + " · " + (data.language || "");
+}
+
+function openAnnotateModal() {
+  if (!currentRunId || !currentPdfPath) {
+    toast("Selecciona un caso con PDF primero", "err");
+    return;
+  }
+  $("annot-page").value = 1;
+  $("annot-comment").value = "";
+  $("annot-suggest").value = "";
+  $("annot-modal").classList.add("open");
+}
+
+function closeAnnotateModal() {
+  $("annot-modal").classList.remove("open");
+}
+
+async function saveAnnotation() {
+  const page = parseInt($("annot-page").value, 10);
+  const comment = $("annot-comment").value.trim();
+  const suggest = $("annot-suggest").value.trim();
+  const curator = $("annot-curator").value.trim() || "anonymous";
+  if (!comment) {
+    toast("El comentario es obligatorio", "err");
+    return;
+  }
+  const r = await fetch("/api/curation/pdf-annotation", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      run_id: currentRunId, pdf_path: currentPdfPath,
+      page: page, region: {},
+      comment: comment, suggested_change: suggest, curator: curator,
+    })
+  });
+  const j = await r.json();
+  if (j.ok) {
+    toast("Anotación guardada", "ok");
+    closeAnnotateModal();
+    loadAnnotations();
+  } else {
+    toast(j.error || "error", "err");
+  }
+}
+
+loadCases();
+</script>
+</body></html>
+"""
+
+
+@app.route("/curar")
+def curar_page():
+    return render_template_string(_CURAR_PAGE_HTML)
+
+
+@app.route("/api/curation/cases")
+def api_curation_cases():
+    """List recent completed runs for the cases sidebar."""
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    cases: list[dict] = []
+    if not _RUNS_DIR.exists():
+        return jsonify({"cases": []})
+    paths = sorted(
+        _RUNS_DIR.glob("run:*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )[:50]
+    for p in paths:
+        try:
+            m = json.loads(p.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if m.get("status") != "completed":
+            continue
+        rid = m.get("run_id", p.stem)
+        target = (m.get("target_definition") or {}).get("target_identifier", "")
+        label = target or rid
+        cases.append({
+            "run_id":       rid,
+            "label":        label,
+            "pipeline_id":  m.get("pipeline_id", ""),
+            "completed_at": (m.get("completed_at", "") or "")[:19].replace("T", " "),
+        })
+    return jsonify({"cases": cases})
+
+
+@app.route("/api/curation/run-pdf")
+def api_curation_run_pdf():
+    """Locate the PDF emitted by motor_017 for a given run."""
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    if not run_id:
+        return jsonify({"error": "no run"}), 404
+    m017 = _curation_load_motor_output(run_id, "motor_017")
+    pdf_path = m017.get("pdf_path", "")
+    pdfs = m017.get("pdf_paths", {}) or {}
+    language = ""
+    if not pdf_path and pdfs:
+        # Prefer English, fall back to any
+        pdf_path = pdfs.get("en") or next(iter(pdfs.values()), "")
+        language = "en" if pdf_path == pdfs.get("en") else (
+            next((k for k, v in pdfs.items() if v == pdf_path), "")
+        )
+    if pdf_path == pdfs.get("en"):
+        language = "en"
+    elif pdf_path == pdfs.get("es"):
+        language = "es"
+    if not pdf_path:
+        return jsonify({"error": "no PDF for this run"}), 404
+    pdf_url = f"/api/curation/run-pdf-file?run_id={run_id}&lang={language or 'any'}"
+    pdf_basename = Path(pdf_path).name
+    return jsonify({
+        "pdf_path":     pdf_path,
+        "pdf_url":      pdf_url,
+        "pdf_basename": pdf_basename,
+        "language":     language,
+    })
+
+
+@app.route("/api/curation/run-pdf-file")
+def api_curation_run_pdf_file():
+    """Serve the actual PDF file (security: must live under _HERE/output/)."""
+    run_id = (request.args.get("run_id") or "").strip() or _curation_latest_run_id()
+    lang = (request.args.get("lang") or "any").strip()
+    m017 = _curation_load_motor_output(run_id, "motor_017")
+    pdfs = m017.get("pdf_paths", {}) or {}
+    pdf_path = m017.get("pdf_path", "") or pdfs.get(lang) or pdfs.get("en") or next(iter(pdfs.values()), "")
+    if not pdf_path:
+        return jsonify({"error": "no PDF"}), 404
+    abs_pdf = Path(pdf_path).resolve()
+    output_root = (_HERE / "output").resolve()
+    try:
+        abs_pdf.relative_to(output_root)
+    except ValueError:
+        return jsonify({"error": "PDF outside output/"}), 403
+    if not abs_pdf.exists():
+        return jsonify({"error": "PDF not on disk"}), 404
+    return send_file(str(abs_pdf), mimetype="application/pdf")
 
 
 _REVISAR_PAGE_HTML = """<!doctype html>
