@@ -3,13 +3,31 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-14 (V8 CERRADO — 1806 tests, regression 7/7 hard mode default)**
+**Última actualización: 2026-05-14 (V9 CERRADO — 1846 tests, regression 7/7 hard mode default)**
 
 ---
 
-## 0. Doctrina actual: V8 — FINAL RELEASE HARDENING (cerrado)
+## 0. Doctrina actual: V9 — FINAL ARCHITECTURAL CLOSURE (cerrado)
 
-V8 cerrado. Ver `RECOVERY_DONE_V8.md` para el cierre completo.
+V9 cerrado. Ver `RECOVERY_DONE_V9.md` para el cierre completo.
+
+Resumen:
+- **1846 tests passing** (+40 vs V8 baseline 1806).
+- **Regression cross-asset 7/7** verde bajo V9 hard mode default ON.
+- 6 commits V9 (P0..P5).
+- 3 mecanismos arquitectónicos finales del prompt Chief Systems Architect cerrados:
+  1. **Fair Comparison Engine 10-dim** (§ 4) — `fair_comparison.py` + R14 blocking.
+  2. **Chart artifact safety** (§ 9) — CV7 (section_id) + CV8 (hypothesis_supported).
+  3. **Industry Onboarding Workflow** (§ 12) — `industry_onboarding.py` checklist 10-req.
+
+**El cerebro V9 es 100% client-ready arquitectónico.**
+Industry breadth + fetcher breadth = V10 (trabajo de contenido).
+
+---
+
+## 0.bis V8 — Final Release Hardening (referencia)
+
+V8 cerrado en HEAD `b184b8a`. Ver `RECOVERY_DONE_V8.md`.
 
 Resumen:
 - **1806 tests passing** (+85 desde V7 baseline 1650 → ahora 1721).
@@ -94,8 +112,8 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 ## 4. Estado post-V7 (2026-05-13)
 
 - **64 motores** · **30 patterns** (6 con `anti_asset_types` explícitos) · **4 combinations V6-strict-migradas** · **144 approved knowledge**
-- **1806 tests passing** · regression cross-asset **7/7 PASS bajo V8 hard mode default ON**
-- **54 commits V5+V6+V7+V8** en `main` local (V8 P10 pendiente de push)
+- **1846 tests passing** · regression cross-asset **7/7 PASS bajo V9 hard mode default ON**
+- **60 commits V5-V9** en `main` local (V9 P5 pendiente de push)
 - **Jurisdicción**: US-only para case discovery; combinations universales
 - **192 fuentes industriales** en catálogo
 
@@ -113,29 +131,33 @@ APIs: `phase_of(motor_id)`, `motors_in_phase(n)`, `PHASE_CANONICAL_UNIT`.
 | `render_gate.py` | motor_017 → `render_gate_verdict` | **strict ON** |
 | `validate_combination_v6_strict` | engine.py write-path en hard mode | hard mode gated |
 
-**V6 blocking set V8 = 20 reglas**: R1/R2/R4 + R8-R13 (motor_059, 10), AF1/AF2 (motor_061), GN1 (motor_057), RU2/RU6 (motor_058), SJ1/SJ2/SJ3 (motor_062), CV1/CV3/CV5/**CV6** (motor_063, 4). CV6 V8 = chart wrong source_case_id.
+**V6 blocking set V9 = 23 reglas**: R1/R2/R4 + R8-**R14** (motor_059, 11), AF1/AF2 (motor_061), GN1 (motor_057), RU2/RU6 (motor_058), SJ1/SJ2/SJ3 (motor_062), CV1/CV3/CV5/CV6/**CV7**/**CV8** (motor_063, 6). V9 adds: R14 peer_ranking_with_incomplete_comparability + CV7 chart_without_section_id + CV8 chart_without_hypothesis_supported.
 
+**Módulos V9 nuevos**: `fair_comparison.py` (P1 — 10-dim peer comparability), `industry_onboarding.py` (P3 — checklist 10-req scalability).
 **Módulos V8 nuevos / extendidos**: `tad_claim_sync.py` (P4), `evidence_branching.py` (P5), `hybrid_justification.build_hybrid_governance_object` (P3), `source_execution_auditor.SourceAuthorityTier` (P6), `fallback_policy.HIGH_VALUE_SECTIONS` (P7), `render_gate.as_yaml_block` + `publication_mode` (P8).
 
 ---
 
-## 5. V8 — 10 sub-fases (entregadas)
+## 5. V9 — 6 sub-fases (entregadas)
 
-Detalle completo en `RECOVERY_DONE_V8.md`.
+Detalle completo en `RECOVERY_DONE_V9.md`.
 
 | # | Trabajo | Status |
 |---|---|---|
-| P0  | Baseline freeze + plan anchor                              | ✅ |
-| P1  | `template_contamination_failure` hard block en render_gate | ✅ |
-| P2  | CV6 chart `source_case_id` provenance                      | ✅ |
-| P3  | Hybrid Governance Object completo (10 campos)              | ✅ |
-| P4  | TAD Claim Sync rewrite (`DO_NOT_MODEL_YET`, etc.)          | ✅ |
-| P5  | Evidence Branching Engine (per-hypothesis matrix)          | ✅ |
-| P6  | Source Authority Tier classification                       | ✅ |
-| P7  | Section-level Fallback Governance (high-value sections)    | ✅ |
-| P8  | Final Delivery Gate YAML block en motor_017                | ✅ |
-| P9  | Stability suite V8 end-to-end (8 escenarios + control)     | ✅ |
-| P10 | Docs + final regression + push                             | ⏳ |
+| P0 | Baseline + plan anchor                                | ✅ |
+| P1 | Fair Comparison Engine 10-dim + R14 blocking          | ✅ |
+| P2 | Chart CV7 (section_id) + CV8 (hypothesis_supported)   | ✅ |
+| P3 | Industry Onboarding Workflow                          | ✅ |
+| P4 | Final Architectural Stability Suite (4 + control)     | ✅ |
+| P5 | Docs + final regression + push                        | ⏳ |
+
+### V8 (entregado) — referencia rápida
+
+Detalle completo en `RECOVERY_DONE_V8.md`. 11 sub-fases:
+template_contamination hard block, CV6 chart provenance, hybrid governance
+object completo, TAD claim sync rewrite, evidence branching engine, source
+authority tier, section-level fallback, Final Delivery Gate YAML, stability
+suite 8 escenarios.
 
 ### V7 + V6 (entregados) — referencia rápida
 
@@ -166,7 +188,7 @@ export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier s
 
 1. `Phases/phase-{N}/docs/es/` — constitución (gobierna conflictos)
 2. `CLAUDE.md` (este archivo) — doctrina operativa actual
-3. `RECOVERY_DONE_V8.md` · `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
+3. `RECOVERY_DONE_V9.md` · `RECOVERY_DONE_V8.md` · `RECOVERY_DONE_V7.md` · `RECOVERY_DONE_V6.md` · `RECOVERY_DONE_V5.md` — cierres
 5. `AGENTS.md` — guía operativa (subordinado a CLAUDE.md)
 6. `runtime-orchestrator/` + suite de tests
 7. `phase_registry.py` + `phase_units.py` (V5)
@@ -175,24 +197,27 @@ export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier s
 
 ---
 
-## 8. Pendiente post-V8 (V9 candidato)
+## 8. Pendiente post-V9 (V10 candidato — trabajo de CONTENIDO, no framework)
 
-V8 cierra el ajuste fino. V9 (si se requiere) puede retomar:
+V9 cierra los 3 mecanismos arquitectónicos finales del prompt Chief Systems Architect. V10 (si llega) sería trabajo de catálogo:
 
-- **Phase 7 depth**: motor_054 belief_revision_event desde eventos reales (única fase superficial).
-- **Cascade S1-S9**: regenerar AI_SCAFFOLDING_REGISTRY items desde extracción determinista (143 approved + V4 extractor).
+- **Industry breadth** (§ 1, § 12): autoría/extracción de patterns para pharma, district energy, utilities, thermal process. V9 `validate_industry_readiness` es el gate.
+- **Source fetcher breadth** (§ 6): implementar fetchers para IIAR, ISA, IEEE, MEASUR, VERIFI, DOE Better Plants, DOE AMO, manufacturer docs.
+- **Phase 7 depth**: motor_054 belief_revision_event desde eventos reales (única fase canónica superficial).
+- **Cascade S1-S9**: regenerar AI_SCAFFOLDING_REGISTRY items desde extractor determinista + 143 approved knowledge.
 - **Procesar 105 PDFs restantes** de la library.
-- **Dashboard QA**: exponer QAScoreCard + RenderGateVerdict en `/revisar`.
-- **CI smoke hard mode**: job que corra la suite con flags ON.
+- **Dashboard QA visual** (QAScoreCard + RenderGateVerdict en `/revisar`).
+- **CI smoke hard-mode job**.
 
 ---
 
-## 9. Lo que V8 NO hace (por doctrina)
+## 9. Lo que V9 NO hace (por doctrina)
 
-- No añade motores, patterns o combinations nuevas.
-- No añade LLM en ningún lado que no sea motor_019.
-- No regenera el AI_SCAFFOLDING_REGISTRY.
+- No añade industrias reales (V10).
+- No añade fetchers IIAR / ISA / IEEE / etc (V10).
+- No añade LLM en otro motor que no sea motor_019.
+- No regenera AI_SCAFFOLDING_REGISTRY.
 - No procesa los 105 PDFs restantes.
-- No expone dashboard QA.
+- No expone dashboard QA visual.
 
-**V8 = ajuste fino final para entrega cliente. Nada más.**
+**V9 = cierre arquitectónico final. El cerebro es 100% client-ready arquitectónicamente. Trabajo de contenido (V10) si llega.**
