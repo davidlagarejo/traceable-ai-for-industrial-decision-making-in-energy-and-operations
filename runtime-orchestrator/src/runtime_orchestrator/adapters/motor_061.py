@@ -33,6 +33,7 @@ from typing import Any
 from .base import BaseMotorAdapter
 from ..hybrid_families import find_admissible_hybrid, shared_patterns_for_hybrid
 from ..hybrid_justification import (
+    build_hybrid_governance_object,
     build_hybrid_narrative,
     match_evidence_against_hybrid,
 )
@@ -278,9 +279,15 @@ class Motor061Adapter(BaseMotorAdapter):
                 hybrid=hybrid,
                 matched_evidence_tokens=matched_triggers,
             )
+            # V8 P3 — full structured governance object (10 fields).
+            hybrid_governance_object = build_hybrid_governance_object(
+                hybrid=hybrid,
+                matched_evidence_tokens=matched_triggers,
+            )
         else:
             matched_triggers = []
             hybrid_justification_narrative = ""
+            hybrid_governance_object = {}
 
         warnings: list[dict] = []
         warnings.extend(_detect_pattern_contamination(asset_family, activated_combinations, shared_patterns))
@@ -355,6 +362,12 @@ class Motor061Adapter(BaseMotorAdapter):
             # this verbatim — Phase 0: framework dicta la WHY, no el LLM.
             "hybrid_justification_narrative": hybrid_justification_narrative,
             "hybrid_matched_evidence_triggers": list(matched_triggers),
+            # V8 P3 — full 10-field Hybrid Governance Object per Chief QA
+            # Architect prompt § 3. Empty dict if no hybrid admitted.
+            # motor_019 / motor_017 may read scope_allowed / scope_prohibited
+            # / report_sections_allowed / report_sections_blocked to apply
+            # section-level enforcement when a hybrid is active.
+            "hybrid_governance_object": hybrid_governance_object,
             # V3 G4: surface the hybrid rationale text so the composer can
             # render a "Hybrid Asset Family Justification" block. The
             # rationale comes from asset_family_hybrids.json (scaffolding

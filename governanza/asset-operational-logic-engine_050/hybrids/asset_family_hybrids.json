@@ -25,7 +25,47 @@
         "steam_trap_failure_plausibility",
         "boiler_degradation_plausibility"
       ],
-      "rationale": "Dairy, meat, ready-meal and bakery facilities frequently combine cold-chain storage with on-site thermal processing (cook, pasteurize, retort, sanitation steam). Process heat and refrigeration coexist by design; flagging process patterns as contamination would block valid cross-system intelligence."
+      "rationale": "Dairy, meat, ready-meal and bakery facilities frequently combine cold-chain storage with on-site thermal processing (cook, pasteurize, retort, sanitation steam). Process heat and refrigeration coexist by design; flagging process patterns as contamination would block valid cross-system intelligence.",
+      "scope_allowed": [
+        "thermal-duty hypothesis (process steam vs refrigeration share)",
+        "process-support risk (boiler / steam trap / compressed air on the process side)",
+        "permit-first routing (state environmental permits, air emissions)",
+        "VOC / wastewater discovery",
+        "joint sanitation / refrigeration load characterization"
+      ],
+      "scope_prohibited": [
+        "declaring resin / press / curing as dominant scenario (those are NOT food processing)",
+        "treating storage-only cold-chain as thermal-process manufacturing",
+        "process closure without metered process-heat duty",
+        "fair-comparison peer-set substitution to pure manufacturing"
+      ],
+      "evidence_to_confirm": [
+        "process-heat meter / boiler runtime log",
+        "permit demonstrating process heat or sanitation steam",
+        "production line inventory (cook / pasteurize / retort / sanitize)",
+        "NAICS code in 311xxx (food manufacturing) range"
+      ],
+      "evidence_to_falsify": [
+        "no on-site thermal processing observed",
+        "facility is storage-only (DC / 3PL cold-chain)",
+        "process heat is purchased / off-site"
+      ],
+      "report_sections_allowed": [
+        "executive_structural_thesis",
+        "fair_comparison",
+        "tad",
+        "conditional_redesign",
+        "evidence_request"
+      ],
+      "report_sections_blocked": [
+        "manufacturing_dominant_redesign_recommendation",
+        "owner_capturable_roi_on_process_side"
+      ],
+      "tad_impact": [
+        "VALIDATE_PROCESS_HEAT_DUTY before any thermal CAPEX",
+        "REQUEST_EVIDENCE_FIRST for compressed-air / steam topology",
+        "DO_NOT_RETROFIT_YET on refrigeration if process-heat duty unbounded"
+      ]
     },
     {
       "hybrid_id": "warehouse_mixed_temperature",
@@ -42,7 +82,43 @@
         "refrigeration_duty",
         "defrost_profile"
       ],
-      "rationale": "Modern omnichannel DCs combine ambient, refrigerated and frozen zones in a single building. Cold-chain patterns apply to the conditioned zones without invalidating warehouse logic (MHE charging, dock cycles)."
+      "rationale": "Modern omnichannel DCs combine ambient, refrigerated and frozen zones in a single building. Cold-chain patterns apply to the conditioned zones without invalidating warehouse logic (MHE charging, dock cycles).",
+      "scope_allowed": [
+        "refrigeration duty characterization for conditioned zones only",
+        "defrost / cold-chain status discovery",
+        "zoned thermal-boundary characterization",
+        "joint MHE charging + cold-chain analysis"
+      ],
+      "scope_prohibited": [
+        "treating entire facility as cold-chain (ambient zone misclassified)",
+        "process-heat hypothesis (no manufacturing here)",
+        "applying cold-chain peer set on a primarily ambient DC"
+      ],
+      "evidence_to_confirm": [
+        "zone-by-zone temperature setpoint map",
+        "refrigerated / frozen zone area share above threshold",
+        "compressor inventory dedicated to cold zones"
+      ],
+      "evidence_to_falsify": [
+        "no refrigerated / frozen zones in the facility",
+        "refrigerated zone < threshold (treat as ambient with rare exception)"
+      ],
+      "report_sections_allowed": [
+        "executive_structural_thesis",
+        "fair_comparison",
+        "peer_comparison",
+        "tad",
+        "conditional_redesign"
+      ],
+      "report_sections_blocked": [
+        "cold_chain_dominant_thesis_when_ambient_share_dominates",
+        "refrigeration_retrofit_recommendation_without_zone_split"
+      ],
+      "tad_impact": [
+        "MEASURE zone-by-zone duty before retrofit logic",
+        "VALIDATE_LOSS_PATTERN per zone separately",
+        "DEFER refrigeration-first CAPEX until zone share quantified"
+      ]
     },
     {
       "hybrid_id": "office_with_edge_datacenter",
@@ -58,7 +134,43 @@
         "pue_composition_unknown",
         "cooling_topology_uncertainty"
       ],
-      "rationale": "Class-A office buildings increasingly house edge DC or telco hub tenants. The DC load and cooling topology must be characterized independently from the office HVAC schedule, but coexist in one asset."
+      "rationale": "Class-A office buildings increasingly house edge DC or telco hub tenants. The DC load and cooling topology must be characterized independently from the office HVAC schedule, but coexist in one asset.",
+      "scope_allowed": [
+        "PUE composition characterization for DC zone only",
+        "cooling topology discovery (chilled water vs DX vs separate CRAC)",
+        "tenant boundary discovery (DC operator vs landlord)",
+        "submetering topology for DC vs office"
+      ],
+      "scope_prohibited": [
+        "applying datacenter peer set to entire building",
+        "treating office HVAC schedule as DC HVAC schedule",
+        "PUE claim on whole-building consumption"
+      ],
+      "evidence_to_confirm": [
+        "dedicated CRAC / CRAH evidence",
+        "tenant lease showing DC operator",
+        "submeter for IT load",
+        "server room area / kW threshold"
+      ],
+      "evidence_to_falsify": [
+        "no dedicated cooling for server space",
+        "IT load below threshold (treat as office plug load)"
+      ],
+      "report_sections_allowed": [
+        "executive_structural_thesis",
+        "fair_comparison",
+        "tad",
+        "evidence_request"
+      ],
+      "report_sections_blocked": [
+        "datacenter_dominant_thesis_when_office_share_dominates",
+        "PUE_claim_on_mixed_load"
+      ],
+      "tad_impact": [
+        "MEASURE IT load and HVAC load independently",
+        "REQUEST_EVIDENCE_FIRST for tenant boundary",
+        "DO_NOT_UNDERWRITE_ENERGY_RETROFIT_YET on cooling until topology mapped"
+      ]
     },
     {
       "hybrid_id": "manufacturing_with_attached_dc",
@@ -75,7 +187,43 @@
         "warehouse_dock_infiltration_loss",
         "high_bay_lighting_waste"
       ],
-      "rationale": "Plants with attached finished-goods warehouses (FMCG, automotive Tier-1, building products) present both process loads and DC loads in one footprint. Warehouse patterns are legitimate when the DC is operationally distinct from production lines."
+      "rationale": "Plants with attached finished-goods warehouses (FMCG, automotive Tier-1, building products) present both process loads and DC loads in one footprint. Warehouse patterns are legitimate when the DC is operationally distinct from production lines.",
+      "scope_allowed": [
+        "MHE charging demand-peak hypothesis on DC zone",
+        "dock infiltration loss on DC zone",
+        "high-bay lighting waste on DC zone",
+        "joint manufacturing + DC peer-set construction"
+      ],
+      "scope_prohibited": [
+        "applying warehouse patterns to production lines",
+        "MHE retrofit recommendation when DC is < threshold of operational footprint",
+        "Treating production-side energy as DC-side energy"
+      ],
+      "evidence_to_confirm": [
+        "attached / adjacent DC footprint evidence",
+        "shipping dock count above warehouse threshold",
+        "submetering separating DC from production"
+      ],
+      "evidence_to_falsify": [
+        "no shipping DC operations on site",
+        "DC area < small share of total footprint"
+      ],
+      "report_sections_allowed": [
+        "executive_structural_thesis",
+        "fair_comparison",
+        "tad",
+        "peer_comparison",
+        "conditional_redesign"
+      ],
+      "report_sections_blocked": [
+        "warehouse_dominant_thesis_when_production_share_dominates",
+        "tariff_orchestration_claim_on_production_load"
+      ],
+      "tad_impact": [
+        "CLASSIFY DC zone and production zone separately",
+        "MEASURE charging profile only on DC side",
+        "DEFER warehouse-style CAPEX until production-vs-DC split mapped"
+      ]
     },
     {
       "hybrid_id": "urban_grocer_or_food_retail",
@@ -91,7 +239,42 @@
         "refrigerant_integrity",
         "compressor_staging"
       ],
-      "rationale": "Mixed-use commercial buildings hosting supermarkets, food retail, or commercial kitchens carry refrigeration loads that dominate base electrical consumption. Refrigeration logic applies despite the dominant office/retail building envelope."
+      "rationale": "Mixed-use commercial buildings hosting supermarkets, food retail, or commercial kitchens carry refrigeration loads that dominate base electrical consumption. Refrigeration logic applies despite the dominant office/retail building envelope.",
+      "scope_allowed": [
+        "refrigeration duty for grocer / kitchen zone",
+        "refrigerant inventory / integrity for retail food zone",
+        "compressor staging on retail refrigeration",
+        "tenant boundary discovery (grocer operator vs building landlord)"
+      ],
+      "scope_prohibited": [
+        "applying refrigeration logic to non-food retail tenants",
+        "claiming refrigeration retrofit savings without tenant boundary mapped",
+        "treating commercial building HVAC as refrigeration topology"
+      ],
+      "evidence_to_confirm": [
+        "supermarket / food retail tenant on lease",
+        "below-grade refrigeration evidence",
+        "restaurant kitchen permit / equipment list"
+      ],
+      "evidence_to_falsify": [
+        "no food retail tenant in the building",
+        "refrigeration load below threshold of total consumption"
+      ],
+      "report_sections_allowed": [
+        "executive_structural_thesis",
+        "fair_comparison",
+        "tad",
+        "evidence_request"
+      ],
+      "report_sections_blocked": [
+        "office_HVAC_dominant_thesis_when_refrigeration_share_dominates",
+        "owner_capturable_ROI_on_refrigeration_when_grocer_operates"
+      ],
+      "tad_impact": [
+        "VALIDATE refrigeration duty per tenant",
+        "VALIDATE control boundary (landlord vs grocer)",
+        "PROHIBIT_ROI on refrigeration until tenant capture mapped"
+      ]
     }
   ]
 }

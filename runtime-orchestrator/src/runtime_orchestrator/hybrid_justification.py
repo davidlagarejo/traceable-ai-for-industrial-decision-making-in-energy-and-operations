@@ -81,6 +81,53 @@ def build_hybrid_narrative(
     return " ".join(parts)
 
 
+def build_hybrid_governance_object(
+    *,
+    hybrid: Mapping[str, Any] | None,
+    matched_evidence_tokens: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    """V8 P3 — Build the full structured Hybrid Governance Object the
+    Chief QA Architect prompt § 3 + § C requires.
+
+    Required fields (10):
+      1. primary_asset_family
+      2. secondary_asset_family
+      3. trigger_evidence       (matched triggers from the spec)
+      4. why_secondary_logic_is_allowed  (= narrative WHY string)
+      5. scope_allowed                   (= spec.scope_allowed)
+      6. scope_prohibited                (= spec.scope_prohibited)
+      7. evidence_to_confirm             (= spec.evidence_to_confirm)
+      8. evidence_to_falsify             (= spec.evidence_to_falsify)
+      9. report_sections_allowed         (= spec.report_sections_allowed)
+     10. report_sections_blocked         (= spec.report_sections_blocked)
+       + tad_impact                      (= spec.tad_impact)
+
+    Returns an empty dict {} when hybrid is malformed or None.
+    """
+    if not isinstance(hybrid, Mapping):
+        return {}
+    primary = str(hybrid.get("primary", "") or "").strip()
+    secondary = str(hybrid.get("secondary", "") or "").strip()
+    if not primary or not secondary:
+        return {}
+    narrative = build_hybrid_narrative(
+        hybrid=hybrid, matched_evidence_tokens=matched_evidence_tokens
+    )
+    return {
+        "primary_asset_family":      primary,
+        "secondary_asset_family":    secondary,
+        "trigger_evidence":          list(matched_evidence_tokens or []),
+        "why_secondary_logic_is_allowed": narrative,
+        "scope_allowed":             list(hybrid.get("scope_allowed", []) or []),
+        "scope_prohibited":          list(hybrid.get("scope_prohibited", []) or []),
+        "evidence_to_confirm":       list(hybrid.get("evidence_to_confirm", []) or []),
+        "evidence_to_falsify":       list(hybrid.get("evidence_to_falsify", []) or []),
+        "report_sections_allowed":   list(hybrid.get("report_sections_allowed", []) or []),
+        "report_sections_blocked":   list(hybrid.get("report_sections_blocked", []) or []),
+        "tad_impact":                list(hybrid.get("tad_impact", []) or []),
+    }
+
+
 def match_evidence_against_hybrid(
     hybrid: Mapping[str, Any],
     evidence_tokens: Sequence[str] | set[str],
