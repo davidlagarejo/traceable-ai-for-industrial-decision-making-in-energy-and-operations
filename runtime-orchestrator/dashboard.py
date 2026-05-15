@@ -18280,6 +18280,214 @@ def knowledge_page():
     return render_template_string(_KNOWLEDGE_REVIEW_HTML)
 
 
+# ─── V10 P0 — Industry Corpus curation endpoints ─────────────────────────────
+# These endpoints expose chunks_pending/ for human review. They are READ +
+# write-only on the corpus state machine: chunks move between pending/approved/
+# rejected, never deleted. Reading is also exposed for diagnostics.
+
+def _corpus_dir_path() -> Path:
+    from runtime_orchestrator.industry_corpus.manifest import corpus_root
+    return corpus_root()
+
+
+@app.route("/api/corpus/pending")
+def corpus_pending_list():
+    """List pending chunks (optionally filtered by asset_family / source_id).
+
+    Query params:
+      family    — asset_family filter (optional)
+      source    — source_id filter (optional)
+      limit     — max items (default 100)
+    """
+    from runtime_orchestrator.industry_corpus.manifest import load_chunk_json
+    family = request.args.get("family") or ""
+    source = request.args.get("source") or ""
+    limit  = int(request.args.get("limit") or 100)
+
+    pending = _corpus_dir_path() / "chunks_pending"
+    if not pending.exists():
+        return jsonify({"items": [], "total": 0})
+
+    items = []
+    total = 0
+    for p in sorted(pending.rglob("*.json")):
+        try:
+            ch = load_chunk_json(p)
+        except Exception:
+            continue
+        if family and family not in ch.asset_families and "_shared" not in ch.asset_families:
+            continue
+        if source and ch.source_id != source:
+            continue
+        total += 1
+        if len(items) >= limit:
+            continue
+        items.append({
+            "chunk_id":       ch.chunk_id,
+            "source_id":      ch.source_id,
+            "source_url":     ch.source_url,
+            "page":           ch.page,
+            "asset_families": list(ch.asset_families),
+            "token_count":    ch.token_count,
+            "text":           ch.text,
+            "_file":          str(p.relative_to(_corpus_dir_path())),
+        })
+    return jsonify({"items": items, "total": total, "limit": limit})
+
+
+@app.route("/api/corpus/approve/<path:chunk_id>", methods=["POST"])
+def corpus_approve(chunk_id: str):
+    return _corpus_move_chunk(chunk_id, dest="chunks_approved")
+
+
+@app.route("/api/corpus/reject/<path:chunk_id>", methods=["POST"])
+def corpus_reject(chunk_id: str):
+    return _corpus_move_chunk(chunk_id, dest="chunks_rejected")
+
+
+def _corpus_move_chunk(chunk_id: str, *, dest: str):
+    """Move a chunk JSON from chunks_pending/<sha>/ to chunks_<dest>/<sha>/."""
+    from runtime_orchestrator.industry_corpus.manifest import load_chunk_json
+    corpus = _corpus_dir_path()
+    pending = corpus / "chunks_pending"
+    if not pending.exists():
+        return jsonify({"ok": False, "error": "no pending chunks dir"}), 404
+    # chunk_id format: "<source_sha8>::chunk_NNNN" — locate by file name match
+    short = chunk_id.split("::")[-1]
+    target_file: Path | None = None
+    for p in pending.rglob(f"{short}.json"):
+        try:
+            ch = load_chunk_json(p)
+            if ch.chunk_id == chunk_id:
+                target_file = p
+                break
+        except Exception:
+            continue
+    if target_file is None:
+        return jsonify({"ok": False, "error": f"chunk {chunk_id} not found in pending"}), 404
+    ch = load_chunk_json(target_file)
+    dest_dir = corpus / dest / ch.source_sha
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    import shutil as _sh
+    _sh.move(str(target_file), str(dest_dir / target_file.name))
+    return jsonify({"ok": True, "chunk_id": chunk_id, "moved_to": dest})
+
+
+@app.route("/api/corpus/index-status")
+def corpus_index_status():
+    """Return current index availability per asset_family."""
+    try:
+        from runtime_orchestrator.industry_corpus.retriever import index_status
+        return jsonify({"ok": True, "status": index_status()})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"{type(exc).__name__}: {exc}"}), 500
+
+
+_CORPUS_REVIEW_HTML = """<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><title>Industry Corpus — Curación</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0;background:#0f1115;color:#e4e6eb}
+  header{background:#1a1d24;padding:14px 22px;border-bottom:1px solid #2a2f3a;display:flex;justify-content:space-between;align-items:center}
+  h1{margin:0;font-size:18px}
+  .filters{padding:14px 22px;background:#161922;border-bottom:1px solid #2a2f3a;display:flex;gap:10px;flex-wrap:wrap}
+  select,input{background:#0f1115;color:#e4e6eb;border:1px solid #353a47;padding:6px 10px;border-radius:4px;font-size:14px}
+  button{background:#3a6df0;color:#fff;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:14px}
+  button.reject{background:#c44}
+  button.approve{background:#3aa66a}
+  .chunks{padding:18px 22px;max-width:920px;margin:0 auto}
+  .chunk{background:#1a1d24;border:1px solid #2a2f3a;border-radius:6px;padding:14px 18px;margin-bottom:14px}
+  .chunk .meta{font-size:12px;color:#9aa1ad;margin-bottom:8px}
+  .chunk .text{white-space:pre-wrap;line-height:1.5;font-size:14px;background:#0f1115;padding:10px;border-radius:4px;max-height:280px;overflow-y:auto}
+  .chunk .actions{margin-top:10px;display:flex;gap:8px}
+  .status{padding:10px 22px;font-size:13px;color:#9aa1ad}
+  .index-bar{background:#161922;border-bottom:1px solid #2a2f3a;padding:10px 22px;font-size:13px;color:#9aa1ad}
+</style>
+</head><body>
+<header>
+  <h1>Industry Corpus — Curación de chunks pendientes</h1>
+  <div><a href="/" style="color:#3a6df0;text-decoration:none">← inicio</a></div>
+</header>
+<div class="index-bar" id="indexBar">cargando estado del índice…</div>
+<div class="filters">
+  <label>Asset family:
+    <select id="filterFamily">
+      <option value="">— todas —</option>
+      <option>cold_chain_facility</option>
+      <option>manufacturing_facility</option>
+      <option>datacenter</option>
+      <option>commercial_building</option>
+      <option>warehouse_distribution</option>
+      <option>infrastructure_node</option>
+    </select>
+  </label>
+  <label>Source: <input id="filterSource" placeholder="iiar_bulletin_109"></label>
+  <button onclick="load()">Filtrar</button>
+</div>
+<div class="status" id="status">cargando…</div>
+<div class="chunks" id="chunks"></div>
+<script>
+async function load() {
+  const family = document.getElementById('filterFamily').value;
+  const source = document.getElementById('filterSource').value;
+  const url = `/api/corpus/pending?limit=100${family ? '&family=' + family : ''}${source ? '&source=' + source : ''}`;
+  document.getElementById('status').textContent = 'cargando…';
+  const r = await fetch(url);
+  const data = await r.json();
+  const items = data.items || [];
+  document.getElementById('status').textContent =
+    `${items.length} mostrados (de ${data.total} pendientes en total)`;
+  const root = document.getElementById('chunks');
+  root.innerHTML = '';
+  items.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'chunk';
+    div.id = 'chunk-' + c.chunk_id.replace(/[^a-z0-9]/gi,'_');
+    div.innerHTML = `
+      <div class="meta">
+        <strong>${c.chunk_id}</strong> · source=${c.source_id} · page=${c.page}
+        · families=${c.asset_families.join(', ')} · ${c.token_count} tokens
+        · <a href="${c.source_url}" target="_blank" style="color:#3a6df0">ver fuente</a>
+      </div>
+      <div class="text">${c.text.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</div>
+      <div class="actions">
+        <button class="approve" onclick="decide('${c.chunk_id}','approve')">✓ Aprobar</button>
+        <button class="reject" onclick="decide('${c.chunk_id}','reject')">✗ Rechazar</button>
+      </div>`;
+    root.appendChild(div);
+  });
+}
+async function decide(chunk_id, action) {
+  const r = await fetch(`/api/corpus/${action}/${encodeURIComponent(chunk_id)}`,
+                       {method:'POST'});
+  const data = await r.json();
+  if (data.ok) {
+    const el = document.getElementById('chunk-' + chunk_id.replace(/[^a-z0-9]/gi,'_'));
+    if (el) el.style.opacity = 0.3;
+  } else {
+    alert('Error: ' + (data.error || 'unknown'));
+  }
+}
+async function loadIndex() {
+  const r = await fetch('/api/corpus/index-status');
+  const d = await r.json();
+  if (!d.ok) { document.getElementById('indexBar').textContent =
+    'índice: error — ' + d.error; return; }
+  const parts = Object.entries(d.status).map(([af, info]) =>
+    `<strong>${af}</strong>: ${info.available ? info.chunks + ' chunks' : '—'}`);
+  document.getElementById('indexBar').innerHTML = 'índices: ' + parts.join(' · ');
+}
+loadIndex();
+load();
+</script>
+</body></html>"""
+
+
+@app.route("/corpus_curar")
+def corpus_curar_page():
+    return render_template_string(_CORPUS_REVIEW_HTML)
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():
