@@ -16243,7 +16243,7 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
 
 <header>
   <h1>ZLab · Curar entregable</h1>
-  <span style="font-size:11.5px;color:#71717a;">human curation surface — runs + combos + PDF mark-up</span>
+  <span style="font-size:11.5px;color:#71717a;">human curation surface · texto en español redactado por Claude (estático, editable en dashboard.py)</span>
   <a href="/log" style="margin-left:auto;font-size:12px;color:#2563eb;text-decoration:none;font-weight:600;">📜 Historial de corridas →</a>
 </header>
 
@@ -16723,20 +16723,55 @@ let pendingSelection = null;  // {text, page, bbox}
 async function ensurePdfJs() {
   if (window.pdfjsLib) return window.pdfjsLib;
   return new Promise((resolve, reject) => {
-    const s = document.createElement("script");
-    s.src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.min.mjs";
-    s.type = "module";
-    // ES module loading — fallback to UMD if module loading is awkward
     const sUmd = document.createElement("script");
     sUmd.src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js";
+    sUmd.crossOrigin = "anonymous";
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (!settled) {
+        settled = true;
+        reject(new Error("PDF.js timeout (>10s) — revisa conexión / CDN"));
+      }
+    }, 10000);
     sUmd.onload = () => {
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.worker.min.js";
-      resolve(window.pdfjsLib);
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      try {
+        if (!window.pdfjsLib) throw new Error("window.pdfjsLib no expuesto por el bundle");
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.worker.min.js";
+        resolve(window.pdfjsLib);
+      } catch (e) {
+        reject(e);
+      }
     };
-    sUmd.onerror = reject;
+    sUmd.onerror = (e) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(new Error("No se pudo cargar PDF.js desde CDN"));
+    };
     document.head.appendChild(sUmd);
   });
+}
+
+function showIframeFallback(pdfUrl, basename) {
+  // PDF.js no cargó / falló render. Caemos a iframe nativo del navegador.
+  const area = $("pdf-render-area");
+  area.style.display = "none";
+  $("pdf-empty").style.display = "none";
+  let iframe = $("pdf-iframe-fallback");
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.id = "pdf-iframe-fallback";
+    iframe.style.cssText = "flex:1;width:100%;height:100%;border:0;background:#fff;";
+    $("pdfpane").appendChild(iframe);
+  }
+  iframe.src = pdfUrl;
+  iframe.style.display = "block";
+  $("pdfhead-label").textContent = basename + " (vista simple — selección+comments deshabilitados)";
+  toast("PDF.js falló · cargando con vista simple sin comentarios", "err");
 }
 
 function changeZoom(delta) {
@@ -16772,15 +16807,19 @@ async function loadPdf() {
   }
   $("pdfhead-label").textContent = (data.pdf_basename || "PDF") + " · " + (data.language || "");
   $("pdf-empty").style.display = "none";
+  // Hide any prior iframe fallback
+  const iframeOld = $("pdf-iframe-fallback");
+  if (iframeOld) iframeOld.style.display = "none";
   area.style.display = "block";
   try {
     await ensurePdfJs();
     pdfDoc = await window.pdfjsLib.getDocument(data.pdf_url).promise;
     await rerenderAllPages();
   } catch (e) {
-    $("pdf-empty").style.display = "flex";
-    $("pdf-empty").textContent = "Error cargando PDF.js: " + (e.message || e);
-    area.style.display = "none";
+    console.error("PDF.js failed:", e);
+    // Caída a iframe — al menos el usuario VE el PDF aunque sin
+    // selection-to-comment habilitado.
+    showIframeFallback(data.pdf_url, data.pdf_basename || "PDF");
   }
 }
 
@@ -16841,15 +16880,22 @@ async function renderOnePage(pageNum, pageAnnots) {
 
   // Render canvas
   await page.render({canvasContext: canvas.getContext("2d"), viewport}).promise;
-  // Render text layer (selectable)
-  const textContent = await page.getTextContent();
-  if (window.pdfjsLib.renderTextLayer) {
-    window.pdfjsLib.renderTextLayer({
-      textContentSource: textContent,
-      container: textLayer,
-      viewport,
-      textDivs: [],
-    });
+  // Render text layer (selectable) — PDF.js 2.x usa `textContent`, no
+  // `textContentSource` (introducido en v3+).
+  try {
+    const textContent = await page.getTextContent();
+    if (window.pdfjsLib && window.pdfjsLib.renderTextLayer) {
+      const params = {
+        textContent: textContent,
+        container: textLayer,
+        viewport: viewport,
+        textDivs: [],
+      };
+      const task = window.pdfjsLib.renderTextLayer(params);
+      if (task && task.promise) await task.promise;
+    }
+  } catch (e) {
+    console.warn("Text layer render failed (canvas still visible):", e);
   }
 }
 
