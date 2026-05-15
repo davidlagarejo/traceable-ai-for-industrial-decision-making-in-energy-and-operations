@@ -1,0 +1,13 @@
+# Auto-approve eligible: DOE OSTI, public_domain, added_by=system_verified
+source_id: doe_osti_1825384
+title: DOE OSTI 1825384 — Industrial energy report
+url: https://www.osti.gov/servlets/purl/1825384
+license: public_domain
+publisher: doe_osti
+asset_families:
+  - manufacturing_facility
+  - _shared
+version: "2022"
+added_at: "2026-05-15T00:00:00Z"
+added_by: system_verified
+notes: "Smoke test source for V10 P0 F1."

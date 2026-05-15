@@ -3,7 +3,7 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-14 (V9 CERRADO — 1846 tests, regression 7/7 hard mode default)**
+**Última actualización: 2026-05-15 (V10 P0 ARRANCANDO — Industry Corpus / RAG additivo, no rompe V9)**
 
 ---
 
@@ -194,6 +194,71 @@ export ZLAB_RENDER_STRICT_DEFAULT=0   # opt-out: render permitido en cualquier s
 7. `phase_registry.py` + `phase_units.py` (V5)
 8. `AI_SCAFFOLDING_REGISTRY.md` (FROZEN en 9 items)
 9. `docs/history/` — backlogs y planes antiguos archivados (V2-V7)
+
+---
+
+## 7.bis V10 P0 — Industry Corpus / RAG (EN CURSO, 2026-05-15)
+
+**Decisión arquitectónica:** se construye un **industry corpus RAG** para enriquecer la narrativa de motor_019 con citas verbatim de fuentes públicas. **NO toca la cadena de decisión** (motors 001-018, 020-064). 100% additivo, behind feature flag `INDUSTRY_CORPUS_ENABLED=false` por defecto.
+
+### Reglas inviolables de V10 P0 (additivas a las V8)
+
+10. **El corpus solo enriquece motor_019.** Ningún otro motor importa `industry_corpus.retriever`. Si lo hacés, violás Phase 0.
+11. **Retriever es determinístico.** Cosine similarity sobre numpy flat index. Cero llamadas LLM en el retriever.
+12. **Solo se indexa lo aprobado.** `chunks_pending/` nunca llega al retriever. `chunks_approved/` sí. Auto-approve permitido solo para fuentes con `license=public_domain` Y `added_by=system_verified` (DOE, EPA, EIA, NREL, PNNL).
+13. **Narrator cita verbatim o no cita.** Regla 11 del system prompt motor_019: si usa un industry fact, copia el texto entre comillas y cita `[source_id::chunk_id]`. Prohibido parafrasear.
+14. **Feature flag por defecto OFF.** `INDUSTRY_CORPUS_ENABLED=false` → output de motor_019 BIT-IDENTICAL a V9. Test de no-regresión obligatorio.
+15. **Corpus separado de knowledge_memory.** `industry_corpus/` ≠ `knowledge_pending/knowledge_approved/`. El primero es *material de referencia* citable, el segundo son *reglas de decisión* validadas.
+
+### Arquitectura V10 P0
+
+```
+runtime-orchestrator/
+├── industry_corpus/                          # datos
+│   ├── sources/<asset_family>/*.yaml         # manifests de fuentes
+│   ├── raw_pdfs/<sha>.pdf                    # binarios (reutiliza pdf_url_fetcher)
+│   ├── extracted_text/<sha>.txt              # pdfplumber output
+│   ├── chunks_pending/<sha>/chunk_NNNN.json  # ← gate humano
+│   ├── chunks_approved/<sha>/chunk_NNNN.json # único leído por retriever
+│   ├── chunks_rejected/<sha>/                # auditoría
+│   ├── embeddings/<sha>/<chunk_id>.npy       # float32[384]
+│   └── index/<asset_family>/                 # vectors.npy + manifest.json
+└── src/runtime_orchestrator/industry_corpus/  # código
+    ├── manifest.py    # CorpusSource, CorpusChunk dataclasses
+    ├── etl.py         # ingest_source(yaml) — descarga + extrae + chunkea
+    ├── chunker.py     # split() determinista, page-aware, 512 tok / 50 overlap
+    ├── embedder.py    # MiniLM 384-dim (sentence-transformers, CPU)
+    ├── indexer.py     # build_index(asset_family) → vectors.npy
+    └── retriever.py   # retrieve(query, asset_family, k) — única API pública
+```
+
+### Dependencias V10 P0 (nuevas, opcionales)
+
+`requirements-corpus.txt`:
+- `sentence-transformers>=2.6` (arrastra `torch` ~800 MB)
+- `numpy>=1.24`
+- `tiktoken>=0.6` (opcional — token counting determinístico)
+
+Si no están instaladas → `_CORPUS_AVAILABLE=False` → motor_019 funciona igual que V9. Sin regresión.
+
+### Plan de 6 fases
+
+| Fase | Días | Entregable |
+|---|---|---|
+| F1 | 1 | Esqueleto + ETL (`etl.py`, `chunker.py`, `manifest.py`) |
+| F2 | 1 | Embeddings + index (`embedder.py`, `indexer.py`) |
+| F3 | 0.5 | Retriever (`retriever.py`) + tests de determinismo |
+| F4 | 0.5 | Curación: CLI bulk + auto-approve federal whitelist + dashboard `/corpus_curar` |
+| F5 | 0.5 | Wire motor_019 detrás de flag + no-regression test |
+| F6 | 0.5 | Seed corpus (50+ fuentes federales) + index build inicial |
+
+**Total: ~4 días.** Cero cambios en motors fuera de motor_019.
+
+### Confirmaciones del usuario (2026-05-15)
+
+1. Acepta dependencia `sentence-transformers + torch` (~1 GB). ✓
+2. Seed mínimo: 50 fuentes. ✓
+3. Auto-approve para fuentes federales (DOE/EPA/EIA/NREL/PNNL), curación manual para todo lo demás (IIAR, Wikipedia, corporate sites). ✓
 
 ---
 
