@@ -791,7 +791,16 @@ class Motor019Adapter(BaseMotorAdapter):
             if (os.environ.get("INDUSTRY_CORPUS_ENABLED", "").lower() == "true"
                     and _INDUSTRY_CORPUS_AVAILABLE
                     and "industry_context_facts" not in ctx):
-                _af = (fp.get("asset_family") or "").strip()
+                # asset_family lives in fp.target_definition.target_type
+                # (canonical 6-family taxonomy: cold_chain_facility, …).
+                # Fallbacks: top-level asset_family / asset_type (defensive).
+                _td = fp.get("target_definition") or {}
+                _af = (
+                    (_td.get("target_type") if isinstance(_td, dict) else None)
+                    or fp.get("asset_family")
+                    or fp.get("asset_type")
+                    or ""
+                ).strip()
                 _subj = (title or prompt[:60] or "").strip()
                 if _af and _subj:
                     try:
