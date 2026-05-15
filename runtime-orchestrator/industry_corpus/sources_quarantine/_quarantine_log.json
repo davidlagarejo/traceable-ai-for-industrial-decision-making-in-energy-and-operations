@@ -1,0 +1,76 @@
+{
+  "quarantined_at": "2026-05-15T14:48:18.053663Z",
+  "count": 14,
+  "entries": [
+    {
+      "source_id": "nrel_1900998",
+      "url": "https://www.osti.gov/servlets/purl/1900998",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "nrel_1907181",
+      "url": "https://www.osti.gov/servlets/purl/1907181",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "nrel_1959581",
+      "url": "https://www.osti.gov/servlets/purl/1959581",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "ornl_1898430",
+      "url": "https://www.osti.gov/servlets/purl/1898430",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "pnnl_1834906",
+      "url": "https://www.osti.gov/servlets/purl/1834906",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "pnnl_1604329",
+      "url": "https://www.osti.gov/servlets/purl/1604329",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "pnnl_1838842",
+      "url": "https://www.osti.gov/servlets/purl/1838842",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "pnnl_1838843",
+      "url": "https://www.osti.gov/servlets/purl/1838843",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "doe_osti_1755456",
+      "url": "https://www.osti.gov/servlets/purl/1755456",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "doe_osti_1814103",
+      "url": "https://www.osti.gov/servlets/purl/1814103",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "doe_osti_1869788",
+      "url": "https://www.osti.gov/servlets/purl/1869788",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "doe_osti_1893820",
+      "url": "https://www.osti.gov/servlets/purl/1893820",
+      "reason": "error: HTTP 404: "
+    },
+    {
+      "source_id": "doe_osti_1893822",
+      "url": "https://www.osti.gov/servlets/purl/1893822",
+      "reason": "rejected: PDF exceeds max size (31457280 bytes)"
+    },
+    {
+      "source_id": "doe_osti_1898012",
+      "url": "https://www.osti.gov/servlets/purl/1898012",
+      "reason": "error: HTTP 404: "
+    }
+  ]
+}

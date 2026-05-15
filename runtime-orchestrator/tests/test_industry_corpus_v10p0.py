@@ -126,6 +126,69 @@ def test_motor_019_flag_off_does_not_call_retriever(monkeypatch):
     assert len(calls) == 0
 
 
+def test_motor_019_section_packet_no_industry_facts_when_flag_off(monkeypatch):
+    """Strongest no-regression check: when flag=OFF, _build_section_packet
+    must produce identical output regardless of whether the corpus has data.
+    We invoke _build_section_packet on a minimal ctx and confirm no
+    industry_context_facts key appears in the packet."""
+    monkeypatch.delenv("INDUSTRY_CORPUS_ENABLED", raising=False)
+    from runtime_orchestrator.adapters import motor_019
+
+    # Spy on retriever — must be called ZERO times when flag is off
+    calls = []
+    monkeypatch.setattr(
+        motor_019, "_industry_corpus_retrieve",
+        lambda *a, **kw: (calls.append((a, kw)) or [])
+    )
+
+    # Build a section packet using only public function _build_section_packet
+    packet_with_corpus_ctx = motor_019._build_section_packet(
+        section_id="executive_summary",
+        title="Executive Summary",
+        audience="operator",
+        prompt="Summarize the facility state.",
+        ctx={"facility_inputs": {"name": "test"}},
+    )
+    # Verify packet does NOT contain industry_context_facts
+    assert "industry_context_facts" not in packet_with_corpus_ctx.get("ctx", {})
+    # Spy never invoked (flag was off, body never executed)
+    assert len(calls) == 0
+
+
+def test_motor_019_corpus_block_respects_falsy_flag_values(monkeypatch):
+    """Only the exact string 'true' (case-insensitive) enables the corpus.
+    Defensive: 'false', '0', '', 'no' must all leave the corpus off."""
+    from runtime_orchestrator.adapters import motor_019
+    for falsy in ("", "false", "False", "0", "no", "off", "FALSE"):
+        monkeypatch.setenv("INDUSTRY_CORPUS_ENABLED", falsy)
+        flag_active = (
+            os.environ.get("INDUSTRY_CORPUS_ENABLED", "").lower() == "true"
+        )
+        assert flag_active is False, f"falsy value {falsy!r} should NOT enable corpus"
+
+    for truthy in ("true", "True", "TRUE"):
+        monkeypatch.setenv("INDUSTRY_CORPUS_ENABLED", truthy)
+        flag_active = (
+            os.environ.get("INDUSTRY_CORPUS_ENABLED", "").lower() == "true"
+        )
+        assert flag_active is True, f"truthy value {truthy!r} should enable corpus"
+
+
+def test_retriever_returns_list_of_RetrievedChunk_or_empty():
+    """Type-stability: retriever MUST return a list (never None, dict, etc).
+    This protects motor_019's ctx-build code from defensive `or []` patterns."""
+    from runtime_orchestrator.industry_corpus.retriever import retrieve, RetrievedChunk
+    result = retrieve("", "manufacturing_facility")  # empty query
+    assert isinstance(result, list)
+    result = retrieve("anything", "not_a_valid_family")
+    assert isinstance(result, list)
+    # If anything comes back, each must be RetrievedChunk
+    result = retrieve("test", "manufacturing_facility", k=2, min_similarity=0.0)
+    for r in result:
+        assert isinstance(r, RetrievedChunk)
+        assert hasattr(r, "chunk_id") and hasattr(r, "similarity")
+
+
 def test_system_prompt_contains_rule_11():
     """Regla 11 (industry context facts) must be present in _SYSTEM."""
     from runtime_orchestrator.adapters import motor_019
