@@ -18383,6 +18383,83 @@ def corpus_index_status():
         return jsonify({"ok": False, "error": f"{type(exc).__name__}: {exc}"}), 500
 
 
+@app.route("/api/corpus/rebuild-index", methods=["POST"])
+def corpus_rebuild_index():
+    """Rebuild stale indices on demand.
+
+    Query params:
+      family  — limit to one asset_family (optional; default = all stale)
+
+    Returns per-family stats. This is the framework-managed alternative to
+    running scripts/build_industry_corpus_index.py from the shell.
+    """
+    try:
+        from runtime_orchestrator.industry_corpus.retriever import (
+            index_status, clear_cache as _retriever_clear,
+        )
+        from runtime_orchestrator.industry_corpus.indexer import build_index
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"import_failed: {exc}"}), 500
+
+    family = (request.args.get("family") or "").strip()
+    status = index_status()
+    # Decide which families need rebuild
+    to_build: list[str] = []
+    if family:
+        to_build = [family]
+    else:
+        to_build = [af for af, info in status.items()
+                    if info.get("stale") or not info.get("available")]
+    if not to_build:
+        return jsonify({"ok": True, "rebuilt": [], "note": "no stale indices"})
+
+    results = []
+    for af in to_build:
+        s = build_index(af)
+        results.append({
+            "asset_family":  s.asset_family,
+            "chunks":        s.chunks_indexed,
+            "new":           s.new_embeddings,
+            "cached":        s.cached_embeddings,
+            "errors":        s.errors,
+        })
+    _retriever_clear()  # invalidate retriever LRU so new index is picked up
+    return jsonify({"ok": True, "rebuilt": results})
+
+
+@app.route("/api/corpus/ingest-sources", methods=["POST"])
+def corpus_ingest_sources():
+    """Run ETL on every sources/*.yaml that hasn't produced chunks yet.
+
+    Framework-managed alternative to scripts/seed_industry_corpus_v10p0.py
+    for re-running ingestion (e.g. after adding new YAMLs).
+
+    Returns per-source outcomes — auditable, no silent failures.
+    """
+    try:
+        from runtime_orchestrator.industry_corpus.etl import ingest_all_sources
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"import_failed: {exc}"}), 500
+    results = ingest_all_sources()
+    payload = [{
+        "source_id":      r.source_id,
+        "url":            r.url,
+        "auto_approved":  r.auto_approved,
+        "pdf_fetched":    r.pdf_fetched,
+        "fetched_via":    r.fetched_via,
+        "text_chars":     r.text_chars,
+        "chunks_total":   r.chunks_total,
+        "chunks_written": r.chunks_written,
+        "skipped_dup":    r.chunks_skipped_dup,
+        "errors":         r.errors,
+    } for r in results]
+    return jsonify({
+        "ok":      True,
+        "count":   len(payload),
+        "results": payload,
+    })
+
+
 _CORPUS_REVIEW_HTML = """<!doctype html>
 <html lang="es"><head>
 <meta charset="utf-8"><title>Industry Corpus — Curación</title>
@@ -18423,6 +18500,7 @@ _CORPUS_REVIEW_HTML = """<!doctype html>
   </label>
   <label>Source: <input id="filterSource" placeholder="iiar_bulletin_109"></label>
   <button onclick="load()">Filtrar</button>
+  <button onclick="ingestSources()" style="background:#3aa66a">↻ Re-ingest sources</button>
 </div>
 <div class="status" id="status">cargando…</div>
 <div class="chunks" id="chunks"></div>
@@ -18473,9 +18551,30 @@ async function loadIndex() {
   const d = await r.json();
   if (!d.ok) { document.getElementById('indexBar').textContent =
     'índice: error — ' + d.error; return; }
-  const parts = Object.entries(d.status).map(([af, info]) =>
-    `<strong>${af}</strong>: ${info.available ? info.chunks + ' chunks' : '—'}`);
-  document.getElementById('indexBar').innerHTML = 'índices: ' + parts.join(' · ');
+  let stale = false;
+  const parts = Object.entries(d.status).map(([af, info]) => {
+    if (info.stale) stale = true;
+    const tag = info.stale ? ' <span style="color:#ff9">⚠stale</span>' : '';
+    return `<strong>${af}</strong>: ${info.available ? info.chunks + ' chunks' : '—'}${tag}`;
+  });
+  const rebuildBtn = stale
+    ? ' <button onclick="rebuild()" style="background:#c93;color:#000;border:0;padding:3px 8px;border-radius:3px;cursor:pointer;font-size:12px">Reconstruir índices</button>'
+    : '';
+  document.getElementById('indexBar').innerHTML =
+    'índices: ' + parts.join(' · ') + rebuildBtn;
+}
+async function rebuild() {
+  const r = await fetch('/api/corpus/rebuild-index', {method:'POST'});
+  const d = await r.json();
+  alert('Rebuild: ' + (d.ok ? (d.rebuilt.length + ' familias rehechas') : ('error: ' + d.error)));
+  loadIndex();
+}
+async function ingestSources() {
+  if (!confirm('Re-ejecutar ETL sobre todos los sources/*.yaml? Puede tardar varios minutos.')) return;
+  const r = await fetch('/api/corpus/ingest-sources', {method:'POST'});
+  const d = await r.json();
+  alert('Ingest: ' + (d.ok ? (d.count + ' fuentes procesadas') : ('error: ' + d.error)));
+  loadIndex();
 }
 loadIndex();
 load();

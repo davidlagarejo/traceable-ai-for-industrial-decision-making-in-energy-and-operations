@@ -181,7 +181,12 @@ def _read_chunk_text(corpus_dir: Path, row: dict[str, Any]) -> str:
 def index_status(
     *, runtime_orchestrator_dir: Path | None = None,
 ) -> dict[str, Any]:
-    """Return per-family stats — what's available right now."""
+    """Return per-family stats — what's available right now.
+
+    Each entry now also exposes `stale` (bool): True iff the index file
+    is older than the newest approved chunk for that asset_family. The
+    framework / dashboard uses this to know if a rebuild is due.
+    """
     corpus_dir = corpus_root(runtime_orchestrator_dir)
     out: dict[str, Any] = {}
     for af in sorted(CANONICAL_ASSET_FAMILIES):
@@ -189,12 +194,61 @@ def index_status(
             continue
         idx = _load_index(af, str(corpus_dir))
         if idx is None:
-            out[af] = {"available": False, "chunks": 0}
+            out[af] = {"available": False, "chunks": 0, "stale": _has_pending_chunks(corpus_dir, af)}
         else:
             out[af] = {
                 "available": True,
                 "chunks":    int(idx.vectors.shape[0]),
                 "dim":       idx.dim,
                 "model":     idx.model,
+                "stale":     _is_index_stale(corpus_dir, af),
             }
     return out
+
+
+def _newest_chunk_mtime(corpus_dir: Path, asset_family: str) -> float:
+    """Find the newest mtime among chunks_approved/ files matching this family."""
+    approved = corpus_dir / "chunks_approved"
+    if not approved.exists():
+        return 0.0
+    newest = 0.0
+    for json_file in approved.rglob("*.json"):
+        try:
+            mt = json_file.stat().st_mtime
+            if mt > newest:
+                # Quick filter: load only if mtime is recent enough
+                import json as _json
+                data = _json.loads(json_file.read_text(encoding="utf-8"))
+                fams = data.get("asset_families", []) or []
+                if asset_family in fams or "_shared" in fams:
+                    newest = mt
+        except Exception:
+            continue
+    return newest
+
+
+def _is_index_stale(corpus_dir: Path, asset_family: str) -> bool:
+    """True if index/<asset_family>/vectors.npy is older than newest chunk."""
+    idx_file = corpus_dir / "index" / asset_family / "vectors.npy"
+    if not idx_file.exists():
+        return True
+    idx_mtime = idx_file.stat().st_mtime
+    newest_chunk = _newest_chunk_mtime(corpus_dir, asset_family)
+    return newest_chunk > idx_mtime + 1.0  # 1s grace for FS granularity
+
+
+def _has_pending_chunks(corpus_dir: Path, asset_family: str) -> bool:
+    """True if chunks_approved/ has chunks for this family but no index built."""
+    approved = corpus_dir / "chunks_approved"
+    if not approved.exists():
+        return False
+    for json_file in approved.rglob("*.json"):
+        try:
+            import json as _json
+            data = _json.loads(json_file.read_text(encoding="utf-8"))
+            fams = data.get("asset_families", []) or []
+            if asset_family in fams or "_shared" in fams:
+                return True
+        except Exception:
+            continue
+    return False

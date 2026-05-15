@@ -36,11 +36,41 @@ import shutil
 try:
     from runtime_orchestrator.industry_corpus.retriever import (
         retrieve as _industry_corpus_retrieve,
+        index_status as _industry_corpus_index_status,
     )
     _INDUSTRY_CORPUS_AVAILABLE = True
 except Exception:  # ImportError, ModuleNotFoundError, anything
     _INDUSTRY_CORPUS_AVAILABLE = False
     _industry_corpus_retrieve = None  # type: ignore
+    _industry_corpus_index_status = None  # type: ignore
+
+
+def _industry_corpus_should_activate() -> bool:
+    """Decide if the corpus should be queried for this run.
+
+    Env var INDUSTRY_CORPUS_ENABLED accepts:
+      · "false" / "0" / "off"  → never query (legacy / safety)
+      · "true"  / "1"  / "on"   → force-query even if corpus is empty
+      · "auto"  (default) or unset → query iff corpus has any indexed
+        asset_family. This is the framework-managed mode: the corpus
+        works on its own when present, stays out when absent.
+
+    Phase 0 doctrine intact: even on "auto", retrieval is read-only,
+    deterministic, and only feeds motor_019.
+    """
+    raw = os.environ.get("INDUSTRY_CORPUS_ENABLED", "auto").strip().lower()
+    if raw in ("false", "0", "off", "no"):
+        return False
+    if raw in ("true", "1", "on", "yes"):
+        return True
+    # auto / unknown → introspect actual state
+    if not _INDUSTRY_CORPUS_AVAILABLE or _industry_corpus_index_status is None:
+        return False
+    try:
+        status = _industry_corpus_index_status() or {}
+    except Exception:
+        return False
+    return any(bool(s.get("available")) for s in status.values())
 import subprocess
 import tempfile
 import time
@@ -830,7 +860,7 @@ class Motor019Adapter(BaseMotorAdapter):
             # When ON and corpus index exists for this asset_family, top-k
             # chunks are injected as `industry_context_facts`. Rule 11 of
             # _SYSTEM tells the LLM how to cite them (verbatim or omit).
-            if (os.environ.get("INDUSTRY_CORPUS_ENABLED", "").lower() == "true"
+            if (_industry_corpus_should_activate()
                     and _INDUSTRY_CORPUS_AVAILABLE
                     and "industry_context_facts" not in ctx):
                 # asset_family lives in fp.target_definition.target_type
