@@ -15591,14 +15591,74 @@ section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border
 .annot .sug{color:#1d4ed8;font-style:italic;margin-top:4px;}
 .annot .del{background:none;color:#a1a1aa;border:0;cursor:pointer;font-size:12px;}
 .annot .del:hover{color:#dc2626;}
-/* RIGHT — PDF preview */
-section.pdfpane{width:52%;max-width:780px;background:#27272a;display:flex;flex-direction:column;min-width:0;}
+/* RIGHT — PDF preview con text-layer + comments rail estilo Word */
+section.pdfpane{width:60%;background:#3f3f46;display:flex;flex-direction:column;min-width:0;}
 section.pdfpane .pdfhead{padding:8px 14px;background:#3f3f46;color:#e4e4e7;font-size:12px;
-                          display:flex;justify-content:space-between;align-items:center;}
-section.pdfpane iframe{flex:1;width:100%;border:0;background:#fff;}
+                          display:flex;justify-content:space-between;align-items:center;
+                          border-bottom:1px solid #52525b;}
 section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:center;color:#a1a1aa;font-style:italic;}
+.pdf-render-area{flex:1;overflow-y:auto;padding:14px 0;background:#52525b;}
+.pdf-render-area .pdf-page-row{display:flex;align-items:flex-start;justify-content:center;
+                                margin:0 auto 16px auto;max-width:1200px;gap:10px;padding:0 12px;}
+.pdf-render-area .pdf-page-wrap{position:relative;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.4);
+                                 flex-shrink:0;}
+.pdf-render-area canvas{display:block;}
+.pdf-render-area .textLayer{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;
+                             line-height:1.0;opacity:.25;font-family:sans-serif;}
+.pdf-render-area .textLayer span,.pdf-render-area .textLayer br{color:transparent;
+        position:absolute;white-space:pre;cursor:text;transform-origin:0% 0%;}
+.pdf-render-area .textLayer ::selection{background:#fde68a;}
+.pdf-render-area .textLayer span::selection{background:#fde68a;}
+.pdf-render-area .pageNumber{position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+                              font-size:9.5px;color:#a1a1aa;background:#27272a;
+                              padding:1px 8px;border-radius:3px;font-weight:600;letter-spacing:.05em;}
+/* Comments rail — la columna estilo Word a la derecha de cada página */
+.pdf-render-area .pdf-comments-rail{width:240px;flex-shrink:0;display:flex;
+                                     flex-direction:column;gap:7px;padding-top:2px;}
+.pdf-render-area .comment-card{background:#fef3c7;border-left:3px solid #d97706;
+                                padding:8px 10px;font-size:11px;border-radius:3px;
+                                box-shadow:0 1px 3px rgba(0,0,0,.15);}
+.pdf-render-area .comment-card.suggested{background:#dbeafe;border-left-color:#2563eb;}
+.pdf-render-area .comment-card .cm-quote{font-style:italic;color:#52525b;border-left:2px solid #e4e4e7;
+                                          padding-left:7px;margin-bottom:5px;font-size:10.5px;line-height:1.4;}
+.pdf-render-area .comment-card .cm-comment{color:#18181b;line-height:1.45;margin-bottom:4px;}
+.pdf-render-area .comment-card .cm-suggest{color:#1d4ed8;font-style:italic;font-size:10.5px;
+                                            line-height:1.4;border-top:1px dashed #93c5fd;padding-top:4px;}
+.pdf-render-area .comment-card .cm-meta{font-size:9.5px;color:#71717a;margin-top:5px;
+                                         display:flex;justify-content:space-between;align-items:center;}
+.pdf-render-area .comment-card .cm-del{background:none;color:#a1a1aa;border:0;cursor:pointer;font-size:11px;padding:0 3px;}
+.pdf-render-area .comment-card .cm-del:hover{color:#dc2626;}
+.pdf-render-area .empty-rail{font-size:10.5px;color:#a1a1aa;font-style:italic;padding:8px 4px;}
+/* Floating action button on selection */
+.floating-comment-trigger{position:absolute;background:#7c3aed;color:#fff;
+                          padding:5px 10px;border:0;border-radius:5px;cursor:pointer;
+                          font-size:11.5px;font-weight:600;box-shadow:0 3px 9px rgba(0,0,0,.25);
+                          z-index:500;display:none;}
+.floating-comment-trigger.show{display:inline-flex;align-items:center;gap:5px;}
+.floating-comment-trigger:hover{background:#6d28d9;}
+/* Inline composer floating near selection */
+.inline-comment-composer{position:absolute;background:#fff;border:1px solid #d4d4d8;
+                          border-radius:8px;width:340px;padding:12px;
+                          box-shadow:0 8px 28px rgba(0,0,0,.25);z-index:600;display:none;}
+.inline-comment-composer.show{display:block;}
+.inline-comment-composer .quote{background:#fef3c7;border-left:3px solid #d97706;
+                                 padding:6px 9px;font-size:11px;color:#52525b;
+                                 font-style:italic;line-height:1.45;margin-bottom:8px;
+                                 max-height:60px;overflow:auto;border-radius:3px;}
+.inline-comment-composer label{display:block;font-size:10.5px;font-weight:700;
+                                color:#52525b;text-transform:uppercase;
+                                letter-spacing:.04em;margin:6px 0 3px 0;}
+.inline-comment-composer textarea{width:100%;border:1px solid #d4d4d8;border-radius:5px;
+                                   padding:6px 9px;font-size:12px;font-family:inherit;
+                                   resize:vertical;min-height:48px;}
+.inline-comment-composer .row-actions{margin-top:9px;display:flex;gap:6px;justify-content:flex-end;}
+.inline-comment-composer .btn{padding:5px 11px;font-size:11.5px;}
 .pdfpane .annotate-btn{padding:5px 11px;background:#16a34a;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:11.5px;font-weight:600;}
 .pdfpane .annotate-btn:hover{background:#15803d;}
+.pdfpane .zoom-controls{display:flex;align-items:center;gap:6px;font-size:11px;}
+.pdfpane .zoom-btn{padding:2px 8px;background:#52525b;color:#fff;border:0;border-radius:3px;
+                    cursor:pointer;font-size:11px;font-weight:700;}
+.pdfpane .zoom-btn:hover{background:#71717a;}
 /* Annotation modal */
 .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);
        display:none;align-items:center;justify-content:center;z-index:1000;}
@@ -15650,45 +15710,45 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
 
     <div class="section-head" style="margin-top:22px;">
       Anotaciones del PDF <span class="count" id="annot-count">0</span>
+      <span style="margin-left:auto;font-size:11px;color:#71717a;font-weight:500;text-transform:none;letter-spacing:0;">
+        Selecciona texto en el PDF para comentar →
+      </span>
     </div>
     <div id="annotations">
-      <div class="empty-block">Selecciona un caso y haz clic en "+ Anotar PDF" arriba a la derecha.</div>
+      <div class="empty-block">Aún sin comentarios. Selecciona texto en el PDF a la derecha y aparecerá el botón "💬 Comentar selección".</div>
     </div>
   </section>
 
-  <!-- RIGHT: PDF preview -->
+  <!-- RIGHT: PDF preview with text-layer + comments rail (Word-style) -->
   <section class="pdfpane" id="pdfpane">
     <div class="pdfhead">
       <span id="pdfhead-label">PDF</span>
-      <button class="annotate-btn" id="annot-add-btn" onclick="openAnnotateModal()" disabled>+ Anotar</button>
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="changeZoom(-0.15)">−</button>
+        <span id="zoom-label">100%</span>
+        <button class="zoom-btn" onclick="changeZoom(+0.15)">+</button>
+      </div>
     </div>
     <div class="empty" id="pdf-empty">Selecciona un caso para previsualizar el PDF.</div>
-    <iframe id="pdf-frame" style="display:none;"></iframe>
+    <div class="pdf-render-area" id="pdf-render-area" style="display:none;"></div>
   </section>
 </main>
 
-<!-- Annotation modal -->
-<div class="modal" id="annot-modal">
-  <div class="modalbox">
-    <h3>Anotar PDF (track-changes)</h3>
-    <div class="row">
-      <div>
-        <label>Página</label>
-        <input id="annot-page" type="number" min="1" value="1">
-      </div>
-      <div>
-        <label>Curador</label>
-        <input id="annot-curator" type="text" value="anonymous">
-      </div>
-    </div>
-    <label>Comentario (qué está mal)</label>
-    <textarea id="annot-comment" placeholder="Ej: este gráfico no corresponde al caso cold-chain"></textarea>
-    <label>Cambio sugerido (opcional)</label>
-    <textarea id="annot-suggest" placeholder="Ej: eliminar el chart CHT-002 o reemplazar con refrigeration duty"></textarea>
-    <div class="actions">
-      <button class="btn btn-soft" onclick="closeAnnotateModal()">Cancelar</button>
-      <button class="btn btn-ok" onclick="saveAnnotation()">Guardar anotación</button>
-    </div>
+<!-- Floating "+" button shown when user selects PDF text -->
+<button class="floating-comment-trigger" id="float-trigger" onclick="openInlineComposer()">
+  💬 Comentar selección
+</button>
+
+<!-- Inline composer that pops near the selection -->
+<div class="inline-comment-composer" id="inline-composer">
+  <div class="quote" id="composer-quote"></div>
+  <label>Comentario · qué cambiar</label>
+  <textarea id="composer-comment" placeholder="Ej: este claim no aplica a un caso de cold-chain"></textarea>
+  <label>Sugerencia · cómo cambiarlo (opcional)</label>
+  <textarea id="composer-suggest" placeholder="Ej: reemplazar por 'refrigeration duty unresolved'"></textarea>
+  <div class="row-actions">
+    <button class="btn btn-soft" onclick="closeInlineComposer()">Cancelar</button>
+    <button class="btn btn-ok" onclick="saveInlineComment()">Guardar comentario</button>
   </div>
 </div>
 
@@ -15772,7 +15832,6 @@ async function selectCaseById(caseId) {
   if (c && c.run_id) {
     currentRunId = c.run_id;
     await Promise.all([loadBanner(), loadApprovals(), loadAnnotations(), loadPdf()]);
-    $("annot-add-btn").disabled = !currentPdfPath;
   } else {
     // No run yet → reset center/right
     currentRunId = "";
@@ -15783,11 +15842,11 @@ async function selectCaseById(caseId) {
     $("annotations").innerHTML = '<div class="empty-block">Sin run todavía.</div>';
     $("combo-count").textContent = "0";
     $("annot-count").textContent = "0";
-    $("pdf-frame").style.display = "none";
+    $("pdf-render-area").style.display = "none";
+    $("pdf-render-area").innerHTML = "";
     $("pdf-empty").style.display = "flex";
     $("pdf-empty").textContent = "Corre el framework para generar el PDF.";
     $("pdfhead-label").textContent = "Sin PDF";
-    $("annot-add-btn").disabled = true;
   }
   await loadCases();  // refresh sidebar to highlight the active case
 }
@@ -15999,73 +16058,249 @@ async function loadAnnotations() {
   $("annot-count").textContent = annots.length;
   const el = $("annotations");
   if (!annots.length) {
-    el.innerHTML = '<div class="empty-block">Sin anotaciones todavía. Usa el botón "+ Anotar" arriba.</div>';
+    el.innerHTML = '<div class="empty-block">Aún sin comentarios. Selecciona texto en el PDF a la derecha y aparecerá el botón "💬 Comentar selección".</div>';
     return;
   }
-  el.innerHTML = annots.map(a => `
-    <div class="annot">
+  el.innerHTML = annots.map(a => {
+    const q = (a.region && a.region.selected_text) ? a.region.selected_text : "";
+    return `<div class="annot">
       <div class="head">
         <span class="pg">Pág. ${a.page} · ${escapeHtml(a.curator)}</span>
-        <button class="del" onclick="deleteAnnot('${a.annotation_id}')">×</button>
+        <button class="del" onclick="deleteAnnotAndReload('${a.annotation_id}')">×</button>
       </div>
+      ${q ? `<div class="com" style="font-style:italic;color:#71717a;font-size:11px;border-left:2px solid #e4e4e7;padding-left:7px;margin-bottom:4px;">"${escapeHtml(q.slice(0,140))}${q.length>140?"…":""}"</div>` : ""}
       <div class="com">${escapeHtml(a.comment)}</div>
       ${a.suggested_change ? `<div class="sug">→ ${escapeHtml(a.suggested_change)}</div>` : ""}
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
-async function deleteAnnot(id) {
-  const r = await fetch(`/api/curation/pdf-annotation/${id}?run_id=${encodeURIComponent(currentRunId)}`, {method: "DELETE"});
-  const j = await r.json();
-  if (j.ok) {
-    toast("Anotación borrada", "ok");
-    loadAnnotations();
-  } else {
-    toast("No se pudo borrar", "err");
-  }
+// ── PDF.js rendering with selectable text layer + comments rail ──
+let pdfDoc = null;
+let pdfZoom = 1.20;
+let pendingSelection = null;  // {text, page, bbox}
+
+async function ensurePdfJs() {
+  if (window.pdfjsLib) return window.pdfjsLib;
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.0.379/build/pdf.min.mjs";
+    s.type = "module";
+    // ES module loading — fallback to UMD if module loading is awkward
+    const sUmd = document.createElement("script");
+    sUmd.src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js";
+    sUmd.onload = () => {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.worker.min.js";
+      resolve(window.pdfjsLib);
+    };
+    sUmd.onerror = reject;
+    document.head.appendChild(sUmd);
+  });
+}
+
+function changeZoom(delta) {
+  pdfZoom = Math.max(0.5, Math.min(2.5, pdfZoom + delta));
+  $("zoom-label").textContent = Math.round(pdfZoom * 100) + "%";
+  if (pdfDoc) rerenderAllPages();
 }
 
 async function loadPdf() {
+  const area = $("pdf-render-area");
+  area.innerHTML = "";
+  if (!currentRunId) {
+    $("pdf-empty").style.display = "flex";
+    $("pdf-empty").textContent = "Selecciona un caso a la izquierda.";
+    area.style.display = "none";
+    return;
+  }
   const r = await fetch(`/api/curation/run-pdf?run_id=${encodeURIComponent(currentRunId)}`);
   if (!r.ok) {
     currentPdfPath = "";
-    $("pdf-frame").style.display = "none";
     $("pdf-empty").style.display = "flex";
-    $("pdfhead-label").textContent = "PDF no disponible";
+    $("pdf-empty").textContent = "Corre el framework para generar el PDF.";
+    area.style.display = "none";
+    $("pdfhead-label").textContent = "Sin PDF";
     return;
   }
   const data = await r.json();
   currentPdfPath = data.pdf_path || "";
   if (!currentPdfPath) {
-    $("pdf-frame").style.display = "none";
     $("pdf-empty").style.display = "flex";
+    area.style.display = "none";
     return;
   }
-  $("pdf-frame").src = data.pdf_url;
-  $("pdf-frame").style.display = "block";
-  $("pdf-empty").style.display = "none";
   $("pdfhead-label").textContent = (data.pdf_basename || "PDF") + " · " + (data.language || "");
+  $("pdf-empty").style.display = "none";
+  area.style.display = "block";
+  try {
+    await ensurePdfJs();
+    pdfDoc = await window.pdfjsLib.getDocument(data.pdf_url).promise;
+    await rerenderAllPages();
+  } catch (e) {
+    $("pdf-empty").style.display = "flex";
+    $("pdf-empty").textContent = "Error cargando PDF.js: " + (e.message || e);
+    area.style.display = "none";
+  }
 }
 
-function openAnnotateModal() {
-  if (!currentRunId || !currentPdfPath) {
-    toast("Selecciona un caso con PDF primero", "err");
+async function rerenderAllPages() {
+  const area = $("pdf-render-area");
+  area.innerHTML = "";
+  if (!pdfDoc) return;
+  // Fetch annotations once
+  const annR = await fetch(`/api/curation/pdf-annotations?run_id=${encodeURIComponent(currentRunId)}`);
+  const annData = await annR.json();
+  const annots = annData.annotations || [];
+  $("annot-count").textContent = annots.length;
+  for (let i = 1; i <= pdfDoc.numPages; i++) {
+    await renderOnePage(i, annots.filter(a => a.page === i));
+  }
+}
+
+async function renderOnePage(pageNum, pageAnnots) {
+  const page = await pdfDoc.getPage(pageNum);
+  const viewport = page.getViewport({scale: pdfZoom});
+
+  const row = document.createElement("div");
+  row.className = "pdf-page-row";
+  row.dataset.page = pageNum;
+
+  const wrap = document.createElement("div");
+  wrap.className = "pdf-page-wrap";
+  wrap.style.width = viewport.width + "px";
+  wrap.style.height = viewport.height + "px";
+
+  const pageLabel = document.createElement("div");
+  pageLabel.className = "pageNumber";
+  pageLabel.textContent = "Pág. " + pageNum;
+  wrap.appendChild(pageLabel);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = viewport.width;
+  canvas.height = viewport.height;
+  wrap.appendChild(canvas);
+
+  const textLayer = document.createElement("div");
+  textLayer.className = "textLayer";
+  textLayer.style.width = viewport.width + "px";
+  textLayer.style.height = viewport.height + "px";
+  wrap.appendChild(textLayer);
+
+  const rail = document.createElement("div");
+  rail.className = "pdf-comments-rail";
+  if (pageAnnots.length === 0) {
+    rail.innerHTML = '<div class="empty-rail">— sin comentarios —</div>';
+  } else {
+    pageAnnots.forEach(a => rail.appendChild(renderCommentCard(a)));
+  }
+
+  row.appendChild(wrap);
+  row.appendChild(rail);
+  $("pdf-render-area").appendChild(row);
+
+  // Render canvas
+  await page.render({canvasContext: canvas.getContext("2d"), viewport}).promise;
+  // Render text layer (selectable)
+  const textContent = await page.getTextContent();
+  if (window.pdfjsLib.renderTextLayer) {
+    window.pdfjsLib.renderTextLayer({
+      textContentSource: textContent,
+      container: textLayer,
+      viewport,
+      textDivs: [],
+    });
+  }
+}
+
+function renderCommentCard(a) {
+  const card = document.createElement("div");
+  card.className = "comment-card" + (a.suggested_change ? " suggested" : "");
+  const quote = (a.region && a.region.selected_text) ? a.region.selected_text : "";
+  card.innerHTML = `
+    ${quote ? `<div class="cm-quote">"${escapeHtml(quote.slice(0, 180))}${quote.length > 180 ? "…" : ""}"</div>` : ""}
+    <div class="cm-comment">${escapeHtml(a.comment)}</div>
+    ${a.suggested_change ? `<div class="cm-suggest">→ ${escapeHtml(a.suggested_change)}</div>` : ""}
+    <div class="cm-meta">
+      <span>${escapeHtml(a.curator || "anonymous")}</span>
+      <button class="cm-del" onclick="deleteAnnotAndReload('${a.annotation_id}')">×</button>
+    </div>
+  `;
+  return card;
+}
+
+async function deleteAnnotAndReload(id) {
+  const r = await fetch(`/api/curation/pdf-annotation/${id}?run_id=${encodeURIComponent(currentRunId)}`, {method: "DELETE"});
+  const j = await r.json();
+  if (j.ok) {
+    toast("Comentario borrado", "ok");
+    await rerenderAllPages();
+    await loadAnnotations();
+  }
+}
+
+// ── Selection-driven comment trigger ────────────────────────────
+document.addEventListener("mouseup", (ev) => {
+  const sel = window.getSelection();
+  const text = sel ? sel.toString().trim() : "";
+  const trigger = $("float-trigger");
+  if (!text || !sel.anchorNode) {
+    trigger.classList.remove("show");
+    pendingSelection = null;
     return;
   }
-  $("annot-page").value = 1;
-  $("annot-comment").value = "";
-  $("annot-suggest").value = "";
-  $("annot-modal").classList.add("open");
+  // Only trigger when selection is inside the PDF text layer
+  let node = sel.anchorNode;
+  if (node.nodeType === Node.TEXT_NODE) node = node.parentNode;
+  const pageRow = node.closest ? node.closest(".pdf-page-row") : null;
+  if (!pageRow) {
+    trigger.classList.remove("show");
+    return;
+  }
+  const pageNum = parseInt(pageRow.dataset.page, 10);
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  pendingSelection = {text, page: pageNum};
+  trigger.style.top = (window.scrollY + rect.bottom + 6) + "px";
+  trigger.style.left = (window.scrollX + rect.left) + "px";
+  trigger.classList.add("show");
+});
+
+document.addEventListener("mousedown", (ev) => {
+  // Close composer when clicking outside it (but allow clicks within it)
+  const comp = $("inline-composer");
+  if (comp.classList.contains("show") && !comp.contains(ev.target) && ev.target.id !== "float-trigger") {
+    closeInlineComposer();
+  }
+});
+
+function openInlineComposer() {
+  if (!pendingSelection) return;
+  const trigger = $("float-trigger");
+  const comp = $("inline-composer");
+  $("composer-quote").textContent = '"' + pendingSelection.text.slice(0, 280) + (pendingSelection.text.length > 280 ? "…" : "") + '"';
+  $("composer-comment").value = "";
+  $("composer-suggest").value = "";
+  // Position composer below the trigger
+  const triggerRect = trigger.getBoundingClientRect();
+  comp.style.top = (window.scrollY + triggerRect.bottom + 6) + "px";
+  comp.style.left = Math.max(10, (window.scrollX + triggerRect.left - 150)) + "px";
+  comp.classList.add("show");
+  trigger.classList.remove("show");
+  $("composer-comment").focus();
 }
 
-function closeAnnotateModal() {
-  $("annot-modal").classList.remove("open");
+function closeInlineComposer() {
+  $("inline-composer").classList.remove("show");
+  pendingSelection = null;
 }
 
-async function saveAnnotation() {
-  const page = parseInt($("annot-page").value, 10);
-  const comment = $("annot-comment").value.trim();
-  const suggest = $("annot-suggest").value.trim();
-  const curator = $("annot-curator").value.trim() || "anonymous";
+async function saveInlineComment() {
+  if (!pendingSelection) {
+    toast("Selección perdida — vuelve a marcar texto en el PDF", "err");
+    return;
+  }
+  const comment = $("composer-comment").value.trim();
+  const suggest = $("composer-suggest").value.trim();
   if (!comment) {
     toast("El comentario es obligatorio", "err");
     return;
@@ -16075,15 +16310,18 @@ async function saveAnnotation() {
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       run_id: currentRunId, pdf_path: currentPdfPath,
-      page: page, region: {},
-      comment: comment, suggested_change: suggest, curator: curator,
+      page: pendingSelection.page,
+      region: {selected_text: pendingSelection.text},
+      comment: comment, suggested_change: suggest,
+      curator: "anonymous",
     })
   });
   const j = await r.json();
   if (j.ok) {
-    toast("Anotación guardada", "ok");
-    closeAnnotateModal();
-    loadAnnotations();
+    toast("Comentario guardado al margen ✓", "ok");
+    closeInlineComposer();
+    await rerenderAllPages();
+    await loadAnnotations();
   } else {
     toast(j.error || "error", "err");
   }
