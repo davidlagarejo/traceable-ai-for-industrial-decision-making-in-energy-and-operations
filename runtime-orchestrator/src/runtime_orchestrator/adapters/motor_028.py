@@ -66,6 +66,10 @@ from ..source_execution_auditor import (
     audit_source_execution,
     gaps_block_render,
 )
+from ..discovery_fetchers import (
+    FetcherContext,
+    run_full_discovery as _run_full_discovery,
+)
 from ..congruence_intelligence.evidence_attempts import (
     build_search_attempt_ledger,
     build_search_attempt_outcome_register,
@@ -1231,6 +1235,29 @@ class Motor028Adapter(BaseMotorAdapter):
             json.dumps({"target": target_definition.get("target_identifier"), "cik": cik, "at": produced_at}, sort_keys=True).encode()
         ).hexdigest()[:16]
 
+        # P-DISCOVERY — real US-wide discovery layer running PARALLEL to the
+        # legacy path. Always runs (best-effort, errors isolated). Result lives
+        # in `real_discovery_bundle`; downstream motors and the dashboard
+        # consume it directly. The legacy attempts above remain intact.
+        real_discovery_bundle: dict[str, Any] = {}
+        try:
+            _addr = str(target_definition.get("address_raw") or target_definition.get("declared_asset_name") or "").strip()
+            _af   = str(target_definition.get("asset_family") or target_definition.get("target_type") or "").strip()
+            if _addr:
+                _ctx = FetcherContext(
+                    address=_addr,
+                    asset_family=_af,
+                    facility_name=str(target_definition.get("declared_asset_name") or ""),
+                )
+                real_discovery_bundle = _run_full_discovery(_ctx)
+        except Exception as _exc:
+            real_discovery_bundle = {
+                "error": f"discovery_orchestrator_exception: {type(_exc).__name__}: {_exc}",
+                "ok_count": 0,
+                "sufficient_for_pipeline": False,
+                "results": {},
+            }
+
         # V6 P13.2 — source execution audit. ADDITIVE: emits a verdict
         # for the render_gate downstream. Does not mutate any other field.
         source_audit_report = audit_source_execution(
@@ -1252,6 +1279,7 @@ class Motor028Adapter(BaseMotorAdapter):
         return {
             "discovery_candidates": candidates,
             "discovery_attempts":   attempts,
+            "real_discovery_bundle": real_discovery_bundle,
             "source_audit_verdict": source_audit_verdict,
             "discovery_summary":    _summarize_attempts(
                 attempts,
