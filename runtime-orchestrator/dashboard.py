@@ -15296,20 +15296,56 @@ def api_curation_run_status():
     verdict = m017.get("render_gate_verdict") or {}
     publication_mode = m017.get("publication_mode") or verdict.get("state") or ""
 
-    # Map to traffic light
-    if pipeline_status == "completed" and completed == total_motors and total_motors > 0:
+    # Build a humane explanation. The reconciled status can be:
+    #   completed              → all OK + render gate happy
+    #   completed_with_stubs   → ran but some motors used stubs
+    #   partial                → ran but render gate rejected the deliverable
+    #   failed                 → at least one motor errored
+    #   unknown                → no manifest
+    verdict_reasons = list(verdict.get("reasons", []) or [])
+    failed_gates = [k for k in (
+        "qa_client_safe", "state_in_allowed", "no_prohibited_fallback",
+        "no_unjustified_sources", "claims_in_sync", "no_isolation_violations",
+        "no_template_contamination",
+    ) if verdict.get(k) is False]
+
+    if pipeline_status == "completed":
         if verdict.get("allowed") is True:
             status = "ok"
-            message = "Framework corrió sin problemas"
+            message = "Framework corrió sin problemas — listo para curar"
         elif verdict.get("allowed") is False:
             status = "warn"
-            message = f"Framework completó pero render gate refused — modo: {publication_mode}"
+            primary = verdict_reasons[0] if verdict_reasons else "render gate refused"
+            message = f"Framework completó pero el deliverable no pasa gate · {primary}"
         else:
             status = "ok"
-            message = "Framework corrió completo"
-    elif pipeline_status == "completed":
+            message = f"Framework corrió completo ({completed}/{total_motors} motores)"
+    elif pipeline_status == "partial":
         status = "warn"
-        message = f"Pipeline completado con motores incompletos ({completed}/{total_motors})"
+        # The orchestrator marks "partial" when motor_017/027 didn't produce
+        # a usable deliverable. The render_gate.reasons are the why.
+        if verdict_reasons:
+            primary = verdict_reasons[0]
+            message = (
+                f"Pipeline completó los {completed}/{total_motors} motores, "
+                f"pero NO emite un deliverable client-safe — {primary}"
+            )
+        elif failed_gates:
+            message = (
+                f"Pipeline completó pero falló el gate de calidad: "
+                f"{', '.join(failed_gates[:3])}"
+            )
+        else:
+            message = (
+                f"Pipeline completó pero el PDF no pasó el final delivery gate "
+                f"(state={verdict.get('state','desconocido')})"
+            )
+    elif pipeline_status == "failed":
+        status = "blocked"
+        message = f"Pipeline falló · {manifest.get('error', '') or 'ver logs'}"
+    elif pipeline_status == "completed_with_stubs":
+        status = "warn"
+        message = f"Pipeline completó usando stubs ({completed}/{total_motors} motores reales)"
     else:
         status = "blocked"
         message = f"Pipeline status: {pipeline_status or 'unknown'}"
