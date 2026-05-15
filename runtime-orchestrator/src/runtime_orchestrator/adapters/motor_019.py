@@ -25,9 +25,22 @@ analysis as due diligence, underwriting, or acquisition assessment.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import shutil
+
+# V10 P0 — Industry corpus retriever (optional, behind feature flag).
+# Import is gated so that if sentence-transformers / numpy / corpus package
+# are missing, motor_019 still works exactly like before V10.
+try:
+    from runtime_orchestrator.industry_corpus.retriever import (
+        retrieve as _industry_corpus_retrieve,
+    )
+    _INDUSTRY_CORPUS_AVAILABLE = True
+except Exception:  # ImportError, ModuleNotFoundError, anything
+    _INDUSTRY_CORPUS_AVAILABLE = False
+    _industry_corpus_retrieve = None  # type: ignore
 import subprocess
 import tempfile
 import time
@@ -82,6 +95,12 @@ _SYSTEM = (
     "fetched from Census/NOAA/EPA/EIA/OSM — they are NOT claims, just observed context. Cite them "
     "as 'public-record context indicates …' or 'Census Geocoder confirms …'. NEVER fabricate, NEVER "
     "round excessively, NEVER omit them when the section is location/regional/peer-related.\n"
+    "11. INDUSTRY CONTEXT FACTS — when ctx.industry_context_facts is provided (a list of {text, "
+    "source_id, chunk_id, page, similarity}), you MAY cite ONE OR TWO facts if directly relevant to "
+    "the section topic. WHEN you cite, you MUST: (a) copy the text verbatim between double quotes "
+    "(no paraphrasing, no rewording, no summarization); (b) attribute with the exact tag "
+    "[source_id::chunk_id] right after the quote. If no fact is directly relevant, OMIT them — "
+    "never force a citation. If no industry_context_facts are provided, ignore this rule.\n"
 )
 
 _FORBIDDEN_PHRASES = (
@@ -763,6 +782,45 @@ class Motor019Adapter(BaseMotorAdapter):
                 ctx = {**ctx, "public_context_facts": {
                     k: v for k, v in real_discovery.items() if v not in (None, "", [], {})
                 }}
+
+            # V10 P0 — Industry corpus retrieval (BEHIND FEATURE FLAG).
+            # Default OFF → motor_019 output is BIT-IDENTICAL to V9.
+            # When ON and corpus index exists for this asset_family, top-k
+            # chunks are injected as `industry_context_facts`. Rule 11 of
+            # _SYSTEM tells the LLM how to cite them (verbatim or omit).
+            if (os.environ.get("INDUSTRY_CORPUS_ENABLED", "").lower() == "true"
+                    and _INDUSTRY_CORPUS_AVAILABLE
+                    and "industry_context_facts" not in ctx):
+                _af = (fp.get("asset_family") or "").strip()
+                _subj = (title or prompt[:60] or "").strip()
+                if _af and _subj:
+                    try:
+                        _k = int(os.environ.get("INDUSTRY_CORPUS_TOP_K", "3"))
+                        _min_sim = float(os.environ.get("INDUSTRY_CORPUS_MIN_SIM", "0.35"))
+                        _hits = _industry_corpus_retrieve(
+                            query=f"{_af} {_subj}",
+                            asset_family=_af,
+                            k=_k,
+                            min_similarity=_min_sim,
+                        ) or []
+                        if _hits:
+                            ctx = {**ctx, "industry_context_facts": [
+                                {
+                                    "text":       h.text[:600],
+                                    "source_id":  h.source_id,
+                                    "chunk_id":   h.chunk_id,
+                                    "source_url": h.source_url,
+                                    "page":       h.page,
+                                    "similarity": h.similarity,
+                                }
+                                for h in _hits
+                            ]}
+                    except Exception:
+                        # Never let corpus failure break the narrator
+                        logging.getLogger(__name__).debug(
+                            "industry_corpus retrieval failed for section=%s",
+                            section_id, exc_info=True,
+                        )
             packet = _build_section_packet(
                 section_id=section_id,
                 title=title,
