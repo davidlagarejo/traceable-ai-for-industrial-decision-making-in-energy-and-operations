@@ -15451,6 +15451,191 @@ _HUMAN_RULE_EXPLANATIONS: dict[str, dict[str, str]] = {
     },
 }
 
+# ── Patterns canónicos del framework — nombre + 1 línea en español plano ─
+_PATTERN_HUMAN_NAMES: dict[str, dict[str, str]] = {
+    # Cold-chain
+    "refrigeration_duty": {
+        "title": "Refrigeración no caracterizada",
+        "detail": "No sabemos cuánto trabajo real está haciendo el sistema de refrigeración (carga, setpoints, condensadores).",
+    },
+    "compressor_staging": {
+        "title": "Secuencia de compresores no clara",
+        "detail": "Hay varios compresores pero no se sabe cómo se reparten la carga ni si están dimensionados bien.",
+    },
+    "defrost_profile": {
+        "title": "Ciclo de defrost desconocido",
+        "detail": "El defrost (descarche) puede estar mal calibrado y comerse energía sin que nadie lo mida.",
+    },
+    "door_cycle_losses": {
+        "title": "Pérdidas por aperturas de puertas",
+        "detail": "Cada vez que se abre una puerta hacia zona refrigerada entra calor — falta evidencia de cuánto pesa esto.",
+    },
+    "infiltration_load": {
+        "title": "Infiltración térmica del envolvente",
+        "detail": "Hay calor/humedad colándose por el envolvente (sellos, vestíbulos, esclusas).",
+    },
+    "thermal_boundary": {
+        "title": "Límite térmico mal definido",
+        "detail": "No se sabe exactamente dónde termina la zona refrigerada y empieza la ambiente.",
+    },
+    "cold_chain_status_unknown": {
+        "title": "Estado de cadena de frío sin caracterizar",
+        "detail": "Falta saber si hay refrigeración, dónde, qué áreas, qué setpoints.",
+    },
+    "chiller_degradation_plausibility": {
+        "title": "Posible degradación de chillers",
+        "detail": "Los chillers pueden estar perdiendo eficiencia con el tiempo y nadie lo está midiendo.",
+    },
+    # Warehouse / logistics
+    "warehouse_mhe_charging_demand_peak": {
+        "title": "Carga de montacargas dispara picos de demanda",
+        "detail": "Los MHE (montacargas eléctricos) se cargan en horarios que pueden estar inflando el pico de demanda y la tarifa.",
+    },
+    "high_bay_lighting_waste": {
+        "title": "Iluminación de high-bay con desperdicio",
+        "detail": "La iluminación de techo alto puede estar encendida cuando no hay actividad bajo ella.",
+    },
+    "warehouse_dock_infiltration_loss": {
+        "title": "Pérdidas por aperturas de docks",
+        "detail": "Las puertas de carga y descarga dejan entrar/salir aire — puede ser significativo en climas extremos.",
+    },
+    # Manufacturing / process
+    "process_load_vs_waste": {
+        "title": "Carga de proceso vs desperdicio mal separados",
+        "detail": "No está claro qué energía es proceso productivo (intocable) vs soporte/desperdicio (recuperable).",
+    },
+    "boiler_degradation_plausibility": {
+        "title": "Posible degradación de caldera",
+        "detail": "La caldera puede estar perdiendo eficiencia (purga, escala, exceso de aire) sin que se note en factura.",
+    },
+    "compressed_air_leak_plausibility": {
+        "title": "Probables fugas en aire comprimido",
+        "detail": "El sistema de aire comprimido frecuentemente tiene fugas que cuestan kWh sin retornar valor.",
+    },
+    "maintenance_maturity_not_evidenced": {
+        "title": "Mantenimiento sin evidencia de madurez",
+        "detail": "No hay datos que indiquen si el programa de mantenimiento es preventivo real o solo reactivo.",
+    },
+    "maintenance_hidden_value_driver": {
+        "title": "Mantenimiento como driver de valor oculto",
+        "detail": "Buenas prácticas de mantenimiento pueden estar ahorrando (o costando) más que la inversión en equipos nuevos.",
+    },
+    # Office / commercial
+    "hvac_schedule_drift": {
+        "title": "Horarios de HVAC desincronizados",
+        "detail": "El HVAC está corriendo fuera de horas de ocupación o más fuerte de lo necesario.",
+    },
+    "tenant_operator_boundary_unresolved": {
+        "title": "Frontera tenant/operator sin definir",
+        "detail": "No se sabe quién opera qué partes del edificio — owner vs operator vs tenant — y por tanto quién captura el ahorro.",
+    },
+    # Comparison / framing
+    "fair_comparison_invalid_area_metric": {
+        "title": "Comparación por área es injusta",
+        "detail": "Usar kWh/m² como métrica de comparación no funciona para este tipo de activo — distorsiona el ranking.",
+    },
+    "benchmark_denominator_error": {
+        "title": "Error en el denominador del benchmark",
+        "detail": "El benchmark con el que se compara tiene un denominador (área, capacidad, etc.) que no aplica.",
+    },
+    "value_boundary_leakage_owner_operator": {
+        "title": "Valor se fuga por la frontera owner/operator",
+        "detail": "El ahorro proyectado lo captura el operador, no el propietario — o al revés. Hay leakage de valor.",
+    },
+    "compliance_vs_control_mismatch": {
+        "title": "Lo que dice el papel no es lo que pasa",
+        "detail": "Hay diferencia entre lo declarado en compliance/permits y lo que realmente se observa operando.",
+    },
+    # Tariff
+    "demand_charge_exposure_unknown": {
+        "title": "Exposición a demand charge no medida",
+        "detail": "No se sabe cuánto de la factura es cargo por demanda (kW) vs consumo (kWh) — puede ser la mitad.",
+    },
+    # Premature claims
+    "digital_twin_prematurity": {
+        "title": "Digital twin propuesto antes de tiempo",
+        "detail": "Construir un modelo detallado/digital twin solo tiene sentido cuando ya conoces las variables dominantes.",
+    },
+    "sensor_prematurity": {
+        "title": "Sensores propuestos antes de tiempo",
+        "detail": "Instrumentar antes de saber qué buscar es invertir en datos que pueden no responder ninguna pregunta.",
+    },
+    # Loss patterns (genéricos)
+    "process_heat_unbounded_duty": {
+        "title": "Carga térmica de proceso sin bounding",
+        "detail": "El calor de proceso productivo está sin cuantificar — puede ser la mayor parte del consumo.",
+    },
+}
+
+
+def _humanize_pattern(pattern_id: str) -> dict:
+    """Translate a pattern_id to a Spanish title + detail."""
+    spec = _PATTERN_HUMAN_NAMES.get(pattern_id)
+    if spec:
+        return {"pattern_id": pattern_id, **spec}
+    # Fallback: build title from pattern_id
+    return {
+        "pattern_id": pattern_id,
+        "title": pattern_id.replace("_", " ").capitalize(),
+        "detail": "Patrón sin descripción registrada todavía.",
+    }
+
+
+def _humanize_combination(combo: dict, contaminated_pattern_ids: set[str] | None = None) -> dict:
+    """Build a plain-Spanish summary of a combination for the dashboard.
+
+    Returns:
+      {
+        title:          str  — combination_name (cleaned)
+        pattern_bullets: list[{pattern_id, title, detail, is_contaminating}]
+        idea_central:    str  — qué dice la combinación, en español plano
+        riesgo:          str  — qué pasa si tomas decisiones sin saber esto
+        is_contaminated: bool — incluye al menos un pattern marcado contaminante
+      }
+    """
+    contaminated_pattern_ids = contaminated_pattern_ids or set()
+    pattern_ids = list(combo.get("pattern_ids", []) or [])
+    bullets = []
+    is_contaminated = False
+    for pid in pattern_ids:
+        b = _humanize_pattern(pid)
+        b["is_contaminating"] = pid in contaminated_pattern_ids
+        if b["is_contaminating"]:
+            is_contaminated = True
+        bullets.append(b)
+
+    name = str(combo.get("combination_name") or "").strip()
+    if name.lower().startswith("latent "):
+        name = "Posible combinación: " + name[len("latent "):].lower()
+    elif not name:
+        name = "Combinación sin nombre"
+
+    # The combined_hypothesis is technical English; build a 1-line idea
+    # from the pattern titles instead. The strategic_risk often has a
+    # usable sentence — keep its first clause if present.
+    pattern_titles = [b["title"].lower() for b in bullets[:3]]
+    if pattern_titles:
+        idea = "Esta combinación dice que los siguientes problemas pueden estar interactuando: " + " + ".join(pattern_titles) + "."
+    else:
+        idea = "Esta combinación no declara patrones; el framework no puede explicarla."
+
+    risk_raw = str(combo.get("strategic_risk") or "").strip()
+    # Try to make the risk human. If raw exists and isn't gibberish, use a
+    # short Spanish wrapper. Otherwise default.
+    if risk_raw:
+        riesgo = "Si tomas decisiones sin investigar esto, el riesgo es: " + risk_raw
+    else:
+        riesgo = "Si no investigas esto antes de decidir, puedes destinar capital al problema equivocado."
+
+    return {
+        "title":          name,
+        "pattern_bullets": bullets,
+        "idea_central":    idea,
+        "riesgo":          riesgo,
+        "is_contaminated": is_contaminated,
+    }
+
+
 _HUMAN_STATE_EXPLANATIONS: dict[str, str] = {
     "decision_blocked": (
         "El framework detectó BLOQUEADORES graves y decidió que este caso "
@@ -15701,6 +15886,22 @@ def api_curation_run_combinations():
     )
     decisions_by_id = _curation.latest_combination_decisions(run_id) if _curation else {}
 
+    # Identify patterns flagged as contaminating by motor_061 — when the
+    # curator sees a combo that contains one of these, it's a candidate
+    # for rejection because rejecting it could unblock the run.
+    m061 = _curation_load_motor_output(run_id, "motor_061")
+    contaminated_pattern_ids: set[str] = set()
+    for v in (m061.get("pattern_isolation_violations") or []):
+        if isinstance(v, dict):
+            pid = str(v.get("pattern_id", "")).strip()
+            if pid:
+                contaminated_pattern_ids.add(pid)
+    # Also flag patterns mentioned in asset_family_isolation_warnings descriptions
+    for w in (m061.get("asset_family_isolation_warnings") or []):
+        if isinstance(w, dict):
+            for pid in (w.get("contaminating_pattern_ids", []) or []):
+                contaminated_pattern_ids.add(str(pid).strip())
+
     rows: list[dict] = []
     for combo in register:
         if not isinstance(combo, dict):
@@ -15709,6 +15910,7 @@ def api_curation_run_combinations():
         if not cid:
             continue
         existing = decisions_by_id.get(cid) or {}
+        human = _humanize_combination(combo, contaminated_pattern_ids)
         rows.append({
             "combination_id":     cid,
             "combination_name":   str(combo.get("combination_name", cid)),
@@ -15717,8 +15919,15 @@ def api_curation_run_combinations():
             "current_decision":   existing.get("decision", ""),
             "modify_instruction": existing.get("modify_instruction", ""),
             "curator":            existing.get("curator", ""),
+            # V-curation P-humanize-combos: bullets in plain Spanish.
+            "human":              human,
+            "is_contaminated":    human["is_contaminated"],
         })
-    return jsonify({"run_id": run_id, "combinations": rows})
+    return jsonify({
+        "run_id": run_id,
+        "combinations": rows,
+        "contaminated_pattern_ids": sorted(contaminated_pattern_ids),
+    })
 
 
 @app.route("/api/curation/combination-decision", methods=["POST"])
@@ -15887,12 +16096,35 @@ section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border
                     background:#faf5ff;border:1px solid #e9d5ff;border-radius:6px;}
 .decisions-summary.show{display:block;}
 .decisions-summary b{color:#6d28d9;}
+.contamination-notice{display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;
+                       padding:11px 14px;margin-bottom:14px;}
+.contamination-notice.show{display:block;}
+.contamination-notice .cn-title{font-size:13.5px;font-weight:700;color:#991b1b;margin-bottom:6px;}
+.contamination-notice .cn-detail{font-size:12.5px;color:#7f1d1d;line-height:1.55;}
+.contamination-notice .cn-detail b{color:#450a0a;}
 .combo{border:1px solid #e4e4e7;border-radius:9px;padding:13px 15px;margin-bottom:12px;background:#fcfcfc;}
-.combo h3{margin:0 0 6px 0;font-size:14px;font-weight:700;color:#18181b;}
-.combo .explain{font-size:12.5px;color:#3f3f46;line-height:1.5;margin-bottom:10px;}
-.combo .patterns{font-size:10.5px;color:#71717a;margin-bottom:10px;}
-.combo .patterns .tag{display:inline-block;font-size:10px;background:#f4f4f5;border:1px solid #e4e4e7;
-                      border-radius:4px;padding:1px 6px;margin:1px 3px 1px 0;font-family:ui-monospace,monospace;}
+.combo.contaminated{border-color:#fca5a5;background:#fef2f2;}
+.combo.contaminated::before{content:"⚠ ESTA COMBINACIÓN ESTÁ CONTAMINADA · contiene patrones que NO aplican a este tipo de activo. Recomendado: rechazar.";
+                             display:block;background:#fee2e2;color:#991b1b;font-size:11px;
+                             font-weight:700;padding:5px 9px;border-radius:5px;margin:-3px -4px 9px -4px;line-height:1.4;}
+.combo h3{margin:0 0 6px 0;font-size:14.5px;font-weight:700;color:#18181b;line-height:1.3;}
+.combo .idea{font-size:12.5px;color:#3f3f46;line-height:1.55;margin-bottom:10px;
+              background:#fafafa;padding:8px 11px;border-left:3px solid #2563eb;border-radius:4px;}
+.combo .idea strong{color:#1d4ed8;font-weight:700;}
+.combo .pattern-bullets{margin:8px 0 10px 0;}
+.combo .pat-bullet{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f4f4f5;}
+.combo .pat-bullet:last-child{border-bottom:0;}
+.combo .pat-bullet.contaminating .pat-title{color:#991b1b;}
+.combo .pat-bullet .pat-icon{flex-shrink:0;font-size:13px;margin-top:1px;}
+.combo .pat-bullet .pat-body{flex:1;min-width:0;}
+.combo .pat-bullet .pat-title{font-size:12.5px;font-weight:600;color:#27272a;line-height:1.3;}
+.combo .pat-bullet .pat-detail{font-size:11.5px;color:#52525b;line-height:1.45;margin-top:2px;}
+.combo .pat-bullet .pat-warn{display:inline-block;font-size:9.5px;font-weight:700;color:#991b1b;
+                              background:#fee2e2;padding:1px 5px;border-radius:3px;margin-left:5px;
+                              text-transform:uppercase;letter-spacing:.04em;}
+.combo .riesgo{font-size:11.5px;color:#92400e;background:#fffbeb;border:1px solid #fde68a;
+                border-radius:5px;padding:7px 10px;margin-bottom:10px;line-height:1.5;}
+.combo .riesgo b{color:#78350f;}
 .combo .btnrow{display:flex;gap:7px;flex-wrap:wrap;}
 .btn{padding:7px 13px;border:0;border-radius:6px;cursor:pointer;font-size:12.5px;font-weight:600;transition:opacity .15s;}
 .btn-ok{background:#16a34a;color:#fff;}
@@ -16035,6 +16267,7 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
         ↻ Aplicar decisiones y re-correr
       </button>
     </div>
+    <div id="contamination-notice" class="contamination-notice"></div>
     <div id="decisions-summary" class="decisions-summary"></div>
     <div id="approvals">
       <div class="empty-block">Selecciona un caso para ver sus combinaciones.</div>
@@ -16326,6 +16559,23 @@ async function loadApprovals() {
   const data = await r.json();
   const combos = data.combinations || [];
   $("combo-count").textContent = combos.length;
+  // Contamination notice — when the run has contamination, surface that
+  // the combinations carrying contaminating patterns are good rejection
+  // candidates to potentially unblock the run.
+  const contaminated = combos.filter(c => c.is_contaminated).length;
+  const noticeEl = $("contamination-notice");
+  if (contaminated > 0) {
+    noticeEl.classList.add("show");
+    noticeEl.innerHTML = `
+      <div class="cn-title">⚠ Este caso está bloqueado por contaminación de patrones</div>
+      <div class="cn-detail">
+        <b>${contaminated}</b> de <b>${combos.length}</b> combinaciones contienen patrones que no aplican a este tipo de activo (marcadas con <b>⚠</b> abajo).
+        Rechaza las contaminadas y haz click en <b>"↻ Aplicar decisiones y re-correr"</b> — el framework volverá a correr sin ellas y el reporte puede pasar el gate.
+      </div>`;
+  } else {
+    noticeEl.classList.remove("show");
+    noticeEl.innerHTML = "";
+  }
   // Decisions summary + apply button
   const counts = {accept: 0, reject: 0, modify: 0};
   combos.forEach(c => { if (c.current_decision) counts[c.current_decision] = (counts[c.current_decision] || 0) + 1; });
@@ -16358,16 +16608,27 @@ async function loadApprovals() {
   el.innerHTML = combos.map(c => {
     const dec = c.current_decision || "";
     const decBadge = dec ? `<div class="decided decided-${dec}">${dec.toUpperCase()}</div>` : "";
-    const patterns = (c.pattern_ids || []).map(p => `<span class="tag">${escapeHtml(p)}</span>`).join("");
+    const h = c.human || {};
+    const bullets = (h.pattern_bullets || []).map(b => `
+      <div class="pat-bullet ${b.is_contaminating ? "contaminating" : ""}">
+        <span class="pat-icon">${b.is_contaminating ? "⚠" : "•"}</span>
+        <div class="pat-body">
+          <div class="pat-title">${escapeHtml(b.title)}${b.is_contaminating ? '<span class="pat-warn">contaminante</span>' : ""}</div>
+          <div class="pat-detail">${escapeHtml(b.detail)}</div>
+        </div>
+      </div>`).join("");
     const modInstr = c.modify_instruction || "";
+    const cardCls = c.is_contaminated ? "combo contaminated" : "combo";
+    const acceptLabel = c.is_contaminated ? "✅ Aceptar de todos modos" : "✅ Aceptar";
     return `
-      <div class="combo" id="combo-${escapeHtml(c.combination_id)}">
-        <h3>${escapeHtml(c.combination_name)}</h3>
+      <div class="${cardCls}" id="combo-${escapeHtml(c.combination_id)}">
+        <h3>${escapeHtml(h.title || c.combination_name)}</h3>
         ${decBadge}
-        <div class="explain">${escapeHtml(c.explanation || "—")}</div>
-        <div class="patterns">Patrones: ${patterns || "—"}</div>
+        ${h.idea_central ? `<div class="idea"><strong>Qué dice esta combinación:</strong> ${escapeHtml(h.idea_central)}</div>` : ""}
+        <div class="pattern-bullets">${bullets}</div>
+        ${h.riesgo ? `<div class="riesgo"><b>Por qué importa:</b> ${escapeHtml(h.riesgo)}</div>` : ""}
         <div class="btnrow">
-          <button class="btn btn-ok" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'accept')">✅ Aceptar</button>
+          <button class="btn btn-ok" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'accept')">${acceptLabel}</button>
           <button class="btn btn-no" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'reject')">❌ Rechazar</button>
           <button class="btn btn-ed" onclick="toggleModify('${escapeHtml(c.combination_id)}')">✏️ Modificar</button>
         </div>
