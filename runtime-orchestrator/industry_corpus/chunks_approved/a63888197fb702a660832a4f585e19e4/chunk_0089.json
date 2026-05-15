@@ -1,0 +1,15 @@
+{
+  "chunk_id": "a6388819::chunk_0089",
+  "source_id": "doe_osti_1893828",
+  "source_sha": "a63888197fb702a660832a4f585e19e4",
+  "source_url": "https://www.osti.gov/servlets/purl/1893828",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "of Operating Engineers Local 57 members operated cranes at sea and supported cranes on land through a project labor agreement for the Block Island Wind Farm. 84 This report is available at no cost from the National Renewable Energy Laboratory at www.nrel.gov/publications.",
+  "token_count": 42,
+  "text_sha": "39c8da6054026f5cae156b77d160ed8ff242c062cec390429f44fb3c7599c9fe",
+  "extracted_at": "2026-05-15T14:09:36.008063Z"
+}

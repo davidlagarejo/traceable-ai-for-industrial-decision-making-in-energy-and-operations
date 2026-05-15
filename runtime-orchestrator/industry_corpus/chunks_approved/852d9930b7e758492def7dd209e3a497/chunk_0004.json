@@ -1,0 +1,15 @@
+{
+  "chunk_id": "852d9930::chunk_0004",
+  "source_id": "doe_osti_1893824",
+  "source_sha": "852d9930b7e758492def7dd209e3a497",
+  "source_url": "https://www.osti.gov/servlets/purl/1893824",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "simulators—can use NREL or commercial tools. • Example conversion flow https://github.com/NREL/DSS2ePHASOR Synergi, OpenDSS ePHASORSIM OpenDSS to Cyme, CIM, Σ model of model of ePHASORSIM Windmill, subtree subtree etc. OpenDSS Subtree DiTTo model extraction (full circuit) OpenDSS model of subtree NREL’s Distribution Transformation Tool (DiTTo), an open-source framework to convert various distribution system modeling formats: https://github.com/NREL/ditto. NREL | 22 Hardware Integration • Hardware-in-the-loop integration of controller and/or power hardware • NREL-owned equipment is available for use. EMTP Voltage V(t) Power QSTS Power flow Difference between After turning on set point and voltage regulator observed voltage NREL | 23 Communications Interfaces • Uses industry-standard interfaces • Distributed Network Protocol 3 (DNP3): – ADMS to OpenDSS: • Device simulator developed by EPRI to provide communications interface. – ADMS to OPAL-RT/RTDS: • DNP3 drivers available. • Currently implementing 2030.5 clients: – Developed by EPRI. • Modbus is being set up for some hardware. • MultiSpeak. NREL | 24 Data Collection and Management • Architected and implemented data management tools • C++ code on GitHub (https://github.com/NREL/rts-vis-app and https://github.com/NREL/rts-data) • 3D visualization was also developed. Photo by NREL NREL | 25",
+  "token_count": 185,
+  "text_sha": "dbe4c74c3330b7f90ac98b1cf71864dcfd376fbac96db7e66116a4bcd3daea22",
+  "extracted_at": "2026-05-15T14:09:21.223270Z"
+}

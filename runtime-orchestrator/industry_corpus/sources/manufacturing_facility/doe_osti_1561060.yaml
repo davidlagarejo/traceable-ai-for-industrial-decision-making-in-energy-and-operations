@@ -1,0 +1,12 @@
+source_id: doe_osti_1561060
+title: "DOE OSTI 1561060"
+url: https://www.osti.gov/servlets/purl/1561060
+license: public_domain
+publisher: doe_osti
+version: "2024"
+added_at: "2026-05-15T14:05:33.229333Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - manufacturing_facility
+  - _shared

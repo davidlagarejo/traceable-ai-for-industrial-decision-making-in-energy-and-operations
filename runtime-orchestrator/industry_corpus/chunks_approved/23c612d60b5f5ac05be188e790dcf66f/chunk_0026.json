@@ -1,0 +1,14 @@
+{
+  "chunk_id": "23c612d6::chunk_0026",
+  "source_id": "eia_mer_sec9",
+  "source_sha": "23c612d60b5f5ac05be188e790dcf66f",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec9.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "EIA, NGM, March 2026, Table 3. Percentage of Industrial Sector 1982–2015: EIA, NGA, annual reports. Calculated as the total amount of natural gas delivered to industrial consumers minus the amount delivered for the account of others, and then divided by the total amount delivered to industrial consumers. 2016 forward: EIA, NGM, March 2026, Table 3. U. S. Energy Information Administration / Monthly Energy Review April 2026 187 Percentage of Electric Power Sector 1973–2001: Calculated by EIA as the quantity of natural gas receipts by electric utilities reported on Form FERC-423, \"Monthly Report of Cost and Quality of Fuels for Electric Utility Plants\" (and predecessor forms) divided by the quantity of natural gas consumed by the electric power sector (for 1973 –1988, see Monthly Energy Review (MER), Table 7.3b; for 1989–2001, see MER, Table 7.4b). 2002–2007: Calculated by EIA as the quantity of natural gas receipts by electric utilities and independent power producers reported on Form FERC-423, \"Monthly Report of Cost and Quality of Fuels for Electric Utility Plants,\" and EIA- 423, \"Monthly Cost and Quality of Fuels for Electric Plants Report,\" divided by the quantity of natural gas consumed by the electric power sector (see MER, Table 7.4b). 2008 forward: Calculated by EIA as the quantity of natural gas receipts by electric utilities and independent power producers reported on Form EIA-923, \"Power Plant Operations Report,\" divided by the quantity of natural gas consumed by the electric power sector (see MER, Table 7.4b). 188 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 254,
+  "text_sha": "4c843af5790220a91dd657b7238751331e0d5b2e22e0aca9d44f680711780eb2",
+  "extracted_at": "2026-05-15T14:07:21.043786Z"
+}

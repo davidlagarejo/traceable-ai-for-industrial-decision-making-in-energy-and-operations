@@ -1,0 +1,11 @@
+source_id: eia_mer_sec7_3
+title: "EIA MER §7.3 Electricity Net Generation"
+url: https://www.eia.gov/totalenergy/data/monthly/pdf/sec7_3.pdf
+license: public_domain
+publisher: eia
+version: "2024"
+added_at: "2026-05-15T14:05:33.228804Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - infrastructure_node

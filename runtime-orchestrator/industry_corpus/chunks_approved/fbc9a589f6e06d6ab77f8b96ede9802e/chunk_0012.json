@@ -1,0 +1,15 @@
+{
+  "chunk_id": "fbc9a589::chunk_0012",
+  "source_id": "doe_osti_1893826",
+  "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
+  "source_url": "https://www.osti.gov/servlets/purl/1893826",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "• Web Services API (PVWatts Only) • Open-source SAM code Built in Scripting Language and Macros Flexible, lightweight scripting language built in to the SAM desktop tool, allowing users to quickly run custom analyses and read/write to other files NREL | 20",
+  "token_count": 42,
+  "text_sha": "95fe5ced3017b9e6fdfb54e165ae38ffb6918ad28f0010d083318d81f3159c62",
+  "extracted_at": "2026-05-15T14:09:25.463779Z"
+}

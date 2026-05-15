@@ -1,0 +1,15 @@
+{
+  "chunk_id": "d77c42fb::chunk_0013",
+  "source_id": "doe_osti_1893829",
+  "source_sha": "d77c42fb453bab68645fada62bee6fba",
+  "source_url": "https://www.osti.gov/servlets/purl/1893829",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Department of Energy 15013 Denver West Parkway, Golden, CO 80401 Office of Energy Efficiency and Renewable Energy 303-275-3000 • www.nrel.gov Operated by the Alliance for Sustainable Energy, LLC NREL prints on paper that contains recycled content. NREL/FS-6A70-83715 • August 2022",
+  "token_count": 40,
+  "text_sha": "e9f78acec50e692b981a8abea42e60ecfa401396ca81422319e9ac92da28e34d",
+  "extracted_at": "2026-05-15T14:09:37.297933Z"
+}

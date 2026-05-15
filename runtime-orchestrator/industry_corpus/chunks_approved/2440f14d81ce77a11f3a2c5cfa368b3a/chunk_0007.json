@@ -1,0 +1,15 @@
+{
+  "chunk_id": "2440f14d::chunk_0007",
+  "source_id": "doe_osti_1782680",
+  "source_sha": "2440f14d81ce77a11f3a2c5cfa368b3a",
+  "source_url": "https://www.osti.gov/servlets/purl/1782680",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "10 Senii9 Conclusion atonal • High-speed algorithm for extracting linewidths from 2D spectroscopy data • No operator input required, ideal for on-the-fly data analysis • Good accuracy for intermediately broadened case, hard case for manual fitting • Demonstrated capability of accurately measuring noisy real experimental data 5/4/20 11",
+  "token_count": 48,
+  "text_sha": "e54b5212f6b3fb4090896ff9daa76e9c89d72fffee366033177ef41afb2235f0",
+  "extracted_at": "2026-05-15T14:07:47.919822Z"
+}

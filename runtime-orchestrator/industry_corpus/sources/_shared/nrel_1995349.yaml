@@ -1,0 +1,11 @@
+source_id: nrel_1995349
+title: "NREL 1995349"
+url: https://www.osti.gov/servlets/purl/1995349
+license: public_domain
+publisher: nrel
+version: "2024"
+added_at: "2026-05-15T14:05:33.229610Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - _shared

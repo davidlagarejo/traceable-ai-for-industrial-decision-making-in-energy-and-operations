@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0ec8fce::chunk_0007",
+  "source_id": "eia_mer_sec10",
+  "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec10.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "1 Municipal solid waste from biogenic sources, landfill gas, sludge waste, Sources: See end of section. 192 U. S. Energy Information Administration / Monthly Energy Review April 2026 Table 10.2b Renewable Energy Consumption: Industrial Sector (Trillion Btu) Industrial Sectora Biomass Hydro- Losses electric Geo- Fuel and Co- Powerb thermalc Solard Winde Wood1 Waste9 Ethanolh,i productsi Total Total 1950 Total .. . 17 NA NA NA 532 NA NA NA 532 549 1955 Total ... . 11 NA NA NA 631 NA NA NA 631 642 1960 Total ................... . 12 NA NA NA 680 NA NA NA 680 692 1965 Total ................... . 11 NA NA NA 855 NA NA NA 855 866 1970 Total ... . 11 NA NA NA 1,019 NA NA NA 1,019 1,030 1975 Total .................. . 11 NA NA NA 1,063 NA NA NA 1,063 1,074 1980 Total ................... . 11 NA NA NA 1,600 NA NA NA 1,600 1,611 1985 Total .................. . 11 NA NA NA 1,645 230 1 42 1,918 1,928 1990 Total ................... . 10 2 (s) 1,442 192 1 49 1,684 1,696 1995 Total .................. . 18 3 (s) 1,652 195 2 86 1,934 1,955 2000 Total ................... . 14 4 (s) 1,636 145 1 99 1,881 1,900 2005 Total .................. . 11 4 (s) 1,452 148 7 227 1,834 1,849 2010 Total .... . 6 4 1 1,409 168 17 727 2,320 2,331 2011 Total ................... 6 4 1 (s) 1,438 165 17 756 2,375 2,387 2012 Total ................... . 8 4 2 (s) 1,462 159 17 711 2,349 2,363 2013 Total .. . 12 4 3 (s) 1,489 187 18 714 2,407 2,427 2014 Total ... . 4 4 4 (s) 1,495 190 14 766 2,466 2,478 2015 Total ................... . 5 4 5 (s) 1,476 190 ;18 791 2,474 2,489 2016 Total ................... . 4 4 7 !:l 1,474 174 18 821 2,487 2,503 2017 Total .... . 5 4 8 1,442 168 18 847 2,475 2,493 2018 Total ... . 4 4 9 (s) 1,432 165 19 855 2,471 2,489 2019 Total ................... . 4 4 11 (s) 1,407 156 19 835 2,416 2,435 2020 Total ... . 3 4 12 (s) 1,356 160 19 735 2,270 2,290 2021 Total ... . 3 4 14 (s) 1,366 161 19 789 2,336 2,357 2022 Total ................... . 3 4 15 (s) 1,415 161 20 808 2,404 2,426 2023 Total ................... . 3 4 16 (s) 1,341 153 20 819 2,334 2,357 2024 January (s) (s) 1 (s) 113 14 R 1 68 R 196 198 February ............. . (s) (s) 1 (s) 107 13 2 69 R 190 192 March ... . (s) (s) 2 (s) 112 14 2 73 201 203 April .... . (s) (s) 2 (s) 110 13 R 1 65 190 192 May .................... . (s) (s) 2 (s) 110 14 2 70 196 198 June .................... . (s) (s) 2 (s) 109 12 2 69 191 194 July .... . (s) (s) 2 (s) 111 12 2 75 200 202",
+  "token_count": 508,
+  "text_sha": "6affd103e028955ac18b762b92d5000243da32d4d12d1fd55c33489d6e8e6a37",
+  "extracted_at": "2026-05-15T14:07:33.077526Z"
+}

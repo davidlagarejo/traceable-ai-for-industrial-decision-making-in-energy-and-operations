@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1f486f3a::chunk_0037",
+  "source_id": "eia_mer_sec2",
+  "source_sha": "1f486f3aa48831e452766ae8b26a1291",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec2.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Primary Energy Consumption 1949 forward: Electric power sector total primary energy consumption is the sum of the electric power sector consumption values for fossil fuels, nuclear electric power, and renewable energy, plus electricity net imports. 62 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 47,
+  "text_sha": "3c98eed70941b71e43fe609e4340145dd8b64d731760ac57d641313f6f5b9369",
+  "extracted_at": "2026-05-15T14:06:09.788797Z"
+}

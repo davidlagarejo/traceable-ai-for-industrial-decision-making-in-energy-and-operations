@@ -1,0 +1,15 @@
+{
+  "chunk_id": "b0f7cd67::chunk_0012",
+  "source_id": "doe_osti_1893827",
+  "source_sha": "b0f7cd671b02522402d1c2906faa630d",
+  "source_url": "https://www.osti.gov/servlets/purl/1893827",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the publisher, by accepting the article for publication, acknowledges that the U.S. NREL/PO-5K00-78247 Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes.",
+  "token_count": 41,
+  "text_sha": "482e4aa4d025ecda820b29fc1f98513056079e2dec44d34b5da20225b169d10c",
+  "extracted_at": "2026-05-15T14:09:27.591456Z"
+}

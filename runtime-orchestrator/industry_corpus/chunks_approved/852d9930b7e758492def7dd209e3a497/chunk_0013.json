@@ -1,0 +1,15 @@
+{
+  "chunk_id": "852d9930::chunk_0013",
+  "source_id": "doe_osti_1893824",
+  "source_sha": "852d9930b7e758492def7dd209e3a497",
+  "source_url": "https://www.osti.gov/servlets/purl/1893824",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "being set up for some hardware. • MultiSpeak. NREL | 24 Data Collection and Management • Architected and implemented data management tools • C++ code on GitHub (https://github.com/NREL/rts-vis-app and https://github.com/NREL/rts-data) • 3D visualization was also developed. Photo by NREL NREL | 25",
+  "token_count": 42,
+  "text_sha": "7c7649b562cf3edceb61ddb6bfea3b6d24a18d8ddb08f5d178074547d0696f91",
+  "extracted_at": "2026-05-15T14:09:21.223270Z"
+}

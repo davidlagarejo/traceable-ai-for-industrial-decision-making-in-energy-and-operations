@@ -1,0 +1,11 @@
+source_id: nrel_1907181
+title: "NREL 1907181"
+url: https://www.osti.gov/servlets/purl/1907181
+license: public_domain
+publisher: nrel
+version: "2024"
+added_at: "2026-05-15T14:05:33.229540Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - _shared

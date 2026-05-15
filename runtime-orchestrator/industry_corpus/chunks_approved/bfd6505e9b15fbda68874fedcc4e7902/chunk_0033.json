@@ -1,0 +1,15 @@
+{
+  "chunk_id": "bfd6505e::chunk_0033",
+  "source_id": "doe_osti_1893830",
+  "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
+  "source_url": "https://www.osti.gov/servlets/purl/1893830",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Y., Denning, A.S., Marchetti, Y., Nelson, R.R., O’Dell, C.W., Osterman, G., Pavlick, R., Roehl, C., Keller, K., Davis, K.J., 2020. ACT-America: Gridded Ensembles of Surface Biogenic Schneider, R., Spiers, G., To, C., Wells, C., Wennberg, P.O., Yelamanchili, A., Yu, S., Carbon Fluxes, 2003-2019. 13",
+  "token_count": 44,
+  "text_sha": "e556312c10717186bc7384ae529a3ae0c06b4e356c99f51bf3072547042fc1ed",
+  "extracted_at": "2026-05-15T14:09:42.490232Z"
+}

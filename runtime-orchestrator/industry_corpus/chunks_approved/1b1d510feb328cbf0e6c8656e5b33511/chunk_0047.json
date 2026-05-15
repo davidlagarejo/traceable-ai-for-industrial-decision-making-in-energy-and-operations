@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1b1d510f::chunk_0047",
+  "source_id": "eia_mer_sec3",
+  "source_sha": "1b1d510feb328cbf0e6c8656e5b33511",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "R716 February ............. . 44 98 32 27 59 277 (s) 6 21 22 3 162 R533 March .. 53 87 20 32 52 293 (s) 7 23 26 4 179 R671 April ..... . 59 95 21 33 54 279 (s) 9 22 59 4 171 R597 May ..... . 83 94 32 34 66 315 (s) 7 R24 55 4 187 770 June ..... 95 71 36 32 69 305 (s) 8 23 33 3 184 722 July ..................... . 96 82 37 32 69 295 (s) 7 24 57 3 188 753 August ................ . 105 104 44 33 77 328 (s) 9 24 37 3 190 RSQ0 September .......... . 89 85 48 31 79 334 (s) 7 R22 35 3 172 747 October 97 132 58 33 91 353 (s) 7 R23 34 4 175 825 November 70 87 34 34 68 313 (s) 4 22 35 4 175 710 December 49 88 47 35 82 345 (s) R4 R22 22 4 177 R711 Total ....... . 888 1,136 458 388 847 3,740 2 R53 R271 453 42 2,138 RS,755 2025 January .... . 46 126 57 33 91 331 1 6 22 57 4 175 R757 February 41 84 46 28 74 280 1 5 R2Q 18 4 156 Reos March ... . 50 102 32 29 61 293 (s) R5 R22 30 4 175 R683 April .... . 63 98 23 31 54 280 (s) 8 R22 43 4 173 R691 May .................... . 79 89 27 32 59 302 (s) 8 R23 56 2 188 748 June .................... . 92 96 35 31 66 317 (s) 7 23 39 3 187 R755 July .... . 100 87 45 34 78 336 (s) 10 R23 47 4 194 801 August . 101 84 61 30 91 373 (s) 9 24 34 3 194 R821 September .......... . 99 100 46 29 75 331 (s) 10 R22 28 4 184 779 October 90 118 47 27 74 336 (s) 9 23 33 4 171 R782 November ............ 67 92 24 29 54 309 (s) 9 22 19 4 170 691 December ........... . 48 87 40 32 72 335 1 8 R22 41 4 184 R73Q Total .................... 877 1,161 484 365 849 3,822 3 R95 R269 445 45 2,149 R8,866 2026 January 42 114 55 31 86 355 10 21 49 3 187 782 a Industrial sector fuel use, including that at industrial combined-heat-and-power also includes negative barrels per day of distillate and residual fuel oil reclassified (CHP) and industrial electricity-only plants. as unfinished oils (through 2021 ), and other products (from both primary and b Propane and propylene. Through 1983, also includes 40% of \"Butane secondary supply) reclassified as gasoline blending components. Beginning in Propane Mixtures\" and 30% of \"Ethane-Propane Mixtures.\" 1983, also includes crude oil burned as fuel. Beginning in 2005, also includes c Ethane, propane, normal butane, isobutane, and refinery olefins (ethylene, naphtha-type jet fuel. propylene, butylene, and isobutylene). Through 1983, also includes plant R=Revised. (s)=Less than 0.5 trillion Btu and",
+  "token_count": 511,
+  "text_sha": "ff3bb3898c02aeadf38a8dc3b22e8156405b64c7409dbe2c239e322694385657",
+  "extracted_at": "2026-05-15T14:06:24.411919Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1f486f3a::chunk_0033",
+  "source_id": "eia_mer_sec2",
+  "source_sha": "1f486f3aa48831e452766ae8b26a1291",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec2.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "7.2a are converted to Btu by multiplying by the nuclear heat rate factors in Table A6. Renewable Energy 1949 forward: Table 10.2c. Electricity Net Imports 1949 forward: Electricity net imports are equal to electricity imports from Table 1.4a minus electricity exports from Table 1.4b. Total Primary Energy Consumption 1949 forward: Electric power sector total primary energy consumption is the sum of the electric power sector consumption values for fossil fuels, nuclear electric power, and renewable energy, plus electricity net imports. 62 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 92,
+  "text_sha": "ab664fd71ca79e1318ef6973a5e6f98adab1f36502c1d72465d6a59527e48dfd",
+  "extracted_at": "2026-05-15T14:06:09.788797Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "23c612d6::chunk_0027",
+  "source_id": "eia_mer_sec9",
+  "source_sha": "23c612d60b5f5ac05be188e790dcf66f",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec9.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the quantity of natural gas receipts by electric utilities and independent power producers reported on Form EIA-923, \"Power Plant Operations Report,\" divided by the quantity of natural gas consumed by the electric power sector (see MER, Table 7.4b). 188 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 50,
+  "text_sha": "2ef88797ed54bd319fdcc6fc34e235a1c6992ecd6fba9dc33650d870057af0a1",
+  "extracted_at": "2026-05-15T14:07:21.043786Z"
+}

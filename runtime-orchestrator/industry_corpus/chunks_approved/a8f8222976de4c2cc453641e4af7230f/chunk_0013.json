@@ -1,0 +1,15 @@
+{
+  "chunk_id": "a8f82229::chunk_0013",
+  "source_id": "ornl_1832320",
+  "source_sha": "a8f8222976de4c2cc453641e4af7230f",
+  "source_url": "https://www.osti.gov/servlets/purl/1832320",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "since it cannot describe conical intersections) to an accurate description of the longer time dynamics on the ground state. This method (treating short-time excited state dynamics with CASSCF and longer time ground state dynamics with DFT) has been successfully applied previously.14-16 II. Ab Initio Multiple Spawning Ab initio multiple spawning (AIMS) is a nonadiabatic dynamics algorithm aimed at describing photodynamical processes involving multiple electronic states using a time-dependent basis set. In the following, we present a brief introduction to the working equations of AIMS and refer the reader elsewhere for a more a more detailed discussion.17 The exact molecular wavefunction can be separated into electronic and nuclear contributions using the Born-Huang representation: 19 LLNL-JRNL-822958 Y ( r , R , t ) = c I ( R , t ) f å I I ( r ; R ) (1) where c ( R,t ) denotes the time-dependent nuclear wavefunction for electronic state I and I f I ( r ; R ) is the electronic wavefunction for state I at nuclear configuration R. In the adiabatic representation, f ( r;R ) is expanded into an orthonormal electronic basis consisting of I eigenfunctions of the time-independent electronic Schrödinger equation (TIESE) parametrically dependent on nuclear configuration R. Under the AIMS ansatz, c I ( R , t ) is represented as a superposition of frozen Gaussian functions called trajectory basis functions (TBF): c 20 LLNL-JRNL-822958 I ( R , t ) = c Ik ( t ) c Ik R ; R Ik ( t ) , P Ik ( t ) , g Ik ( t ) , a ( ) N t I åk = 1 ( Ik ) (2) where N (t) is the total number of TBFs on electronic state I, I c Ik ( t ) is the time-dependent complex coefficient of the kth TBF on electronic state I, is the frozen TBF width, and cI(...) is a k multidimensional frozen Gaussian that is expressed as a product of one-dimensional Gaussian functions corresponding to the 3N nuclear degrees of freedom. In AIMS, each TBF evolves adiabatically along one Born-Oppenheimer electronic surface. The time-dependent positions and momenta, R r I k ( t ) , P r ( I k ( t ) ) , of the TBFs are propagated classically according to Hamilton’s equations of motion on the given electronic state: ¶RI ( t ) PI ( t ) r k = r k (3) ¶t m r ¶ P r ¶ I k t ( t ) = - ¶ E ¶ I R ( R ) r k R r Ik ( )t (4) where m is the mass for the th nuclear coordinate and r E I ( R ) is the electronic energy of state I with nuclear configuration R. The nuclear phase, g Ik ( t ) , is propagated semiclassically according to the classical Lagrangian: ¶gI 3N ( PI ( t ))2 k =å r k -E ( RI( t )) (5) ¶t 2m I k r=1 r The evolution of the",
+  "token_count": 512,
+  "text_sha": "14a193911435782052d2b4f86cd8e7c5e6739698e273664bba8cbf3fc7b6a375",
+  "extracted_at": "2026-05-15T14:08:25.190937Z"
+}

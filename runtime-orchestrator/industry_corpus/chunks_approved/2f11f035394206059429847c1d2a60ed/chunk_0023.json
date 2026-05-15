@@ -1,0 +1,15 @@
+{
+  "chunk_id": "2f11f035::chunk_0023",
+  "source_id": "doe_osti_1893831",
+  "source_sha": "2f11f035394206059429847c1d2a60ed",
+  "source_url": "https://www.osti.gov/servlets/purl/1893831",
+  "asset_families": [
+    "cold_chain_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Capacity vs. Volume change in the state-of-art high-Ni, low-Co and benchmark cathodes Summaries of discharge capacity, volume change and capacity retention in state-of-art high-Ni, low-Co/zero-Co cathode materials. Zero-Co cathodes are labeled as bold. Volume change is calculated based on the lattice parameters a and c.",
+  "token_count": 45,
+  "text_sha": "7b2427f12872f2008cddc1f5135c02c4681245812302f10663bf56c5c9af53f2",
+  "extracted_at": "2026-05-15T14:05:44.840024Z"
+}

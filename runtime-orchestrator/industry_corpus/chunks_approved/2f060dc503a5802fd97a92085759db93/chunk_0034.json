@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2f060dc5::chunk_0034",
+  "source_id": "eia_mer_sec11",
+  "source_sha": "2f060dc503a5802fd97a92085759db93",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec11.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "based on the biogenic shares of total municipal solid waste shown in EIA's \"Methodology for Allocating Municipal Solid Waste to Biogenic and Non-Biogenic Energy,\" Table 1 at https://www.eia.gov/totalenergy/data/monthly/pdf/historical/msw.pdf. 226 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 40,
+  "text_sha": "28fb5efea4750a1e1e938fac671f9e90d749b5e652ff11903b84d7ced042127a",
+  "extracted_at": "2026-05-15T14:07:44.033946Z"
+}

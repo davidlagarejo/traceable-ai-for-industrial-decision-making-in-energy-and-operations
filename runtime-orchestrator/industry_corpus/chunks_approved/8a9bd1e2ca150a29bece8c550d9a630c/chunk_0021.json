@@ -1,0 +1,15 @@
+{
+  "chunk_id": "8a9bd1e2::chunk_0021",
+  "source_id": "ornl_1817423",
+  "source_sha": "8a9bd1e2ca150a29bece8c550d9a630c",
+  "source_url": "https://www.osti.gov/servlets/purl/1817423",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Oak Ridge National Laboratory, ORNL/TM-2020/1834, Oak Ridge, TN, 2020. Web. doi:10.2172/1760108. [10] W. A. Wieselquist, R. A. Lefebvre and M. A. Jessee (Editors), \"SCALE Code System, ORNL/TM- 2005/39, Version 6.2.4,,\" Oak Ridge National Laboratory, , Oak Ridge, TN, 2020. https://www.ornl.gov/file/scale-62-manual/display. 10",
+  "token_count": 41,
+  "text_sha": "2593f16599b200f06f54a0e73b342c4bf13f9d28db42c987e068d573ffd366c2",
+  "extracted_at": "2026-05-15T14:08:22.525922Z"
+}

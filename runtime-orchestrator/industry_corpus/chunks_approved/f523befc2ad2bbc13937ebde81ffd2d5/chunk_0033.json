@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f523befc::chunk_0033",
+  "source_id": "doe_osti_1893821",
+  "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
+  "source_url": "https://www.osti.gov/servlets/purl/1893821",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "2011. [4] National Energy Technology Laboratory (NETL), \"Cost and Performance Baseline for Fossil Energy Plants Volume 1b: Bituminous Coal (IGCC) to Electricity Revision 2b - Year Dollar Update,\" PIttsburgh, PA, 2015. National Energy Technology Laboratory Systems Engineering and Analysis Directorate 43",
+  "token_count": 41,
+  "text_sha": "59fb364b48bac0778e1f75fe1848061597de91733f1e8d1e6cd6a6d9a8032908",
+  "extracted_at": "2026-05-15T14:08:54.155654Z"
+}

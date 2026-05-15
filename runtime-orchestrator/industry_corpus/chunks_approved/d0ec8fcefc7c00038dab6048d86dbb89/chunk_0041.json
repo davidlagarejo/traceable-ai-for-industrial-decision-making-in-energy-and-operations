@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0ec8fce::chunk_0041",
+  "source_id": "eia_mer_sec10",
+  "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec10.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "for the commercial, industrial, and electric power sectors. Solar Energy Consumption: Total 1984 forward: Total solar energy consumption is the sum of the values for total small-scale solar energy consumption and total utility-scale solar energy consumption. 212 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 48,
+  "text_sha": "313defb7f61e9e58bb982baed4d0f65a21c38388cd56a5bfc5d94b297fc2cae0",
+  "extracted_at": "2026-05-15T14:07:33.077526Z"
+}

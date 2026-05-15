@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0ec8fce::chunk_0009",
+  "source_id": "eia_mer_sec10",
+  "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec10.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "10.5. R=Revised. NA=Not available. - =No data reported. (s)=Less than 0.5 trillion e Wind electricity net generation (converted to Btu by multiplying by the heat Btu. content of electricity in Table A6). Notes: • Industrial sector data are estimates, except for hydroelectric power in 1 Wood and wood-derived fuels. 1949-1978 and 1989 forward, and wind. • Totals may not equal sum of 9 Municipal solid waste from biogenic sources, landfill gas, sludge waste, components due to independent rounding. • Geographic coverage is the 50 states agricultural byproducts, and other biomass. Through 2000, also includes and the District of Columbia. non-renewable waste (municipal solid waste from non-biogenic sources, and Web Page: See http://www.eia.gov/totalenergy/data/monthly/#renewable (Excel tire-derived fuels). and CSV files) for all available annual data beginning in 1949 and monthly data h The fuel ethanol (minus denaturant) portion of motor fuels, such as E10, beginning in 1973. con_sumed by the industrial sector. Sources: See end of section. ' There is a discontinuity in this time series between 2014 and 2015 due to a U. S. Energy Information Administration / Monthly Energy Review April 2026 193 Table 10.2c Renewable Energy Consumption: Transportation and Electric Power Sectors (Trillion Btu) Transportation Sector Electric Power Sectora Biomass Biomass I I Fuel I Bio- I R e D n i e e w se a l b le Other e H le yd ct r r o ic - Geo- I I Ethanolb,c dieseld Fuel8 Biofuelsf Total Power9 thermalh Solari Windi Woodk Waste1 Total Total 1950 Total ... .............. NA NA NA NA NA 327 NA NA NA 5 NA 5 333 1955 Total .......... ......... NA NA NA NA NA 385 NA NA NA 3 NA 3 389 1960 Total . .............. NA NA NA NA NA 498 (s) NA NA 2 NA 2 499 1965 Total ... ............. NA NA NA NA NA 661 1 NA NA 3 NA 3 665 1970 Total ............ NA NA NA NA NA 845 2 NA NA 1 2 4 851 1975 Total .. .............. NA NA NA NA NA 1,024 11 NA NA (s) 2 2 1,037 1980 Total .. ............. NA NA NA NA NA 942 17 NA NA 3 2 4 964 1 1 9 9 8 9 5 0 T T o o t t a a l l . . . .. . . .. . . . . . . . . . . . . . . . . . 6 5 0 0 N N A A N N A A N N A A 5 6 0 0 9 9 5 8 9 9 3 53 2 (s 1 ) ( 1 s 0 ) 12 8 9 18 7 8 31 1 7 4 1 1 , , 3 0 6 0 9 6 1995 Total . ............. 112 NA NA NA 112 1,042 46 2 11 125 296 422 1,522 2000Total .. ............. 135 NA NA NA 135 926 48 2 19 134 318 453 1,447 2005 Total ... ............. 327 12 NA NA 339 911",
+  "token_count": 508,
+  "text_sha": "f6b33cfe7e539ec733e84556632287ce7bf40ac7883d3414988695a5acf0d733",
+  "extracted_at": "2026-05-15T14:07:33.077526Z"
+}

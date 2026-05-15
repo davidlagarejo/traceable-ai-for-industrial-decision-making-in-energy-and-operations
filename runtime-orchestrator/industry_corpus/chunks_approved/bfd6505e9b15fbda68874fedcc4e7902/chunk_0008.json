@@ -1,0 +1,15 @@
+{
+  "chunk_id": "bfd6505e::chunk_0008",
+  "source_id": "doe_osti_1893830",
+  "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
+  "source_url": "https://www.osti.gov/servlets/purl/1893830",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "t ( L is e i m e u t c a h l. , s 2 m 0 a 2 l 1 le ) r , a th n a d n t h fo e s a s v il e f r u a e g l e C te O m 2 p e e n r h a a tu n r c e e m di e ff n e t r e n n e c a e r i t n h e th u e r fi b r a s n t air pressure at the surface in the unit of Pa. ptropo is the air pressure at the half of the years 2019 and 2020 is <1 ◦C (https://www.wunderground. t t h ro e p u o n p i a t u o se f i m n o th l/ e m u 2 n . it T o R f O P P a O . S M C I D o w n at l e y r i p s r t o h v e i w de a s t e t r h s e l a w n a t t c e o r l u d m en n s d it e y n i s n it y t h in e com/weather/mx/mexico-city/MMMX); thus, we assume that CO2 biogenic fluxes in February 2020 can be represented by CASA biogenic total slant column. We assume that most water is in the troposphere. fluxes from 2019 thanks to the reduced vegetation activity in winter. AMF is the air mass factor, converting slant column density to vertical The 3-hourly 5-km fluxes are linearly interpolated to 1-hly then column density. XNO2_tropo is the tropospheric column averaged mixing regridded to WRF-Chem domain resolutions using bi-linear ratio of NO2 in the unit of ppb. VCDno2_tropo is the vertical column density interpolation. of NO2 in the unit of mol/m2. 2.3.3. Fossil fuel CO2 emissions 2.3. WRF-chem setup For DC-Balt, we coupled the CO2ff emissions of the Vulcan project version 3.0 (Gurney et al., 2019) available from 2010 to 2015 to the We simulated CO2 mole fractions to generate ΔXCO2 using WRF- WRF-Chem model. The Vulcan product is the first bottom-up inventory 3 R. Lei et al. R e m o t e S e n s i n g o f E n v i r o n m e n t281(2022)113241 Fig. 1. Domain settings and in situ site locations in (a) DC-Balt and (b) Mexico City. The whole maps show the range of the outer domain. The red rectangles show the range of the inner domain. The red triangles show the locations of in situ sites. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.) to report CO2ff plus cement production CO2 fluxes at 1-hour and 1-km outputs with ground-based high-accuracy in situ CO2 measured by Pic- resolution for all",
+  "token_count": 512,
+  "text_sha": "c431f5b1ca50f55cc129063368330cf89d7ca4d9352325e51108f473fcc04616",
+  "extracted_at": "2026-05-15T14:09:42.490232Z"
+}

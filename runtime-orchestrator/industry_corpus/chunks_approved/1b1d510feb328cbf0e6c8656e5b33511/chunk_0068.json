@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1b1d510f::chunk_0068",
+  "source_id": "eia_mer_sec3",
+  "source_sha": "1b1d510feb328cbf0e6c8656e5b33511",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "day for motor gasoline are from Table 3.7c, and are converted to trillion Btu by multiplying by the motor gasoline heat content factors in Table A3. Petroleum Coke 1949–2003: Electric power sector consumption data in thousand barrels per day for petroleum coke are from Table 3.7c, and are converted to trillion Btu by multiplying by the total petroleum coke heat content factor in Table A1. 2004 forward: Electric power sector consumption data in thousand barrels per day for petroleum coke are from Table 3.7c, and are converted to trillion Btu by multiplying by the marketable petroleum coke heat content factor in Table A1. Residual Fuel Oil Transportation and electric power consumption data in thousand barrels per day for residual fuel oil are from Table 3.7c, and are converted to trillion Btu by multiplying by the residual fuel oil heat content factor in Table A1. Other Products Beginning in 2021, transportation sector consumption data in thousand barrels per day for biofuels excluding fuel ethanol are from Table 3.7c, and are converted to trillion Btu by multiplying the fuel types (biodiesel, renewable diesel fuel, and other biofuels) by the appropriate heat content factors in Table A1. Total Petroleum Transportation sector total petroleum consumption is the sum of the data in trillion Btu for the petroleum products shown under \"Transportation Sector\" in Table 3.8c. Electric power sector total petroleum consumption is the sum of the data in trillion Btu for the petroleum products shown under \"Electric Power Sector\" in Table 3.8c. U. S. Energy Information Administration / Monthly Energy Review April 2026 103 THIS PAGE INTENTIONALLY LEFT BLANK",
+  "token_count": 265,
+  "text_sha": "ecd66a7d99307c14dc3c0933b2dd0a1ad6a068f21b0ce4a511507c5255b3f61a",
+  "extracted_at": "2026-05-15T14:06:24.411919Z"
+}

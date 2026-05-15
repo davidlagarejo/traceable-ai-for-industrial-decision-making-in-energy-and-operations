@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1b1d510f::chunk_0032",
+  "source_id": "eia_mer_sec3",
+  "source_sha": "1b1d510feb328cbf0e6c8656e5b33511",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "(s) 19 1,449 42 56 245 3,278 September .... 89 2 638 74 31 105 360 285 (s) 15 1,361 38 42 227 3,057 October ... 97 2 738 100 33 134 395 301 (s) 14 1,420 37 62 232 3,298 November 70 2 636 101 34 135 380 284 2 9 1,338 38 58 230 3,046 December 49 1 669 142 35 177 441 299 2 9 1,373 26 60 230 3,160 Total ...... . 888 23 8,000 1,113 388 1,502 4,395 3,507 16 175 16,573 501 674 2,790 37,541 2025 January .. . 46 1 726 177 33 210 450 285 4 13 1,327 63 70 207 3,193 February . 41 2 645 137 28 165 371 244 4 10 1,227 22 56 193 2,815 March 50 2 696 103 29 132 365 288 3 13 1,371 34 58 214 3,094 April .. 63 2 672 75 31 105 331 300 1 18 1,349 47 55 212 3,049 May ........ . 79 2 677 65 32 97 340 310 1 17 1,417 60 39 224 3,167 June ....... . 92 2 686 60 31 91 343 314 1 15 1,402 45 56 217 3,173 July ........ . 100 3 680 70 34 103 361 324 (s) 20 1,432 53 68 230 3,270 August ... . 101 2 674 87 30 117 398 320 1 19 1,443 40 51 229 3,279 September .... 99 2 673 74 29 103 359 283 (s) 21 1,359 33 70 221 3,120 October ... 90 2 728 93 27 120 382 314 (s) 18 1,391 38 60 211 3,235 November 67 2 657 94 29 124 379 285 3 19 1,314 23 67 210 3,023 December 48 1 681 140 32 172 435 304 4 16 1,374 44 74 226 3,207 Total ...... . 877 23 8,196 1,175 365 1,540 4,513 3,570 23 199 16,406 502 723 2,593 37,625 2026 January .. . R42 1 R720 R167 R31 R198 R457 R289 R5 R21 R 1,292 R54 R60 R215 R3,167 February . RF45 F 2 RE 673 NA NA RE 153 RF374 RE262 F 1 F15 RE1,213 F34 RE54 RE 270 RE 2,944 March ..... . F60 F 2 E 719 NA NA E126 F375 E285 F 1 F 17 E 1,380 F42 E 51 E3 04 E3 ,236 3-Month Total .... . E147 E5 E2,112 NA NA E475 E 1,217 E535 E 8 E 54 E 3,885 E129 E165 E 789 E 9,347 2025 3-Month Total .... . 137 5 2,068 417 91 507 1,186 817 11 36 3,925 120 183 614 9,102 2024 3-Month Total .... . 145 5 2,001 366 91 457 1,138 815 6 43 3,965 97 166 668 9,049 a Beginning in 2009, includes biodiesel and renewable diesel fuel blended into also includes negative barrels per day of distillate and residual fuel oil reclassified distillate fuel oil. For 2011-2020, also includes biodiesel adjustments (supply of as unfinished oils (through 2021), and other products (from both primary and biodiesel not reported as input on surveys) reclassified as distillate fuel oil secondary supply)",
+  "token_count": 512,
+  "text_sha": "6da8d0f2bc93ab80fe9a9f3c73cb7af5f742eebf4b4197b98153a938001e9eb7",
+  "extracted_at": "2026-05-15T14:06:24.411919Z"
+}

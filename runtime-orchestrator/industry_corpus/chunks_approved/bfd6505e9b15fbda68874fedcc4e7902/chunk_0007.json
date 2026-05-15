@@ -1,0 +1,15 @@
+{
+  "chunk_id": "bfd6505e::chunk_0007",
+  "source_id": "doe_osti_1893830",
+  "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
+  "source_url": "https://www.osti.gov/servlets/purl/1893830",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Here we intend to 2.3.2. Biogenic CO2 fluxes reconcile the asynchronous satellite-based NO2 and ΔXCO2 with meso- For DC-Balt, biogenic CO2 fluxes are based on hourly Net Ecosystem scale modeling, validated with ground-based in situ measurements, as Exchange (NEE) of CO2 from the Vegetation Photosynthesis and Respi- ration Model (VPRM) (Mahadevan et al., 2008), a satellite-based described in Section 2.3.4. Low biases in TROPOMI NO2 data have been assimilation scheme of 12 North American biomes using the Enhanced detected and estimated using aircraft (Judd et al., 2020) and ground- Vegetation Index (EVI) and Land Surface Water Index (LSWI), derived based data (van Geffen et al., 2022), possibly due to the cloud algo- from reflectance from the Moderate Resolution Imaging Spectroradi- rithm, a priori NO2 profiles, and coarse-resolution surface reflectivity. ometer (MODIS), plus high-resolution sunlight and air temperature data. Here, we sampled city plumes beyond city limits and therefore expect The VPRM NEE data at 0.02◦ × 0.02◦ were provided over the first 6 low biases in NO2 retrievals. The original tropospheric NO2 unit in TROPOMI data and CO2 unit in OCO-3 data are mol/m2 and ppm, months of 2020 (Gourdji et al., 2021) and regridded over the WRF-Chem respectively. To intuitively compare them, we converted mol/m2 into domains using bi-linear interpolation. ppb (10 (cid:0) 3 ppm) using Eqs. (1) and (2): For Mexico City, we use the NEE product Gridded Ensembles of / / (cid:0) ) / Surface Biogenic Carbon Fluxes (Zhou et al., 2020) from an ensemble of VCD air tropo =1 g M air × p sfc (cid:0) p tropo ×1000–SCD water AMF (1) Carnegie Ames Stanford Approach (CASA) model simulations. This / ensemble provides CO2 biogenic fluxes and their uncertainties at 3-hour- XNO 2 tropo =VCD no2 tropo VCD air tropo ×109 (2) ly time scales over 2003–2019 on a 463-m spatial resolution grid for the conterminous United States (CONUS) and on both 5-km and half-degree air i W n h th e e re u n V i C t D o a f i m r_tr o o l p / o m is 2 . t h g e i s t t r h o e p o g s r p a h vi e t r y i c a c v c e e r l t e ic r a a l t i c o o n l u co m n n s t d a e n n t, s i k t n y o o w f n d r a y s spatial resolution grids for North America. The biogenic CO2 enhance- 9.8 m/s2, Mair is the molecular weight of air, set as 29 g/mol. psfc is the a m r e e n a t ( L is e i m e u t c a h l. , s 2 m 0 a 2 l 1 le ) r , a th n a d n t h fo e s a s v il e f r u a e g l",
+  "token_count": 512,
+  "text_sha": "4a34c1840fc573901dfb602c909544edcf538406cb7b8fb7591a949afdcc6f68",
+  "extracted_at": "2026-05-15T14:09:42.490232Z"
+}

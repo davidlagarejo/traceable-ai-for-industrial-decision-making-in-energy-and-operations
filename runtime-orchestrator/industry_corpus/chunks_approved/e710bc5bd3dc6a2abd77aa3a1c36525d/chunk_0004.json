@@ -1,0 +1,15 @@
+{
+  "chunk_id": "e710bc5b::chunk_0004",
+  "source_id": "doe_osti_1814059",
+  "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
+  "source_url": "https://www.osti.gov/servlets/purl/1814059",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the friction angle of the soil (ranges from 30°-40° for sand or gravel, 20°-30° for silt and clay; 25° for silty sand, 30° for loose sand, 35° for medium to dense sand, 40° for rock riprap) - 𝜎 is the yield stress of the pipe material 𝑦 - 𝑢 is the hydrostatic water pressure at midheight of the pipe if the water table is above the 𝑏 pipe - 𝑃 is the soil and water pressure at the top of the pipe 𝐴 - 𝐸 is the modulus of elasticity of the pipe material - 𝑟 is the mean radius of the pipe (radius to mid-thickness of pipe material) - 𝑡 is the thickness of the pipe - 𝑃 is the internal pressure of the pipe 𝑖𝑛𝑡𝑒𝑟𝑛𝑎𝑙 The parameter d (ratio of pipe deflection to pipe parameter) in equation 3 can have a significant effect on the failure pressure; a value of 0 yields an infinite pressure, .115 yields a scaling of 1 for the equation, and a value of .2 yields only 42% of the effective failure pressure The second equation comes from sources [5,6]: (4) pressure at failure = 32 𝑅 1 𝐸 𝐸 𝑡3 1 +𝑃 𝑊 1+4𝑒―.065 𝐶/𝐷 𝑠𝑜𝑖𝑙 𝑝𝑖𝑝𝑒 12𝐷3 𝑖𝑛𝑡𝑒𝑟𝑛𝑎𝑙 Where - 𝑅 is the water buoyancy factor: 1-0.33*(height of water above pipe/C) 𝑊 - 𝐶 is the depth of soil cover above the pipe - 𝐷 is the outside diameter of the pipe - 𝐸 is the modulus of elasticity of the soil 𝑠𝑜𝑖𝑙 - 𝐸 is the modulus of elasticity of the pipe 𝑝𝑖𝑝𝑒 - 𝑡 is the thickness of the pipe - 𝑃 is the internal pressure of the pipe 𝑖𝑛𝑡𝑒𝑟𝑛𝑎𝑙 Both equations for the buried pipe case should be considered and the lower of the two values is to be used as an estimate for the failure pressure. 2.3. Longitudinal pipe buckling Failure can also occur from buckling not of the cross section but of the length of pipe between supports. Pipes that are buried generally will not suffer from this failure mode since the soil provides continuous support (we neglect cases where buckling is possible due to erosion under the pipe). In 10 these buckling cases, the driving force is the dynamic pressure on the pipe due to effective wind load from the blast, loading the pipe along its length. Failure occurs when the pipe material goes entirely into plastic deformation across the cross section, creating a plastic hinge that continues to deform with no additional loading (hardening of the pipe material is neglected). The internal pressure in the pipe has a negligible effect in longitudinal buckling, since it provides hoop stress in the pipe but not necessarily longitudinal stresses. The pipe is assumed to have a 0.7 coefficient of drag. A key factor in this calculation is estimating the distance between supports in an arbitrary pipe network. In reference [6], the maximum span length is recommended to be 6.6 𝐷, where D is the diameter of the pipe in inches and the returned length in feet. For",
+  "token_count": 509,
+  "text_sha": "86136bd9891a682e423536602263731c975db21a568ff83e487e15ab05e5376c",
+  "extracted_at": "2026-05-15T14:05:33.869789Z"
+}

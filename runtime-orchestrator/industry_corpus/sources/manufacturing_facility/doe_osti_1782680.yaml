@@ -1,0 +1,12 @@
+source_id: doe_osti_1782680
+title: "DOE OSTI 1782680"
+url: https://www.osti.gov/servlets/purl/1782680
+license: public_domain
+publisher: doe_osti
+version: "2024"
+added_at: "2026-05-15T14:05:33.229270Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - manufacturing_facility
+  - _shared

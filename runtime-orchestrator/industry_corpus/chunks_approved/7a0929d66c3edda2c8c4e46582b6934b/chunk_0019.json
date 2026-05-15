@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7a0929d6::chunk_0019",
+  "source_id": "lbnl_1986316",
+  "source_sha": "7a0929d66c3edda2c8c4e46582b6934b",
+  "source_url": "https://www.osti.gov/servlets/purl/1986316",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "based on the Importance Index. Nodes in the network are colored based on their degree, where red-colored nodes have a greater number of edges that connect to other nodes and tend to be centrally located relative to black-colored smaller sized nodes with a fewer number of connected edges. Figure 5. Methodology for identifying academic medical centers, compiling data for their respective websites via Screaming Frog web crawler, then visualization/analysis of data via Gephi and NetworkX. The data set consists of any website that could be crawled by a crawl depth of at least 3 or more. Figure 6. Network graph visualization of the University of Louisville academic medical center website. Community detection using louvain clustering identified eight communities based on modularity.",
+  "token_count": 121,
+  "text_sha": "f09387385e3ab70be2655940b6dc0c876045f533762c36f59d9f56970ae8befd",
+  "extracted_at": "2026-05-15T14:08:47.236025Z"
+}

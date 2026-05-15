@@ -37,3 +37,9 @@ runtime-orchestrator/zlab_skill/registry/combination_approval_log.jsonl
 runtime-orchestrator/zlab_skill/registry/knowledge_pending/knowledge_proposal_log.jsonl
 runtime-orchestrator/zlab_skill/registry/knowledge_memory/knowledge_memory_log.jsonl
 runtime-orchestrator/pdf_cache/
+
+# V10 P0 — raw PDFs + extracted text are regenerable from sources/*.yaml
+# via ETL (pdf_url_fetcher with cache + Playwright fallback). Keep out of git.
+# We commit only: sources/, chunks_approved/, chunks_rejected/, embeddings/, index/
+runtime-orchestrator/industry_corpus/raw_pdfs/
+runtime-orchestrator/industry_corpus/extracted_text/

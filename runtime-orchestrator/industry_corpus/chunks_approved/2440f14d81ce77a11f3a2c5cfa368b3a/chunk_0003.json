@@ -1,0 +1,15 @@
+{
+  "chunk_id": "2440f14d::chunk_0003",
+  "source_id": "doe_osti_1782680",
+  "source_sha": "2440f14d81ce77a11f3a2c5cfa368b3a",
+  "source_url": "https://www.osti.gov/servlets/purl/1782680",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "layer 4. 1 fully-connected dense layer Conv. Flatten Dense 5. 1 output layer S. Namuduri et al., JOSA B ???? • To evaluate the CNN, we use RMS error and percent error on the output results 5/4/20 6 Sendi9 Testing the Machine Learning Algorithm NatoW Pixels 1 2 3 4 5 6 7 8 9 • 0.25 < < 2.5 5 • oty < 0.25 • oly> 2.5 0 44441\"14111110ftikei61.8.0.410......t. • Use the 410 spectra that were put —5 aside to determine homogeneous and inhomogeneous linewidths, then 0.00 0.05 0.10 0.15 0.20 0.25 0.30 y (THz) compare to actual linewidth Pixels 1 2 3 4 5 6 • Algorithm does well for intermediate • 0.25 < 0/y < 2.5 5 • o/y < 025 broadening, when either homogeneous • WY or inhomogeneous width get too o 0 .11:4:41:80419040.rosomme small/large, accuracy is lower —5 0.00 0.05 0.10 0.15 0.20 (THz) 5/4/20 S. Narnuduri et al., JOSA B 7 Testing Against Real Data: Homogeneously Broadened • Use K-Vapor D-lines, homogeneously broadened system • Measure four peaks, only investigate D1-line • Use parameters found by ML algorithm to simulate a spectru m • Compare overall shape and linecuts 5/4/20 )zHT( ycneuqerf noitprosbA Smai9 atonal -390.0 - 1.0 0.8 0.6 -391.0 - 0.4 0.2 392.0 390.0 391.0 392 0 390.0 391.0 392 0 Emission frequency (THz) to • Exp. - • Exp. 8 0. -S im. -Sim. 0.8 fo 0.6 ,o52 ,_, 0.4 0.4- .E3 0.2 j, 0.2 o 0.0 390.0 390.5 391.0 391.5 392.)8 390.0 390.5 391.0 391.5 392.0 Frequency( THz) Frequency( THz) S. Namuduri et al., JOSA B ???? 8 Semi, Testing Against Real Data: lnhomogeneously Broadened NatoW N -372 -372.5 1.0 0.8 3 0.6 • GaAs Quantum Well, CT -373.5 0.4 0.2 intermediate inhomogeneously broadend system EL 374.5 o 373.6 374 6_ • Use parameters found by ML Emission frequency (THz) algorithm to simulate a 1.0 • Exp. 8 —Sim. spectrum 0.8 0.8 l) 06 72 0.6 • Compare overall shape and 8 o,?7{ 0.4 0.4- linecuts •.113 0 2 ch 0.2 q ,..),`6 0.0 0.0 372.5 373.0 373.5 374.0 374.5 372.5 373.0 37.5 374.0 374.5 Frequency (THz) Frequency( THz) S. Namuduri et al., JOSA B ???? 5/4/20 9 Evaluating the ML Algorithm • Improvement with higher pixel number on training data 0.010 Array Size Samples Avg Error ••• Diagonal Width 64px ••• Diagonal Width 128px 32 x 32 1024 > 10% ••• Cross-Diagonal Width 64px ••• Cross-Diagonal Width 128px 0.005 32 x 32 2048 8.5% N • •• 40 •• • •• ••• • • •• N I 00 • •• I D •• • 64 x 64 1024 6% o • • • if• • • •• • • Me • l • f I I• •• • •• • •• 128 x 128 1024 4% 0 000 ID% ••• do •• 411::• •• • 128 x 128 4096 < 2% o ••• •• • • • • • • . . :s:.•• • •• • • ML algorithm drastically reduces < -0.005 • • • ••••",
+  "token_count": 508,
+  "text_sha": "3b58bdd77e98c50cea1656fd31ef48bdbd8a14db24dee4bb550d708d6cdcf99a",
+  "extracted_at": "2026-05-15T14:07:47.919822Z"
+}

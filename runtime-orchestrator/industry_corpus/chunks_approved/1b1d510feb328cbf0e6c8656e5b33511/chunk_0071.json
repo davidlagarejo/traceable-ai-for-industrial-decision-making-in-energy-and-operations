@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1b1d510f::chunk_0071",
+  "source_id": "eia_mer_sec3",
+  "source_sha": "1b1d510feb328cbf0e6c8656e5b33511",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Sector\" in Table 3.8c. Electric power sector total petroleum consumption is the sum of the data in trillion Btu for the petroleum products shown under \"Electric Power Sector\" in Table 3.8c. U. S. Energy Information Administration / Monthly Energy Review April 2026 103 THIS PAGE INTENTIONALLY LEFT BLANK",
+  "token_count": 48,
+  "text_sha": "e3a5f6dcb4a69649c4373ae7599782ef5819efe803e874a205dd8d887f4074af",
+  "extracted_at": "2026-05-15T14:06:24.411919Z"
+}

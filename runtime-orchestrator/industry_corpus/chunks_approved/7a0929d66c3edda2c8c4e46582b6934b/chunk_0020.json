@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7a0929d6::chunk_0020",
+  "source_id": "lbnl_1986316",
+  "source_sha": "7a0929d66c3edda2c8c4e46582b6934b",
+  "source_url": "https://www.osti.gov/servlets/purl/1986316",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "via Gephi and NetworkX. The data set consists of any website that could be crawled by a crawl depth of at least 3 or more. Figure 6. Network graph visualization of the University of Louisville academic medical center website. Community detection using louvain clustering identified eight communities based on modularity.",
+  "token_count": 50,
+  "text_sha": "b93cbf8cfe674a62edccd71b4c711862dc91263c8d0bb58f5c2c8efc8075f9a6",
+  "extracted_at": "2026-05-15T14:08:47.236025Z"
+}

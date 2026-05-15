@@ -1,0 +1,14 @@
+{
+  "chunk_id": "76f47760::chunk_0009",
+  "source_id": "eia_mer_sec2_5",
+  "source_sha": "76f47760a7bbaad44dfdcfa84d212b7f",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec2_5.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Energy Losses,\" Sources: • End-Use Sectors: Tables 2.2-2.5. • Electric Power Sector: at ~nd of section. Table 2.6. • Primary Total: Table 1.3. Equal to end-use energy consumption plus electrical system energy losses. U. S. Energy Information Administration / Monthly Energy Review April 2026 43",
+  "token_count": 45,
+  "text_sha": "a12b1f3ece4c44e6471fe79f882bc7966cc3e2a2e8ceb10c9979917e901e4ed1",
+  "extracted_at": "2026-05-15T14:06:10.061938Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "dd0cb00b::chunk_0010",
+  "source_id": "doe_osti_1893825",
+  "source_sha": "dd0cb00bd835b16b734423863dd69e88",
+  "source_url": "https://www.osti.gov/servlets/purl/1893825",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "of this work, or allow others to do so, for U.S. Annabelle.Pratt@nrel.gov Government purposes. NREL/PR-5D00-84090 NREL is a national laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC. NREL | 18",
+  "token_count": 44,
+  "text_sha": "b0ffa84717aaa543148b02b5be3c8161779747c2b67eb81d7cb3d1a95da3b889",
+  "extracted_at": "2026-05-15T14:09:23.541621Z"
+}

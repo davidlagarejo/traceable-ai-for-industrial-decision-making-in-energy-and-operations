@@ -1,0 +1,15 @@
+{
+  "chunk_id": "8a9bd1e2::chunk_0014",
+  "source_id": "ornl_1817423",
+  "source_sha": "8a9bd1e2ca150a29bece8c550d9a630c",
+  "source_url": "https://www.osti.gov/servlets/purl/1817423",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Measurements Using the ORIGEN Data Analysis Module,\" Oak Ridge National Laboratory, ORNL/TM-2020/1834, Oak Ridge, TN, 2020. Web. doi:10.2172/1760108. [10] W. A. Wieselquist, R. A. Lefebvre and M. A. Jessee (Editors), \"SCALE Code System, ORNL/TM- 2005/39, Version 6.2.4,,\" Oak Ridge National Laboratory, , Oak Ridge, TN, 2020. https://www.ornl.gov/file/scale-62-manual/display. 10",
+  "token_count": 48,
+  "text_sha": "4ec98c449fbc7fb95cf79940d6f712a46fd03645d4d89005b293fdb80be15f41",
+  "extracted_at": "2026-05-15T14:08:22.525922Z"
+}

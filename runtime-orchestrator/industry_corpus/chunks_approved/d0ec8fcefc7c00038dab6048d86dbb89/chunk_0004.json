@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0ec8fce::chunk_0004",
+  "source_id": "eia_mer_sec10",
+  "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec10.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "electricity net generation (converted and CSV files) for all available annual data beginning in 1949 and monthly data to Btu by multiplying by the heat content of electricity in Table A6), and solar beginning in 1973. thermal direct use energy. Sources: • Production: Tables 10.2a-10.4c and U.S. Energy Information 1 Wind electricity net generation (converted to Btu by multiplying by the heat Administration, Form EIA-63C, \"Densified Biomass Fuel Report.\" content of electricity in Table A6). • Consumption: Tables 10.2a-10.2c. U. S. Energy Information Administration / Monthly Energy Review April 2026 191 Table 10.2a Renewable Energy Consumption: Residential and Commercial Sectors (Trillion Btu) Residential Sector Commercial Sectora Biomass Biomass Hydro- I the G r e m o a - lb Solarc Woodd Total e P l o e w ct e r r ic 8 th G er e m o- al1 Solar9 Windh Woodd I Wastei I Eth F a u n e o l 1 i.k Total Total 1950 Total ..... .............. NA NA 1,006 1,006 NA NA NA NA 19 NA NA 19 19 1955 Total ... ................ NA NA 775 775 NA NA NA NA 15 NA NA 15 15 1960 Total .................... NA NA 627 627 NA NA NA NA 12 NA NA 12 12 1965 Total . .................. NA NA 468 468 NA NA NA NA 9 NA NA 9 9 1970 Total ..... .............. NA NA 401 401 NA NA NA NA 8 NA NA 8 8 1975 Total .... ............... NA NA 425 425 NA NA NA NA 8 NA NA 8 8 1980 Total .................... NA NA 850 850 NA NA NA NA 21 NA NA 21 21 1985 Total .................... NA NA 1,010 1,010 NA NA NA NA 24 NA (s) 24 24 - 1990 Total ... ................ 6 55 580 640 (s) 3 (s) 66 28 (s) 94 97 1995 Total .................... 7 63 520 589 (s) 5 (s) - 72 40 (s) 113 118 2000 Total .. ................. 9 57 420 486 (s) 8 (s) - 71 47 (s) 119 127 2005 Total .................... 16 49 430 495 (s) 14 1 - 70 34 1 105 120 2010 Total .................... 37 59 541 636 !s) 19 4 !s) 72 36 3 111 134 2011 Total ..... .............. 40 62 524 626 s) 20 7 s) 69 43 3 115 141 2012 Total .... 40 66 438 544 (s) 20 11 (s) 61 45 3 108 139 ········\"\"''' 2013 Total .................... 40 72 572 683 (s) 20 15 ls) 70 47 3 120 155 2014 Total .................... 40 79 579 697 !s) 20 19 s) 73 47 4 124 163 2015 Total .. ................. 40 87 513 639 s) 20 21 s) 73 47 k26 146 187 2016 Total .................... 40 100 445 585 1 20 23 (s) 74 48 26 148 191 2017 Total .... ............... 40 113 430 582 1 20 28 (s) 74 48 25 146 195 2018 Total .................... 40 123 526 689 1 20 35 1 74 47 25 146 203 2019 Total .................... 40",
+  "token_count": 510,
+  "text_sha": "4e878684aca29cda0ac7cf8633394114501f0a86c1f32885ddf9b61d05632c35",
+  "extracted_at": "2026-05-15T14:07:33.077526Z"
+}

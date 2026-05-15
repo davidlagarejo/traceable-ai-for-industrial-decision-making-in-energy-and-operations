@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1ae1711d::chunk_0016",
+  "source_id": "eia_mer_sec6",
+  "source_sha": "1ae1711de864b1ec72e52f0e0ee137d7",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec6.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "forms. 2008 forward: EIA, Form EIA-3, “Quarterly Survey of Industrial, Commercial, and Institutional Coal Users” (formerly called, “Quarterly Survey of Non-Electric Sector Coal Data”); and, for forecast values, EIA, STIFS. Electric Power 1949 forward: Table 7.5. 130 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 48,
+  "text_sha": "e120ce4e52dd88226eb0a064229fbac23ea33505c0c57999fe3f8939c61da6aa",
+  "extracted_at": "2026-05-15T14:06:45.427485Z"
+}

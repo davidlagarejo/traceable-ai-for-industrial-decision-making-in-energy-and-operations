@@ -1,0 +1,15 @@
+{
+  "chunk_id": "2440f14d::chunk_0014",
+  "source_id": "doe_osti_1782680",
+  "source_sha": "2440f14d81ce77a11f3a2c5cfa368b3a",
+  "source_url": "https://www.osti.gov/servlets/purl/1782680",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "for extracting linewidths from 2D spectroscopy data • No operator input required, ideal for on-the-fly data analysis • Good accuracy for intermediately broadened case, hard case for manual fitting • Demonstrated capability of accurately measuring noisy real experimental data 5/4/20 11",
+  "token_count": 41,
+  "text_sha": "f1b1e8d41890ee4c3b5eb48fed344015a4eeea5fd18cde9ebdc24be3d896cf3b",
+  "extracted_at": "2026-05-15T14:07:47.919822Z"
+}

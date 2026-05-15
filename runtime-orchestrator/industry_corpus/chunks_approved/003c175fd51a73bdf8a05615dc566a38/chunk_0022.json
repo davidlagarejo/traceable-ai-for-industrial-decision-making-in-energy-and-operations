@@ -1,0 +1,14 @@
+{
+  "chunk_id": "003c175f::chunk_0022",
+  "source_id": "nrel_1995349",
+  "source_sha": "003c175fd51a73bdf8a05615dc566a38",
+  "source_url": "https://www.osti.gov/servlets/purl/1995349",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "of Table IV), for both ΛCDM and DM DR. → 4 3 2 1 0 500 1000 1500 2000 2500 ‘ TT)2 χ∆(∆ ‘ to write expression (A2) as (∆χ 2)TT (∆χ 2 )TT;ζ =0.1,a =0.1 ‘ − ‘LCDM t κ=0.1 κ=0.5 κ=1.0 κ=2.0 κ=5.0 FIG. 7: An indicator of the relative ∆χ2 as a function of TT ℓ between the DM DR power spectra shown in Figure 3 and the Planck TT → data. We sum the ∆χ2 values in ℓ-bins  (cid:16) (cid:17)κ  of width ∆ℓ = 60. In each case we subtract the equivalent a t Λ h C e D Λ M CD q M uan q t u it a y nt fr it o y m . t A h s e s D u M ch → , p D o R sit q iv u e an v t a i l t u y es an o d n d t i h v i i s de pl b o y t 1+ (cid:16) 1 a (cid:17)κ2 F 11,1;1+ κ 1 ; (cid:16) a a (cid:17) t κ +1 . (A4) indicateaworsefitthanΛCDMandnegativevaluesabetter at at The numerical calculation of the hypergeometric func- fit. Itisclearthatthebulkofthe“badnessoffit”ofDM DR is sourced by the intermediate-to-high-ℓ regime where → CMB tion 2 F 1 (a,b;c;x) is inefficient w (cid:16) hen (cid:17)κ| x | is close to 1; to lensing is changing the power spectra; the ISW effect also avoid these inefficiencies, where a >100 we use the at causes a spike at low ℓ. identity 16 Γ(c)Γ(c a b) F (a,b;c;x)= − − F (a,b;a+b+1 c;1 x) 2 1 2 1 Γ(c a)Γ(c b) − − − − Γ(c)Γ(a+b c) + − (1 x)c−a−b F (c a,c b;1+c a b;1 x), (A5) 2 1 Γ(a)Γ(b) − − − − − − where Γ(x) is the gamma function, to write expres- sion (A4) as     1 (cid:18) Γ (cid:0) 1+ 1(cid:1) Γ (cid:0) 1+ 1(cid:1) 1 1  1+ (cid:16) a (cid:17)κ Γ (cid:0) κ κ 1(cid:1) Γ (cid:0) − κ 1(cid:1) κ 2 F 11,1;2 − κ ; (cid:16) a (cid:17)κ +1  at at  1−1   (cid:18) (cid:19) (cid:18) (cid:19) κ (cid:19) 1 1 1 1 1 1 1 +Γ 1+ κ Γ 1 − κ  1+ (cid:16) a (cid:17)κ 2 F 1 κ , κ ; κ ; (cid:16) a (cid:17)κ +1  . (A6) at at We then approximate the hypergeometric functions as 1 this as (cid:16) (cid:17)κ (cid:16) (cid:17)κ (as F (a,b,c,0)=1) and 1+ a as a and write 2 1 at at     1 Γ (cid:0) 1+ 1(cid:1) Γ (cid:0) 1+ 1(cid:1) 1 (cid:18) 1 (cid:19) (cid:18) 1 (cid:19) (cid:16) a (cid:17)κ Γ (cid:0) κ 1(cid:1) Γ (cid:0) − 1(cid:1) κ +(cid:16) a (cid:17)Γ 1+ κ Γ 1 − κ . (A7) at κ κ at We use the GSL function gsl sf gamma to calculate the we could in principle choose a lower bound on the prior gamma functions. than log",
+  "token_count": 510,
+  "text_sha": "c97f5c6a6b63808ea0a472b1de1d413a148ade865476a01bd3283578a0deb533",
+  "extracted_at": "2026-05-15T14:08:09.053935Z"
+}

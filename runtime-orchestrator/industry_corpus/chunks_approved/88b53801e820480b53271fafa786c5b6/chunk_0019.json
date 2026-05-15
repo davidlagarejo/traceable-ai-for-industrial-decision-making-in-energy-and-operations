@@ -1,0 +1,14 @@
+{
+  "chunk_id": "88b53801::chunk_0019",
+  "source_id": "pnnl_1763942",
+  "source_sha": "88b53801e820480b53271fafa786c5b6",
+  "source_url": "https://www.osti.gov/servlets/purl/1763942",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "distribution of isotropic material. Springer, 2004. [52] A. W¨achter and L. T. Biegler. On the implementation of a primal-dual interior point filter line search algorithm for large-scale nonlinear programming. Mathematical Programming, 106(1):25–57, 2006. [53] M.A.Puso,BradleyN.Maker,RobertM.Ferencz,andJohnO.Hallquist. Nike3d: anonlinear,implicit, three-dimensional finite element code for solid and structural mechanics. User’s Manual, 2007. 32",
+  "token_count": 50,
+  "text_sha": "fd127fc96eb94b2b5fe5b333888abfeb86f46a6fc50c110c33fbb81b5de74e0b",
+  "extracted_at": "2026-05-15T14:08:20.916537Z"
+}

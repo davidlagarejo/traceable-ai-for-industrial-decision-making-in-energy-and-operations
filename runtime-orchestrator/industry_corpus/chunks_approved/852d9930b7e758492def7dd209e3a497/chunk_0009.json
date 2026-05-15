@@ -1,0 +1,15 @@
+{
+  "chunk_id": "852d9930::chunk_0009",
+  "source_id": "doe_osti_1893824",
+  "source_sha": "852d9930b7e758492def7dd209e3a497",
+  "source_url": "https://www.osti.gov/servlets/purl/1893824",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "EPRI. • Modbus is being set up for some hardware. • MultiSpeak. NREL | 24 Data Collection and Management • Architected and implemented data management tools • C++ code on GitHub (https://github.com/NREL/rts-vis-app and https://github.com/NREL/rts-data) • 3D visualization was also developed. Photo by NREL NREL | 25",
+  "token_count": 46,
+  "text_sha": "fcc513511e51f7012dd95aa031c8d6efca593c4b457bc17e1dfd90abea0bdfb3",
+  "extracted_at": "2026-05-15T14:09:21.223270Z"
+}

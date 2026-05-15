@@ -1,0 +1,14 @@
+{
+  "chunk_id": "bbfd7f9f::chunk_0010",
+  "source_id": "eia_mer_sec8",
+  "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec8.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "units. Nuclear Electricity Net Generation and Nuclear Share of Electricity Net Generation 1957 forward: Table 7.2a. Capacity Factor 1973–2007: Calculated by EIA using the method described above in Note 2. 2008 forward: Table 7.8a. 168 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 46,
+  "text_sha": "1e70e8fb506a2a1ae4f6c364b7b4e2932b0156c37acbdf4c692ae7d5f358b5a3",
+  "extracted_at": "2026-05-15T14:07:08.869888Z"
+}

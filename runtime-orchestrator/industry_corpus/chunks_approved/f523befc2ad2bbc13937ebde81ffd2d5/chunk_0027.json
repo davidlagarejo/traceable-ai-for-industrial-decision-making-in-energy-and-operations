@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f523befc::chunk_0027",
+  "source_id": "doe_osti_1893821",
+  "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
+  "source_url": "https://www.osti.gov/servlets/purl/1893821",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "to Electricity: IGCC Cases,\" Pittsburgh, PA, 2011. [4] National Energy Technology Laboratory (NETL), \"Cost and Performance Baseline for Fossil Energy Plants Volume 1b: Bituminous Coal (IGCC) to Electricity Revision 2b - Year Dollar Update,\" PIttsburgh, PA, 2015. National Energy Technology Laboratory Systems Engineering and Analysis Directorate 43",
+  "token_count": 47,
+  "text_sha": "0a61e7ec57a2606cb5d4702f9cd4446a011446310a493f80fe4e8869902143f4",
+  "extracted_at": "2026-05-15T14:08:54.155654Z"
+}

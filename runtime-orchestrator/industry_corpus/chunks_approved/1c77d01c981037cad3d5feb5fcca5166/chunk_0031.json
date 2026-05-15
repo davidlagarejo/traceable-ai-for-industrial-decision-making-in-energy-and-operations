@@ -1,0 +1,15 @@
+{
+  "chunk_id": "1c77d01c::chunk_0031",
+  "source_id": "doe_osti_1893823",
+  "source_sha": "1c77d01c981037cad3d5feb5fcca5166",
+  "source_url": "https://www.osti.gov/servlets/purl/1893823",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Nat. Toxins 5, 91–95. exacerbations of paediatric asthma. Clin. Exp. Immunol. 144, 212–216. Zhao, S., Sun, H., Yan, W., Xu, D., Shen, T., 2018. A proteomic study of the pulmonary injury induced by microcystin-LR in mice. Toxicon 150, 304–314. 10",
+  "token_count": 40,
+  "text_sha": "ed593e5e5c17107929d085b9cde60a416bd94b1315e65493ca53d97c627201fd",
+  "extracted_at": "2026-05-15T14:09:18.413409Z"
+}

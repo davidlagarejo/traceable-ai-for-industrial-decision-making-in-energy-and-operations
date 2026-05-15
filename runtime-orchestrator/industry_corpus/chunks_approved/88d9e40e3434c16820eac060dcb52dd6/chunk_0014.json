@@ -1,0 +1,15 @@
+{
+  "chunk_id": "88d9e40e::chunk_0014",
+  "source_id": "ornl_1854098",
+  "source_sha": "88d9e40e3434c16820eac060dcb52dd6",
+  "source_url": "https://www.osti.gov/servlets/purl/1854098",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Lab Angular Momentum], Phys. Rev. D 102, 054002 (2020) [arXiv:2002.08384[hep-ph]]. [11] M.G.Echevarria,Z.B.KangandJ.Terry,JHEP01,126(2021)[arXiv:2009.10710[hep-ph]]. [12] E.R.Noceraetal.[NNPDF],Nucl.Phys.B887,276-308(2014)[arXiv:1406.5539[hep-ph]]. [13] N.Satoetal.[JeffersonLabAngularMomentum],Phys.Rev.D93,074005(2016)[arXiv:1601.07782 [hep-ph]]. [14] D. De Florian, G. A. Lucero, R. Sassot, M. Stratmann and W. Vogelsang, Phys. Rev. D 100, 114027 (2019)[arXiv:1902.10548[hep-ph]]. [15] B.Yoon,M.Engelhardt,R.Gupta,T.Bhattacharya,J.R.Green,B.U.Musch,J.W.Negele,A.V.Pochin- sky,A.Scha¨ferandS.N.Syritsyn,Phys.Rev.D96,094508(2017)[arXiv:1706.03406[hep-lat]]. 5",
+  "token_count": 41,
+  "text_sha": "f5bf9fdc2d22982c7699f38709bf476f15e456266aa43b0b5909b294c5151f39",
+  "extracted_at": "2026-05-15T14:08:26.526119Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "a8f82229::chunk_0014",
+  "source_id": "ornl_1832320",
+  "source_sha": "a8f8222976de4c2cc453641e4af7230f",
+  "source_url": "https://www.osti.gov/servlets/purl/1832320",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "state I with nuclear configuration R. The nuclear phase, g Ik ( t ) , is propagated semiclassically according to the classical Lagrangian: ¶gI 3N ( PI ( t ))2 k =å r k -E ( RI( t )) (5) ¶t 2m I k r=1 r The evolution of the time-dependent amplitudes is governed by the time-dependent Schrodinger equation (TDSE) written in matrix form as: (6) where S and 𝐒̇ are the nuclear overlap matrix and its right-acting time-derivative, respectively, and H is the Hamiltonian. The matrix elements of the Hamiltonian are computed using the zeroth-order saddle-point (SP) approximation, which involves evaluating the zeroth-order Taylor expansion of the PES and/or nonadiabatic coupling vector (NACV) around the centroid position between pairs of TBFs. In addition to the SP approximation, the independent first generation (IFG) approximation is used to describe the initial nuclear wavepacket at time t = 0 as a swarm of independent initial TBFs each with their own positions and momenta sampled from a harmonic Wigner distribution, i.e. initial conditions (IC). Unlike the initial TBFs, the spawned TBFs from each IC remain coupled during the course of the dynamics and their separation naturally accounts for decoherence of the nuclear wavefunction on multiple electronic states. III. Classifying Isomers from Structural Dynamics on S 0 The natural evolution of the wavepacket dynamics can be followed by binning geometries along ground-state TBFs into one of the DASA photoproducts (A, A', A'', B/B', B'', B''', EEZE, EZEE, EZZE, EEEE, EZZZ, and ZEZZ), following previous studies.14 Snapshots taken every 50fs along all 186-ground state DFT TBFs were binned into one of the isomers based on dihedral angles (    ) and atomic distances (C -C and N-H ). For details on the binning criteria, 2 6 a see Supplementary Fig. S2. Due to the ground state TBFs being sufficiently uncoupled from all others, the total population of a specific isomer L at time t on the ground-state, 21 LLNL-JRNL-822958 P L ( t ) is computed by: P ( t ) = 1 å N IC é ê å k N T M BF (t) c k * ,M ( t ) c k,M ( t ) d ( L,I ( R k,M ( t )))ù ú (7) L N IC M=1 ê êë å k N T M BF (t) c k * ,M ( t ) c k,M ( t ) ú úû where L is defined as one of (A, A', A'', B/B', B'', B''', EEZE, EZEE, EZZE, EEEE, EZZZ, and ZEZZ), c ( t ) is the amplitude of the kth TBF and Mth IC, N is the total number of initial k,M IC conditions, and 22 LLNL-JRNL-822958 d ( … ) is a Kronecker-delta function, and I ( R ) represents the isomer classification of the geometry given by R. Figure S1. The SA3-CAS(2,2)SCF/6-31G** natural orbitals at the S minimum. Orange and green 0 correspond to 0.05 and-0.05e-/Å3 isovalues, respectively. 23 LLNL-JRNL-822958 S 0 M O O r r i b b n i m it a l 8",
+  "token_count": 511,
+  "text_sha": "1dc5c7b445c14d0c3f0e9d041fea7a417a2dfaf89e379926b3e90ae01e0e0a1a",
+  "extracted_at": "2026-05-15T14:08:25.190937Z"
+}

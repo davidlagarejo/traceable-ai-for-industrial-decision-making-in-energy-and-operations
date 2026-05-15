@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9aa120a3::chunk_0003",
+  "source_id": "eia_mer_sec7_3",
+  "source_sha": "9aa120a39e29808b30495111a2e956d9",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec7_3.pdf",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "to that house the generating equipment. Direct use is exclusive of station use. the public. Through 1988, data are for electric utilities only; beginning in 1989, data E=Estimate. NA=Not available. F=Forecast. (s)=Less than 0.5 billion are for electric utilities and independent power producers. kilowatthours and greater than -0.5 billon kilowatthours. c Commercial combined-heat-and-power (CHP) and commercial electricity-only Notes: • See Note 1, \"Coverage of Electricity Statistics,\" and Note 2, plants. \"Classification of Power Plants Into Energy-Use Sectors,\" at end of section. d Industrial combined-heat-and-power (CHP) and industrial electricity-only • Data values preceded by \"F\" are derived from the U.S. Energy Information plants. Through 1988, data are for industrial hydroelectric power only. Administration's Short-Term Integrated Forecasting System. See Note 3, \"Electricity e Electricity transmitted across U.S. borders. Net imports equal imports minus Forecast Values,\" at end of section. • Totals may not equal sum of components exP,orts. due to independent rounding. • Geographic coverage is the 50 states and the f Transmission and distribution losses (electricity losses that occur between the District of Columbia. point of generation and delivery to the customer). See Note 1, \"Electrical System Web Page: See http://www.eia.gov/totalenergy/data/monthly/#electricity (Excel Energy Losses,\" at end of Section 2. and CSV files) for all available annual data beginning in 1949 and monthly data g Data collection frame differences and nonsampling error. beginning in 1973. h Electricity sales to ultimate customers by electric utilities and, beginning in Sources: See end of section. U. S. Energy Information Administration / Monthly Energy Review April 2026 133",
+  "token_count": 252,
+  "text_sha": "273debe562ea5733d860915a5d30f2b0ece0093c4a6607e892c9908186f72525",
+  "extracted_at": "2026-05-15T14:06:58.399688Z"
+}

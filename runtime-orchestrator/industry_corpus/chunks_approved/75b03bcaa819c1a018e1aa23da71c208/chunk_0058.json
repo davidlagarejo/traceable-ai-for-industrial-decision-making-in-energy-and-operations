@@ -1,0 +1,14 @@
+{
+  "chunk_id": "75b03bca::chunk_0058",
+  "source_id": "eia_mer_sec7",
+  "source_sha": "75b03bcaa819c1a018e1aa23da71c208",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec7.pdf",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Report–Utility,\" and Form EIA-860B, \"Annual Electric Generator Report–Nonutility.\" 2001–2007: EIA, Form EIA-860, \"Annual Electric Generator Report.\" 2008 forward: EIA, Form EIA-860, \"Annual Electric Generator Report,\" and Form EIA-860M, “Monthly Update to the Annual Electric Generator Report.” 162 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 48,
+  "text_sha": "06b3cb54479dd90046c4482cbdd628ad4bb513ff977684a3717751de149c4253",
+  "extracted_at": "2026-05-15T14:06:58.255043Z"
+}

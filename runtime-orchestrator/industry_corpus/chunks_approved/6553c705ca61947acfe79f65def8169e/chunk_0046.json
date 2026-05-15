@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6553c705::chunk_0046",
+  "source_id": "eia_mer_sec1",
+  "source_sha": "6553c705ca61947acfe79f65def8169e",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec1.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "database printouts for adjustments. 1988: “Report on U.S. Merchandise Trade, 1988 final revisions,” August 18, 1989. 1989: “Report on U.S. Merchandise Trade, 1989 revisions,” July 10, 1990. U. S. Energy Information Administration / Monthly Energy Review April 2026 37 1990: “U.S. Merchandise Trade, 1990 fina report,” May 10, 1991, and “U.S. Merchandise Trade, December 1992,” February 18, 1993, page 3. 1991: “U.S. Merchandise Trade, 1992 final report,” May 12, 1993. 1992–2020: “U.S. International Trade in Goods and Services,” annual revisions. 2022–2024: “U.S. International Trade in Goods and Services,” 2024 annual revisions. 2025: “U.S. International Trade in Goods and Services,” FT-900, monthly. 38 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 113,
+  "text_sha": "17511c9f62c930e2b1eff326665bf4d8d46f92d3233834b4cb987735677661ac",
+  "extracted_at": "2026-05-15T14:05:58.361915Z"
+}

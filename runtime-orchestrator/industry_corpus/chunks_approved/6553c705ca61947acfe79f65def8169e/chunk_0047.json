@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6553c705::chunk_0047",
+  "source_id": "eia_mer_sec1",
+  "source_sha": "6553c705ca61947acfe79f65def8169e",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec1.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Trade, 1992 final report,” May 12, 1993. 1992–2020: “U.S. International Trade in Goods and Services,” annual revisions. 2022–2024: “U.S. International Trade in Goods and Services,” 2024 annual revisions. 2025: “U.S. International Trade in Goods and Services,” FT-900, monthly. 38 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 50,
+  "text_sha": "bdecfe56e6dde770a28f7d2e03103855dc43b093183a87e7fbf5d9f1f2070582",
+  "extracted_at": "2026-05-15T14:05:58.361915Z"
+}

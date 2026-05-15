@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ce8ecc2c::chunk_0013",
+  "source_id": "eia_mer_sec5",
+  "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec5.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "general, the most recent 12 months of estimated well counts will have the highest errors because they are the farthest from the average well‐per‐rig ratio used in the model (at least 25 months). 120 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 45,
+  "text_sha": "574af08c6bec02834d4680331c99a457f42ceae9f081a5c4aee1ee045ec9a3fa",
+  "extracted_at": "2026-05-15T14:06:35.324603Z"
+}

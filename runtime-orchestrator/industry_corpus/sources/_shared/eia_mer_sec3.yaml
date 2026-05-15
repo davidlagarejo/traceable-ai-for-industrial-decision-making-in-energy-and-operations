@@ -1,0 +1,11 @@
+source_id: eia_mer_sec3
+title: "EIA MER §3 Petroleum"
+url: https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf
+license: public_domain
+publisher: eia
+version: "2024"
+added_at: "2026-05-15T14:05:33.228477Z"
+added_by: system_verified
+notes: "V10 P0 F6 seed."
+asset_families:
+  - _shared

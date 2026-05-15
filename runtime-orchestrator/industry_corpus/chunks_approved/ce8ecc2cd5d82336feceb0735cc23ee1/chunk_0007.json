@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ce8ecc2c::chunk_0007",
+  "source_id": "eia_mer_sec5",
+  "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec5.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "“completed for natural gas,” “dry hole,” “vertical,” “horizontal and directional,” and “total.” Wells that produce both crude oil and natural gas are categorized by the state. EIA includes both developmental wells and exploratory wells in the six well types, but excludes all other classes of wells drilled in connection with the search for producible hydrocarbons. If a lateral well (such as a service well, stratigraphic test well, observation well, etc.) is drilled at the same time as the original hole, EIA does not separately count the lateral well. However, EIA includes all of the well footage. EIA counts only horizontal wells after the first lateral is drilled and does not count pilot holes. Prior to the March 1985 MER, drilling statistics consisted of completion data for crude oil, natural gas, and dry wells as reported to the American Petroleum Institute (API) during a given month. Due to time lags between the date of well completion and the date of completion reporting to the API, as‐reported well completions were an inaccurate indicator of drilling activity. For example, in 1982, as‐reported well completions increased, while the number of actual completions decreased. As a result, for 1973 forward, the data shown in this section are revised estimates based on the partial data available from S&P Global. EIA continuously revises these estimates as new data become available. Each month, EIA estimates the latest 36 months of wells using the rig count and a 3‐month average wells per rig ratio. EIA applies three conditions to the result: 1) if the model result is less than the actual reported value, then EIA uses the reported value, and 2) the published total well count is the maximum of the modeled total, or the sum of modeled oil, gas, and dry, or the sum of modeled horizontal and vertical well counts, and 3) the modeled component well counts are prorated so that they add exactly to the total published well count. EIA uses a similar process to estimate drilled footage using a 6‐month average footage‐per‐well ratio. Because there is no reported dry rig count data, EIA estimates the number of dry wells using a 6‐month average dry‐wells‐to‐total‐wells ratio, which EIA then applies to the modeled total wells. In general, the most recent 12 months of estimated well counts will have the highest errors because they are the farthest from the average well‐per‐rig ratio used in the model (at least 25 months). 120 U. S. Energy Information Administration / Monthly Energy Review April 2026",
+  "token_count": 415,
+  "text_sha": "7a4535c68dccf52797f0788be41dce5f41e2821a761fac460b1f41a99a8126eb",
+  "extracted_at": "2026-05-15T14:06:35.324603Z"
+}

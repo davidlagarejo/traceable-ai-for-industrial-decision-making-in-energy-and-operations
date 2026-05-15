@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2f060dc5::chunk_0012",
+  "source_id": "eia_mer_sec11",
+  "source_sha": "2f060dc503a5802fd97a92085759db93",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec11.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "beginning in 1973. Biofuels\" in Glossary. See Table 11.7 for energy-related carbon dioxide emissions Sources: See end of section. from wood, biomass waste, fuel ethanol (minus denaturant), and biodiesel. U. S. Energy Information Administration / Monthly Energy Review April 2026 219 Table 11.5 Carbon Dioxide Emissions From Energy Consumption: Transportation Sector (Million Metric Tons of Carbon Dioxidea) Petroleum I I I I Natural Aviation Distillate I Jet I Lubri- I Motor Residual Elec- Coal Gasb Gasoline Fuel OilC HGLd Fuel cants Gasolinee Fuel Oil Total tricityf Totalg 1973 Total .... ········\"········· (s) 39 6 164 3 152 6 887 55 1,272 2 1,314 1975 Total ........................ (s) 32 5 157 3 144 6 889 53 1,257 2 1,291 1980 Total .... ( h) 34 4 207 1 155 6 882 105 1,360 2 1,397 1985 Total ...... · . · . · . ·· .. · . · . · . \" .. \" .. ' . \" . \" . \" . \" . \" . \" ( h) 28 3 234 2 178 6 910 59 1,392 3 1,423 1990 Total .. ................... ( h) 36 3 271 1 223 7 967 76 1,547 3 1,587 1995 Total .. .................... !h ) 38 3 310 1 222 6 1,027 68 1,637 3 1,679 2000 Total ........................ h) 36 3 386 1 259 7 1,128 67 1,848 4 1,888 2005 Total ..... .................. !h ) 33 2 453 2 251 6 1,177 63 1,954 5 1,992 2010 Total ........................ h) 38 2 429 (s) 214 6 1,086 67 1,804 5 1,847 2011 Total ... ................... ( h) 39 2 436 (s) 213 5 1,054 58 1,769 4 1,813 2012 Total .. ..... ····· ......... ( h) 41 2 417 (s) 210 5 1,047 50 1,730 4 1,776 2013 Total ... .................... ( h) 47 2 421 (s) 214 5 1,057 44 1,744 4 1,795 2014 Total ... .................... ( h) 40 2 441 (s) 220 6 1,067 34 1,769 4 1,814 2015 Total .................... ( h) 39 1 447 1 231 6 1,073 35 1,794 4 1,837 2016 Total .... ................... ( h) 40 1 437 1 242 6 1,092 47 1,825 4 1,869 2017 Total .................... ( h) 42 1 442 1 251 5 1,090 50 1,841 4 1,887 2018 Total .... ••••••••••••••••••• ( h) 51 2 466 1 255 5 1,090 45 1,864 4 1,918 2019 Total ........................ ( h) 59 2 468 1 261 5 1,086 40 1,862 3 1,924 2020 Total ••••••••••••••••••••• ( h) 59 1 439 1 161 4 935 29 1,572 3 1,633 2021 Total ... ................... ( h) 65 1 459 1 205 5 1,025 46 1,742 3 1,809 2022 Total ........................ ( h) 72 2 464 1 233 5 1,018 47 1,770 3 1,845 2023 Total ..... .................. ( h) 72 1 453 1 247 4 1,038 39 1,783 3 1,857 2024 January .................. ( h) 8 (s) 33 (s) 19 (s) 82 3 R139 (s) 147 February ................ ( h) 7 (s) 31 (s) 18 (s) 80 3",
+  "token_count": 508,
+  "text_sha": "b12b98d4a6321015dc4a8681a629216c75b3231c96a10731e0eebb35688a6ad3",
+  "extracted_at": "2026-05-15T14:07:44.033946Z"
+}

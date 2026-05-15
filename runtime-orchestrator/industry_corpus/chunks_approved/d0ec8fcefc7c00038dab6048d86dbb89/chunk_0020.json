@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0ec8fce::chunk_0020",
+  "source_id": "eia_mer_sec10",
+  "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec10.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "... .......... ,,, .. NA NA d 1,914 d 80 d10 27 NA 27 83 56 1,885 79 10 2022 Total .. ··········\"\"'\"' NA NA 4,841 203 26 114 NA 114 282 200 4,756 200 25 2023 Total .................... NA NA 7,058 296 38 100 NA 100 314 32 7,126 299 38 2024 January ................ NA NA 623 26 3 - NA - 400 85 538 23 3 February .............. NA NA 620 26 3 - NA - 412 12 607 26 3 March ................... NA NA 692 29 4 - NA - 496 84 609 26 3 April ... ................. NA NA 651 27 3 - NA - 414 -82 733 31 4 May ...... ............... NA NA 512 21 3 - NA - 478 64 447 19 2 June ..................... NA NA 651 27 3 - NA - 538 60 592 25 3 July ...................... NA NA 580 24 3 - NA - 467 -71 652 27 3 August ................. NA NA 700 29 4 - NA - 612 145 555 23 3 September ........... NA NA 874 37 5 - NA - 740 129 746 31 4 October ................ NA NA 742 31 4 - NA - 631 -110 851 36 5 November ............ NA NA 856 36 5 - NA - 451 -179 1,035 43 6 December ............ NA NA 792 33 4 - NA - 489 37 754 32 4 - - Total .... ............ , .. NA NA 8,293 348 44 NA 489 174 8,118 341 44 2025 January ................ NA NA 1,032 43 6 - (s) (s) 725 i269 h764 h32 h4 February .............. NA NA 1,238 52 7 - 45 -45 884 159 1,033 43 6 March ... ............... NA NA 1,013 43 5 - 1 -1 938 54 958 40 5 April. ................... NA NA 877 37 5 - (s) (s) 850 -88 965 41 5 May ...................... NA NA 1,107 47 6 - 1 -1 880 29 1,077 45 6 June ..... ............... NA NA 1,142 48 6 - 120 -120 629 -251 1,273 53 7 July ...... ............ , .. NA NA 1,290 54 7 - (s) (s) 877 248 1,041 44 6 August ................. NA NA 740 31 4 - 52 -52 718 -159 847 36 5 September ........... NA NA 1,342 56 7 - (s) (s) 842 123 1,218 51 7 October ................ NA NA 1,498 63 8 - - - 1,130 289 1,209 51 6 November ............ NA NA 1,801 76 10 - 97 -97 879 -251 1,955 82 10 December ............ NA NA 1,667 70 9 - 75 -75 1,006 127 1,464 62 8 Total .................... NA NA 14,747 619 79 - 392 -392 1,006 i 551 13,805 580 74 2026 January .. ............. NA NA 1,029 43 6 - - - 1,107 100 928 39 5 a Data are for renewable heating oil, renewable jet fuel (sustainable aviation from consumption. Beginning in 2025, consumption is calculated as production plus fuel), renewable naphtha and gasoline, biobutanol, and other biofuels and net.imports minus stock change. biointermediates. Beginning in",
+  "token_count": 512,
+  "text_sha": "66bbb32eb255dcd8a7bbb337a9f44a79c1b32859debda5e97cd16f74091f002d",
+  "extracted_at": "2026-05-15T14:07:33.077526Z"
+}

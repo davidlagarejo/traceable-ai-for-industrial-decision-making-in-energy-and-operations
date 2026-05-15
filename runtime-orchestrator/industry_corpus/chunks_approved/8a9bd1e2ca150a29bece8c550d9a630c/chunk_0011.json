@@ -1,0 +1,15 @@
+{
+  "chunk_id": "8a9bd1e2::chunk_0011",
+  "source_id": "ornl_1817423",
+  "source_sha": "8a9bd1e2ca150a29bece8c550d9a630c",
+  "source_url": "https://www.osti.gov/servlets/purl/1817423",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "National Laboratory, , 2011. 9 Proceedings of the INMM & ESARDA Joint Virtual Annual Meeting August 23-26 & August 30-September 1, 2021 [6] D. B. Pelowitz (editor), \"MCNP6 User's Manual (version 1.0),\" Los Alamos National Laboratory, LA-CP-13-00634, 2013. [7] S. Vaccaro, I. C. Gauld, J. Hu, P. D. Baere, J. Peterson, P. Schwalbach, A. Smejkal, A. Tomanin, A. Sjöland, S. Tobin and D. Wiarda, \"Advancing the Fork Detector for Quantitative Spent Nuclear Fuel Verification,\" Nuclear Inst. and Methods in Physics Research, A, p. Vol. 888; p. 202–217, 2018. https://doi.org/10.1016/j.nima.2018.01.066. [8] J. Hu, I. Gauld, S. Vaccaro, T. Honkamaa and G. Ilas, \"Validation of ORIGEN for VVER-440 Spent Fuel with Application to Fork Detector Safeguards Measurements,\" ESARDA Bulletin, no. 60, pp. 28-42, 2020. https://doi.org/10.2760/217080. [9] J. Hu, G. Ilas and I. C. Gauld, \"Analysis of PNAR Spent Fuel Safeguards Measurements Using the ORIGEN Data Analysis Module,\" Oak Ridge National Laboratory, ORNL/TM-2020/1834, Oak Ridge, TN, 2020. Web. doi:10.2172/1760108. [10] W. A. Wieselquist, R. A. Lefebvre and M. A. Jessee (Editors), \"SCALE Code System, ORNL/TM- 2005/39, Version 6.2.4,,\" Oak Ridge National Laboratory, , Oak Ridge, TN, 2020. https://www.ornl.gov/file/scale-62-manual/display. 10",
+  "token_count": 186,
+  "text_sha": "e0d39ef34452a632ed474190260bc621cbdea44a68176e38952ba58f2a62bee8",
+  "extracted_at": "2026-05-15T14:08:22.525922Z"
+}

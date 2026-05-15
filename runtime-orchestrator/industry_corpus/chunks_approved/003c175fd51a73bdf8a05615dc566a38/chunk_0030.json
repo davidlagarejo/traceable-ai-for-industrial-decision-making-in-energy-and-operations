@@ -1,0 +1,14 @@
+{
+  "chunk_id": "003c175f::chunk_0030",
+  "source_id": "nrel_1995349",
+  "source_sha": "003c175fd51a73bdf8a05615dc566a38",
+  "source_url": "https://www.osti.gov/servlets/purl/1995349",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "2102.12498. [53] D. M. Scolnic, D. O. Jones, A. Rest, Y. C. Pan, [67] G. F. Abella´n, R. Murgia, V. Poulin, and J. Lavalle, R. Chornock, R. J. Foley, M. E. Huber, R. Kessler, arXiv e-prints arXiv:2008.09615 (2020), 2008.09615. G. Narayan, A. G. Riess, et al., ApJ 859, 101 (2018),",
+  "token_count": 50,
+  "text_sha": "5786fc3fd21fc93a7d4c606296033a7ec95da45382855733bb025e5fc7c1ba44",
+  "extracted_at": "2026-05-15T14:08:09.053935Z"
+}

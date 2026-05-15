@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9aa120a3::chunk_0005",
+  "source_id": "eia_mer_sec7_3",
+  "source_sha": "9aa120a39e29808b30495111a2e956d9",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec7_3.pdf",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "available annual data beginning in 1949 and monthly data g Data collection frame differences and nonsampling error. beginning in 1973. h Electricity sales to ultimate customers by electric utilities and, beginning in Sources: See end of section. U. S. Energy Information Administration / Monthly Energy Review April 2026 133",
+  "token_count": 49,
+  "text_sha": "2c0f1fc6d956ca8dce9ed15a22bba28f3f79f9f9a90520c7edb5a9513c220f63",
+  "extracted_at": "2026-05-15T14:06:58.399688Z"
+}

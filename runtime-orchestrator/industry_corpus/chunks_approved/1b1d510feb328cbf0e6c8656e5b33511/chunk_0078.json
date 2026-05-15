@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1b1d510f::chunk_0078",
+  "source_id": "eia_mer_sec3",
+  "source_sha": "1b1d510feb328cbf0e6c8656e5b33511",
+  "source_url": "https://www.eia.gov/totalenergy/data/monthly/pdf/sec3.pdf",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "total petroleum consumption is the sum of the data in trillion Btu for the petroleum products shown under \"Electric Power Sector\" in Table 3.8c. U. S. Energy Information Administration / Monthly Energy Review April 2026 103 THIS PAGE INTENTIONALLY LEFT BLANK",
+  "token_count": 41,
+  "text_sha": "456ec820de481303b9f09ad31ccdf0de6eb4c098d9b1813cb1963e42dc6cf77f",
+  "extracted_at": "2026-05-15T14:06:24.411919Z"
+}

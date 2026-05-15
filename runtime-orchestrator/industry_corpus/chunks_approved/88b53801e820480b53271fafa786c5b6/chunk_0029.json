@@ -1,0 +1,14 @@
+{
+  "chunk_id": "88b53801::chunk_0029",
+  "source_id": "pnnl_1763942",
+  "source_sha": "88b53801e820480b53271fafa786c5b6",
+  "source_url": "https://www.osti.gov/servlets/purl/1763942",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "L. T. Biegler. On the implementation of a primal-dual interior point filter line search algorithm for large-scale nonlinear programming. Mathematical Programming, 106(1):25–57, 2006. [53] M.A.Puso,BradleyN.Maker,RobertM.Ferencz,andJohnO.Hallquist. Nike3d: anonlinear,implicit, three-dimensional finite element code for solid and structural mechanics. User’s Manual, 2007. 32",
+  "token_count": 40,
+  "text_sha": "c74ee626128d642404f4b2c5d5a675cb9b6be2deb3ca51473d39f008ea816359",
+  "extracted_at": "2026-05-15T14:08:20.916537Z"
+}

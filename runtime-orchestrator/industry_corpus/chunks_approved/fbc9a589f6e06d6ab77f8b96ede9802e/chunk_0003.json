@@ -1,0 +1,15 @@
+{
+  "chunk_id": "fbc9a589::chunk_0003",
+  "source_id": "doe_osti_1893826",
+  "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
+  "source_url": "https://www.osti.gov/servlets/purl/1893826",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "• Revenue/savings Production (kWh) Value ($) • Taxes NREL | 18 • Desktop Application • Advanced Analysis Features – Parametric – Stochastic – P50/P90 • Built-in Scripting Language • Macros How can you access • Software Development Kit (SDK) – Python (PySAM package) SAM models? – C/C++ – Matlab – PHP – C# – Java – VBA – iOS / Android • Web Services API (PVWatts Only) • Open-source SAM code Built in Scripting Language and Macros Flexible, lightweight scripting language built in to the SAM desktop tool, allowing users to quickly run custom analyses and read/write to other files NREL | 20",
+  "token_count": 103,
+  "text_sha": "feaa72aa056afc8adc03db8003580ac31c307a263f897c94db53e65be115c1b8",
+  "extracted_at": "2026-05-15T14:09:25.463779Z"
+}

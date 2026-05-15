@@ -1,0 +1,14 @@
+{
+  "chunk_id": "003c175f::chunk_0013",
+  "source_id": "nrel_1995349",
+  "source_sha": "003c175fd51a73bdf8a05615dc566a38",
+  "source_url": "https://www.osti.gov/servlets/purl/1995349",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "k (and the low-k 0 eq matterpowerspectrumingeneral)beingshiftedtolarger scales (see also the discussion in [17]). Changeinmatterpowerspectrum; ζ =0.1,a =0.1 t E. Potential to reduce cosmological tensions As has been noted previously in the literature, this modelhasthecapacitytosimultaneouslyameliorateboth the H and the S tensions. First, the H tension can 0 8 0 κ=0.01 beimprovedbecausethePlanck dataprimarilyconstrain κ=0.1 Ω h2 at recombination but not today. The result of a m κ=0.5 conversion of some DM to DR after recombination is a κ=1.0 lower Ω today (as compared to in ΛCDM) and thus a m κ=2.0 slightly higher value of Ω , in order to preserve flatness Λ κ=5.0 (cid:80) Ω = 1. This leads to a longer period of exponential i i expansion due to dark energy, and a higher expansion rate H today. Simultaneously, the decay of some DM 0 leads straightforwardly to less matter clustering today and a lower value of S . 8 FIG.3: InducedchangesintheCMBtemperaturepowerspec- In Figure 4 we show the ΛCDM H ,S values (from 0 8 trum(top andmiddle)andthelinearmatterpowerspectrum { } the Planck CMB-only constraints), along with the val- P(k) (bottom). In each case we define the fractional change ues of H and S for the DM DR model with ζ = 0.1, ∆X X−XΛCDM , where X is either CTT or P(k). The 0 8 → b of ig t g h e e ≡ st la c t h e X a -t n Λ i g m C e D e s M I in S d W uc s e i d gn i a n l, C a ℓ T n T eff ar e e ct d w ue hi t c o ℓ h t i h s e m a o m st p ly lifi n c o a t t i i c o e n - a r p a t r m i = m e a t 0 e r . y 0 rs - 1 C ( a M Ω n b d B h v 2 v a , a r Ω i l o u ⋆ c u e h s s 2, v a a n s l s u b , e e s A fo o s r f ) e κ fi , ( x w w e h d it e h t r o e th t a h e g e a re i P n m la a b n i y n c i k Ω ng ⋆ 20 p w 1 a 8 e - ableatlowℓ,andduetothereducedimpactofCMBlensing, c mean Ω at the time of the release of the CMB). We can an effect that is mostly noticeable at high ℓ (the character- c see that this model allows for higher values of H , along istic peak-smearing due to lensing is lessened, and there is 0 with lower values of S . less power shifted from large to small scales). In the mat- 8 ter power spectrum, we see a suppression of power on",
+  "token_count": 508,
+  "text_sha": "a8896125aefab3ea0f640aa8f4a31da2ac93c341031ee07f08cf5b1dc4c4adc6",
+  "extracted_at": "2026-05-15T14:08:09.053935Z"
+}
