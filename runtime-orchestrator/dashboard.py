@@ -15251,6 +15251,316 @@ def _curation_simple_combo_explanation(combo: dict) -> str:
     return "  ".join(bits)
 
 
+# ────────────────────────────────────────────────────────────────────
+# Plain Spanish translations for validator rule_ids and state codes.
+# When a curator looks at the dashboard banner, we surface bullets in
+# everyday language instead of technical rule_id strings.
+# ────────────────────────────────────────────────────────────────────
+
+_HUMAN_RULE_EXPLANATIONS: dict[str, dict[str, str]] = {
+    # ── motor_059 — Strategic Intelligence (R1..R14) ─────────────
+    "R1_missing_falsification": {
+        "title": "Claim sin condición de falsificación",
+        "detail": "Hay una afirmación permitida que no declara cómo podría refutarse. Cada claim 'allowed' debe traer su test: '¿qué evidencia mostraría que esto es falso?'",
+        "category": "Epistemología",
+    },
+    "R2_act_now_with_prohibited_claim": {
+        "title": "Acción 'ACT NOW' con claim prohibido",
+        "detail": "Hay una acción del TAD marcada como 'ACT NOW' pero está basada en un claim que el framework prohíbe. No se debe actuar sobre algo bloqueado.",
+        "category": "TAD ↔ Claims",
+    },
+    "R3_do_not_model_with_active_redesign": {
+        "title": "Modelar prohibido pero hay redesign activo",
+        "detail": "El framework dice 'no modelar todavía' pero al mismo tiempo hay propuestas de rediseño activas. Inconsistencia entre TAD y permisos.",
+        "category": "TAD ↔ Claims",
+    },
+    "R4_observed_fact_without_evidence": {
+        "title": "'Hecho observado' sin evidencia",
+        "detail": "Una variable está etiquetada como OBSERVED_FACT pero no tiene la evidencia que respaldaría esa etiqueta.",
+        "category": "Epistemología",
+    },
+    "R5_chart_implies_prohibited_claim": {
+        "title": "Gráfico apoya un claim prohibido",
+        "detail": "Un chart visualiza algo que respalda un claim que el framework prohíbe. Aunque el claim no esté en el texto, el chart lo está implicando.",
+        "category": "Charts",
+    },
+    "R6_gold_nugget_peer_superiority_blocked": {
+        "title": "Gold nugget implica superioridad ante peers",
+        "detail": "Un insight estratégico sugiere que el activo supera a sus peers, pero el fair-comparison engine bloqueó este tipo de conclusión.",
+        "category": "Comparación injusta",
+    },
+    "R7_claim_count_mismatch_across_layers": {
+        "title": "Conteo de claims inconsistente entre motores",
+        "detail": "Los motores no coinciden en cuántos claims gobernados existen (claim_register / TAD-linked / governance_summary tienen números distintos). Hay un desfase que rompe la trazabilidad.",
+        "category": "Consistencia",
+    },
+    "R8_digital_twin_with_unresolved_dominant_variable": {
+        "title": "Digital twin propuesto sin medir lo básico",
+        "detail": "El TAD propone construir un digital twin / modelo detallado, pero hay variables dominantes (las que gobiernan la economía física) que todavía no se conocen. Primero medir, luego modelar.",
+        "category": "TAD prematuro",
+    },
+    "R9_roi_claim_with_unresolved_control_boundary": {
+        "title": "ROI sin saber quién paga / quién captura",
+        "detail": "Una acción menciona ROI/payback/savings, pero el control boundary (quién opera, quién captura el valor) no está resuelto. Sin esto, el ROI no es del propietario.",
+        "category": "Financiero",
+    },
+    "R10_peer_superiority_with_incomplete_normalization": {
+        "title": "Comparación con peers sin normalización completa",
+        "detail": "El reporte afirma que es 'mejor que peers' o 'top quartile' pero el peer set no está normalizado correctamente (área, throughput, régimen térmico, tarifa, etc.).",
+        "category": "Comparación injusta",
+    },
+    "R11_verified_savings_with_soft_baseline": {
+        "title": "'Savings verificados' sin baseline duro",
+        "detail": "Una acción usa lenguaje de 'verified savings' o 'guaranteed savings', pero el baseline no está hardened. No se puede verificar savings sin baseline sólido.",
+        "category": "Financiero",
+    },
+    "R12_local_truth_from_archetypal_prior": {
+        "title": "'Este edificio consume X' sin evidencia local",
+        "detail": "Hay un claim que afirma una verdad LOCAL ('este sitio consume X kWh/sf', 'esta facility es X% ineficiente') pero la única evidencia que lo respalda es un prior arquetípico, no datos del caso. Verdades locales requieren evidencia local.",
+        "category": "Epistemología",
+    },
+    "R13_benchmark_as_truth": {
+        "title": "Usar benchmark como verdad",
+        "detail": "Un claim usa frases como 'below industry benchmark' o 'benchmark says X' como si el benchmark fuera oráculo. Los benchmarks son distribuciones de referencia, no truth local.",
+        "category": "Epistemología",
+    },
+    "R14_peer_ranking_with_incomplete_comparability": {
+        "title": "Peer ranking sin comparabilidad 10-dim completa",
+        "detail": "Una acción quiere rankear contra peers pero el peer set no cumple las 10 dimensiones canónicas de comparabilidad (asset_family, throughput_band, operating_hours, etc.).",
+        "category": "Comparación injusta",
+    },
+    # ── motor_061 — Asset Family Isolation ──────────────────────
+    "AF1_pattern_contamination": {
+        "title": "Pattern de OTRO asset family activado",
+        "detail": "Se activó un pattern que NO corresponde al asset family de este caso. Ejemplo típico: lógica de office (tenant_boundary) activada en un datacenter, o lógica manufacturing en cold-chain. Esto es contaminación cross-asset.",
+        "category": "Contaminación de patterns",
+    },
+    "AF2_nugget_token_contamination": {
+        "title": "Gold nugget contiene tokens de otro asset family",
+        "detail": "Un gold nugget (insight estratégico) usa tokens (refrigeration, MHE charging, etc.) que pertenecen a otro asset family. El insight está copiado de otro tipo de caso.",
+        "category": "Contaminación de patterns",
+    },
+    # ── motor_062 — Scenario Justification ──────────────────────
+    "SJ1_scenario_missing_justification": {
+        "title": "Escenario activo sin justificación",
+        "detail": "Un escenario activo no declara los 5 campos requeridos (trigger, source_basis, process_clue, evidence_required, what_falsifies). Sin esto, no se sabe POR QUÉ está activo.",
+        "category": "Justificación de escenario",
+    },
+    "SJ2_scenario_source_unknown": {
+        "title": "Escenario cita fuente que no existe",
+        "detail": "Un escenario referencia una source_id que no está en el catálogo de fuentes aprobadas. La justificación es inválida.",
+        "category": "Justificación de escenario",
+    },
+    "SJ3_source_family_mismatch": {
+        "title": "Fuente del escenario no corresponde al asset family",
+        "detail": "El escenario cita una fuente, pero esa fuente está catalogada para otro asset family. La cita es cross-family — no aplica.",
+        "category": "Justificación de escenario",
+    },
+    # ── motor_063 — Chart Validity ──────────────────────────────
+    "CV1_decorative_risk_chart": {
+        "title": "Gráfico decorativo (no aporta intelligence)",
+        "detail": "Un chart en el reporte no soporta ninguna hipótesis ni decisión — está ahí por estética. Los charts deben mover la interpretación del lector; si no, se eliminan.",
+        "category": "Charts",
+    },
+    "CV2_chart_without_intelligence_binding": {
+        "title": "Gráfico sin vínculo a una idea del reporte",
+        "detail": "El chart no declara qué tesis, combinación, contradicción o hipótesis sostiene. No puede defenderse como relevante para decisiones.",
+        "category": "Charts",
+    },
+    "CV4_no_charts_with_admissible_thesis": {
+        "title": "Reporte sin charts cuando la tesis lo permite",
+        "detail": "La tesis ejecutiva está en un estado que admitiría charts, pero el reporte no tiene ninguno. Pierde fuerza visual injustificadamente.",
+        "category": "Charts",
+    },
+    "CV3_decorative_ratio_critical": {
+        "title": "Más del 30% de los charts son decorativos",
+        "detail": "El reporte tiene tantos charts decorativos que pasa el umbral crítico de 30%. La densidad de información visual está diluida.",
+        "category": "Charts",
+    },
+    "CV5_chart_cross_asset_family": {
+        "title": "Gráfico vinculado a OTRO asset family",
+        "detail": "Un chart declara que pertenece a otro asset family (p.ej. chart de office en un caso de cold-chain). Esto es contaminación visual cross-asset.",
+        "category": "Contaminación de charts",
+    },
+    "CV6_chart_wrong_source_case_id": {
+        "title": "Gráfico copiado de OTRO caso",
+        "detail": "Un chart fue heredado de otro caso (otro asset, otra dirección, otro estudio) sin re-bind. El chart está hablando de otro sitio, no del actual.",
+        "category": "Contaminación de charts",
+    },
+    "CV7_chart_without_section_id": {
+        "title": "Gráfico sin asignación de sección",
+        "detail": "Un chart no declara a qué sección del reporte pertenece. Aparece huérfano en el deliverable.",
+        "category": "Charts",
+    },
+    "CV8_chart_without_hypothesis_supported": {
+        "title": "Gráfico sin hipótesis que sostiene",
+        "detail": "Un chart no declara qué hipótesis o claim soporta. Si no cambia la interpretación, debe quitarse.",
+        "category": "Charts",
+    },
+    # ── motor_058 — Report Uniqueness ───────────────────────────
+    "RU1_high_jaccard_overlap": {
+        "title": "Vocabulario muy parecido al de un caso anterior",
+        "detail": "El vocabulario de los gold nuggets se superpone más del 65% con un run pasado. Probable que el reporte esté reciclando narrativa en lugar de hablar de este caso específico.",
+        "category": "Reutilización de contenido",
+    },
+    "RU2_verbatim_nugget_reuse": {
+        "title": "Gold nugget reutilizado verbatim de otro caso",
+        "detail": "Un insight estratégico aparece IDÉNTICO al de un caso anterior. El reporte está reciclando narrativa en lugar de hablar del caso actual.",
+        "category": "Reutilización de contenido",
+    },
+    "RU3_tad_action_set_reuse": {
+        "title": "Acciones TAD calcadas de otro caso",
+        "detail": "El conjunto de acciones del TAD se solapa más del umbral con un run pasado. El plan de acción no está especializado para este caso.",
+        "category": "Reutilización de contenido",
+    },
+    "RU4_chart_set_reuse": {
+        "title": "Set de charts calcado de otro caso",
+        "detail": "Los IDs de chart se superponen demasiado con un run pasado. La estructura visual repite la de otro caso.",
+        "category": "Reutilización de contenido",
+    },
+    "RU5_evidence_pack_set_reuse": {
+        "title": "Paquete de evidencia calcado de otro caso",
+        "detail": "La evidencia mínima exigida coincide casi totalmente con un run pasado. No se derivaron requerimientos específicos para este caso.",
+        "category": "Reutilización de contenido",
+    },
+    "RU6_intra_run_evidence_pack_repetition": {
+        "title": "Dos casos del run usan el mismo paquete de evidencia",
+        "detail": "El framework está reusando el MISMO conjunto de evidencia para más de un caso del run, en lugar de pedir evidencia específica para cada uno.",
+        "category": "Reutilización de contenido",
+    },
+    # ── motor_057 — Gold Nugget Quality ─────────────────────────
+    "GN1_archetype_replay": {
+        "title": "Gold nugget repite el arquetipo, no habla del caso",
+        "detail": "Un insight cita el arquetipo del tipo de activo en lugar de hablar de las condiciones específicas del caso.",
+        "category": "Gold nuggets",
+    },
+    "GN2_nugget_without_evidence": {
+        "title": "Gold nugget sin evidencia que lo respalde",
+        "detail": "Un insight estratégico carece del trace de evidencia que lo sostenga. No puede defenderse en revisión.",
+        "category": "Gold nuggets",
+    },
+    "GN3_nugget_violates_claim_permission": {
+        "title": "Gold nugget viola permisos de claim",
+        "detail": "Un insight afirma algo que el claim governor prohíbe en este caso.",
+        "category": "Gold nuggets",
+    },
+    "GN4_nugget_count_out_of_range": {
+        "title": "Cantidad de gold nuggets fuera de rango",
+        "detail": "El reporte tiene muy pocos (o demasiados) insights estratégicos para considerarse decision-grade. El mínimo recomendado es 5.",
+        "category": "Gold nuggets",
+    },
+}
+
+_HUMAN_STATE_EXPLANATIONS: dict[str, str] = {
+    "decision_blocked": (
+        "El framework detectó BLOQUEADORES graves y decidió que este caso "
+        "NO debe convertirse en deliverable. Hay contaminación, contradicciones "
+        "o falta de evidencia."
+    ),
+    "internal_debug_only": (
+        "El reporte está marcado solo para revisión interna / debug. "
+        "No es entregable al cliente."
+    ),
+    "exploratory_prior": (
+        "Estado exploratorio inicial: el framework hizo hipótesis estructurales "
+        "pero sin evidencia local suficiente. Sirve como borrador para curar."
+    ),
+    "structural_hypothesis": (
+        "Hipótesis estructurales formuladas. Falta evidencia para subir a "
+        "comparación con peers o discriminación entre opciones."
+    ),
+    "bounded_peer_analysis": (
+        "Análisis de peers acotado. Sirve para comparación, no para decisiones "
+        "de capital."
+    ),
+    "evidence_discrimination": (
+        "El framework tiene suficiente evidencia para discriminar entre "
+        "hipótesis rivales. Aún no es client-safe."
+    ),
+    "publish_bounded": (
+        "Publicable con caveats — el reporte puede entregarse pero con "
+        "limitaciones explícitas declaradas."
+    ),
+    "client_safe": (
+        "Listo para cliente. Pasó todos los gates de calidad del framework."
+    ),
+}
+
+
+def _humanize_rule(rule_id: str, raw_description: str = "") -> dict:
+    """Translate a rule_id into a plain-Spanish bullet dict."""
+    spec = _HUMAN_RULE_EXPLANATIONS.get(rule_id)
+    if spec:
+        return {
+            "rule_id":  rule_id,
+            "title":    spec["title"],
+            "detail":   spec["detail"],
+            "category": spec["category"],
+        }
+    # Fallback: format the technical description
+    return {
+        "rule_id":  rule_id,
+        "title":    rule_id.replace("_", " ").capitalize(),
+        "detail":   raw_description or "El framework reportó esta regla sin descripción.",
+        "category": "Otros",
+    }
+
+
+def _curation_humanize_failures(run_id: str) -> list[dict]:
+    """Walk through every motor that emits warnings and translate each
+    rule_id into a plain-Spanish bullet. Returns a list of dicts grouped
+    by category."""
+    bullets: list[dict] = []
+    seen_rules: set[str] = set()
+
+    # Motors that emit `*_warnings` registers with rule_id field
+    warning_motors = {
+        "motor_059": "strategic_intelligence_warnings",
+        "motor_061": "asset_family_isolation_warnings",
+        "motor_062": "scenario_justification_warnings",
+        "motor_063": "chart_validity_warnings",
+        "motor_058": "report_uniqueness_warnings",
+        "motor_057": "gold_nugget_quality_warnings",
+    }
+    for motor_id, field_name in warning_motors.items():
+        out = _curation_load_motor_output(run_id, motor_id)
+        warnings = out.get(field_name, []) or []
+        for w in warnings:
+            if not isinstance(w, dict):
+                continue
+            rid = str(w.get("rule_id", "")).strip()
+            sev = str(w.get("severity", "")).strip()
+            # Only surface warning-level or worse
+            if sev not in ("warning", "critical", "error", "blocking"):
+                continue
+            # Dedup by rule_id (a rule may fire multiple times — show once)
+            key = f"{rid}"
+            if key in seen_rules:
+                continue
+            seen_rules.add(key)
+            b = _humanize_rule(rid, str(w.get("description", "")))
+            b["severity"] = sev
+            b["motor"] = motor_id
+            bullets.append(b)
+
+    # Add state-level explanation if state is decision_blocked / internal_debug_only
+    m017 = _curation_load_motor_output(run_id, "motor_017")
+    verdict = m017.get("render_gate_verdict") or {}
+    state = str(verdict.get("state") or "").strip()
+    if state in ("decision_blocked", "internal_debug_only"):
+        explanation = _HUMAN_STATE_EXPLANATIONS.get(state, state)
+        bullets.insert(0, {
+            "rule_id":  f"state:{state}",
+            "title":    f"Estado del reporte: {state.replace('_',' ')}",
+            "detail":   explanation,
+            "category": "Estado del reporte",
+            "severity": "blocking",
+            "motor":    "motor_036",
+        })
+
+    return bullets
+
+
 @app.route("/api/curation/run-status")
 def api_curation_run_status():
     """Return a compact run health summary for the center-column banner.
@@ -15350,6 +15660,11 @@ def api_curation_run_status():
         status = "blocked"
         message = f"Pipeline status: {pipeline_status or 'unknown'}"
 
+    # V-curation P-humanize: surface plain-Spanish bullets when something failed.
+    human_reasons: list[dict] = []
+    if status in ("warn", "blocked"):
+        human_reasons = _curation_humanize_failures(run_id)
+
     return jsonify({
         "run_id":             run_id,
         "status":             status,
@@ -15357,6 +15672,7 @@ def api_curation_run_status():
         "completed_motors":   completed,
         "total_motors":       total_motors,
         "message":            message,
+        "human_reasons":      human_reasons,
         "final_delivery_gate": verdict or None,
     })
 
@@ -15546,6 +15862,20 @@ section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border
 .banner-bad .dot{background:#dc2626;}
 .banner-empty .dot{background:#a1a1aa;}
 .banner .meta{margin-left:auto;font-size:11px;font-weight:500;opacity:.78;}
+.banner-details{margin-top:8px;background:#fff;border:1px solid #e4e4e7;border-radius:8px;padding:10px 14px;display:none;}
+.banner-details.show{display:block;}
+.banner-details .bd-cat{font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;
+                         letter-spacing:.04em;margin:6px 0 4px 0;}
+.banner-details .bd-cat:first-child{margin-top:0;}
+.banner-details .bd-item{padding:6px 0 6px 14px;border-left:3px solid #c4b5fd;margin-bottom:4px;}
+.banner-details .bd-item.sev-blocking{border-left-color:#dc2626;}
+.banner-details .bd-item.sev-critical{border-left-color:#ea580c;}
+.banner-details .bd-item.sev-warning{border-left-color:#d97706;}
+.banner-details .bd-title{font-size:13px;font-weight:600;color:#18181b;line-height:1.35;}
+.banner-details .bd-detail{font-size:12px;color:#52525b;line-height:1.5;margin-top:3px;}
+.banner-toggle{margin-left:8px;background:rgba(255,255,255,.5);border:0;color:inherit;
+                cursor:pointer;font-size:11px;padding:3px 8px;border-radius:4px;font-weight:700;}
+.banner-toggle:hover{background:rgba(255,255,255,.85);}
 .section-head{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
               color:#52525b;margin:8px 0 10px 0;display:flex;align-items:center;gap:8px;}
 .section-head .count{background:#f4f4f5;color:#52525b;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:600;}
@@ -15682,6 +16012,7 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
 <header>
   <h1>ZLab · Curar entregable</h1>
   <span style="font-size:11.5px;color:#71717a;">human curation surface — runs + combos + PDF mark-up</span>
+  <a href="/log" style="margin-left:auto;font-size:12px;color:#2563eb;text-decoration:none;font-weight:600;">📜 Historial de corridas →</a>
 </header>
 
 <main>
@@ -15696,6 +16027,7 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
       <span class="dot"></span>
       <span>Selecciona un caso a la izquierda</span>
     </div>
+    <div id="banner-details" class="banner-details"></div>
 
     <div class="section-head">
       Aprobaciones <span class="count" id="combo-count">0</span>
@@ -15934,12 +16266,59 @@ async function loadBanner() {
   const r = await fetch(`/api/curation/run-status?run_id=${encodeURIComponent(currentRunId)}`);
   const s = await r.json();
   const b = $("banner");
+  const bd = $("banner-details");
   const cls = s.status === "ok" ? "banner-ok" : (s.status === "warn" ? "banner-warn" : (s.status === "blocked" ? "banner-bad" : "banner-empty"));
   const icon = s.status === "ok" ? "✓" : (s.status === "warn" ? "⚠" : (s.status === "blocked" ? "✗" : "·"));
   b.className = "banner " + cls;
+  const reasons = s.human_reasons || [];
+  // Build compact one-liner: "5 problemas detectados (3 reutilización, 2 charts, …)"
+  let oneliner = "";
+  if (s.status === "ok") {
+    oneliner = s.message || "Framework corrió sin problemas";
+  } else if (reasons.length === 0) {
+    oneliner = s.message || "";
+  } else {
+    // Count by category
+    const byCat = {};
+    reasons.forEach(x => { byCat[x.category] = (byCat[x.category] || 0) + 1; });
+    const cats = Object.entries(byCat).map(([k,v]) => `${v} ${k.toLowerCase()}`).join(" · ");
+    oneliner = `${reasons.length} ${reasons.length === 1 ? "problema detectado" : "problemas detectados"} · ${cats}`;
+  }
+  const toggleBtn = reasons.length > 0
+    ? `<button class="banner-toggle" onclick="toggleBannerDetails()">Ver detalle ▼</button>`
+    : "";
   b.innerHTML = `<span class="dot"></span>
-    <span><b>${icon}</b> ${escapeHtml(s.message || "")}</span>
-    <span class="meta">${s.completed_motors || 0}/${s.total_motors || 0} motores · ${escapeHtml(s.publication_mode || "—")}</span>`;
+    <span><b>${icon}</b> ${escapeHtml(oneliner)}</span>
+    <span class="meta">${s.completed_motors || 0}/${s.total_motors || 0} motores · ${escapeHtml(s.publication_mode || "—")}</span>
+    ${toggleBtn}`;
+  // Group bullets by category and render
+  if (reasons.length === 0) {
+    bd.classList.remove("show");
+    bd.innerHTML = "";
+    return;
+  }
+  const grouped = {};
+  reasons.forEach(x => {
+    grouped[x.category] = grouped[x.category] || [];
+    grouped[x.category].push(x);
+  });
+  bd.innerHTML = Object.entries(grouped).map(([cat, items]) => {
+    return `<div class="bd-cat">${escapeHtml(cat)}</div>` +
+      items.map(it => `
+        <div class="bd-item sev-${escapeHtml(it.severity)}">
+          <div class="bd-title">${escapeHtml(it.title)}</div>
+          <div class="bd-detail">${escapeHtml(it.detail)}</div>
+        </div>`).join("");
+  }).join("");
+}
+
+function toggleBannerDetails() {
+  $("banner-details").classList.toggle("show");
+  const btn = document.querySelector(".banner-toggle");
+  if (btn) {
+    btn.textContent = $("banner-details").classList.contains("show")
+      ? "Ocultar ▲" : "Ver detalle ▼";
+  }
 }
 
 async function loadApprovals() {
@@ -16405,6 +16784,254 @@ Shape: {
 
 def _inputs_file_exists(inputs_filename: str) -> bool:
     return (_HERE / "inputs" / inputs_filename).exists()
+
+
+@app.route("/api/curation/runs-log")
+def api_curation_runs_log():
+    """Historial enriquecido de TODAS las corridas (no solo las que tienen PDF).
+
+    Devuelve hasta `limit` (default 100) corridas ordenadas desc por
+    completed_at / mtime, cada una con:
+      · run_id, case_id (si mapea a canonical), pipeline_id
+      · started_at / completed_at / duration_s
+      · pipeline_status (completed / partial / failed / running)
+      · publication_mode + render_gate.allowed
+      · pdf_available + pdf_basename
+      · failure_count + first_failure_title (en español plano)
+      · curator_decisions (accept / reject / modify counts) + annotation_count
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    limit = int((request.args.get("limit") or "100").strip() or "100")
+    if not _RUNS_DIR.exists():
+        return jsonify({"runs": []})
+
+    paths = sorted(
+        _RUNS_DIR.glob("run:*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )[:limit]
+
+    rows: list[dict] = []
+    pipeline_to_case = {
+        c["pipeline_id"]: c for c in _CURATION_CANONICAL_CASES
+    }
+    for p in paths:
+        try:
+            m = json.loads(p.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        rid = m.get("run_id", p.stem)
+        pipeline_id = m.get("pipeline_id", "")
+        case_spec = pipeline_to_case.get(pipeline_id)
+        case_id = case_spec["case_id"] if case_spec else ""
+        case_label = case_spec["label"] if case_spec else (
+            (m.get("target_definition") or {}).get("target_identifier", "")
+            or pipeline_id
+        )
+        started_at = m.get("started_at", "") or ""
+        completed_at = m.get("completed_at", "") or ""
+        # Duration in seconds
+        duration_s = 0.0
+        try:
+            from datetime import datetime as _dt
+            if started_at and completed_at:
+                duration_s = (
+                    _dt.fromisoformat(completed_at.replace("Z", "+00:00")) -
+                    _dt.fromisoformat(started_at.replace("Z", "+00:00"))
+                ).total_seconds()
+        except Exception:
+            pass
+
+        # PDF availability
+        m017 = _curation_load_motor_output(rid, "motor_017")
+        pdf_path = m017.get("pdf_path", "") or next(
+            iter((m017.get("pdf_paths") or {}).values()), ""
+        )
+        pdf_available = bool(pdf_path and Path(pdf_path).exists()) if pdf_path else False
+        publication_mode = m017.get("publication_mode") or (
+            m017.get("render_gate_verdict") or {}
+        ).get("state", "")
+
+        # Plain-Spanish failure summary
+        failures = _curation_humanize_failures(rid)
+        failure_count = len(failures)
+        first_failure_title = failures[0]["title"] if failures else ""
+        first_failure_cat = failures[0]["category"] if failures else ""
+
+        # Curator decisions and annotations
+        bundle = _curation.export_curation_bundle(rid)
+
+        rows.append({
+            "run_id":              rid,
+            "case_id":             case_id,
+            "case_label":          case_label,
+            "pipeline_id":         pipeline_id,
+            "started_at":          started_at[:19].replace("T", " "),
+            "completed_at":        completed_at[:19].replace("T", " "),
+            "duration_s":          round(duration_s, 1),
+            "pipeline_status":     m.get("status", ""),
+            "publication_mode":    publication_mode,
+            "render_allowed":     (m017.get("render_gate_verdict") or {}).get("allowed"),
+            "pdf_available":       pdf_available,
+            "pdf_basename":        Path(pdf_path).name if pdf_path else "",
+            "failure_count":       failure_count,
+            "first_failure_title": first_failure_title,
+            "first_failure_category": first_failure_cat,
+            "accept_count":        bundle.get("accept_count", 0),
+            "reject_count":        bundle.get("reject_count", 0),
+            "modify_count":        bundle.get("modify_count", 0),
+            "annotation_count":    bundle.get("annotation_count", 0),
+        })
+    return jsonify({"runs": rows})
+
+
+_LOG_PAGE_HTML = r"""<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Historial de corridas — ZLab</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+     background:#f7f7f8;color:#18181b;margin:0;padding:0;}
+header{padding:14px 22px;background:#fff;border-bottom:1px solid #e4e4e7;
+       display:flex;align-items:center;gap:16px;}
+h1{margin:0;font-size:18px;font-weight:600;}
+.subtitle{font-size:12px;color:#71717a;}
+.back{margin-left:auto;font-size:12px;color:#2563eb;text-decoration:none;font-weight:600;}
+.back:hover{text-decoration:underline;}
+main{padding:18px 22px;max-width:1400px;margin:0 auto;}
+.summary{display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.s-card{background:#fff;border:1px solid #e4e4e7;border-radius:8px;padding:11px 16px;min-width:120px;}
+.s-num{font-size:22px;font-weight:800;letter-spacing:-.03em;color:#18181b;}
+.s-lbl{font-size:10.5px;color:#71717a;margin-top:2px;text-transform:uppercase;letter-spacing:.05em;}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e4e4e7;border-radius:8px;overflow:hidden;}
+th{background:#f9fafb;font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+   color:#52525b;padding:9px 10px;text-align:left;border-bottom:1px solid #e4e4e7;font-weight:700;}
+td{padding:10px;border-bottom:1px solid #f4f4f5;font-size:12.5px;color:#27272a;vertical-align:top;}
+tr:last-child td{border-bottom:0;}
+tr:hover{background:#fafafa;}
+.case-cell{font-weight:600;color:#18181b;}
+.case-cell .pipe{display:block;font-size:10.5px;font-weight:500;color:#71717a;margin-top:2px;}
+.statebadge{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:3px;
+            text-transform:uppercase;letter-spacing:.04em;}
+.s-completed{background:#dcfce7;color:#166534;}
+.s-partial{background:#fef3c7;color:#92400e;}
+.s-failed{background:#fee2e2;color:#991b1b;}
+.s-running{background:#dbeafe;color:#1e40af;}
+.modebadge{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;
+            text-transform:uppercase;letter-spacing:.04em;}
+.m-client_safe{background:#dcfce7;color:#166534;}
+.m-publish_bounded{background:#fef3c7;color:#92400e;}
+.m-internal_debug_only{background:#fee2e2;color:#991b1b;}
+.m-decision_blocked{background:#fee2e2;color:#991b1b;}
+.m-exploratory_prior{background:#dbeafe;color:#1e40af;}
+.failure-cell{color:#92400e;font-style:italic;}
+.failure-cell.zero{color:#a1a1aa;font-style:normal;}
+.decision-counts{font-size:11px;color:#52525b;}
+.decision-counts b{color:#18181b;}
+.empty-row{text-align:center;padding:50px;color:#a1a1aa;font-style:italic;}
+.dur{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;color:#71717a;}
+.pdf-yes{color:#16a34a;font-weight:700;}
+.pdf-no{color:#a1a1aa;}
+</style></head><body>
+
+<header>
+  <h1>Historial de corridas</h1>
+  <span class="subtitle">log completo · ordenado por fecha desc</span>
+  <a class="back" href="/curar">← Volver a Curar</a>
+</header>
+
+<main>
+  <div class="summary" id="summary"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Caso / Pipeline</th>
+        <th>Inicio</th>
+        <th>Duración</th>
+        <th>Estado</th>
+        <th>Publication Mode</th>
+        <th>Problemas detectados</th>
+        <th>Decisiones</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+    <tbody id="runs-tbody">
+      <tr><td colspan="8" class="empty-row">Cargando historial…</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+function escapeHtml(s) {
+  return String(s || "").replace(/[&<>"']/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+}
+
+async function loadLog() {
+  const r = await fetch("/api/curation/runs-log?limit=100");
+  const data = await r.json();
+  const runs = data.runs || [];
+  const tbody = $("runs-tbody");
+  if (!runs.length) {
+    tbody.innerHTML = '<tr><td colspan="8" class="empty-row">No hay corridas registradas.</td></tr>';
+    return;
+  }
+  // Summary
+  const byStatus = {completed:0, partial:0, failed:0, running:0};
+  let totalDecisions = 0, totalAnnots = 0, withPdf = 0;
+  runs.forEach(r => {
+    if (byStatus[r.pipeline_status] != null) byStatus[r.pipeline_status]++;
+    totalDecisions += (r.accept_count||0) + (r.reject_count||0) + (r.modify_count||0);
+    totalAnnots += r.annotation_count || 0;
+    if (r.pdf_available) withPdf++;
+  });
+  $("summary").innerHTML = `
+    <div class="s-card"><div class="s-num">${runs.length}</div><div class="s-lbl">Total corridas</div></div>
+    <div class="s-card"><div class="s-num">${byStatus.completed}</div><div class="s-lbl">completadas</div></div>
+    <div class="s-card"><div class="s-num">${byStatus.partial}</div><div class="s-lbl">parciales</div></div>
+    <div class="s-card"><div class="s-num">${byStatus.failed}</div><div class="s-lbl">fallidas</div></div>
+    <div class="s-card"><div class="s-num">${withPdf}</div><div class="s-lbl">con PDF</div></div>
+    <div class="s-card"><div class="s-num">${totalDecisions}</div><div class="s-lbl">decisiones de curador</div></div>
+    <div class="s-card"><div class="s-num">${totalAnnots}</div><div class="s-lbl">anotaciones PDF</div></div>
+  `;
+  tbody.innerHTML = runs.map(r => {
+    const stBadge = `<span class="statebadge s-${r.pipeline_status}">${r.pipeline_status||"?"}</span>`;
+    const modeBadge = r.publication_mode
+      ? `<span class="modebadge m-${r.publication_mode}">${r.publication_mode.replace(/_/g,' ')}</span>`
+      : '<span style="color:#a1a1aa;">—</span>';
+    const failure = r.failure_count > 0
+      ? `<span class="failure-cell"><b>${r.failure_count}</b> · ${escapeHtml(r.first_failure_title)}<br><small>${escapeHtml(r.first_failure_category)}</small></span>`
+      : '<span class="failure-cell zero">sin problemas</span>';
+    const dec = (r.accept_count + r.reject_count + r.modify_count) > 0
+      ? `<span class="decision-counts">✅<b>${r.accept_count}</b> ❌<b>${r.reject_count}</b> ✏️<b>${r.modify_count}</b><br>📝${r.annotation_count}</span>`
+      : '<span style="color:#a1a1aa;">—</span>';
+    const pdf = r.pdf_available
+      ? `<span class="pdf-yes">✓ disponible</span>`
+      : `<span class="pdf-no">— sin PDF</span>`;
+    return `<tr>
+      <td class="case-cell">${escapeHtml(r.case_label)}<span class="pipe">${escapeHtml(r.pipeline_id)}</span></td>
+      <td><span class="dur">${escapeHtml(r.started_at||"")}</span></td>
+      <td><span class="dur">${r.duration_s ? r.duration_s.toFixed(1)+"s" : "—"}</span></td>
+      <td>${stBadge}</td>
+      <td>${modeBadge}</td>
+      <td>${failure}</td>
+      <td>${dec}</td>
+      <td>${pdf}</td>
+    </tr>`;
+  }).join("");
+}
+
+loadLog();
+</script>
+</body></html>
+"""
+
+
+@app.route("/log")
+def log_page():
+    return render_template_string(_LOG_PAGE_HTML)
 
 
 @app.route("/api/curation/cases")
