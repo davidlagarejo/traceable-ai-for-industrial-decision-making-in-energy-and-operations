@@ -95,12 +95,15 @@ _SYSTEM = (
     "fetched from Census/NOAA/EPA/EIA/OSM — they are NOT claims, just observed context. Cite them "
     "as 'public-record context indicates …' or 'Census Geocoder confirms …'. NEVER fabricate, NEVER "
     "round excessively, NEVER omit them when the section is location/regional/peer-related.\n"
-    "11. INDUSTRY CONTEXT FACTS — when ctx.industry_context_facts is provided (a list of {text, "
-    "source_id, chunk_id, page, similarity}), you MAY cite ONE OR TWO facts if directly relevant to "
-    "the section topic. WHEN you cite, you MUST: (a) copy the text verbatim between double quotes "
-    "(no paraphrasing, no rewording, no summarization); (b) attribute with the exact tag "
-    "[source_id::chunk_id] right after the quote. If no fact is directly relevant, OMIT them — "
-    "never force a citation. If no industry_context_facts are provided, ignore this rule.\n"
+    "11. INDUSTRY CONTEXT FACTS — when source_facts.industry_context_facts is provided (a list "
+    "of {text, source_id, chunk_id, page, similarity}), you SHOULD include AT LEAST ONE verbatim "
+    "citation from that list in your prose, choosing the most topically relevant entry. To cite: "
+    "(a) copy a continuous span from `text` verbatim between double quotes (no paraphrasing, no "
+    "rewording, no summarization, no ellipsis except to skip an irrelevant middle clause); (b) "
+    "attribute with the EXACT tag [source_id::chunk_id] right after the closing quote (e.g. "
+    "[eia_mer_sec2::1f486f3a::chunk_0001]). The tag is a single token — never split, never edit. "
+    "Only OMIT citations if NONE of the provided facts are topically applicable to the section. "
+    "If no industry_context_facts are provided, ignore this rule.\n"
 )
 
 _FORBIDDEN_PHRASES = (
@@ -504,6 +507,15 @@ def _lint_text(packet: dict[str, Any], text: str) -> dict[str, Any]:
     # tokens share NO overlap with source_facts is flagged as a candidate
     # hallucination. This is the Phase 0 "the LLM doesn't invent"
     # enforcement at sentence granularity.
+    # V10 P0 — allow-list industry_context_facts metadata so [source_id::chunk_id]
+    # citation tags don't trip the orphan-claim detector. The TEXT of each fact
+    # is already in source_facts (tokenized by check_orphan_claims), but the
+    # tags themselves are structural metadata, not claims.
+    _icf_allowlist: list[str] = []
+    for _f in (packet.get("source_facts", {}) or {}).get("industry_context_facts", []) or []:
+        if isinstance(_f, dict):
+            _icf_allowlist.append(str(_f.get("source_id", "")))
+            _icf_allowlist.append(str(_f.get("chunk_id", "")))
     orphan_findings = check_orphan_claims(
         packet.get("source_facts", {}),
         text,
@@ -511,6 +523,7 @@ def _lint_text(packet: dict[str, Any], text: str) -> dict[str, Any]:
             str(packet.get("target_type", "")),
             str(packet.get("asset_family", "")),
             str(packet.get("case_id", "")),
+            *_icf_allowlist,
         ],
     )
     if orphan_findings:
@@ -584,9 +597,38 @@ def _render_fallback(packet: dict[str, Any]) -> dict[str, str]:
     )
     if chart_note:
         follow_up_es += " Use el gráfico para aclarar el punto central, no para endurecer el claim."
+
+    # V10 P0 — When the LLM fails / falls back, we still want the industry
+    # citations to land. We pick the highest-similarity fact and inline it
+    # verbatim with its [source_id::chunk_id] tag. This is purely a quote —
+    # the fallback never paraphrases or claims anything about the fact.
+    icf = (packet.get("source_facts", {}) or {}).get("industry_context_facts") or []
+    industry_quote_en = ""
+    industry_quote_es = ""
+    if icf:
+        # Pick highest similarity (list is already top-k sorted, but be defensive)
+        top = max(icf, key=lambda f: f.get("similarity", 0.0))
+        quote = (top.get("text") or "").strip()
+        # Use the first sentence-ish span (cap 220 chars) so the quote stays readable
+        if quote:
+            cut = min(220, len(quote))
+            for end_char in (". ", "! ", "? "):
+                idx = quote.find(end_char, 60, cut + 60)
+                if idx > 0:
+                    cut = idx + 1
+                    break
+            quote = quote[:cut].strip()
+            tag = f"[{top.get('source_id','')}::{top.get('chunk_id','')}]"
+            industry_quote_en = (
+                f' Public industry context: "{quote}" {tag}.'
+            )
+            industry_quote_es = (
+                f' Contexto industrial público: "{quote}" {tag}.'
+            )
+
     return {
-        "en": intro_en.strip() + "\n\n" + follow_up_en.strip(),
-        "es": intro_es.strip() + "\n\n" + follow_up_es.strip(),
+        "en": (intro_en.strip() + "\n\n" + follow_up_en.strip() + industry_quote_en).strip(),
+        "es": (intro_es.strip() + "\n\n" + follow_up_es.strip() + industry_quote_es).strip(),
     }
 
 
