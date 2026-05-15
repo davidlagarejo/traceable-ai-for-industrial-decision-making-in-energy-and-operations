@@ -1,0 +1,167 @@
+"""PDF URL fetcher — download public technical PDFs for the
+deterministic extractor (V4 P3 bridge).
+
+Rules:
+  · HTTPS only.
+  · Max size: 30 MB per PDF (cap).
+  · Timeout: 60s.
+  · Content-Type must be application/pdf OR URL ends in .pdf.
+  · Cache to disk under `pdf_cache/<sha256-of-url>.pdf` so re-runs are fast.
+
+This is the network sibling of local_pdf_autodraft. The extractor expects
+a LOCAL path → this module gives you that path from a URL.
+
+No API keys required. Uses only stdlib.
+"""
+from __future__ import annotations
+
+import hashlib
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+
+DEFAULT_TIMEOUT_SECONDS: int = 60
+MAX_BYTES: int = 30 * 1024 * 1024  # 30 MB
+USER_AGENT: str = (
+    # Browser-like UA — some federal sites (EPA, PNNL) block obvious bot UAs
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2_1) AppleWebKit/605.1.15 "
+    "(KHTML, like Gecko) Version/17.2 Safari/605.1.15 ZLab-Discovery/1.0"
+)
+
+
+@dataclass(frozen=True)
+class PDFFetchResult:
+    url:           str
+    local_path:    str
+    status:        str            # "ok" | "cached" | "error" | "rejected"
+    bytes_written: int
+    content_type:  str
+    error:         str = ""
+    elapsed_s:     float = 0.0
+
+
+def _cache_root() -> Path:
+    # runtime-orchestrator/pdf_cache/
+    return Path(__file__).resolve().parents[3] / "pdf_cache"
+
+
+def _cache_path_for(url: str) -> Path:
+    h = hashlib.sha256(url.encode("utf-8")).hexdigest()[:32]
+    return _cache_root() / f"{h}.pdf"
+
+
+def fetch_pdf_from_url(
+    url: str,
+    *,
+    timeout: int = DEFAULT_TIMEOUT_SECONDS,
+    max_bytes: int = MAX_BYTES,
+    use_cache: bool = True,
+) -> PDFFetchResult:
+    """Download a public PDF safely. Returns local_path on success."""
+    started = time.time()
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme != "https":
+        return PDFFetchResult(
+            url=url, local_path="", status="rejected", bytes_written=0,
+            content_type="",
+            error="only HTTPS URLs allowed (got scheme={!r})".format(parsed.scheme),
+            elapsed_s=time.time() - started,
+        )
+
+    cache = _cache_path_for(url)
+    if use_cache and cache.exists() and cache.stat().st_size > 0:
+        return PDFFetchResult(
+            url=url, local_path=str(cache), status="cached",
+            bytes_written=cache.stat().st_size,
+            content_type="application/pdf",
+            elapsed_s=time.time() - started,
+        )
+    cache.parent.mkdir(parents=True, exist_ok=True)
+
+    req = urllib.request.Request(url)
+    req.add_header("User-Agent", USER_AGENT)
+    req.add_header("Accept", "application/pdf,*/*;q=0.5")
+    # Follow up to 5 redirects manually so we can validate each hop is HTTPS
+    redirects = 0
+    final_url = url
+    try:
+        while True:
+            try:
+                resp = urllib.request.urlopen(req, timeout=timeout)
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code in (301, 302, 303, 307, 308) and redirects < 5:
+                    loc = exc.headers.get("Location", "")
+                    if loc.startswith("/"):
+                        # Relative redirect — build full URL
+                        loc = f"{parsed.scheme}://{parsed.netloc}{loc}"
+                    if not loc.startswith("https://"):
+                        raise urllib.error.HTTPError(
+                            url, exc.code, "redirect to non-HTTPS denied",
+                            exc.headers, None,
+                        )
+                    redirects += 1
+                    final_url = loc
+                    req = urllib.request.Request(loc)
+                    req.add_header("User-Agent", USER_AGENT)
+                    req.add_header("Accept", "application/pdf,*/*;q=0.5")
+                    parsed = urllib.parse.urlparse(loc)
+                    continue
+                raise
+        # Continue with resp (we have to re-enter the `with` block — refactor)
+        with resp:
+            ctype = resp.headers.get("Content-Type", "").lower()
+            # Some servers don't set application/pdf but URL ends in .pdf
+            is_pdf = (
+                "application/pdf" in ctype
+                or "octet-stream" in ctype
+                or url.lower().split("?")[0].endswith(".pdf")
+            )
+            if not is_pdf:
+                return PDFFetchResult(
+                    url=url, local_path="", status="rejected",
+                    bytes_written=0, content_type=ctype,
+                    error=f"non-PDF content-type: {ctype!r}",
+                    elapsed_s=time.time() - started,
+                )
+            # Stream in chunks, cap at max_bytes
+            total = 0
+            tmp = cache.with_suffix(".pdf.partial")
+            with tmp.open("wb") as fh:
+                while True:
+                    chunk = resp.read(64 * 1024)
+                    if not chunk:
+                        break
+                    total += len(chunk)
+                    if total > max_bytes:
+                        tmp.unlink(missing_ok=True)
+                        return PDFFetchResult(
+                            url=url, local_path="", status="rejected",
+                            bytes_written=total, content_type=ctype,
+                            error=f"PDF exceeds max size ({max_bytes} bytes)",
+                            elapsed_s=time.time() - started,
+                        )
+                    fh.write(chunk)
+            tmp.rename(cache)
+            return PDFFetchResult(
+                url=url, local_path=str(cache), status="ok",
+                bytes_written=total, content_type=ctype,
+                elapsed_s=time.time() - started,
+            )
+    except urllib.error.HTTPError as exc:
+        return PDFFetchResult(
+            url=url, local_path="", status="error", bytes_written=0,
+            content_type="", error=f"HTTP {exc.code}: {exc.reason}",
+            elapsed_s=time.time() - started,
+        )
+    except Exception as exc:
+        return PDFFetchResult(
+            url=url, local_path="", status="error", bytes_written=0,
+            content_type="", error=f"{type(exc).__name__}: {exc}",
+            elapsed_s=time.time() - started,
+        )

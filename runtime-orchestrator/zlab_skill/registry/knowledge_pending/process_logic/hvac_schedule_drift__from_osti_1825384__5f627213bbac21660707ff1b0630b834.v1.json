@@ -1,0 +1,65 @@
+{
+  "id": "hvac_schedule_drift__from_osti_1825384__5f627213bbac21660707ff1b0630b834",
+  "version": "1.0.0",
+  "knowledge_kind": "process_logic",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "HVAC runtime may exceed actual occupied or service-relevant windows",
+    "BMS or controls evidence unresolved",
+    "after-hours load plausible"
+  ],
+  "anti_triggers": [
+    "runtime already aligned to occupancy and service windows",
+    "HVAC systems are minor or not owner-controlled",
+    "schedule evidence shows no meaningful drift"
+  ],
+  "falsification_conditions": [
+    "runtime aligns to occupied or service-relevant windows",
+    "after-hours conditioning is justified by real duty",
+    "HVAC is not materially relevant"
+  ],
+  "evidence_required": [
+    "BMS trend logs",
+    "occupied or service schedule",
+    "runtime profile",
+    "override or control strategy evidence"
+  ],
+  "financial_translation": "Runtime drift can inflate consumption and sometimes demand, while also misleading analysts toward equipment-first narratives.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "HVAC schedule drift is a plausible hypothesis requiring runtime and schedule validation.",
+  "prohibited_language": [
+    "This asset has HVAC schedule waste."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1825384",
+      "confidence": "high",
+      "supporting_excerpt": "− projects aren’t prepared to initiate stabilization when soil disturbance ceases\n− projects don’t adequately schedule storm water requirements into project activities\n− project personnel operate reactively instead of proactivel",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1825384::hvac_schedule_drift"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/5f627213bbac21660707ff1b0630b834.pdf",
+    "matched_terms": [
+      "schedule"
+    ],
+    "source_id": "osti_1825384",
+    "supporting_excerpt": "− projects aren’t prepared to initiate stabilization when soil disturbance ceases\n− projects don’t adequately schedule storm water requirements into project activities\n− project personnel operate reactively instead of proactivel",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:09+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "process_logic"
+}

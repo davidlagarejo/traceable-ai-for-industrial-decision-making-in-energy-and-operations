@@ -1,0 +1,67 @@
+{
+  "id": "tenant_operator_boundary_unresolved__from_osti_1825384__5f627213bbac21660707ff1b0630b834",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "tenant or operator may control dominant loads",
+    "metering or responsibility boundary unresolved",
+    "owner-side value framing plausible"
+  ],
+  "anti_triggers": [
+    "single actor clearly controls and captures the dominant variable",
+    "lease and metering boundary fully aligned",
+    "tenant or operator boundary immaterial"
+  ],
+  "falsification_conditions": [
+    "single actor controls and captures the variable",
+    "lease and meter map fully align",
+    "boundary ambiguity proves immaterial"
+  ],
+  "evidence_required": [
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator agreement",
+    "maintenance responsibility"
+  ],
+  "financial_translation": "Savings or compliance value may leak across contractual and metering boundaries.",
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "PROHIBIT_CLAIM",
+    "DO_NOT_INVEST_YET"
+  ],
+  "allowed_language": "The tenant or operator boundary must be resolved before owner-capture or clean peer logic is admissible.",
+  "prohibited_language": [
+    "The owner will capture the value."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1825384",
+      "confidence": "high",
+      "supporting_excerpt": "la-ur-21-29967\napproved for public release; distribution is unlimited.\ntitle: planning is key for storm water regulatory compliance\nauthor(s): wheeler,",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1825384::tenant_operator_boundary_unresolved"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/5f627213bbac21660707ff1b0630b834.pdf",
+    "matched_terms": [
+      "lease"
+    ],
+    "source_id": "osti_1825384",
+    "supporting_excerpt": "la-ur-21-29967\napproved for public release; distribution is unlimited.\ntitle: planning is key for storm water regulatory compliance\nauthor(s): wheeler,",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:09+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}

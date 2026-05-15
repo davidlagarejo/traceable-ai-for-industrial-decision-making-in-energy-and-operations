@@ -1,0 +1,63 @@
+# Public PDF sources — free, no API key required.
+# Verified 2026-05-15 via curl HEAD + content-type check.
+#
+# All URLs return HTTP 200 + Content-Type: application/pdf. Stable
+# repositories: DOE OSTI (osti.gov/servlets/purl/<doi>) and EIA monthly
+# total energy reports.
+#
+# Pipeline:
+#   scripts/populate_knowledge_from_public_urls.py
+#     ↓
+#   pdf_url_fetcher.fetch_pdf_from_url (HTTPS + redirects + cache)
+#     ↓
+#   local_pdf_autodraft.extract_bounded_pdf_text
+#     ↓
+#   _evaluate_pattern_rule against 30 registered pattern_specs
+#     ↓
+#   propose_extracted_pattern → knowledge_memory/pending/pattern/
+
+sources:
+
+# ── DOE OSTI — verified working ──────────────────────────────────────
+- url: https://www.osti.gov/servlets/purl/1825384
+  source_id: osti_1825384
+  topic: industrial_energy_management
+  asset_family: manufacturing_facility
+  tier: 1
+  title: "DOE OSTI 1825384 — Industrial energy report"
+
+- url: https://www.osti.gov/servlets/purl/1814059
+  source_id: osti_1814059
+  topic: industrial_energy_management
+  asset_family: manufacturing_facility
+  tier: 1
+  title: "DOE OSTI 1814059 — Industrial energy report"
+
+- url: https://www.osti.gov/servlets/purl/1923345
+  source_id: osti_1923345
+  topic: industrial_energy_management
+  asset_family: manufacturing_facility
+  tier: 1
+  title: "DOE OSTI 1923345 — Industrial energy report"
+
+- url: https://www.osti.gov/servlets/purl/1893831
+  source_id: osti_1893831
+  topic: industrial_energy_management
+  asset_family: manufacturing_facility
+  tier: 1
+  title: "DOE OSTI 1893831 — Industrial energy report"
+
+# ── EIA Monthly Energy Review — verified working ─────────────────────
+- url: https://www.eia.gov/totalenergy/data/monthly/pdf/sec7_3.pdf
+  source_id: eia_mer_section7_3
+  topic: electricity_sector
+  asset_family: infrastructure_node
+  tier: 1
+  title: "EIA Monthly Energy Review — Section 7.3 Electricity Net Generation"
+
+- url: https://www.eia.gov/totalenergy/data/monthly/pdf/sec2_5.pdf
+  source_id: eia_mer_section2_5
+  topic: industrial_energy_consumption
+  asset_family: manufacturing_facility
+  tier: 1
+  title: "EIA Monthly Energy Review — Section 2.5 Industrial Sector Energy Consumption"

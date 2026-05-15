@@ -1,0 +1,65 @@
+{
+  "id": "value_boundary_leakage_owner_operator__from_osti_1893831__2f11f035394206059429847c1d2a60ed",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "commercial_building",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "owner and operator may differ",
+    "operator may control schedule, docks, charging or dominant loads",
+    "capture boundary is not evidenced"
+  ],
+  "anti_triggers": [
+    "single owner-operator controls and captures all relevant loads",
+    "full meter and responsibility alignment documented"
+  ],
+  "falsification_conditions": [
+    "single owner-operator control documented",
+    "metering and responsibility alignment documented"
+  ],
+  "evidence_required": [
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator agreement",
+    "maintenance responsibility"
+  ],
+  "financial_translation": "Savings, compliance value or operational improvement can leak across responsibility boundaries before reaching the funding party.",
+  "tad_actions": [
+    "REQUEST_CONTROL_BOUNDARY",
+    "PROHIBIT_ROI",
+    "DEFER_RETROFIT_UNDERWRITING"
+  ],
+  "allowed_language": "The control boundary must be resolved before claiming owner-capturable value.",
+  "prohibited_language": [
+    "The owner will capture the savings."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1893831",
+      "confidence": "high",
+      "supporting_excerpt": "ermal tolerance in the delithiated state, owing to\nof the chemo-mechanical cracking and irreversible oxygen release at the strong oxidizability of ni4+ and oxygen release23,24. the detrimental\nhigh voltage13,14. in this conte",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1893831::value_boundary_leakage_owner_operator"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/2f11f035394206059429847c1d2a60ed.pdf",
+    "matched_terms": [
+      "lease"
+    ],
+    "source_id": "osti_1893831",
+    "supporting_excerpt": "ermal tolerance in the delithiated state, owing to\nof the chemo-mechanical cracking and irreversible oxygen release at the strong oxidizability of ni4+ and oxygen release23,24. the detrimental\nhigh voltage13,14. in this conte",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:26+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}

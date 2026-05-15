@@ -1,0 +1,67 @@
+{
+  "id": "compliance_vs_control_mismatch__from_osti_1825384__5f627213bbac21660707ff1b0630b834",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "commercial_building",
+    "warehouse_distribution",
+    "manufacturing_facility"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "compliance or filing burden visible",
+    "dominant load-control boundary unresolved",
+    "owner-capture versus operator-control tension plausible"
+  ],
+  "anti_triggers": [
+    "control boundary fully aligned and documented",
+    "single actor captures and controls the dominant variable",
+    "compliance burden immaterial"
+  ],
+  "falsification_conditions": [
+    "single actor clearly controls and captures the dominant variable",
+    "metering and responsibility alignment documented",
+    "compliance burden is economically immaterial"
+  ],
+  "evidence_required": [
+    "filing or permit basis",
+    "lease responsibility matrix",
+    "meter map",
+    "utility payment responsibility",
+    "operator control evidence"
+  ],
+  "financial_translation": "Compliance pressure can be translated into the wrong retrofit or underwriting logic if control and capture boundaries are misread.",
+  "tad_actions": [
+    "VALIDATE_CONTROL_BOUNDARY",
+    "REQUEST_MINIMUM_EVIDENCE",
+    "PROHIBIT_CLAIM"
+  ],
+  "allowed_language": "Compliance pressure may be real while control and capture boundaries remain too unresolved for owner-capture claims.",
+  "prohibited_language": [
+    "The owner will capture the compliance-driven savings."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1825384",
+      "confidence": "high",
+      "supporting_excerpt": "967\napproved for public release; distribution is unlimited.\ntitle: planning is key for storm water regulatory compliance\nauthor(s): wheeler, holly lynn\nintended for: slides for subcontractor forum\nissued: 2021-10-07\n\ndisclaimer:\nl",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1825384::compliance_vs_control_mismatch"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/5f627213bbac21660707ff1b0630b834.pdf",
+    "matched_terms": [
+      "compliance"
+    ],
+    "source_id": "osti_1825384",
+    "supporting_excerpt": "967\napproved for public release; distribution is unlimited.\ntitle: planning is key for storm water regulatory compliance\nauthor(s): wheeler, holly lynn\nintended for: slides for subcontractor forum\nissued: 2021-10-07\n\ndisclaimer:\nl",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:09+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "procurement_vs_maintenance_conflict__from_osti_1814059__e710bc5bd3dc6a2abd77aa3a1c36525d",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "replacement or procurement logic visible",
+    "maintenance maturity unresolved",
+    "reliability or downtime burden plausible"
+  ],
+  "anti_triggers": [
+    "maintenance maturity evidenced and aligned with procurement",
+    "replacement logic already discriminated against maintenance reality",
+    "reliability burden immaterial"
+  ],
+  "falsification_conditions": [
+    "maintenance maturity is evidenced and sufficient",
+    "replacement logic remains valid after maintenance review",
+    "downtime and reliability burden are immaterial"
+  ],
+  "evidence_required": [
+    "maintenance logs",
+    "downtime history",
+    "failure mode evidence",
+    "work orders",
+    "replacement rationale"
+  ],
+  "financial_translation": "Capital can be spent on new equipment while the real economics remain in maintenance execution, downtime or operating discipline.",
+  "tad_actions": [
+    "VALIDATE_MAINTENANCE_REALITY",
+    "DO_NOT_INVEST_YET",
+    "REDESIGN_HYPOTHESIS"
+  ],
+  "allowed_language": "Procurement may be targeting a secondary symptom if maintenance reality has not yet been bounded.",
+  "prohibited_language": [
+    "The right answer is equipment replacement."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1814059",
+      "confidence": "high",
+      "supporting_excerpt": "sevier science and technology, 2014\n[3] antaki, g. a., piping and pipeline engineering: design, construction, maintenance, integrity,\nand repair, taylor and frances group, 2003\n[4] watkins, r. k., anderson, l. r., structural mechan",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1814059::procurement_vs_maintenance_conflict"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/e710bc5bd3dc6a2abd77aa3a1c36525d.pdf",
+    "matched_terms": [
+      "maintenance"
+    ],
+    "source_id": "osti_1814059",
+    "supporting_excerpt": "sevier science and technology, 2014\n[3] antaki, g. a., piping and pipeline engineering: design, construction, maintenance, integrity,\nand repair, taylor and frances group, 2003\n[4] watkins, r. k., anderson, l. r., structural mechan",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:10+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}

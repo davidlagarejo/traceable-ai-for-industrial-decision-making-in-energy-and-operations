@@ -1,0 +1,72 @@
+{
+  "id": "fair_comparison_invalid_area_metric__from_osti_1893831__2f11f035394206059429847c1d2a60ed",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "warehouse_distribution",
+    "fulfillment_center",
+    "cold_chain_distribution",
+    "logistics_terminal"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "area-based comparison proposed",
+    "key comparability dimensions missing"
+  ],
+  "anti_triggers": [
+    "dry vs cold-chain classification bounded",
+    "dock density bounded",
+    "operating hours bounded",
+    "charging profile bounded",
+    "owner/operator boundary bounded"
+  ],
+  "falsification_conditions": [
+    "required comparison dimensions are sufficiently bounded to support a fair peer set"
+  ],
+  "evidence_required": [
+    "dry vs cold-chain status",
+    "dock density",
+    "operating hours",
+    "MHE profile",
+    "charging profile",
+    "climate zone",
+    "utility tariff",
+    "service-level intensity",
+    "automation level",
+    "owner/operator boundary"
+  ],
+  "financial_translation": "Using the wrong denominator can distort valuation, underwriting and retrofit sequencing.",
+  "tad_actions": [
+    "BUILD_FAIR_PEER_SET",
+    "COMPARE_FAIRLY",
+    "PROHIBIT_PEER_SUPERIORITY"
+  ],
+  "allowed_language": "Fair comparison is not yet valid until the comparison basis is normalized.",
+  "prohibited_language": [
+    "This asset is inefficient compared to peers."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1893831",
+      "confidence": "high",
+      "supporting_excerpt": "n on the graphite\n\nextended data table 1 | capacity vs. volume change in the state-of-art high-ni, low-co and benchmark cathodes\nsummaries of discharge capacity, volume change and capacity retention in state-of-art high-ni, low-c",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1893831::fair_comparison_invalid_area_metric"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/2f11f035394206059429847c1d2a60ed.pdf",
+    "matched_terms": [
+      "benchmark"
+    ],
+    "source_id": "osti_1893831",
+    "supporting_excerpt": "n on the graphite\n\nextended data table 1 | capacity vs. volume change in the state-of-art high-ni, low-co and benchmark cathodes\nsummaries of discharge capacity, volume change and capacity retention in state-of-art high-ni, low-c",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 1 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:26+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}

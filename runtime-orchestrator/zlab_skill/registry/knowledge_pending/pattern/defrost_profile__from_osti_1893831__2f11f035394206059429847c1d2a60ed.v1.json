@@ -1,0 +1,65 @@
+{
+  "id": "defrost_profile__from_osti_1893831__2f11f035394206059429847c1d2a60ed",
+  "version": "1.0.0",
+  "knowledge_kind": "pattern",
+  "asset_families": [
+    "cold_chain_facility",
+    "cold_chain_distribution"
+  ],
+  "anti_families": [],
+  "trigger_conditions": [
+    "freezer or cooler zone present",
+    "defrost initiation method (time/demand/ambient) unknown",
+    "defrost duration or frequency not characterized"
+  ],
+  "anti_triggers": [
+    "defrost on demand-initiation with telemetry",
+    "defrost already bounded"
+  ],
+  "falsification_conditions": [
+    "demand-initiated defrost with telemetry and tuned dwell"
+  ],
+  "evidence_required": [
+    "defrost initiation method",
+    "defrost frequency and duration logs",
+    "coil inspection evidence"
+  ],
+  "financial_translation": "Defrost optimization is a controls-grade intervention with measurable kWh impact; missing it means equipment-first CAPEX masks a controls fix.",
+  "tad_actions": [
+    "VALIDATE_LOSS_PATTERN",
+    "INSPECT_DEFROST_CONTROLS"
+  ],
+  "allowed_language": "Defrost profile is a plausible controls-grade loss-pattern requiring validation.",
+  "prohibited_language": [
+    "This facility's defrost is wasteful."
+  ],
+  "claim_ceiling": "L2",
+  "source_basis": [
+    {
+      "source_id": "osti_1893831",
+      "confidence": "high",
+      "supporting_excerpt": "e is 1 m lipf dissolved in ethylene carbonate: the dsc test, ta instrument dsc q2000 equipped with an air-fin cooler\n6\nethyl methyl carbonate = 3:7 solvent with 2 wt% vinylene carbonate as is applied, providing temperature mea",
+      "source_locator": "public_url::https://www.osti.gov/servlets/purl/1893831::defrost_profile"
+    }
+  ],
+  "extraction_metadata": {
+    "extraction_path": "deterministic_pdf_autodraft",
+    "extracted_from_pdf": "/Volumes/ZLab_Run/Zlab_Run/Repos/zlab-operational-truth-framework/runtime-orchestrator/pdf_cache/2f11f035394206059429847c1d2a60ed.pdf",
+    "matched_terms": [
+      "cooler",
+      "method",
+      "not",
+      "strategy",
+      "electric",
+      "gas"
+    ],
+    "source_id": "osti_1893831",
+    "supporting_excerpt": "e is 1 m lipf dissolved in ethylene carbonate: the dsc test, ta instrument dsc q2000 equipped with an air-fin cooler\n6\nethyl methyl carbonate = 3:7 solvent with 2 wt% vinylene carbonate as is applied, providing temperature mea",
+    "extractor_module": "zlab_skill.local_pdf_autodraft",
+    "extractor_version": "v1"
+  },
+  "notes": "Bridged from deterministic PDF autodraft. Confirmed by keyword matches against 6 required groups + optional terms. Spec body comes from the framework's frozen registry pattern (see AI_SCAFFOLDING_REGISTRY S4). The PDF excerpt provides the authoritative-source provenance link.",
+  "__proposed_at__": "2026-05-15T11:16:26+00:00",
+  "__proposed_by__": "deterministic_pdf_autodraft",
+  "__pending_kind__": "pattern"
+}
