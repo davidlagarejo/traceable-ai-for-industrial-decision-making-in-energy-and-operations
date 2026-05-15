@@ -1,0 +1,15 @@
+{
+  "chunk_id": "0f0e37dd::chunk_0060",
+  "source_id": "doe_osti_3020107",
+  "source_sha": "0f0e37ddf7da07ca6c2306b93ee45f81",
+  "source_url": "https://www.osti.gov/servlets/purl/3020107",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "to the Temperature Derating Technical Note for more details. (2) Two AC terminals per line are available. (3) Up to two DC terminals (+, -) are available. (4) A DC input with MC4 connectors supporting up to 20 strings is available upon request. 90 Power Optimizer Technical Specifications H1300 H1300 (FOR CONNECTION TO TWO PV MODULES) Unit INPUT Rated Input DC Power(1) 1300 W Connection Method Single input for series connected modules Absolute Maximum Input Voltage (Voc at lowest temperature) 125 Vdc MPPT Operating Range 12.5 – 105 Vdc Maximum Short Circuit Current per Input (Isc) 15 Adc Maximum Efficiency 99.5 % Weighted Efficiency 98.8 % Overvoltage Category II OUTPUT DURING OPERATION (POWER OPTIMIZER CONNECTED TO OPERATING SOLAREDGE INVERTER) Maximum Output Current 20 Adc Maximum Output Voltage 75 Vdc OUTPUT DURING STANDBY (POWER OPTIMIZER DISCONNECTED TO OPERATING SOLAREDGE) Safety Output Voltage per Power Optimizer 1 ± 0.1 Vdc STANDARD COMPLIANCE EMC FCC Part 15 Class A Safety UL 1741, CSA C22.2#107.1, CSA C22.2#330 Material UL 94 V-0, UV resistant RoHS Yes Fire Safety VDE-AR-E 2100-712:2013-05 INSTALLATION SPECIFICATIONS Compatible SolarEdge Inverters SE330KUS Maximum Allowed System Voltage 1500 Vdc Dimensions (W x L x H) 129 x 155 x 59 / 5.08 x 6.10 x 2.32 mm / in Weight (including cables) 1170 / 2.6 g / lb Input/Output Connector(2) MC4 Input Wire Length 1.6, 1.6 / 5.25, 5.25 m / ft Output Wire Length 0.1, 5.3 / 0.32, 17.39 m / ft Operating Temperature Range(3) -40 to 65 / -40 to 149 °C / °F Protection Rating IP68 / NEMA6P Relative Humidity 0 – 100 % (1) The rated power of the module at STC will not exceed the power optimizer’s Rated Input DC Power. Modules with up to +5% power tolerance are allowed. (2) For other connector types please contact SolarEdge. (3) For ambient temperatures above +65°C / 149°F power derating is applied. Refer to the Temperature Derating Technical Note for more details. SE330KUS Module Power Minimum String Length(4) 400 – 450W 27 / 54 (Power Optimizers/Modules) 455 – 550W 24 / 48 555 – 650W 22 / 44 Maximum String Length (Power Optimizers/Modules) 40 / 80 Maximum Continuous Power per String 25,000 W Maximum Allowed Connected Power per String(5) 33,000 W Maximum Allowed Difference between the shortest and longest string 5 Power Optimizers connected to the same inverter (4) Design your project using SolarEdge Designer use a lower minimum string length and/or connect more STC power per string. (5) A minimum of 14 strings must be connected. For 13 strings or less, 29,000W is allowed. 91",
+  "token_count": 427,
+  "text_sha": "696dc3a02cf7bfbff885f83be293f6ced99fd5b8c578910285afb85e431ba99b",
+  "extracted_at": "2026-05-15T21:07:58.755214Z"
+}

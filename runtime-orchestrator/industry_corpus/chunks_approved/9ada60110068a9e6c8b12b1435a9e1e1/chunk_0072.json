@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9ada6011::chunk_0072",
+  "source_id": "doe_osti_3024210",
+  "source_sha": "9ada60110068a9e6c8b12b1435a9e1e1",
+  "source_url": "https://www.osti.gov/servlets/purl/3024210",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "such as the mean and standard deviation are obtained. This method, and the correlations explicitly described in the Supplementary Information of [4], are used to evaluate the capital cost of MS-PTES. It should be noted that these correlations were developed at different points in time. Therefore, the cost estimates are scaled to 2023 values using the Chemical Engineering Cost Indices. (The MS-PTES economic results presented in [4] used 2019 values, and this led to a cost increase of ~30% in this study.) Cost correlations are not available for some of the novel components used in P-PTES. However, a detailed bottom-up cost estimation tool was developed as part of the ARPA-E-funded ENDURING project. The ENDURING concept is an energy storage device with electrically heated particle TES. The stored heat is then discharged through a modified combined cycle power plant. Cost models were developed for the PFB HXs, particle silos, skip hoists, lock hoppers, and pipelines, and detailed information is given in [37]. Correlations for how these costs depend on major design parameters were developed and are presented in Table 18. In this work, the cost of P-PTES is estimated using (1) the correlations in Table 18 for PFB HXs and storage systems and (2) the correlations from [4] for the turbomachinery, fans, heat rejection HX, motor, and generator. Note that [13] provided turbomachinery cost estimates based on combined cycle gas turbines, but these estimates are not used in this work. Due to this (and other 85 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 262,
+  "text_sha": "38acabbbdd66d37b4760f1b969e19b23ca1ba8dacb87753e02fab6a6a10f16e7",
+  "extracted_at": "2026-05-15T21:08:09.433046Z"
+}

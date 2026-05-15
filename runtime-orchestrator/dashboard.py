@@ -18427,6 +18427,59 @@ def corpus_rebuild_index():
     return jsonify({"ok": True, "rebuilt": results})
 
 
+@app.route("/api/corpus/discover-sources", methods=["POST"])
+def corpus_discover_sources():
+    """Proactively discover NEW sources from publisher APIs (DOE OSTI today).
+
+    Query params:
+      family       — limit to one asset_family (optional, default = all)
+      max_new      — per-family cap (default 5)
+
+    Pipeline per family:
+      1. OSTI API search by SUBJECT_KEYWORDS[family]
+      2. Filter out source_ids already on disk
+      3. Write sources/<family>/<source_id>.yaml for each new
+      4. ETL ingest (download → chunk → auto-approve federal)
+      5. Rebuild that family's vector index
+
+    Returns per-family stats + list of new_sources.
+    """
+    try:
+        from runtime_orchestrator.industry_corpus.discovery.orchestrator import (
+            discover_and_ingest_family, discover_all_families,
+        )
+        from runtime_orchestrator.industry_corpus.retriever import clear_cache as _retriever_clear
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"import_failed: {exc}"}), 500
+
+    family = (request.args.get("family") or "").strip()
+    max_new = int(request.args.get("max_new") or 5)
+
+    if family:
+        results = [discover_and_ingest_family(family, max_new=max_new)]
+    else:
+        results = discover_all_families(max_new_per_family=max_new)
+
+    _retriever_clear()
+    payload = [{
+        "asset_family":        r.asset_family,
+        "candidates_found":    r.candidates_found,
+        "yamls_written":       r.yamls_written,
+        "yamls_skipped_existing": r.yamls_skipped_existing,
+        "sources_ingested":    r.sources_ingested,
+        "chunks_added":        r.chunks_added,
+        "chunks_indexed":      r.chunks_indexed,
+        "errors":              r.errors[:5],
+        "new_sources":         r.new_sources,
+    } for r in results]
+    totals = {
+        "families_processed":  len(payload),
+        "sources_ingested":    sum(r.sources_ingested for r in results),
+        "chunks_added":        sum(r.chunks_added for r in results),
+    }
+    return jsonify({"ok": True, "totals": totals, "per_family": payload})
+
+
 @app.route("/api/corpus/ingest-sources", methods=["POST"])
 def corpus_ingest_sources():
     """Run ETL on every sources/*.yaml that hasn't produced chunks yet.
@@ -18501,6 +18554,7 @@ _CORPUS_REVIEW_HTML = """<!doctype html>
   <label>Source: <input id="filterSource" placeholder="iiar_bulletin_109"></label>
   <button onclick="load()">Filtrar</button>
   <button onclick="ingestSources()" style="background:#3aa66a">↻ Re-ingest sources</button>
+  <button onclick="discoverSources()" style="background:#7066c0">🔭 Discover new sources</button>
 </div>
 <div class="status" id="status">cargando…</div>
 <div class="chunks" id="chunks"></div>
@@ -18575,6 +18629,32 @@ async function ingestSources() {
   const d = await r.json();
   alert('Ingest: ' + (d.ok ? (d.count + ' fuentes procesadas') : ('error: ' + d.error)));
   loadIndex();
+}
+async function discoverSources() {
+  const family = document.getElementById('filterFamily').value;
+  const scope = family ? `familia "${family}"` : 'TODAS las familias';
+  if (!confirm(`Descubrir nuevas fuentes en DOE OSTI para ${scope}? Puede tardar 2-5 minutos.`)) return;
+  document.getElementById('status').textContent = 'descubriendo nuevas fuentes…';
+  const qs = family ? `?family=${encodeURIComponent(family)}` : '';
+  const r = await fetch('/api/corpus/discover-sources' + qs, {method:'POST'});
+  const d = await r.json();
+  if (!d.ok) { alert('Discovery error: ' + d.error); return; }
+  const t = d.totals || {};
+  let msg = `Descubrimiento completo:\n` +
+    `  · familias procesadas: ${t.families_processed}\n` +
+    `  · fuentes nuevas ingestadas: ${t.sources_ingested}\n` +
+    `  · chunks añadidos: ${t.chunks_added}\n\n`;
+  for (const fr of (d.per_family || [])) {
+    if (fr.sources_ingested) {
+      msg += `${fr.asset_family}: +${fr.sources_ingested} fuentes, +${fr.chunks_added} chunks\n`;
+      for (const ns of (fr.new_sources || []).slice(0,3)) {
+        msg += `   · ${ns.source_id}: ${ns.title.substring(0,60)}\n`;
+      }
+    }
+  }
+  alert(msg);
+  loadIndex();
+  load();
 }
 loadIndex();
 load();

@@ -1,0 +1,11 @@
+source_id: doe_osti_3024210
+title: "Pumped Thermal Energy Storage Using Low-Cost Particles and a Fluid Bed Heat Exchanger for Maximum Power Efficiency"
+url: https://www.osti.gov/servlets/purl/3024210
+license: public_domain
+publisher: doe_osti
+version: "2026-03-17"
+added_at: "2026-05-15T21:07:58.793808Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, Carnot Battery, concentrating solar thermal power, fluid bed, long-duration electricity storage"
+asset_families:
+  - cold_chain_facility

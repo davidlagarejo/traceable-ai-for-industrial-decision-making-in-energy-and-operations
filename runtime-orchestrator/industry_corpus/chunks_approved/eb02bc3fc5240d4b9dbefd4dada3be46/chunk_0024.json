@@ -1,0 +1,14 @@
+{
+  "chunk_id": "eb02bc3f::chunk_0024",
+  "source_id": "doe_osti_3014921",
+  "source_sha": "eb02bc3fc5240d4b9dbefd4dada3be46",
+  "source_url": "https://www.osti.gov/servlets/purl/3014921",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "NaCl-KCl-MgCl2 eutectic molten salt as a next-generation high-temperature heat transfer fluids in concentrated solar power systems.\" Journal of Solar Energy Engineering 143, no. 4 (2021). 26 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 43,
+  "text_sha": "f63c570f056f785eeba1efb0f6dea718530b41beac741a31328524e94a28fd13",
+  "extracted_at": "2026-05-15T21:08:12.176678Z"
+}

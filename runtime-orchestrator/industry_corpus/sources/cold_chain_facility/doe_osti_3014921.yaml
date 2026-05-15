@@ -1,0 +1,11 @@
+source_id: doe_osti_3014921
+title: "Powdermet CRADA for VELOCITI Voucher (CRADA Final Report)"
+url: https://www.osti.gov/servlets/purl/3014921
+license: public_domain
+publisher: doe_osti
+version: "2026-01-09"
+added_at: "2026-05-15T21:08:09.441511Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, CRADA, electric thermal energy storage, PCM energy storage, PCM molten salt slurry"
+asset_families:
+  - cold_chain_facility

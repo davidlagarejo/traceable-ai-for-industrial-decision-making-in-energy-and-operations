@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9ada6011::chunk_0083",
+  "source_id": "doe_osti_3024210",
+  "source_sha": "9ada60110068a9e6c8b12b1435a9e1e1",
+  "source_url": "https://www.osti.gov/servlets/purl/3024210",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "cost estimates based on combined cycle gas turbines, but these estimates are not used in this work. Due to this (and other 85 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 40,
+  "text_sha": "3ed31f444788c5c5df366e113d5cab924c94560c751725f15e62015735ae792b",
+  "extracted_at": "2026-05-15T21:08:09.433046Z"
+}

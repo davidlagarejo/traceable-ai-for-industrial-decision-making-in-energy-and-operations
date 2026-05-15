@@ -1,0 +1,15 @@
+{
+  "chunk_id": "0f0e37dd::chunk_0065",
+  "source_id": "doe_osti_3020107",
+  "source_sha": "0f0e37ddf7da07ca6c2306b93ee45f81",
+  "source_url": "https://www.osti.gov/servlets/purl/3020107",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "5 Power Optimizers connected to the same inverter (4) Design your project using SolarEdge Designer use a lower minimum string length and/or connect more STC power per string. (5) A minimum of 14 strings must be connected. For 13 strings or less, 29,000W is allowed. 91",
+  "token_count": 46,
+  "text_sha": "da5af9febcfc6a43ac5f6c6002692514d64f4b5cee9161386afb2635a6a2cbdb",
+  "extracted_at": "2026-05-15T21:07:58.755214Z"
+}
