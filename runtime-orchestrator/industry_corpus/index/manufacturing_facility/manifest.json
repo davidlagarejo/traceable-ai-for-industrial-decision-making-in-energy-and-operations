@@ -1,0 +1,177 @@
+{
+  "asset_family": "manufacturing_facility",
+  "built_at": "2026-05-15T12:19:40.576644Z",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "dim": 384,
+  "chunk_count": 12,
+  "rows": [
+    {
+      "row": 0,
+      "chunk_id": "5f627213::chunk_0001",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "d72dbd3eb2c7679634deb4764fe801fd75848cc5a50abba19626d7502711326f",
+      "token_count": 392
+    },
+    {
+      "row": 1,
+      "chunk_id": "5f627213::chunk_0002",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "b573c6f17952a36e1df0af5b87068bf20346fc1ae6f3bbd7858694c196241dd5",
+      "token_count": 50
+    },
+    {
+      "row": 2,
+      "chunk_id": "5f627213::chunk_0003",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c00f695a7bbefcaf5fc6f9bf16a59b91d8796b5effeb696bf7e87ffdc19bc28c",
+      "token_count": 49
+    },
+    {
+      "row": 3,
+      "chunk_id": "5f627213::chunk_0004",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "de56d4d351b2229473a9e936a267aa5c3ed0cdc0cbf7c35e1a915d411b8d3017",
+      "token_count": 48
+    },
+    {
+      "row": 4,
+      "chunk_id": "5f627213::chunk_0005",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c5dbfa99ce1837703ffb600ff4e0d9a61d85f34e3e3e0e72a22829b356b19ee7",
+      "token_count": 47
+    },
+    {
+      "row": 5,
+      "chunk_id": "5f627213::chunk_0006",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1f840d4c1fa4391fc84484ce3c258d83323bcbccd83ddcc140558434ed1c9676",
+      "token_count": 46
+    },
+    {
+      "row": 6,
+      "chunk_id": "5f627213::chunk_0007",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "5c876f53d1ff9b3ed2d39e1a9868cfc8e06fc1fa349154a8304c77f09af8dd30",
+      "token_count": 45
+    },
+    {
+      "row": 7,
+      "chunk_id": "5f627213::chunk_0008",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "ed9960bbcee74d99e3189ee1512a6d5dad7840aa0d6dac67f648bb14224524bf",
+      "token_count": 44
+    },
+    {
+      "row": 8,
+      "chunk_id": "5f627213::chunk_0009",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "94525e5d83a0e837ebe02adffe35e217ad1212dedf40de55aadcea2c9ca844d1",
+      "token_count": 43
+    },
+    {
+      "row": 9,
+      "chunk_id": "5f627213::chunk_0010",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "b49939ada20163188442a829887c98b413e1a66116bb1ea7df23a1ac4dac71d7",
+      "token_count": 42
+    },
+    {
+      "row": 10,
+      "chunk_id": "5f627213::chunk_0011",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "6f9c14c5dcd2b818234e6f009d8dffea846feef7b5e2c2ed73261bb935efa676",
+      "token_count": 41
+    },
+    {
+      "row": 11,
+      "chunk_id": "5f627213::chunk_0012",
+      "source_id": "doe_osti_1825384",
+      "source_sha": "5f627213bbac21660707ff1b0630b834",
+      "source_url": "https://www.osti.gov/servlets/purl/1825384",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "7c41fe2740c48f329a5f618c2cc7d2102c330cd8fd8db9cef1aab5fd1ddef2fb",
+      "token_count": 40
+    }
+  ]
+}

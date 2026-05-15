@@ -1,0 +1,6 @@
+{
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "dim": 384,
+  "backend": "sentence-transformers",
+  "manifest_sha": "e9e2c8815f70dad4"
+}
