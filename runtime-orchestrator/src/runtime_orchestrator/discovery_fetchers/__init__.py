@@ -35,6 +35,7 @@ from . import (
     eia_opendata,
     osm_overpass,
     comparable_finder,
+    company_web_scraper,
     playwright_scraper,
     orchestrator,
 )
@@ -50,6 +51,7 @@ __all__ = [
     "eia_opendata",
     "osm_overpass",
     "comparable_finder",
+    "company_web_scraper",
     "playwright_scraper",
     "orchestrator",
     "run_full_discovery",

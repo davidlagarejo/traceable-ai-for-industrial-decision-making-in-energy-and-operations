@@ -3517,6 +3517,52 @@ class Motor012Adapter(BaseMotorAdapter):
         m28 = inputs.get("motor_028", {})
         enriched = dict(m28.get("enriched_data", {}))
         quality_gate_passed = m28.get("quality_gate_passed", False)
+
+        # P-DISCOVERY downstream: lee real_discovery_bundle de motor_028 y
+        # construye un summary plano que se inyecta en facility_prior para
+        # que TODOS los downstream motors lo consuman directamente.
+        _rd_bundle = m28.get("real_discovery_bundle", {}) or {}
+        _rd_results = _rd_bundle.get("results", {}) or {}
+
+        def _rd_payload(src_key: str) -> dict:
+            r = _rd_results.get(src_key) or {}
+            return r.get("payload") or {} if r.get("status") == "ok" else {}
+
+        _geo  = _rd_payload("census_geocoder")
+        _clim = _rd_payload("noaa_climate")
+        _epa  = _rd_payload("epa_envirofacts")
+        _eia  = _rd_payload("eia_opendata")
+        _osm  = _rd_payload("osm_overpass")
+        _comp = _rd_payload("comparable_finder")
+
+        real_discovery_summary: dict[str, Any] = {
+            "available":               bool(_rd_bundle),
+            "sufficient_for_pipeline": bool(_rd_bundle.get("sufficient_for_pipeline")),
+            "ok_sources":              list(_rd_bundle.get("ok_sources", []) or []),
+            # Geolocation
+            "matched_address":         _geo.get("matched_address", ""),
+            "lat":                     _geo.get("lat"),
+            "lon":                     _geo.get("lon"),
+            "county_name":             _geo.get("county_name", ""),
+            "county_geoid":            _geo.get("county_geoid", ""),
+            "tract_geoid":             _geo.get("tract_geoid", ""),
+            "state_abbreviation":      _geo.get("state_abbreviation", ""),
+            # Climate
+            "ashrae_climate_zone":     _clim.get("ashrae_climate_zone_heuristic", ""),
+            # Energy context
+            "residential_price_cents_per_kwh": _eia.get("residential_price_cents_per_kwh"),
+            "commercial_price_cents_per_kwh":  _eia.get("commercial_price_cents_per_kwh"),
+            "industrial_price_cents_per_kwh":  _eia.get("industrial_price_cents_per_kwh"),
+            # Neighbors / context
+            "epa_facilities_in_zip_count":     _epa.get("facility_count_city"),
+            "epa_estimated_local_industry":    list(_epa.get("estimated_local_industry", []) or [])[:8],
+            "osm_industrial_neighbor_count":   _osm.get("industrial_count"),
+            "osm_cold_storage_neighbor_count": _osm.get("cold_storage_count"),
+            "osm_nearby_substation_count":     _osm.get("nearby_substation_count"),
+            # Peers
+            "comparable_peer_count":           _comp.get("best_peer_count"),
+            "comparable_peer_candidates":      list(_comp.get("peer_candidates", []) or [])[:10],
+        }
         routing_plan_compliance = dict(m28.get("routing_plan_compliance", {}) or {})
         source_routing_plan = dict(m28.get("source_routing_plan", {}) or {})
         enriched["coverage_gaps"] = _coverage_gap_types(m28, enriched)
@@ -3727,6 +3773,8 @@ class Motor012Adapter(BaseMotorAdapter):
             "evidence_lineage": evidence_lineage,
             "input_count": len([k for k in fi_runtime if k.startswith("input_")]),
             "minimum_inputs_satisfied": len([k for k in fi_runtime if k.startswith("input_")]) >= 10,
+            # P-DISCOVERY: real US-wide discovery data (Census/NOAA/EPA/EIA/OSM/peers)
+            "real_discovery_summary": real_discovery_summary,
         }
 
         return {

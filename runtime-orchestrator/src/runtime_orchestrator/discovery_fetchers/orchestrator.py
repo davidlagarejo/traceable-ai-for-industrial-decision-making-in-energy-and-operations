@@ -26,6 +26,7 @@ from typing import Any
 from .base import FetcherContext, FetcherResult, FetcherStatus
 from . import (
     census_geocoder,
+    company_web_scraper,
     comparable_finder,
     eia_opendata,
     epa_envirofacts,
@@ -133,6 +134,14 @@ def run_full_discovery(context: FetcherContext) -> dict[str, Any]:
         ctx, epa_neighbors=epa_neighbors, osm_neighbors=osm_neighbors,
     )
     results[comparable_finder.SOURCE_KEY] = comp
+
+    # 7. Company Web Scraper — uses DuckDuckGo + Playwright. Useful when
+    # the facility is private (not in SEC/county records). Slower than
+    # the rest of the orchestrator (~10-25s) so it runs LAST.
+    # Disabled when facility_name is empty.
+    results[company_web_scraper.SOURCE_KEY] = _safe_run(
+        company_web_scraper.fetch, ctx, max_pages=3,
+    )
 
     # Tally
     by_status: dict[str, int] = {}

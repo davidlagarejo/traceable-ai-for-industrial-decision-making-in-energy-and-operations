@@ -1243,11 +1243,18 @@ class Motor028Adapter(BaseMotorAdapter):
         try:
             _addr = str(target_definition.get("address_raw") or target_definition.get("declared_asset_name") or "").strip()
             _af   = str(target_definition.get("asset_family") or target_definition.get("target_type") or "").strip()
+            # facility_name: prefer declared_asset_name, else target_identifier
+            # (e.g. "lakeshore-cold-storage-campus" → "lakeshore cold storage campus")
+            _fname = str(target_definition.get("declared_asset_name") or "").strip()
+            if not _fname:
+                _tid = str(target_definition.get("target_identifier") or "").strip()
+                if _tid:
+                    _fname = _tid.replace("-", " ").replace("_", " ").strip().title()
             if _addr:
                 _ctx = FetcherContext(
                     address=_addr,
                     asset_family=_af,
-                    facility_name=str(target_definition.get("declared_asset_name") or ""),
+                    facility_name=_fname,
                 )
                 real_discovery_bundle = _run_full_discovery(_ctx)
         except Exception as _exc:
