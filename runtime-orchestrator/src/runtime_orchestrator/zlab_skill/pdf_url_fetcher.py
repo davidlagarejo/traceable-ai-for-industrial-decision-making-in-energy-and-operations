@@ -38,11 +38,19 @@ USER_AGENT: str = (
 class PDFFetchResult:
     url:           str
     local_path:    str
-    status:        str            # "ok" | "cached" | "error" | "rejected"
+    status:        str            # "ok" | "cached" | "error" | "rejected" | "blocked"
     bytes_written: int
     content_type:  str
     error:         str = ""
     elapsed_s:     float = 0.0
+    # How we got it: "stdlib" (urllib direct) | "playwright" (browser fallback)
+    # | "cache" (already on disk) | "" (never fetched).
+    fetched_via:   str = ""
+
+
+# HTTP statuses that typically mean "server actively blocked the bot" rather
+# than "URL is gone". For these we try the Playwright fallback before giving up.
+_BLOCK_STATUS_CODES = frozenset({401, 403, 406, 429, 451, 503})
 
 
 def _cache_root() -> Path:
@@ -53,6 +61,101 @@ def _cache_root() -> Path:
 def _cache_path_for(url: str) -> Path:
     h = hashlib.sha256(url.encode("utf-8")).hexdigest()[:32]
     return _cache_root() / f"{h}.pdf"
+
+
+def _playwright_available() -> bool:
+    try:
+        import playwright  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+
+def _fetch_pdf_with_playwright(
+    url: str, cache_path: Path, max_bytes: int, timeout_s: int,
+) -> PDFFetchResult:
+    """Fallback: use headless Chromium to fetch a PDF when the stdlib client
+    is blocked (Cloudflare interstitial, bot detection, JS-gated download, …).
+
+    Playwright presents a full browser fingerprint, so federal/state portals
+    that 403 plain urllib will usually serve the file here.
+
+    Returns status="ok" on success, "blocked" if still blocked, "error" otherwise.
+    """
+    started = time.time()
+    if not _playwright_available():
+        return PDFFetchResult(
+            url=url, local_path="", status="blocked", bytes_written=0,
+            content_type="",
+            error=("blocked by server AND playwright is not installed — "
+                   "run: pip install playwright && playwright install chromium"),
+            elapsed_s=time.time() - started,
+            fetched_via="",
+        )
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent=USER_AGENT,
+                viewport={"width": 1280, "height": 800},
+                accept_downloads=True,
+            )
+            # Use Playwright's APIRequestContext — it shares cookies / TLS
+            # fingerprint with the browser but lets us stream raw bytes.
+            api = context.request
+            resp = api.get(url, timeout=timeout_s * 1000)
+            status_code = resp.status
+            ctype = (resp.headers.get("content-type", "") or "").lower()
+            if status_code >= 400:
+                browser.close()
+                return PDFFetchResult(
+                    url=url, local_path="", status="blocked",
+                    bytes_written=0, content_type=ctype,
+                    error=f"playwright also got HTTP {status_code}",
+                    elapsed_s=time.time() - started,
+                    fetched_via="playwright",
+                )
+            body = resp.body()
+            browser.close()
+            if len(body) > max_bytes:
+                return PDFFetchResult(
+                    url=url, local_path="", status="rejected",
+                    bytes_written=len(body), content_type=ctype,
+                    error=f"PDF exceeds max size ({max_bytes} bytes)",
+                    elapsed_s=time.time() - started,
+                    fetched_via="playwright",
+                )
+            is_pdf = (
+                "application/pdf" in ctype
+                or "octet-stream" in ctype
+                or body[:4] == b"%PDF"
+            )
+            if not is_pdf:
+                return PDFFetchResult(
+                    url=url, local_path="", status="blocked",
+                    bytes_written=len(body), content_type=ctype,
+                    error=(f"playwright got non-PDF response (content-type={ctype!r}) "
+                           "— probably an interstitial/login wall"),
+                    elapsed_s=time.time() - started,
+                    fetched_via="playwright",
+                )
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            cache_path.write_bytes(body)
+            return PDFFetchResult(
+                url=url, local_path=str(cache_path), status="ok",
+                bytes_written=len(body), content_type=ctype,
+                elapsed_s=time.time() - started,
+                fetched_via="playwright",
+            )
+    except Exception as exc:
+        return PDFFetchResult(
+            url=url, local_path="", status="error", bytes_written=0,
+            content_type="",
+            error=f"playwright fallback failed: {type(exc).__name__}: {exc}",
+            elapsed_s=time.time() - started,
+            fetched_via="playwright",
+        )
 
 
 def fetch_pdf_from_url(
@@ -80,6 +183,7 @@ def fetch_pdf_from_url(
             bytes_written=cache.stat().st_size,
             content_type="application/pdf",
             elapsed_s=time.time() - started,
+            fetched_via="cache",
         )
     cache.parent.mkdir(parents=True, exist_ok=True)
 
@@ -123,11 +227,19 @@ def fetch_pdf_from_url(
                 or url.lower().split("?")[0].endswith(".pdf")
             )
             if not is_pdf:
+                # Server returned HTML (probably interstitial / bot check).
+                # Try Playwright — a real browser usually clears those.
+                pw = _fetch_pdf_with_playwright(url, cache, max_bytes, timeout)
+                if pw.status == "ok":
+                    return pw
+                # Playwright also didn't get a PDF → genuinely blocked.
                 return PDFFetchResult(
-                    url=url, local_path="", status="rejected",
+                    url=url, local_path="", status="blocked",
                     bytes_written=0, content_type=ctype,
-                    error=f"non-PDF content-type: {ctype!r}",
+                    error=(f"stdlib got non-PDF ({ctype!r}); "
+                           f"playwright fallback: {pw.error or pw.status}"),
                     elapsed_s=time.time() - started,
+                    fetched_via=pw.fetched_via or "stdlib",
                 )
             # Stream in chunks, cap at max_bytes
             total = 0
@@ -152,16 +264,33 @@ def fetch_pdf_from_url(
                 url=url, local_path=str(cache), status="ok",
                 bytes_written=total, content_type=ctype,
                 elapsed_s=time.time() - started,
+                fetched_via="stdlib",
             )
     except urllib.error.HTTPError as exc:
+        # If the server actively blocked us (403/429/etc.), try Playwright
+        # — a real browser fingerprint clears most federal-site bot walls.
+        if exc.code in _BLOCK_STATUS_CODES:
+            pw = _fetch_pdf_with_playwright(url, cache, max_bytes, timeout)
+            if pw.status == "ok":
+                return pw
+            return PDFFetchResult(
+                url=url, local_path="", status="blocked",
+                bytes_written=0, content_type="",
+                error=(f"stdlib HTTP {exc.code} {exc.reason}; "
+                       f"playwright fallback: {pw.error or pw.status}"),
+                elapsed_s=time.time() - started,
+                fetched_via=pw.fetched_via or "stdlib",
+            )
         return PDFFetchResult(
             url=url, local_path="", status="error", bytes_written=0,
             content_type="", error=f"HTTP {exc.code}: {exc.reason}",
             elapsed_s=time.time() - started,
+            fetched_via="stdlib",
         )
     except Exception as exc:
         return PDFFetchResult(
             url=url, local_path="", status="error", bytes_written=0,
             content_type="", error=f"{type(exc).__name__}: {exc}",
             elapsed_s=time.time() - started,
+            fetched_via="stdlib",
         )

@@ -98,10 +98,14 @@ def main() -> int:
     print("─" * 70)
 
     summary = {
-        "fetched": 0, "cached": 0, "rejected": 0, "errors": 0,
+        "fetched": 0, "cached": 0, "rejected": 0, "blocked": 0, "errors": 0,
         "extracted": 0, "patterns_matched": 0, "proposed": 0,
         "skipped_no_match": 0,
     }
+    # Per-URL outcome log so the user can SEE which URLs were actually
+    # investigated and which were silently blocked. Written to disk so we
+    # don't lose visibility after the run.
+    outcomes: list[dict] = []
 
     # Import the existing extractor / pipeline
     from runtime_orchestrator.zlab_skill.local_pdf_autodraft import (
@@ -143,19 +147,34 @@ def main() -> int:
 
         # Step 1: download
         fr = fetch_pdf_from_url(url, use_cache=not args.no_cache)
+        via = f" via={fr.fetched_via}" if fr.fetched_via else ""
         if fr.status == "ok":
             summary["fetched"] += 1
-            print(f"          ✓ downloaded {fr.bytes_written:,} bytes in {fr.elapsed_s:.1f}s → {fr.local_path}")
+            print(f"          ✓ downloaded {fr.bytes_written:,} bytes in {fr.elapsed_s:.1f}s{via} → {fr.local_path}")
+            outcomes.append({"source_id": source_id, "url": url, "status": "ok",
+                             "via": fr.fetched_via, "error": ""})
         elif fr.status == "cached":
             summary["cached"] += 1
             print(f"          ✓ from cache: {fr.local_path}")
+            outcomes.append({"source_id": source_id, "url": url, "status": "cached",
+                             "via": "cache", "error": ""})
+        elif fr.status == "blocked":
+            summary["blocked"] += 1
+            print(f"          ⛔ BLOQUEADO{via}: {fr.error}")
+            outcomes.append({"source_id": source_id, "url": url, "status": "blocked",
+                             "via": fr.fetched_via, "error": fr.error})
+            continue
         elif fr.status == "rejected":
             summary["rejected"] += 1
             print(f"          ✗ rejected: {fr.error}")
+            outcomes.append({"source_id": source_id, "url": url, "status": "rejected",
+                             "via": fr.fetched_via, "error": fr.error})
             continue
         else:
             summary["errors"] += 1
             print(f"          ✗ error: {fr.error}")
+            outcomes.append({"source_id": source_id, "url": url, "status": "error",
+                             "via": fr.fetched_via, "error": fr.error})
             continue
 
         pdf_path = Path(fr.local_path)
@@ -228,12 +247,49 @@ def main() -> int:
     for k, v in summary.items():
         print(f"  {k:<20} {v}")
     print()
+
+    # ── LOUD report: URLs that were blocked/errored ─────────────────────
+    # The point: if a URL was blocked, the user MUST see it. Otherwise it
+    # looks like "research happened" when in fact nothing was investigated.
+    blocked = [o for o in outcomes if o["status"] in ("blocked", "error")]
+    if blocked:
+        print("⚠ " + "═" * 68)
+        print(f"⚠  {len(blocked)} URL(s) NO se pudieron investigar:")
+        print("⚠ " + "═" * 68)
+        for o in blocked:
+            tag = "BLOQUEADO" if o["status"] == "blocked" else "ERROR"
+            print(f"⚠  [{tag}] {o['source_id']}")
+            print(f"⚠     url:   {o['url']}")
+            print(f"⚠     why:   {o['error']}")
+            if o["status"] == "blocked" and o["via"] != "playwright":
+                print("⚠     hint:  install Playwright para reintentar con navegador real:")
+                print("⚠            pip install playwright && playwright install chromium")
+            print("⚠")
+        print("⚠ " + "═" * 68)
+        print("⚠  Estas fuentes NO contribuyeron al knowledge_memory.")
+        print("⚠  Si necesitas su contenido, descárgalo manualmente y úsalo con")
+        print("⚠  scripts/extract_from_local_pdf.py.")
+        print("⚠ " + "═" * 68)
+        print()
+
+    # Always persist the per-URL outcome log so it's auditable later.
+    report_path = _HERE / "pdf_cache" / "_last_run_report.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    import datetime as _dt
+    report_path.write_text(json.dumps({
+        "ran_at":   _dt.datetime.utcnow().isoformat() + "Z",
+        "summary":  summary,
+        "outcomes": outcomes,
+    }, indent=2), encoding="utf-8")
+    print(f"  reporte por-URL guardado en: {report_path}")
+
     if not args.dry_run:
         pending_dir = _HERE.parent / "knowledge_memory" / "pending" / "pattern"
         if pending_dir.exists():
             n = len(list(pending_dir.glob("*.json")))
             print(f"  knowledge_memory/pending/pattern/ ahora contiene {n} archivos")
-    return 0
+    # Exit non-zero if anything was blocked, so CI / dashboards can flag it.
+    return 0 if summary["blocked"] == 0 else 3
 
 
 if __name__ == "__main__":
