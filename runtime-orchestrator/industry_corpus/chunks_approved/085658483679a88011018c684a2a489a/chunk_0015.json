@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0015",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Y , Z p la n e s A test of the robot articulation and functionality was successful. The demonstration realized several benefits of robotic (mechanical) fueling, including: • Robot can be precise • Robot will not drop and damage the nozzle • Higher precision robot leads to less reduced wear and tear between components • Less Hose flexing/twisting • No human contact with -40°C fueling components during fueling Conceptual operations for fueling on-road vehicles NREL completed the concept and specification review for automotive fueling. A flow chart of processes is shown in Figure 30. An analysis of the autonomous system operation codes that should be considered in the design of such a system are in Figure 31. Figure 32 shows a comparison of the potential for an autonomous system to drastically reduce fueling times versus a human operator. Figure 30: Example flowcharts for automotive fueling. Page 27 of 31 Figure 31: Autonomous codes and standards. Figure 32: Comparison of human vs robot operation times. The finding of this study is that robotic fueling for on road vehicles can be initiated in 9 seconds vs the 77 seconds needed for a human operator. Page 28 of 31 •• CE o n E E– s id e G loH ra tio n o f e th ic a l s ta n d a rd s fo r th e d e s ig n , c re a tio n , a n d u s e / o p e ra tio n o f a u to n o m o u s s y s te m s . b a l In itia tiv e o n E th ic s o f A u to n o m o u s a n d In te llig e n t S y s te m s u m a n r ig h ts , w e ll-b e in g , a c c o u n ta b ility , tra n s p a re n c y , a n d a w a re n e s s o f m is u s e • IE E E P 7 0 0 0 - M o d e l P ro c e s s fo r A d d re s s in g E th ic a l C o n c e rn s D u rin g S y s te m D e s ig n • IE E E P 7 0 0 1 - T ra n s p a re n c y o f A u to n o m o u s S y s te m s • IE E E P 7 0 0 2 - D a ta P riv a c y P ro c e s s • IE E E P 7 0 0 3 - A lg o rith m ic B ia s C o n s id e ra tio n s",
+  "token_count": 512,
+  "text_sha": "6f62a6bf59e61f60a37d14499735655a87b701a816053d5a9a247555fc691409",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

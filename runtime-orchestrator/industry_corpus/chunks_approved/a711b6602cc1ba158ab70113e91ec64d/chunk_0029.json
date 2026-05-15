@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0029",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "of the nonlinear Hamiltonian control design. 2. 4-LEG CONVERTER ARCHITECTURE The 4-leg inverter stage from [9] is shown in Fig. 1. In [9], this topology was shown to be capable of responding to CM insults using a simple control algorithm. However, the use of a sub-optimal control strategy results in a larger DC voltage transient and the need for an energy storage system to compensate. A better optimized control strategy will be developed here. The green encircled section of Fig. 1 shows the output stage of the full SST design in [9] which performs the switching necessary to address CM in- sults. The full converter is not considered in the scope of this paper because CM effects do not cross the DC links or the dual active bridge (DAB) cou- pling the input rectifier to the output inverter, as shown in [9]. The input rectifier and the output inverter may be treated independently as it relates to mitigation of CM current offset. In the proposed architecture, the fourth leg (far right leg) is shorted to neutral. Additionally, the DC bus is floating with respect to network ground. The output of the SST is coupled to the main grid. The CM insult voltage is modeled as a DC offset in the neutral path. Figure1: ProposedarchitectureofSSTforcommonmodemitigation. Thefarleft(input) is a rectifier, the far right (output) is an inverter, and the center is a dual active bridge. This paper focuses on control of the output inverter to the far right (enclosed in green box). The full SST is shown in Fig. 1. At the input is a 4-leg rectifier; at the center is a DAB; and at the output is a 4-leg inverter. This paper focuses on control of the 4-leg inverter at the output. The portion of interest is enclosed 3 in the green box. For the remainder of this paper, it is assumed that V dc is a constant value. However, deviation of V will not affect the proposed dc control scheme. The voltage equations are defined by di x v (S S ) = L +Ri +v , x a,b,c . (3) dc x z x xn − dt ∀ ∈ { } Note that V is the constant input voltage to the far left and that v is dc dc the dynamic voltage across the capacitor C at the input of the inverter. S dc x represents the switch state of phase x a,b,c and S represents the switch z ∈ { } state for the fourth leg. Averaging over the switching cycle yields S ˆ S ˆ ˆi ˆi v a − z d a a a v S ˆ S ˆ = L ˆi +R ˆi + v . (4) dc  b − z  dt  b   b   b  S ˆ c S ˆ z ˆi c ˆi c v c −         ˆ ˆ It should be noted that in average mode, S , S [0,1]. The system x z ∈ defined by (3)",
+  "token_count": 511,
+  "text_sha": "5ca3ae69be6d54a82f170b8dc50a72d9d45f4059bbe40e01da4a5dd671aec94c",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

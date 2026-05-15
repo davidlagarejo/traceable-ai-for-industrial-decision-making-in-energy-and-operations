@@ -1,0 +1,14 @@
+{
+  "chunk_id": "8a59a097::chunk_0015",
+  "source_id": "doe_osti_3015698",
+  "source_sha": "8a59a097a05972062d5de85bf1422de5",
+  "source_url": "https://www.osti.gov/servlets/purl/3015698",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "26 26 26 26 26 26 26 26 DEER 2014 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2015 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2017 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER pre-1975 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 DEER 1985 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 17 DEER 1996 18 18 18 18 18 13 13 13 13 13 18 18 18 18 18 18 DEER 2003 18 18 18 18 18 13 13 13 13 18 18 18 18 18 18 18 Mass DEER 2007 20 20 20 20 20 13 13 13 13 20 20 20 20 20 20 20 DEER 2011 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2014 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2015 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2017 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER pre-1975 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 DEER 1985 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 DEER 1996 18 18 18 18 18 13 13 13 13 13 18 18 18 18 18 18 DEER 2003 18 18 18 18 18 13 13 13 13 18 18 18 18 18 18 18 Wood DEER 2007 20 20 20 20 20 13 13 13 13 20 20 20 20 20 20 20 framed DEER 2011 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2014 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2015 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 DEER 2017 20 26 26 26 20 13 15 15 26 26 26 26 26 26 26 26 9 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications. 2.3.3 Windows Unlike walls and roofs, which are simply modeled to meet the R-value or U-value required by the building’s energy code, windows in the ComStock baseline are modeled based on market- representative product distributions, reflecting the realistic performance characteristics of actual window technologies rather than idealized code-minimum values. ComStock models 12 different window assemblies, whose properties are based on commercially available products, as described in a collaborative study by Lawrence Berkeley National Laboratory and the National Laboratory of the Rockies (previously National Renewable Energy Laboratory) [18]. Window performance in ComStock is defined by three metrics: U-value, SHGC, and visible light transmittance (VLT). The 12 window",
+  "token_count": 512,
+  "text_sha": "3afe2f59758f42d5e76bfdb4e42d536ddee793aa66e9b58b33228f9093c911b7",
+  "extracted_at": "2026-05-15T21:40:47.056182Z"
+}

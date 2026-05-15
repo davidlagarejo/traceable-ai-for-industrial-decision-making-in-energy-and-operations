@@ -1,0 +1,12 @@
+source_id: doe_osti_3007111
+title: "2025 Large Load Literature Review"
+url: https://www.osti.gov/servlets/purl/3007111
+license: public_domain
+publisher: doe_osti
+version: "2025-12-31"
+added_at: "2026-05-15T21:39:34.746070Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 97 MATHEMATICS AND COMPUTING, Co-location, Data center location/infrastructure, Data sources, Demand flexibility"
+asset_families:
+  - _shared
+  - datacenter

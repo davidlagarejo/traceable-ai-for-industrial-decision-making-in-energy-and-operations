@@ -1,0 +1,15 @@
+{
+  "chunk_id": "d13c9421::chunk_0025",
+  "source_id": "doe_osti_3013776",
+  "source_sha": "d13c9421d0d4e0fe85ac9855b2aa6840",
+  "source_url": "https://www.osti.gov/servlets/purl/3013776",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "adding an FPV plant to Tuckertown (Figure 19). 4. Scenario 4: This is a very similar configuration as in Scenario 3,c but with a FPV capacity of 51 MW. This yields a high loading in the transmission line between Tuckertown and High Rock by reaching 93% of the capacity, which is deemed as high loading. 5. Scenario 5: This is an extreme case where the braker from Tuckertown to High Rock is opened, and therefore, generated power from Tuckertown will be send back to Badin. The FPV capacity in this scenario is 45 MW. It is worth noting that this strategy is only applied in extreme scenarios, and it is not accepted as a normal operating procedure (Figure 20). c A figure for this scenario is not included for the sake of brevity. 36 Badin W 102.59 kV 28.06 | 18.43 Falls Plant Narrows Plant Pgen = 0.00 MW Pgen = 4.18 MW Tuckertown FPV Pmax = 31.00 MW Pmax = 110.00 MW Pgen = 0.00 MW Pmax = 0.00 MW Tuckertown Hydro Pgen = 0.00 MW Pmax = 33.00 MW Badin RT 102.58 kV 16.36 | 13.91 54% 60.40 MW 59.60 MW Badin 102.58 kV Tuckertown 100 kV -15.065 MVar -15.45 MVar Transmission Transmission 59.60 MW -15.45 MVar % Acceptable Badin #2 115.91 kV 11.55 | 7.14 % A th p r p e r s o h a o c l h d i n 90 g % loading 60% 58.73 MW % High loading > 90% -15.88 MVar High Rock Plant Pgen = 0.00 MW Pmax = 39.00 MW Badin 119.15 kV 2.76 | -25.41 58.73 MW -15.88 MVar High Rock 100.95 kV Transmission High Rock Jct. 100.95 kV Figure 17. Scenario 1: Layout of hydropower plants along the Yadkin River and operated by ECRE. The three plants are connected with 100 kV transmission lines. The values of capacity and generation in this example are BAU case. 37 Badin W 101.76 kV 24.46 | -35.76 Falls Plant Narrows Plant Pgen = 31.00 MW Pgen = 110.00 MW Tuckertown FPV Pmax = 31.00 MW Pmax = 110.00 MW Pgen = 0.00 MW Pmax = 0.00 MW Tuckertown Hydro Pgen = 33.00 MW Pmax = 33.00 MW Badin RT 101.76 kV 36.10 | -31.13 35% 40.42 MW 59.60 MW Badin 100 kV Tuckertown 100 kV -6.55 MVar -15.45 MVar Transmission Transmission 73.07 MW -36.27 MVar % Acceptable Badin #2 115.16 kV 13.54 | -16.24 % A th p r p e r s o h a o c l h d i n 90 g % loading 79% 71.53 MW % High loading > 90% -37.71 MVar High Rock Plant Pgen = 39.00 MW Pmax = 39.00 MW Badin 118.34 kV 23.96 | 14.81 58.73 MW -15.88 MVar High Rock 100 kV Transmission High Rock Jct. 100 kV Figure 18. Scenario 2: Capacity share. Badin W 101.76 kV 31.71 | -36.92 Falls Plant Narrows Plant Pgen = 31.00 MW Pgen = 110.00 MW Tuckertown FPV Pmax = 31.00 MW Pmax = 110.00 MW Pgen = 33.00 MW Pmax = 33.00 MW",
+  "token_count": 512,
+  "text_sha": "79f21dfea13563b7aa94e39d8881d70bd754d778e96d4abc056a8c1b7565f5b0",
+  "extracted_at": "2026-05-15T21:45:11.744408Z"
+}

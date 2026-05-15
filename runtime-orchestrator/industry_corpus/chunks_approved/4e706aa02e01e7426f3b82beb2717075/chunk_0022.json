@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4e706aa0::chunk_0022",
+  "source_id": "doe_osti_2589169",
+  "source_sha": "4e706aa02e01e7426f3b82beb2717075",
+  "source_url": "https://www.osti.gov/servlets/purl/2589169",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "S. da Silva, “Comparison between conventional and solid state transformers in smart distribution grids,” 2019 IEEE PES Innovative Smart Grid Technologies Conference - Latin America (ISGT Latin America), 2019. Subject Inventions Listing: None ROI#: None 33 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 47,
+  "text_sha": "30184aa1f4c56b166e7ca7448c1107b4109187089ed98ad594b4492f8f33f2a5",
+  "extracted_at": "2026-05-15T21:43:45.693239Z"
+}

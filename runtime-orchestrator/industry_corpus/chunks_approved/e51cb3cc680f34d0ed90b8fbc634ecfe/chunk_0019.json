@@ -1,0 +1,15 @@
+{
+  "chunk_id": "e51cb3cc::chunk_0019",
+  "source_id": "doe_osti_3362687",
+  "source_sha": "e51cb3cc680f34d0ed90b8fbc634ecfe",
+  "source_url": "https://www.osti.gov/servlets/purl/3362687",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "105 ksi Yield Strength American Institute of Steel Construction (AISC) AISC 325-10 – Steel Construction Manual National Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+  "token_count": 46,
+  "text_sha": "11f70ad68d944177d8c537effbcc2b70c4701456b29e7818d67382c8e4f921bf",
+  "extracted_at": "2026-05-15T21:37:53.368679Z"
+}

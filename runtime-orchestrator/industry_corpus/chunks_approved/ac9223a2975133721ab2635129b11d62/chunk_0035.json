@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ac9223a2::chunk_0035",
+  "source_id": "doe_osti_3014791",
+  "source_sha": "ac9223a2975133721ab2635129b11d62",
+  "source_url": "https://www.osti.gov/servlets/purl/3014791",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "to only a small percentage of that power loss. At this sameoperatingpoint,thepeakvelocityandpeakposition werefoundtodecreasebyapproximately10%,withthat decrease being greater at larger wave periods. REFERENCES [1] J.A.Lewis,“Marinebiofoulinganditspreventiononunderwater surfaces,” Materials Forum, vol. 22, no. November, pp. 41–61, 1998. 84 85 86 87 88 89 90 91",
+  "token_count": 41,
+  "text_sha": "2247b18d19f5cbcbb7d5e03677d6379609f26a5d39259582f9b8eb62e5173fc0",
+  "extracted_at": "2026-05-15T21:39:31.690365Z"
+}

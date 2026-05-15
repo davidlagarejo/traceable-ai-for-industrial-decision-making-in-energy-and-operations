@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5a9ef4fe::chunk_0027",
+  "source_id": "doe_osti_3024717",
+  "source_sha": "5a9ef4fe8315f361c3bb5b1d7f4d0f29",
+  "source_url": "https://www.osti.gov/servlets/purl/3024717",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "broken out by fuel type for applicable dwelling units only for advanced air sealing with drill-and-fill wall insulation (air, wall sealing/insulation) and advanced air sealing only 29 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 43,
+  "text_sha": "817f1c18800ba6227b501161ec62ad8b5919d48d73fc11430f3c90a8017544da",
+  "extracted_at": "2026-05-15T21:46:16.048248Z"
+}

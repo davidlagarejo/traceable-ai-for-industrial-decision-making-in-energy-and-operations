@@ -26,7 +26,33 @@ from ..manifest import (
     CANONICAL_ASSET_FAMILIES,
     corpus_root,
 )
-from .osti_discoverer import CandidateSource, discover_for_family
+from .osti_discoverer import CandidateSource, discover_for_family as _osti_discover
+from .arxiv_discoverer import ArxivCandidate, discover_for_family as _arxiv_discover
+
+
+def _candidates_for_family(asset_family: str, *, max_per_source: int) -> list:
+    """Aggregate candidates from all enabled discoverers for one family.
+
+    Returns a unified list. Each item has `source_id`, `title`, `url`,
+    `asset_families`, `publisher`, `publication_date` — duck-typed across
+    discoverer types.
+    """
+    out = []
+    try:
+        out.extend(_osti_discover(asset_family, max_candidates=max_per_source))
+    except Exception:
+        pass
+    try:
+        out.extend(_arxiv_discover(asset_family, max_candidates=max_per_source))
+    except Exception:
+        pass
+    return out
+
+
+def discover_for_family(asset_family: str, *, max_candidates: int = 30):
+    """Wrapper kept for back-compat (OSTI-only). New callers should use
+    _candidates_for_family for multi-source discovery."""
+    return _osti_discover(asset_family, max_candidates=max_candidates)
 
 
 @dataclass
@@ -57,20 +83,42 @@ def _yaml_already_anywhere(corpus_dir: Path, source_id: str) -> bool:
     return False
 
 
-def _write_candidate_yaml(candidate: CandidateSource, corpus_dir: Path) -> Path:
+def _write_candidate_yaml(candidate, corpus_dir: Path) -> Path:
+    """Write a YAML for ANY discoverer's candidate (OSTI or arxiv).
+
+    License decision (controls auto-approve eligibility):
+      · OSTI       → license="public_domain"        (federal)
+      · arxiv      → license="open_access"          (CC license)
+      · vendor     → license="vendor_whitepaper"   (trusted allowlist)
+    """
     target = _yaml_path_for(corpus_dir, candidate)
     target.parent.mkdir(parents=True, exist_ok=True)
+
+    publisher = getattr(candidate, "publisher", "")
+    if publisher == "arxiv":
+        license_str = "open_access"
+        # Best-effort notes for arxiv
+        cats = getattr(candidate, "categories", ())
+        abstract = (getattr(candidate, "abstract", "") or "")[:240]
+        notes = f"Auto-discovered via arXiv API. Categories: {', '.join(cats[:3])}. Abstract: {abstract}"
+    else:
+        # OSTI / federal default
+        license_str = "public_domain"
+        subjects = getattr(candidate, "raw_subjects", ())
+        notes = f"Auto-discovered via {publisher} API. Subjects: " + (
+            ", ".join(subjects[:5]).replace('"', "'")[:200]
+        )
+
     lines = [
         f"source_id: {candidate.source_id}",
-        f"title: \"{candidate.title}\"",
+        f"title: \"{candidate.title.replace(chr(34), chr(39))}\"",
         f"url: {candidate.url}",
-        f"license: public_domain",
-        f"publisher: {candidate.publisher}",
-        f"version: \"{candidate.publication_date[:10] or 'unknown'}\"",
+        f"license: {license_str}",
+        f"publisher: {publisher}",
+        f"version: \"{(candidate.publication_date or 'unknown')[:10]}\"",
         f"added_at: \"{_dt.datetime.utcnow().isoformat()}Z\"",
         f"added_by: system_verified",
-        f"notes: \"Auto-discovered via {candidate.publisher} API. Subjects: "
-        + ", ".join(candidate.raw_subjects[:5]).replace('"', "'")[:200] + "\"",
+        f"notes: \"{notes[:280].replace(chr(34), chr(39))}\"",
         "asset_families:",
     ]
     for af in candidate.asset_families:
@@ -94,9 +142,9 @@ def discover_and_ingest_family(
 
     corpus_dir = corpus_root(runtime_orchestrator_dir)
 
-    # Step 1: discover candidates
+    # Step 1: discover candidates from ALL enabled discoverers (OSTI + arxiv)
     try:
-        candidates = discover_for_family(asset_family, max_candidates=max_new * 3)
+        candidates = _candidates_for_family(asset_family, max_per_source=max_new * 2)
     except Exception as exc:
         result.errors.append(f"discoverer_failed: {type(exc).__name__}: {exc}")
         return result

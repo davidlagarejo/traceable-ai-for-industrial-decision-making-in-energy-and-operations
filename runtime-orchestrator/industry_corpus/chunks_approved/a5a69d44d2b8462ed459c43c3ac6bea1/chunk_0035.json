@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a5a69d44::chunk_0035",
+  "source_id": "doe_osti_3015901",
+  "source_sha": "a5a69d44d2b8462ed459c43c3ac6bea1",
+  "source_url": "https://www.osti.gov/servlets/purl/3015901",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "2.07 936.35 Thermal Insulation Wool (width = 18 in.) 128 956 −4 Wall, Floor, Roof (ss347H) [9] 7650.8 3𝑑𝑑10 𝑇𝑇−0.1025 −3 8.2𝑑𝑑10 𝑇𝑇−18.50 0.16 𝑇𝑇−559.44 40 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 43,
+  "text_sha": "4e84a2c65681865b1f1b7347b36f28bd20aa99296903516dadff06a1f6fe09fc",
+  "extracted_at": "2026-05-15T21:38:02.500647Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "23274427::chunk_0027",
+  "source_id": "doe_osti_2500794",
+  "source_sha": "232744275dc3d4cf9b1a6e46772ab8e8",
+  "source_url": "https://www.osti.gov/servlets/purl/2500794",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "equipment on the market is rated to −30°C (−22°F)—i.e., warmer temperatures. During procurement, the temperature rating of the model considered should be examined to determine if it is appropriate for the location. 34 This report is available at no cost from the National Renewable Energy Laboratory at www.nrel.gov/publications.",
+  "token_count": 48,
+  "text_sha": "60bc737814a19d3526dade0606a034fc2425d6bba16bbf558fd0ceec50bef571",
+  "extracted_at": "2026-05-15T21:38:17.752316Z"
+}

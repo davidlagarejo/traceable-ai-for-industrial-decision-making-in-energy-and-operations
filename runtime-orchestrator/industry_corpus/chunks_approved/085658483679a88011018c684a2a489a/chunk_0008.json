@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0008",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "e e q u ip m e n t - P a rt 1 : G e n e ra l re q u ire m e n ts a n d te s ts In te rlo c k in g d e v ic e s a s s o c ia te d w ith g u a rd s — P rin c ip le s fo r d e s ig n a n d s e le c tio n G u a rd s — G e n e ra l re q u ire m e n ts fo r th e d e s ig n a n d c o n s tru c tio n o f fix e d a n d m o v a b le g u a rd s R o b o ts a n d ro b o tic e q u ip m e n t In d u s tria l ro b o ts a n d ro b o t s y s te m s – s a fe ty re q u ire m e n ts R o b o ts a n d ro b o tic d e v ic e s . S a fe ty re q u ire m e n ts fo r in d u s tria l ro b o ts . S a fe ty re q u ire m e n ts fo r in d u s tria l ro b o ts - P a rt 2 : R o b o t s y s te m s a n d in te g ra tio n In d u s tria l ro b o ts – ta s k b a s e d ris k a s s e s s m e n t m e th o d o lo g y In d u s tria l ro b o ts a n d ro b o t s y s te m s – s a fe ty re q u ire m e n ts . S a fe g u a rd in g n • 127 cm radius maximum space defined as 457 cm hazardous approach limits for robot service/maintenance. • 475 cm (15’) radius design zone defined for class 1 division 2 environment considerations. • All motors and electronics will be housed in a purged and pressurized environment consistent with class 1 division 2 requirements. 127 cm 457 cm Following the risk analysis, a process and instrumentation diagram (P&ID) for the autonomous mechanism and its connections to a standard GenFuel dispenser was created. The P&ID includes all plumbing, valves, actuators, sensors, and safety sensors. Detailed analysis of the motors and joints (Figure 8 and Figure 9) demonstrated a robust design with adequate motor life and rotational speeds. Figure 8: Mechanism design. Figure 9: Ball screw motor analysis. Page 12 of 31 • 4",
+  "token_count": 512,
+  "text_sha": "5ef18236f89064b1c4082e89c57dd48f99345a89bc414c63fa00faf68e6c07fc",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

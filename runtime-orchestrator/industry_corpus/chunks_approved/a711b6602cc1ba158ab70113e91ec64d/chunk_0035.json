@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0035",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "→∞ (cid:16) (cid:17) or limˆi = i constant (63) t 0 ∗0 ≡ →∞ Therefore, from (50), it must also hold that ˙ lim H (t) = 0. (64) 0 t →∞ It is not recommended to attempt to critically damp the controller by choosing(K0z R)2 = 4LK0z. ThisisbecausethevaluesofLandR maynot p − i be exactly known (manufacturing error, wear, etc.). Choosing to critically damp based upon the nameplate resistance and inductance parameters may drive the controller into an unstable operating state. 4.2. Q-Axis Control Formulation For the q-axis components, the Hamiltonian power surface is 3 3 dˆi H ˙ = ˆi D v Rˆi2 ˆi v = L qˆi +ωLˆi ˆi . (65) q 2 q q dc − q − q q 2 dt q q d ! (cid:16) (cid:17) ˙ The goal is to drive H to its steady-state value. From (65), it can be seen q that driving the q-axis current to any steady-state value will drive the q-axis Hamiltonian to 3ωLiSSiSS, where iSS and iSS are the steady-state q- and 2 q d q d d-axis current components. 14 Dropping the 3ˆi factor, (65) can be alternatively written as 2 q dˆi D v Rˆi v = L q +ωLˆi . (66) q dc q q d − − dt Choose the control law ωLˆi +Ri +v k k D = d ∗q d + p i ˆi + i i ˆi dt. (67) q v v ∗q − q v ∗q − q dc dc dc Z (cid:16) (cid:17) (cid:16) (cid:17) If i is constant, then ∗q di ∗q L = 0. (68) dt Then, (65) becomes d (k +R) i ˆi +k i ˆi dt+L i ˆi = 0, (69) p ∗q − q i ∗q − q dt ∗q − q Z (cid:16) (cid:17) (cid:16) (cid:17) (cid:16) (cid:17) where k > 0 and k > 0 are the proportional and integral gains respectively. p i Using analysis similar to that earlier discussed, for the 0-axis Hamiltonian component, it can similarly be shown that u q (t) = C 5 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 6 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit (70) and u˙ q (t) = i ∗q − i q = C 7 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 8 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit, (71) where C , C , C , and C are arbitrary constants. Then, 5 6 7 8 lim i ˆi = 0. (72) t ∗q − q →∞ (cid:16) (cid:17) From (65) ˙ lim H (t) = ωLi i . (73) q ∗q ∗d t →∞ In the next section, it will be established thatˆi i as t . d → ∗d → ∞ 15 4.3. D-Axis Control Formulation For the d-axis components, the Hamiltonian power surface is 3 3 dˆi H ˙ = ˆi D v Rˆi2 ˆi v = L dˆi ωLˆi ˆi . (74) d 2 d d dc − d − d d 2 dt",
+  "token_count": 512,
+  "text_sha": "6d58d6d8c25c62bec842e00fc4269a0e28886fda360da25a9157d98f880a5378",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

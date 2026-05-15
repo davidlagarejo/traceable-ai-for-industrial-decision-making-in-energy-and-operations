@@ -1,0 +1,14 @@
+{
+  "chunk_id": "17e4b0f1::chunk_0021",
+  "source_id": "doe_osti_3363587",
+  "source_sha": "17e4b0f129976d78318ab5cfd459f9c7",
+  "source_url": "https://www.osti.gov/servlets/purl/3363587",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "From and Methods Behind Bottom-Up Simulations of County-Specific Household Electric Vehicle Charging Load (Hourly 8760) Profiles Projected Through 2050 for Differentiated Household and Vehicle Types. https://doi.org/10.2172/1984452. 18 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 44,
+  "text_sha": "0b1d12a13ec53105a0dc77c3fe6d98f885498c57ee003ea21680264711e80627",
+  "extracted_at": "2026-05-15T21:40:57.007345Z"
+}

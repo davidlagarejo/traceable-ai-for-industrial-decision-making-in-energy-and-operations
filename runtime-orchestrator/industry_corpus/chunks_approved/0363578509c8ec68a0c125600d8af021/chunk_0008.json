@@ -1,0 +1,15 @@
+{
+  "chunk_id": "03635785::chunk_0008",
+  "source_id": "doe_osti_3022392",
+  "source_sha": "0363578509c8ec68a0c125600d8af021",
+  "source_url": "https://www.osti.gov/servlets/purl/3022392",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "2 processing and injection equipment will be designed to operate unattended and should only require monitoring by OEE personnel and occasional intervention from plant personnel. Routine maintenance items may include filter change outs on rotating equipment and the dehydration unit, addition of oil to compression systems, and periodic sampling. 6",
+  "token_count": 50,
+  "text_sha": "f999e74465dddabd10a114c05c2cc9f505a2abbdf072c7b94e3ea59d0f01b28b",
+  "extracted_at": "2026-05-15T21:46:21.732791Z"
+}

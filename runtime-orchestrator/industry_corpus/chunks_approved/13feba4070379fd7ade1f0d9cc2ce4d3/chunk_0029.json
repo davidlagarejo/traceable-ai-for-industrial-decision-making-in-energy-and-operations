@@ -1,0 +1,14 @@
+{
+  "chunk_id": "13feba40::chunk_0029",
+  "source_id": "doe_osti_3018739",
+  "source_sha": "13feba4070379fd7ade1f0d9cc2ce4d3",
+  "source_url": "https://www.osti.gov/servlets/purl/3018739",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Using UAV and USV Vehicles in the Coastal Zone Remote Sensing 31. Pääkkönen, S., Pölönen, I., Raita-Hakola, A.-M., Carneiro, M., Cardoso, H., Mauricio, D. et al. (2024) Non-invasive monitoring of microalgae cultivations using hyperspectral imager Journal of Applied Phycology 36, 1653-1665 28",
+  "token_count": 42,
+  "text_sha": "a96258b10fb4b39d3a0982c5ff58dbfd4b199612dc19727567f192f76343f13d",
+  "extracted_at": "2026-05-15T21:42:48.616779Z"
+}

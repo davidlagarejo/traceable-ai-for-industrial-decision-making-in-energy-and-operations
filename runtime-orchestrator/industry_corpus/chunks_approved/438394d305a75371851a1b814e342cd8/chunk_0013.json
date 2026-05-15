@@ -1,0 +1,14 @@
+{
+  "chunk_id": "438394d3::chunk_0013",
+  "source_id": "doe_osti_2587585",
+  "source_sha": "438394d305a75371851a1b814e342cd8",
+  "source_url": "https://www.osti.gov/servlets/purl/2587585",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "of metabolic adaptation in the duckweed Lemna gibba: an integrated metabolic, transcriptomic and flux analysis. BMC Plant Biol 23: 458. Sowinski EE, Gilbert S, Lam E, Carpita NC. 2019. Linkage structure of cell-wall polysaccharides from three duckweed species. Carbohydr Polym 223: 115119. Websites www.lemna.org",
+  "token_count": 44,
+  "text_sha": "209aab6eafc09990d3cc89f38ed75b1ceae833033e2dd71ce05727717fa38420",
+  "extracted_at": "2026-05-15T21:38:18.583106Z"
+}

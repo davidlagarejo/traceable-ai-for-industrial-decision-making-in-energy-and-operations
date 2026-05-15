@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce17f0ac::chunk_0018",
+  "source_id": "doe_osti_3025199",
+  "source_sha": "ce17f0ac9acf72ad4152950517312428",
+  "source_url": "https://www.osti.gov/servlets/purl/3025199",
+  "asset_families": [
+    "_shared",
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes.",
+  "token_count": 41,
+  "text_sha": "c8fe18e24528f0948e57a05575a04ef99f8a7036ea0ce0d7503da49e33e7f24f",
+  "extracted_at": "2026-05-15T21:40:01.007592Z"
+}

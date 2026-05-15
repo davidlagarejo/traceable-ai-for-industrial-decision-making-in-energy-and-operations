@@ -1,0 +1,15 @@
+{
+  "chunk_id": "e51cb3cc::chunk_0025",
+  "source_id": "doe_osti_3362687",
+  "source_sha": "e51cb3cc680f34d0ed90b8fbc634ecfe",
+  "source_url": "https://www.osti.gov/servlets/purl/3362687",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "of Steel Construction (AISC) AISC 325-10 – Steel Construction Manual National Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+  "token_count": 40,
+  "text_sha": "026cf7915e7e882214457370f328cc926a4a8c4a06db8d939c766fbe6708d066",
+  "extracted_at": "2026-05-15T21:37:53.368679Z"
+}

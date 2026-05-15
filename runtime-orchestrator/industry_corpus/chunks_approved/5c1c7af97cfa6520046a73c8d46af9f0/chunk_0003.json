@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5c1c7af9::chunk_0003",
+  "source_id": "doe_osti_2999841",
+  "source_sha": "5c1c7af97cfa6520046a73c8d46af9f0",
+  "source_url": "https://www.osti.gov/servlets/purl/2999841",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "FOA DE-EE0002997. The project aims to develop a microwave-based approach for low-heat aqueous-based industry-relevant reactions currently conducted using a conventional fossil-energy fueled hydrothermal reactor. The team has combined expertise in the areas of polymer production, microwave assisted reactions and scale-up, and life cycle analysis to perform the tasks proposed.",
+  "token_count": 49,
+  "text_sha": "429f2e1760719fbfe39510d0c8a26ec0b01804eaf745755aa6107274217f63ea",
+  "extracted_at": "2026-05-15T21:46:08.934081Z"
+}

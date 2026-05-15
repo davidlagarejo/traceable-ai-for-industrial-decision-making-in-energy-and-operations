@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ce2b4840::chunk_0018",
+  "source_id": "doe_osti_3001265",
+  "source_sha": "ce2b4840832c3d698b2ef02c60995f56",
+  "source_url": "https://www.osti.gov/servlets/purl/3001265",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "https://www.mckinsey.com/industries/ technology-media-and-telecommunications/our-insights/ ai-power-expanding-data-center-capacity-to-meet-growing-demand/ [4] J. Ciesla, “Data center trends: Rack densities and outages on the rise,” Raritan, Tech. Rep., March 30, 2021. [Online]. Available: https://www.raritan.com/blog/detail/ data-center-trends-rack-densities-and-outages-on-therise/ [5] J.HickandP.Weber,“LosAlamosNationalLaboratoryHigh Performance Computing Division Power Forecast Model,” December, 2024. Page 5 of 5",
+  "token_count": 40,
+  "text_sha": "c55a6a59dd8650483f2204213ddc66d1b74785a92a078ada8b7f8e687eaa80e0",
+  "extracted_at": "2026-05-15T21:39:51.455169Z"
+}

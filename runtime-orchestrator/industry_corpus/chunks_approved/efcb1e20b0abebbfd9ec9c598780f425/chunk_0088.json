@@ -1,0 +1,15 @@
+{
+  "chunk_id": "efcb1e20::chunk_0088",
+  "source_id": "doe_osti_3022260",
+  "source_sha": "efcb1e20b0abebbfd9ec9c598780f425",
+  "source_url": "https://www.osti.gov/servlets/purl/3022260",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "priced products may need to lower the price of their products by the entire value they receive from the 45X MPTC to achieve competitive pricing. 77 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 43,
+  "text_sha": "a0fff01d64c337e944562932d84ea8030101ab7f8bd268a1f49ff86db0c7a718",
+  "extracted_at": "2026-05-15T21:45:25.831542Z"
+}

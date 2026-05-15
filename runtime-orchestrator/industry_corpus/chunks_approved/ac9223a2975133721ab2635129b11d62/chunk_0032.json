@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ac9223a2::chunk_0032",
+  "source_id": "doe_osti_3014791",
+  "source_sha": "ac9223a2975133721ab2635129b11d62",
+  "source_url": "https://www.osti.gov/servlets/purl/3014791",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "some of theinevitablepowerlossduetobiofoulingbutislimited to only a small percentage of that power loss. At this sameoperatingpoint,thepeakvelocityandpeakposition werefoundtodecreasebyapproximately10%,withthat decrease being greater at larger wave periods. REFERENCES [1] J.A.Lewis,“Marinebiofoulinganditspreventiononunderwater surfaces,” Materials Forum, vol. 22, no. November, pp. 41–61, 1998. 84 85 86 87 88 89 90 91",
+  "token_count": 44,
+  "text_sha": "153e354639ae34bc44298b906129ce932e78a5920eb05e5e17b5e931daff5e07",
+  "extracted_at": "2026-05-15T21:39:31.690365Z"
+}

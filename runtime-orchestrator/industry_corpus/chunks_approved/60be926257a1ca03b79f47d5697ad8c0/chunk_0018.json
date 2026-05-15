@@ -1,0 +1,14 @@
+{
+  "chunk_id": "60be9262::chunk_0018",
+  "source_id": "doe_osti_2588544",
+  "source_sha": "60be926257a1ca03b79f47d5697ad8c0",
+  "source_url": "https://www.osti.gov/servlets/purl/2588544",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "[Online]. Available: https://www.nrel.gov/docs/fy23osti/83819.pdf [14] U.S. Energy Information Administration, “Use of natural gas - U.S. Energy Information Administration (EIA).” Accessed: May 22, 2024. [Online]. Available: https://www.eia.gov/energyexplained/natural-gas/use-of-natural-gas.php [15] U.S. Energy Information Administration, “No. 2 Distillate Prices - Residential.” Accessed: May 22, 2024. [Online]. Available: https://www.eia.gov/dnav/pet/pet_pri_dist_a_epd2_prt_dpgal_a.htm [16] S. Ong and R. McKeel, “National Utility Rate Database: Preprint,” Aug. 2012, doi: 10.2172/1050105. 19 This report is available at no cost from NREL at www.nrel.gov/publications. [17] U.S. Energy Information Administration, “U.S. Energy Information Administration - EIA - Independent Statistics and Analysis.” Accessed: May 22, 2024. [Online]. Available: https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T07.06#/?f=A [18] A. Walker, “SOLAR ENERGY: Technologies and Project Delivery for Buildings,” 2013. [19] National Renewable Energy Laboratory, “NREL Annual Technology Baseline (ATB).” Accessed: Jun. 08, 2025. [Online]. Available: https://atb- archive.nrel.gov/electricity/2020/index.php?t=sd 20 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 135,
+  "text_sha": "f97ca7e1a8925c946d52f9f8945fde6e00c3b7eca94874572e657e45fb8989ce",
+  "extracted_at": "2026-05-15T21:40:40.674154Z"
+}

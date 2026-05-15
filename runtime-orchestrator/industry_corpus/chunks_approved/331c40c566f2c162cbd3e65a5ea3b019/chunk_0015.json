@@ -1,0 +1,14 @@
+{
+  "chunk_id": "331c40c5::chunk_0015",
+  "source_id": "doe_osti_2584244",
+  "source_sha": "331c40c566f2c162cbd3e65a5ea3b019",
+  "source_url": "https://www.osti.gov/servlets/purl/2584244",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Develop and deploy a model for the fluid’s secondary temperature (decided in Year 2). • Install AIOps on the EL300. • Conduct analytics on the fluid’s secondary temperature metric streamed to Kafka and write the results of the analytics back to Kafka. Publication and Presentation of Results Both teams will collaborate to define a strategy for publicizing the results of this work in appropriate venues (e.g., Supercomputing and EEHPC presentations, NREL technical reports, HPE whitepapers). The work completed under this CRADA has been documented in OSTI as Artificial Intelligence for Data Center Operations (AI Ops), OSTI ID: 1783088. A link to the technical report is provided: https://doi.org/10.2172/1783088 16 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 119,
+  "text_sha": "5c50752dc8e2a4425616b2960799b2c68562910c170a6f7fd48835634bd205f2",
+  "extracted_at": "2026-05-15T21:39:49.229888Z"
+}

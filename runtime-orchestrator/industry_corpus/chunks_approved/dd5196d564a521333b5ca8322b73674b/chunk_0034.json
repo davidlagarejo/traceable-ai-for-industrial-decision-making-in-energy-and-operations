@@ -1,0 +1,14 @@
+{
+  "chunk_id": "dd5196d5::chunk_0034",
+  "source_id": "doe_osti_3066504",
+  "source_sha": "dd5196d564a521333b5ca8322b73674b",
+  "source_url": "https://www.osti.gov/servlets/purl/3066504",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "EMT modeling structure, validation methodology, and controller interaction studies. 4. UT-Austin, “DC-Coupled Photovoltaic and Battery Systems: Modeling and Control,” Laboratory Technical Notes, 2020–2024. Background on DC-coupled GFM/PV+BESS research relevant to the laboratory work conducted in this project. Page 36 of 36",
+  "token_count": 41,
+  "text_sha": "971c5acc712591f10da8cd17e562e7a6340eb34170b0950922729a875e64400e",
+  "extracted_at": "2026-05-15T21:45:35.616238Z"
+}

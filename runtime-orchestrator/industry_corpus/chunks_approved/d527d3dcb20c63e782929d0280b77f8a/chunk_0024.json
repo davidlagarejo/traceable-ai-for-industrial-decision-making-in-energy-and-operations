@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d527d3dc::chunk_0024",
+  "source_id": "doe_osti_3030032",
+  "source_sha": "d527d3dcb20c63e782929d0280b77f8a",
+  "source_url": "https://www.osti.gov/servlets/purl/3030032",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Reyna, J., Adhikari, R., . . . Qi, L. (2022). End- Use Load Profiles for the U.S. Building Stock. Golden: NREL. Retrieved from https://docs.nlr.gov/docs/fy22osti/80889.pdf 17 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 41,
+  "text_sha": "9109be27f6e1145ccb49907668d9cbd87bcce3e63b9eec5fecff4843ddf08deb",
+  "extracted_at": "2026-05-15T21:40:53.071061Z"
+}

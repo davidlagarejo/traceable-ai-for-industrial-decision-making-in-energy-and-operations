@@ -1,0 +1,14 @@
+{
+  "chunk_id": "96ef3168::chunk_0054",
+  "source_id": "doe_osti_3018256",
+  "source_sha": "96ef316838d2cb74c2066d0c41b521e8",
+  "source_url": "https://www.osti.gov/servlets/purl/3018256",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "from the National Laboratory of the Rockies at www.nlr.gov/publications. Figure A-2. PEM fuel cell system total overnight cost breakdown for the high-cost scenario 53 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 40,
+  "text_sha": "56fb314ea41118277031965795fc35e0cf71b29a413b336706a1b2eff347038d",
+  "extracted_at": "2026-05-15T21:44:14.698947Z"
+}

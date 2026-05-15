@@ -1,0 +1,14 @@
+{
+  "chunk_id": "bf3d98d0::chunk_0006",
+  "source_id": "doe_osti_3362637",
+  "source_sha": "bf3d98d0a99590ce919a65206d092ed2",
+  "source_url": "https://www.osti.gov/servlets/purl/3362637",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "(4–6 inches in diameter) will be fabricated using representative non-radioactive surrogate materials. Fabrication parameters and waste form properties will be measured and evaluated. This demonstration is a critical step toward validating the feasibility of the proposed waste management strategy and enabling successful commercialization of the NuCycle® process.",
+  "token_count": 47,
+  "text_sha": "d59436977ab308e853d587e88c2385db05b8e47215d71898ee0d7f4291525581",
+  "extracted_at": "2026-05-15T21:46:29.989553Z"
+}

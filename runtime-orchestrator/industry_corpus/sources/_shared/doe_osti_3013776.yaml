@@ -1,0 +1,12 @@
+source_id: doe_osti_3013776
+title: "Floating Photovoltaics in Hydropower Reservoirs in the United States"
+url: https://www.osti.gov/servlets/purl/3013776
+license: public_domain
+publisher: doe_osti
+version: "2026-01-26"
+added_at: "2026-05-15T21:44:20.614408Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 13 - HYDRO ENERGY, 13 HYDRO ENERGY, 14 - SOLAR ENERGY, 14 SOLAR ENERGY, 29 - ENERGY PLANNING, POLICY AND ECONOMY"
+asset_families:
+  - _shared
+  - infrastructure_node

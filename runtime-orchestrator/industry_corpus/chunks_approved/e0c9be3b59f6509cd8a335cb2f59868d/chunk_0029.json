@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e0c9be3b::chunk_0029",
+  "source_id": "doe_osti_3024211",
+  "source_sha": "e0c9be3b59f6509cd8a335cb2f59868d",
+  "source_url": "https://www.osti.gov/servlets/purl/3024211",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Total Savings Total Savings = $196,678 – Box 32 $34,774 Box 34: Payback Payback = Box 25 / Box 33 8.1 years 32 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 40,
+  "text_sha": "09beda3e24c48a6ff72a0d5427a4bcc28e110f62a222b633e7ea75565b3dd68d",
+  "extracted_at": "2026-05-15T21:40:59.732335Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c80d5e7f::chunk_0013",
+  "source_id": "doe_osti_3019723",
+  "source_sha": "c80d5e7f621301067a23558ec2d9b039",
+  "source_url": "https://www.osti.gov/servlets/purl/3019723",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "George, F., Peter, P.K., Slats, J., George, J., Peter, L., Fowler, J., Stevens, V., Cooke, A. and Nelson, H., 2019. Akiachak Energy Action Plan (No. DOE-ANC-00061). Akiachak Native Community. https://www.osti.gov/servlets/purl/1527003 13 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 48,
+  "text_sha": "3398ecb20f06dc17c26d843e3b71f714e5e9f025b36b369fa5ebf1e87854cf8c",
+  "extracted_at": "2026-05-15T21:42:59.739283Z"
+}

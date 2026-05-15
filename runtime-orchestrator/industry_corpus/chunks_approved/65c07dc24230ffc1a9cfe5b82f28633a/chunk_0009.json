@@ -1,0 +1,14 @@
+{
+  "chunk_id": "65c07dc2::chunk_0009",
+  "source_id": "doe_osti_2570194",
+  "source_sha": "65c07dc24230ffc1a9cfe5b82f28633a",
+  "source_url": "https://www.osti.gov/servlets/purl/2570194",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Finite-Element Modeling of a Power Transformer,\" IEEE Transactions on Magnetics, vol. 53, no. 6, pp. 1-4, June 2017, [12] M. Mahamed, S. Seyyedbarzegar, “Design and Thermal Analysis of a 250 MVA HTS Transformer for Substation of Offshore Wind Farms,” Physica C: Superconductivity and its applications, vol. 620, 2024 14",
+  "token_count": 49,
+  "text_sha": "2d3aab1740ca2d551214c4a68c5c7b852445570ca89719c01cfa86272d24b0ea",
+  "extracted_at": "2026-05-15T21:43:41.906020Z"
+}

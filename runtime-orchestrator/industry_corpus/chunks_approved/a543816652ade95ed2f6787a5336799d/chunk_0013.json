@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a5438166::chunk_0013",
+  "source_id": "doe_osti_3019910",
+  "source_sha": "a543816652ade95ed2f6787a5336799d",
+  "source_url": "https://www.osti.gov/servlets/purl/3019910",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "collaborate on next-generation high-performance networking,\" Lawrence Livermore National Laboratory, 4 May 2022. [Online]. Available: https://www.llnl.gov/article/48631/nnsa-cornelis-networks-collaborate-next- generation-high-performance-networking. [27] \"HPC for Energy Innovation announces funding for new energy efficiency projects,\" Lawrence Livermore National Laboratory, 11 March 2024. [Online]. Available: https://www.llnl.gov/article/50986/hpc-energy-innovation-announces-funding-new-energy- efficiency-projects. Data Center Market Report – LLNL-TR-2013901 12",
+  "token_count": 46,
+  "text_sha": "3c692ef83623126fd3f17d054e340b3a8ea8254089999a48effb1cd0da2e8056",
+  "extracted_at": "2026-05-15T21:39:33.168965Z"
+}

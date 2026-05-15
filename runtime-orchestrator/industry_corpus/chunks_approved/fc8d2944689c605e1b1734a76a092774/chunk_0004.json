@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc8d2944::chunk_0004",
+  "source_id": "doe_osti_3021838",
+  "source_sha": "fc8d2944689c605e1b1734a76a092774",
+  "source_url": "https://www.osti.gov/servlets/purl/3021838",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "temperature and low pressure with heat exchange and recompression. This refinement of operating conditions allowed for detailed equipment selection to calculate power requirements. The energetics of rotating machinery (blowers and compressors) are evaluated in terms of isentropic efficiency, which determines both power requirements and adiabatic heating inside the process. The high-fidelity mass balances for the MSU units defined the retentate gas composition, which was evaluated as a generator fuel stream operating at 30% thermal efficiency. These inputs allowed us to demonstrate 40% of the power generated is required to operate the process, with 60% available for net metering to the grid as shown in Table 1. Table 1. Summary of power requirements for integrated process. Equipment Power (kW) Total Power required 250 -Work Input (rotating) 112 -Fan Power Assuming COP=4 38.3 -Reactor 6-pack 100 Generator production 650 Excess power production 450 Task 2: Project Management The Contractor and Participant will: • Schedule and attend project kick off meeting. • Schedule and attend meetings (as required) to provide review of progress, identify any challenges and discuss project requirements. 3 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. Both parties scheduled and attended a kickoff meeting followed by biweekly check-ins between GFE and the NREL Principal Investigator (PI) to provide updates and resolution. The Participant visited NREL to meet with the project team on February 3, 2025 as shown in Figure 2. Figure 2. Peter Schubert (rear) meeting on site with NREL team. Task 3: Additional Work Contractor will perform other work at the direction of the Participant, consistent with the scope and subject to the availability of funding. The contractor prepared a 30-page report for submittal to GFE. The participant reviewed and submitted comments, allowing NREL to submit a final report to GFE. Task 4: CRADA Final Report The Parties will prepare a CRADA Final Report. Preparation and submission in accordance with the terms of this agreement. This report serves to meet the requirement for the CRADA Final Report with preparation and submission in accordance with the agreement’s Article X Subject Inventions Listing: None. ROI#: None. 4 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 372,
+  "text_sha": "2b5e4c9985f62f4c08879c52b7e87dd6d7f5d3806d2823a61454552f66452407",
+  "extracted_at": "2026-05-15T21:46:22.718654Z"
+}

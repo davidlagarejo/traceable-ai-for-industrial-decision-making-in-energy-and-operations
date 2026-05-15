@@ -1,0 +1,14 @@
+{
+  "chunk_id": "23fde807::chunk_0004",
+  "source_id": "doe_osti_2588254",
+  "source_sha": "23fde80769f9ca3cf2d6b5425fdb5e4c",
+  "source_url": "https://www.osti.gov/servlets/purl/2588254",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Romulus 300,000 230,481 228,058 Lilli Libby 200,000 45,038 Artemis 78,647 Apollo 100,000 183,020 84,788 0 Legacy Helios Figure 8: Cluster Cooling 6 Cluster Cooling (Tons) 50 45 45 4 40 5 Helios '24 35 3 Helios '23 30 Ross Romulus 25 19 Lilli 20 Libby 15 13 Artemis 3 10 7 Apollo 5 11 7 0 Legacy Helios Figure 9: Cluster Cooling in Tons CONCLUSIONS The excising of the six FFESD Legacy Clusters, along with consolidating systems and services into the HELIOS cluster, has produced clear operational and financial benefits. Power consumption decreased approximately 58%, which directly lowers the data center’s cooling load by 26 tons of refrigeration, equivalent to nearly 316,000 BTU/hr. This reduction translates into lower annual operating costs for both electrical and mechanical cooling systems. At the same time, compute core capacity increased by 21%, enabling higher throughput and more efficient use of data center resources within the same rack footprint. This transition also simplified system administration by eliminating the complexity of maintaining multiple aging clusters, reducing maintenance overhead, and standardizing the software and user environment. The resulting configuration positions FFESD and ITSD HPC to meet evolving research demands, reduce operational costs, and align with institutional Operational Excellence performance pillars, while achieving energy efficiency and sustainability goals. 7 CREDITS AND CONTRIBUTORS The successful launch of the FFESD flagship cluster, Helios, and the excision of the Legacy Clusters required a tremendous collective effort by many individuals. The following contributed to these successful accomplishments: ITSD HPC Engineers and Direct Contributors: Bettinger, Matthew: ORNL, Project Lead Baird, Mark: ORNL Benson, Zack: ORNL Childs, Roger: ORNL Hickling, Regina: ORNL Linares, Franciel: ORNL Lindsey, Eric: ORNL Liu, Hong: ORNL Overstreet, Juan: CTG Peek, Michael: ORNL Reid, Zack: ORNL Reynolds, Lee: ORNL Sacca, Dallas: ORNL Schrock, Jonathan: ORNL Shaeffer, Ian: ORNL Shute, Michael: ORNL Swallows, Hathan: ORNL Taylor, Sean: ORNL Tippit, Joseph: ORNL Wikesberg, Whitney: ORNL Researchers and Testers: Asgari, Mehdi: ORNL Baird, Mark: ORNL Benson, Zack: ORNL Celik, Cihangir: ORNL Dal Forno Chuahy, Flavio: ORNL Hartanto, Donny: ORNL Lefebvre, Robert: ORNL Rao, Vivek: ORNL AI-assisted tools were used for minor editorial review; all content and conclusions are the author’s own. 8",
+  "token_count": 359,
+  "text_sha": "25a8de10af9622e3d3450bd0a691a8fb273b0a77fc5fcf393a20f57d2ec33808",
+  "extracted_at": "2026-05-15T21:39:50.412854Z"
+}

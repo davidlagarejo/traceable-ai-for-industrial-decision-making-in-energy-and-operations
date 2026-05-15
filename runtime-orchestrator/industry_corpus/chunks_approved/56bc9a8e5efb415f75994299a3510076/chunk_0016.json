@@ -1,0 +1,14 @@
+{
+  "chunk_id": "56bc9a8e::chunk_0016",
+  "source_id": "doe_osti_3362526",
+  "source_sha": "56bc9a8e5efb415f75994299a3510076",
+  "source_url": "https://www.osti.gov/servlets/purl/3362526",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Kameroff, M., Morgan, B., Morgan, B., Morgan Sr, L., Fowler, J. and Stevens, V., 2019. Aniak Energy Action Plan (No. DOE-NVA-00079). Native Village of Aniak, AK. https://www.osti.gov/servlets/purl/1526439 13 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 45,
+  "text_sha": "d831c7308fc05e3855de60067c6a2fda2654439af394b5dffa2ab89c9d5ca9a6",
+  "extracted_at": "2026-05-15T21:39:34.743889Z"
+}

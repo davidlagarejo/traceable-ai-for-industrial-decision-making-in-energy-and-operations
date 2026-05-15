@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a847e4db::chunk_0040",
+  "source_id": "doe_osti_2997653",
+  "source_sha": "a847e4dbd5b7da85f6ec7ebe9a564e76",
+  "source_url": "https://www.osti.gov/servlets/purl/2997653",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof.",
+  "token_count": 44,
+  "text_sha": "5e7cf8c1b3af5b87e865de5dee0ee38d4d2fb510cbc1c5586a095a8b76ac7e28",
+  "extracted_at": "2026-05-15T21:42:58.218320Z"
+}

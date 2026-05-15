@@ -1,0 +1,14 @@
+{
+  "chunk_id": "8a59a097::chunk_0042",
+  "source_id": "doe_osti_3015698",
+  "source_sha": "8a59a097a05972062d5de85bf1422de5",
+  "source_url": "https://www.osti.gov/servlets/purl/3015698",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "[26] S. Ong and R. McKeel, \"National Utility Rate Database,\" in 2012 World Renewable Energy Forum, Denver, Colorado, 2012. [27] U.S. Energy Information Administration, \"Monthly Energy Review,\" 29 July 2024. [Online]. Available: https://www.eia.gov/totalenergy/data/monthly/. 42 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 50,
+  "text_sha": "c2b1e3becd51cab79d7091d94be001826ca89663e615be6a230baf188fe1b8cd",
+  "extracted_at": "2026-05-15T21:40:47.056182Z"
+}

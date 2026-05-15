@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f32c2aac::chunk_0036",
+  "source_id": "doe_osti_2588547",
+  "source_sha": "f32c2aac98f0cf3c8415d1a0d4a5d363",
+  "source_url": "https://www.osti.gov/servlets/purl/2588547",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "and L. Klun, \"ComStock Reference Documentation: Version 1,\" National Renewable Energy Laboratory, Golden, 2023. 38 This report is available at no cost from NREL at www.nrel.gov/publications. Appendix. Additional Figures Figure A-1. Map of ASHRAE Climate Zones [22] 39 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 49,
+  "text_sha": "7f86f6f90bb430714ead3582877db395cda22d8134f57c8e5cf34eb2f0f7f740",
+  "extracted_at": "2026-05-15T21:38:51.217324Z"
+}

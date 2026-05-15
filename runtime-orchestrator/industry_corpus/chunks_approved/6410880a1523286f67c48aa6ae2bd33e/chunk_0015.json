@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6410880a::chunk_0015",
+  "source_id": "doe_osti_3006042",
+  "source_sha": "6410880a1523286f67c48aa6ae2bd33e",
+  "source_url": "https://www.osti.gov/servlets/purl/3006042",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "otherwise does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof.",
+  "token_count": 45,
+  "text_sha": "ce1d956e23c1d2f1af98072273cbf23f4ec68011b575da314c78de84c79c0d8b",
+  "extracted_at": "2026-05-15T21:39:42.924626Z"
+}

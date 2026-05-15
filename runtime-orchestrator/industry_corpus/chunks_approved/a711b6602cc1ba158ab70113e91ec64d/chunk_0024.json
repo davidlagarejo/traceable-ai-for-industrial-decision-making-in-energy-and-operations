@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0024",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ") ta w sy b i s l l e l te b m in e =k p R v i d ∗q c − v ˆi d q c! +k i R Z v i d ∗q c − v ˆi d q c! dt. (29) Authorized licensed use limited to: Sandia National Laboratories. Downloaded on July 21,2025 at 16:09:30 UTC from IEEE Xplore. Restrictions apply. where k > 0 and k > 0 are the proportional and integral Thesevoltagestepscorrespondtoapproximately+25%,-25%, p i gains respectively. The d-axis control law is identical to (29), +45%,and-45%ofv respectively.Thevoltagev isshown dc dc except that the ’q’ subscripts are replaced with ’d’ subscripts. in Fig. 3. The resultant phase currents are shown in Fig. 4. Using analysis similar to the 0-axis case yields The waveform distortions are negligible after the CM steps occur. The currents converted to the qd0 reference frame are i ∗q − ˆi q =(i ∗q − ˆi q (0))e−kp k + i 1 t (30) showninFig.5.Thecurrentssuccessfullytracktheirsetpoints over the full simulation. Also, the duty cycles of the top 4 and identical analysis for the d-axis yields switches are shown in Fig. 6. From this figure, it can be seen i ∗d− ˆi d =(i ∗d− ˆi d (0))e−kp k + i 1 t . (31) t 2 h 5 a % t th w e he le n g- V 4 du = ty + cy 2 c 5 l 0 e ; Sˆ 7 z 5% is 5 w 0 h % en d V uring = nor 2 m 5 a 0 l ; o 5 p % era w ti h o e n n ; cm cm − Itcanreadilybeseenthattheconclusionsfortheq-andd-axis V =+450; and 95% when V = 450. That is, the leg-4 cm cm − Hamiltonians are the same as for the 0-axis. For all cases, duty cycle is i in x i ( t 0 ia ) l , l x y i ∈ nd { u q c , e d d ,0 b } y C is M eit i h n e su r l t t h . e Fr i o n m itia ( l 24 c ) u , r t r h e e nt la o t r te t r h w e o c u u l r d re b n e t Sˆ z ∼ = 1 2 − 1 20 V .5 c V m . (32) dc t=t +∆t. step Additionally, it can also be seen that the q-, d-, and 0-axis The proposed control does have a minor limitation. The duty cycles are within the ranges prescribed in (18). maximum CM voltage that can be mitigated is equal to half The Hamiltonian of the section of the inverter starting to the voltage v across the inverter’s input capacitor C . dc dc the right of the input dc capacitor C is shown in Fig. 7. dc However, for a full SST the input voltage V will be the dc It can be seen",
+  "token_count": 511,
+  "text_sha": "02df5622741e4dfc5c08e5c08e201ef09a4e4c463032dd9195cef84a3ba2c425",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

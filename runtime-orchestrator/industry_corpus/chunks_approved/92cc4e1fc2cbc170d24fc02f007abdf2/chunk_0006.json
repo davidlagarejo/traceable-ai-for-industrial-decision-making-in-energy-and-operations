@@ -1,0 +1,14 @@
+{
+  "chunk_id": "92cc4e1f::chunk_0006",
+  "source_id": "doe_osti_3007880",
+  "source_sha": "92cc4e1fc2cbc170d24fc02f007abdf2",
+  "source_url": "https://www.osti.gov/servlets/purl/3007880",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "on existing resilience challenges created a disproportionately high number of outages in the county that year. Particularly for utility assets leveled by Helene, a window of opportunity may exist in the rebuilding process to improve resilience by design. For questions related to this document, please contact fishlerhk@ornl.gov.",
+  "token_count": 47,
+  "text_sha": "0598ccaa9d760c839657fad494697c475fdd9912763e5e0b9e7f817dfef4c588",
+  "extracted_at": "2026-05-15T21:45:32.581007Z"
+}

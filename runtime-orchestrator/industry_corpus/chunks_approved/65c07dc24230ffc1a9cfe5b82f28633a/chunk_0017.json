@@ -1,0 +1,14 @@
+{
+  "chunk_id": "65c07dc2::chunk_0017",
+  "source_id": "doe_osti_2570194",
+  "source_sha": "65c07dc24230ffc1a9cfe5b82f28633a",
+  "source_url": "https://www.osti.gov/servlets/purl/2570194",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "on Magnetics, vol. 53, no. 6, pp. 1-4, June 2017, [12] M. Mahamed, S. Seyyedbarzegar, “Design and Thermal Analysis of a 250 MVA HTS Transformer for Substation of Offshore Wind Farms,” Physica C: Superconductivity and its applications, vol. 620, 2024 14",
+  "token_count": 41,
+  "text_sha": "c510c70ea949b213cd4ec31c4c68d0b21a345641d7f615ac59728b47a8a04ea0",
+  "extracted_at": "2026-05-15T21:43:41.906020Z"
+}

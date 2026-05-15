@@ -1,0 +1,11 @@
+source_id: doe_osti_3363587
+title: "ResStock Measure Documentation: Electric Vehicle Adoption With Level 2 Charging"
+url: https://www.osti.gov/servlets/purl/3363587
+license: public_domain
+publisher: doe_osti
+version: "2026-05-07"
+added_at: "2026-05-15T21:40:55.121430Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, building energy modeling, building stock modeling, electric vehicles, residential buildings"
+asset_families:
+  - commercial_building

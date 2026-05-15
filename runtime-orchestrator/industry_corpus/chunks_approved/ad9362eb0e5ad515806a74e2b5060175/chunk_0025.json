@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ad9362eb::chunk_0025",
+  "source_id": "doe_osti_3007111",
+  "source_sha": "ad9362eb0e5ad515806a74e2b5060175",
+  "source_url": "https://www.osti.gov/servlets/purl/3007111",
+  "asset_families": [
+    "_shared",
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "of Energy. The U.S. Government retains, and the publisher, by accepting the article for publication, acknowledges, that the U.S. Government retains a non-exclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this manuscript, or allow others to do so, for U.S. Government purposes 84",
+  "token_count": 48,
+  "text_sha": "5a023a657eff3ae43b230c7931035fa55e5b59b281c4edda70bb82de2986077c",
+  "extracted_at": "2026-05-15T21:39:38.909141Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "24145638::chunk_0007",
+  "source_id": "steamloc_steam_traps_whitepaper",
+  "source_sha": "2414563832b9c43c60de69a68b0461f1",
+  "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "proven +30 year lifetime. We kindly challenge you to permanently consider innovative technologies, which keep your installations state of the art. Your reward is double: energy savings for your plant and reductions on greenhouse gasses. Appreciate you took some of your valuable time to study this paper. Feel free to contact us for more detail. Marc Froeyen Steamloc International www.steamloc.org You can reach the author at marc.froeyen@steamloc.org 9 Marc Froeyen March 2015 / SL801 Rev0",
+  "token_count": 75,
+  "text_sha": "803c26492c42f5314c685aa9e16ff7c6c89f3ba507bab4831539d06fc8cf2178",
+  "extracted_at": "2026-05-15T21:35:32.402289Z"
+}

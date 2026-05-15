@@ -1,0 +1,11 @@
+source_id: doe_osti_3001265
+title: "Futureproofing through 2035 for the AI and HPC Power Density Trend"
+url: https://www.osti.gov/servlets/purl/3001265
+license: public_domain
+publisher: doe_osti
+version: "2025-10-28"
+added_at: "2026-05-15T21:39:50.414370Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 97 MATHEMATICS AND COMPUTING, AI, Data Center, Density, Design"
+asset_families:
+  - datacenter

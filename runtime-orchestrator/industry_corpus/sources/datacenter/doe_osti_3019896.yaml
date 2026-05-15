@@ -1,0 +1,11 @@
+source_id: doe_osti_3019896
+title: "Microreactor Incident-Free Transportation Radiation Dose Assessment"
+url: https://www.osti.gov/servlets/purl/3019896
+license: public_domain
+publisher: doe_osti
+version: "2025-12-31"
+added_at: "2026-05-15T21:39:51.457192Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 22 GENERAL STUDIES OF NUCLEAR REACTORS, 61 RADIATION PROTECTION AND DOSIMETRY, Advanced Reactors, tranportation"
+asset_families:
+  - datacenter

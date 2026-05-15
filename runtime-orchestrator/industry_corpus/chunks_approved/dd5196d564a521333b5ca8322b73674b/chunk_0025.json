@@ -1,0 +1,14 @@
+{
+  "chunk_id": "dd5196d5::chunk_0025",
+  "source_id": "doe_osti_3066504",
+  "source_sha": "dd5196d564a521333b5ca8322b73674b",
+  "source_url": "https://www.osti.gov/servlets/purl/3066504",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Northwest National Laboratory Technical Reports, 2019–2024. References used for EMT modeling structure, validation methodology, and controller interaction studies. 4. UT-Austin, “DC-Coupled Photovoltaic and Battery Systems: Modeling and Control,” Laboratory Technical Notes, 2020–2024. Background on DC-coupled GFM/PV+BESS research relevant to the laboratory work conducted in this project. Page 36 of 36",
+  "token_count": 50,
+  "text_sha": "1c9d82cd9a4d03495b824ebe38bd7b52d7107c765be38270ad2bad2e2027a6bc",
+  "extracted_at": "2026-05-15T21:45:35.616238Z"
+}

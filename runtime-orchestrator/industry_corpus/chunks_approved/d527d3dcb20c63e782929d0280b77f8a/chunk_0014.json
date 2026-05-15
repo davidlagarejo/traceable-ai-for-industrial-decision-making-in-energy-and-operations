@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d527d3dc::chunk_0014",
+  "source_id": "doe_osti_3030032",
+  "source_sha": "d527d3dcb20c63e782929d0280b77f8a",
+  "source_url": "https://www.osti.gov/servlets/purl/3030032",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "iccsafe.org: https://codes.iccsafe.org/s/IECC2015/chapter-4-ce-commercial-energy- efficiency/IECC2015-Pt01-Ch04-SecC403.2.9 Jump, D. A., Walker, I. S., & Modera, M. P. (1996). Field Measurements of Efficiency and Duct Effectiveness in Residential Forced Air Distributions Systems. NREL. (2025). General Duct Insulation. Retrieved from nrel.gov: https://sws.nrel.gov/spec/501071 Peavey, J. (2025). How to Achieve 4% Duct Leakage or Less . Retrieved from pvhvac.com: https://www.pvhvac.com/blog/how-to-achieve-4-duct-leakage-or-less/ Reyna, J., Fontanini, A., Parker, A., Present, E., Liu, L., Adhikari, R., . . . Wilson, E. (2025). ResStock Technical Reference Documentation, Active Development Version. Retrieved from https://natlabrockies.github.io/ResStock.github.io/assets/trd/ResStockTechnicalReference Guide_2025_1.pdf Wilson, E., Parker, A., Fontanini, A., Present, E., Reyna, J., Adhikari, R., . . . Qi, L. (2022). End- Use Load Profiles for the U.S. Building Stock. Golden: NREL. Retrieved from https://docs.nlr.gov/docs/fy22osti/80889.pdf 17 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 130,
+  "text_sha": "762b0c2b5cbeef9b94d242204eaa986d373cf367ed99a31e342effb82893c9ab",
+  "extracted_at": "2026-05-15T21:40:53.071061Z"
+}

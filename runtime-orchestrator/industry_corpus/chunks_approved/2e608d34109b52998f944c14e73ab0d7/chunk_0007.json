@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2e608d34::chunk_0007",
+  "source_id": "doe_osti_2999811",
+  "source_sha": "2e608d34109b52998f944c14e73ab0d7",
+  "source_url": "https://www.osti.gov/servlets/purl/2999811",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": ": 04-K.Matsu- shima-ESR BPM Pick-Up Mechanical Design.pptx [7] P. Cameron, A. Blednykh, B. N. Kosciuk, I. Pinayev, V. Ravindranath, and O. Singh, “BPM Button Optimization to Minimize Distortion due to Trapped Mode Heating”, in Proc. PAC'09, Vancouver, Canada, May 2009, paper TH5RFP011, pp. 3462-3464. [8] M. Wendt “ESR BPM system overview”, PDR presentation - October 2025 - Link : 03-M.Wendt-ESR BPM System Overview.pptx [9] C. Hetzel – Private communication [10] HDR Basis of Design – BNL report BNL_EIC- FD100_IFB_BOD [11] M. Mahoney – Private communication [12] N. Kurita, D. Martin, S. Smith, C. Ng, M. Nordby, and C. Perkins, “Design of the Button Beam Position Monitor for PEP-II”, in Proc. PAC'95, Dallas, TX, USA, May 1995, pa- per MPQ25, pp. 2512-2514. [13] S. P. Weathersby and A. Novokhatski, “BPM Breakdown Potential in the PEP-II B-factory Storage Ring Collider”, in Proc. ICAP'09, San Francisco, CA, USA, Aug.-Sep. 2009, paper THPSC057, pp. 363-366. [14] F. Micolon and B. Podobedov, \"Ground vibration studies in the RHIC tunnel in view of EIC\", in Proc. NAPAC2025, Sacramento, CA, USA, Aug. 2025, pp. 884-887. doi:10.18429/JACoW-NAPAC2025-WEP097",
+  "token_count": 179,
+  "text_sha": "65ab9a64aa1262fd363fdc2d82025499153d3999cb732a48d88c62de95fc8a6c",
+  "extracted_at": "2026-05-15T21:42:50.046738Z"
+}

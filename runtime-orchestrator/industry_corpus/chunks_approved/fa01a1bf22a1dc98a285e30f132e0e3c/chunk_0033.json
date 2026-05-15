@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fa01a1bf::chunk_0033",
+  "source_id": "doe_osti_3020505",
+  "source_sha": "fa01a1bf22a1dc98a285e30f132e0e3c",
+  "source_url": "https://www.osti.gov/servlets/purl/3020505",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "while simultaneously addressing roadblocks inherent in the technology. Also in this upcoming issue... • Automated high-throughput screening, high-performance computing, and AI transform materials chemistry. • Laboratory contributions yield research achievements at CERN. • On its 70th anniversary, Livermore’s Site 300 celebrates its advanced test facilities and operational experts.",
+  "token_count": 48,
+  "text_sha": "548178637c8f13ceaff9cd6b038b85cd58186ef8ace0f97c4fde0ab743fc5bd1",
+  "extracted_at": "2026-05-15T21:42:45.997580Z"
+}

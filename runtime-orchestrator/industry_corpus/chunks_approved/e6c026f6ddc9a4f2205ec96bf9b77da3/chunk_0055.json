@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e6c026f6::chunk_0055",
+  "source_id": "doe_osti_3021864",
+  "source_sha": "e6c026f6ddc9a4f2205ec96bf9b77da3",
+  "source_url": "https://www.osti.gov/servlets/purl/3021864",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "electricity costs, while CPP has mostly flat electric rates, except for occasional high-price events [107]. In the US, the non-flat utility rate programs mostly follow the static TOU pricing [108]. Overall US Climate Zones Assessment In this assessment, two HP-TES performance metrics were utilized, namely: (i) demand reduction (DR) and (ii) recharge energy increase (REI). These metrics are the primary driver of the annual utility cost savings for an end user (Eq.(14)). The first term represents the demand reduction during the selected peak hours, whereas the second term compares the recharge energy requirements with the baseline energy during those hours. Page 99 of 127",
+  "token_count": 104,
+  "text_sha": "4c9e43c86886b50f9b552c5bedcb5e7f0bd8f0e675dd8c45ae93a12d45984821",
+  "extracted_at": "2026-05-15T21:38:13.722298Z"
+}

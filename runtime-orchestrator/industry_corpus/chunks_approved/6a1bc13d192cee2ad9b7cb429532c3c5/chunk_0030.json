@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6a1bc13d::chunk_0030",
+  "source_id": "doe_osti_3023538",
+  "source_sha": "6a1bc13d192cee2ad9b7cb429532c3c5",
+  "source_url": "https://www.osti.gov/servlets/purl/3023538",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "30 13.5 DLC DA 1,795.32 95.21 59.88 54.97 N/A N/A 31.25 3.80 5.24 60 27 TOU RT 1,841.51 105.10 33.05 15.57 154.84 −121.79 30.29 3.61 5.02 60 27 RTP RT 1,861.23 85.38 26.85 −8.08 1,052.19 −1,025.34 30.17 13.37 15.21 60 27 DLC DA 1,745.74 144.79 45.53 31.18 N/A N/A 30.73 5.04 6.06 100 45 TOU RT 1,887.03 59.58 11.24 −21.47 760.53 −749.29 29.30 6.38 7.52 100 45 RTP RT 2,125.19 −178.58 −33.69 −124.51 848.95 −882.65 40.03 21.66 25.07 100 45 DLC DA 1,707.59 182.94 34.52 18.00 N/A N/A 30.05 5.01 6.87 31 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 109,
+  "text_sha": "7d2a7e40407a56faabdbd8270c3e3f34a482d4214a9a65f80c8920e1945f8ff7",
+  "extracted_at": "2026-05-15T21:42:53.440331Z"
+}

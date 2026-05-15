@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3f4f11df::chunk_0019",
+  "source_id": "doe_osti_3013235",
+  "source_sha": "3f4f11df52890941f756ae4bea226f9a",
+  "source_url": "https://www.osti.gov/servlets/purl/3013235",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "National Building Stock,” NREL/TP-5500-46861, 1009264, Feb. 2011. doi: 10.2172/1009264. [4] U.S. Energy Information Administration, “2018 Commercial Buildings Energy Consumption Survey (CBECS),” 2018. [Online]. Available: https://www.eia.gov/consumption/commercial/ [5] “PVWatts Calculator,” National Renewable Energy Laboratory. Accessed: Apr. 21, 2025. [Online]. Available: https://pvwatts.nrel.gov/ [6] U.S. Energy Information Administration, “Use of natural gas - U.S. Energy Information Administration (EIA).” [Online]. Available: https://www.eia.gov/energyexplained/natural- gas/use-of-natural-gas.php [7] U.S. Energy Information Administration, “No. 2 Distillate Prices - Residential.” [Online]. Available: https://www.eia.gov/dnav/pet/pet_pri_dist_a_epd2_prt_dpgal_a.htm [8] S. Ong and R. McKeel, “National Utility Rate Database: Preprint,” NREL/CP-6A20- 54633, 1050105, Aug. 2012. doi: 10.2172/1050105. [9] U.S. Energy Information Administration, “EIA - Independent Statistics and Analysis.” [Online]. Available: https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T07.06#/?f=A [10] P. Gagnon, R. Margolis, J. Melius, C. Phillips, and R. Elmore, “Rooftop Solar Photovoltaic Technical Potential in the United States. A Detailed Assessment,” National Renewable Energy Laboratory (NREL), Golden, CO (United States), Jan. 2016. doi: 10.2172/1236153. 22 This report is available at no cost from NREL at www.nrel.gov/publications. Appendix Figure A-1. Site annual natural gas consumption of the ComStock baseline and the measure scenario by census division Figure A-2. Site annual natural gas consumption of the ComStock baseline and the measure scenario by building type 23 This report is available at no cost from NREL at www.nrel.gov/publications. Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division 24 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 248,
+  "text_sha": "d3ee1e8b80083c2d6f78d39a97a5d03e94e470cd69cf88f02238707db6b89e3f",
+  "extracted_at": "2026-05-15T21:41:33.411578Z"
+}

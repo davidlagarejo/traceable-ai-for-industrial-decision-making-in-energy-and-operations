@@ -1,0 +1,11 @@
+source_id: doe_osti_3022261
+title: "ComStock Measure Documentation: Fan Static Pressure Reset for Multizone Variable Air Volume Systems"
+url: https://www.osti.gov/servlets/purl/3022261
+license: public_domain
+publisher: doe_osti
+version: "2026-03-02"
+added_at: "2026-05-15T21:40:29.066560Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, energy efficiency, static pressure reset"
+asset_families:
+  - commercial_building

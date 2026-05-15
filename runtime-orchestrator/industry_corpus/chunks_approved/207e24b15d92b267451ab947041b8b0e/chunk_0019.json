@@ -1,0 +1,14 @@
+{
+  "chunk_id": "207e24b1::chunk_0019",
+  "source_id": "doe_osti_3030035",
+  "source_sha": "207e24b15d92b267451ab947041b8b0e",
+  "source_url": "https://www.osti.gov/servlets/purl/3030035",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "E., Liu, L., Adhikari, R., . . . Wilson, E. (2025). ResStock Technical Reference Documentation, Active Development Version. National Renewable Energy Laboratory, Golden, CO. Retrieved from https://natlabrockies.github.io/ResStock.github.io/assets/trd/ResStockTechnicalReference Guide_2025_1.pdf 17 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 45,
+  "text_sha": "995ce1baff1a59179c5162931db3f3d22d2e4a95168dc564c6151ec5e02485e3",
+  "extracted_at": "2026-05-15T21:41:03.231666Z"
+}

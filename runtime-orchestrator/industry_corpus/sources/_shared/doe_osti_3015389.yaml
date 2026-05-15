@@ -1,0 +1,12 @@
+source_id: doe_osti_3015389
+title: "Informing Transmission Supply Chain Needs from National Transmission Studies"
+url: https://www.osti.gov/servlets/purl/3015389
+license: public_domain
+publisher: doe_osti
+version: "2026-01-23"
+added_at: "2026-05-15T21:45:28.395298Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, 29 ENERGY PLANNING, POLICY, AND ECONOMY, capacity expansion, grid, supply chain"
+asset_families:
+  - _shared
+  - infrastructure_node

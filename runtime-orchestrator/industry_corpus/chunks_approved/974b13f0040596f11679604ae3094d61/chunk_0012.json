@@ -1,0 +1,14 @@
+{
+  "chunk_id": "974b13f0::chunk_0012",
+  "source_id": "doe_osti_3011887",
+  "source_sha": "974b13f0040596f11679604ae3094d61",
+  "source_url": "https://www.osti.gov/servlets/purl/3011887",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Facility (Book): NREL (National Renewable Energy Laboratory). https://doi.org/10.2172/1031393 Skidmore, Zachary. 2025. “US data centers face grid bottlenecks as regional operators delay upgrades.” Data Center Dynamics. https://www.datacenterdynamics.com/en/news/us-data- centers-face-grid-bottlenecks-as-regional-operators-delay-upgrades/. Vincent, Matt. 2025. “Inside NVIDIA’s Vision for AI Factories: Wade Vinson’s Data Center World 2025 Keynote.” Data Center Frontier. https://www.datacenterfrontier.com/machine- learning/article/55286658/inside-nvidias-vision-for-ai-factories-wade-vinsons-data-center- world-2025-keynote. Wang Esram, Nora, and Neal Elliott. 2024. “Turning Data Centers into Grid and Regional Assets: Considerations and Recommendations for the Federal Government, State Policymakers, and Utility Regulators.” ACEEE Policy Brief. https://www.aceee.org/sites/default/files/pdfs/Turning%20Data%20Centers%20into%20Grid %20and%20Regional%20Assets%20- %20Considerations%20and%20Recommendations%20for%20the%20Federal%20Governme nt%2C%20State%20Policymakers%2C%20and%20Utility%20Regulators.pdf. 18 This report is available at no cost from NREL at www.nrel.gov/publications. Wilson, John, Zach Zimmerman, and Rob Gramlich. 2024. “Strategic Industries Surging: Driving US Power Demand.” Grid Strategies, LLC. https://gridstrategiesllc.com/wp- content/uploads/National-Load-Growth-Report-2024.pdf. 19 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 127,
+  "text_sha": "7ced93775ef508b8c2f6f759276ea99de8ac8b283594e7699baafd020ea2c688",
+  "extracted_at": "2026-05-15T21:39:41.738906Z"
+}

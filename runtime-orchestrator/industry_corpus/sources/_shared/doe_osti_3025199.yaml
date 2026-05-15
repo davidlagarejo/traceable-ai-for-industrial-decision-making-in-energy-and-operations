@@ -1,0 +1,12 @@
+source_id: doe_osti_3025199
+title: "Leveraging reVeal for Data Center Siting [Slides]"
+url: https://www.osti.gov/servlets/purl/3025199
+license: public_domain
+publisher: doe_osti
+version: "2026-03-24"
+added_at: "2026-05-15T21:39:58.655978Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 29 ENERGY PLANNING, POLICY, AND ECONOMY, 97 MATHEMATICS AND COMPUTING, data center, downscaling, projections"
+asset_families:
+  - _shared
+  - datacenter

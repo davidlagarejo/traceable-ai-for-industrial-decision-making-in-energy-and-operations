@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0033",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "stores energy. Therefore, the inductance is conservative and the resistance is nonconservative. The Hamiltonian energy surface is stable in the sense of Lyapunov if H(x) = 0, iff x=0 H(x) > 0, x = 0 . (35)  ̸  H ˙ (x) 0, x = 0 ≤ ∀ ̸ It should be noted here that Lyapunov stability criteria do not imply the  opposite. That is, if a system in not stable in the Lyapunov sense, that does not necessarily mean that the system is unstable. Consider again the system described by (20). Only the terms associated with the ideal inductance are conservative. It is useful to rearrange the formulation as ˆi 0 ωL 0 ˆi d q q L ˆi + ωL 0 0 ˆi = d d dt   −   ˆi 0 0 0 ˆi 0 0      S ˆ R 0 0 ˆi v q q q v S ˆ 0 R 0 ˆi v . (36) dc d d d  −  −  S ˆ 0 S ˆ z 0 0 R ˆi 0 v 0 −        Note the left-hand side of (36) is conservative and the right-hand side is nonconservative. Define 0 ωL 0 Ω = ωL 0 0 (37) −  0 0 0   and R 0 0 R = 0 R 0 . (38)   0 0 R   11 Recalling that the abc to qd0 transform was power variant, the derivative of the Hamiltonian of this system is 3 dˆi H ˙ = ˆiT L qd0 +Ωˆi . (39) 2 qd0 dt qd0 ! Alternatively, using the nonconservative forces, this can equivalently be writ- ten as 3 H ˙ = ˆiT v D Rˆi v . (40) 2 qd0 dc qd0 − qd0 − qd0 (cid:16) (cid:17) For the purpose of this control, the Hamiltonian is separated into qd0 com- ponents such that H = H +H +H . (41) q d 0 Assume the sinusoidal duty cycle takes the form D qcos(θ+δ)+σ a D = qcos(θ 2π +δ)+σ , (42)  b   − 3  D qcos(θ+ 2π +δ)+σ c 3     where q [0,1] is the magnitude of the duty cycle and σ is the offset of the ∈ duty cycle. Then qcos(δ) D = K D = qsin(δ) . (43) qd0 s abc −  σ   Therefore, ˆ D = S [ 1,1], (44) q q ∈ − ˆ D = S [ 1,1], and (45) d d ∈ − ˆ ˆ D = S S = σ. (46) 0 0 z − Because ˆ ˆ D = S S (47) 0 0 z − and ˆ S [0,1], (48) z ∈ it must hold that ˆ S [σ,σ +1] (49) 0 ∈ 12 4.1. 0-Axis Control Formulation For the 0-axis component, the Hamiltonian power surface is 3 3 dˆi H ˙ = ˆi D v Rˆi2 ˆi v = L 0ˆi .",
+  "token_count": 512,
+  "text_sha": "46b66f16f9c2959a7fa0e197d14c6246396e0a51d76c0eb5d420679a611f60ea",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a27448f7::chunk_0020",
+  "source_id": "doe_osti_3362856",
+  "source_sha": "a27448f76a6a8945d449a5e1e3d5a06b",
+  "source_url": "https://www.osti.gov/servlets/purl/3362856",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "2. AHRI, Performance Rating of Commercial and Industrial Unitary Air-conditioning and Heat Pump Equipment. 2024, AHRI: Arlington, VA. 3. ANSI/ASHRAE, ANSI/ASHRAE 37-2009 (RA 2019) Methods of Testing for Rating Electrically Driven Unitary Air-Conditioning and Heat-Pump Equipment. 2019, ASHRAE: Atlanta. 8",
+  "token_count": 40,
+  "text_sha": "3441e59a4f761907f980bdc379860a7d0e264e663e4fc9dec19691809f9c681c",
+  "extracted_at": "2026-05-15T21:40:38.104921Z"
+}

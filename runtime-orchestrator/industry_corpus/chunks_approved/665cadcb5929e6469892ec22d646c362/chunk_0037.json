@@ -1,0 +1,15 @@
+{
+  "chunk_id": "665cadcb::chunk_0037",
+  "source_id": "doe_osti_3023417",
+  "source_sha": "665cadcb5929e6469892ec22d646c362",
+  "source_url": "https://www.osti.gov/servlets/purl/3023417",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Aznar. 2020. An Overview of Behind-the- Meter Solar-Plus-Storage Regulatory Design: Approaches and Case Studies to Inform International Applications. NREL/TP--7A40-75283, 1606152. https://doi.org/10.2172/1606152. References 30 PNNL-39073 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 40,
+  "text_sha": "b82510c843f6b1391706b74db113577faf6fd0d9cfc1d3aa88946205516b3f21",
+  "extracted_at": "2026-05-15T21:38:21.657016Z"
+}

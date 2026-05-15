@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f6a57fd7::chunk_0055",
+  "source_id": "doe_osti_2589816",
+  "source_sha": "f6a57fd79c4c0dff5ea59f1269edfd6e",
+  "source_url": "https://www.osti.gov/servlets/purl/2589816",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Jersey Drayage Electrification Analysis. Retrieved from: https://www.nrel.gov/docs/ fy23osti/83400.pdf. 43 Muratori, Matteo and Brennan Borlaug (2021). Perspectives on Charging Medium- and Heavy- Duty Electric Vehicles. Retrieved from: https:// docs.nrel.gov/docs/fy22osti/81656.pdf. 77 National Grid plc National Grid House Warwick Technology Park Gallows Hill Warwick CV34 6DA United Kingdom nationalgrid.com 78 SER/sirraHM-IMR .5202 rebmetpeS",
+  "token_count": 50,
+  "text_sha": "7218d81727173cbc133523284707561df58c1ad2fc82939b4f7f6f6597d67ec1",
+  "extracted_at": "2026-05-15T21:42:00.869925Z"
+}

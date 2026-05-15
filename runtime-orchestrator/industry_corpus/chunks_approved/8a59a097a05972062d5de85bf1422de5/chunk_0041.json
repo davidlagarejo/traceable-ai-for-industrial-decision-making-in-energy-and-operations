@@ -1,0 +1,14 @@
+{
+  "chunk_id": "8a59a097::chunk_0041",
+  "source_id": "doe_osti_3015698",
+  "source_sha": "8a59a097a05972062d5de85bf1422de5",
+  "source_url": "https://www.osti.gov/servlets/purl/3015698",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Administration, \"Natural Gas Explained,\" 28 April 2023. [Online]. Available: https://www.eia.gov/energyexplained/natural-gas/use-of-natural-gas.php. [25] U.S. Energy Information Administration, \"Petroleum and Other Liquids,\" 1 June 2022. [Online]. Available: https://www.eia.gov/dnav/pet/pet_pri_dist_a_epd2_prt_dpgal_a.htm. [26] S. Ong and R. McKeel, \"National Utility Rate Database,\" in 2012 World Renewable Energy Forum, Denver, Colorado, 2012. [27] U.S. Energy Information Administration, \"Monthly Energy Review,\" 29 July 2024. [Online]. Available: https://www.eia.gov/totalenergy/data/monthly/. 42 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 75,
+  "text_sha": "706d08d25c678ea7a9a3f4f582ddef748adf5c3b2d76336b0fbe32584a87f239",
+  "extracted_at": "2026-05-15T21:40:47.056182Z"
+}

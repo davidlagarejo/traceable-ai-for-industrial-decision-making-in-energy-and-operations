@@ -1,0 +1,14 @@
+{
+  "chunk_id": "169810da::chunk_0073",
+  "source_id": "doe_osti_3030851",
+  "source_sha": "169810da22d9d35c9b19c787ccb075d0",
+  "source_url": "https://www.osti.gov/servlets/purl/3030851",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Natural Language Processing Metrics, Colorado State University, Department of Systems Engineering • David Trinko, PhD 2023 Modeling and simulation to investigate the electrification potential of medium and heavy-duty vehicle fleets, MS 2019 Dataset Processing and Control Type Classification for Acceleration Events, Colorado State University, Department of Systems Engineering 94",
+  "token_count": 49,
+  "text_sha": "f5a80ea6191322c1069b74b7da78b03e5888dfad55e5dff1f8555922d7c789a4",
+  "extracted_at": "2026-05-15T21:39:25.291876Z"
+}

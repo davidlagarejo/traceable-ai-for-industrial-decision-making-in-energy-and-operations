@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0021",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "0  ˆi d = ˆi 0 0 0 ˆi Sˆ Sˆ ˆi ˆi v 0 0 v dc   S S ˆ ˆ a c b − − − S S ˆ ˆ z z z   =L d d t  ˆ ˆ i i a c b  +R   ˆ ˆ i i a c b  +   v v a c b   . (4)  v dc   Sˆ 0  S S ˆ ˆ d q Sˆ z − R 0 0  R 0 0  R 0 0   ˆ ˆ ˆ i i i d 0 q − v v v d 0 q  . (11) It should be noted that in average mode, Sˆ , Sˆ ϵ[0,1]. The  −       x z Note the left-hand side of (11) is conservative and the right- system defined by (3) is transformed from the abc to the qd0 hand side is nonconservative. Define referenceframeusingasdetailedin[12],[13].Defineapower 0 ωL 0 variant transform with a-phase to q-axis alignment Ω= ωL 0 0 (12) cos(θ) cos(θ 2π) cos(θ+ 2π) − 0 0 0  2 − 3 3 K s = 3 sin(θ) sin(θ − 2 3 π) sin(θ+ 2 3 π)  , (5) and   1/2 1/2 1/2 R 0 0   R= 0 R 0 . (13) so that   0 0 R f =K f . (6) qd0 s abc   Recallingthattheabctoqd0transformwaspowervariant,the f abc =K −s 1f qd0 (7) derivative of the Hamiltonian of this system is Substitution of (7) into (4) yields H˙ = 2 3 i T qd0 L d(i d q t d0 ) +Ωiqd0 . (14) Sˆ (cid:18) (cid:19) q v Sˆ = Alternatively,usingthenonconservativeforces,thiscanequiv- dc  d  alently be written as Sˆ Sˆ 0 z − 3  d ˆ i q R ωL 0 ˆi q v q H˙ = 2 i T qd0 (v dc D qd0 − Riqd0 − v qd0 ). (15) L ˆi + ωL R 0 ˆi + v . (8) dt d −  d  d  For the purpose of this control, the Hamiltonian is separated ˆi 0 0 0 R ˆi 0 v 0 into qd0 components such that        The CM disturbance is modeled as being injected into the H =H +H +H . (16) q d 0 0-axis of the qd0 voltage. That is, Let s take the form abc 0, CM disturbance not present v = . (9) cos(θ+δ)+1 0 q (V cm , CM disturbance present s = cos(θ 2π+δ)+1 , (17) abc 2 − 3  cos(θ+ 2π+δ)+1 III. HAMILTONIANSURFACESHAPING 3   As discussed in [14], the Hamiltonian energy surface of a whereq [0,1]isthemagnitudeofthedutycycleands abc = physicalsystemisthesumoftheallconservativeenergy.That [Sˆ a Sˆ b Sˆ∈ c ]T. Then, is,theHamiltoniansurfaceistheenergyacrossallcomponents cos(δ) [ 1,1] which store, but do not dissipate energy. Such components do s =K s = q sin(δ) [ −2",
+  "token_count": 510,
+  "text_sha": "df0a9547a7232d0afedc640a5066b9fed501f4c006f3ffdf06811d03f165eed2",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc8d2944::chunk_0008",
+  "source_id": "doe_osti_3021838",
+  "source_sha": "fc8d2944689c605e1b1734a76a092774",
+  "source_url": "https://www.osti.gov/servlets/purl/3021838",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "This report serves to meet the requirement for the CRADA Final Report with preparation and submission in accordance with the agreement’s Article X Subject Inventions Listing: None. ROI#: None. 4 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 47,
+  "text_sha": "2edcc3842b8c25e94dce3c659958a57fa4f0610e4649871ca8cc48c45b776c4e",
+  "extracted_at": "2026-05-15T21:46:22.718654Z"
+}

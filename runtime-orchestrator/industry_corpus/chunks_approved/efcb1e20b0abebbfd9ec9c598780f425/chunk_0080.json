@@ -1,0 +1,15 @@
+{
+  "chunk_id": "efcb1e20::chunk_0080",
+  "source_id": "doe_osti_3022260",
+  "source_sha": "efcb1e20b0abebbfd9ec9c598780f425",
+  "source_url": "https://www.osti.gov/servlets/purl/3022260",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "projects receive an ITC domestic content bonus. Globally, the price of torque tubes can be as low as $0.025/W in certain regions, particularly in dc markets with lower raw material, fabrication, galvanizing, and manufacturing expenses driven by lower labor or overhead costs (Business Analytiq 2025). However, steel prices are a major driver of price differences. In 2023, for example, U.S. steel cost twice as much as Chinese steel and about 25% higher than Northern European Steel (Chopra and Shangraw 2023). Beyond regional price variations, costs also fluctuate owing to site-specific conditions, such as wind load requirements, soil conditions affecting foundation design, and corrosion protection needs (e.g., galvanization or special coatings for humid or coastal areas). 4.3.5 Upstream Inputs for Torque Tubes For a consolidated discussion of upstream inputs and processing, see Appendix D. 4.4 Fasteners/Clamps This section outlines the supply chain of generic fasteners and clamps used in PV mounting structures, along with their primary input materials, manufacturing processes, and domestic production vs import reliance (Figure 51 and Figure 52). Fasteners and clamps are small but critical BOS components that mechanically secure modules, rails, and structural assemblies in PV systems. They can be categorized as follows: By product type: • Clamps (mid clamps, end clamps, and rail connectors) • Fasteners (bolts, nuts, screws, washers, rivets, and lockbolts). By material: • Steel (commonly used for structural fasteners and utility-scale tracker clamps) • Aluminum (commonly used for module-level clamps in residential/commercial racking). 45 In the absence of sufficient market data, we assume the tax credit value was evenly split between lowering the component price and increasing company profit margins. Companies with higher-profit-margin products without sufficient competitive forces to push down prices may not reduce prices at all when receiving cash flows from the 45X MPTC. Conversely, manufacturers of extremely competitively priced products may need to lower the price of their products by the entire value they receive from the 45X MPTC to achieve competitive pricing. 77 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 341,
+  "text_sha": "e4f8699c9bd7ae4ea6dfac4f1b6131320ffed5e0106e5e83435ab9f3fd76da05",
+  "extracted_at": "2026-05-15T21:45:25.831542Z"
+}

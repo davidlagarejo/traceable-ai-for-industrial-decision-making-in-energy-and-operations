@@ -1,0 +1,11 @@
+source_id: doe_osti_3014572
+title: "Autonomous Hydrogen Fueling Station"
+url: https://www.osti.gov/servlets/purl/3014572
+license: public_domain
+publisher: doe_osti
+version: "2026-01-27"
+added_at: "2026-05-15T21:42:00.876827Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 08 HYDROGEN, Hydrogen robotic refueling automated"
+asset_families:
+  - warehouse_distribution

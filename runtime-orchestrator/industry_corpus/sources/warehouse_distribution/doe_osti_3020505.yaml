@@ -1,0 +1,11 @@
+source_id: doe_osti_3020505
+title: "S&amp;TR Jan/Feb 2026 Vera Rubin Observatory issue"
+url: https://www.osti.gov/servlets/purl/3020505
+license: public_domain
+publisher: doe_osti
+version: "2026-02-26"
+added_at: "2026-05-15T21:42:40.654986Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 07 ISOTOPE AND RADIATION SOURCES, 79 ASTRONOMY AND ASTROPHYSICS, 97 MATHEMATICS AND COMPUTING, Administration and management, Astronomy and AstroPhysics"
+asset_families:
+  - warehouse_distribution

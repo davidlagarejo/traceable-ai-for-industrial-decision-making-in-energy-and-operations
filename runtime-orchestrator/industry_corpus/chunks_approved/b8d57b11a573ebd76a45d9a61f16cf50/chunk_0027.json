@@ -1,0 +1,14 @@
+{
+  "chunk_id": "b8d57b11::chunk_0027",
+  "source_id": "doe_osti_3022261",
+  "source_sha": "b8d57b11a573ebd76a45d9a61f16cf50",
+  "source_url": "https://www.osti.gov/servlets/purl/3022261",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "electricity consumption of the ComStock baseline and the measure scenario by building type Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division 31 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 48,
+  "text_sha": "77f77e7e6c0cde7ba5af1b8759512c959313f4f32722939ca8a6c9b69a30f360",
+  "extracted_at": "2026-05-15T21:40:32.934757Z"
+}

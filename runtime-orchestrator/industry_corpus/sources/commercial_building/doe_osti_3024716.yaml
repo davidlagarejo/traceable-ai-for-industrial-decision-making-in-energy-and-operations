@@ -1,0 +1,11 @@
+source_id: doe_osti_3024716
+title: "ResStock Measure Documentation: HVAC Load Flexibility"
+url: https://www.osti.gov/servlets/purl/3024716
+license: public_domain
+publisher: doe_osti
+version: "2026-03-20"
+added_at: "2026-05-15T21:40:47.061421Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, 97 MATHEMATICS AND COMPUTING, buildings, demand flexibility, demand response"
+asset_families:
+  - commercial_building

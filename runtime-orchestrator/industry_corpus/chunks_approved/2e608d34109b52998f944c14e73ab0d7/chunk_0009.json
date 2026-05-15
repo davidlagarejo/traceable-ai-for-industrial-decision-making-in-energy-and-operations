@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2e608d34::chunk_0009",
+  "source_id": "doe_osti_2999811",
+  "source_sha": "2e608d34109b52998f944c14e73ab0d7",
+  "source_url": "https://www.osti.gov/servlets/purl/2999811",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Potential in the PEP-II B-factory Storage Ring Collider”, in Proc. ICAP'09, San Francisco, CA, USA, Aug.-Sep. 2009, paper THPSC057, pp. 363-366. [14] F. Micolon and B. Podobedov, \"Ground vibration studies in the RHIC tunnel in view of EIC\", in Proc. NAPAC2025, Sacramento, CA, USA, Aug. 2025, pp. 884-887. doi:10.18429/JACoW-NAPAC2025-WEP097",
+  "token_count": 49,
+  "text_sha": "a86d2e27f431bf44c9e7ab15077f5975069a633adb17341bef06e8961c6bc2e9",
+  "extracted_at": "2026-05-15T21:42:50.046738Z"
+}

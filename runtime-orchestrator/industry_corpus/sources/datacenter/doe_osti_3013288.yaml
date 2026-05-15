@@ -1,0 +1,11 @@
+source_id: doe_osti_3013288
+title: "Electromagnetic Transient Modeling of Large Data Centers for Grid-Level Studies"
+url: https://www.osti.gov/servlets/purl/3013288
+license: public_domain
+publisher: doe_osti
+version: "2026-01-15"
+added_at: "2026-05-15T21:40:01.009939Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, datacenter, electromagnetic transients, Large dynamic ditigal loads, power electronics"
+asset_families:
+  - datacenter

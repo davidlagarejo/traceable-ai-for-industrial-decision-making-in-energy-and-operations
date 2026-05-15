@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6410880a::chunk_0009",
+  "source_id": "doe_osti_3006042",
+  "source_sha": "6410880a1523286f67c48aa6ae2bd33e",
+  "source_url": "https://www.osti.gov/servlets/purl/3006042",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "implied, or assumes any legal liability or responsibility for the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately owned rights. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof.",
+  "token_count": 94,
+  "text_sha": "ff3db236ad075e379a20bd3b130a478dd99efbeacdb5b69034abbba201c4ad7d",
+  "extracted_at": "2026-05-15T21:39:42.924626Z"
+}

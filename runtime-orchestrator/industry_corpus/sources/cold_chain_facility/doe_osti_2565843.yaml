@@ -1,0 +1,11 @@
+source_id: doe_osti_2565843
+title: "Highly Resolved Reference Projections of Building Energy Use for the Contiguous United States: Building Sector Energy Baselines, Projection Methods, and Results"
+url: https://www.osti.gov/servlets/purl/2565843
+license: public_domain
+publisher: doe_osti
+version: "2025-05-01"
+added_at: "2026-05-15T21:38:31.610520Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, Annual Energy Outlook (AEO), ComStock, ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, ResStock"
+asset_families:
+  - cold_chain_facility

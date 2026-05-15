@@ -1,0 +1,14 @@
+{
+  "chunk_id": "381180cf::chunk_0012",
+  "source_id": "doe_osti_3096215",
+  "source_sha": "381180cf1da59ac13c8ff299ecaea697",
+  "source_url": "https://www.osti.gov/servlets/purl/3096215",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "equipment at the end of life? Is the remaining refrigerant in retired equipment recycled or thrown away? • Do you have equipment that uses refrigerants that are not hydrocarbons or carbon dioxide? 14 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 50,
+  "text_sha": "9717067b55956fd77bcb3aca606c8c808c496a5942687408ba0d72a1e09e5e7f",
+  "extracted_at": "2026-05-15T21:38:23.513938Z"
+}

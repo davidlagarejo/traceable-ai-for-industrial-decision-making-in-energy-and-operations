@@ -1,0 +1,12 @@
+source_id: doe_osti_3018003
+title: "Large Load Planning, Siting, and Interconnection"
+url: https://www.osti.gov/servlets/purl/3018003
+license: public_domain
+publisher: doe_osti
+version: "2026-02-06"
+added_at: "2026-05-15T21:45:11.752709Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, 29 ENERGY PLANNING, POLICY, AND ECONOMY, data centers, grid planning, large loads"
+asset_families:
+  - _shared
+  - infrastructure_node

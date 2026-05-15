@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f9c59ef7::chunk_0074",
+  "source_id": "doe_osti_3013288",
+  "source_sha": "f9c59ef75df5f75eae1ff2ae6152538d",
+  "source_url": "https://www.osti.gov/servlets/purl/3013288",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "American Electric Reliability Corporation, 25 June 2025. [Online]. Available: https://www.nerc.com/comm/RSTC/LLTF/LLTF_June_Workshop_Presentations.pdf. [Accessed 5 November 2025]. [75] B. A. Ross and G. Paramo, \"Fault Dynamics of Converter-Based Loads,\" North American Electric Reliability Corporation, 21 April 2025. [Online]. Available: https://www.nerc.com/globalassets/who-we-are/standing- committees/rstc/lltf/lltf_april_meeting__technical_workshop_presentations_.pdf. [Accessed 2 December 2025]. References 87",
+  "token_count": 44,
+  "text_sha": "9ae52848a1ed55c31c962d1c56d824289c336698fa650ed6a2ec9d88d4c48fd5",
+  "extracted_at": "2026-05-15T21:40:11.191936Z"
+}

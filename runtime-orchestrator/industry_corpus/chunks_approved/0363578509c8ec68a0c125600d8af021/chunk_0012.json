@@ -1,0 +1,15 @@
+{
+  "chunk_id": "03635785::chunk_0012",
+  "source_id": "doe_osti_3022392",
+  "source_sha": "0363578509c8ec68a0c125600d8af021",
+  "source_url": "https://www.osti.gov/servlets/purl/3022392",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "equipment will be designed to operate unattended and should only require monitoring by OEE personnel and occasional intervention from plant personnel. Routine maintenance items may include filter change outs on rotating equipment and the dehydration unit, addition of oil to compression systems, and periodic sampling. 6",
+  "token_count": 46,
+  "text_sha": "a68e72cc74936c483047a3fa0b2ec5c320c46ad1fc5c88bb738b1e67ee8c03bb",
+  "extracted_at": "2026-05-15T21:46:21.732791Z"
+}

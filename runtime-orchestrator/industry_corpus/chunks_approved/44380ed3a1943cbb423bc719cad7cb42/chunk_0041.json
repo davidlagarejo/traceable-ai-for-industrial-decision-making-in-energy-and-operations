@@ -1,0 +1,14 @@
+{
+  "chunk_id": "44380ed3::chunk_0041",
+  "source_id": "doe_osti_3027760",
+  "source_sha": "44380ed3a1943cbb423bc719cad7cb42",
+  "source_url": "https://www.osti.gov/servlets/purl/3027760",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Electron Microscopy TGA: Thermogravimetric Analysis TiCl : Titanium Chloride 4 TMB: 1,3,5-Trimethylbenzene TMC: Trimesoyl Chloride TOC: Total Overnight Cost TPC: Total Plant Cost TRL: Technology Readiness Level TSA: Temperature Swing Adsorption UB: The State University of New York at Buffalo UHP: Ultra High Purity END OF REPORT 51",
+  "token_count": 48,
+  "text_sha": "a2d8ec5fcdf3447c7535d36c1f7fae90836814232e8f316217e4ec83b59b0cd8",
+  "extracted_at": "2026-05-15T21:46:29.500703Z"
+}

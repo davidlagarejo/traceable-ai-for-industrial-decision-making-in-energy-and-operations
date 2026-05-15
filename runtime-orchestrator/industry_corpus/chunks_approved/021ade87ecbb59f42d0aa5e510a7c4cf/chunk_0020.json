@@ -1,0 +1,15 @@
+{
+  "chunk_id": "021ade87::chunk_0020",
+  "source_id": "doe_osti_3029160",
+  "source_sha": "021ade87ecbb59f42d0aa5e510a7c4cf",
+  "source_url": "https://www.osti.gov/servlets/purl/3029160",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "U.S. Data accessed via Dataweb (https://dataweb.usitc.gov); Mexico and Canada data accessed via UN Comtrade (https://comtradeplus.un.org) 51. Cooper, Charles et al. 2025. \"High-wire act: Is soaring copper demand an obstacle to future growth?\" Wood Mackenzie National Laboratory of the Rockies | 47",
+  "token_count": 41,
+  "text_sha": "9692d48d7a6fdeece9519c775c79e8286dcf175b3bceea877778bb54ff4b203f",
+  "extracted_at": "2026-05-15T21:45:28.392870Z"
+}

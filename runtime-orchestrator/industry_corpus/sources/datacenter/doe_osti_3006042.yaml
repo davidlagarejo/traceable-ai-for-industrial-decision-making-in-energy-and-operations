@@ -1,0 +1,11 @@
+source_id: doe_osti_3006042
+title: "Center for Wind Energy"
+url: https://www.osti.gov/servlets/purl/3006042
+license: public_domain
+publisher: doe_osti
+version: "2025-12-03"
+added_at: "2026-05-15T21:39:41.741376Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 17 WIND ENERGY, wind energy, wind energy research, wind energy research and development"
+asset_families:
+  - datacenter

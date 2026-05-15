@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0014",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "cap from receptacle Current concept is to integrate dust cap with fueling door to avoid having to robotically remove and replace dust cap. Fueling components NREL implemented a Cognex In-Sight 7000 Series Camera that can be integrated with the robot programming (Figure 24). Camera research included research into symbol recognition. NREL also had access to high pressure fueling nozzles including a grip type (WEH) and push-pull type (Walther) for testing and determining which technology would be more suitable for robotic connection, shown in Figure 25. Page 23 of 31 Figure 24: Cognex In-Sight 7000 series camera. Figure 25: WEH and WALTHER-PRÄZISION Nozzles (left to right) Robotic fixture A fixture was designed for testing automotive fueling using a UR10e robot (Figure 26). The receptacle in the fixture is adjustable to represent different approach angles and vehicles. test cell with 80/20 extruded aluminum parts and UR robot stands rather than the initial concept of a weldment. Using this bolt-on approach will allow flexibility to find the best position for the various electrical cabinets. The design is mobile with the aid of a forklift and is easily transported for use with real vehicles after completion of lab testing. Page 24 of 31 Figure 26: Drawing of robotic fixture at NREL The end effector interface to the nozzle was designed to use two pneumatic actuators and a plate for disengagement of the nozzle from the receptacle (see Figure 27). Figure 27: Redesigned End Effector Page 25 of 31 A drawing of the final test cell is shown in Figure 28 and the completed build of the test cell is shown in (Figure 29). Figure 28: NREL test cell design. Figure 29: Test cell complete at NREL. Page 26 of 31 R o b o t p e5 d1 e sta l m .2 ” re a o u ch n t w T e st C e ll F e n ce & E -S to p T B D R o b o t C o n tro lle r a n C o n tro ls C a b in e t ith H d oS se /B re a k u p p o rt M a w a y a st R e co n fig u U ra b R 1 0 le 8 e 0 R o /2 0 b o t S ta n d Lin e a r a ctu a te d n o zzle w ith m a ch in e d m o u n t a n d ca m e ra p o st (T B D ) R e ce p ta cle M o u n t - A d ju sta b le in X , Y , Z p la n e s A test of the robot articulation and functionality was successful. The demonstration realized several benefits of robotic (mechanical) fueling, including: • Robot can be precise • Robot will not drop and damage the nozzle • Higher precision robot leads to less reduced",
+  "token_count": 508,
+  "text_sha": "342176b356c260cc5003a464aa7aed4f21466d3aa4c1073fe9bac5094fb8b627",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

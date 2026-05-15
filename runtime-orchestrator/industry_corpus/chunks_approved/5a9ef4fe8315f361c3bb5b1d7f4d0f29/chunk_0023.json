@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5a9ef4fe::chunk_0023",
+  "source_id": "doe_osti_3024717",
+  "source_sha": "5a9ef4fe8315f361c3bb5b1d7f4d0f29",
+  "source_url": "https://www.osti.gov/servlets/purl/3024717",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Average annual energy bills broken out by fuel type for applicable dwelling units only for advanced air sealing with drill-and-fill wall insulation (air, wall sealing/insulation) and advanced air sealing only 29 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 47,
+  "text_sha": "83a3f121fb73db9e3b1bacbb6f9f1112bbee567c3c74feb2d8bb2758f830e9d3",
+  "extracted_at": "2026-05-15T21:46:16.048248Z"
+}

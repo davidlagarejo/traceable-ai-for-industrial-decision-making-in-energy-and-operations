@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0045",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "cycle saturation in a conventional magnetic transformer are hardware study of a CM insult impacting a conventional discussed; in Section III, the power electronics and controls magnetictransformerisprovided.Aschematicofthecircuit architecture of the proposed CM-resilient SST is described; is shown in Fig. 4a, and a picture of the hardware setup is in Section IV, hardware testing of a single SST in both showninFig.4b.Theparametersforthethree-phasevoltage steady-state and in response to a CM insult is evaluated; in source V , estimated line resistance R , ground resistance ac l Section V, the application of the SST to protect neighboring R , and simulated CM voltage insult (V ) are provided in g cm transformers in the grid is demonstrated; and finally, in Table 1. Section VI, conclusions and directions for future research Simulation results for a magnetic transformer subjected are outlined. to a CM voltage insult are shown in Fig. 5a. Plotted are the primary-side grid voltages and currents. Before the CM II. Half-cycleSaturationinMagneticTransformers insult, the primary-side voltages and currents are sinusoidal In conventional ac power systems, the main purpose of signals with no dc offset. At t = 0 s, the simulated CM a transformer is to step voltages up for long distance insultbeginsandthegridvoltagesimmediatelyincreasedue transmission and step voltages down again for customer to the CM offset. This applied CM voltage also causes a use. Assuming ideal behavior, the transformer functions as CM current to flow through the transformer primary-side linear mutual inductance between two windings, and energy winding and return through R . This dc current is large g is transferred seamlessly between them. In practice, the enough to push the transformer into a region of half-cycle magneticcoreexhibitsseveralnon-idealbehaviors,including saturation, which results in the distorted primary-side grid the phenomenon of magnetic saturation. Although some current shown in Fig. 5a. Similarly, the hardware study degree of saturation is acceptable in many power system results are shown in Fig. 5b. The applied dc CM voltage applications,aHEMPorGMDeventthatinduceslargeGICs pushes the magnetic transformer into half-cycle saturation 2 VOLUME,",
+  "token_count": 327,
+  "text_sha": "e93aea9e9f36d3fa7d745d422fc06ea76c14343b5f936fcf336b3b7d4c4b9d40",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

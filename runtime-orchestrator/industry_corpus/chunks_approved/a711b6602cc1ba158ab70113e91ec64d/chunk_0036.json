@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0036",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "d → ∗d → ∞ 15 4.3. D-Axis Control Formulation For the d-axis components, the Hamiltonian power surface is 3 3 dˆi H ˙ = ˆi D v Rˆi2 ˆi v = L dˆi ωLˆi ˆi . (74) d 2 d d dc − d − d d 2 dt d − d q ! (cid:16) (cid:17) ˙ The goal is to drive H to its steady-state value. From (74), it can be seen d that driving the q-axis current to any steady-state value will drive the d-axis Hamiltonian to 3ωLiSSiSS, where iSS and iSS are the steady-state q- and −2 q d q d d-axis current components. In general,ˆi is not identically zero. Choose the d control law ωLˆi +v +Ri di k k D = − d d ∗d +L ∗0 + p i ˆi + i i ˆi dt. (75) d v dt v ∗d − d v ∗d − d dc dc dc Z (cid:16) (cid:17) (cid:16) (cid:17) If i is constant, then ∗d di L ∗d = 0. (76) dt Then, (74) becomes d (k +R) i ˆi +k i ˆi dt+L i ˆi = 0, (77) p ∗d − d i ∗d − d dt ∗d − d Z (cid:16) (cid:17) (cid:16) (cid:17) (cid:16) (cid:17) where k > 0 and k > 0 are the proportional and integral respectively. p i Using analysis similar to that earlier discussed for the q-axis Hamiltonian component, it can similarly be shown that lim i ˆi = 0 (78) t ∗d − d →∞ (cid:16) (cid:17) and ˙ lim H (t) = ωLi i . (79) t d − ∗q ∗d →∞ Therefore, ˙ ˙ ˙ ˙ lim H = lim H +H +H = ωLi i ωLi i +0 = 0. (80) t t q d 0 ∗q ∗d − ∗q ∗d →∞ →∞ (cid:16) (cid:17) 5. Implementation with Limited Sensoring For practical application, it may not be feasible to measure the grid volt- ages for feedback into the controller as described by (53), (67), and (75). That is, cost or other considerations may prohibit the placement of these additional sensors. In this section, the effects of omitting the grid voltage term (v , v , and v ) are discussed. q d 0 16 5.1. Omitting q-Axis Grid Voltage (v ) from the Control Loop q If the grid voltage is relatively stiff, the q-axis grid voltage may be ap- proximated as a constant value v = V constant. (81) q q ≡ (70) then becomes u q (t) = C 5 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 6 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit + V q (82) k i and u˙ q (t) = i ∗q − i q = C 7 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 8 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit, (83) where C , C , C , and C are arbitrary constants. Then, 5 6 7 8 lim i ˆi",
+  "token_count": 508,
+  "text_sha": "276951bc56a7e73becca0434e610456dad9f4235019e3dbc3087d180f2984ab6",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

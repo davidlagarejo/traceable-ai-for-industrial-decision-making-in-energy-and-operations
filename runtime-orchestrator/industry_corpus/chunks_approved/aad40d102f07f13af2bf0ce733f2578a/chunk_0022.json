@@ -1,0 +1,14 @@
+{
+  "chunk_id": "aad40d10::chunk_0022",
+  "source_id": "doe_osti_3017156",
+  "source_sha": "aad40d102f07f13af2bf0ce733f2578a",
+  "source_url": "https://www.osti.gov/servlets/purl/3017156",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "European PV Solar Energy Conference, 2008. [12] Detailed Cost Analysis Model (DCAM). (2025). US Department of Energy and the National Renewable Energy Laboratory, Golden, CO. [Online]. Available: https://dcam.openei.org [13] B. S. SJ Andrews, MG Deceglie, KA Horowitz, and TJ Silverman. . \"NREL Comparative PV LCOE Calculator - Version 2.0.0.\" NREL. https://www.nrel.gov/pv/lcoe-calculator/ (accessed 2024). [14] Longi. Hi-MO7 (LR8-66HGD-625M) Topcon module data sheet. (2025). Longi Solar. [15] Longi. \"Longi claims world’s highest efficiency for silicon solar cells.\" PV-Magazine. https://www.pv-magazine.com/2025/04/14/longi-claims-worlds-highest-efficiency-for- silicon-solar-cells/ (accessed 2025). Page 29 of 30 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications. [16] P. Verlinden et al., \"Photovoltaic device innovation for a solar future,\" Device, vol. 1, no. 1, p. 100013, 2023/07/21 2023, doi: https://doi.org/10.1016/j.device.2023.100013. [17] \"Maxeon \" https://www.maxeon.com/maxeon-solar-panels (accessed 2025). [18] I. M. Peters, J. Hauch, C. Brabec, and P. Sinha, \"The value of stability in photovoltaics,\" Joule, vol. 5, no. 12, pp. 3137-3153, 2021/12/15/ 2021, doi: https://doi.org/10.1016/j.joule.2021.10.019. Page 30 of 30 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 179,
+  "text_sha": "45204b65e9a79a21759090107580c032a19ac1890047d2a167a55be9b4809edc",
+  "extracted_at": "2026-05-15T21:46:34.611635Z"
+}

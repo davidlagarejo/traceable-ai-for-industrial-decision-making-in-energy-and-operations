@@ -1,0 +1,11 @@
+source_id: doe_osti_3018766
+title: "Feasibility Analyses for the Microgrid of the Mountain in the Cordillera Central Region of Puerto Rico"
+url: https://www.osti.gov/servlets/purl/3018766
+license: public_domain
+publisher: doe_osti
+version: "2026-01-01"
+added_at: "2026-05-15T21:44:04.189763Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, Design-Basis Threats, Droop Curve, HAZOP, Microgrid"
+asset_families:
+  - infrastructure_node

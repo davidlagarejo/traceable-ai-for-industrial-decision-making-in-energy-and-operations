@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0034",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "z − and ˆ S [0,1], (48) z ∈ it must hold that ˆ S [σ,σ +1] (49) 0 ∈ 12 4.1. 0-Axis Control Formulation For the 0-axis component, the Hamiltonian power surface is 3 3 dˆi H ˙ = ˆi D v Rˆi2 ˆi v = L 0ˆi . (50) 0 2 0 0 dc − 0 − 0 0 2 dt 0 (cid:16) (cid:17) Dropping the 3ˆi factor, (50) becomes 2 0 dˆi D v Rˆi v = L 0 . (51) 0 dc 0 0 − − dt ˙ The goal is to drive H to zero in its limit. From (51), it can be seen that 0 driving the 0-axis current to any steady-state value will drive the 0-axis Hamiltonian to zero. Choose K0 K0 S ˆ = p i ˆi + i i ˆi dt; (52) 0 v ∗0 − 0 v ∗0 − 0 dc dc Z (cid:16) (cid:17) (cid:16) (cid:17) and Ri +v L dˆi K0 K0 S ˆ = ∗0 0 0 p i ˆi i i ˆi dt. (53) z − v − v dt − v ∗0 − 0 − v ∗0 − 0 dc dc dc dc Z (cid:16) (cid:17) (cid:16) (cid:17) For the controller to be valid, it must hold that di < ∗0 < . (54) −∞ dt ∞ That is, any change in the reference current must be gradual. Then, (51) becomes d L i ˆi + K0z +R i ˆi +K0z i ˆi = 0, (55) dt ∗0 − 0 p ∗0 − 0 i ∗0 − 0 Z (cid:16) (cid:17) (cid:16) (cid:17) (cid:16) (cid:17) (cid:0) (cid:1) or Lu¨ + K0z +R u˙ +K0zu = 0; (56) 0 p 0 i 0 where (cid:0) (cid:1) u = i ˆi dt, (57) 0 ∗0 − 0 Z (cid:16) (cid:17) K0z = K0 Kz, (58) p p − p and K0z = K0 Kz. (59) i i − i 13 K0 > 0 and K0 > 0 are the proportional and integral gains for the 0-axis p i controller; and Kz > 0 and Kz > 0 are the proportional and integral gains p i for the leg 4 controller. (56) has the solution u 0 (t) = C 1 e− (Kp 0z+R)+ √ 2 ( L Kp 0z+R)2 − 4LKi t +C 2 e− (Kp 0z+R) − √ 2 ( L Kp 0z+R)2 − 4LKi t (60) and u˙ 0 (t) = C 3 e− (Kp 0z+R)+ √ 2 ( L Kp 0z+R)2 − 4LKi t +C 4 e− (Kp 0z+R) − √ 2 ( L Kp 0z+R)2 − 4LKi t. (61) Therefore, if (K0z +R)2 4LK0z, then p ≤ i lim u˙ (t) = lim i ˆi = 0 (62) t 0 t ∗0 − 0 →∞ →∞ (cid:16) (cid:17) or limˆi = i constant (63) t 0 ∗0 ≡ →∞ Therefore, from (50), it must also hold that ˙ lim H (t) = 0. (64) 0 t →∞ It is not recommended to attempt to critically damp the controller by choosing(K0z R)2 = 4LK0z. ThisisbecausethevaluesofLandR maynot",
+  "token_count": 512,
+  "text_sha": "b980d73c17289ba8dd765aef082734157289260120b0333cc97840245cad9fa8",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

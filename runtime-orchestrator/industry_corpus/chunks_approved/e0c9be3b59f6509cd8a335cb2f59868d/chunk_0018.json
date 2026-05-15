@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e0c9be3b::chunk_0018",
+  "source_id": "doe_osti_3024211",
+  "source_sha": "e0c9be3b59f6509cd8a335cb2f59868d",
+  "source_url": "https://www.osti.gov/servlets/purl/3024211",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "value for Solar PV in Box 17 0 Cost Analysis Box 18: Box 19: Box 20: Box 21: Box 22: Box 23: Box 24: Heating Cost Heating Cost Cooling Cost Multiplier Plug Loads Cost Lighting Cost Enter Cost Solar Cost Multiplier Multiplier for Gas Multiplier for for Electricity Multiplier for Multiplier for Multiplier on for Electricity Operational Cost Multipliers Electricity Electricity Electricity Selected DHW $869 ft2/kBtu Card $3,165 ft2/kBtu $3,165 ft2/kBtu $3,165 ft2/kBtu $3,165 ft2/kBtu $869 ft2/kBtu $3,165 ft2/kBtu Box 25: Box 26: Box 27: Box 28: Box 29: Box 30: Box 31: Box 32: Sum of Capital Costs Box 10 * Box 18 Box 11 * Box 19 Box 12 * Box 20 Box 13 * Box 21 Box 14 * Box 22 Box 15 * Box 23 Total Operational from All Selected Cards Cost = Sum Box 26 Cost Analysis Above thru 31 + (Box 17 * $5,084 $18,515 $39,879 $72,795 $22,155 $3,476 Box 24) $281,372 $161,904 Box 33: Total Savings Total Savings = $196,678 – Box 32 $34,774 Box 34: Payback Payback = Box 25 / Box 33 8.1 years 32 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 201,
+  "text_sha": "253db4f26ef627ae6d0a122d4ef800048ab35c5ad79d9837be28c13358929a6c",
+  "extracted_at": "2026-05-15T21:40:59.732335Z"
+}

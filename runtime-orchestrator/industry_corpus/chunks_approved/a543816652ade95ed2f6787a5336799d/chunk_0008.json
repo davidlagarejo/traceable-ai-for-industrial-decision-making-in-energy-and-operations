@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a5438166::chunk_0008",
+  "source_id": "doe_osti_3019910",
+  "source_sha": "a543816652ade95ed2f6787a5336799d",
+  "source_url": "https://www.osti.gov/servlets/purl/3019910",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "climate resiliency: Solving a large- scale stochastic capacity expansion problem with mpi-sppy,\" Electric Power Systems Research, vol. 235, 2024. [20] M. Bynum, A. Staid, B. Arguello, A. Castillo, B. Knueven, C. Laird and J.-P. Watson, \"Proactive Operations and Investment Planning via Stochastic Optimization to Enhance Power Systems’ Extreme Weather Resilience,\" Journal of Infrastructure Systems, vol. 27, no. 2, 2021. [21] J. Iyer, P. Roy, D. Nguyen and J. Stolaroff, \"Systems and methods for periodic nodal surface based reactors, distributors, contactors and heat exchangers\". United States Patent US11885568B2, 1 7 2021. Data Center Market Report – LLNL-TR-2013901 11 [22] P. Roy, D. Nguyen and J. Stolaroff, \"Hierarchical triply periodic minimal surface structures as heat exchangers and reactors\". United States Patent US11389765B2, 09 01 2019. [23] N. Singer, \"Electrical circuits encased in fluid may reshape data-center design,\" Sandia National Laboratories, 30 May 2024. [Online]. Available: https://www.sandia.gov/labnews/2024/05/30/hpc-cooling/. [24] \"An Innovative Approach to Cooling High Power Devices,\" Lawrence Livermore National Laboratory, [Online]. Available: https://ipo.llnl.gov/technologies/instruments-sensors-and-electronics/innovative-approach-cooling-high-power-devices. [25] S. Patra and R. Deri, \"Systems and methods for cooling high power devices\". United States Patent US20240243545A1, 17 01 2023. [26] \"NNSA and Cornelis Networks to collaborate on next-generation high-performance networking,\" Lawrence Livermore National Laboratory, 4 May 2022. [Online]. Available: https://www.llnl.gov/article/48631/nnsa-cornelis-networks-collaborate-next- generation-high-performance-networking. [27] \"HPC for Energy Innovation announces funding for new energy efficiency projects,\" Lawrence Livermore National Laboratory, 11 March 2024. [Online]. Available: https://www.llnl.gov/article/50986/hpc-energy-innovation-announces-funding-new-energy- efficiency-projects. Data Center Market Report – LLNL-TR-2013901 12",
+  "token_count": 233,
+  "text_sha": "8cfd7a41a4fdc4d3e80947b9c568af2fdc51c11cfe23346f68c20b85ae3165a8",
+  "extracted_at": "2026-05-15T21:39:33.168965Z"
+}

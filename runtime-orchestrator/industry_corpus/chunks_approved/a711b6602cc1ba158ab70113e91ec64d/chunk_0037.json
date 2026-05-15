@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0037",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "i ∗q − i q = C 7 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 8 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit, (83) where C , C , C , and C are arbitrary constants. Then, 5 6 7 8 lim i ˆi = 0. (84) t ∗q − q →∞ (cid:16) (cid:17) From (65) ˙ lim H (t) = ωLi i . (85) q ∗q ∗d t →∞ 5.2. Omitting d-Axis Grid Voltage (v ) from the Control Loop d If the grid voltage is relatively stiff, the q-axis grid voltage may be ap- proximated as a constant value v = V constant. (86) d d ≡ (74) then becomes u d (t) = C 5 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 6 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit + V d (87) k i and u˙ d (t) = i ∗d − i d = C 7 e− (kp+R)+ √ 2 ( L kp+R)2 − 4Lkit +C 8 e− (kp+R) − √ 2 ( L kp+R)2 − 4Lkit, (88) where C , C , C , and C are arbitrary constants. Then, 5 6 7 8 lim i ˆi = 0. (89) t ∗d − d →∞ (cid:16) (cid:17) From (74) ˙ lim H (t) = ωLi i . (90) t d − ∗q ∗d →∞ 17 5.3. Omitting 0-Axis Grid Voltage (v ) from the Control Loop 0 The the impact omitting the q- and d-axis cases were trivial assuming stiff q- and d-axis components at the grid end. However, in the presence of a CM disturbance, the 0-axis component of the voltage cannot be constant. For mitigation of E2 disturbances, it is recommended that at least the 0- axis voltage be used in the feedback loop. Otherwise, direct stability analysis may become intractably complex. However, if only E3 mitigation is required, v may be omitted from the feedback loop to reduce cost. For a ramped 0 common mode insult, the 0-axis voltage may be represented as 0, if t < t cm v (t) = Vcm (t t ), if t < t t +T , (91) 0  Trise − cm cm ≤ cm rise  V , if t t +T cm cm rise ≥  where V is the final magnitude of the ramped common mode insult, T cm rise is the rise time of the common mode insult, and t is the inception time of cm the common mode insult. For an E3 insult, only the limiting behavior is of interest. That is, any epoch much greater than the system period (1/f) may be treated as indef- initely sustained. Therefore, only the interval t t + T needs to be cm rise ≥ considered in determining stability. Considering this time interval only, For t t +T ,(56) has the solution cm rise ≥ u 0 (t) = C 1 e− (Kp 0z+R)+ √ 2 ( L Kp 0z+R)2 − 4LKi t+C 2 e− (Kp 0z+R) − √",
+  "token_count": 510,
+  "text_sha": "03422186a63d057b4447b64d4cdef211db39f4b03a80c761802cd079bf110cfb",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2e62340d::chunk_0015",
+  "source_id": "doe_osti_3019822",
+  "source_sha": "2e62340d9bd0e00a34a6f4d0684dff61",
+  "source_url": "https://www.osti.gov/servlets/purl/3019822",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "coating. This study encourages further development of electrospray processing as a new method of fabricating EC material thin films with high quality, which we envision to have the potential to meet manufacturing demands in the practical application in the future. Composite materials with LCs We also conducted film synthesis work with LC materials when blended in with the PVDF terpolymer. The information on the chosen LCs are shown below. 20 DE-EE0009099 Figure 7 – Liquid crystals used in this project with their electrocaloric properties (temperature lift) using two methods for measurement. Only 5CB, 8CB, and 12CB were used in this work. We blended up to 30 wt% of these LCs with the PVDF terpolymer and found the films either wet or difficult to reproduce. We will attach some slides describing this work and the characterization as an addendum to this report. However, the figure below summarizes the impact of blending these different materials into the PVDF terpolymer. More on these results can be found in our 2024 Q1 report, though I can amend this report if the DOE would prefer. The general result indicates that the adding of LC did not enhance the electrocaloric behavior of our films when tested under room temperature conditions. This is likely because the LCs are less electroactive at room temperature. Additional information is provided in the table below. We could have tested these films for their electrocaloric behavior at higher temperatures (closer to their activation temperature), but the project ended. We requested an extension with a small amount of additional funding to support this work through the end of 2025, but the transition of administration ended discussion on updated contracts with the DOE and we ceased program activity (outside of manuscript preparation) in early 2025. Even though these results were not what we hoped, we still fulfilled the milestones by making the composite films and testing their properties. 21 )Co( TD ECE 6 5 4 3 2 1 0 2 0 3 5 3 5 3 T %%%%%e 5 C B lo a d in g 5 C B lo a d in g 8 C B lo a d in g 8 C B lo a d in g 1 2 C B lo a d in g rp o ly m e r (0 % L C lo a d 4 0 6 0 E le c tric F ie ld in g (M ) V /m 8 ) 0 1 0 0 Figure 8 – Temperature lift from terpolymer loaded with various LCs at room temperature DE-EE0009099 22 E E x L x p i p e r D t eD e r D i m e n a t a r a t u r a t a i m e n a t a t e t a l a l M P P P 5 8 1 P1 P1 P1 P P P a t e r i a l s – U n a n n e a l e d – A n n e a l e",
+  "token_count": 512,
+  "text_sha": "75ed9a18c32048caead31fcafa486fb50b1551a00b20df1a3cfdec418e15dfa2",
+  "extracted_at": "2026-05-15T21:46:38.094170Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "b99051bc::chunk_0035",
+  "source_id": "doe_osti_3015389",
+  "source_sha": "b99051bcb3a66519ddc0fa42843c8e14",
+  "source_url": "https://www.osti.gov/servlets/purl/3015389",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Study: Operational Analysis of U.S. Power Systems with Increased Electrification and Demand-Side Flexibility (No. NREL/TP-- 6A20-79094, 1785329, MainId:33320; p. NREL/TP--6A20-79094, 1785329, MainId:33320). https://doi.org/10.2172/1785329 34 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 41,
+  "text_sha": "a5dfc97abab0f61bb1cf0ba5363e9889da181a8fca37e2edb589b65d05d230a4",
+  "extracted_at": "2026-05-15T21:45:31.565600Z"
+}

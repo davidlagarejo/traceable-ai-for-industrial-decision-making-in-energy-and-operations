@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0006",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "assumed that the truck is on a flat, level surface and the receptacle is parallel to the ground. In this application, we have the luxury of controlling the design of the fuel cell system; the automotive application will require more degrees of freedom. The robotic mechanism will be sited next to a manual hydrogen dispenser (See Figure 5) so that they can share a common set of plumbing and the manual dispenser can be used as a backup during the early phases of reliability testing. Figure 5: Robotic mechanism next to GenFuel hydrogen dispenser. Further design considerations include a switch located on the receptacle will detect the presence of the nozzle and signal the fuel cell system that it is in the fueling state. An infrared transmitter located near the receptacle will transmit the hydrogen tank temperature to an infrared receiver on the nozzle, as specified in the SAE J2601 Page 10 of 31 standards. Data transmission and firmware updates will be accomplished using a wireless protocol that connects to the Plug Power cloud. Finally, the unit identification to the dispenser will be accomplished using the AR tags. Design of SCARA Robot Mechanism Safety concepts were evaluated and the team compiled a set of applicable standards (Figure 6). Figure 6: Applicable Standards. A preliminary risk analysis and reduction methodology per ISO 12100 was completed. One result of the analysis was identification of pressurized housings for all motors to meet the Class 1, Zone 2 hazard requirements for the dispenser (Figure 7). Figure 7: Safety approach for motors. Page 11 of 31 T y p e o f s ta n d a rd T y p e -A s ta n d a rd B a s ic s a fe ty s ta n d a r d s T y p e -B 1 s ta n d a rd G e n e r ic s a fe ty s ta n d a rd s fo r s p e c ific s a fe ty a s p e c ts T y p e -B 2 s ta n d a rd G e n e r ic s a fe ty s ta n d a rd s fo r s a fe g u a rd s T y p e -C s ta n d a rd M a c h in e s a fe ty s ta n d a rd s (p r o d u c t s ta n d a r d ) N u m b e r o f s ta n d a rd IS O 1 2 1 0 0 IS O 1 3 8 5 4 IE C 6 0 2 0 4 -1 IS O 1 3 8 4 9 -1 IS O 1 3 8 5 7 IS O 1 3 8 5 5 IS O 1 3 8 5 0 IE C 6 1 4 9 6 -1 IS O 1 4 1 1 9 IS O 1 4",
+  "token_count": 512,
+  "text_sha": "57305335227086f72bb01de565bfdcb22abbd283a1314d3311582c5d03d132e1",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

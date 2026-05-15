@@ -1,0 +1,14 @@
+{
+  "chunk_id": "295c7dbc::chunk_0013",
+  "source_id": "doe_osti_3030034",
+  "source_sha": "295c7dbc51acf5abd4b3cf6e4830d32a",
+  "source_url": "https://www.osti.gov/servlets/purl/3030034",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "of overall stock-level site energy savings. Figure 12. Annual utility bills per dwelling unit for all homes 16 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications. References Alliance, G. B. (2025). Air Sealing and Ventilation. Retrieved from gba.org: https://gba.org/resources/green-building-methods/interior-solutions/air-sealing-and- ventilation/ DOE. (2025). Air Sealing Your Home. Retrieved from energy.gov: https://www.energy.gov/energysaver/air-sealing-your-home Lou, Y., & Liu, L. (2025). ResStock 2025.1 SDR Duct Sealing and Insulation Upgrade Documentation. Retrieved from https://docs.nlr.gov/docs/fy26osti/96344.pdf NLR. (2025). End-Use Load Profiles for the U.S. Building Stock. Retrieved from https://www.nlr.gov/buildings/end-use-load-profiles Phoung, S., Lou, Y., & White, P. (2025a). ResStock SDR 2025.1 Documentation: Advanced Air Sealing. Retrieved from https://docs.nlr.gov/docs/fy26osti/96738.pdf Phoung, S., Lou, Y., & White, P. (2025b). ResStock SDR 2025.1 Documentation: Attic Floor Insulation for Unfinished Attics. Retrieved from https://docs.nlr.gov/docs/fy26osti/96739.pdf Reyna, J., Fontanini, A., Parker, A., Present, E., Liu, L., Adhikari, R., . . . Wilson, E. (2025). ResStock Technical Reference Documentation, Active Development Version. National Renewable Energy Laboratory, Golden, CO. Retrieved from https://NatLabRockies.github.io/ResStock.github.io/assets/trd/ResStockTechnicalReferen ceGuide_2025_1.pdf 17 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 180,
+  "text_sha": "33eb47bfe993a44aaa356f4cba453c3e55085813ac1ada16057b7b88c581ae1c",
+  "extracted_at": "2026-05-15T21:41:01.473728Z"
+}

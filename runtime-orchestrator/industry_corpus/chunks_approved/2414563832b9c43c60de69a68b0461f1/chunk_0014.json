@@ -1,0 +1,16 @@
+{
+  "chunk_id": "24145638::chunk_0014",
+  "source_id": "steamloc_steam_traps_whitepaper",
+  "source_sha": "2414563832b9c43c60de69a68b0461f1",
+  "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "reductions on greenhouse gasses. Appreciate you took some of your valuable time to study this paper. Feel free to contact us for more detail. Marc Froeyen Steamloc International www.steamloc.org You can reach the author at marc.froeyen@steamloc.org 9 Marc Froeyen March 2015 / SL801 Rev0",
+  "token_count": 44,
+  "text_sha": "71549c7d7c4b1683f9ee87f0d5c544b3e9ddf1e196b8b8a1203b304e73fb2565",
+  "extracted_at": "2026-05-15T21:35:32.402289Z"
+}

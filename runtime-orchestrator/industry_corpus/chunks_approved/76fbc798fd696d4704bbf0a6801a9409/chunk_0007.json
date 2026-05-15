@@ -1,0 +1,14 @@
+{
+  "chunk_id": "76fbc798::chunk_0007",
+  "source_id": "doe_osti_2571203",
+  "source_sha": "76fbc798fd696d4704bbf0a6801a9409",
+  "source_url": "https://www.osti.gov/servlets/purl/2571203",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "this project complete, PPAC is better equipped than ever to fulfill its mission: to serve the entertainment needs of Rhode Island, connect the community to educational opportunities, preserve the historic integrity of the building and maintain fiscal responsibility while engaging and enriching the lives of all who enter its doors.",
+  "token_count": 50,
+  "text_sha": "ad1c321cf3417a3b96239e72eca7e642585ce49c11d7fe691815236354e1301d",
+  "extracted_at": "2026-05-15T21:42:34.310427Z"
+}

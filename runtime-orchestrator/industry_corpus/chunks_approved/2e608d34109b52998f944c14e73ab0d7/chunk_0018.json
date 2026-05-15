@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2e608d34::chunk_0018",
+  "source_id": "doe_osti_2999811",
+  "source_sha": "2e608d34109b52998f944c14e73ab0d7",
+  "source_url": "https://www.osti.gov/servlets/purl/2999811",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Proc. ICAP'09, San Francisco, CA, USA, Aug.-Sep. 2009, paper THPSC057, pp. 363-366. [14] F. Micolon and B. Podobedov, \"Ground vibration studies in the RHIC tunnel in view of EIC\", in Proc. NAPAC2025, Sacramento, CA, USA, Aug. 2025, pp. 884-887. doi:10.18429/JACoW-NAPAC2025-WEP097",
+  "token_count": 40,
+  "text_sha": "af091710b791adf218fd3d29cf5f040f75166e8020063f4b92a5af6fe885ffe3",
+  "extracted_at": "2026-05-15T21:42:50.046738Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3363066
+title: "NLR's FleetDNA Speed Distributions for EPA MOVES"
+url: https://www.osti.gov/servlets/purl/3363066
+license: public_domain
+publisher: doe_osti
+version: "2026-05-04"
+added_at: "2026-05-15T21:41:16.293569Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 33 ADVANCED PROPULSION SYSTEMS, CE-CERT, FleetDNA, MOVES3, vehicle miles traveled"
+asset_families:
+  - warehouse_distribution

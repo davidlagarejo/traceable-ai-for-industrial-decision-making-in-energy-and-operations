@@ -1,0 +1,15 @@
+{
+  "chunk_id": "31025171::chunk_0015",
+  "source_id": "doe_osti_3018003",
+  "source_sha": "3102517152df7b68b78a189942483775",
+  "source_url": "https://www.osti.gov/servlets/purl/3018003",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "retains a nonexclusive, paid-up, irrevocable, worldwide license to Photo by Josh Bauer / Bryan Bechtold, National Laboratory of the Rockies 82067 publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes.",
+  "token_count": 40,
+  "text_sha": "4bccd7887fa94144a06c84b18f00abdbeb75bf340c58fa636fb1b5f922bc6b57",
+  "extracted_at": "2026-05-15T21:45:14.261140Z"
+}

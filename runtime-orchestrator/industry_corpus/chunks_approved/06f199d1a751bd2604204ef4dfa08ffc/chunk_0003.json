@@ -1,0 +1,14 @@
+{
+  "chunk_id": "06f199d1::chunk_0003",
+  "source_id": "doe_osti_3017686",
+  "source_sha": "06f199d1a751bd2604204ef4dfa08ffc",
+  "source_url": "https://www.osti.gov/servlets/purl/3017686",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "supported Realta Fusion in setting up their own instances of WarpX. We presented our results at the American Physical Society Division of Plasma Physics meeting and are in the process of writing a publication that will be submitted to a peer-reviewed journal to share our results with the broader community.",
+  "token_count": 50,
+  "text_sha": "11f213b76a3e05250681e3a2399725382f071508be1cdf5fb1692d40fc85b06d",
+  "extracted_at": "2026-05-15T21:46:35.190517Z"
+}

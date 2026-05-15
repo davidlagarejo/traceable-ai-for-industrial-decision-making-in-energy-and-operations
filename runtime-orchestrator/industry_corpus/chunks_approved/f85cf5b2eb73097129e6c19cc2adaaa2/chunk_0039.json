@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f85cf5b2::chunk_0039",
+  "source_id": "doe_osti_3020763",
+  "source_sha": "f85cf5b2eb73097129e6c19cc2adaaa2",
+  "source_url": "https://www.osti.gov/servlets/purl/3020763",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "deliverables and cross-partner learnings that remain applicable to future DOE Connected Communities and grid-edge programs. The integration design, communication architecture, and cybersecurity methodologies serve as a tested foundation for subsequent initiatives pursuing scalable, utility-managed DER coordination and community energy resilience. 36",
+  "token_count": 41,
+  "text_sha": "72a3b80acaf2668a17a8bfe2bf0030eb30a5860013d5f7dd5a6d68e3c121ad69",
+  "extracted_at": "2026-05-15T21:46:08.564641Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3011887
+title: "Considerations for Distributed Edge Data Centers and Use of Building Loads to Support Large Interconnections"
+url: https://www.osti.gov/servlets/purl/3011887
+license: public_domain
+publisher: doe_osti
+version: "2025-11-01"
+added_at: "2026-05-15T21:39:38.912542Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, affordability, artificial intelligence, buildings, data center"
+asset_families:
+  - datacenter

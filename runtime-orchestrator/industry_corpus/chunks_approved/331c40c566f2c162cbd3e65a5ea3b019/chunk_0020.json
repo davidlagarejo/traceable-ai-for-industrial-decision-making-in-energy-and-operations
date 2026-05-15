@@ -1,0 +1,14 @@
+{
+  "chunk_id": "331c40c5::chunk_0020",
+  "source_id": "doe_osti_2584244",
+  "source_sha": "331c40c566f2c162cbd3e65a5ea3b019",
+  "source_url": "https://www.osti.gov/servlets/purl/2584244",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "HPE whitepapers). The work completed under this CRADA has been documented in OSTI as Artificial Intelligence for Data Center Operations (AI Ops), OSTI ID: 1783088. A link to the technical report is provided: https://doi.org/10.2172/1783088 16 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 46,
+  "text_sha": "21839b0ed5bcb2da90f038c564061f7709796d6a53ff7f15df60697fa1cc12b5",
+  "extracted_at": "2026-05-15T21:39:49.229888Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4e341f80::chunk_0030",
+  "source_id": "doe_osti_3024716",
+  "source_sha": "4e341f80e89def0001f35651232f9b20",
+  "source_url": "https://www.osti.gov/servlets/purl/3024716",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Energy. Retrieved from https://www.eia.gov/consumption/residential/data/2020/pdf/2020%20RECS%20CE%20 Methodology_Final.pdf Xcel. (2021). AC Rewards Program Evaluation. Retrieved from https://www.xcelenergy.com/staticfiles/xe- responsive/Company/Rates%20&%20Regulations/Regulatory%20Filings/CO- DSM/2021%20AC%20Rewards%20Evaluation.pdf Xcel Energy. (2024). Retrieved from Time of Use: https://co.my.xcelenergy.com/s/billing- payment/residential-rates/time-of-use-pricing 32 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 44,
+  "text_sha": "7a08194e13bb7ae3a7a057d8fc37a2014556833b8a110340e64c2a11c9724006",
+  "extracted_at": "2026-05-15T21:40:51.179817Z"
+}

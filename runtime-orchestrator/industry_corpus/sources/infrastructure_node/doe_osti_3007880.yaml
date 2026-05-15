@@ -1,0 +1,11 @@
+source_id: doe_osti_3007880
+title: "A North Carolina Retrospective: Major Outage Event Trends &amp; Hurricane Helene using TASTI-GRID"
+url: https://www.osti.gov/servlets/purl/3007880
+license: public_domain
+publisher: doe_osti
+version: "2026-11-01"
+added_at: "2026-05-15T21:45:31.569884Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION"
+asset_families:
+  - infrastructure_node

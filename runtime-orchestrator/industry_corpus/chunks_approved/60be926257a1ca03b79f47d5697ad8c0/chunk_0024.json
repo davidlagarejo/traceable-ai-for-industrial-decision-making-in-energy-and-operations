@@ -1,0 +1,14 @@
+{
+  "chunk_id": "60be9262::chunk_0024",
+  "source_id": "doe_osti_2588544",
+  "source_sha": "60be926257a1ca03b79f47d5697ad8c0",
+  "source_url": "https://www.osti.gov/servlets/purl/2588544",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "[Online]. Available: https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T07.06#/?f=A [18] A. Walker, “SOLAR ENERGY: Technologies and Project Delivery for Buildings,” 2013. [19] National Renewable Energy Laboratory, “NREL Annual Technology Baseline (ATB).” Accessed: Jun. 08, 2025. [Online]. Available: https://atb- archive.nrel.gov/electricity/2020/index.php?t=sd 20 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 45,
+  "text_sha": "d3f779faf98f2c0436bfae5e8eb3a71441cfbfb8b6d97eef1967560c9784ad0e",
+  "extracted_at": "2026-05-15T21:40:40.674154Z"
+}

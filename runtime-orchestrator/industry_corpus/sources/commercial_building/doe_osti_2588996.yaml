@@ -1,0 +1,11 @@
+source_id: doe_osti_2588996
+title: "ComStock Measure Scenario Documentation: Laboratory-Informed Modeling of Standard Performance Heat Pump Rooftop Units"
+url: https://www.osti.gov/servlets/purl/2588996
+license: public_domain
+publisher: doe_osti
+version: "2025-09-15"
+added_at: "2026-05-15T21:40:32.939102Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, building energy modeling, commercial building stock, ComStock, heat pump rooftop units"
+asset_families:
+  - commercial_building

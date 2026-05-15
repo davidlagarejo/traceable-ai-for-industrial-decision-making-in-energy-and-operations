@@ -1,0 +1,11 @@
+source_id: doe_osti_3013233
+title: "ComStock Measure Documentation: Lighting Control for Load Shedding"
+url: https://www.osti.gov/servlets/purl/3013233
+license: public_domain
+publisher: doe_osti
+version: "2025-11-24"
+added_at: "2026-05-15T21:41:26.442390Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, ComStock, demand flexibility, demand response, EUSS"
+asset_families:
+  - warehouse_distribution

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "def515ec::chunk_0038",
+  "source_id": "doe_osti_3022460",
+  "source_sha": "def515ecf4fa44c963273b4b3678a66f",
+  "source_url": "https://www.osti.gov/servlets/purl/3022460",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Write In Prefer not to answer 40. Please provide your email if you would like to be contacted for a voluntary interview. 52 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 40,
+  "text_sha": "183b1fe33cf19944d7788a7eb4b7b8c77028ef78b316ffb076e837f119b9c505",
+  "extracted_at": "2026-05-15T21:46:13.270300Z"
+}

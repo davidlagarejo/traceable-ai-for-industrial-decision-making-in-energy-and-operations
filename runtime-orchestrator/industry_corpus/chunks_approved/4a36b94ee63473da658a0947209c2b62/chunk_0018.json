@@ -1,0 +1,15 @@
+{
+  "chunk_id": "4a36b94e::chunk_0018",
+  "source_id": "doe_osti_3017158",
+  "source_sha": "4a36b94ee63473da658a0947209c2b62",
+  "source_url": "https://www.osti.gov/servlets/purl/3017158",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "will give the building some added resilience. If the natural gas boiler is down for maintenance, the apartment will have another heat source while the boiler is repaired. 16 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 46,
+  "text_sha": "edc776e063d5c3cccdd2373d45b4c51c2ed397c9eab70ee713e38fe45be7b697",
+  "extracted_at": "2026-05-15T21:41:05.644585Z"
+}

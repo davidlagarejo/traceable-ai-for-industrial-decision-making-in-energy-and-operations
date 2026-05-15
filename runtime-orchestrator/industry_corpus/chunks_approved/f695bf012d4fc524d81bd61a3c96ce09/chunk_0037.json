@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f695bf01::chunk_0037",
+  "source_id": "doe_osti_3031073",
+  "source_sha": "f695bf012d4fc524d81bd61a3c96ce09",
+  "source_url": "https://www.osti.gov/servlets/purl/3031073",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Cooling air outlet temperature 10 Hz °C All Communications OCPP logs to charger 1 Hz N/A All Communications Vehicle communications 1 Hz N/A Vehicle Use Vector CCS listener 41 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 45,
+  "text_sha": "00aa2b5d50ab2cb500ef01acdd96307b239763e9cb82e1500a1b684923814036",
+  "extracted_at": "2026-05-15T21:37:57.512714Z"
+}

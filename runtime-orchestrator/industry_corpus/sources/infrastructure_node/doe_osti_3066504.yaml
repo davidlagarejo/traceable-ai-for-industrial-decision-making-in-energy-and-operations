@@ -1,0 +1,11 @@
+source_id: doe_osti_3066504
+title: "Final Technical Report: Demonstration of Grid Services Using Mixed Grid-Forming and Grid-Following Technologies at the Wheatridge Renewable Energy Facility"
+url: https://www.osti.gov/servlets/purl/3066504
+license: public_domain
+publisher: doe_osti
+version: "2026-04-28"
+added_at: "2026-05-15T21:45:32.582255Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 17 WIND ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 25 ENERGY STORAGE, grid-forming inverter, grid-following inverter, inverter-based resources, grid services, power system stabil"
+asset_families:
+  - infrastructure_node

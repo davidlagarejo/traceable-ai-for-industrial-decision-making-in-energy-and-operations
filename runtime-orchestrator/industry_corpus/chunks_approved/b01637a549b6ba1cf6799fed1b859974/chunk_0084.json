@@ -1,0 +1,15 @@
+{
+  "chunk_id": "b01637a5::chunk_0084",
+  "source_id": "doe_osti_2589501",
+  "source_sha": "b01637a549b6ba1cf6799fed1b859974",
+  "source_url": "https://www.osti.gov/servlets/purl/2589501",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "FRlvAAttIIROOnn ESA CSAEmmPEnUtS 87 15013 Denver west Parkway, golden, CO 80401 303-275-3000 • www.nrel.gov nREl is a national laboratory of the U.S. Department of Energy Ofce of Energy Efciency and Renewable Energy Operated under Contract no. DE-AC36-08gO28308 nREl/mP-1900-96668 • September 2025 nREl prints on paper that contains recycled content",
+  "token_count": 49,
+  "text_sha": "c14aa91c926530a0d75291364c84b7908a2e80a468518f2b6212881fe57ae11f",
+  "extracted_at": "2026-05-15T21:38:46.244095Z"
+}

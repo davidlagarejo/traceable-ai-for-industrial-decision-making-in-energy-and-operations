@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f85cf5b2::chunk_0029",
+  "source_id": "doe_osti_3020763",
+  "source_sha": "f85cf5b2eb73097129e6c19cc2adaaa2",
+  "source_url": "https://www.osti.gov/servlets/purl/3020763",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "PacifiCorp, Utah State University, the University of Utah, Electric Power Engineers, PNNL, OSI, and other partners, the project developed and tested technical architectures, DER control strategies, cybersecurity frameworks, and data management structures foundational to community-scale DER integration. At the time of DOE’s termination of the award on October 9, 2025, all major Budget Period 1 and 2 milestones had been completed or substantially advanced, including successful HIL testing and the ability 35 to control of 100% of DERs at the USU microgrid facility, installation of advanced metering infrastructure, and initial execution of the cybersecurity framework. Planned field demonstrations, lighting and water- heater control implementations, and extended data collection activities for Budget Period 3 were not initiated. Despite early closure, the UDERMS project produced a rich set of technical deliverables and cross-partner learnings that remain applicable to future DOE Connected Communities and grid-edge programs. The integration design, communication architecture, and cybersecurity methodologies serve as a tested foundation for subsequent initiatives pursuing scalable, utility-managed DER coordination and community energy resilience. 36",
+  "token_count": 169,
+  "text_sha": "0862464c5182b7828903f40ea42afafe5c5faf04b2ad8904dbdf2fb911866224",
+  "extracted_at": "2026-05-15T21:46:08.564641Z"
+}

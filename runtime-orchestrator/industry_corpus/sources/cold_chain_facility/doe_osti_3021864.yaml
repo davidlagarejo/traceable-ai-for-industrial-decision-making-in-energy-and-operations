@@ -1,0 +1,11 @@
+source_id: doe_osti_3021864
+title: "Dual Purpose – Heating &amp; Cooling – Thermal Battery for Flexible and Energy-Efficient Heat Pump Systems"
+url: https://www.osti.gov/servlets/purl/3021864
+license: public_domain
+publisher: doe_osti
+version: "2026-03-05"
+added_at: "2026-05-15T21:38:02.504965Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 42 ENGINEERING, demand reduction, heat pump, phase change material, system-level analysis"
+asset_families:
+  - cold_chain_facility

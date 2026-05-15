@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4303ba5c::chunk_0028",
+  "source_id": "doe_osti_3013233",
+  "source_sha": "4303ba5c116b5bd2189f27b8393d72a5",
+  "source_url": "https://www.osti.gov/servlets/purl/3013233",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "www.nrel.gov/publications. Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division 30 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 47,
+  "text_sha": "18a0de00ea8d9475db725e4b5bbeb23296fe77c26812374a7172e57c91bf9a92",
+  "extracted_at": "2026-05-15T21:41:30.306601Z"
+}

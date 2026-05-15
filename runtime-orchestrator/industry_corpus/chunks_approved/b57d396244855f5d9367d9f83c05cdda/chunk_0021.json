@@ -1,0 +1,14 @@
+{
+  "chunk_id": "b57d3962::chunk_0021",
+  "source_id": "doe_osti_3013234",
+  "source_sha": "b57d396244855f5d9367d9f83c05cdda",
+  "source_url": "https://www.osti.gov/servlets/purl/3013234",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "flexibility upgrade packages with different objectives, for applicable buildings Note: TOU = time of use 27 This report is available at no cost from NREL at www.nrel.gov/publications. References [1] A. Parker et al., “ComStock Reference Documentation (V.1),” NREL/TP--5500-83819, 1967948, MainId:84592, Mar. 2023. doi: 10.2172/1967948. [2] E. Wilson et al., “End-Use Load Profiles for the U.S. Building Stock: Methodology and Results of Model Calibration, Validation, and Uncertainty Quantification,” NREL/TP-5500- 80889, 1854582, MainId:78667, Mar. 2022. doi: 10.2172/1854582. [3] M. Deru et al., “U.S. Department of Energy Commercial Reference Building Models of the National Building Stock,” NREL/TP-5500-46861, 1009264, Feb. 2011. doi: 10.2172/1009264. [4] NREL, “Cambium | Energy Analysis.” [Online]. Available: https://www.nrel.gov/analysis/cambium.html [5] U.S. Energy Information Administration, “Use of natural gas - U.S. Energy Information Administration (EIA).” [Online]. Available: https://www.eia.gov/energyexplained/natural- gas/use-of-natural-gas.php [6] U.S. Energy Information Administration, “No. 2 Distillate Prices - Residential.” [Online]. Available: https://www.eia.gov/dnav/pet/pet_pri_dist_a_epd2_prt_dpgal_a.htm [7] S. Ong and R. McKeel, “National Utility Rate Database: Preprint,” NREL/CP-6A20- 54633, 1050105, Aug. 2012. doi: 10.2172/1050105. [8] U.S. Energy Information Administration, “EIA - Independent Statistics and Analysis.” [Online]. Available: https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T07.06#/?f=A 28 This report is available at no cost from NREL at www.nrel.gov/publications. Appendix Figure A-1. Site annual natural gas consumption of the ComStock baseline and the measure scenario by census division Figure A-2. Site annual natural gas consumption of the ComStock baseline and the measure scenario by building type 29 This report is available at no cost from NREL at www.nrel.gov/publications. Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division 30 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 280,
+  "text_sha": "0d8f90b66f14d45e877fd8b81252a5aea8a0c8b29bb18043a1b8860dad1a427f",
+  "extracted_at": "2026-05-15T21:39:00.853664Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "cc807114::chunk_0060",
+  "source_id": "doe_osti_3013369",
+  "source_sha": "cc80711483b83e505d46f41c36933844",
+  "source_url": "https://www.osti.gov/servlets/purl/3013369",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "43. McMillan, C., Xi, W., Zhang, J., Masanet, E., Kurup, P., Schoeneberger, C., Meyers, S. and Margolis, R., 2021. Evaluating the economic parity of solar for industrial process heat. Solar Energy Advances, 1, p.100011 44. https://nepis.epa.gov/Exe/ZyPDF.cgi/910116ZZ.PDF?Dockey=910116ZZ.PDF; Last Accessed: 2025 45. https://www.energy.gov/sites/default/files/2021-04/2021discountrates.pdf; Last Accessed: April, 2022. Page 87 of 87",
+  "token_count": 49,
+  "text_sha": "6fab216cfc148706a902848bfeeb5b7723c871ce7a34dd28f7f0bd5a598a70f9",
+  "extracted_at": "2026-05-15T21:46:04.626440Z"
+}

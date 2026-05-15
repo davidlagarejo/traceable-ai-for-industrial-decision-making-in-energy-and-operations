@@ -1,0 +1,14 @@
+{
+  "chunk_id": "00e10f30::chunk_0046",
+  "source_id": "doe_osti_2565843",
+  "source_sha": "00e10f307647d06aff54c312a528a64a",
+  "source_url": "https://www.osti.gov/servlets/purl/2565843",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "TV, video game console, WCL Refrigeration Freezer, refrigerator Space Heating, Ceiling fan, dehumidifier, furnace fans, secondary heating, space cooling, Cooling, and space heating Ventilation 40 This report is available at no cost from the National Renewable Energy Laboratory at www.nrel.gov/publications.",
+  "token_count": 40,
+  "text_sha": "379ba2389390b0235416178ca92b6b469d24c799f915f294c560874748c163da",
+  "extracted_at": "2026-05-15T21:38:37.270256Z"
+}

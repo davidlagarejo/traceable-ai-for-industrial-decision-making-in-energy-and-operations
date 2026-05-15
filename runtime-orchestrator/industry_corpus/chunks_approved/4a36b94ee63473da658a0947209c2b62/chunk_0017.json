@@ -1,0 +1,15 @@
+{
+  "chunk_id": "4a36b94e::chunk_0017",
+  "source_id": "doe_osti_3017158",
+  "source_sha": "4a36b94ee63473da658a0947209c2b62",
+  "source_url": "https://www.osti.gov/servlets/purl/3017158",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "year-round, will give the building some added resilience. If the natural gas boiler is down for maintenance, the apartment will have another heat source while the boiler is repaired. 16 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 47,
+  "text_sha": "9a683745d66aee4711ababc4a691d7bf58a0d970a89896dde9879a194eb6ed74",
+  "extracted_at": "2026-05-15T21:41:05.644585Z"
+}

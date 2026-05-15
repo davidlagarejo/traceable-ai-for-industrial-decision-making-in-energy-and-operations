@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0019",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "refueling. 10. Products: none. 11. Project Team and Roles: Patrick Adam, Plug: Lead of autonomous liquid hydrogen fueling effort Glynne Saelid: Co-PI of autonomous liquid hydrogen fueling effort Sean Dimmer: Mechanical engineer of autonomous liquid hydrogen fueling effort Leif Harfst: Controls engineer of autonomous liquid hydrogen fueling effort Elijah Shoemake: Mechanical engineer of autonomous liquid hydrogen fueling effort Karen Swider Lyons, Plug: Assisted with demonstration of fueling arm Dustan Skidmore, Plug: Led the original design of the robotic arm Keith Brown, Plug: Demonstrated robotic arm with hydrogen fueling Victor Sevilla: Electrical engineer Sam Sprik: NREL. Lead of Autonomous road vehicle fueling Shaun Onorato, NREL, Co-Lead of Autonomous road vehicle fueling Jacob Thorson, NREL, Design and build robot fixture Autonomous road vehicle fueling Spencer Gilleon, NREL, Assisted with measurements and build of Autonomous road vehicle fueling 12. References: none. Page 31 of 31",
+  "token_count": 142,
+  "text_sha": "102a136079251c6d83cb799f6c5d2dc0bd4562775d75265a87335b0986d399f7",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

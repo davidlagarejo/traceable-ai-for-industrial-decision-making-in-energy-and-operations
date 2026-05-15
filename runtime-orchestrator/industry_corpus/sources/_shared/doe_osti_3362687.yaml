@@ -1,0 +1,12 @@
+source_id: doe_osti_3362687
+title: "OES CO<sub>2</sub> Pipeline FEED Project Design Basis Memorandum"
+url: https://www.osti.gov/servlets/purl/3362687
+license: public_domain
+publisher: doe_osti
+version: "2026-05-07"
+added_at: "2026-05-15T21:37:51.159307Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 09 BIOMASS FUELS, 25 ENERGY STORAGE, 29 ENERGY PLANNING, POLICY, AND ECONOMY, 42 ENGINEERING, 58 GEOSCIENCES"
+asset_families:
+  - _shared
+  - cold_chain_facility

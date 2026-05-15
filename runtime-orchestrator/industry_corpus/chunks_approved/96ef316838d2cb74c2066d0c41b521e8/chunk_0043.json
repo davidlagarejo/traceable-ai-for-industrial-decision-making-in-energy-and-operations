@@ -1,0 +1,14 @@
+{
+  "chunk_id": "96ef3168::chunk_0043",
+  "source_id": "doe_osti_3018256",
+  "source_sha": "96ef316838d2cb74c2066d0c41b521e8",
+  "source_url": "https://www.osti.gov/servlets/purl/3018256",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "FCB hydrogen pressure 6 83 150 relief valve flange screw type field fab Medium hydrogen pipe 18 89 154 reducing tee connector welded field fab Large hydrogen pipe 3 89 154 reducing tee connector welded field fab Fuel cell coolant 1 180 thermocouple 50 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications. Table A-9. Quantification Methods and Page Numbers From Page (1999) for Cooling Pad Installation Tasks Task Number per Number Labor Hour Alloy Cooler per Row Page Modification Number Page Number Small coolant pipe 4 0 42 156 machine cutting plain ends Small coolant pipe 4 0 46 156 machine beveling for welding Coolant shutoff valve 4 0 13 150 flange threaded shop fab Small coolant pipe stub- 4 0 85 150 in welded field fab Coolant shutoff valve 2 0 83 field handling Medium coolant pipe 2 2 42 156 machine cutting plain ends Medium coolant pipe 2 2 46 156 machine beveling pipe for welding Medium coolant pipe 0 2 85 150 stub-in welded field fab Cooling bay coolant 1 180 thermocouple 51 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications. Figure A-1. PEM fuel cell system total overnight cost breakdown for the low-cost scenario 52 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications. Figure A-2. PEM fuel cell system total overnight cost breakdown for the high-cost scenario 53 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 262,
+  "text_sha": "00c6e610518773190f33a2eacdddc1b310cf7752435f005f7dc694b48cdec39e",
+  "extracted_at": "2026-05-15T21:44:14.698947Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e6c026f6::chunk_0063",
+  "source_id": "doe_osti_3021864",
+  "source_sha": "e6c026f6ddc9a4f2205ec96bf9b77da3",
+  "source_url": "https://www.osti.gov/servlets/purl/3021864",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "of the annual utility cost savings for an end user (Eq.(14)). The first term represents the demand reduction during the selected peak hours, whereas the second term compares the recharge energy requirements with the baseline energy during those hours. Page 99 of 127",
+  "token_count": 43,
+  "text_sha": "773771e6200b8d0fcd6f3fee563fde2d3caf596696a22c41e61a1e11c9c82439",
+  "extracted_at": "2026-05-15T21:38:13.722298Z"
+}

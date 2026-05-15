@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a27448f7::chunk_0009",
+  "source_id": "doe_osti_3362856",
+  "source_sha": "a27448f76a6a8945d449a5e1e3d5a06b",
+  "source_url": "https://www.osti.gov/servlets/purl/3362856",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Conditioning and Heating Equipment (Excluding Air-Cooled Equipment With a Cooling Capacity Less Than 65,000 Btu/h), in 10 C.F.R., Chapter II, Subchapter D, Part 431, Subpart F, Appendix A1. 2024. 2. AHRI, Performance Rating of Commercial and Industrial Unitary Air-conditioning and Heat Pump Equipment. 2024, AHRI: Arlington, VA. 3. ANSI/ASHRAE, ANSI/ASHRAE 37-2009 (RA 2019) Methods of Testing for Rating Electrically Driven Unitary Air-Conditioning and Heat-Pump Equipment. 2019, ASHRAE: Atlanta. 8",
+  "token_count": 69,
+  "text_sha": "ce30fee66ac31c1c9909f20451e6163099f8b4b3288ea75ad79e8c0390e32de7",
+  "extracted_at": "2026-05-15T21:40:38.104921Z"
+}

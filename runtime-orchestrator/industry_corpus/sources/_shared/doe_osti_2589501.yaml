@@ -1,0 +1,12 @@
+source_id: doe_osti_2589501
+title: "Environmental Performance Report 2024: Annual Site Environmental Report per the U.S. Department of Energy Order 231.1B Chg 1"
+url: https://www.osti.gov/servlets/purl/2589501
+license: public_domain
+publisher: doe_osti
+version: "2025-09-19"
+added_at: "2026-05-15T21:38:37.275466Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 29 ENERGY PLANNING, POLICY, AND ECONOMY, 54 ENVIRONMENTAL SCIENCES, air quality, APHIS, ASER"
+asset_families:
+  - _shared
+  - cold_chain_facility

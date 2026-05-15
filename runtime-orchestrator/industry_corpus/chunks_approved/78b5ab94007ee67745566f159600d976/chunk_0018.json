@@ -1,0 +1,14 @@
+{
+  "chunk_id": "78b5ab94::chunk_0018",
+  "source_id": "doe_osti_3015786",
+  "source_sha": "78b5ab94007ee67745566f159600d976",
+  "source_url": "https://www.osti.gov/servlets/purl/3015786",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Task 5.2 Subtask 5.2 comprises the investigation of steam-assisted desorption processes for Holocene’s materials. Ideation on the design of a test bench system was started in January 2025 but then stopped mid-February and not resumed due to project termination. 10",
+  "token_count": 40,
+  "text_sha": "a9cfdb2c775db51ad66ce1278f985ef6c5af2b4bd25abcf9783a6a63d9c021a8",
+  "extracted_at": "2026-05-15T21:46:31.447056Z"
+}

@@ -1,0 +1,12 @@
+source_id: doe_osti_3023538
+title: "How Improved Forecasting Can Increase the Bulk Power System Value of Price-Responsive Electric Vehicle Managed Charging"
+url: https://www.osti.gov/servlets/purl/3023538
+license: public_domain
+publisher: doe_osti
+version: "2026-03-12"
+added_at: "2026-05-15T21:42:50.048591Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 29 ENERGY PLANNING, POLICY, AND ECONOMY, demand response, direct load control, distributed energy resources, electric vehicle managed charging"
+asset_families:
+  - _shared
+  - warehouse_distribution

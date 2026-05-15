@@ -1,0 +1,15 @@
+{
+  "chunk_id": "f6a57fd7::chunk_0063",
+  "source_id": "doe_osti_2589816",
+  "source_sha": "f6a57fd79c4c0dff5ea59f1269edfd6e",
+  "source_url": "https://www.osti.gov/servlets/purl/2589816",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "43 Muratori, Matteo and Brennan Borlaug (2021). Perspectives on Charging Medium- and Heavy- Duty Electric Vehicles. Retrieved from: https:// docs.nrel.gov/docs/fy22osti/81656.pdf. 77 National Grid plc National Grid House Warwick Technology Park Gallows Hill Warwick CV34 6DA United Kingdom nationalgrid.com 78 SER/sirraHM-IMR .5202 rebmetpeS",
+  "token_count": 42,
+  "text_sha": "33687562bc5e9c2a7023efd9023e534b5e25c9953f221b4832e52713ba9bc869",
+  "extracted_at": "2026-05-15T21:42:00.869925Z"
+}

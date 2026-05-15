@@ -1,0 +1,14 @@
+{
+  "chunk_id": "726b90f7::chunk_0019",
+  "source_id": "doe_osti_3014922",
+  "source_sha": "726b90f75075a0b38f58f9b083e055d1",
+  "source_url": "https://www.osti.gov/servlets/purl/3014922",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. References [1] A. Dutta et al., Process Design and Economics for Conversion of Lignocellulosic Biomass to Ethanol. (2011) https://www.nrel.gov/docs/fy11osti/51400.pdf [2] West Biofuels, West Biofuels Fuel Ethanol & Value-Added Chemicals from Biomass Residues, ARV-15-017 Report. [3] California Public Utilities Commission, Hydrogen Blending Impacts Study, (2022) https://docs.cpuc.ca.gov/PublishedDocs/Efile/G000/M493/K760/493760600.PDF [4] High-Octane Gasoline from Lignocellulosic Biomass via Syngas and Methanol/Dimethyl Ether Intermediates: 2021 State of Technology, (2021) https://www.nrel.gov/docs/fy22osti/81178.pdf [5] Gao et al., A Thermodynamic Analysis of Methanation Reaction of Carbon Oxides for the Production of Synthetic Natural Gas, RSC Advances, 2012. [6] Energy Information Agency, (2023). https://www.eia.gov/ [7] Aden, A et al., Lignocellulosic Biomass to Ethanol Process Design and Economics Utilizing Co-Current Dilute Acid Prehydrolysis and Enzymatic Hydrolysis for Corn Stover. Report No. NREL/TP-510-32438. Golden, CO: National Renewable Energy Laboratory, June 2002. http://www.nrel.gov/docs/fy02osti/32438.pdf 31 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 155,
+  "text_sha": "31e745a0587d9c7fbcc0d57023d033b4ddeecea2875b53f94223a50c2070743f",
+  "extracted_at": "2026-05-15T21:46:18.886321Z"
+}

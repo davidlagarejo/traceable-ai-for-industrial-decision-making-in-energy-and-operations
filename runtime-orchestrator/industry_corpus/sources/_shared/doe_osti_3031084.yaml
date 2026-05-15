@@ -1,0 +1,12 @@
+source_id: doe_osti_3031084
+title: "Bridging the Gap for Powering Data Centers"
+url: https://www.osti.gov/servlets/purl/3031084
+license: public_domain
+publisher: doe_osti
+version: "2026-02-09"
+added_at: "2026-05-15T21:39:42.926728Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 22 - GENERAL STUDIES OF NUCLEAR REACTORS, 24 - POWER TRANSMISSION AND DISTRIBUTION, 25 - ENERGY STORAGE, 29 - ENERGY PLANNING, POLICY AND ECONOMY, data center"
+asset_families:
+  - _shared
+  - datacenter

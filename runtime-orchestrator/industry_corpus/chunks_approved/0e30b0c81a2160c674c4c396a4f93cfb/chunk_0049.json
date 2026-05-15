@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0e30b0c8::chunk_0049",
+  "source_id": "doe_osti_3019896",
+  "source_sha": "0e30b0c81a2160c674c4c396a4f93cfb",
+  "source_url": "https://www.osti.gov/servlets/purl/3019896",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "7.19×10−8 6.82×10−3 2.08×10−4 1.99×10−2 3.34×10−4 1.06×10−4 2.03×10−6 2.69×10−2 3.94×10−4 1% 7.56cm shield 3 year cooling 7.78×10−5 2.45×10−6 5.69×10−6 6.32×10−8 3.09×10−3 8.14×10−5 1.07×10−2 1.66×10−4 5.33×10−5 9.59×10−7 1.39×10−2 1.85×10−4 1% 9.31cm shield Appendix A A.9 PNNL-38760 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 50,
+  "text_sha": "555aaf7353a85de83f7c6fd91ba4d690588ce8f77534851b12b35211418109aa",
+  "extracted_at": "2026-05-15T21:39:58.649254Z"
+}

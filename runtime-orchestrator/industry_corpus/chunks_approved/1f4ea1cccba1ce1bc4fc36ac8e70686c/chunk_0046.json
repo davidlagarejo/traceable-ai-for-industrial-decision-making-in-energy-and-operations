@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1f4ea1cc::chunk_0046",
+  "source_id": "doe_osti_3001923",
+  "source_sha": "1f4ea1cccba1ce1bc4fc36ac8e70686c",
+  "source_url": "https://www.osti.gov/servlets/purl/3001923",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "X. Cai, “Grey-Box Aggregation Modeling of Wind Farm for Wideband Oscillations Analysis,” Applied Energy, vol. 283, 116035, 2021. https://doi.org/10.1016/j.apenergy.2020.116035. (Zong et al., 2021) References 47 PNNL-38364 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 42,
+  "text_sha": "7b989d91d0502aa667701a4ad1a40ab000b1f72f781d51b55dc857e32ab0571f",
+  "extracted_at": "2026-05-15T21:44:20.609455Z"
+}

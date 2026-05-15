@@ -1,0 +1,14 @@
+{
+  "chunk_id": "23fde807::chunk_0011",
+  "source_id": "doe_osti_2588254",
+  "source_sha": "23fde80769f9ca3cf2d6b5425fdb5e4c",
+  "source_url": "https://www.osti.gov/servlets/purl/2588254",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Testers: Asgari, Mehdi: ORNL Baird, Mark: ORNL Benson, Zack: ORNL Celik, Cihangir: ORNL Dal Forno Chuahy, Flavio: ORNL Hartanto, Donny: ORNL Lefebvre, Robert: ORNL Rao, Vivek: ORNL AI-assisted tools were used for minor editorial review; all content and conclusions are the author’s own. 8",
+  "token_count": 44,
+  "text_sha": "2e6a5325ac1e4fcd2f899988e908ca662bc3084a6831f4cd7e68ac5dfa99d8bd",
+  "extracted_at": "2026-05-15T21:39:50.412854Z"
+}

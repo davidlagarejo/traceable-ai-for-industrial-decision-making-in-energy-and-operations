@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0016",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "E P 7 0 0 2 - D a ta P riv a c y P ro c e s s • IE E E P 7 0 0 3 - A lg o rith m ic B ia s C o n s id e ra tio n s • IE E E P 7 0 0 6 - S ta n d a rd fo r P e rs o n a l D a ta A rtific ia l In te llig e n c e (A I) A g e n t • IE E E P 7 0 0 7 - O n to lo g ic a l S ta n d a rd fo r E th ic a lly D riv e n R o b o tic s a n d A u to m a tio n S y s te m s • IE E E P 7 0 0 8 - S ta n d a rd fo r E th ic a lly D riv e n N u d g in g fo r R o b o tic , In te llig e n t, a n d A u to m a tio n S y s te m • IE E E P 7 0 0 9 - S ta n d a rd fo r F a il-S a fe D e s ig n o f A u to n o m o u s a n d S e m i-A u to n o m o u s S y s te m s • IE E E P 7 0 1 0 - W e llb e in g M e tric s S ta n d a rd fo r E th ic a l A rtific ia l In te llig e n c e a n d A u to n o m o u s S y s te m s s 7.2 Liquid Hydrogen Transfer Efficiency For this part of the project, the following activities were envisioned: • Review existing LH2 transfer data to evaluate the range of hydrogen venting associated with sending and receiving tank fill levels and pressures. A previously developed thermodynamic model will be used to simulate these scenarios for model validation before using the model to identify optimum transfer pressures, flow rates, and duration that minimize cool down and pressure blow down losses. • Use results from objective 1 to size control valves and process logic of the control system for a small scale ~10 kg liquid transfer system. • Process dynamics observed in the small-scale system during budget period 2 will be used to inform hardware requirements and process control points for the larger full-scale system with a goal of achieving a minimum 20% reduction in transfer losses compared to a transfer using the incumbent transfer protocol. Initial work focused on finalizing system definition and pivoting from a liquid hydrogen to liquid nitrogen-based test platform to reduce",
+  "token_count": 509,
+  "text_sha": "c285661416b7b1525dd9737d00946811bb282ea36003f3a8e727be392b678d80",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3021527
+title: "ComStock Measure Documentation: Variable-Speed Pumps"
+url: https://www.osti.gov/servlets/purl/3021527
+license: public_domain
+publisher: doe_osti
+version: "2026-02-25"
+added_at: "2026-05-15T21:40:20.909658Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, commercial building stock, comstock, hvac, pump"
+asset_families:
+  - commercial_building

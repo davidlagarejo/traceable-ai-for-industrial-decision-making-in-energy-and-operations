@@ -16,13 +16,59 @@ from pathlib import Path
 from typing import Any
 
 
-# Federal/public-domain publishers whose sources are eligible for
-# auto-approval (chunks land directly in chunks_approved/, no human gate).
-# Match is case-insensitive against `source.added_by` or domain in URL.
+# Trusted publishers eligible for auto-approval (chunks land directly in
+# chunks_approved/, no human gate). Match is case-insensitive against
+# `source.added_by` or domain in URL.
+#
+# Three tiers:
+#   1. Federal / public-domain (US gov agencies + national labs)
+#   2. Open-access scientific (arXiv, DOAJ — CC-licensed)
+#   3. Trusted industrial vendors — companies whose technical reputation
+#      depends on the accuracy of their publications. Adding a vendor here
+#      means "we trust their whitepapers to be technically sound enough to
+#      cite verbatim". Curated allowlist, NOT discoverable.
 FEDERAL_AUTO_APPROVE_PUBLISHERS: frozenset[str] = frozenset({
+    # ── Federal / national labs (public_domain) ──
     "doe", "eia", "epa", "nrel", "pnnl", "ornl", "lbnl", "nist", "doe_osti",
     "energy.gov", "eia.gov", "epa.gov", "nrel.gov", "pnnl.gov", "ornl.gov",
-    "energystar.gov", "osti.gov",
+    "energystar.gov", "osti.gov", "nist.gov",
+    # ── Open-access scientific (CC-licensed) ──
+    "arxiv", "arxiv.org", "doaj", "doaj.org",
+    # ── Trusted industrial vendors (whitepapers, technical bulletins) ──
+    # Steam / thermal systems:
+    "steamloc",     "spirax sarco", "armstrong international", "watson mcdaniel",
+    # HVAC / refrigeration majors:
+    "trane", "carrier", "johnson controls", "daikin", "danfoss", "bitzer",
+    # Industrial automation / controls:
+    "emerson", "abb", "siemens", "schneider electric", "honeywell",
+    "rockwell automation", "yokogawa",
+    # Compressors / motors / drives:
+    "atlas copco", "ingersoll rand", "kaeser", "sullair", "gardner denver",
+    # Chemicals / industrial gases:
+    "linde", "air products", "air liquide", "praxair",
+    # Pumps / mechanical:
+    "grundfos", "ksb", "flowserve", "sulzer",
+    # Heavy industrials / engines:
+    "ge", "general electric", "caterpillar", "cummins", "mitsubishi heavy industries",
+    # Process / energy equipment:
+    "alfa laval", "doosan", "babcock wilcox",
+})
+
+
+# Subset that does NOT require special "added_by=system_verified" — corporate
+# vendor whitepapers can be added by anyone (the publisher allowlist itself
+# is the trust gate). Federal/scientific still require system_verified to
+# guard against typos in user-added YAMLs.
+VENDOR_TRUST_PUBLISHERS: frozenset[str] = frozenset({
+    "steamloc", "spirax sarco", "armstrong international", "watson mcdaniel",
+    "trane", "carrier", "johnson controls", "daikin", "danfoss", "bitzer",
+    "emerson", "abb", "siemens", "schneider electric", "honeywell",
+    "rockwell automation", "yokogawa",
+    "atlas copco", "ingersoll rand", "kaeser", "sullair", "gardner denver",
+    "linde", "air products", "air liquide", "praxair",
+    "grundfos", "ksb", "flowserve", "sulzer",
+    "ge", "general electric", "caterpillar", "cummins", "mitsubishi heavy industries",
+    "alfa laval", "doosan", "babcock wilcox",
 })
 
 
@@ -54,16 +100,37 @@ class CorpusSource:
     notes:           str = ""
 
     def is_auto_approvable(self) -> bool:
-        """True iff this source can skip human curation (federal whitelist)."""
+        """True iff this source can skip human curation.
+
+        Three valid paths:
+          1. Federal/public_domain + added_by=system_verified
+          2. arxiv/open_access + added_by=system_verified
+          3. Trusted industrial vendor (publisher in VENDOR_TRUST_PUBLISHERS,
+             license in permissive set). The vendor allowlist itself is
+             the trust gate — no system_verified requirement.
+        """
+        pub = (self.publisher or "").lower().strip()
+        u = (self.url or "").lower()
+
+        # Path 3: trusted industrial vendor whitepapers
+        if pub in VENDOR_TRUST_PUBLISHERS:
+            if self.license in ("permissive_with_attribution",
+                                "vendor_whitepaper",
+                                "public_domain"):
+                return True
+            return False
+        # Path 2: arxiv / open access
+        if pub in ("arxiv", "arxiv.org", "doaj", "doaj.org") or "arxiv.org" in u:
+            if self.license in ("open_access", "cc_by", "public_domain"):
+                return self.added_by == "system_verified"
+            return False
+        # Path 1: federal / national labs
         if self.license != "public_domain":
             return False
         if self.added_by != "system_verified":
             return False
-        pub = (self.publisher or "").lower().strip()
         if pub in FEDERAL_AUTO_APPROVE_PUBLISHERS:
             return True
-        # Fallback: domain of URL
-        u = (self.url or "").lower()
         return any(dom in u for dom in FEDERAL_AUTO_APPROVE_PUBLISHERS)
 
     def to_dict(self) -> dict[str, Any]:

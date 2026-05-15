@@ -1,0 +1,14 @@
+{
+  "chunk_id": "331c40c5::chunk_0023",
+  "source_id": "doe_osti_2584244",
+  "source_sha": "331c40c566f2c162cbd3e65a5ea3b019",
+  "source_url": "https://www.osti.gov/servlets/purl/2584244",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "work completed under this CRADA has been documented in OSTI as Artificial Intelligence for Data Center Operations (AI Ops), OSTI ID: 1783088. A link to the technical report is provided: https://doi.org/10.2172/1783088 16 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 43,
+  "text_sha": "b75916bec0271c55b8ac145ad946b00242105d9fb554ae97d69929952737b6b4",
+  "extracted_at": "2026-05-15T21:39:49.229888Z"
+}

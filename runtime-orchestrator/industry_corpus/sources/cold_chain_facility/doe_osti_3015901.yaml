@@ -1,0 +1,11 @@
+source_id: doe_osti_3015901
+title: "Analysis of Molten Salt Thermal Energy Storage Tank Sizing and Preheating"
+url: https://www.osti.gov/servlets/purl/3015901
+license: public_domain
+publisher: doe_osti
+version: "2026-01-27"
+added_at: "2026-05-15T21:37:57.518244Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 25 ENERGY STORAGE, 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, failure mechanisms, molten salt tank diameter, molten salt thermal energy storage"
+asset_families:
+  - cold_chain_facility

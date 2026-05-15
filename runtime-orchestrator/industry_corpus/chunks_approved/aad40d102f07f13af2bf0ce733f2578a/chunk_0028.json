@@ -1,0 +1,14 @@
+{
+  "chunk_id": "aad40d10::chunk_0028",
+  "source_id": "doe_osti_3017156",
+  "source_sha": "aad40d102f07f13af2bf0ce733f2578a",
+  "source_url": "https://www.osti.gov/servlets/purl/3017156",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "J. Hauch, C. Brabec, and P. Sinha, \"The value of stability in photovoltaics,\" Joule, vol. 5, no. 12, pp. 3137-3153, 2021/12/15/ 2021, doi: https://doi.org/10.1016/j.joule.2021.10.019. Page 30 of 30 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 45,
+  "text_sha": "1c7af90376ea704fa35fef6c5e4f81fa5adf8c91fc012a73cfc343b81a2c11a4",
+  "extracted_at": "2026-05-15T21:46:34.611635Z"
+}

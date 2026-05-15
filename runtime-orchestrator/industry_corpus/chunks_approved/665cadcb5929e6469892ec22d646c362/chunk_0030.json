@@ -1,0 +1,15 @@
+{
+  "chunk_id": "665cadcb::chunk_0030",
+  "source_id": "doe_osti_3023417",
+  "source_sha": "665cadcb5929e6469892ec22d646c362",
+  "source_url": "https://www.osti.gov/servlets/purl/3023417",
+  "asset_families": [
+    "_shared",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "https://doi.org/10.1049/iet-gtd.2017.0508. Zinaman, Owen, Thomas Bowen, and Alexandra Aznar. 2020. An Overview of Behind-the- Meter Solar-Plus-Storage Regulatory Design: Approaches and Case Studies to Inform International Applications. NREL/TP--7A40-75283, 1606152. https://doi.org/10.2172/1606152. References 30 PNNL-39073 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 47,
+  "text_sha": "88e35d9076a149554272c8cc65ad8bf91b604db2d3e56810502098b2e9761d92",
+  "extracted_at": "2026-05-15T21:38:21.657016Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0730cf2::chunk_0022",
+  "source_id": "doe_osti_2588996",
+  "source_sha": "d0730cf2974ac66cd5d76ac39fdc9192",
+  "source_url": "https://www.osti.gov/servlets/purl/2588996",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Site energy use intensity (EUI) savings distribution for ComStock models with applied measure scenario by end use and fuel type. The data points that appear above some of the distributions indicate outliers in the distribution, meaning they fall outside 1.5 times the interquartile range. The value for n indicates the number of ComStock models that were applicable for energy savings for the fuel type category. Each data point represents the pairwise comparison between a ComStock baseline model and the corresponding model after the measure scenario is applied. 27 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 99,
+  "text_sha": "6f559a4c50546ce06cf0ef61906091c0d987fc707e55d69a878e54b77240aa2f",
+  "extracted_at": "2026-05-15T21:40:36.410885Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "08565848::chunk_0030",
+  "source_id": "doe_osti_3014572",
+  "source_sha": "085658483679a88011018c684a2a489a",
+  "source_url": "https://www.osti.gov/servlets/purl/3014572",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Onorato, NREL, Co-Lead of Autonomous road vehicle fueling Jacob Thorson, NREL, Design and build robot fixture Autonomous road vehicle fueling Spencer Gilleon, NREL, Assisted with measurements and build of Autonomous road vehicle fueling 12. References: none. Page 31 of 31",
+  "token_count": 40,
+  "text_sha": "1eaecc60b00f78dd3f9e1451c6eae40fb96d8e5837499233990232957919a925",
+  "extracted_at": "2026-05-15T21:42:04.222410Z"
+}

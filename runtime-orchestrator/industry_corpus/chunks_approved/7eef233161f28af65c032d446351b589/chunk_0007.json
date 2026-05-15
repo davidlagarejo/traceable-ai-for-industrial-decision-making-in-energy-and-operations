@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7eef2331::chunk_0007",
+  "source_id": "doe_osti_3020886",
+  "source_sha": "7eef233161f28af65c032d446351b589",
+  "source_url": "https://www.osti.gov/servlets/purl/3020886",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "2000. Most foundry work has gone offshore, but the AMEC process shows potential to reshore foundry capabilities. This project and the opportunities through Innovation Crossroads have also been impactful for Skuld. During the duration of this project, Skuld has been awarded contracts and secured additional funding to continue growing the company and investing in AMEC. This includes the first sale of their Lightning Metal LM-16 system which is now at the University of Tennessee. The company has now grown to more than 20 employees. 1.4 SUBJECT INVENTIONS NA 1.5 CONCLUSIONS This CRADA project was completely successfully and focused on improving, documenting, and creating a better understanding of several aspects of the AMEC process. A new software post-processor was developed to allow for automated perforating of 3D prints to save material and help gas escape when the polymer vaporizes. Extensive testing was conducted on various PLA materials using TGA. The results showed that natural PLA, without any added colorant, is safest and most effective for the casting process. Conversely, white PLA (one of the most common colors), is the worst at leaving remnants behind after vaporization. A basic computational model was developed to understand how the AMEC process works and can be used to predict how geometries will perform. This includes understanding gas formation and buildup due to the polymer pyrolyzing as well as stress concentrations and locations. Skuld helped ORNL resurrect a mobile foundry and learn the necessary operations to begin expeditionary manufacturing trials. Additionally, Skuld has expanded the AMEC process capabilities to achieve 150lb steel parts and added new materials such as 6061 and 7075 aluminums. Future work will focus on continuing to scale up the process, add new material capabilities, and develop automated systems such as the Lightning Metal LM-16. 2. SKULD LLC BACKGROUND Founded in 2015, Skuld brings together metallurgical expertise and next-generation processes to move projects from prototype to production at unmatched speed. Their mission is to revolutionize metal part production by developing new advanced manufacturing processes that are more efficient saving time, money, and resources. They do this by developing new technology, providing parts manufacturing, and designing equipment for others to use these processes. Skuld LLC is an American company based in Piqua, Ohio. 3. APPENDIX The following are testing reports from NSL Analytical that were conducted as part of task 4.",
+  "token_count": 387,
+  "text_sha": "2788fb8c705681c4a213e36f9a36932dd0f0118a03a0d54e654fee4efa467680",
+  "extracted_at": "2026-05-15T21:46:20.863690Z"
+}

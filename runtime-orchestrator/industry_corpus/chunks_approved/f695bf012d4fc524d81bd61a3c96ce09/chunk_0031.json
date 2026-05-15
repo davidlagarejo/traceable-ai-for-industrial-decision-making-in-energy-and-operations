@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f695bf01::chunk_0031",
+  "source_id": "doe_osti_3031073",
+  "source_sha": "f695bf012d4fc524d81bd61a3c96ce09",
+  "source_url": "https://www.osti.gov/servlets/purl/3031073",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Metadata Testing date and time N/A N/A All Metadata Vehicle make and model N/A N/A Vehicle Metadata Odometer N/A N/A Vehicle Metadata Emulator (charge control box) N/A N/A Charger Metadata Plug-in time stamp N/A N/A All Metadata Unplug time stamp N/A N/A All Electrical Input voltage 10 Hz Vrms All A, B, and C phases Electrical Input current 10 Hz Arms All A, B, and C phases Electrical Input frequency 10 Hz Hz All A, B, and C phases Electrical Input real power 10 Hz kW All Electrical Input reactive power 10 Hz kVAR All Electrical Input apparent power 10 Hz kVA All Electrical Input harmonics 10 Hz % All 3rd, 5th, 7th, 9th… sampling frequency determined by highest harmonic Electrical Output voltage 10 Hz V All Electrical Output current 10 Hz A Charger Electrical Output power 10 Hz kW Charger Electrical Output energy 10 Hz Ah Charger Electrical Input current THD % All Electrical Battery SOC 10 Hz % All Also before and after test Thermal Ambient temperature 10 Hz °C All Thermal Charge cable temperature 10 Hz °C All Thermal Charge connector 10 Hz °C All temperature Thermal EVSE enclosure temperature 10 Hz °C All Thermal Cooling air inlet temperature 10 Hz °C All Thermal Cooling air outlet temperature 10 Hz °C All Communications OCPP logs to charger 1 Hz N/A All Communications Vehicle communications 1 Hz N/A Vehicle Use Vector CCS listener 41 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 252,
+  "text_sha": "a4a7ce53dc352136bed371dfd84a2fe58d50233907033a92b6cba5b0e4611ade",
+  "extracted_at": "2026-05-15T21:37:57.512714Z"
+}

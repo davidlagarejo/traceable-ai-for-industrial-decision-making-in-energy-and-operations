@@ -1,0 +1,14 @@
+{
+  "chunk_id": "00e10f30::chunk_0035",
+  "source_id": "doe_osti_2565843",
+  "source_sha": "00e10f307647d06aff54c312a528a64a",
+  "source_url": "https://www.osti.gov/servlets/purl/2565843",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Annual Square Footage per Dwelling unit Growth Rate 0.0100 39 This report is available at no cost from the National Renewable Energy Laboratory at www.nrel.gov/publications. Table 16. Simple annual growth factors (2018-2050) for end use energy per dwelling unit End Uses Fuel Type Major Appliances Refrigeration Electricity 0.0007 -0.0047 Natural Gas -0.0016 N/A Fuel Oil -0.0301 N/A Propane -0.0234 N/A Other 0.0094 N/A Table 17. Simple annual growth factors (2018-2050) for residential end use EUI (energy per sqft) End Uses Fuel Type Space Heating and Cooling Plug Loads and Other Lighting Electricity 0.0039 0.0046 -0.0190 Natural Gas -0.0151 -0.0118 N/A Fuel Oil -0.0290 -0.0136 N/A Propane -0.0219 0.0095 N/A Other -0.0201 Table 18. Consolidated residential end use category details. Residential End Use Equipment Examples Lighting Lighting Major Appliances Clothes washer, cooking, dishwasher, dryer, hot water, pool heater, spa Plug Loads and Other Coffee maker, desktop PC, DVD, electric other, home theater, laptop, microwave, monitors, network equipment, other appliance, rechargeable, security system, set top box, TV, video game console, WCL Refrigeration Freezer, refrigerator Space Heating, Ceiling fan, dehumidifier, furnace fans, secondary heating, space cooling, Cooling, and space heating Ventilation 40 This report is available at no cost from the National Renewable Energy Laboratory at www.nrel.gov/publications.",
+  "token_count": 204,
+  "text_sha": "120b065d330f5fc6068f4be1196dcde3a66cfb732427ae948ed6bc97dc9c69be",
+  "extracted_at": "2026-05-15T21:38:37.270256Z"
+}

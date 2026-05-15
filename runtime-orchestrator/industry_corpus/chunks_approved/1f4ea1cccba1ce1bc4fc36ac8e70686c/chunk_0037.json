@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1f4ea1cc::chunk_0037",
+  "source_id": "doe_osti_3001923",
+  "source_sha": "1f4ea1cccba1ce1bc4fc36ac8e70686c",
+  "source_url": "https://www.osti.gov/servlets/purl/3001923",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Meshed Hybrid Microgrid Enabled Using Smart Transformers,” IEEE Transactions on Industrial Electronics, vol. 69, no. 4, pp. 3722–3731, 2022. doi:10.1109/TIE.2021.3071683. (Hrishikesan et al., 2022) V. M. Hrishikesan and C. Kumar, “Smart Transformer-Based Meshed Hybrid Microgrid with MVDC Interconnection,” in Proc. IECON 2020—46th Annual Conf. IEEE Industrial Electronics Society, 2020, pp. 4961–4966. doi:10.1109/IECON43393.2020.9255284. (Hrishikesan & Kumar, 2020) F. Wald, Q. Tao, and G. De Carne, “Virtual Synchronous Machine Control for Asynchronous Grid Connections,” IEEE Transactions on Power Delivery, vol. 39, no. 1, pp. 397–406, 2024. doi:10.1109/TPWRD.2023.3235149. (Wald et al., 2024) B. Wang et al., Developing a PSCAD Model of the Reduced 240-Bus WECC System, NREL/TP-5D00-82287, 2022. (Wang et al., 2022) X. Yu, X. She, X. Ni, and A. Q. Huang, “System Integration and Hierarchical Power Management Strategy for a Solid-State Transformer Interfaced Microgrid System,” IEEE Transactions on Power Electronics, vol. 29, no. 8, pp. 4414–4425, 2014. doi:10.1109/TPEL.2013.2289374. (Yu et al., 2014) CIGRE JWG C6/B4.37, Medium Voltage DC Distribution Systems, Technical Brochure 875, 2022. (Yu et al., 2022) H. Yuan, Developing a Reduced 240-Bus WECC Dynamic Model for Frequency Response Study of High Renewable Integration, NREL preprint, 2020 (later conf. versions 2021/2022). (Yuan, 2020) References 46 PNNL-38364 H. Zong, J. Lyu, X. Wang, C. Zhang, R. Zhang, and X. Cai, “Grey-Box Aggregation Modeling of Wind Farm for Wideband Oscillations Analysis,” Applied Energy, vol. 283, 116035, 2021. https://doi.org/10.1016/j.apenergy.2020.116035. (Zong et al., 2021) References 47 PNNL-38364 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 248,
+  "text_sha": "3b2449d491850f36f0591ddbbdcc88ec69d0a0a74daedde488d2cecb38d804ca",
+  "extracted_at": "2026-05-15T21:44:20.609455Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "d0730cf2::chunk_0032",
+  "source_id": "doe_osti_2588996",
+  "source_sha": "d0730cf2974ac66cd5d76ac39fdc9192",
+  "source_url": "https://www.osti.gov/servlets/purl/2588996",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "energy savings for the fuel type category. Each data point represents the pairwise comparison between a ComStock baseline model and the corresponding model after the measure scenario is applied. 27 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 41,
+  "text_sha": "63eef4ca68fff4b3939519fcd5935ac4394c57395e7837c24ab26d2a270487c7",
+  "extracted_at": "2026-05-15T21:40:36.410885Z"
+}

@@ -1,0 +1,12 @@
+source_id: doe_osti_3020763
+title: "Utility Managed Distributed Energy Resources Intelligent Community - UDERMS iCommunity (Final Technical Report)"
+url: https://www.osti.gov/servlets/purl/3020763
+license: public_domain
+publisher: doe_osti
+version: "2026-02-20"
+added_at: "2026-05-15T21:46:04.633594Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 25 ENERGY STORAGE, 29 ENERGY PLANNING, POLICY, AND ECONOMY, 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION"
+asset_families:
+  - _shared
+  - manufacturing_facility

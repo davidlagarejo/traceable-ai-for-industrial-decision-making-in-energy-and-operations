@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a711b660::chunk_0023",
+  "source_id": "doe_osti_2589597",
+  "source_sha": "a711b6602cc1ba158ab70113e91ec64d",
+  "source_url": "https://www.osti.gov/servlets/purl/2589597",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "+Rˆi 0 H˙ q = 2 ˆi q Sˆ q v dc − Rˆi2 q − ˆi q v q . (25) z p − v dc − v dc ! andthederivativeofth (cid:16) ed-axiscomponentof (cid:17) theHamiltonian K v 0 − v 2 dc +Ri ∗0 v 0 − v 2 dc +Rˆi 0 dt is 3 − i Z v dc − v dc ! H˙ d = 2 ˆi d Sˆ d v dc − Rˆi2 d− ˆi d v d (26) = K R i ∗0 ˆi 0 K R i ∗0 ˆi 0 dt, (22) For the q-and d-axis, w (cid:16) e will seek to drive the (cid:17) se Hamiltonian p i − v dc − v dc!− Z v dc − v dc! components to zero. For the q-axis this is enforced using where K p > 0 and K i > 0 are the proportional and integral 0= 3 ˆi Sˆ v Rˆi2 ˆi v . (27) gains respectively. Assume that v V . Also, assume that 2 q q dc − q − q q dc dc ≈ (cid:16) (cid:17) v 0 is constant except for at the instant the CM insult initiates. factoring outˆi yields q Thetransitionbetweenthetwostatesisneglected.Substituting (22) into (20) and solving the resultant ordinary differential 0= 3 Sˆ v Rˆi v . (28) q dc q q equation (ODE) yields 2 − − (cid:16) (cid:17) i ∗0− ˆi 0 =(i ∗0− ˆi 0 (0))e−K K p+ i 1 t . (23) For the q-axis, the chosen control law is Note that v dc is not constant. Therefore, although the analysis Sˆ =k Ri ∗q +v q Rˆi q +v q q p is linear, the control law is nonlinear. However, as opposed to v dc − v dc ! eigenvalue analysis, the system is not linearized to establish stability. +k Ri ∗q +v q Rˆi q +v q dt i The controller is not Lyapunov stable for all points in time. Z v dc − v dc ! H i t s h o e u w L n e s y v t a a e p b r u , le n a . o s I v n e s a e i r t n s li s e e l r i . m T s i t t h a , a te H t d ˙ i 0 , s, t w h th i i s e ll 3 d e r o v d e e s n c t o u n n a o d l t l i y t i i m o b n p ec l o y o f m ( th 1 e a 0 t s ) ta w sy b i s l l e l te b m in e =k p R v i d ∗q c − v ˆi d q c! +k i R Z v i d ∗q c − v ˆi d q c! dt. (29) Authorized licensed use",
+  "token_count": 512,
+  "text_sha": "859ebd43d36e599763390cc493db5cfd3b7e3375a5cf15797e5488dd0d28de3d",
+  "extracted_at": "2026-05-15T21:44:04.183256Z"
+}

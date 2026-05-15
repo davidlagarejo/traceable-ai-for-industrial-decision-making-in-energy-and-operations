@@ -1,0 +1,14 @@
+{
+  "chunk_id": "44380ed3::chunk_0029",
+  "source_id": "doe_osti_3027760",
+  "source_sha": "44380ed3a1943cbb423bc719cad7cb42",
+  "source_url": "https://www.osti.gov/servlets/purl/3027760",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "the bed to room temperature, allowing the sorbent to be ready for the next adsorption cycle. In this project, we propose using indirect air cooling to achieve this. Aspen Adsorption modeling was used to estimate the optimal airflow rate needed to cool the bed within 30 min. A lower airflow rate is preferred to minimize blower energy 39 A B 8 0 7 0 )C 6 0 B e d in le t o( e B e d m id d le ru 5 0 B e d o u tle t tarep 4 0 met d 3 0 eB 2 0 1 0 0 3 0 6 0 9 0 1 2 0 T im e (m in ) 2 0 )gk/ 1 5 lom( gnida 1 0 ol tnebroS 5 0 0 3 0 T im 6 0 e (m in ) C C C H N O - B e d in le t 2 O -B e d m id d le 2 O -B e d o u tle t 2O -B e d m id d le 2-B e d o u tle t 2 9 0 1 2 0 consumption and cost. As shown in Figure 39, the bed can be cooled to room temperature using approximately 1% of the airflow rate employed during the adsorption step. These data will be used to define the cooling air specifications in TEA. . 100 0.0027 kmol/s 0.0054 kmol/s ) 80 0.0135 kmol/s C o 0.027 kmol/s ( e r u ta 60 r e p m e t d 40 e B 20 0 80 90 100 110 120 Time (min) Figure 39. Bed temperature as a function of cooling air flowrate in 30 min. 3.6. Summary of the Techno-Economic Analysis A detailed topical report on TEA was submitted to DOE with summary below: 3.6.1. Plant list of equipment Table 11. List of equipment for the proposed DAC plant and their characteristics. Equipment Description Type Design Conditions Quantity Adsorption Inlet 15°C, 1.013 bar, outlet 15.3°C, 1.016 bar 1 Centrifugal 1 air blower motor power 80 kW, 11462 cm/min Cooling air Inlet 15°C, 1.013 bar, outlet 15.2°C, 1.015 bar 2 Centrifugal 1 blower motor power 0.53 kW, 114.62 cm/min Vacuum Water Inlet 20°C, 0.2 bar, outlet 60°C, 1.013 bar motor 3 1 pump sealed power15.97 kW, cooling water 1217 kg/h Surface Inlet 100°C, 0.2 bar, outlet 20°C, 1.013 bar 4 Condenser 1 1 condenser cooling water 1217 kg/h Surface Inlet 60°C, 1.013 bar, outlet 20°C, 1.013 bar 5 Condenser 2 1 condenser cooling water 1217 kg/h Gas Reciprocati Inlet 20°C, 1.013 bar, outlet 30°C, 151.685 bar 6 1 compressor ng 6-stage motor power 39 kW, cooling water 3967 kg/h Adsorption fixed bed 15 bed each mat, each is 100 kg sorbent, 2 m ID 7 5 mats sorbent x 15 cm bed length DAC plant with the major equipment was drawn on aspen Adsorption software (proprietary information; not included). Table 11 describes the major equipment applied in the DAC plant along with their respective types and design conditions.",
+  "token_count": 512,
+  "text_sha": "78aed1314416475d950992cece2d0c2248400292095a5d53d50413e1e3e5a060",
+  "extracted_at": "2026-05-15T21:46:29.500703Z"
+}

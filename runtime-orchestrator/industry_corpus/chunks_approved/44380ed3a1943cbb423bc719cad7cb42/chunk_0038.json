@@ -1,0 +1,14 @@
+{
+  "chunk_id": "44380ed3::chunk_0038",
+  "source_id": "doe_osti_3027760",
+  "source_sha": "44380ed3a1943cbb423bc719cad7cb42",
+  "source_url": "https://www.osti.gov/servlets/purl/3027760",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "30. J. Theis, Quality guidelines for energy systems studies: cost estimation methodology for NETL assessments of power plant performance, United States, 2021. 31. S. Hughes, A. Zoelle, M. Woods, S. Henry, S. Homsy, S. Pidaparti, N. Kuehn, H. Hoffman, K. Forrest, A. Sheriff, T. Fout, W. Summers, S. Herron, Cost of capturing CO 2 from industrial sources, United States, 2022. 50 List of Acronyms BEC: Bare Erected Cost DAC: Direct Air Capture DEA: Diethanolamine DETA: Diethylenetriamine DOE: Department of Energy EG: Ethylene Glycol EPC: Engineering, Procurement, and Construction FIB-SEM: Focused Ion Beam Scanning Electron Microscope FTIR: Fourier-transform Infrared spectroscopy GTI: GTI Energy HNC: Hierarchical Nanoporous Capsules ISO: International Organization for Standardization LCOC: Levelized Cost of Capture NETL: National Energy Technology Laboratory O&M: Operating and Maintenance PEF: Porous Electrospun Fibers PEO: Poly(ethylene oxide) QGESS: Quality Guidelines for Energy System Studies SEM: Scanning Electron Microscope TASC: Total As-Spent Capital TEA: Techno-Economic Analysis TEM: Transmission Electron Microscopy TGA: Thermogravimetric Analysis TiCl : Titanium Chloride 4 TMB: 1,3,5-Trimethylbenzene TMC: Trimesoyl Chloride TOC: Total Overnight Cost TPC: Total Plant Cost TRL: Technology Readiness Level TSA: Temperature Swing Adsorption UB: The State University of New York at Buffalo UHP: Ultra High Purity END OF REPORT 51",
+  "token_count": 200,
+  "text_sha": "890970714bf4afe26701dc328107be7360ab9a48bd3176c7145b403664216379",
+  "extracted_at": "2026-05-15T21:46:29.500703Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "726b90f7::chunk_0022",
+  "source_id": "doe_osti_3014922",
+  "source_sha": "726b90f75075a0b38f58f9b083e055d1",
+  "source_url": "https://www.osti.gov/servlets/purl/3014922",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Biomass to Ethanol Process Design and Economics Utilizing Co-Current Dilute Acid Prehydrolysis and Enzymatic Hydrolysis for Corn Stover. Report No. NREL/TP-510-32438. Golden, CO: National Renewable Energy Laboratory, June 2002. http://www.nrel.gov/docs/fy02osti/32438.pdf 31 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 48,
+  "text_sha": "f9524fa761765c6410514babc648cdf4bfbd04c6e92538e68aa06bfa842e8d47",
+  "extracted_at": "2026-05-15T21:46:18.886321Z"
+}

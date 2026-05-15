@@ -1,0 +1,16 @@
+{
+  "chunk_id": "24145638::chunk_0004",
+  "source_id": "steamloc_steam_traps_whitepaper",
+  "source_sha": "2414563832b9c43c60de69a68b0461f1",
+  "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "versions compare results with a database for which you need to complete lots of details. This might be labour intensive to find and upload. Some apply a combination of the ultrasonic check with a thermal infrared camera. Attention is to be given on the trap and piping materials to avoid reflection. Also the downstream pipe size influences the flow pattern and judgements on corresponding temperatures. More recent, some companies promote a real time and continuous monitoring of the traps. Transmitters are built in for each trap and connected to a central computer. From then they continuously check and analyse the trap status. It is a pretty expensive solution, but in return you continuously know how your traps are doing, at every moment. 2.8 Steam loss of Steam traps Traps that fail open still drain the condensate but simultaneously blow steam through their orifice. John Napier wrote down the widely used equation to estimate the steam flow passing the internal orifice of a failing steam trap while draining condensate. Imperial Metric W (lb/h) = 24.24 x P x D2 W(kg/h) = 0,247175 x P x D2 abs abs Lb/h = cte x psia x inch2 kg/h = cte x bara x mm2 Here in: W = steam loss in lb/h 1 kg/h = 2.20 lb/h P = delta steam pressure in psia 1 bara = 14.50 psia abs D = diameter of the internal orifice in inch 1 mm = 39.37x10-3 inch 24.24 = constant 0,24712 = constant 5 Marc Froeyen March 2015 / SL801 Rev0 What you don’t know about steam traps As an example, we worked out 2 cases on average steam pressure: (Steam cost € 25/ton - 8600 h/yr) 1. Utility steam trap 1/2” – internal orifice 1/8” (3,18 mm) - Blow-through failure Steam pressure 5 barg to back pressure 0 barg – condensate load 15 kg/h W = 24.24 x 72,5 x (1/8)² W = 0,247175 * 5 * (3,18)2 = 27.5 lb/h ~ 7,5 €/day = 12,5 kg/h ~ 7,5 €/day 2. Process steam trap 3” - internal orifice 5/16” (7,9 mm) - Blow-through failure Steam pressure 16 barg to back pressure 2 barg – condensate load 16000 kg/h W = 24.24 x 203 x (5/16)² W = 0,247175 * 14 * (7,9)2 = 480.5 lb/h ~ 129 €/day = 216 kg/h ~ 129 €/day 2.9. Impact of leaking traps on your boiler load Unless you benefit from exothermal processes that generate steam, it is your steam boiler that produces all energy to feed your process installations. The boiler capacity that compensates for the steam loss from traps is also called ‘phantom load’. It is the energy that is produced but not available for your process applications. The well-meant actions from your operators to open the bypass a little over your closed failing traps, will even increase this phantom loss, which also might result in safety issues. At the end, it’s all about the fuel bill and additional greenhouse gasses to produce this phantom load. 3 Impact of failing traps for the next 30 years 3.1. Financial impact",
+  "token_count": 512,
+  "text_sha": "59e6e545d67f584555086f9db7f0e853f2319a6d7acbe40b60bfa5fad10b46e8",
+  "extracted_at": "2026-05-15T21:35:32.402289Z"
+}
