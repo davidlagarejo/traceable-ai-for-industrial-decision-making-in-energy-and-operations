@@ -1,0 +1,15 @@
+{
+  "chunk_id": "95f3b273::chunk_0082",
+  "source_id": "doe_osti_1893822",
+  "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+  "source_url": "https://www.osti.gov/servlets/purl/1893822",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "The Selexol process unit can be constructed primarily out of killed carbon steel, which is a deoxidized steel that provides limited or no ageing, and a harder material. High severity areas of the Selexol process require stainless steel. High severity areas are defined as:  High temperature 73",
+  "token_count": 48,
+  "text_sha": "c8ae9ab7d3cb774601dbdd7603b5c66b0fb8aba8364d65533ca2413edd657ef3",
+  "extracted_at": "2026-05-15T15:43:33.367071Z"
+}

@@ -26,7 +26,9 @@ from typing import Any
 
 
 DEFAULT_TIMEOUT_SECONDS: int = 60
-MAX_BYTES: int = 30 * 1024 * 1024  # 30 MB
+# 50 MB — accommodates large DOE OSTI technical reports (some are 35-45 MB).
+# Anything beyond this is almost always image-heavy and not worth chunking.
+MAX_BYTES: int = 50 * 1024 * 1024  # 50 MB
 USER_AGENT: str = (
     # Browser-like UA — some federal sites (EPA, PNNL) block obvious bot UAs
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2_1) AppleWebKit/605.1.15 "

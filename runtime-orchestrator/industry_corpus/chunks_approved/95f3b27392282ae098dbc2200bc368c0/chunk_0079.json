@@ -1,0 +1,15 @@
+{
+  "chunk_id": "95f3b273::chunk_0079",
+  "source_id": "doe_osti_1893822",
+  "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+  "source_url": "https://www.osti.gov/servlets/purl/1893822",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "report, H recovery is 99.5 percent per pass. The minimal H slip to the CO 2 2 2 sequestration stream maximizes the overall plant efficiency. The semi-rich solvent from the HP CO recycle flash drum is routed to two sequential CO flash 2 2 drums. The MP CO stream is flashed at 0.55 MPa (80 psia) and the LP CO stream is flashed at 2 2 0.1 MPa (16.7 psia). The flashed CO gas is sent to the CO compressors and the semi-lean 2 2 solvent is pumped back to the CO absorber. 2 The rich solvent exiting the H S absorber is heated using the lean solvent from the stripper. The 2 hot, rich solvent enters the H S concentrator and partially flashes. The gas exiting the 2 concentrator is compressed and recycled back to the H S absorber. The H S-rich solvent from 2 2 the concentrator is sent to the regenerator for thermal regeneration. The regenerator is composed of a lower section containing packed beds and an upper section containing several reflux trays used to contact the overhead vapor with the reflux water. The solvent from the concentrator enters the regenerator above the packed bed and flows downward, releasing H S, CO , and other components as it passes an upflow of hot vapor 2 2 generated in the reboiler. The combined gases and hot vapor flow upward through a demister and the trayed section, where it is contacted with downflowing reflux water, which cools and condenses the hot vapor and reduces solvent entrainment. The overhead stream passes through a de-entrainment device and exits the top of the column. The overhead gas then passes through the reflux condenser in order to recover the overhead liquid. The cooled liquid and vapor phases are separated in the reflux drum. The reflux liquid is pumped to the trayed section of the regenerator and the acid gas stream is sent to the Claus plant for further processing, as discussed in Section 3.1.7. The lean solvent exiting the stripper is first cooled by providing heat to the rich solvent, then further cooled by exchange with the product gas and finally chilled in the lean chiller before returning to the top of the CO absorber. 2 The Selexol process unit can be constructed primarily out of killed carbon steel, which is a deoxidized steel that provides limited or no ageing, and a harder material. High severity areas of the Selexol process require stainless steel. High severity areas are defined as:  High temperature 73",
+  "token_count": 421,
+  "text_sha": "52174b68234bafc9fef8133126d082083f480b7c5d96f53cbbacccdbe4b3608c",
+  "extracted_at": "2026-05-15T15:43:33.367071Z"
+}

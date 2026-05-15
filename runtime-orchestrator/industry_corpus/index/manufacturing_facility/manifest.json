@@ -1,9 +1,9 @@
 {
   "asset_family": "manufacturing_facility",
-  "built_at": "2026-05-15T14:10:00.844989Z",
+  "built_at": "2026-05-15T15:43:42.490109Z",
   "model_name": "sentence-transformers/all-MiniLM-L6-v2",
   "dim": 384,
-  "chunk_count": 1095,
+  "chunk_count": 1185,
   "rows": [
     {
       "row": 0,
@@ -10007,6 +10007,1266 @@
     },
     {
       "row": 749,
+      "chunk_id": "95f3b273::chunk_0001",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "ec02bceb33525f87f6b4b320b57b116c163c8b2315999835918119a1dc84ffc8",
+      "token_count": 512
+    },
+    {
+      "row": 750,
+      "chunk_id": "95f3b273::chunk_0002",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "e1fac5bcbf62c40f267e889c6fc02cc0ba4046a14be2349a38233ccb37f48028",
+      "token_count": 511
+    },
+    {
+      "row": 751,
+      "chunk_id": "95f3b273::chunk_0003",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "08af8cc401d8404bee74761ae94d8ac2aaa95e6a416c9b6913d6a3a789155406",
+      "token_count": 508
+    },
+    {
+      "row": 752,
+      "chunk_id": "95f3b273::chunk_0004",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "6922a012ce26738100e680fc2177b5afd6797c4f84c7c3d45e0920a2d6fe800c",
+      "token_count": 510
+    },
+    {
+      "row": 753,
+      "chunk_id": "95f3b273::chunk_0005",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c2d3adfb7c8752bec2f0098b6cdd03cd22366f8c321d5dc595c6f7643c2df2e7",
+      "token_count": 508
+    },
+    {
+      "row": 754,
+      "chunk_id": "95f3b273::chunk_0006",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "359d9fc1ae70c737b42be2d6c823506b17d31f8bd273bf54a138259fd6c2eabe",
+      "token_count": 509
+    },
+    {
+      "row": 755,
+      "chunk_id": "95f3b273::chunk_0007",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "f1e8eb996daf0fb0774c5bd3915ef49230bcf51a9ca4fffd0d48d89b023ce15d",
+      "token_count": 509
+    },
+    {
+      "row": 756,
+      "chunk_id": "95f3b273::chunk_0008",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "07e3308c2486d7621e90231f3d0734ffb4ffa654365ed5dc2615e6c51d74cc3b",
+      "token_count": 511
+    },
+    {
+      "row": 757,
+      "chunk_id": "95f3b273::chunk_0009",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "17137466b5885a8cb7c816a3fd77333f51886fb671cb0f7802cd0ccb89172ef3",
+      "token_count": 512
+    },
+    {
+      "row": 758,
+      "chunk_id": "95f3b273::chunk_0010",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9fa47093d9da0bd87d8e52ec3063df79698ff0054b2a3e805e540c28061039c2",
+      "token_count": 512
+    },
+    {
+      "row": 759,
+      "chunk_id": "95f3b273::chunk_0011",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "85388ebd606a3d43ce53c2a7e7b3a521a0be7723c7b03ce59fb08bc1984c3db0",
+      "token_count": 510
+    },
+    {
+      "row": 760,
+      "chunk_id": "95f3b273::chunk_0012",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c9b4852752431f7277d9953364dfc84a91411c5a6c86a2bd1537fd13f7cdf92d",
+      "token_count": 510
+    },
+    {
+      "row": 761,
+      "chunk_id": "95f3b273::chunk_0013",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "8d54f653fa43bf28f37fed1a17d08591a43912991b57f8c5ce5122915ce63227",
+      "token_count": 512
+    },
+    {
+      "row": 762,
+      "chunk_id": "95f3b273::chunk_0014",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "36ca88e277e104235bee4e263f0bf27a0d155fb264f1d79b4f57830f8dc6fa1c",
+      "token_count": 509
+    },
+    {
+      "row": 763,
+      "chunk_id": "95f3b273::chunk_0015",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "368b399d20cd3e67545e4256fee4d945267864ce45277003eb206dc9f3bde18a",
+      "token_count": 512
+    },
+    {
+      "row": 764,
+      "chunk_id": "95f3b273::chunk_0016",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "361c4f61d342c27c0b03670291c0e7feccca103bfb1cd3a71740614022af16a2",
+      "token_count": 510
+    },
+    {
+      "row": 765,
+      "chunk_id": "95f3b273::chunk_0017",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "fdbdc8cdecd899e7e7f7c8bc230d40b4218816ca3a501f8de411aa79f4e2ef31",
+      "token_count": 512
+    },
+    {
+      "row": 766,
+      "chunk_id": "95f3b273::chunk_0018",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "3bf52b4a9b736630d9637087c5c5a53fc2dda6797eb972b2e4b3694c17b00bd9",
+      "token_count": 512
+    },
+    {
+      "row": 767,
+      "chunk_id": "95f3b273::chunk_0019",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "f6d2fc24ae676d95a468a52e2dcd9a3589447f28237ef1fbff134239756db79f",
+      "token_count": 512
+    },
+    {
+      "row": 768,
+      "chunk_id": "95f3b273::chunk_0020",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "45d9c3ee2ce56c1f2b71a7bad2f85023a44443d3bed179271bd90d65285740b3",
+      "token_count": 512
+    },
+    {
+      "row": 769,
+      "chunk_id": "95f3b273::chunk_0021",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9980f2cfaca1fc0418f8ad8050c177570cbb3fcecbfed8357f8ece0d0d756191",
+      "token_count": 511
+    },
+    {
+      "row": 770,
+      "chunk_id": "95f3b273::chunk_0022",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "0bbd07b68c5764f92f5757474972e02ccb51343008470057fcb6a0980f9a47b9",
+      "token_count": 509
+    },
+    {
+      "row": 771,
+      "chunk_id": "95f3b273::chunk_0023",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "43926e05fc6d96b4c4dfe7a168e4f7171385de11011bfaa6b858456c72c971ff",
+      "token_count": 511
+    },
+    {
+      "row": 772,
+      "chunk_id": "95f3b273::chunk_0024",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "5ef2067b5916edb9d12112158b036097063be1be5ef859ab1d7048736c53f7ce",
+      "token_count": 512
+    },
+    {
+      "row": 773,
+      "chunk_id": "95f3b273::chunk_0025",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9bd51737bb93dcd72be7e17ae5a96fcbe6d24b54bf05ee8512fa219dbd6f1ddc",
+      "token_count": 512
+    },
+    {
+      "row": 774,
+      "chunk_id": "95f3b273::chunk_0026",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "055d11083c65cb405fe50f251699c29f2169d69d19f190b42da733e68410a806",
+      "token_count": 510
+    },
+    {
+      "row": 775,
+      "chunk_id": "95f3b273::chunk_0027",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "e7a4859709319067025be7b919c059759d8ad2d07bb71422c77278502c0a325a",
+      "token_count": 511
+    },
+    {
+      "row": 776,
+      "chunk_id": "95f3b273::chunk_0028",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "ac2c91e5a13c5ee8cdf6db1370f909e7271cf552f8fbd388b0134d871ff64b3b",
+      "token_count": 512
+    },
+    {
+      "row": 777,
+      "chunk_id": "95f3b273::chunk_0029",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "bf6f25fac6abeb6aa1c45bf90f59c6e00dd51a916eefa8cb1b0101351f59f33b",
+      "token_count": 512
+    },
+    {
+      "row": 778,
+      "chunk_id": "95f3b273::chunk_0030",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9e89ef58097bf9ef661ba0c5d59e5bbcb0190a27ab17eccf9fc954482bfe9e6d",
+      "token_count": 508
+    },
+    {
+      "row": 779,
+      "chunk_id": "95f3b273::chunk_0031",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "b0d24cda443fe82ded3e31b7105a40ed2268bfd6ab5778d57bea0c48b682242f",
+      "token_count": 512
+    },
+    {
+      "row": 780,
+      "chunk_id": "95f3b273::chunk_0032",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "d1892685c1dd01c3193036b2543e3068a66f49c81659801dcb5b35c8280644cd",
+      "token_count": 509
+    },
+    {
+      "row": 781,
+      "chunk_id": "95f3b273::chunk_0033",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "eca6d68a473c282126cf481718c0a1d64e8d6021f94bd777d437e5d872a68b24",
+      "token_count": 508
+    },
+    {
+      "row": 782,
+      "chunk_id": "95f3b273::chunk_0034",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1a1ec4fa286d5c692c626354a83ace3ebf7f892d484a9908c5afb73ee4298a27",
+      "token_count": 511
+    },
+    {
+      "row": 783,
+      "chunk_id": "95f3b273::chunk_0035",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c68480a3ff9cebc1cdf669f14976f4641e0fa885f65c975e2be5558af95b13a3",
+      "token_count": 508
+    },
+    {
+      "row": 784,
+      "chunk_id": "95f3b273::chunk_0036",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c86f3e9a7b238756f5ada5878ddd3284634b8a2ed47d2a78b6d31e740d4eac73",
+      "token_count": 509
+    },
+    {
+      "row": 785,
+      "chunk_id": "95f3b273::chunk_0037",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "0a3844d203dc8ca0ab86b4c41c5392fab66875796fc75b652186de48d521b3f0",
+      "token_count": 510
+    },
+    {
+      "row": 786,
+      "chunk_id": "95f3b273::chunk_0038",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "7a02ac1febee7607baeae7880f8ed4ca8ea74f9c2a3224746aade374486b7d76",
+      "token_count": 512
+    },
+    {
+      "row": 787,
+      "chunk_id": "95f3b273::chunk_0039",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "f51fff8f40ac41f0c04eb381caccd155d8ac1f9cb82615fd021814dd2768f0aa",
+      "token_count": 512
+    },
+    {
+      "row": 788,
+      "chunk_id": "95f3b273::chunk_0040",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "8447cb1f4b2c315210652e44259d1cddd830e175fe48ee63b5489d98d2dd2985",
+      "token_count": 510
+    },
+    {
+      "row": 789,
+      "chunk_id": "95f3b273::chunk_0041",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "06e76baba09d84ab9671a13fb898cc16211d0719dd5e734658b3e9a3f4da5b54",
+      "token_count": 510
+    },
+    {
+      "row": 790,
+      "chunk_id": "95f3b273::chunk_0042",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1e8353b6f0841c67fd3a1a32587796327ee57d6670fe172ac46844e5ed9125f2",
+      "token_count": 509
+    },
+    {
+      "row": 791,
+      "chunk_id": "95f3b273::chunk_0043",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "4e1c6ef05810a9b8a9d0498baa10d9a95783fc45d39b9f322940e31c9d141bb2",
+      "token_count": 509
+    },
+    {
+      "row": 792,
+      "chunk_id": "95f3b273::chunk_0044",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "f9ef3fc5fe155152dc169f60163206b3703f7da264426a8ee25444baddf061cb",
+      "token_count": 510
+    },
+    {
+      "row": 793,
+      "chunk_id": "95f3b273::chunk_0045",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "3b4e9957c85cc31a34a8c462409c5f4474ee307d6c0d8309eb4ee8491fb2641b",
+      "token_count": 509
+    },
+    {
+      "row": 794,
+      "chunk_id": "95f3b273::chunk_0046",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c6d3a96005be6450053df5d3598890b9abde02e67fa097e0620aa5fc95b59047",
+      "token_count": 509
+    },
+    {
+      "row": 795,
+      "chunk_id": "95f3b273::chunk_0047",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1948f00e4e62b6f3911e0640fa8d725a3b17af88bb6256f32547fa74d640e4c9",
+      "token_count": 512
+    },
+    {
+      "row": 796,
+      "chunk_id": "95f3b273::chunk_0048",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "0769fe01b01305f4b2013a2fa13eedd679bc2ec864a67f534d8eef5c5308f2bd",
+      "token_count": 510
+    },
+    {
+      "row": 797,
+      "chunk_id": "95f3b273::chunk_0049",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "3fd85f73ff78e147f4f38157c236c28837141e8ec6c5654eea03b32b7af91dc2",
+      "token_count": 509
+    },
+    {
+      "row": 798,
+      "chunk_id": "95f3b273::chunk_0050",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "84c6ec53f7d11a7381b1e2377c4baf16a7faa499fd1f13c169eb2716f5490518",
+      "token_count": 512
+    },
+    {
+      "row": 799,
+      "chunk_id": "95f3b273::chunk_0051",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "10d8b99d87e47ff913f3b8433391a1a40c054841c20db89fbb274a397403ed77",
+      "token_count": 509
+    },
+    {
+      "row": 800,
+      "chunk_id": "95f3b273::chunk_0052",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1f49195192dba457dec1ac2775eb9dd0cff0eb9ce96cd7e94b932b0d18e25af7",
+      "token_count": 509
+    },
+    {
+      "row": 801,
+      "chunk_id": "95f3b273::chunk_0053",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "580ec05d709dd8b73a0ab9f936e701190be53160a3f19fb52a10eb57076608ce",
+      "token_count": 512
+    },
+    {
+      "row": 802,
+      "chunk_id": "95f3b273::chunk_0054",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "bde38cbdb670e47dbf9ad63fc95fa0efa590d977cc2fe46a6e9d5fb27fba377a",
+      "token_count": 512
+    },
+    {
+      "row": 803,
+      "chunk_id": "95f3b273::chunk_0055",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "a6016a4143b03c7531b1d88b90324f2624a3ee0f9bf59fd025830a1bdc6fdcfb",
+      "token_count": 512
+    },
+    {
+      "row": 804,
+      "chunk_id": "95f3b273::chunk_0056",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "b7ed6ee09ca8dc83886d1fb8cfcae337d8d2c0cbc0740bd4dfc1e75d54b20d5a",
+      "token_count": 509
+    },
+    {
+      "row": 805,
+      "chunk_id": "95f3b273::chunk_0057",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "16a428dbd433b4b14c9ccf0de191148c0a273bc8e9542b989a7b43764471ae36",
+      "token_count": 512
+    },
+    {
+      "row": 806,
+      "chunk_id": "95f3b273::chunk_0058",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "cebc040c5892e0377ec2af665092d10912ec37af1f449d5ec524788011354812",
+      "token_count": 510
+    },
+    {
+      "row": 807,
+      "chunk_id": "95f3b273::chunk_0059",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "5ec0a0881cc6f88b5cad1966f41349f0d78be0ac5c174b447604a8ba879203bc",
+      "token_count": 512
+    },
+    {
+      "row": 808,
+      "chunk_id": "95f3b273::chunk_0060",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9c3aeb7645f5d276ac3ffed85944c6d12659a653cb9393ad1999ee0d95017786",
+      "token_count": 512
+    },
+    {
+      "row": 809,
+      "chunk_id": "95f3b273::chunk_0061",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "e2da02ffc13b9c9f5da05fe154bab2056164a60ff7ad25ec86cdcc6366b50e1a",
+      "token_count": 512
+    },
+    {
+      "row": 810,
+      "chunk_id": "95f3b273::chunk_0062",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "8d866c42938b6e94bbb361d89ce25b52dd1884aa512c5a689fc8be7f6d8dcd2e",
+      "token_count": 508
+    },
+    {
+      "row": 811,
+      "chunk_id": "95f3b273::chunk_0063",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "8d84823d6b5ff0968fbd8172793882572b1b696b94ab373cd85741ad3c264f64",
+      "token_count": 510
+    },
+    {
+      "row": 812,
+      "chunk_id": "95f3b273::chunk_0064",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "9d8c2f94fea061a2acd8374b90579b34d8f93e4d710b7b73b29316c4527905e7",
+      "token_count": 509
+    },
+    {
+      "row": 813,
+      "chunk_id": "95f3b273::chunk_0065",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "ddd1d2d2eb2c568a61a9ceba411907a8dac33a5eebd1540642a433bc3c437e4b",
+      "token_count": 509
+    },
+    {
+      "row": 814,
+      "chunk_id": "95f3b273::chunk_0066",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "f40892b527b070f46a19fc0d4b6d8432e0b20fcde0eb5581d8e6cda07be5d349",
+      "token_count": 510
+    },
+    {
+      "row": 815,
+      "chunk_id": "95f3b273::chunk_0067",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "2836efdb82c53ecb4cd852761ba3c88dce0539478ae23f9ae3b09b28f315e51e",
+      "token_count": 511
+    },
+    {
+      "row": 816,
+      "chunk_id": "95f3b273::chunk_0068",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "473337ef83a29e82d8993e975b224a41a51d7f1376ddffd333de210aaed58189",
+      "token_count": 510
+    },
+    {
+      "row": 817,
+      "chunk_id": "95f3b273::chunk_0069",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "a6e77e3e64a0b8bbcfa5d9a88061a425daaa953c106509d6800df47b56802049",
+      "token_count": 509
+    },
+    {
+      "row": 818,
+      "chunk_id": "95f3b273::chunk_0070",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "6523be0390885389940a0593ba9835ccbacea7c3cb8454224a63157ef3336267",
+      "token_count": 509
+    },
+    {
+      "row": 819,
+      "chunk_id": "95f3b273::chunk_0071",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "29f006e10330c1e2b5eb59ba25d2eed0ea6a0a8a47e5b3568484b16803af13b7",
+      "token_count": 509
+    },
+    {
+      "row": 820,
+      "chunk_id": "95f3b273::chunk_0072",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "3987478d4a6344702d53c2829f5f12d7bfbad3c2c989a29fe7947638ebcc6b79",
+      "token_count": 512
+    },
+    {
+      "row": 821,
+      "chunk_id": "95f3b273::chunk_0073",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "778150ca3e7efd4a8b3003fba413f8345b291250fb6bb1768a29cf4fa28f4a44",
+      "token_count": 511
+    },
+    {
+      "row": 822,
+      "chunk_id": "95f3b273::chunk_0074",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "37eb218a15ea1cd7f7676174099eee6ce4684193b4c84dbf9b3f41e082ae678f",
+      "token_count": 511
+    },
+    {
+      "row": 823,
+      "chunk_id": "95f3b273::chunk_0075",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "8c4221abffa5f7c2e3754fbe5ef86e708f9e221a4c1fbca86854f77976e1dcc2",
+      "token_count": 509
+    },
+    {
+      "row": 824,
+      "chunk_id": "95f3b273::chunk_0076",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "2afe76b2d36556569860d49b2f1e3b6e594ee7cf0834dcc7a9a9587d03adcaaf",
+      "token_count": 509
+    },
+    {
+      "row": 825,
+      "chunk_id": "95f3b273::chunk_0077",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "d2541ef9d959eb686d58e50b5299e28bb70b41b805ea5625a86cb0efc8ed182e",
+      "token_count": 511
+    },
+    {
+      "row": 826,
+      "chunk_id": "95f3b273::chunk_0078",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "b4f7087ad39acad2fd1b5f3687c58225e4a6a3a6e0b5cc190e8d9d7ac1cee8c9",
+      "token_count": 508
+    },
+    {
+      "row": 827,
+      "chunk_id": "95f3b273::chunk_0079",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "52174b68234bafc9fef8133126d082083f480b7c5d96f53cbbacccdbe4b3608c",
+      "token_count": 421
+    },
+    {
+      "row": 828,
+      "chunk_id": "95f3b273::chunk_0080",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "942f2b503521771b2021acdfd860b56be75ac2c03b40c4f3616ff4b06cd0ec3f",
+      "token_count": 50
+    },
+    {
+      "row": 829,
+      "chunk_id": "95f3b273::chunk_0081",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1e210bd105169edf2db9d9fca97993fd8df7bc6808427347092bf28780bb2ed8",
+      "token_count": 49
+    },
+    {
+      "row": 830,
+      "chunk_id": "95f3b273::chunk_0082",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "c8ae9ab7d3cb774601dbdd7603b5c66b0fb8aba8364d65533ca2413edd657ef3",
+      "token_count": 48
+    },
+    {
+      "row": 831,
+      "chunk_id": "95f3b273::chunk_0083",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "264c316884c68a6a2ce07342b7fce494f0fdb2da03459bbaa35dc22fcc654b14",
+      "token_count": 47
+    },
+    {
+      "row": 832,
+      "chunk_id": "95f3b273::chunk_0084",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "668bef616bf6f264156702128ffe7f334b450d0b9e491917e25a4db4191bcc06",
+      "token_count": 46
+    },
+    {
+      "row": 833,
+      "chunk_id": "95f3b273::chunk_0085",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "7ccd296bc63df2d975a37a34f3867155e6e8f5e24918b18fafbff73475c4fa3b",
+      "token_count": 45
+    },
+    {
+      "row": 834,
+      "chunk_id": "95f3b273::chunk_0086",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "bb13ddea29c7bf9e28b72995323b1adf727138d01b5d102e0f3f7fa24d356a82",
+      "token_count": 44
+    },
+    {
+      "row": 835,
+      "chunk_id": "95f3b273::chunk_0087",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "0516e434e517a52319e9ba6b841c6d51170ffa326a964920f74453f78956bdad",
+      "token_count": 43
+    },
+    {
+      "row": 836,
+      "chunk_id": "95f3b273::chunk_0088",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "1f58e5524ff2f04dcf51af8db1065e5907ac9c3f6cc56d87a92bc9a3c5905491",
+      "token_count": 42
+    },
+    {
+      "row": 837,
+      "chunk_id": "95f3b273::chunk_0089",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "0ee8034952914a9de904c26cecaf3824d8f2af0e71573945cf7d151c6dcd69ea",
+      "token_count": 41
+    },
+    {
+      "row": 838,
+      "chunk_id": "95f3b273::chunk_0090",
+      "source_id": "doe_osti_1893822",
+      "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+      "source_url": "https://www.osti.gov/servlets/purl/1893822",
+      "page": 1,
+      "asset_families": [
+        "manufacturing_facility",
+        "_shared"
+      ],
+      "text_sha": "ca431609bcad10d57a6ae89e121ab6489108150f79e01ba52549aacec5879690",
+      "token_count": 40
+    },
+    {
+      "row": 839,
       "chunk_id": "a6388819::chunk_0001",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10020,7 +11280,7 @@
       "token_count": 512
     },
     {
-      "row": 750,
+      "row": 840,
       "chunk_id": "a6388819::chunk_0002",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10034,7 +11294,7 @@
       "token_count": 508
     },
     {
-      "row": 751,
+      "row": 841,
       "chunk_id": "a6388819::chunk_0003",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10048,7 +11308,7 @@
       "token_count": 512
     },
     {
-      "row": 752,
+      "row": 842,
       "chunk_id": "a6388819::chunk_0004",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10062,7 +11322,7 @@
       "token_count": 511
     },
     {
-      "row": 753,
+      "row": 843,
       "chunk_id": "a6388819::chunk_0005",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10076,7 +11336,7 @@
       "token_count": 511
     },
     {
-      "row": 754,
+      "row": 844,
       "chunk_id": "a6388819::chunk_0006",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10090,7 +11350,7 @@
       "token_count": 508
     },
     {
-      "row": 755,
+      "row": 845,
       "chunk_id": "a6388819::chunk_0007",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10104,7 +11364,7 @@
       "token_count": 512
     },
     {
-      "row": 756,
+      "row": 846,
       "chunk_id": "a6388819::chunk_0008",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10118,7 +11378,7 @@
       "token_count": 509
     },
     {
-      "row": 757,
+      "row": 847,
       "chunk_id": "a6388819::chunk_0009",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10132,7 +11392,7 @@
       "token_count": 508
     },
     {
-      "row": 758,
+      "row": 848,
       "chunk_id": "a6388819::chunk_0010",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10146,7 +11406,7 @@
       "token_count": 509
     },
     {
-      "row": 759,
+      "row": 849,
       "chunk_id": "a6388819::chunk_0011",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10160,7 +11420,7 @@
       "token_count": 512
     },
     {
-      "row": 760,
+      "row": 850,
       "chunk_id": "a6388819::chunk_0012",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10174,7 +11434,7 @@
       "token_count": 511
     },
     {
-      "row": 761,
+      "row": 851,
       "chunk_id": "a6388819::chunk_0013",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10188,7 +11448,7 @@
       "token_count": 511
     },
     {
-      "row": 762,
+      "row": 852,
       "chunk_id": "a6388819::chunk_0014",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10202,7 +11462,7 @@
       "token_count": 510
     },
     {
-      "row": 763,
+      "row": 853,
       "chunk_id": "a6388819::chunk_0015",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10216,7 +11476,7 @@
       "token_count": 511
     },
     {
-      "row": 764,
+      "row": 854,
       "chunk_id": "a6388819::chunk_0016",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10230,7 +11490,7 @@
       "token_count": 508
     },
     {
-      "row": 765,
+      "row": 855,
       "chunk_id": "a6388819::chunk_0017",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10244,7 +11504,7 @@
       "token_count": 511
     },
     {
-      "row": 766,
+      "row": 856,
       "chunk_id": "a6388819::chunk_0018",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10258,7 +11518,7 @@
       "token_count": 510
     },
     {
-      "row": 767,
+      "row": 857,
       "chunk_id": "a6388819::chunk_0019",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10272,7 +11532,7 @@
       "token_count": 512
     },
     {
-      "row": 768,
+      "row": 858,
       "chunk_id": "a6388819::chunk_0020",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10286,7 +11546,7 @@
       "token_count": 511
     },
     {
-      "row": 769,
+      "row": 859,
       "chunk_id": "a6388819::chunk_0021",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10300,7 +11560,7 @@
       "token_count": 510
     },
     {
-      "row": 770,
+      "row": 860,
       "chunk_id": "a6388819::chunk_0022",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10314,7 +11574,7 @@
       "token_count": 508
     },
     {
-      "row": 771,
+      "row": 861,
       "chunk_id": "a6388819::chunk_0023",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10328,7 +11588,7 @@
       "token_count": 509
     },
     {
-      "row": 772,
+      "row": 862,
       "chunk_id": "a6388819::chunk_0024",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10342,7 +11602,7 @@
       "token_count": 510
     },
     {
-      "row": 773,
+      "row": 863,
       "chunk_id": "a6388819::chunk_0025",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10356,7 +11616,7 @@
       "token_count": 512
     },
     {
-      "row": 774,
+      "row": 864,
       "chunk_id": "a6388819::chunk_0026",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10370,7 +11630,7 @@
       "token_count": 512
     },
     {
-      "row": 775,
+      "row": 865,
       "chunk_id": "a6388819::chunk_0027",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10384,7 +11644,7 @@
       "token_count": 508
     },
     {
-      "row": 776,
+      "row": 866,
       "chunk_id": "a6388819::chunk_0028",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10398,7 +11658,7 @@
       "token_count": 512
     },
     {
-      "row": 777,
+      "row": 867,
       "chunk_id": "a6388819::chunk_0029",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10412,7 +11672,7 @@
       "token_count": 512
     },
     {
-      "row": 778,
+      "row": 868,
       "chunk_id": "a6388819::chunk_0030",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10426,7 +11686,7 @@
       "token_count": 510
     },
     {
-      "row": 779,
+      "row": 869,
       "chunk_id": "a6388819::chunk_0031",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10440,7 +11700,7 @@
       "token_count": 511
     },
     {
-      "row": 780,
+      "row": 870,
       "chunk_id": "a6388819::chunk_0032",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10454,7 +11714,7 @@
       "token_count": 508
     },
     {
-      "row": 781,
+      "row": 871,
       "chunk_id": "a6388819::chunk_0033",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10468,7 +11728,7 @@
       "token_count": 509
     },
     {
-      "row": 782,
+      "row": 872,
       "chunk_id": "a6388819::chunk_0034",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10482,7 +11742,7 @@
       "token_count": 511
     },
     {
-      "row": 783,
+      "row": 873,
       "chunk_id": "a6388819::chunk_0035",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10496,7 +11756,7 @@
       "token_count": 512
     },
     {
-      "row": 784,
+      "row": 874,
       "chunk_id": "a6388819::chunk_0036",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10510,7 +11770,7 @@
       "token_count": 510
     },
     {
-      "row": 785,
+      "row": 875,
       "chunk_id": "a6388819::chunk_0037",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10524,7 +11784,7 @@
       "token_count": 512
     },
     {
-      "row": 786,
+      "row": 876,
       "chunk_id": "a6388819::chunk_0038",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10538,7 +11798,7 @@
       "token_count": 510
     },
     {
-      "row": 787,
+      "row": 877,
       "chunk_id": "a6388819::chunk_0039",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10552,7 +11812,7 @@
       "token_count": 512
     },
     {
-      "row": 788,
+      "row": 878,
       "chunk_id": "a6388819::chunk_0040",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10566,7 +11826,7 @@
       "token_count": 512
     },
     {
-      "row": 789,
+      "row": 879,
       "chunk_id": "a6388819::chunk_0041",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10580,7 +11840,7 @@
       "token_count": 511
     },
     {
-      "row": 790,
+      "row": 880,
       "chunk_id": "a6388819::chunk_0042",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10594,7 +11854,7 @@
       "token_count": 509
     },
     {
-      "row": 791,
+      "row": 881,
       "chunk_id": "a6388819::chunk_0043",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10608,7 +11868,7 @@
       "token_count": 512
     },
     {
-      "row": 792,
+      "row": 882,
       "chunk_id": "a6388819::chunk_0044",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10622,7 +11882,7 @@
       "token_count": 511
     },
     {
-      "row": 793,
+      "row": 883,
       "chunk_id": "a6388819::chunk_0045",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10636,7 +11896,7 @@
       "token_count": 508
     },
     {
-      "row": 794,
+      "row": 884,
       "chunk_id": "a6388819::chunk_0046",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10650,7 +11910,7 @@
       "token_count": 510
     },
     {
-      "row": 795,
+      "row": 885,
       "chunk_id": "a6388819::chunk_0047",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10664,7 +11924,7 @@
       "token_count": 512
     },
     {
-      "row": 796,
+      "row": 886,
       "chunk_id": "a6388819::chunk_0048",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10678,7 +11938,7 @@
       "token_count": 510
     },
     {
-      "row": 797,
+      "row": 887,
       "chunk_id": "a6388819::chunk_0049",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10692,7 +11952,7 @@
       "token_count": 509
     },
     {
-      "row": 798,
+      "row": 888,
       "chunk_id": "a6388819::chunk_0050",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10706,7 +11966,7 @@
       "token_count": 512
     },
     {
-      "row": 799,
+      "row": 889,
       "chunk_id": "a6388819::chunk_0051",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10720,7 +11980,7 @@
       "token_count": 508
     },
     {
-      "row": 800,
+      "row": 890,
       "chunk_id": "a6388819::chunk_0052",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10734,7 +11994,7 @@
       "token_count": 508
     },
     {
-      "row": 801,
+      "row": 891,
       "chunk_id": "a6388819::chunk_0053",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10748,7 +12008,7 @@
       "token_count": 510
     },
     {
-      "row": 802,
+      "row": 892,
       "chunk_id": "a6388819::chunk_0054",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10762,7 +12022,7 @@
       "token_count": 509
     },
     {
-      "row": 803,
+      "row": 893,
       "chunk_id": "a6388819::chunk_0055",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10776,7 +12036,7 @@
       "token_count": 509
     },
     {
-      "row": 804,
+      "row": 894,
       "chunk_id": "a6388819::chunk_0056",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10790,7 +12050,7 @@
       "token_count": 508
     },
     {
-      "row": 805,
+      "row": 895,
       "chunk_id": "a6388819::chunk_0057",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10804,7 +12064,7 @@
       "token_count": 511
     },
     {
-      "row": 806,
+      "row": 896,
       "chunk_id": "a6388819::chunk_0058",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10818,7 +12078,7 @@
       "token_count": 510
     },
     {
-      "row": 807,
+      "row": 897,
       "chunk_id": "a6388819::chunk_0059",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10832,7 +12092,7 @@
       "token_count": 508
     },
     {
-      "row": 808,
+      "row": 898,
       "chunk_id": "a6388819::chunk_0060",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10846,7 +12106,7 @@
       "token_count": 511
     },
     {
-      "row": 809,
+      "row": 899,
       "chunk_id": "a6388819::chunk_0061",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10860,7 +12120,7 @@
       "token_count": 512
     },
     {
-      "row": 810,
+      "row": 900,
       "chunk_id": "a6388819::chunk_0062",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10874,7 +12134,7 @@
       "token_count": 509
     },
     {
-      "row": 811,
+      "row": 901,
       "chunk_id": "a6388819::chunk_0063",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10888,7 +12148,7 @@
       "token_count": 512
     },
     {
-      "row": 812,
+      "row": 902,
       "chunk_id": "a6388819::chunk_0064",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10902,7 +12162,7 @@
       "token_count": 512
     },
     {
-      "row": 813,
+      "row": 903,
       "chunk_id": "a6388819::chunk_0065",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10916,7 +12176,7 @@
       "token_count": 512
     },
     {
-      "row": 814,
+      "row": 904,
       "chunk_id": "a6388819::chunk_0066",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10930,7 +12190,7 @@
       "token_count": 512
     },
     {
-      "row": 815,
+      "row": 905,
       "chunk_id": "a6388819::chunk_0067",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10944,7 +12204,7 @@
       "token_count": 508
     },
     {
-      "row": 816,
+      "row": 906,
       "chunk_id": "a6388819::chunk_0068",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10958,7 +12218,7 @@
       "token_count": 511
     },
     {
-      "row": 817,
+      "row": 907,
       "chunk_id": "a6388819::chunk_0069",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10972,7 +12232,7 @@
       "token_count": 512
     },
     {
-      "row": 818,
+      "row": 908,
       "chunk_id": "a6388819::chunk_0070",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -10986,7 +12246,7 @@
       "token_count": 512
     },
     {
-      "row": 819,
+      "row": 909,
       "chunk_id": "a6388819::chunk_0071",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11000,7 +12260,7 @@
       "token_count": 511
     },
     {
-      "row": 820,
+      "row": 910,
       "chunk_id": "a6388819::chunk_0072",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11014,7 +12274,7 @@
       "token_count": 512
     },
     {
-      "row": 821,
+      "row": 911,
       "chunk_id": "a6388819::chunk_0073",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11028,7 +12288,7 @@
       "token_count": 511
     },
     {
-      "row": 822,
+      "row": 912,
       "chunk_id": "a6388819::chunk_0074",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11042,7 +12302,7 @@
       "token_count": 512
     },
     {
-      "row": 823,
+      "row": 913,
       "chunk_id": "a6388819::chunk_0075",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11056,7 +12316,7 @@
       "token_count": 512
     },
     {
-      "row": 824,
+      "row": 914,
       "chunk_id": "a6388819::chunk_0076",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11070,7 +12330,7 @@
       "token_count": 508
     },
     {
-      "row": 825,
+      "row": 915,
       "chunk_id": "a6388819::chunk_0077",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11084,7 +12344,7 @@
       "token_count": 509
     },
     {
-      "row": 826,
+      "row": 916,
       "chunk_id": "a6388819::chunk_0078",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11098,7 +12358,7 @@
       "token_count": 508
     },
     {
-      "row": 827,
+      "row": 917,
       "chunk_id": "a6388819::chunk_0079",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11112,7 +12372,7 @@
       "token_count": 512
     },
     {
-      "row": 828,
+      "row": 918,
       "chunk_id": "a6388819::chunk_0080",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11126,7 +12386,7 @@
       "token_count": 443
     },
     {
-      "row": 829,
+      "row": 919,
       "chunk_id": "a6388819::chunk_0081",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11140,7 +12400,7 @@
       "token_count": 50
     },
     {
-      "row": 830,
+      "row": 920,
       "chunk_id": "a6388819::chunk_0082",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11154,7 +12414,7 @@
       "token_count": 49
     },
     {
-      "row": 831,
+      "row": 921,
       "chunk_id": "a6388819::chunk_0083",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11168,7 +12428,7 @@
       "token_count": 48
     },
     {
-      "row": 832,
+      "row": 922,
       "chunk_id": "a6388819::chunk_0084",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11182,7 +12442,7 @@
       "token_count": 47
     },
     {
-      "row": 833,
+      "row": 923,
       "chunk_id": "a6388819::chunk_0085",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11196,7 +12456,7 @@
       "token_count": 46
     },
     {
-      "row": 834,
+      "row": 924,
       "chunk_id": "a6388819::chunk_0086",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11210,7 +12470,7 @@
       "token_count": 45
     },
     {
-      "row": 835,
+      "row": 925,
       "chunk_id": "a6388819::chunk_0087",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11224,7 +12484,7 @@
       "token_count": 44
     },
     {
-      "row": 836,
+      "row": 926,
       "chunk_id": "a6388819::chunk_0088",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11238,7 +12498,7 @@
       "token_count": 43
     },
     {
-      "row": 837,
+      "row": 927,
       "chunk_id": "a6388819::chunk_0089",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11252,7 +12512,7 @@
       "token_count": 42
     },
     {
-      "row": 838,
+      "row": 928,
       "chunk_id": "a6388819::chunk_0090",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11266,7 +12526,7 @@
       "token_count": 41
     },
     {
-      "row": 839,
+      "row": 929,
       "chunk_id": "a6388819::chunk_0091",
       "source_id": "doe_osti_1893828",
       "source_sha": "a63888197fb702a660832a4f585e19e4",
@@ -11280,7 +12540,7 @@
       "token_count": 40
     },
     {
-      "row": 840,
+      "row": 930,
       "chunk_id": "a8f82229::chunk_0001",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11294,7 +12554,7 @@
       "token_count": 509
     },
     {
-      "row": 841,
+      "row": 931,
       "chunk_id": "a8f82229::chunk_0002",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11308,7 +12568,7 @@
       "token_count": 512
     },
     {
-      "row": 842,
+      "row": 932,
       "chunk_id": "a8f82229::chunk_0003",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11322,7 +12582,7 @@
       "token_count": 509
     },
     {
-      "row": 843,
+      "row": 933,
       "chunk_id": "a8f82229::chunk_0004",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11336,7 +12596,7 @@
       "token_count": 510
     },
     {
-      "row": 844,
+      "row": 934,
       "chunk_id": "a8f82229::chunk_0005",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11350,7 +12610,7 @@
       "token_count": 510
     },
     {
-      "row": 845,
+      "row": 935,
       "chunk_id": "a8f82229::chunk_0006",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11364,7 +12624,7 @@
       "token_count": 508
     },
     {
-      "row": 846,
+      "row": 936,
       "chunk_id": "a8f82229::chunk_0007",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11378,7 +12638,7 @@
       "token_count": 508
     },
     {
-      "row": 847,
+      "row": 937,
       "chunk_id": "a8f82229::chunk_0008",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11392,7 +12652,7 @@
       "token_count": 508
     },
     {
-      "row": 848,
+      "row": 938,
       "chunk_id": "a8f82229::chunk_0009",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11406,7 +12666,7 @@
       "token_count": 510
     },
     {
-      "row": 849,
+      "row": 939,
       "chunk_id": "a8f82229::chunk_0010",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11420,7 +12680,7 @@
       "token_count": 509
     },
     {
-      "row": 850,
+      "row": 940,
       "chunk_id": "a8f82229::chunk_0011",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11434,7 +12694,7 @@
       "token_count": 508
     },
     {
-      "row": 851,
+      "row": 941,
       "chunk_id": "a8f82229::chunk_0012",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11448,7 +12708,7 @@
       "token_count": 509
     },
     {
-      "row": 852,
+      "row": 942,
       "chunk_id": "a8f82229::chunk_0013",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11462,7 +12722,7 @@
       "token_count": 512
     },
     {
-      "row": 853,
+      "row": 943,
       "chunk_id": "a8f82229::chunk_0014",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11476,7 +12736,7 @@
       "token_count": 511
     },
     {
-      "row": 854,
+      "row": 944,
       "chunk_id": "a8f82229::chunk_0015",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11490,7 +12750,7 @@
       "token_count": 511
     },
     {
-      "row": 855,
+      "row": 945,
       "chunk_id": "a8f82229::chunk_0016",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11504,7 +12764,7 @@
       "token_count": 511
     },
     {
-      "row": 856,
+      "row": 946,
       "chunk_id": "a8f82229::chunk_0017",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11518,7 +12778,7 @@
       "token_count": 505
     },
     {
-      "row": 857,
+      "row": 947,
       "chunk_id": "a8f82229::chunk_0018",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11532,7 +12792,7 @@
       "token_count": 50
     },
     {
-      "row": 858,
+      "row": 948,
       "chunk_id": "a8f82229::chunk_0019",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11546,7 +12806,7 @@
       "token_count": 49
     },
     {
-      "row": 859,
+      "row": 949,
       "chunk_id": "a8f82229::chunk_0020",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11560,7 +12820,7 @@
       "token_count": 48
     },
     {
-      "row": 860,
+      "row": 950,
       "chunk_id": "a8f82229::chunk_0021",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11574,7 +12834,7 @@
       "token_count": 47
     },
     {
-      "row": 861,
+      "row": 951,
       "chunk_id": "a8f82229::chunk_0022",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11588,7 +12848,7 @@
       "token_count": 46
     },
     {
-      "row": 862,
+      "row": 952,
       "chunk_id": "a8f82229::chunk_0023",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11602,7 +12862,7 @@
       "token_count": 45
     },
     {
-      "row": 863,
+      "row": 953,
       "chunk_id": "a8f82229::chunk_0024",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11616,7 +12876,7 @@
       "token_count": 44
     },
     {
-      "row": 864,
+      "row": 954,
       "chunk_id": "a8f82229::chunk_0025",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11630,7 +12890,7 @@
       "token_count": 43
     },
     {
-      "row": 865,
+      "row": 955,
       "chunk_id": "a8f82229::chunk_0026",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11644,7 +12904,7 @@
       "token_count": 42
     },
     {
-      "row": 866,
+      "row": 956,
       "chunk_id": "a8f82229::chunk_0027",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11658,7 +12918,7 @@
       "token_count": 41
     },
     {
-      "row": 867,
+      "row": 957,
       "chunk_id": "a8f82229::chunk_0028",
       "source_id": "ornl_1832320",
       "source_sha": "a8f8222976de4c2cc453641e4af7230f",
@@ -11672,7 +12932,7 @@
       "token_count": 40
     },
     {
-      "row": 868,
+      "row": 958,
       "chunk_id": "b0f7cd67::chunk_0001",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11686,7 +12946,7 @@
       "token_count": 512
     },
     {
-      "row": 869,
+      "row": 959,
       "chunk_id": "b0f7cd67::chunk_0002",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11700,7 +12960,7 @@
       "token_count": 511
     },
     {
-      "row": 870,
+      "row": 960,
       "chunk_id": "b0f7cd67::chunk_0003",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11714,7 +12974,7 @@
       "token_count": 50
     },
     {
-      "row": 871,
+      "row": 961,
       "chunk_id": "b0f7cd67::chunk_0004",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11728,7 +12988,7 @@
       "token_count": 49
     },
     {
-      "row": 872,
+      "row": 962,
       "chunk_id": "b0f7cd67::chunk_0005",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11742,7 +13002,7 @@
       "token_count": 48
     },
     {
-      "row": 873,
+      "row": 963,
       "chunk_id": "b0f7cd67::chunk_0006",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11756,7 +13016,7 @@
       "token_count": 47
     },
     {
-      "row": 874,
+      "row": 964,
       "chunk_id": "b0f7cd67::chunk_0007",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11770,7 +13030,7 @@
       "token_count": 46
     },
     {
-      "row": 875,
+      "row": 965,
       "chunk_id": "b0f7cd67::chunk_0008",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11784,7 +13044,7 @@
       "token_count": 45
     },
     {
-      "row": 876,
+      "row": 966,
       "chunk_id": "b0f7cd67::chunk_0009",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11798,7 +13058,7 @@
       "token_count": 44
     },
     {
-      "row": 877,
+      "row": 967,
       "chunk_id": "b0f7cd67::chunk_0010",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11812,7 +13072,7 @@
       "token_count": 43
     },
     {
-      "row": 878,
+      "row": 968,
       "chunk_id": "b0f7cd67::chunk_0011",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11826,7 +13086,7 @@
       "token_count": 42
     },
     {
-      "row": 879,
+      "row": 969,
       "chunk_id": "b0f7cd67::chunk_0012",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11840,7 +13100,7 @@
       "token_count": 41
     },
     {
-      "row": 880,
+      "row": 970,
       "chunk_id": "b0f7cd67::chunk_0013",
       "source_id": "doe_osti_1893827",
       "source_sha": "b0f7cd671b02522402d1c2906faa630d",
@@ -11854,7 +13114,7 @@
       "token_count": 40
     },
     {
-      "row": 881,
+      "row": 971,
       "chunk_id": "bbfd7f9f::chunk_0001",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11867,7 +13127,7 @@
       "token_count": 509
     },
     {
-      "row": 882,
+      "row": 972,
       "chunk_id": "bbfd7f9f::chunk_0002",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11880,7 +13140,7 @@
       "token_count": 511
     },
     {
-      "row": 883,
+      "row": 973,
       "chunk_id": "bbfd7f9f::chunk_0003",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11893,7 +13153,7 @@
       "token_count": 511
     },
     {
-      "row": 884,
+      "row": 974,
       "chunk_id": "bbfd7f9f::chunk_0004",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11906,7 +13166,7 @@
       "token_count": 508
     },
     {
-      "row": 885,
+      "row": 975,
       "chunk_id": "bbfd7f9f::chunk_0005",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11919,7 +13179,7 @@
       "token_count": 411
     },
     {
-      "row": 886,
+      "row": 976,
       "chunk_id": "bbfd7f9f::chunk_0006",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11932,7 +13192,7 @@
       "token_count": 50
     },
     {
-      "row": 887,
+      "row": 977,
       "chunk_id": "bbfd7f9f::chunk_0007",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11945,7 +13205,7 @@
       "token_count": 49
     },
     {
-      "row": 888,
+      "row": 978,
       "chunk_id": "bbfd7f9f::chunk_0008",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11958,7 +13218,7 @@
       "token_count": 48
     },
     {
-      "row": 889,
+      "row": 979,
       "chunk_id": "bbfd7f9f::chunk_0009",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11971,7 +13231,7 @@
       "token_count": 47
     },
     {
-      "row": 890,
+      "row": 980,
       "chunk_id": "bbfd7f9f::chunk_0010",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11984,7 +13244,7 @@
       "token_count": 46
     },
     {
-      "row": 891,
+      "row": 981,
       "chunk_id": "bbfd7f9f::chunk_0011",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -11997,7 +13257,7 @@
       "token_count": 45
     },
     {
-      "row": 892,
+      "row": 982,
       "chunk_id": "bbfd7f9f::chunk_0012",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -12010,7 +13270,7 @@
       "token_count": 44
     },
     {
-      "row": 893,
+      "row": 983,
       "chunk_id": "bbfd7f9f::chunk_0013",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -12023,7 +13283,7 @@
       "token_count": 43
     },
     {
-      "row": 894,
+      "row": 984,
       "chunk_id": "bbfd7f9f::chunk_0014",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -12036,7 +13296,7 @@
       "token_count": 42
     },
     {
-      "row": 895,
+      "row": 985,
       "chunk_id": "bbfd7f9f::chunk_0015",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -12049,7 +13309,7 @@
       "token_count": 41
     },
     {
-      "row": 896,
+      "row": 986,
       "chunk_id": "bbfd7f9f::chunk_0016",
       "source_id": "eia_mer_sec8",
       "source_sha": "bbfd7f9f06c8fc7c0a6b1c1b2b5e26e8",
@@ -12062,7 +13322,7 @@
       "token_count": 40
     },
     {
-      "row": 897,
+      "row": 987,
       "chunk_id": "bfd6505e::chunk_0001",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12076,7 +13336,7 @@
       "token_count": 509
     },
     {
-      "row": 898,
+      "row": 988,
       "chunk_id": "bfd6505e::chunk_0002",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12090,7 +13350,7 @@
       "token_count": 508
     },
     {
-      "row": 899,
+      "row": 989,
       "chunk_id": "bfd6505e::chunk_0003",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12104,7 +13364,7 @@
       "token_count": 508
     },
     {
-      "row": 900,
+      "row": 990,
       "chunk_id": "bfd6505e::chunk_0004",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12118,7 +13378,7 @@
       "token_count": 510
     },
     {
-      "row": 901,
+      "row": 991,
       "chunk_id": "bfd6505e::chunk_0005",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12132,7 +13392,7 @@
       "token_count": 512
     },
     {
-      "row": 902,
+      "row": 992,
       "chunk_id": "bfd6505e::chunk_0006",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12146,7 +13406,7 @@
       "token_count": 508
     },
     {
-      "row": 903,
+      "row": 993,
       "chunk_id": "bfd6505e::chunk_0007",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12160,7 +13420,7 @@
       "token_count": 512
     },
     {
-      "row": 904,
+      "row": 994,
       "chunk_id": "bfd6505e::chunk_0008",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12174,7 +13434,7 @@
       "token_count": 512
     },
     {
-      "row": 905,
+      "row": 995,
       "chunk_id": "bfd6505e::chunk_0009",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12188,7 +13448,7 @@
       "token_count": 511
     },
     {
-      "row": 906,
+      "row": 996,
       "chunk_id": "bfd6505e::chunk_0010",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12202,7 +13462,7 @@
       "token_count": 511
     },
     {
-      "row": 907,
+      "row": 997,
       "chunk_id": "bfd6505e::chunk_0011",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12216,7 +13476,7 @@
       "token_count": 511
     },
     {
-      "row": 908,
+      "row": 998,
       "chunk_id": "bfd6505e::chunk_0012",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12230,7 +13490,7 @@
       "token_count": 510
     },
     {
-      "row": 909,
+      "row": 999,
       "chunk_id": "bfd6505e::chunk_0013",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12244,7 +13504,7 @@
       "token_count": 508
     },
     {
-      "row": 910,
+      "row": 1000,
       "chunk_id": "bfd6505e::chunk_0014",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12258,7 +13518,7 @@
       "token_count": 510
     },
     {
-      "row": 911,
+      "row": 1001,
       "chunk_id": "bfd6505e::chunk_0015",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12272,7 +13532,7 @@
       "token_count": 512
     },
     {
-      "row": 912,
+      "row": 1002,
       "chunk_id": "bfd6505e::chunk_0016",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12286,7 +13546,7 @@
       "token_count": 509
     },
     {
-      "row": 913,
+      "row": 1003,
       "chunk_id": "bfd6505e::chunk_0017",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12300,7 +13560,7 @@
       "token_count": 511
     },
     {
-      "row": 914,
+      "row": 1004,
       "chunk_id": "bfd6505e::chunk_0018",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12314,7 +13574,7 @@
       "token_count": 510
     },
     {
-      "row": 915,
+      "row": 1005,
       "chunk_id": "bfd6505e::chunk_0019",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12328,7 +13588,7 @@
       "token_count": 512
     },
     {
-      "row": 916,
+      "row": 1006,
       "chunk_id": "bfd6505e::chunk_0020",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12342,7 +13602,7 @@
       "token_count": 510
     },
     {
-      "row": 917,
+      "row": 1007,
       "chunk_id": "bfd6505e::chunk_0021",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12356,7 +13616,7 @@
       "token_count": 512
     },
     {
-      "row": 918,
+      "row": 1008,
       "chunk_id": "bfd6505e::chunk_0022",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12370,7 +13630,7 @@
       "token_count": 508
     },
     {
-      "row": 919,
+      "row": 1009,
       "chunk_id": "bfd6505e::chunk_0023",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12384,7 +13644,7 @@
       "token_count": 511
     },
     {
-      "row": 920,
+      "row": 1010,
       "chunk_id": "bfd6505e::chunk_0024",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12398,7 +13658,7 @@
       "token_count": 512
     },
     {
-      "row": 921,
+      "row": 1011,
       "chunk_id": "bfd6505e::chunk_0025",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12412,7 +13672,7 @@
       "token_count": 512
     },
     {
-      "row": 922,
+      "row": 1012,
       "chunk_id": "bfd6505e::chunk_0026",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12426,7 +13686,7 @@
       "token_count": 162
     },
     {
-      "row": 923,
+      "row": 1013,
       "chunk_id": "bfd6505e::chunk_0027",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12440,7 +13700,7 @@
       "token_count": 50
     },
     {
-      "row": 924,
+      "row": 1014,
       "chunk_id": "bfd6505e::chunk_0028",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12454,7 +13714,7 @@
       "token_count": 49
     },
     {
-      "row": 925,
+      "row": 1015,
       "chunk_id": "bfd6505e::chunk_0029",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12468,7 +13728,7 @@
       "token_count": 48
     },
     {
-      "row": 926,
+      "row": 1016,
       "chunk_id": "bfd6505e::chunk_0030",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12482,7 +13742,7 @@
       "token_count": 47
     },
     {
-      "row": 927,
+      "row": 1017,
       "chunk_id": "bfd6505e::chunk_0031",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12496,7 +13756,7 @@
       "token_count": 46
     },
     {
-      "row": 928,
+      "row": 1018,
       "chunk_id": "bfd6505e::chunk_0032",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12510,7 +13770,7 @@
       "token_count": 45
     },
     {
-      "row": 929,
+      "row": 1019,
       "chunk_id": "bfd6505e::chunk_0033",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12524,7 +13784,7 @@
       "token_count": 44
     },
     {
-      "row": 930,
+      "row": 1020,
       "chunk_id": "bfd6505e::chunk_0034",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12538,7 +13798,7 @@
       "token_count": 43
     },
     {
-      "row": 931,
+      "row": 1021,
       "chunk_id": "bfd6505e::chunk_0035",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12552,7 +13812,7 @@
       "token_count": 42
     },
     {
-      "row": 932,
+      "row": 1022,
       "chunk_id": "bfd6505e::chunk_0036",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12566,7 +13826,7 @@
       "token_count": 41
     },
     {
-      "row": 933,
+      "row": 1023,
       "chunk_id": "bfd6505e::chunk_0037",
       "source_id": "doe_osti_1893830",
       "source_sha": "bfd6505e9b15fbda68874fedcc4e7902",
@@ -12580,7 +13840,7 @@
       "token_count": 40
     },
     {
-      "row": 934,
+      "row": 1024,
       "chunk_id": "ce8ecc2c::chunk_0001",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12593,7 +13853,7 @@
       "token_count": 512
     },
     {
-      "row": 935,
+      "row": 1025,
       "chunk_id": "ce8ecc2c::chunk_0002",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12606,7 +13866,7 @@
       "token_count": 510
     },
     {
-      "row": 936,
+      "row": 1026,
       "chunk_id": "ce8ecc2c::chunk_0003",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12619,7 +13879,7 @@
       "token_count": 512
     },
     {
-      "row": 937,
+      "row": 1027,
       "chunk_id": "ce8ecc2c::chunk_0004",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12632,7 +13892,7 @@
       "token_count": 511
     },
     {
-      "row": 938,
+      "row": 1028,
       "chunk_id": "ce8ecc2c::chunk_0005",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12645,7 +13905,7 @@
       "token_count": 509
     },
     {
-      "row": 939,
+      "row": 1029,
       "chunk_id": "ce8ecc2c::chunk_0006",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12658,7 +13918,7 @@
       "token_count": 510
     },
     {
-      "row": 940,
+      "row": 1030,
       "chunk_id": "ce8ecc2c::chunk_0007",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12671,7 +13931,7 @@
       "token_count": 415
     },
     {
-      "row": 941,
+      "row": 1031,
       "chunk_id": "ce8ecc2c::chunk_0008",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12684,7 +13944,7 @@
       "token_count": 50
     },
     {
-      "row": 942,
+      "row": 1032,
       "chunk_id": "ce8ecc2c::chunk_0009",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12697,7 +13957,7 @@
       "token_count": 49
     },
     {
-      "row": 943,
+      "row": 1033,
       "chunk_id": "ce8ecc2c::chunk_0010",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12710,7 +13970,7 @@
       "token_count": 48
     },
     {
-      "row": 944,
+      "row": 1034,
       "chunk_id": "ce8ecc2c::chunk_0011",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12723,7 +13983,7 @@
       "token_count": 47
     },
     {
-      "row": 945,
+      "row": 1035,
       "chunk_id": "ce8ecc2c::chunk_0012",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12736,7 +13996,7 @@
       "token_count": 46
     },
     {
-      "row": 946,
+      "row": 1036,
       "chunk_id": "ce8ecc2c::chunk_0013",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12749,7 +14009,7 @@
       "token_count": 45
     },
     {
-      "row": 947,
+      "row": 1037,
       "chunk_id": "ce8ecc2c::chunk_0014",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12762,7 +14022,7 @@
       "token_count": 44
     },
     {
-      "row": 948,
+      "row": 1038,
       "chunk_id": "ce8ecc2c::chunk_0015",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12775,7 +14035,7 @@
       "token_count": 43
     },
     {
-      "row": 949,
+      "row": 1039,
       "chunk_id": "ce8ecc2c::chunk_0016",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12788,7 +14048,7 @@
       "token_count": 42
     },
     {
-      "row": 950,
+      "row": 1040,
       "chunk_id": "ce8ecc2c::chunk_0017",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12801,7 +14061,7 @@
       "token_count": 41
     },
     {
-      "row": 951,
+      "row": 1041,
       "chunk_id": "ce8ecc2c::chunk_0018",
       "source_id": "eia_mer_sec5",
       "source_sha": "ce8ecc2cd5d82336feceb0735cc23ee1",
@@ -12814,7 +14074,7 @@
       "token_count": 40
     },
     {
-      "row": 952,
+      "row": 1042,
       "chunk_id": "d0ec8fce::chunk_0001",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12827,7 +14087,7 @@
       "token_count": 512
     },
     {
-      "row": 953,
+      "row": 1043,
       "chunk_id": "d0ec8fce::chunk_0002",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12840,7 +14100,7 @@
       "token_count": 508
     },
     {
-      "row": 954,
+      "row": 1044,
       "chunk_id": "d0ec8fce::chunk_0003",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12853,7 +14113,7 @@
       "token_count": 510
     },
     {
-      "row": 955,
+      "row": 1045,
       "chunk_id": "d0ec8fce::chunk_0004",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12866,7 +14126,7 @@
       "token_count": 510
     },
     {
-      "row": 956,
+      "row": 1046,
       "chunk_id": "d0ec8fce::chunk_0005",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12879,7 +14139,7 @@
       "token_count": 511
     },
     {
-      "row": 957,
+      "row": 1047,
       "chunk_id": "d0ec8fce::chunk_0006",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12892,7 +14152,7 @@
       "token_count": 508
     },
     {
-      "row": 958,
+      "row": 1048,
       "chunk_id": "d0ec8fce::chunk_0007",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12905,7 +14165,7 @@
       "token_count": 508
     },
     {
-      "row": 959,
+      "row": 1049,
       "chunk_id": "d0ec8fce::chunk_0008",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12918,7 +14178,7 @@
       "token_count": 512
     },
     {
-      "row": 960,
+      "row": 1050,
       "chunk_id": "d0ec8fce::chunk_0009",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12931,7 +14191,7 @@
       "token_count": 508
     },
     {
-      "row": 961,
+      "row": 1051,
       "chunk_id": "d0ec8fce::chunk_0010",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12944,7 +14204,7 @@
       "token_count": 511
     },
     {
-      "row": 962,
+      "row": 1052,
       "chunk_id": "d0ec8fce::chunk_0011",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12957,7 +14217,7 @@
       "token_count": 511
     },
     {
-      "row": 963,
+      "row": 1053,
       "chunk_id": "d0ec8fce::chunk_0012",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12970,7 +14230,7 @@
       "token_count": 512
     },
     {
-      "row": 964,
+      "row": 1054,
       "chunk_id": "d0ec8fce::chunk_0013",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12983,7 +14243,7 @@
       "token_count": 510
     },
     {
-      "row": 965,
+      "row": 1055,
       "chunk_id": "d0ec8fce::chunk_0014",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -12996,7 +14256,7 @@
       "token_count": 510
     },
     {
-      "row": 966,
+      "row": 1056,
       "chunk_id": "d0ec8fce::chunk_0015",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13009,7 +14269,7 @@
       "token_count": 511
     },
     {
-      "row": 967,
+      "row": 1057,
       "chunk_id": "d0ec8fce::chunk_0016",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13022,7 +14282,7 @@
       "token_count": 512
     },
     {
-      "row": 968,
+      "row": 1058,
       "chunk_id": "d0ec8fce::chunk_0017",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13035,7 +14295,7 @@
       "token_count": 512
     },
     {
-      "row": 969,
+      "row": 1059,
       "chunk_id": "d0ec8fce::chunk_0018",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13048,7 +14308,7 @@
       "token_count": 508
     },
     {
-      "row": 970,
+      "row": 1060,
       "chunk_id": "d0ec8fce::chunk_0019",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13061,7 +14321,7 @@
       "token_count": 508
     },
     {
-      "row": 971,
+      "row": 1061,
       "chunk_id": "d0ec8fce::chunk_0020",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13074,7 +14334,7 @@
       "token_count": 512
     },
     {
-      "row": 972,
+      "row": 1062,
       "chunk_id": "d0ec8fce::chunk_0021",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13087,7 +14347,7 @@
       "token_count": 512
     },
     {
-      "row": 973,
+      "row": 1063,
       "chunk_id": "d0ec8fce::chunk_0022",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13100,7 +14360,7 @@
       "token_count": 509
     },
     {
-      "row": 974,
+      "row": 1064,
       "chunk_id": "d0ec8fce::chunk_0023",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13113,7 +14373,7 @@
       "token_count": 510
     },
     {
-      "row": 975,
+      "row": 1065,
       "chunk_id": "d0ec8fce::chunk_0024",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13126,7 +14386,7 @@
       "token_count": 510
     },
     {
-      "row": 976,
+      "row": 1066,
       "chunk_id": "d0ec8fce::chunk_0025",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13139,7 +14399,7 @@
       "token_count": 509
     },
     {
-      "row": 977,
+      "row": 1067,
       "chunk_id": "d0ec8fce::chunk_0026",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13152,7 +14412,7 @@
       "token_count": 511
     },
     {
-      "row": 978,
+      "row": 1068,
       "chunk_id": "d0ec8fce::chunk_0027",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13165,7 +14425,7 @@
       "token_count": 509
     },
     {
-      "row": 979,
+      "row": 1069,
       "chunk_id": "d0ec8fce::chunk_0028",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13178,7 +14438,7 @@
       "token_count": 512
     },
     {
-      "row": 980,
+      "row": 1070,
       "chunk_id": "d0ec8fce::chunk_0029",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13191,7 +14451,7 @@
       "token_count": 512
     },
     {
-      "row": 981,
+      "row": 1071,
       "chunk_id": "d0ec8fce::chunk_0030",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13204,7 +14464,7 @@
       "token_count": 512
     },
     {
-      "row": 982,
+      "row": 1072,
       "chunk_id": "d0ec8fce::chunk_0031",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13217,7 +14477,7 @@
       "token_count": 510
     },
     {
-      "row": 983,
+      "row": 1073,
       "chunk_id": "d0ec8fce::chunk_0032",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13230,7 +14490,7 @@
       "token_count": 511
     },
     {
-      "row": 984,
+      "row": 1074,
       "chunk_id": "d0ec8fce::chunk_0033",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13243,7 +14503,7 @@
       "token_count": 511
     },
     {
-      "row": 985,
+      "row": 1075,
       "chunk_id": "d0ec8fce::chunk_0034",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13256,7 +14516,7 @@
       "token_count": 512
     },
     {
-      "row": 986,
+      "row": 1076,
       "chunk_id": "d0ec8fce::chunk_0035",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13269,7 +14529,7 @@
       "token_count": 512
     },
     {
-      "row": 987,
+      "row": 1077,
       "chunk_id": "d0ec8fce::chunk_0036",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13282,7 +14542,7 @@
       "token_count": 510
     },
     {
-      "row": 988,
+      "row": 1078,
       "chunk_id": "d0ec8fce::chunk_0037",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13295,7 +14555,7 @@
       "token_count": 509
     },
     {
-      "row": 989,
+      "row": 1079,
       "chunk_id": "d0ec8fce::chunk_0038",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13308,7 +14568,7 @@
       "token_count": 204
     },
     {
-      "row": 990,
+      "row": 1080,
       "chunk_id": "d0ec8fce::chunk_0039",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13321,7 +14581,7 @@
       "token_count": 50
     },
     {
-      "row": 991,
+      "row": 1081,
       "chunk_id": "d0ec8fce::chunk_0040",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13334,7 +14594,7 @@
       "token_count": 49
     },
     {
-      "row": 992,
+      "row": 1082,
       "chunk_id": "d0ec8fce::chunk_0041",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13347,7 +14607,7 @@
       "token_count": 48
     },
     {
-      "row": 993,
+      "row": 1083,
       "chunk_id": "d0ec8fce::chunk_0042",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13360,7 +14620,7 @@
       "token_count": 47
     },
     {
-      "row": 994,
+      "row": 1084,
       "chunk_id": "d0ec8fce::chunk_0043",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13373,7 +14633,7 @@
       "token_count": 46
     },
     {
-      "row": 995,
+      "row": 1085,
       "chunk_id": "d0ec8fce::chunk_0044",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13386,7 +14646,7 @@
       "token_count": 45
     },
     {
-      "row": 996,
+      "row": 1086,
       "chunk_id": "d0ec8fce::chunk_0045",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13399,7 +14659,7 @@
       "token_count": 44
     },
     {
-      "row": 997,
+      "row": 1087,
       "chunk_id": "d0ec8fce::chunk_0046",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13412,7 +14672,7 @@
       "token_count": 43
     },
     {
-      "row": 998,
+      "row": 1088,
       "chunk_id": "d0ec8fce::chunk_0047",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13425,7 +14685,7 @@
       "token_count": 42
     },
     {
-      "row": 999,
+      "row": 1089,
       "chunk_id": "d0ec8fce::chunk_0048",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13438,7 +14698,7 @@
       "token_count": 41
     },
     {
-      "row": 1000,
+      "row": 1090,
       "chunk_id": "d0ec8fce::chunk_0049",
       "source_id": "eia_mer_sec10",
       "source_sha": "d0ec8fcefc7c00038dab6048d86dbb89",
@@ -13451,7 +14711,7 @@
       "token_count": 40
     },
     {
-      "row": 1001,
+      "row": 1091,
       "chunk_id": "d77c42fb::chunk_0001",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13465,7 +14725,7 @@
       "token_count": 509
     },
     {
-      "row": 1002,
+      "row": 1092,
       "chunk_id": "d77c42fb::chunk_0002",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13479,7 +14739,7 @@
       "token_count": 161
     },
     {
-      "row": 1003,
+      "row": 1093,
       "chunk_id": "d77c42fb::chunk_0003",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13493,7 +14753,7 @@
       "token_count": 50
     },
     {
-      "row": 1004,
+      "row": 1094,
       "chunk_id": "d77c42fb::chunk_0004",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13507,7 +14767,7 @@
       "token_count": 49
     },
     {
-      "row": 1005,
+      "row": 1095,
       "chunk_id": "d77c42fb::chunk_0005",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13521,7 +14781,7 @@
       "token_count": 48
     },
     {
-      "row": 1006,
+      "row": 1096,
       "chunk_id": "d77c42fb::chunk_0006",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13535,7 +14795,7 @@
       "token_count": 47
     },
     {
-      "row": 1007,
+      "row": 1097,
       "chunk_id": "d77c42fb::chunk_0007",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13549,7 +14809,7 @@
       "token_count": 46
     },
     {
-      "row": 1008,
+      "row": 1098,
       "chunk_id": "d77c42fb::chunk_0008",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13563,7 +14823,7 @@
       "token_count": 45
     },
     {
-      "row": 1009,
+      "row": 1099,
       "chunk_id": "d77c42fb::chunk_0009",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13577,7 +14837,7 @@
       "token_count": 44
     },
     {
-      "row": 1010,
+      "row": 1100,
       "chunk_id": "d77c42fb::chunk_0010",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13591,7 +14851,7 @@
       "token_count": 43
     },
     {
-      "row": 1011,
+      "row": 1101,
       "chunk_id": "d77c42fb::chunk_0011",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13605,7 +14865,7 @@
       "token_count": 42
     },
     {
-      "row": 1012,
+      "row": 1102,
       "chunk_id": "d77c42fb::chunk_0012",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13619,7 +14879,7 @@
       "token_count": 41
     },
     {
-      "row": 1013,
+      "row": 1103,
       "chunk_id": "d77c42fb::chunk_0013",
       "source_id": "doe_osti_1893829",
       "source_sha": "d77c42fb453bab68645fada62bee6fba",
@@ -13633,7 +14893,7 @@
       "token_count": 40
     },
     {
-      "row": 1014,
+      "row": 1104,
       "chunk_id": "dd0cb00b::chunk_0001",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13647,7 +14907,7 @@
       "token_count": 512
     },
     {
-      "row": 1015,
+      "row": 1105,
       "chunk_id": "dd0cb00b::chunk_0002",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13661,7 +14921,7 @@
       "token_count": 508
     },
     {
-      "row": 1016,
+      "row": 1106,
       "chunk_id": "dd0cb00b::chunk_0003",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13675,7 +14935,7 @@
       "token_count": 169
     },
     {
-      "row": 1017,
+      "row": 1107,
       "chunk_id": "dd0cb00b::chunk_0004",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13689,7 +14949,7 @@
       "token_count": 50
     },
     {
-      "row": 1018,
+      "row": 1108,
       "chunk_id": "dd0cb00b::chunk_0005",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13703,7 +14963,7 @@
       "token_count": 49
     },
     {
-      "row": 1019,
+      "row": 1109,
       "chunk_id": "dd0cb00b::chunk_0006",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13717,7 +14977,7 @@
       "token_count": 48
     },
     {
-      "row": 1020,
+      "row": 1110,
       "chunk_id": "dd0cb00b::chunk_0007",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13731,7 +14991,7 @@
       "token_count": 47
     },
     {
-      "row": 1021,
+      "row": 1111,
       "chunk_id": "dd0cb00b::chunk_0008",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13745,7 +15005,7 @@
       "token_count": 46
     },
     {
-      "row": 1022,
+      "row": 1112,
       "chunk_id": "dd0cb00b::chunk_0009",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13759,7 +15019,7 @@
       "token_count": 45
     },
     {
-      "row": 1023,
+      "row": 1113,
       "chunk_id": "dd0cb00b::chunk_0010",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13773,7 +15033,7 @@
       "token_count": 44
     },
     {
-      "row": 1024,
+      "row": 1114,
       "chunk_id": "dd0cb00b::chunk_0011",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13787,7 +15047,7 @@
       "token_count": 43
     },
     {
-      "row": 1025,
+      "row": 1115,
       "chunk_id": "dd0cb00b::chunk_0012",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13801,7 +15061,7 @@
       "token_count": 42
     },
     {
-      "row": 1026,
+      "row": 1116,
       "chunk_id": "dd0cb00b::chunk_0013",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13815,7 +15075,7 @@
       "token_count": 41
     },
     {
-      "row": 1027,
+      "row": 1117,
       "chunk_id": "dd0cb00b::chunk_0014",
       "source_id": "doe_osti_1893825",
       "source_sha": "dd0cb00bd835b16b734423863dd69e88",
@@ -13829,7 +15089,7 @@
       "token_count": 40
     },
     {
-      "row": 1028,
+      "row": 1118,
       "chunk_id": "e710bc5b::chunk_0001",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13843,7 +15103,7 @@
       "token_count": 510
     },
     {
-      "row": 1029,
+      "row": 1119,
       "chunk_id": "e710bc5b::chunk_0002",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13857,7 +15117,7 @@
       "token_count": 510
     },
     {
-      "row": 1030,
+      "row": 1120,
       "chunk_id": "e710bc5b::chunk_0003",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13871,7 +15131,7 @@
       "token_count": 512
     },
     {
-      "row": 1031,
+      "row": 1121,
       "chunk_id": "e710bc5b::chunk_0004",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13885,7 +15145,7 @@
       "token_count": 509
     },
     {
-      "row": 1032,
+      "row": 1122,
       "chunk_id": "e710bc5b::chunk_0005",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13899,7 +15159,7 @@
       "token_count": 512
     },
     {
-      "row": 1033,
+      "row": 1123,
       "chunk_id": "e710bc5b::chunk_0006",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13913,7 +15173,7 @@
       "token_count": 510
     },
     {
-      "row": 1034,
+      "row": 1124,
       "chunk_id": "e710bc5b::chunk_0007",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13927,7 +15187,7 @@
       "token_count": 508
     },
     {
-      "row": 1035,
+      "row": 1125,
       "chunk_id": "e710bc5b::chunk_0008",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13941,7 +15201,7 @@
       "token_count": 174
     },
     {
-      "row": 1036,
+      "row": 1126,
       "chunk_id": "e710bc5b::chunk_0009",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13955,7 +15215,7 @@
       "token_count": 50
     },
     {
-      "row": 1037,
+      "row": 1127,
       "chunk_id": "e710bc5b::chunk_0010",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13969,7 +15229,7 @@
       "token_count": 49
     },
     {
-      "row": 1038,
+      "row": 1128,
       "chunk_id": "e710bc5b::chunk_0011",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13983,7 +15243,7 @@
       "token_count": 48
     },
     {
-      "row": 1039,
+      "row": 1129,
       "chunk_id": "e710bc5b::chunk_0012",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -13997,7 +15257,7 @@
       "token_count": 47
     },
     {
-      "row": 1040,
+      "row": 1130,
       "chunk_id": "e710bc5b::chunk_0013",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14011,7 +15271,7 @@
       "token_count": 46
     },
     {
-      "row": 1041,
+      "row": 1131,
       "chunk_id": "e710bc5b::chunk_0014",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14025,7 +15285,7 @@
       "token_count": 45
     },
     {
-      "row": 1042,
+      "row": 1132,
       "chunk_id": "e710bc5b::chunk_0015",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14039,7 +15299,7 @@
       "token_count": 44
     },
     {
-      "row": 1043,
+      "row": 1133,
       "chunk_id": "e710bc5b::chunk_0016",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14053,7 +15313,7 @@
       "token_count": 43
     },
     {
-      "row": 1044,
+      "row": 1134,
       "chunk_id": "e710bc5b::chunk_0017",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14067,7 +15327,7 @@
       "token_count": 42
     },
     {
-      "row": 1045,
+      "row": 1135,
       "chunk_id": "e710bc5b::chunk_0018",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14081,7 +15341,7 @@
       "token_count": 41
     },
     {
-      "row": 1046,
+      "row": 1136,
       "chunk_id": "e710bc5b::chunk_0019",
       "source_id": "doe_osti_1814059",
       "source_sha": "e710bc5bd3dc6a2abd77aa3a1c36525d",
@@ -14095,7 +15355,7 @@
       "token_count": 40
     },
     {
-      "row": 1047,
+      "row": 1137,
       "chunk_id": "f523befc::chunk_0001",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14109,7 +15369,7 @@
       "token_count": 511
     },
     {
-      "row": 1048,
+      "row": 1138,
       "chunk_id": "f523befc::chunk_0002",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14123,7 +15383,7 @@
       "token_count": 512
     },
     {
-      "row": 1049,
+      "row": 1139,
       "chunk_id": "f523befc::chunk_0003",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14137,7 +15397,7 @@
       "token_count": 512
     },
     {
-      "row": 1050,
+      "row": 1140,
       "chunk_id": "f523befc::chunk_0004",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14151,7 +15411,7 @@
       "token_count": 512
     },
     {
-      "row": 1051,
+      "row": 1141,
       "chunk_id": "f523befc::chunk_0005",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14165,7 +15425,7 @@
       "token_count": 510
     },
     {
-      "row": 1052,
+      "row": 1142,
       "chunk_id": "f523befc::chunk_0006",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14179,7 +15439,7 @@
       "token_count": 511
     },
     {
-      "row": 1053,
+      "row": 1143,
       "chunk_id": "f523befc::chunk_0007",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14193,7 +15453,7 @@
       "token_count": 510
     },
     {
-      "row": 1054,
+      "row": 1144,
       "chunk_id": "f523befc::chunk_0008",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14207,7 +15467,7 @@
       "token_count": 512
     },
     {
-      "row": 1055,
+      "row": 1145,
       "chunk_id": "f523befc::chunk_0009",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14221,7 +15481,7 @@
       "token_count": 509
     },
     {
-      "row": 1056,
+      "row": 1146,
       "chunk_id": "f523befc::chunk_0010",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14235,7 +15495,7 @@
       "token_count": 510
     },
     {
-      "row": 1057,
+      "row": 1147,
       "chunk_id": "f523befc::chunk_0011",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14249,7 +15509,7 @@
       "token_count": 512
     },
     {
-      "row": 1058,
+      "row": 1148,
       "chunk_id": "f523befc::chunk_0012",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14263,7 +15523,7 @@
       "token_count": 510
     },
     {
-      "row": 1059,
+      "row": 1149,
       "chunk_id": "f523befc::chunk_0013",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14277,7 +15537,7 @@
       "token_count": 512
     },
     {
-      "row": 1060,
+      "row": 1150,
       "chunk_id": "f523befc::chunk_0014",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14291,7 +15551,7 @@
       "token_count": 508
     },
     {
-      "row": 1061,
+      "row": 1151,
       "chunk_id": "f523befc::chunk_0015",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14305,7 +15565,7 @@
       "token_count": 512
     },
     {
-      "row": 1062,
+      "row": 1152,
       "chunk_id": "f523befc::chunk_0016",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14319,7 +15579,7 @@
       "token_count": 512
     },
     {
-      "row": 1063,
+      "row": 1153,
       "chunk_id": "f523befc::chunk_0017",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14333,7 +15593,7 @@
       "token_count": 512
     },
     {
-      "row": 1064,
+      "row": 1154,
       "chunk_id": "f523befc::chunk_0018",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14347,7 +15607,7 @@
       "token_count": 511
     },
     {
-      "row": 1065,
+      "row": 1155,
       "chunk_id": "f523befc::chunk_0019",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14361,7 +15621,7 @@
       "token_count": 512
     },
     {
-      "row": 1066,
+      "row": 1156,
       "chunk_id": "f523befc::chunk_0020",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14375,7 +15635,7 @@
       "token_count": 510
     },
     {
-      "row": 1067,
+      "row": 1157,
       "chunk_id": "f523befc::chunk_0021",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14389,7 +15649,7 @@
       "token_count": 512
     },
     {
-      "row": 1068,
+      "row": 1158,
       "chunk_id": "f523befc::chunk_0022",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14403,7 +15663,7 @@
       "token_count": 511
     },
     {
-      "row": 1069,
+      "row": 1159,
       "chunk_id": "f523befc::chunk_0023",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14417,7 +15677,7 @@
       "token_count": 423
     },
     {
-      "row": 1070,
+      "row": 1160,
       "chunk_id": "f523befc::chunk_0024",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14431,7 +15691,7 @@
       "token_count": 50
     },
     {
-      "row": 1071,
+      "row": 1161,
       "chunk_id": "f523befc::chunk_0025",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14445,7 +15705,7 @@
       "token_count": 49
     },
     {
-      "row": 1072,
+      "row": 1162,
       "chunk_id": "f523befc::chunk_0026",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14459,7 +15719,7 @@
       "token_count": 48
     },
     {
-      "row": 1073,
+      "row": 1163,
       "chunk_id": "f523befc::chunk_0027",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14473,7 +15733,7 @@
       "token_count": 47
     },
     {
-      "row": 1074,
+      "row": 1164,
       "chunk_id": "f523befc::chunk_0028",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14487,7 +15747,7 @@
       "token_count": 46
     },
     {
-      "row": 1075,
+      "row": 1165,
       "chunk_id": "f523befc::chunk_0029",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14501,7 +15761,7 @@
       "token_count": 45
     },
     {
-      "row": 1076,
+      "row": 1166,
       "chunk_id": "f523befc::chunk_0030",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14515,7 +15775,7 @@
       "token_count": 44
     },
     {
-      "row": 1077,
+      "row": 1167,
       "chunk_id": "f523befc::chunk_0031",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14529,7 +15789,7 @@
       "token_count": 43
     },
     {
-      "row": 1078,
+      "row": 1168,
       "chunk_id": "f523befc::chunk_0032",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14543,7 +15803,7 @@
       "token_count": 42
     },
     {
-      "row": 1079,
+      "row": 1169,
       "chunk_id": "f523befc::chunk_0033",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14557,7 +15817,7 @@
       "token_count": 41
     },
     {
-      "row": 1080,
+      "row": 1170,
       "chunk_id": "f523befc::chunk_0034",
       "source_id": "doe_osti_1893821",
       "source_sha": "f523befc2ad2bbc13937ebde81ffd2d5",
@@ -14571,7 +15831,7 @@
       "token_count": 40
     },
     {
-      "row": 1081,
+      "row": 1171,
       "chunk_id": "fbc9a589::chunk_0001",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14585,7 +15845,7 @@
       "token_count": 512
     },
     {
-      "row": 1082,
+      "row": 1172,
       "chunk_id": "fbc9a589::chunk_0002",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14599,7 +15859,7 @@
       "token_count": 512
     },
     {
-      "row": 1083,
+      "row": 1173,
       "chunk_id": "fbc9a589::chunk_0003",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14613,7 +15873,7 @@
       "token_count": 103
     },
     {
-      "row": 1084,
+      "row": 1174,
       "chunk_id": "fbc9a589::chunk_0004",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14627,7 +15887,7 @@
       "token_count": 50
     },
     {
-      "row": 1085,
+      "row": 1175,
       "chunk_id": "fbc9a589::chunk_0005",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14641,7 +15901,7 @@
       "token_count": 49
     },
     {
-      "row": 1086,
+      "row": 1176,
       "chunk_id": "fbc9a589::chunk_0006",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14655,7 +15915,7 @@
       "token_count": 48
     },
     {
-      "row": 1087,
+      "row": 1177,
       "chunk_id": "fbc9a589::chunk_0007",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14669,7 +15929,7 @@
       "token_count": 47
     },
     {
-      "row": 1088,
+      "row": 1178,
       "chunk_id": "fbc9a589::chunk_0008",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14683,7 +15943,7 @@
       "token_count": 46
     },
     {
-      "row": 1089,
+      "row": 1179,
       "chunk_id": "fbc9a589::chunk_0009",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14697,7 +15957,7 @@
       "token_count": 45
     },
     {
-      "row": 1090,
+      "row": 1180,
       "chunk_id": "fbc9a589::chunk_0010",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14711,7 +15971,7 @@
       "token_count": 44
     },
     {
-      "row": 1091,
+      "row": 1181,
       "chunk_id": "fbc9a589::chunk_0011",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14725,7 +15985,7 @@
       "token_count": 43
     },
     {
-      "row": 1092,
+      "row": 1182,
       "chunk_id": "fbc9a589::chunk_0012",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14739,7 +15999,7 @@
       "token_count": 42
     },
     {
-      "row": 1093,
+      "row": 1183,
       "chunk_id": "fbc9a589::chunk_0013",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",
@@ -14753,7 +16013,7 @@
       "token_count": 41
     },
     {
-      "row": 1094,
+      "row": 1184,
       "chunk_id": "fbc9a589::chunk_0014",
       "source_id": "doe_osti_1893826",
       "source_sha": "fbc9a589f6e06d6ab77f8b96ede9802e",

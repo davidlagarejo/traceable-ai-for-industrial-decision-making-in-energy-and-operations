@@ -1,0 +1,15 @@
+{
+  "chunk_id": "95f3b273::chunk_0046",
+  "source_id": "doe_osti_1893822",
+  "source_sha": "95f3b27392282ae098dbc2200bc368c0",
+  "source_url": "https://www.osti.gov/servlets/purl/1893822",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "table is based on water qualities from actual operations. The design concentration of each constituent is individually representative of a plant configuration comparable to those in this study. However, due to the interaction and interdependencies of each constituent and the multitude of potential species, the makeup water quality cannot be considered representative as a whole. The makeup water quality is intended to inform users of the contaminants likely present, and at what concentrations they may be expected, to facilitate appropriate equipment selection and design. 34 COST AND PERFORMANCE BASELINE FOR FOSSIL ENERGY PLANTS VOLUME 1: BITUMINOUS COAL AND NATURAL GAS TO ELECTRICITY Exhibit 2-3. Design makeup water quality Parameter Groundwater (Range) POTW Water (Range) Makeup Water (Design Basis) pH 6.6 – 7.9 7.1 – 8.0 7.4 Specific Conductance, μS/cm 1,096 – 1,484 1,150 – 1,629 1312 Turbidity, NTU <50 <50 Total Dissolved Solids, ppm 906 M-Alkalinity as CaCO , ppmA 200 – 325 184 – 596 278 3 Sodium as Na, ppm 102 – 150 172 – 336 168 Chloride as Cl, ppm 73 – 100 205 – 275 157 Sulfate as SO , ppm 100 – 292 73 – 122 153 4 Calcium as Ca, ppm 106 – 160 71 – 117 106 Magnesium as Mg, ppm 39 – 75 19 – 33 40 Potassium as K, ppm 15 – 41 11 – 21 18 Silica as SiO , ppm 5 – 12 21 – 26 16 2 Nitrate as N, ppm 0.1 – 0.8 18 – 34 12 Total Phosphate as PO , ppm 0.1 – 0.2 1.3 – 6.1 1.6 4 Strontium as Sr, ppm 2.48 – 2.97 0.319 – 0.415 1.5 Fluoride as F, ppm 0.5 – 1.21 0.5 – 0.9 0.8 Boron as B, ppm 0.7 – 0.77 0.37 Iron as Fe, ppm 0.099 – 0.629 0.1 0.249 Barium as Ba, ppm 0.011 – 0.52 0.092 – 0.248 0.169 Aluminum as Al, ppm 0.068 – 0.1 0.1 – 0.107 0.098 Selenium as Se, ppm 0.02 – 0.15 0.0008 0.043 Lead as Pb, ppm 0.002 – 0.1 0.026 Arsenic as As, ppm 0.005 – 0.08 0.023 Copper as Cu, ppm 0.004 – 0.03 0.012 – 0.055 0.018 Nickel as Ni, ppm 0.02 – 0.05 0.018 Manganese as Mn, ppm 0.007 – 0.015 0.005 – 0.016 0.009 Zinc as Zn, ppm 0.005 – 0.024 0.009 Chromium as Cr, ppm 0.01 – 0.02 0.008 Cadmium as Cd, ppm 0.002 – 0.02 0.006 Silver as Ag, ppm 0.002 – 0.02 0.006 Mercury as Hg, ppm 0.0002 – 0.001 3E-04 AAlkalinity is reported as CaCO equivalent, rather than the concentration of HCO . The concentration of HCO can be obtained 3 3 3 by dividing the alkalinity by 0.82. 35 COST AND PERFORMANCE BASELINE FOR FOSSIL ENERGY PLANTS VOLUME 1: BITUMINOUS COAL AND NATURAL GAS TO ELECTRICITY In all cases, it was assumed that the steam turbine is enclosed in a turbine building; in the PC cases, the boiler is also enclosed. The gasifier and combustion turbines are not enclosed. The following design parameters are considered site-specific and are",
+  "token_count": 509,
+  "text_sha": "c6d3a96005be6450053df5d3598890b9abde02e67fa097e0620aa5fc95b59047",
+  "extracted_at": "2026-05-15T15:43:33.367071Z"
+}
