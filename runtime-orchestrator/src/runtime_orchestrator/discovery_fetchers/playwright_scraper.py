@@ -24,6 +24,13 @@ from .base import FetcherResult, FetcherStatus
 
 SOURCE_KEY = "playwright_scraper"
 
+# Real-browser UA — federal/state portals and many corporate sites 403
+# obvious bot UAs like "compatible; ZLab-Discovery/1.0".
+_REAL_BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_2_1) AppleWebKit/605.1.15 "
+    "(KHTML, like Gecko) Version/17.2 Safari/605.1.15"
+)
+
 
 def _playwright_available() -> bool:
     try:
@@ -75,8 +82,9 @@ def fetch_page(
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             context = browser.new_context(
-                user_agent="Mozilla/5.0 (compatible; ZLab-Discovery/1.0)",
+                user_agent=_REAL_BROWSER_UA,
                 viewport={"width": 1280, "height": 800},
+                locale="en-US",
             )
             page = context.new_page()
             if headers:

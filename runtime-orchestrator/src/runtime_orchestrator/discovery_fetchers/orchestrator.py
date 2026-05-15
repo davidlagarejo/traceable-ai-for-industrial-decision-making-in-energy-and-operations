@@ -81,6 +81,55 @@ def _enrich_context_from_geocoder(
     )
 
 
+def _resolve_naics(ctx: FetcherContext, epa: FetcherResult) -> tuple[str, str]:
+    """Resolve a NAICS code for the target. Returns (naics, source).
+
+    Strategy (best-effort, transparent):
+      1. If EPA found facilities in this city, try to match one by
+         facility_name → use that facility's first 6-digit NAICS.
+      2. If still empty, use the canonical NAICS prefix for the
+         asset_family (from _ASSET_FAMILY_NAICS_PREFIXES).
+      3. Else "" with source="unresolved".
+
+    The `source` string is auditable downstream: "epa_match",
+    "asset_family_canonical", or "unresolved".
+    """
+    if ctx.naics:
+        return ctx.naics, "input_provided"
+
+    # 1) Try EPA facility match by name
+    if epa.status == FetcherStatus.OK:
+        facilities = (epa.payload or {}).get("facilities_in_city") or []
+        if ctx.facility_name and facilities:
+            target = ctx.facility_name.lower().strip()
+            # tokens of length>=4 to avoid junk matches like "Inc"/"LLC"
+            target_tokens = {t for t in target.split() if len(t) >= 4}
+            for f in facilities:
+                fname = (f.get("name") or "").lower()
+                if not fname:
+                    continue
+                # Match if any meaningful token overlaps
+                if any(t in fname for t in target_tokens) or target in fname:
+                    raw_naics = str(f.get("naics_codes") or "").strip()
+                    # Field may be comma-separated; take first 6-digit code
+                    for code in (raw_naics.replace(";", ",").split(",")):
+                        c = "".join(ch for ch in code if ch.isdigit())[:6]
+                        if len(c) >= 4:
+                            return c, f"epa_match::{(f.get('name') or '')[:40]}"
+
+    # 2) Canonical NAICS prefix from asset_family
+    try:
+        from .epa_envirofacts import _ASSET_FAMILY_NAICS_PREFIXES
+    except Exception:
+        _ASSET_FAMILY_NAICS_PREFIXES = {}
+    af = (ctx.asset_family or "").lower()
+    prefixes = _ASSET_FAMILY_NAICS_PREFIXES.get(af, [])
+    if prefixes:
+        return prefixes[0], f"asset_family_canonical::{af}"
+
+    return "", "unresolved"
+
+
 def run_full_discovery(context: FetcherContext) -> dict[str, Any]:
     """Run every fetcher in sequence. Returns a bundle dict suitable for
     motor_028 to consume.
@@ -117,6 +166,18 @@ def run_full_discovery(context: FetcherContext) -> dict[str, Any]:
     # 3. EPA Envirofacts
     epa = _safe_run(epa_envirofacts.fetch, ctx)
     results[epa_envirofacts.SOURCE_KEY] = epa
+
+    # 3.5 — Resolve NAICS from EPA match (or asset_family fallback) so the
+    # rest of the pipeline has an industry code. Replaces empty `naics`
+    # with a real one + records HOW we got it (auditable).
+    naics_code, naics_source = _resolve_naics(ctx, epa)
+    if naics_code and not ctx.naics:
+        ctx = FetcherContext(
+            address=ctx.address, city=ctx.city, state=ctx.state,
+            zip_code=ctx.zip_code, lat=ctx.lat, lon=ctx.lon,
+            naics=naics_code, asset_family=ctx.asset_family,
+            facility_name=ctx.facility_name,
+        )
 
     # 4. EIA OpenData
     results[eia_opendata.SOURCE_KEY] = _safe_run(eia_opendata.fetch, ctx)
@@ -165,6 +226,10 @@ def run_full_discovery(context: FetcherContext) -> dict[str, Any]:
     return {
         "results":                {k: r.as_dict() for k, r in results.items()},
         "enriched_context":       ctx.as_dict(),
+        "naics_resolution": {
+            "naics":  ctx.naics,
+            "source": naics_source,
+        },
         "ok_count":               ok_count,
         "no_data_count":          by_status.get("no_data", 0),
         "error_count":            by_status.get("error", 0),
