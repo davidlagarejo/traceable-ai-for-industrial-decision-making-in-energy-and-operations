@@ -108,7 +108,16 @@ class CorpusSource:
           3. Trusted industrial vendor (publisher in VENDOR_TRUST_PUBLISHERS,
              license in permissive set). The vendor allowlist itself is
              the trust gate — no system_verified requirement.
+
+        Explicit NEVER-auto-approve:
+          · license == "licensed_journal" — paywalled content (IEEE/Springer/
+            Elsevier/Scopus). Always routes to chunks_pending/ for human
+            review even when added_by=system_verified.
         """
+        # Hard NO: paywall content always needs human review
+        if self.license == "licensed_journal":
+            return False
+
         pub = (self.publisher or "").lower().strip()
         u = (self.url or "").lower()
 

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "bbff2d8c::chunk_0023",
+  "source_id": "arxiv_2111_11714",
+  "source_sha": "bbff2d8c4d7c6f07aa6a9f96a0544064",
+  "source_url": "https://arxiv.org/pdf/2111.11714.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "challengesintheindustrialandenergysectors. MarkoSchubareceivedhisPh.D.inComputerSci- encefromRWTHAachenUniversity.Hehasmore than 20 years of experience in IT security-related fields. Currently, he is working as a full professor atAachenUniversityofAppliedscience,Germany, teachinganddoingresearchinITsecurityanddigital forensicswithafocusonindustrialcontrolsystems, automotiveandsmartbuildings.Markocollaborates withanumberofcompaniesandauthorities,includ- ingtheStateOfficeofCriminalInvestigationNRW, the Federal Criminal Police Office, and Interpol. He is also a co-founder of two IT security companies, transferring applied researchresultsintopractice.",
+  "token_count": 46,
+  "text_sha": "13ddf91fb96ce781f8df619807ded21dc352b81ef3faaf9b625c34407e56e62b",
+  "extracted_at": "2026-05-15T22:11:35.873763Z"
+}

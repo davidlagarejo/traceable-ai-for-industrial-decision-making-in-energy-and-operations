@@ -1,0 +1,11 @@
+source_id: arxiv_1710_09627
+title: "SRE: Semantic Rules Engine For the Industrial Internet-Of-Things Gateways"
+url: https://arxiv.org/pdf/1710.09627.pdf
+license: open_access
+publisher: arxiv
+version: "2017-10-26"
+added_at: "2026-05-15T22:11:35.877213Z"
+added_by: system_verified
+notes: "Auto-discovered via arXiv API. Categories: cs.AI, cs.NI, eess.SY. Abstract: The Advent of the Internet-of-Things (IoT) paradigm has brought opportunities to solve many real-world problems. Energy management, for example, has attracted huge interest from academia, industries, gove"
+asset_families:
+  - manufacturing_facility

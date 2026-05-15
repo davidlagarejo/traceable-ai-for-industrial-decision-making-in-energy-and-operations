@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0e267ca2::chunk_0004",
+  "source_id": "arxiv_1211_0310",
+  "source_sha": "0e267ca2b02d93330ae68f4807bf2502",
+  "source_url": "https://arxiv.org/pdf/1211.0310.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 2.6 Overview of work plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 3 The Analysis Framework and Key Systematics for Investigation . . . . . . . . . . . . . 29 3.1 Weak lensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 3.2 Large-scale structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38 3.3 Supernovae . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44 3.4 Clusters of galaxies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50 3.5 Strong lensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55 3.6 Theory and joint probes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64 3.7 Photo-z’s and common issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72 4 Simulation Tools and Technical Infrastructure . . . . . . . . . . . . . . . . . . . . . . . 79 4.1 Simulations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 79 4.2 Computing infrastructure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91 4.3 Technical coordination . . . . . . .",
+  "token_count": 512,
+  "text_sha": "7a47dd48a17252df59a9d0088b2b15542220ba7d8f554e7284b86f6f6a361559",
+  "extracted_at": "2026-05-15T22:11:33.869750Z"
+}

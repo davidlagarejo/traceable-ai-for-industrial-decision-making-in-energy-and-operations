@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c33adde4::chunk_0007",
+  "source_id": "ieee_10016860",
+  "source_sha": "c33adde431ded512a2796826c41f1a3a",
+  "source_url": "https://ieeexplore.ieee.org/document/10016860/",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Privacy Policy A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. © Copyright 2026 IEEE - All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies.",
+  "token_count": 45,
+  "text_sha": "8756e586f830ec4aa603ae69e96d136d934e47c9e4ceacf1913e0be5c2ce51ab",
+  "extracted_at": "2026-05-15T22:13:21.558993Z"
+}

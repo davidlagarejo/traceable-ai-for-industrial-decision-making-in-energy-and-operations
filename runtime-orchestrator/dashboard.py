@@ -18454,10 +18454,15 @@ def corpus_discover_sources():
 
     family = (request.args.get("family") or "").strip()
     max_new = int(request.args.get("max_new") or 5)
+    include_licensed = (request.args.get("include_licensed") or "").lower() in ("1", "true", "yes")
 
     if family:
-        results = [discover_and_ingest_family(family, max_new=max_new)]
+        results = [discover_and_ingest_family(
+            family, max_new=max_new, include_licensed=include_licensed,
+        )]
     else:
+        # Note: discover_all_families doesn't yet propagate include_licensed —
+        # if the caller wants licensed across all families, they should loop.
         results = discover_all_families(max_new_per_family=max_new)
 
     _retriever_clear()
@@ -18478,6 +18483,66 @@ def corpus_discover_sources():
         "chunks_added":        sum(r.chunks_added for r in results),
     }
     return jsonify({"ok": True, "totals": totals, "per_family": payload})
+
+
+@app.route("/api/corpus/licensed-session-status")
+def corpus_licensed_session_status():
+    """Report the freshness of each licensed-provider Playwright session.
+
+    Returns per-provider: profile_exists, cookies_present, cookies_age_days,
+    likely_expired. The dashboard uses this to show a "Re-authenticate"
+    button when a session is stale (>7 days).
+    """
+    try:
+        from runtime_orchestrator.industry_corpus.discovery.licensed_journal_discoverer import (
+            session_status,
+        )
+        return jsonify({"ok": True, "providers": session_status()})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"{type(exc).__name__}: {exc}"}), 500
+
+
+@app.route("/api/corpus/bootstrap-licensed-session", methods=["POST"])
+def corpus_bootstrap_licensed_session():
+    """Open Playwright HEADED so the user can log in to a licensed provider.
+
+    The browser stays open until the user closes it. Cookies persist in the
+    provider's profile, after which headless searches work.
+
+    Query params:
+      provider — "ieee" | "springer" | "scopus" | "elsevier"
+
+    SAFETY: this is a long-running, interactive operation. Returns 202 with
+    a process handle, NOT a result.
+    """
+    import subprocess
+    provider = (request.args.get("provider") or "").strip().lower()
+    if provider not in ("ieee", "springer", "scopus", "elsevier"):
+        return jsonify({"ok": False, "error": f"invalid provider: {provider}"}), 400
+    # Sensible default landing URL per provider
+    urls = {
+        "ieee":     "https://ieeexplore.ieee.org/",
+        "springer": "https://link.springer.com/",
+        "scopus":   "https://www.scopus.com/",
+        "elsevier": "https://www.sciencedirect.com/",
+    }
+    cmd = [
+        "python3", "scripts/bootstrap_licensed_provider_session.py",
+        "--provider", provider,
+        "--url", urls[provider],
+        "--headless", "false",
+    ]
+    try:
+        proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return jsonify({
+            "ok": True, "provider": provider, "pid": proc.pid,
+            "message": ("Playwright launched in HEADED mode. Log in to "
+                        f"{provider} in the browser window; cookies will "
+                        "persist when you close the browser. Then click "
+                        "the search button to start using the session."),
+        }), 202
+    except Exception as exc:
+        return jsonify({"ok": False, "error": f"{type(exc).__name__}: {exc}"}), 500
 
 
 @app.route("/api/corpus/ingest-sources", methods=["POST"])
@@ -18555,7 +18620,9 @@ _CORPUS_REVIEW_HTML = """<!doctype html>
   <button onclick="load()">Filtrar</button>
   <button onclick="ingestSources()" style="background:#3aa66a">↻ Re-ingest sources</button>
   <button onclick="discoverSources()" style="background:#7066c0">🔭 Discover new sources</button>
+  <button onclick="discoverLicensed()" style="background:#a05c8c" title="IEEE + Springer (paywall) — requires login">🔬 Discover from IEEE/Springer</button>
 </div>
+<div id="licensedBar" style="padding:6px 22px;font-size:12px;color:#9aa1ad;border-bottom:1px solid #2a2f3a">cargando estado de sesiones licensed…</div>
 <div class="status" id="status">cargando…</div>
 <div class="chunks" id="chunks"></div>
 <script>
@@ -18599,6 +18666,46 @@ async function decide(chunk_id, action) {
   } else {
     alert('Error: ' + (data.error || 'unknown'));
   }
+}
+async function loadLicensedStatus() {
+  const r = await fetch('/api/corpus/licensed-session-status');
+  const d = await r.json();
+  if (!d.ok) { document.getElementById('licensedBar').textContent =
+    'licensed: error — ' + d.error; return; }
+  const parts = [];
+  for (const [prov, info] of Object.entries(d.providers || {})) {
+    if (!info.profile_exists) {
+      parts.push(`<strong>${prov}</strong>: <span style="color:#888">no profile</span>`);
+      continue;
+    }
+    if (info.likely_expired) {
+      parts.push(`<strong>${prov}</strong>: <span style="color:#ff9">⚠expired ${info.cookies_age_days}d</span> ` +
+        `<button onclick="bootstrapSession('${prov}')" style="background:#a05c8c;color:#fff;border:0;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:11px">Re-login</button>`);
+    } else {
+      parts.push(`<strong>${prov}</strong>: <span style="color:#3aa66a">✓ active ${info.cookies_age_days||0}d</span>`);
+    }
+  }
+  document.getElementById('licensedBar').innerHTML = 'sesiones licensed: ' + parts.join(' · ');
+}
+async function bootstrapSession(provider) {
+  if (!confirm(`Abrir navegador Playwright HEADED para login a ${provider}? Tienes que dejarlo abierto hasta completar el login.`)) return;
+  const r = await fetch(`/api/corpus/bootstrap-licensed-session?provider=${provider}`, {method:'POST'});
+  const d = await r.json();
+  alert(d.message || ('Status: ' + (d.ok ? 'ok' : d.error)));
+}
+async function discoverLicensed() {
+  const family = document.getElementById('filterFamily').value;
+  const scope = family ? `familia "${family}"` : 'TODAS las familias';
+  if (!confirm(`Buscar papers en IEEE+Springer para ${scope}? Requiere sesiones autenticadas. Puede tardar 5-10 minutos.`)) return;
+  document.getElementById('status').textContent = 'buscando en revistas licensed (paywall content → chunks_pending para revisión)…';
+  const qs = `?include_licensed=true${family ? '&family=' + encodeURIComponent(family) : ''}&max_new=5`;
+  const r = await fetch('/api/corpus/discover-sources' + qs, {method:'POST'});
+  const d = await r.json();
+  if (!d.ok) { alert('Discovery error: ' + d.error); return; }
+  const t = d.totals || {};
+  alert(`Discovery licensed completo:\n  · sources nuevas: ${t.sources_ingested}\n  · chunks añadidos: ${t.chunks_added}\n\nNOTA: paywall content fue a chunks_pending/. Revísalos en esta página.`);
+  load();
+  loadLicensedStatus();
 }
 async function loadIndex() {
   const r = await fetch('/api/corpus/index-status');
@@ -18657,6 +18764,7 @@ async function discoverSources() {
   load();
 }
 loadIndex();
+loadLicensedStatus();
 load();
 </script>
 </body></html>"""

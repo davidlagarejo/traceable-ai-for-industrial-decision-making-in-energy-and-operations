@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c33adde4::chunk_0011",
+  "source_id": "ieee_10016860",
+  "source_sha": "c33adde431ded512a2796826c41f1a3a",
+  "source_url": "https://ieeexplore.ieee.org/document/10016860/",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. © Copyright 2026 IEEE - All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies.",
+  "token_count": 41,
+  "text_sha": "6b5dd45736908b8a2b703f7c5fe4dfdd7067f069c8a3bafe0ceebd1f145b73fb",
+  "extracted_at": "2026-05-15T22:13:21.558993Z"
+}

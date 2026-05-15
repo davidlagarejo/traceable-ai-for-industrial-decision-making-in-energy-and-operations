@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0e267ca2::chunk_0107",
+  "source_id": "arxiv_1211_0310",
+  "source_sha": "0e267ca2b02d93330ae68f4807bf2502",
+  "source_url": "https://arxiv.org/pdf/1211.0310.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "on analysis performed on SDSS data. Therefore, there are many unknowns in our analysis steps, since photometric BAO has not been done in any datasets except SDSS. We decided to encompass a large range of systematics when designing our tasks. Thus, our 100",
+  "token_count": 43,
+  "text_sha": "ee82cff71e2608dadadd35ea630dfe97bf9fd8e5bc0d36a3c8d55a99e99eb246",
+  "extracted_at": "2026-05-15T22:11:33.869750Z"
+}

@@ -21,6 +21,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from ..etl import ingest_source
+from ..licensed_etl import ingest_licensed_source
 from ..indexer import build_index
 from ..manifest import (
     CANONICAL_ASSET_FAMILIES,
@@ -28,10 +29,26 @@ from ..manifest import (
 )
 from .osti_discoverer import CandidateSource, discover_for_family as _osti_discover
 from .arxiv_discoverer import ArxivCandidate, discover_for_family as _arxiv_discover
+from .licensed_journal_discoverer import (
+    LicensedJournalCandidate,
+    discover_for_family as _licensed_discover,
+    session_status as licensed_session_status,
+)
 
 
-def _candidates_for_family(asset_family: str, *, max_per_source: int) -> list:
+def _candidates_for_family(
+    asset_family: str,
+    *,
+    max_per_source: int,
+    include_licensed: bool = False,
+) -> list:
     """Aggregate candidates from all enabled discoverers for one family.
+
+    Sources:
+      · OSTI    — always
+      · arXiv   — always (cheap, no session)
+      · IEEE / Springer / Scopus — only if `include_licensed=True`
+        (slow; requires Playwright sessions to be authenticated)
 
     Returns a unified list. Each item has `source_id`, `title`, `url`,
     `asset_families`, `publisher`, `publication_date` — duck-typed across
@@ -46,6 +63,11 @@ def _candidates_for_family(asset_family: str, *, max_per_source: int) -> list:
         out.extend(_arxiv_discover(asset_family, max_candidates=max_per_source))
     except Exception:
         pass
+    if include_licensed:
+        try:
+            out.extend(_licensed_discover(asset_family, max_candidates=max_per_source))
+        except Exception:
+            pass
     return out
 
 
@@ -97,10 +119,19 @@ def _write_candidate_yaml(candidate, corpus_dir: Path) -> Path:
     publisher = getattr(candidate, "publisher", "")
     if publisher == "arxiv":
         license_str = "open_access"
-        # Best-effort notes for arxiv
         cats = getattr(candidate, "categories", ())
         abstract = (getattr(candidate, "abstract", "") or "")[:240]
         notes = f"Auto-discovered via arXiv API. Categories: {', '.join(cats[:3])}. Abstract: {abstract}"
+    elif publisher in ("ieee", "springer", "scopus", "elsevier"):
+        # Paywalled journal — license tagged so it goes to chunks_pending/
+        # (NOT auto-approved). Citations must respect fair use (≤300 chars).
+        license_str = "licensed_journal"
+        abstract = (getattr(candidate, "abstract", "") or "")[:240]
+        doi = (getattr(candidate, "doi", "") or "")[:80]
+        notes = (
+            f"Discovered via {publisher} licensed search. DOI: {doi}. "
+            f"Abstract: {abstract}"
+        )
     else:
         # OSTI / federal default
         license_str = "public_domain"
@@ -132,6 +163,7 @@ def discover_and_ingest_family(
     *,
     max_new: int = 10,
     rebuild_index: bool = True,
+    include_licensed: bool = False,
     runtime_orchestrator_dir: Path | None = None,
 ) -> DiscoveryResult:
     """Full proactive cycle for ONE asset_family."""
@@ -142,9 +174,12 @@ def discover_and_ingest_family(
 
     corpus_dir = corpus_root(runtime_orchestrator_dir)
 
-    # Step 1: discover candidates from ALL enabled discoverers (OSTI + arxiv)
+    # Step 1: discover candidates from ALL enabled discoverers
     try:
-        candidates = _candidates_for_family(asset_family, max_per_source=max_new * 2)
+        candidates = _candidates_for_family(
+            asset_family, max_per_source=max_new * 2,
+            include_licensed=include_licensed,
+        )
     except Exception as exc:
         result.errors.append(f"discoverer_failed: {type(exc).__name__}: {exc}")
         return result
@@ -171,24 +206,49 @@ def discover_and_ingest_family(
             result.errors.append(f"yaml_write_failed for {c.source_id}: {exc}")
             continue
         try:
-            ingest = ingest_source(yaml_path,
-                                   runtime_orchestrator_dir=runtime_orchestrator_dir)
-            if ingest.errors:
-                result.errors.append(
-                    f"ingest_errors for {c.source_id}: {ingest.errors[0][:120]}"
+            # Route paywall sources to licensed_etl (HTML+Playwright session);
+            # everything else uses standard ingest_source (PDF+url_fetcher).
+            if getattr(c, "publisher", "") in ("ieee", "springer", "scopus", "elsevier"):
+                ling = ingest_licensed_source(
+                    yaml_path,
+                    runtime_orchestrator_dir=runtime_orchestrator_dir,
                 )
-            if ingest.chunks_written > 0:
-                result.sources_ingested += 1
-                result.chunks_added += ingest.chunks_written
-                result.new_sources.append({
-                    "source_id":      c.source_id,
-                    "title":          c.title,
-                    "url":            c.url,
-                    "asset_families": list(c.asset_families),
-                    "publication_date": c.publication_date,
-                    "chunks_written": ingest.chunks_written,
-                    "auto_approved":  ingest.auto_approved,
-                })
+                if ling.errors:
+                    result.errors.append(
+                        f"licensed_ingest_errors for {c.source_id}: {ling.errors[0][:140]}"
+                    )
+                if ling.chunks_written > 0:
+                    result.sources_ingested += 1
+                    result.chunks_added += ling.chunks_written
+                    result.new_sources.append({
+                        "source_id":        c.source_id,
+                        "title":            c.title,
+                        "url":              c.url,
+                        "asset_families":   list(c.asset_families),
+                        "publication_date": c.publication_date,
+                        "chunks_written":   ling.chunks_written,
+                        "auto_approved":    False,   # licensed → human review
+                        "license_routed":   "chunks_pending",
+                    })
+            else:
+                ingest = ingest_source(yaml_path,
+                                       runtime_orchestrator_dir=runtime_orchestrator_dir)
+                if ingest.errors:
+                    result.errors.append(
+                        f"ingest_errors for {c.source_id}: {ingest.errors[0][:120]}"
+                    )
+                if ingest.chunks_written > 0:
+                    result.sources_ingested += 1
+                    result.chunks_added += ingest.chunks_written
+                    result.new_sources.append({
+                        "source_id":      c.source_id,
+                        "title":          c.title,
+                        "url":            c.url,
+                        "asset_families": list(c.asset_families),
+                        "publication_date": c.publication_date,
+                        "chunks_written": ingest.chunks_written,
+                        "auto_approved":  ingest.auto_approved,
+                    })
         except Exception as exc:
             result.errors.append(
                 f"ingest_exception for {c.source_id}: {type(exc).__name__}: {exc}"

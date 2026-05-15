@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0e267ca2::chunk_0005",
+  "source_id": "arxiv_1211_0310",
+  "source_sha": "0e267ca2b02d93330ae68f4807bf2502",
+  "source_url": "https://arxiv.org/pdf/1211.0310.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": ". . 79 4.2 Computing infrastructure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91 4.3 Technical coordination . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95 5 Detailed Work Plan for the Next Three Years . . . . . . . . . . . . . . . . . . . . . . . 97 5.1 Weak lensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 97 5.2 Large scale structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 100 5.3 Supernovae . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 103 5.4 Clusters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105 5.5 Strong lensing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 106 5.6 Theory and joint probes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 108 5.7 Photometric redshifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110 5.8 Cross-working group tasks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111 5.9 Simulations improvements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115 5.10 Software framework . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "5957deb7a68d1f00950f32860ec17725c0509844af4368c8696846adf745ea70",
+  "extracted_at": "2026-05-15T22:11:33.869750Z"
+}

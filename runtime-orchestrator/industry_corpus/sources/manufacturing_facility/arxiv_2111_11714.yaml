@@ -1,0 +1,11 @@
+source_id: arxiv_2111_11714
+title: "Challenges and Opportunities in Securing the Industrial Internet of Things"
+url: https://arxiv.org/pdf/2111.11714.pdf
+license: open_access
+publisher: arxiv
+version: "2021-11-23"
+added_at: "2026-05-15T22:11:33.881566Z"
+added_by: system_verified
+notes: "Auto-discovered via arXiv API. Categories: cs.CR, cs.NI. Abstract: Given the tremendous success of the Internet of Things in interconnecting consumer devices, we observe a natural trend to likewise interconnect devices in industrial settings, referred to as Industrial Internet of"
+asset_families:
+  - manufacturing_facility

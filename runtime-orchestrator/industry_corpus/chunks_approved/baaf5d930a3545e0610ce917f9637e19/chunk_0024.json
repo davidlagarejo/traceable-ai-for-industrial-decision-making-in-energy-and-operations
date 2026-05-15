@@ -1,0 +1,14 @@
+{
+  "chunk_id": "baaf5d93::chunk_0024",
+  "source_id": "arxiv_1710_09627",
+  "source_sha": "baaf5d930a3545e0610ce917f9637e19",
+  "source_url": "https://arxiv.org/pdf/1710.09627.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "M. Proctor, Drools: A Rule Engine for Complex Event Processing, 2012. [23] S. Kuboi, K. Baba, S. Takano, and K. Murakami, “An evaluation of a complex event processing engine,” in 2014 IIAI 3rd International Conference on Advanced Applied Informatics, Aug 2014, pp. 190–193.",
+  "token_count": 43,
+  "text_sha": "fe42dcc2f2a559ef8c1c6b25faf45725cbd18b3f730719176f0c989659a381d8",
+  "extracted_at": "2026-05-15T22:11:37.830432Z"
+}

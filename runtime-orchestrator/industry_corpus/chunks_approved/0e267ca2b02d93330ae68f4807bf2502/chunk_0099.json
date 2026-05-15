@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0e267ca2::chunk_0099",
+  "source_id": "arxiv_1211_0310",
+  "source_sha": "0e267ca2b02d93330ae68f4807bf2502",
+  "source_url": "https://arxiv.org/pdf/1211.0310.pdf",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "algorithms to be enhanced. Activities: As new algorithms are developed for Stage III surveys, we will test them on simulated LSST data (ImSim), and assess the level of systematics in that context. In nearly all cases, LSST will be in a different regime from Stage III surveys in terms of galaxy population, depth, and number of exposures, so we will evaluate how those differences could affect Stage III survey algorithm performance in an LSST context. Deliverables: RecommendationsforwhichalgorithmsfromStageIIIsurveysshouldbeadopted, eitheras-isorwithrecommendedmodifications; recommendationsforwhichstepsofthe analysis process might require development of completely new algorithms. 5.2 Large scale structure 5.2.1 High-Priority Tasks The large scale structure task list was constructed based on several considerations. Of primary importance are those tasks that (a) may cause a change in survey plans (for example, dithering pattern, survey strategies, hardware); (b) involve developing tools that are of long-term value for the LSST DESC (for example, developing software to reach the maximum DE constraining power via large scale structure); or, (c) provide stringent requirements on the telescope system or data processing steps (DM). Since photometric BAO is a recently matured technique, our experience and knowledge is based largely on analysis performed on SDSS data. Therefore, there are many unknowns in our analysis steps, since photometric BAO has not been done in any datasets except SDSS. We decided to encompass a large range of systematics when designing our tasks. Thus, our 100",
+  "token_count": 229,
+  "text_sha": "a41d2325e8b7371338780bf1ffea9f5ebc1b3a0c12b8a971f88dad24c23a9c01",
+  "extracted_at": "2026-05-15T22:11:33.869750Z"
+}
