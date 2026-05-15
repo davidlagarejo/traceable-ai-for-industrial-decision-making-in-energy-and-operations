@@ -41,6 +41,7 @@ def fetch(
     *,
     epa_neighbors: list[dict] | None = None,
     osm_neighbors: list[dict] | None = None,
+    naics_peers: list[dict] | None = None,
 ) -> FetcherResult:
     """Build a peer comparison set from already-fetched neighbor data.
 
@@ -57,11 +58,30 @@ def fetch(
     now = _dt.datetime.utcnow().isoformat() + "Z"
     epa_neighbors = epa_neighbors or []
     osm_neighbors = osm_neighbors or []
+    naics_peers   = naics_peers or []
 
     asset_family = (context.asset_family or "").strip().lower()
     keywords = _ASSET_FAMILY_NAICS_KEYWORDS.get(asset_family, [])
 
     candidates: list[dict] = []
+    # NAICS peers are the strongest signal — they're EPA-registered with
+    # matching NAICS codes for the asset family. Auto-include with high
+    # relevance score (no keyword match needed).
+    for p in naics_peers:
+        if not isinstance(p, dict):
+            continue
+        candidates.append({
+            "source":             "epa_naics",
+            "name":               p.get("name") or "(unnamed)",
+            "city":               p.get("city", ""),
+            "state":              p.get("state", ""),
+            "address":            p.get("address", ""),
+            "registry_id":        p.get("registry_id", ""),
+            "naics_code":         p.get("naics_code", ""),
+            "naics_desc":         p.get("naics_desc", ""),
+            "relevance":          10,  # canonical NAICS match beats keyword match
+            "matched_keywords":   [f"naics:{p.get('naics_code','')}"],
+        })
     # Score EPA neighbors by name/site_type containing asset-family keywords
     for f in epa_neighbors:
         name      = str(f.get("name", "") or "").lower()

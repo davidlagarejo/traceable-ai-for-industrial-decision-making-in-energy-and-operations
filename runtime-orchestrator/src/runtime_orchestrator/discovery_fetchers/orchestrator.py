@@ -125,13 +125,18 @@ def run_full_discovery(context: FetcherContext) -> dict[str, Any]:
     osm = _safe_run(osm_overpass.fetch, ctx)
     results[osm_overpass.SOURCE_KEY] = osm
 
-    # 6. Comparable Finder (consumes EPA + OSM payloads)
+    # 6. Comparable Finder (consumes EPA + OSM payloads + NAICS peers)
     epa_neighbors = (epa.payload.get("facilities_in_city")
                      if epa.status == FetcherStatus.OK else []) or []
     osm_neighbors = (osm.payload.get("neighbors")
                      if osm.status == FetcherStatus.OK else []) or []
+    naics_peers   = (epa.payload.get("naics_peers_in_state")
+                     if epa.status == FetcherStatus.OK else []) or []
     comp = comparable_finder.fetch(
-        ctx, epa_neighbors=epa_neighbors, osm_neighbors=osm_neighbors,
+        ctx,
+        epa_neighbors=epa_neighbors,
+        osm_neighbors=osm_neighbors,
+        naics_peers=naics_peers,
     )
     results[comparable_finder.SOURCE_KEY] = comp
 

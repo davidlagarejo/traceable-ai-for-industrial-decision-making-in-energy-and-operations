@@ -3556,6 +3556,8 @@ class Motor012Adapter(BaseMotorAdapter):
             # Neighbors / context
             "epa_facilities_in_zip_count":     _epa.get("facility_count_city"),
             "epa_estimated_local_industry":    list(_epa.get("estimated_local_industry", []) or [])[:8],
+            "epa_naics_peers_in_state_count":  _epa.get("naics_peer_count"),
+            "epa_naics_peers_in_state":        list(_epa.get("naics_peers_in_state", []) or [])[:10],
             "osm_industrial_neighbor_count":   _osm.get("industrial_count"),
             "osm_cold_storage_neighbor_count": _osm.get("cold_storage_count"),
             "osm_nearby_substation_count":     _osm.get("nearby_substation_count"),

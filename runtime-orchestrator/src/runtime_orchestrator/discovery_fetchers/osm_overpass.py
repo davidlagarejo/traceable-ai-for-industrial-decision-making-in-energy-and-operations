@@ -86,19 +86,37 @@ def fetch(context: FetcherContext) -> FetcherResult:
     def _shape(e: dict) -> dict:
         tags = e.get("tags", {}) or {}
         center = e.get("center", {}) or {}
+        # Best-effort name resolution: prefer name, then operator, then brand,
+        # then ref. Anything > "(unnamed)" is useful.
+        best_name = (
+            tags.get("name")
+            or tags.get("operator")
+            or tags.get("brand")
+            or tags.get("ref")
+            or tags.get("name:en")
+            or ""
+        )
         return {
             "osm_id":      f"{e.get('type','?')}/{e.get('id','?')}",
-            "name":        tags.get("name", ""),
+            "name":        best_name,
+            "name_source": ("name" if tags.get("name") else
+                            "operator" if tags.get("operator") else
+                            "brand" if tags.get("brand") else
+                            "ref" if tags.get("ref") else ""),
             "building":    tags.get("building", ""),
             "industrial":  tags.get("industrial", ""),
             "operator":    tags.get("operator", ""),
+            "brand":       tags.get("brand", ""),
+            "ref":         tags.get("ref", ""),
             "lat":         e.get("lat") or center.get("lat"),
             "lon":         e.get("lon") or center.get("lon"),
             "cold_storage": tags.get("cold_storage", ""),
             "man_made":    tags.get("man_made", ""),
             "power":       tags.get("power", ""),
-            "tags":        {k: v for k, v in tags.items() if k in
-                            {"addr:street", "addr:city", "ref", "wikidata", "wikipedia"}},
+            "addr":        (f"{tags.get('addr:housenumber','')} {tags.get('addr:street','')}".strip()
+                            or tags.get("addr:full", "")),
+            "city":        tags.get("addr:city", ""),
+            "wikidata":    tags.get("wikidata", ""),
         }
 
     shaped = [_shape(e) for e in elements[:60]]

@@ -76,6 +76,12 @@ _SYSTEM = (
     "8. Always preserve semantic equivalence between English and Spanish. Spanish should not add or remove claims.\n"
     "9. Never write meta-instructions such as 'the chart should', 'the prose should', or 'use in text'. "
     "Write directly about the evidence, uncertainty, and decision consequence.\n"
+    "10. PUBLIC CONTEXT FACTS — when ctx.public_context_facts is provided, you MUST cite these facts "
+    "verbatim where relevant (e.g., the county name, ASHRAE climate zone, state electricity prices, "
+    "matched_address, lat/lon, neighbor counts). These are public-record observations the framework "
+    "fetched from Census/NOAA/EPA/EIA/OSM — they are NOT claims, just observed context. Cite them "
+    "as 'public-record context indicates …' or 'Census Geocoder confirms …'. NEVER fabricate, NEVER "
+    "round excessively, NEVER omit them when the section is location/regional/peer-related.\n"
 )
 
 _FORBIDDEN_PHRASES = (
@@ -671,6 +677,11 @@ class Motor019Adapter(BaseMotorAdapter):
         vintage          = fp.get("vintage", {})
         prior_assump     = fp.get("prior_assumptions_pack", [])
         uncertainty      = fp.get("uncertainty_markers", [])
+        # P-DISCOVERY: real US-wide discovery context. The narrator MUST cite
+        # these facts verbatim (lat/lon, county, climate zone, electricity
+        # prices, neighbor counts) instead of inventing or omitting them.
+        # Phase 0: framework dicta los hechos públicos, no el LLM.
+        real_discovery = fp.get("real_discovery_summary", {}) or {}
 
         # ── motor_028: live SEC financial data + web search results ──────────
         enriched   = m28.get("enriched_data", {})
@@ -745,6 +756,13 @@ class Motor019Adapter(BaseMotorAdapter):
 
         def add(section_id: str, title: str, audience: str, prompt: str, ctx: dict):
             nonlocal budget_exhausted, skipped_sections_due_budget, lint_failures, fallback_sections, structured_summary_sections
+            # P-DISCOVERY: inject real public discovery facts as `public_context_facts`
+            # into every section's ctx so the narrator can cite them verbatim.
+            # Phase 0: framework dicta los hechos públicos, no el LLM.
+            if real_discovery and "public_context_facts" not in ctx:
+                ctx = {**ctx, "public_context_facts": {
+                    k: v for k, v in real_discovery.items() if v not in (None, "", [], {})
+                }}
             packet = _build_section_packet(
                 section_id=section_id,
                 title=title,
