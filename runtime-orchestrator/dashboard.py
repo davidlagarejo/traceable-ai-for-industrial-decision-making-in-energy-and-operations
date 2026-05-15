@@ -15473,6 +15473,23 @@ aside.cases .item.active{background:#eff6ff;border-left:3px solid #2563eb;paddin
 aside.cases .t{font-size:12.5px;font-weight:600;color:#18181b;line-height:1.35;}
 aside.cases .m{font-size:10.5px;color:#71717a;margin-top:3px;}
 aside.cases .empty{padding:40px 16px;text-align:center;color:#a1a1aa;font-style:italic;line-height:1.5;}
+aside.cases .casebox{padding:11px 14px;border-bottom:1px solid #f4f4f5;}
+aside.cases .casebox.active{background:#eff6ff;border-left:3px solid #2563eb;padding-left:11px;}
+aside.cases .caselabel{font-size:12.5px;font-weight:600;color:#18181b;line-height:1.35;cursor:pointer;}
+aside.cases .caselabel:hover{color:#2563eb;}
+aside.cases .casemeta{font-size:10.5px;color:#71717a;margin-top:3px;}
+aside.cases .caserow{margin-top:7px;display:flex;align-items:center;gap:6px;}
+aside.cases .runbtn{padding:4px 10px;background:#16a34a;color:#fff;border:0;border-radius:5px;
+                     cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.02em;}
+aside.cases .runbtn:hover{background:#15803d;}
+aside.cases .runbtn:disabled{background:#a1a1aa;cursor:wait;}
+aside.cases .runbtn.again{background:#2563eb;}
+aside.cases .runbtn.again:hover{background:#1d4ed8;}
+aside.cases .runstate{font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;}
+aside.cases .state-idle{background:#f4f4f5;color:#71717a;}
+aside.cases .state-running{background:#fef3c7;color:#92400e;}
+aside.cases .state-completed{background:#dcfce7;color:#166534;}
+aside.cases .state-failed{background:#fee2e2;color:#991b1b;}
 aside.cases .modebadge{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:4px;text-transform:uppercase;letter-spacing:.04em;}
 aside.cases .mode-client_safe{background:#dcfce7;color:#166534;}
 aside.cases .mode-publish_with_degradation{background:#fef3c7;color:#92400e;}
@@ -15496,6 +15513,14 @@ section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border
 .section-head{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
               color:#52525b;margin:8px 0 10px 0;display:flex;align-items:center;gap:8px;}
 .section-head .count{background:#f4f4f5;color:#52525b;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:600;}
+.apply-btn{margin-left:auto;padding:6px 14px;background:#7c3aed;color:#fff;border:0;border-radius:6px;
+           cursor:pointer;font-size:11.5px;font-weight:700;letter-spacing:.02em;text-transform:none;}
+.apply-btn:hover{background:#6d28d9;}
+.apply-btn:disabled{background:#a1a1aa;cursor:wait;}
+.decisions-summary{font-size:11.5px;color:#52525b;margin-bottom:12px;display:none;padding:8px 12px;
+                    background:#faf5ff;border:1px solid #e9d5ff;border-radius:6px;}
+.decisions-summary.show{display:block;}
+.decisions-summary b{color:#6d28d9;}
 .combo{border:1px solid #e4e4e7;border-radius:9px;padding:13px 15px;margin-bottom:12px;background:#fcfcfc;}
 .combo h3{margin:0 0 6px 0;font-size:14px;font-weight:700;color:#18181b;}
 .combo .explain{font-size:12.5px;color:#3f3f46;line-height:1.5;margin-bottom:10px;}
@@ -15578,7 +15603,11 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
 
     <div class="section-head">
       Aprobaciones <span class="count" id="combo-count">0</span>
+      <button id="apply-decisions-btn" class="apply-btn" onclick="applyDecisions()" style="display:none;">
+        ↻ Aplicar decisiones y re-correr
+      </button>
     </div>
+    <div id="decisions-summary" class="decisions-summary"></div>
     <div id="approvals">
       <div class="empty-block">Selecciona un caso para ver sus combinaciones.</div>
     </div>
@@ -15660,30 +15689,151 @@ async function loadCases() {
   }
 }
 
+let currentCaseId = "";
+let casePollingInterval = null;
+
 function renderCases(cases) {
   const el = $("cases");
   if (!cases.length) {
-    el.innerHTML = '<div class="empty">No hay runs con PDF.<br><br><small>Corre el framework y aparecerá aquí.</small></div>';
+    el.innerHTML = '<div class="empty">No hay casos definidos.</div>';
     return;
   }
   el.innerHTML = cases.map(c => {
-    const klass = (c.run_id === currentRunId) ? "item active" : "item";
-    const mode = c.publication_mode || "";
-    const modeBadge = mode ? `<span class="modebadge mode-${mode}">${mode.replace(/_/g,' ')}</span>` : "";
-    return `<div class="${klass}" onclick="selectCase('${c.run_id}')">
-      <div class="t">${escapeHtml(c.label || c.run_id)}</div>
-      <div class="m">${escapeHtml(c.completed_at || "")} ${modeBadge}</div>
+    const klass = (c.case_id === currentCaseId) ? "casebox active" : "casebox";
+    const state = c.run_state || "idle";
+    const hasRun = c.run_state === "completed" && c.run_id;
+    const isRunning = c.run_state === "running";
+    const btnLabel = isRunning
+      ? "⏳ Corriendo…"
+      : (hasRun ? "↻ Correr otra vez" : "▶ Correr framework");
+    const btnClass = hasRun ? "runbtn again" : "runbtn";
+    const inputsMissing = !c.inputs_available;
+    const errBit = (state === "failed" && c.error)
+      ? `<div class="casemeta" style="color:#991b1b;">⚠ ${escapeHtml(c.error)}</div>`
+      : "";
+    const stateLabel = state === "idle" ? "sin correr aún" : state;
+    return `<div class="${klass}">
+      <div class="caselabel" onclick="selectCaseById('${escapeHtml(c.case_id)}')">${escapeHtml(c.label)}</div>
+      <div class="casemeta">${escapeHtml(c.asset_family)}</div>
+      <div class="caserow">
+        <button class="${btnClass}" onclick="runCase('${escapeHtml(c.case_id)}')"
+                ${isRunning || inputsMissing ? "disabled" : ""}>
+          ${btnLabel}
+        </button>
+        <span class="runstate state-${state}">${stateLabel}</span>
+      </div>
+      ${errBit}
     </div>`;
   }).join("");
 }
 
-async function selectCase(runId) {
-  currentRunId = runId;
-  // Re-render case list active state
-  await loadCases();
-  await Promise.all([loadBanner(), loadApprovals(), loadAnnotations(), loadPdf()]);
-  $("annot-add-btn").disabled = !currentPdfPath;
+async function selectCaseById(caseId) {
+  currentCaseId = caseId;
+  // Find the run_id of this case from the latest /cases response
+  const r = await fetch("/api/curation/cases");
+  const data = await r.json();
+  const c = (data.cases || []).find(x => x.case_id === caseId);
+  if (c && c.run_id) {
+    currentRunId = c.run_id;
+    await Promise.all([loadBanner(), loadApprovals(), loadAnnotations(), loadPdf()]);
+    $("annot-add-btn").disabled = !currentPdfPath;
+  } else {
+    // No run yet → reset center/right
+    currentRunId = "";
+    currentPdfPath = "";
+    $("banner").className = "banner banner-empty";
+    $("banner").innerHTML = '<span class="dot"></span><span>Este caso no ha corrido todavía. Haz click en "▶ Correr framework".</span>';
+    $("approvals").innerHTML = '<div class="empty-block">Sin run todavía.</div>';
+    $("annotations").innerHTML = '<div class="empty-block">Sin run todavía.</div>';
+    $("combo-count").textContent = "0";
+    $("annot-count").textContent = "0";
+    $("pdf-frame").style.display = "none";
+    $("pdf-empty").style.display = "flex";
+    $("pdf-empty").textContent = "Corre el framework para generar el PDF.";
+    $("pdfhead-label").textContent = "Sin PDF";
+    $("annot-add-btn").disabled = true;
+  }
+  await loadCases();  // refresh sidebar to highlight the active case
 }
+
+async function applyDecisions() {
+  if (!currentRunId) {
+    toast("No hay run activo", "err");
+    return;
+  }
+  const btn = $("apply-decisions-btn");
+  btn.disabled = true;
+  btn.textContent = "⏳ Re-corriendo con decisiones…";
+  const r = await fetch("/api/curation/rerun-with-decisions", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({run_id: currentRunId}),
+  });
+  const j = await r.json();
+  if (!j.ok) {
+    btn.disabled = false;
+    toast(j.error || "No se pudo lanzar", "err");
+    loadApprovals();
+    return;
+  }
+  const caseId = j.case_id;
+  toast(`Re-corriendo · ${j.accepted_count} accept · ${j.rejected_count} reject · ~90s`, "ok");
+  if (casePollingInterval) clearInterval(casePollingInterval);
+  casePollingInterval = setInterval(async () => {
+    const rr = await fetch("/api/curation/cases");
+    const dd = await rr.json();
+    renderCases(dd.cases || []);
+    const c = (dd.cases || []).find(x => x.case_id === caseId);
+    if (c && (c.run_state === "completed" || c.run_state === "failed")) {
+      clearInterval(casePollingInterval);
+      casePollingInterval = null;
+      if (c.run_state === "completed") {
+        toast("PDF actualizado con tus decisiones ✓", "ok");
+        await selectCaseById(caseId);
+      } else {
+        toast("Re-run falló: " + (c.error || ""), "err");
+        btn.disabled = false;
+      }
+    }
+  }, 3500);
+}
+
+async function runCase(caseId) {
+  const r = await fetch("/api/curation/run-case", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({case_id: caseId}),
+  });
+  const j = await r.json();
+  if (j.ok) {
+    toast("Pipeline lanzado — esto toma ~90 segundos", "ok");
+    currentCaseId = caseId;
+    // Start polling cases until this one completes
+    if (casePollingInterval) clearInterval(casePollingInterval);
+    casePollingInterval = setInterval(async () => {
+      const rr = await fetch("/api/curation/cases");
+      const dd = await rr.json();
+      renderCases(dd.cases || []);
+      const c = (dd.cases || []).find(x => x.case_id === caseId);
+      if (c && (c.run_state === "completed" || c.run_state === "failed")) {
+        clearInterval(casePollingInterval);
+        casePollingInterval = null;
+        if (c.run_state === "completed") {
+          toast("Pipeline completado ✓", "ok");
+          await selectCaseById(caseId);
+        } else {
+          toast("Pipeline falló: " + (c.error || ""), "err");
+        }
+      }
+    }, 3500);
+    // Initial refresh
+    loadCases();
+  } else {
+    toast("No se pudo lanzar: " + (j.error || ""), "err");
+  }
+}
+
+// (V2: selectCase replaced by selectCaseById — selects by case_id, not run_id)
 
 async function loadBanner() {
   const r = await fetch(`/api/curation/run-status?run_id=${encodeURIComponent(currentRunId)}`);
@@ -15702,6 +15852,30 @@ async function loadApprovals() {
   const data = await r.json();
   const combos = data.combinations || [];
   $("combo-count").textContent = combos.length;
+  // Decisions summary + apply button
+  const counts = {accept: 0, reject: 0, modify: 0};
+  combos.forEach(c => { if (c.current_decision) counts[c.current_decision] = (counts[c.current_decision] || 0) + 1; });
+  const totalActionable = counts.accept + counts.reject;
+  const sumEl = $("decisions-summary");
+  const btn = $("apply-decisions-btn");
+  if (counts.accept + counts.reject + counts.modify > 0) {
+    sumEl.classList.add("show");
+    let parts = [];
+    if (counts.accept) parts.push(`✅ <b>${counts.accept}</b> aceptadas`);
+    if (counts.reject) parts.push(`❌ <b>${counts.reject}</b> rechazadas`);
+    if (counts.modify) parts.push(`✏️ <b>${counts.modify}</b> con modificaciones (se aplican por skill humana)`);
+    sumEl.innerHTML = "Decisiones actuales: " + parts.join(" · ");
+  } else {
+    sumEl.classList.remove("show");
+    sumEl.innerHTML = "";
+  }
+  if (totalActionable > 0) {
+    btn.style.display = "inline-block";
+    btn.disabled = false;
+    btn.textContent = `↻ Aplicar ${totalActionable} decisión(es) y re-correr`;
+  } else {
+    btn.style.display = "none";
+  }
   const el = $("approvals");
   if (!combos.length) {
     el.innerHTML = '<div class="empty-block">Sin combinaciones activadas en este run.</div>';
@@ -15890,82 +16064,374 @@ def curar_page():
     return render_template_string(_CURAR_PAGE_HTML)
 
 
+# Canonical regression cases — same set used by
+# scripts/regression_cross_asset_recovery.sh. Each entry: (case_id, label,
+# asset_family, inputs_file, pipeline_id). Adding new cases here makes
+# them appear in /curar.
+_CURATION_CANONICAL_CASES: list[dict[str, str]] = [
+    {
+        "case_id":       "cold_chain_lakeshore",
+        "label":         "Cold-Chain · Lakeshore Cold Storage",
+        "asset_family":  "cold_chain_facility",
+        "inputs_file":   "cold_chain_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-cold-chain-lakeshore-regression",
+    },
+    {
+        "case_id":       "manufacturing_wilsonart",
+        "label":         "Manufacturing · Wilsonart Temple-North",
+        "asset_family":  "manufacturing_facility",
+        "inputs_file":   "mfg_wilsonart_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-manufacturing-wilsonart-regression",
+    },
+    {
+        "case_id":       "warehouse_austin",
+        "label":         "Warehouse · Austin DC",
+        "asset_family":  "warehouse_distribution",
+        "inputs_file":   "warehouse_austin_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-warehouse-austin-regression",
+    },
+    {
+        "case_id":       "datacenter_dlr",
+        "label":         "Datacenter · DLR Austin",
+        "asset_family":  "datacenter",
+        "inputs_file":   "dlr_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-datacenter-dlr-regression",
+    },
+    {
+        "case_id":       "building_bxp",
+        "label":         "Commercial Building · BXP Boylston",
+        "asset_family":  "commercial_building",
+        "inputs_file":   "bxp_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-building-bxp-regression",
+    },
+    {
+        "case_id":       "infrastructure_csx",
+        "label":         "Infrastructure · CSX Rail Node",
+        "asset_family":  "infrastructure_node",
+        "inputs_file":   "csx_force_render_inputs.json",
+        "pipeline_id":   "zlab-asset-infrastructure-csx-regression",
+    },
+]
+
+
+_CURATION_RUN_STATE: dict[str, dict[str, Any]] = {}
+"""In-memory tracker for ongoing/completed runs per case_id.
+Shape: {
+  case_id: {
+    "status": "idle"|"running"|"completed"|"failed",
+    "run_id": "...",        # populated when known
+    "started_at": iso8601,
+    "ended_at": iso8601,
+    "error": "",
+    "log_tail": "...",
+  }
+}
+"""
+
+
+def _inputs_file_exists(inputs_filename: str) -> bool:
+    return (_HERE / "inputs" / inputs_filename).exists()
+
+
 @app.route("/api/curation/cases")
 def api_curation_cases():
-    """List recent completed runs THAT PRODUCED A PDF.
+    """List the canonical curation cases (input files + pipeline mapping).
 
-    Curation only makes sense for runs that actually emitted a deliverable.
-    Filters: status=completed AND motor_017 output has a PDF on disk.
-    Sorted by completed_at descending. Caps at 50 most recent.
+    Each case shows whether it has a recent run with PDF. Curator clicks
+    the case → either selects existing latest run OR clicks "▶ Correr"
+    which invokes /api/curation/run-case.
     """
     if not _curation_available:
         return jsonify({"error": "curation_layer unavailable"}), 503
     cases: list[dict] = []
-    if not _RUNS_DIR.exists():
-        return jsonify({"cases": []})
-    paths = sorted(
-        _RUNS_DIR.glob("run:*.json"),
-        key=lambda p: p.stat().st_mtime,
-        reverse=True,
-    )
-    for p in paths:
-        if len(cases) >= 50:
-            break
-        try:
-            m = json.loads(p.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
-        if m.get("status") != "completed":
-            continue
-        rid = m.get("run_id", p.stem)
-        # Cheap pre-filter: motor_017 must have completed status.
-        m017_entry = (m.get("motor_results") or {}).get("motor_017", {})
-        if m017_entry.get("status") != "completed":
-            continue
-        # Authoritative filter: actual PDF must exist on disk.
-        m017_out = _curation_load_motor_output(rid, "motor_017")
-        pdf_path = m017_out.get("pdf_path", "") or next(
-            iter((m017_out.get("pdf_paths") or {}).values()), ""
-        )
-        if not pdf_path:
-            continue
-        try:
-            if not Path(pdf_path).exists():
-                continue
-        except (OSError, ValueError):
-            continue
-
-        # Build a useful label.
-        target_def = m.get("target_definition") or {}
-        target_id = (
-            target_def.get("target_identifier")
-            or target_def.get("declared_asset_name")
-            or target_def.get("address_raw")
-            or ""
-        )
-        asset_family = target_def.get("asset_family") or target_def.get("target_type") or ""
-        # Prefer "cold_chain_facility · Lakeshore Cold Storage" over raw run_id.
-        if target_id and asset_family:
-            label = f"{asset_family} · {target_id}"
-        elif target_id:
-            label = target_id
-        else:
-            label = m.get("pipeline_id", "") or rid
-
-        # publication_mode for at-a-glance badge in the sidebar.
-        pub_mode = m017_out.get("publication_mode") or (
-            m017_out.get("render_gate_verdict") or {}
-        ).get("state", "")
-
-        cases.append({
-            "run_id":           rid,
-            "label":            label,
-            "pipeline_id":      m.get("pipeline_id", ""),
-            "completed_at":     (m.get("completed_at", "") or "")[:19].replace("T", " "),
-            "publication_mode": pub_mode,
-            "pdf_basename":     Path(pdf_path).name,
-        })
+    for spec in _CURATION_CANONICAL_CASES:
+        case = dict(spec)
+        case["inputs_available"] = _inputs_file_exists(spec["inputs_file"])
+        state = _CURATION_RUN_STATE.get(spec["case_id"], {})
+        case["run_state"] = state.get("status", "idle")
+        case["run_id"]    = state.get("run_id", "")
+        case["error"]     = state.get("error", "")
+        case["started_at"] = state.get("started_at", "")
+        case["ended_at"]   = state.get("ended_at", "")
+        cases.append(case)
     return jsonify({"cases": cases})
+
+
+def _curation_invoke_pipeline(case_id: str, pipeline_id: str, inputs_file: str) -> None:
+    """Background runner — subprocess invocation of cli.py.
+
+    Updates `_CURATION_RUN_STATE[case_id]` as the run progresses.
+    Captures the run_id by scanning run-registry for the most recent
+    manifest with matching pipeline_id created after `started_at`.
+    """
+    started = datetime.now(datetime.now().astimezone().tzinfo).isoformat() if False else \
+              datetime.utcnow().isoformat() + "Z"
+    _CURATION_RUN_STATE[case_id] = {
+        "status":     "running",
+        "started_at": started,
+        "run_id":     "",
+        "error":      "",
+        "log_tail":   "",
+    }
+    proc = None
+    try:
+        proc = subprocess.Popen(
+            [
+                sys.executable, "cli.py", "run",
+                "--pipeline-id", pipeline_id,
+                "--inputs", f"inputs/{inputs_file}",
+                "--no-cache",
+            ],
+            cwd=str(_HERE),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        stdout, _ = proc.communicate(timeout=600)
+        ended = datetime.utcnow().isoformat() + "Z"
+        log_tail = "\n".join((stdout or "").strip().splitlines()[-25:])
+        # Extract Run ID from cli output
+        run_id = ""
+        for line in (stdout or "").splitlines():
+            if line.startswith("Run ID :"):
+                run_id = line.split(":", 1)[1].strip()
+                break
+        ok = proc.returncode == 0
+        _CURATION_RUN_STATE[case_id] = {
+            "status":     "completed" if ok else "failed",
+            "started_at": started,
+            "ended_at":   ended,
+            "run_id":     run_id,
+            "error":      "" if ok else f"exit code {proc.returncode}",
+            "log_tail":   log_tail,
+        }
+    except subprocess.TimeoutExpired:
+        if proc is not None:
+            proc.kill()
+        _CURATION_RUN_STATE[case_id] = {
+            "status":     "failed",
+            "started_at": started,
+            "ended_at":   datetime.utcnow().isoformat() + "Z",
+            "run_id":     "",
+            "error":      "timeout (> 10 min)",
+            "log_tail":   "",
+        }
+    except Exception as exc:  # pragma: no cover — defensive
+        _CURATION_RUN_STATE[case_id] = {
+            "status":     "failed",
+            "started_at": started,
+            "ended_at":   datetime.utcnow().isoformat() + "Z",
+            "run_id":     "",
+            "error":      str(exc),
+            "log_tail":   "",
+        }
+
+
+def _curation_case_id_from_run(run_id: str) -> str:
+    """Recover case_id from a run's manifest by matching pipeline_id."""
+    manifest_path = _RUNS_DIR / f"{run_id}.json"
+    if not manifest_path.exists():
+        return ""
+    try:
+        m = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return ""
+    pipeline_id = m.get("pipeline_id", "")
+    spec = next(
+        (c for c in _CURATION_CANONICAL_CASES if c["pipeline_id"] == pipeline_id),
+        None,
+    )
+    return spec["case_id"] if spec else ""
+
+
+def _curation_invoke_pipeline_with_decisions(
+    case_id: str, pipeline_id: str, inputs_file: str,
+    rejected_ids: list[str], accepted_ids: list[str],
+) -> None:
+    """Background runner — same as _curation_invoke_pipeline but injects
+    curator decisions into pipeline_inputs via a temp inputs file."""
+    started = datetime.utcnow().isoformat() + "Z"
+    _CURATION_RUN_STATE[case_id] = {
+        "status":     "running",
+        "started_at": started,
+        "run_id":     "",
+        "error":      "",
+        "log_tail":   "",
+    }
+    proc = None
+    tmp_inputs = None
+    try:
+        # Load original inputs and inject curator-decision flags
+        original_path = _HERE / "inputs" / inputs_file
+        if not original_path.exists():
+            raise FileNotFoundError(f"inputs file missing: {inputs_file}")
+        with original_path.open("r", encoding="utf-8") as fh:
+            payload = json.load(fh)
+        payload["__rejected_combination_ids__"] = list(rejected_ids)
+        payload["__accepted_combination_ids__"] = list(accepted_ids)
+        # Write to a sibling file so cli.py can find it
+        tmp_inputs = original_path.with_name(
+            original_path.stem + "_with_decisions.json"
+        )
+        tmp_inputs.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+        proc = subprocess.Popen(
+            [
+                sys.executable, "cli.py", "run",
+                "--pipeline-id", pipeline_id,
+                "--inputs", f"inputs/{tmp_inputs.name}",
+                "--no-cache",
+            ],
+            cwd=str(_HERE),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        stdout, _ = proc.communicate(timeout=600)
+        ended = datetime.utcnow().isoformat() + "Z"
+        log_tail = "\n".join((stdout or "").strip().splitlines()[-25:])
+        run_id = ""
+        for line in (stdout or "").splitlines():
+            if line.startswith("Run ID :"):
+                run_id = line.split(":", 1)[1].strip()
+                break
+        ok = proc.returncode == 0
+        _CURATION_RUN_STATE[case_id] = {
+            "status":     "completed" if ok else "failed",
+            "started_at": started,
+            "ended_at":   ended,
+            "run_id":     run_id,
+            "error":      "" if ok else f"exit code {proc.returncode}",
+            "log_tail":   log_tail,
+            "applied_decisions": {
+                "rejected_count": len(rejected_ids),
+                "accepted_count": len(accepted_ids),
+            },
+        }
+    except Exception as exc:  # pragma: no cover — defensive
+        if proc is not None:
+            try:
+                proc.kill()
+            except Exception:
+                pass
+        _CURATION_RUN_STATE[case_id] = {
+            "status":     "failed",
+            "started_at": started,
+            "ended_at":   datetime.utcnow().isoformat() + "Z",
+            "run_id":     "",
+            "error":      str(exc),
+            "log_tail":   "",
+        }
+    finally:
+        # Cleanup temp file
+        if tmp_inputs is not None and tmp_inputs.exists():
+            try:
+                tmp_inputs.unlink()
+            except Exception:
+                pass
+
+
+@app.route("/api/curation/rerun-with-decisions", methods=["POST"])
+def api_curation_rerun_with_decisions():
+    """Re-run the framework for a given run_id, applying the curator's
+    accept/reject decisions as input filters.
+
+    Body: { run_id: str }
+    - Rejected combination_ids → filtered out by motor_054.
+    - Accepted combination_ids → tagged operator_decision='accepted'.
+    - Modify decisions are persisted but NOT auto-applied (require
+      future translation skill).
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    run_id = str(data.get("run_id") or "").strip()
+    if not run_id:
+        return jsonify({"error": "run_id required"}), 400
+
+    case_id = _curation_case_id_from_run(run_id)
+    if not case_id:
+        return jsonify({"error": f"could not map run_id to canonical case: {run_id}"}), 404
+    spec = next((c for c in _CURATION_CANONICAL_CASES if c["case_id"] == case_id), None)
+    if not spec:
+        return jsonify({"error": f"unknown case_id: {case_id}"}), 404
+
+    # Read curator decisions
+    latest = _curation.latest_combination_decisions(run_id)
+    rejected = [cid for cid, row in latest.items() if row.get("decision") == "reject"]
+    accepted = [cid for cid, row in latest.items() if row.get("decision") == "accept"]
+    modified = [cid for cid, row in latest.items() if row.get("decision") == "modify"]
+
+    # If nothing decided, refuse
+    if not (rejected or accepted):
+        return jsonify({
+            "ok": False,
+            "error": "no accept/reject decisions yet — nada que aplicar",
+            "modify_pending": len(modified),
+        }), 400
+
+    existing = _CURATION_RUN_STATE.get(case_id, {})
+    if existing.get("status") == "running":
+        return jsonify({"ok": False, "error": "already running",
+                        "case_id": case_id, **existing}), 409
+
+    th = threading.Thread(
+        target=_curation_invoke_pipeline_with_decisions,
+        args=(case_id, spec["pipeline_id"], spec["inputs_file"],
+              rejected, accepted),
+        daemon=True,
+    )
+    th.start()
+    return jsonify({
+        "ok": True,
+        "status": "running",
+        "case_id": case_id,
+        "accepted_count": len(accepted),
+        "rejected_count": len(rejected),
+        "modify_count_skipped": len(modified),
+        "started_at": _CURATION_RUN_STATE.get(case_id, {}).get("started_at", ""),
+    })
+
+
+@app.route("/api/curation/run-case", methods=["POST"])
+def api_curation_run_case():
+    """Invoke the framework for a canonical case_id (async, fire-and-forget).
+
+    Body: { case_id: str }
+    Response: { ok: true, status: "running", case_id, started_at }
+
+    The caller should poll /api/curation/cases to learn when status flips
+    to "completed" + run_id is populated.
+    """
+    if not _curation_available:
+        return jsonify({"error": "curation_layer unavailable"}), 503
+    data = request.get_json(silent=True) or {}
+    case_id = str(data.get("case_id") or "").strip()
+    if not case_id:
+        return jsonify({"error": "case_id required"}), 400
+    spec = next((c for c in _CURATION_CANONICAL_CASES if c["case_id"] == case_id), None)
+    if not spec:
+        return jsonify({"error": f"unknown case_id: {case_id}"}), 404
+    if not _inputs_file_exists(spec["inputs_file"]):
+        return jsonify({"error": f"inputs file missing: {spec['inputs_file']}"}), 404
+    # If already running, refuse to spawn a second
+    existing = _CURATION_RUN_STATE.get(case_id, {})
+    if existing.get("status") == "running":
+        return jsonify({"ok": False, "error": "already running",
+                        "case_id": case_id, **existing}), 409
+    # Spawn background thread
+    th = threading.Thread(
+        target=_curation_invoke_pipeline,
+        args=(case_id, spec["pipeline_id"], spec["inputs_file"]),
+        daemon=True,
+    )
+    th.start()
+    return jsonify({
+        "ok": True,
+        "status": "running",
+        "case_id": case_id,
+        "started_at": _CURATION_RUN_STATE.get(case_id, {}).get("started_at", ""),
+    })
 
 
 @app.route("/api/curation/run-pdf")

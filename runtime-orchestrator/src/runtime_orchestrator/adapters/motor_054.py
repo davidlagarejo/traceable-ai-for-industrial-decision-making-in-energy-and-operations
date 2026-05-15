@@ -54,6 +54,38 @@ class Motor054Adapter(BaseMotorAdapter):
         _auto_accept = bool(_pipeline.get("__auto_accept_combinations__", False))
         _combo_default_decision = "accepted" if _auto_accept else "needs_review"
 
+        # Dashboard curation feedback loop — when the curator has decided
+        # accept/reject for specific combinations in /curar, those IDs are
+        # injected into pipeline_inputs so the pipeline re-renders with
+        # those decisions applied.
+        _rejected_combo_ids = set(
+            str(x).strip() for x in (
+                _pipeline.get("__rejected_combination_ids__", []) or []
+            )
+        )
+        _accepted_combo_ids = set(
+            str(x).strip() for x in (
+                _pipeline.get("__accepted_combination_ids__", []) or []
+            )
+        )
+
+        def _apply_curator_decisions(register: list) -> list:
+            """Filter out rejected combos and tag accepted ones."""
+            if not (_rejected_combo_ids or _accepted_combo_ids):
+                return register
+            out = []
+            for c in register or []:
+                if not isinstance(c, dict):
+                    continue
+                cid = str(c.get("combination_id", "")).strip()
+                if cid and cid in _rejected_combo_ids:
+                    continue  # curator rejected → remove
+                if cid and cid in _accepted_combo_ids:
+                    c = dict(c)
+                    c["operator_decision"] = "accepted"
+                out.append(c)
+            return out
+
         asset_family_research_profile = (
             dict(inputs.get("motor_049", {}).get("asset_family_research_profile", {}) or {})
             if isinstance(inputs.get("motor_049"), dict)
@@ -151,6 +183,17 @@ class Motor054Adapter(BaseMotorAdapter):
         skill_admissible_combination_review_register = build_admissible_combination_review_register(
             latent_combination_candidate_register=skill_latent_combination_candidate_register,
             default_decision=_combo_default_decision,
+        )
+        # Apply dashboard curator decisions (V9 P-curation):
+        # rejected → filtered out; accepted → operator_decision tagged.
+        skill_combination_activation_register = _apply_curator_decisions(
+            skill_combination_activation_register
+        )
+        skill_combination_review_register = _apply_curator_decisions(
+            skill_combination_review_register
+        )
+        skill_admissible_combination_review_register = _apply_curator_decisions(
+            skill_admissible_combination_review_register
         )
         skill_expanded_tad_action_register = build_registry_tad_action_register(
             combination_review_register=skill_combination_review_register,
