@@ -15691,6 +15691,60 @@ def _humanize_rule(rule_id: str, raw_description: str = "") -> dict:
     }
 
 
+def _curation_suggest_actions(run_id: str, failures: list[dict]) -> list[dict]:
+    """Given the human failures, propose concrete actions the curator can take.
+
+    Each action: {title, detail, action_kind}
+    """
+    actions: list[dict] = []
+    cats = {f["category"] for f in failures}
+    # 1. Si hay contaminación cross-asset-family → recomendar rechazo + re-run
+    if "Contaminación de patterns" in cats or "Contaminación de charts" in cats:
+        actions.append({
+            "title":  "🔻 Rechaza las combinaciones contaminadas y re-corre",
+            "detail": "Hay patrones que no aplican a este tipo de activo. Marca esas combinaciones como ❌ Rechazar abajo y dale click a ↻ Aplicar decisiones y re-correr. El framework volverá a correr sin esos patrones; el reporte puede pasar al gate.",
+            "kind":   "reject_contaminated",
+        })
+    # 2. Reutilización de contenido — sugerir enriquecer inputs O aceptar como genérico
+    if "Reutilización de contenido" in cats:
+        actions.append({
+            "title":  "📂 Enriquece los inputs (solución de fondo)",
+            "detail": "El reporte recicla contenido de otros casos porque tus inputs JSON carecen de datos específicos del sitio. Añade interval data utility (12 meses 15-min), compressor inventory, lease responsibility matrix, dock cycle data o setpoint logs en el archivo de inputs y vuelve a correr.",
+            "kind":   "enrich_inputs",
+        })
+        actions.append({
+            "title":  "✅ Acepta como reporte genérico estructural (publish_bounded)",
+            "detail": "Si tú como curador validas que el contenido es conceptualmente correcto aunque parezca genérico, acepta las combinaciones válidas y aplica decisiones. El framework lo elevará a 'publish_bounded' — publicable con caveats explícitos de que es análisis estructural, no calibrado al sitio.",
+            "kind":   "accept_as_generic",
+        })
+    # 3. Source-routing — algo de evidencia faltó
+    if any("Estado" in c for c in cats):
+        # check if there are source-related failures by inspecting failure rule_ids
+        for f in failures:
+            if f.get("rule_id", "").startswith("state:") and "decision_blocked" in f.get("rule_id", ""):
+                actions.append({
+                    "title":  "🔍 Revisa el historial /log para entender el patrón",
+                    "detail": "Si este caso se ha bloqueado varias veces por las mismas razones, hay un problema sistémico (inputs deficientes o falta de fetchers de fuente real). Visita 📜 Historial de corridas para ver patrones.",
+                    "kind":   "review_log",
+                })
+                break
+    # 4. Inconsistencia de claims — usualmente fix de inputs
+    if "Consistencia" in cats:
+        actions.append({
+            "title":  "📊 Inconsistencia de claims — revisar inputs (técnico)",
+            "detail": "Los motores no coinciden en el conteo de claims. Suele indicar que los inputs declaran datos parciales (algunos campos sí, otros no). Suele resolverse al completar los facility_inputs en el JSON.",
+            "kind":   "fix_claims_count",
+        })
+    # Always offer "do nothing" as a fallback
+    if not actions:
+        actions.append({
+            "title":  "↻ Vuelve a correr el framework",
+            "detail": "Si el problema parece transitorio, vuelve a correr el caso. Si persiste, edita los inputs JSON o consulta el historial.",
+            "kind":   "rerun",
+        })
+    return actions
+
+
 def _curation_humanize_failures(run_id: str) -> list[dict]:
     """Walk through every motor that emits warnings and translate each
     rule_id into a plain-Spanish bullet. Returns a list of dicts grouped
@@ -15847,17 +15901,20 @@ def api_curation_run_status():
 
     # V-curation P-humanize: surface plain-Spanish bullets when something failed.
     human_reasons: list[dict] = []
+    suggested_actions: list[dict] = []
     if status in ("warn", "blocked"):
         human_reasons = _curation_humanize_failures(run_id)
+        suggested_actions = _curation_suggest_actions(run_id, human_reasons)
 
     return jsonify({
-        "run_id":             run_id,
-        "status":             status,
-        "publication_mode":   publication_mode,
-        "completed_motors":   completed,
-        "total_motors":       total_motors,
-        "message":            message,
-        "human_reasons":      human_reasons,
+        "run_id":              run_id,
+        "status":              status,
+        "publication_mode":    publication_mode,
+        "completed_motors":    completed,
+        "total_motors":        total_motors,
+        "message":             message,
+        "human_reasons":       human_reasons,
+        "suggested_actions":   suggested_actions,
         "final_delivery_gate": verdict or None,
     })
 
@@ -16082,6 +16139,12 @@ section.curation{flex:1;overflow-y:auto;padding:18px 22px;background:#fff;border
 .banner-details .bd-item.sev-warning{border-left-color:#d97706;}
 .banner-details .bd-title{font-size:13px;font-weight:600;color:#18181b;line-height:1.35;}
 .banner-details .bd-detail{font-size:12px;color:#52525b;line-height:1.5;margin-top:3px;}
+.banner-details .bd-actions{margin-top:14px;padding-top:12px;border-top:1px dashed #e4e4e7;}
+.banner-details .bd-actions-title{font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;
+                                   letter-spacing:.04em;margin-bottom:8px;}
+.banner-details .bd-action{background:#faf5ff;border:1px solid #e9d5ff;border-radius:7px;padding:9px 12px;margin-bottom:6px;}
+.banner-details .bd-action-head{font-size:12.5px;font-weight:600;color:#6d28d9;line-height:1.35;}
+.banner-details .bd-action-detail{font-size:11.5px;color:#52525b;margin-top:3px;line-height:1.45;}
 .banner-toggle{margin-left:8px;background:rgba(255,255,255,.5);border:0;color:inherit;
                 cursor:pointer;font-size:11px;padding:3px 8px;border-radius:4px;font-weight:700;}
 .banner-toggle:hover{background:rgba(255,255,255,.85);}
@@ -16535,7 +16598,7 @@ async function loadBanner() {
     grouped[x.category] = grouped[x.category] || [];
     grouped[x.category].push(x);
   });
-  bd.innerHTML = Object.entries(grouped).map(([cat, items]) => {
+  let html = Object.entries(grouped).map(([cat, items]) => {
     return `<div class="bd-cat">${escapeHtml(cat)}</div>` +
       items.map(it => `
         <div class="bd-item sev-${escapeHtml(it.severity)}">
@@ -16543,6 +16606,19 @@ async function loadBanner() {
           <div class="bd-detail">${escapeHtml(it.detail)}</div>
         </div>`).join("");
   }).join("");
+  // Suggested actions block
+  const actions = s.suggested_actions || [];
+  if (actions.length > 0) {
+    html += `<div class="bd-actions">
+      <div class="bd-actions-title">→ Acciones posibles</div>`;
+    html += actions.map(a => `
+      <div class="bd-action">
+        <div class="bd-action-head">${escapeHtml(a.title)}</div>
+        <div class="bd-action-detail">${escapeHtml(a.detail)}</div>
+      </div>`).join("");
+    html += `</div>`;
+  }
+  bd.innerHTML = html;
 }
 
 function toggleBannerDetails() {
