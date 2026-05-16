@@ -1,0 +1,14 @@
+{
+  "chunk_id": "76385284::chunk_0011",
+  "source_id": "nyc_ll88_lighting_upgrade",
+  "source_sha": "76385284ab54db2debcb7211a6e88c8d",
+  "source_url": "https://www.nyc.gov/assets/buildings/local_laws/ll88of2009.pdf",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "No. 973-A) contains the correct text and was passed by the New York City Council on December 9, 2009, approved by the Mayor on December 28, 2009 and returned to the City Clerk on December 28, 2009. JEFFREY D. FRIEDLANDER, Acting Corporation Counsel. 7",
+  "token_count": 44,
+  "text_sha": "d22592c027ab3d7b5e423cc499efc6186476c22dc633af530393ac873779c946",
+  "extracted_at": "2026-05-16T00:25:20.707353Z"
+}

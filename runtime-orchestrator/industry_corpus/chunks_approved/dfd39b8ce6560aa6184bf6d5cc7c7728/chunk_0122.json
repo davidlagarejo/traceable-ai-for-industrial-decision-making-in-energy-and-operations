@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0122",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "connection of generation sources from closer location to the consumption; and (f) the storage of energy. 3. Network or retail tariffs may support dynamic pricing for demand response measures by final customers, such as: (a) time-of-use tariffs; (b) critical peak pricing; (c) real time pricing; and (d) peak time rebates.",
+  "token_count": 50,
+  "text_sha": "55dc40952a09bcf534fa7177ad8312a0c8a47e090e4899f0e6fd5f4714f5e293",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

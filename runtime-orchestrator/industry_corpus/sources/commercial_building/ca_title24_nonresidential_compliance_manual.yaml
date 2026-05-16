@@ -1,0 +1,11 @@
+source_id: ca_title24_nonresidential_compliance_manual
+title: "California Nonresidential Compliance Manual — Title 24"
+url: https://www.energy.ca.gov/sites/default/files/2022-12/CEC-400-2022-009-CMF.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:17.547628Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: ca."
+asset_families:
+  - commercial_building

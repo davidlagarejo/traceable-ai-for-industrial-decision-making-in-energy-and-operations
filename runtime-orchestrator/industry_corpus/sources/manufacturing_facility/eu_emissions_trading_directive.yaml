@@ -1,0 +1,13 @@
+source_id: eu_emissions_trading_directive
+title: "EU Emissions Trading System Directive (consolidated 2024)"
+url: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02003L0087-20240301
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:28.096131Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: eu."
+asset_families:
+  - manufacturing_facility
+  - infrastructure_node
+  - _shared

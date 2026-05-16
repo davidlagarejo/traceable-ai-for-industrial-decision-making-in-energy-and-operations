@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6634109c::chunk_0074",
+  "source_id": "eu_industrial_emissions_directive",
+  "source_sha": "6634109cf847ee2a9b8d3df12b85b563",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02010L0075-20110106",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "at an oxygen content as set out in this Part for certain industrial activities and certain polluting substances or, in case of the absence of such values, total emission limit values replacing the emission limit values as set out in specific Annexes of this Directive. The total oxygen content to replace the oxygen content for the standardisation is calculated on the basis of the content above respecting the partial volumes. 2010L0075 — EN — 06.01.2011 — 000.001 — 88 ▼B All emission limit values shall be calculated at a temperature of 273,15 K, a pressure of 101,3 kPa and after correcting for the water vapour content of the waste gases. Member States may lay down rules governing the exemptions provided for in this Part. 2. Special provisions for cement kilns co-incinerating waste 2.1. The emission limit values set out in points 2.2 and 2.3 apply as daily average values for total dust, HCl, HF, NO x , SO 2 and TOC (for continuous measurements), as average values over the sampling period of a minimum of 30 minutes and a maximum of 8 hours for heavy metals and as average values over the sampling period of a minimum of 6 hours and a maximum of 8 hours for dioxins and furans. All values are standardised at 10 % oxygen. Half-hourly average values shall only be needed in view of calculating the daily average values. 2.2. C – total emission limit values (mg/Nm3 except for dioxins and furans) for the following –polluting substances Polluting substance C Total dust 30 HCl 10 HF 1 NO x 500 (1 ) Cd + Tl 0,05 Hg 0,05 Sb + As + Pb + Cr + Co + Cu + Mn + Ni + V 0,5 Dioxins and furans (ng/Nm 3 ) 0,1 (1 ) Until 1 January 2016, the competent authority may authorise exemptions from t p h e e r m li i m t i s t e t v s a a lu e to t f a o l r e N m O is x s i f o o n r l L im ep it o l v a k l i u ln e s f o a r n d N O lo x n g o f r o n t o a t r y m k o i r l e n s t h p a r n o v 8 i 0 d 0 e d m t g h / a N t m th 3 e . 2.3. C – total emission limit values (mg/Nm 3 ) for SO 2 and TOC Pollutant C SO 2 50 TOC 10 The competent authority may grant derogations for emission limit values set out in this point in cases where TOC and SO 2 do not result from the co-incineration of waste. 2.4. C- total emission limit values for CO The competent authority may set emission limit values for CO. 2010L0075 — EN — 06.01.2011 — 000.001 — 89 ▼B 3. Special provisions for",
+  "token_count": 512,
+  "text_sha": "c2043ac283cea2d75148ded56ad4131ef746cb3ef94cce1d3c4cf07d7f9d7239",
+  "extracted_at": "2026-05-16T00:25:38.752989Z"
+}

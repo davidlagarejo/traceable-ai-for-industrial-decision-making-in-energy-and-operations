@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6634109c::chunk_0075",
+  "source_id": "eu_industrial_emissions_directive",
+  "source_sha": "6634109cf847ee2a9b8d3df12b85b563",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02010L0075-20110106",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "in this point in cases where TOC and SO 2 do not result from the co-incineration of waste. 2.4. C- total emission limit values for CO The competent authority may set emission limit values for CO. 2010L0075 — EN — 06.01.2011 — 000.001 — 89 ▼B 3. Special provisions for combustion plants co-incinerating waste 3.1. C proc expressed as daily average values (mg/Nm3 ) valid until the date set out in Article 82(5) For determining the total rated thermal input of the combustion plants, the aggregation rules as defined in Article 29 shall apply. Half-hourly average values shall only be needed in view of calculating the daily average values. C proc for solid fuels with the exception of biomass (O 2 content 6 %): Polluting < 50 MWth 50-100 MWth 100 to 300 MWth > 300 MWth substances SO 2 — 850 200 200 NO x — 400 200 200 Dust 50 50 30 30 C proc for biomass (O 2 content 6 %): Polluting < 50 MWth 50 to 100 MWth 100 to 300 MWth > 300 MWth substances SO 2 — 200 200 200 NO x — 350 300 200 Dust 50 50 30 30 C proc for liquid fuels (O 2 content 3 %): Polluting 50 to 100 < 50 MWth 100 to 300 MWth > 300 MWth substances MWth SO 2 — 850 400 to 200 200 (linear decrease from 100 to 300 MWth) NO x — 400 200 200 Dust 50 50 30 30 3.2. C proc expressed as daily average values (mg/Nm 3 ) valid from the date set out in Article 82(6) For determining the total rated thermal input of the combustion plants, the aggregation rules as defined in Article 29 shall apply. Half-hourly average values shall only be needed in view of calculating the daily average values. 3.2.1. C proc for combustion plants referred to in Article 30(2), with the exception of gas turbines and gas engines C proc for solid fuels with the exception of biomass (O 2 content 6 %): Polluting 100 to 300 < 50 MWth 50-100 MWth > 300 MWth substance MWth SO 2 — 400 for peat: 300 200 200 2010L0075 — EN — 06.01.2011 — 000.001 — 90 ▼B Polluting 100 to 300 < 50 MWth 50-100 MWth > 300 MWth substance MWth NO x — 300 200 200 for pulverised lignite: 400 Dust 50 30 25 20 for peat: 20 C proc for biomass (O 2 content 6 %): Polluting substance < 50 MWth 50 to 100 MWth 100 to 300 MWth > 300 MWth SO 2 — 200 200 200 NO x — 300 250 200 Dust 50 30 20 20 C proc for liquid fuels (O 2 content 3 %): Polluting substance < 50 MWth 50 to 100 MWth 100 to 300 MWth > 300 MWth SO 2 — 350 250 200 NO x — 400 200 150 Dust 50 30 25 20 3.2.2. C proc for combustion plants referred to in Article 30(3), with the exception of gas turbines and gas engines C proc",
+  "token_count": 512,
+  "text_sha": "d2e16b94d67cedce6cee83cc8177b4a84115c06510b56bf476c657ebc113d96c",
+  "extracted_at": "2026-05-16T00:25:38.752989Z"
+}

@@ -1,0 +1,12 @@
+source_id: eu_f_gas_regulation_2024
+title: "EU F-Gas Regulation (EU 2024/573) — refrigerants"
+url: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400573
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:38.764192Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: eu."
+asset_families:
+  - cold_chain_facility
+  - commercial_building

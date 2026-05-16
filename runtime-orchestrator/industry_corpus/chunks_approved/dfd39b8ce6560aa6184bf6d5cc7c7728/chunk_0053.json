@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0053",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "area of over 250 m2, that are owned by public bodies and that, on 1 January 2024, are not nearly zero-energy buildings. 2. Member States may apply requirements that are less stringent than those laid down in paragraph 1 for the following categories of buildings: (a) buildings officially protected as part of a designated environment, or because of their special architectural or historical merit, in so far as compliance with certain minimum energy performance requirements would alter their character or appearance unacceptably; (b) buildings owned by the armed forces or central government and serving national defence purposes, apart from single living quarters or office buildings for the armed forces and other staff employed by national defence authorities; (c) buildings used as places of worship and for religious activities. Member States may decide not to renovate any building that is not referred to in the first subparagraph of this paragraph up to the level provided for in paragraph 1 if they assess that it is not technically, economically or functionally feasible for that building to be transformed into a nearly zero-energy building. Where they so decide, Member States shall not count the renovation of that building towards the fulfilment of the requirement set out in paragraph 1. 3. In order to front load energy savings and to provide an incentive for early action, a Member State that renovates more than 3 % of the total floor area of its buildings in accordance with paragraph 1 in any year until 31 December 2026may count the surplus towards the annual renovation rate of any of the following three years. A Member State that renovates more than 3 % of the total floor area of its buildings as of 1 January 2027 may count the surplus towards the annual renovation rate of the following two years. L 231/38 EN Official Journal of the European Union 20.9.2023 4. Member States may count towards the annual renovation rate of buildings new buildings owned as replacements for specific public bodies’ buildings demolished in any of the two previous years. This shall apply only where they would be more cost effective and sustainable in terms of the energy and lifecycle CO emissions achieved compared to the 2 renovations of such buildings. The general criteria, methodologies and procedures to identify such exceptional cases shall be clearly set out and published by each Member State. 5. By 11 October 2025, Member States shall, for the purposes of this Article, establish and make publicly available and accessible an inventory of heated and/or cooled buildings that are owned or occupied by public bodies and that have a total useful floor area of more than 250 m2. Member States shall update that inventory at least every two years. The inventory shall be linked to the building stock overview carried out in the framework of the national building renovation plans in accordance with Directive 2010/31/EU and the relevant databases. Publicly available and accessible data about building stock characteristics, buildings renovation and energy performance may be aggregated by the EU Building Stock Observatory to",
+  "token_count": 509,
+  "text_sha": "1bd0a9f15888453360901f0000c81f0f1eabf20fe9ed3029aa6e630577ed5a7d",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

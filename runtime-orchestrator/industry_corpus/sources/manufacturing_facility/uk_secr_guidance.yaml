@@ -1,0 +1,13 @@
+source_id: uk_secr_guidance
+title: "UK Streamlined Energy and Carbon Reporting (SECR) Guidance"
+url: https://assets.publishing.service.gov.uk/media/5d6e9c8de5274a17046c2dee/Env-reporting-guidance_inc_SECR_31March.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:45.605080Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: uk."
+asset_families:
+  - manufacturing_facility
+  - commercial_building
+  - _shared

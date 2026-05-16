@@ -1,0 +1,16 @@
+{
+  "chunk_id": "3eaf9a4d::chunk_0101",
+  "source_id": "eu_emissions_trading_directive",
+  "source_sha": "3eaf9a4d88cb0983474a514536bf6e91",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02003L0087-20240301",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "to paragraph 2 of this Article during the previous two years when considering additional actions to be im­ plemented as referred to in Article 8(1), first subparagraph, point (c), of that Regulation in order to meet their obligations under that Regu­ lation.",
+  "token_count": 42,
+  "text_sha": "2a63c1928221421ab9d030e069cd02277dece1d3877649badc5399a0b1a217a8",
+  "extracted_at": "2026-05-16T00:25:33.798743Z"
+}

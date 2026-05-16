@@ -1,0 +1,15 @@
+{
+  "chunk_id": "65f7d388::chunk_0066",
+  "source_id": "eu_f_gas_regulation_2024",
+  "source_sha": "65f7d3886435cf3523cbe4581c44e309",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400573",
+  "asset_families": [
+    "cold_chain_facility",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "2 HCFE-235da2 (isoflurane) and isomers CHF OCHClCF 539 1 930 2 3 HFE-236ea2 (desflurane) and isomers CHF OCHFCF 2 590 7 020 2 3 Section 3: other fluorinated substances nitrogen trifluoride NF 17 400 13 400 3 sulfuryl fluoride SO F 4 630 7 510 2 2 (1) Based on the Sixth Assessment Report adopted by the Intergovernmental Panel on Climate Change, unless otherwise indicated. (2) Tokuhashi, K., T. Uchimaru, K. Takizawa, & S. Kondo (2018): Rate Constants for the Reactions of OH Radical with the (E)/(Z) Isomers of CF CF=CHCl and CHF CF=CHCl. The Journal of Physical Chemistry A 122:3120–3127. 3 2 (*) Global warming potential not yet available. (3) Default value, global warming potential not yet available. (1) As per Article 2, point (a), mixtures containing the substances listed in this Annex are considered as fluorinated greenhouse gases covered by this Regulation. ELI: http://data.europa.eu/eli/reg/2024/573/oj 51/67 EN OJ L, 20.2.2024 ANNEX III Fluorinated greenhouse gases referred to in Article 2, point (a)(1)– fluorinated ethers, ketones and alcohols and other fluorinated compounds Substance 20 years-GWP(1) GWP(1) for information Common name/industrial designation Chemical formula purposes only Section 1: Fluorinated ethers, ketones and alcohols HFE-125 CHF OCF 14 300 13 500 2 3 HFE-134 (HG-00) CHF OCHF 6 630 12 700 2 2 HFE-143a CH OCF 616 2 170 3 3 HFE-245cb2 CH OCF CF 747 2 630 3 2 3 HFE-245fa2 CHF OCH CF 878 3 060 2 2 3 HFE-254cb2 CH OCF CHF 328 1 180 3 2 2 HFE-347 mcc3 (HFE-7000) CH OCF CF CF 576 2 020 3 2 2 3 HFE-347pcf2 CHF CF OCH CF 980 3 370 2 2 2 3 HFE-356pcc3 CH OCF CF CHF 277 995 3 2 2 2 HFE-449s1 (HFE-7100) C F OCH 460 1 620 4 9 3 HFE-569sf2 (HFE-7200) C F OC H 60,7 219 4 9 2 5 HFE-7300 (CF ) CFCFOC H CF CF CF 405 1 420 32 2 5 2 2 3 n-HFE-7100 CF CF CF CF OCH 544 1 920 3 2 2 2 3 i-HFE-7100 (CF3) CFCF OCH 437 1 540 2 2 3 i-HFE-7200 (CF ) CFCF OCH CH 34,3 124 32 2 2 3 HFE-43-10pcccl24 (Η-Galden 1040x) HG-11 CHF OCF OC F OCHF 3 220 8 720 2 2 2 4 2 HFE-236cal2 (HG-10) CHF OCF OCHF 6 060 11 700 2 2 2 HFE-338pccl3 (HG-01) CHF OCF CF OCHF 3 320 9 180 2 2 2 2 HFE-347mmyl (CF ) CFOCH 392 1 400 32 3 2,2,3,3,3-pentafluoropropan-1-ol CF CF CH OH 34,3 123 3 2 2 1,1,1,3,3,3-Hexafluoropropan-2-ol (CF ) CHOH 206 742 32 HFE-227ea CF CHFOCF 7 520 9 800 3 3 HFE-236fa CF CH OCF 1 100 3 670 3 2 3 HFE-245fal CHF CH OCF 934 3 170 2 2 3 HFE 263mf CF CH OCH 2,06 7,43 3 2 3 HFE-329 mcc2 CHF CF OCF CF 3 770 7 550 2 2 2 3 HFE-338 mcf2 CF CH OCF CF 1 040 3 460 3 2 2 3 HFE-338mmzl (CF ) CHOCHF 3 040 6 500 32 2",
+  "token_count": 510,
+  "text_sha": "957523797a7495ca5e5f92ddb967a21d7c0ca4988fb532cfb07404c4b41a99ee",
+  "extracted_at": "2026-05-16T00:25:44.314663Z"
+}

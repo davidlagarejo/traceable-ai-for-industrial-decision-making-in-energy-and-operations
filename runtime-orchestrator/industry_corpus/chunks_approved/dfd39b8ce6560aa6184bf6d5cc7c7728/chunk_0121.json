@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0121",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "installation where the energy was produced; (b) the dates and places of production; (c) the lower calorific value of the fuel source from which the electricity was produced; (d) the quantity and the use of the heat generated together with the electricity; (e) the quantity of electricity from high-efficiency cogeneration in accordance with Annex III that the guarantee of origin represents; (f) the primary energy savings calculated in accordance with Annex III on the basis of the harmonised efficiency reference values indicated in Annex III, point (d); (g) the nominal electric and thermal efficiency of the plant; (h) whether and to what extent the installation has benefited from investment support; (i) whether and to what extent the unit of energy has benefited in any other way from a national support scheme, and the type of support scheme; (j) the date on which the installation became operational; and (k) the date and country of issue and a unique identification number. The guarantee of origin shall be of the standard size of 1 MWh. It shall relate to the net electricity output measured at the station boundary and exported to the grid. L 231/100 EN Official Journal of the European Union 20.9.2023 ANNEX XIII ENERGY EFFICIENCY CRITERIA FOR ENERGY NETWORK REGULATION AND FOR ELECTRICITY NETWORK TARIFFS 1. Network tariffs shall be transparent and non-discriminatory, and shall comply with Article 18 of Regulation (EU) 2019/943 and be cost-reflective of cost-savings in networks achieved from demand-side and demand- response measures and distributed generation, including savings from lowering the cost of delivery or of network investment and a more optimal operation of the network. 2. Network regulation and tariffs shall not prevent network operators or energy retailers making available system services for demand response measures, demand management and distributed generation on organised electricity markets, including over-the-counter markets and electricity exchanges for trading energy, capacity, balancing and ancillary services in all timeframes, including forward, day-ahead and intra-day markets, in particular: (a) the shifting of the load from peak to off-peak times by final customers taking into account the availability of renewable energy, energy from cogeneration and distributed generation; (b) energy savings from demand response of distributed consumers by independent aggregators; (c) demand reduction from energy efficiency measures undertaken by energy service providers, including ESCOs; (d) the connection and dispatch of generation sources at lower voltage levels; (e) the connection of generation sources from closer location to the consumption; and (f) the storage of energy. 3. Network or retail tariffs may support dynamic pricing for demand response measures by final customers, such as: (a) time-of-use tariffs; (b) critical peak pricing; (c) real time pricing; and (d) peak time rebates.",
+  "token_count": 442,
+  "text_sha": "8eefa3594cb6709bfe312888b44d744d1fe2968eab7db1e82a7e7a93f1730b2a",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

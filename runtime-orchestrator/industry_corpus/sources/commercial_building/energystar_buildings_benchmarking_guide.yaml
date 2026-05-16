@@ -1,0 +1,11 @@
+source_id: energystar_buildings_benchmarking_guide
+title: "ENERGY STAR Benchmarking Guide for Buildings"
+url: https://www.energystar.gov/sites/default/files/tools/Portfolio_Manager_Quick_Start_Guide.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:44.785087Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: federal."
+asset_families:
+  - commercial_building

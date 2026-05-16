@@ -1,0 +1,11 @@
+source_id: nyc_ll84_benchmarking
+title: "NYC Local Law 84 — Annual Energy Benchmarking"
+url: https://www.nyc.gov/assets/buildings/local_laws/ll84of2009.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:19.930114Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: ny."
+asset_families:
+  - commercial_building

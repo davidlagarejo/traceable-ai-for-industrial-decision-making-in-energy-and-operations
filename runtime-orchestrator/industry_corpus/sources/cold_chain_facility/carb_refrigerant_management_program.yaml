@@ -1,0 +1,12 @@
+source_id: carb_refrigerant_management_program
+title: "California Air Resources Board — Refrigerant Management Program"
+url: https://ww2.arb.ca.gov/sites/default/files/2024-04/2024-rmp-final-regulation.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:44.972544Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: ca."
+asset_families:
+  - cold_chain_facility
+  - commercial_building

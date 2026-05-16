@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0115",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "in the same user category. In the case of electronic bills, such comparisons may instead be made available online and signposted to within the bills. Member States may limit the scope of the requirement to provide information about GHG emissions pursuant to point (b) of the first subparagraph to include only supplies from district heating systems with a total rated thermal input exceeding 20 MW. Bills that are not based on actual consumption or heat cost allocator readings shall contain a clear and comprehensible explanation of how the amount set out in the bill was calculated, and at least the information referred to in points (d) and (e). 20.9.2023 EN Official Journal of the European Union L 231/93 ANNEX X POTENTIAL FOR EFFICIENCY IN HEATING AND COOLING The comprehensive assessment of national heating and cooling potentials referred to in Article 25(1) shall include and shall be based on the following: Part I OVERVIEW OF HEATING AND COOLING 1. heating and cooling demand in terms of assessed useful energy(1)and quantified final energy consumption in GWh per year(2)by sector: (a) residential; (b) services; (c) industry; (d) any other sector that individually consumes more than 5 % of total national useful heating and cooling demand; 2. the identification, or, in the case of point (a)(i), the identification or estimation, of current heating and cooling supply: (a) by technology, in GWh per year(3), within the sectors referred to in point 1 where possible, distinguishing between energy derived from fossil and renewable sources: (i) provided on-site in residential and service sites by: — heat only boilers; — high-efficiency heat and power cogeneration; — heat pumps; — other on-site technologies and sources; (ii) provided on-site in non-service and non-residential sites by: — heat only boilers; — high-efficiency heat and power cogeneration; — heat pumps; — other on-site technologies and sources; (iii) provided off-site by: — high-efficiency heat and power cogeneration; — waste heat; — other off-site technologies and sources; (b) the identification of installations that generate waste heat or cold and their potential heating or cooling supply, in GWh per year: (i) thermal power generation installations that can supply or can be retrofitted to supply waste heat with a total thermal input exceeding 50 MW; (ii) heat and power cogeneration installations using technologies referred to in Part II of Annex II with a total thermal input exceeding 20 MW; (iii) waste incineration plants; (1) The amount of thermal energy needed to satisfy the heating and cooling demand of end-users. (2) The most recent data available should be used. (3) The most recent data available should be used. L 231/94 EN Official Journal of the European Union 20.9.2023 (iv) renewable energy installations with a total thermal input exceeding 20 MW other than the installations specified under points (i) and (ii) generating heating or cooling using the energy from renewable sources; (v) industrial installations with a total thermal input exceeding 20 MW which can provide waste heat; (c) reported share of energy from renewable sources and from waste heat or cold in the final energy consumption of the district",
+  "token_count": 511,
+  "text_sha": "cddfda4cd3b57aaadaa1b04ff13f063b795fef2a22302e17d3cc4df34be7168e",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

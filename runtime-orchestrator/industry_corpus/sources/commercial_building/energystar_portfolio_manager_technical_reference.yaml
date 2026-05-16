@@ -1,0 +1,13 @@
+source_id: energystar_portfolio_manager_technical_reference
+title: "ENERGY STAR Portfolio Manager Technical Reference — US EPA"
+url: https://www.energystar.gov/sites/default/files/buildings/tools/Technical_Reference_ENERGY_STAR_Score.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:44.503852Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: federal."
+asset_families:
+  - commercial_building
+  - manufacturing_facility
+  - _shared

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6634109c::chunk_0090",
+  "source_id": "eu_industrial_emissions_directive",
+  "source_sha": "6634109cf847ee2a9b8d3df12b85b563",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02010L0075-20110106",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": ") (1 ) Installations which demonstrate to the competent authority that the (> 2) > 10 75 (1 ) 15 (1 ) average organic solvent content of all cleaning material used does not exceed 30 % by weight are exempt from application of these values.",
+  "token_count": 45,
+  "text_sha": "d17c3b2c67fe1297d01627c8756dd0a499e3424f9a605f17e8b1ea75cae8a070",
+  "extracted_at": "2026-05-16T00:25:38.752989Z"
+}

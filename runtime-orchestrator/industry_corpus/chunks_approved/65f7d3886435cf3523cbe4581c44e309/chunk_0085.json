@@ -1,0 +1,15 @@
+{
+  "chunk_id": "65f7d388::chunk_0085",
+  "source_id": "eu_f_gas_regulation_2024",
+  "source_sha": "65f7d3886435cf3523cbe4581c44e309",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400573",
+  "asset_families": [
+    "cold_chain_facility",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Article 25 Article 31 Article 26 Article 37 Article 27 Article 38 Annex I Annex I Annex II Annex III Annex III Annex IV Annex IV Annex VI Annex V Annex VII Annex VI Annex VIII Annex VII Annex IX ELI: http://data.europa.eu/eli/reg/2024/573/oj 67/67",
+  "token_count": 43,
+  "text_sha": "77ce0d06c3fefc2a035c9e2b04053de12db85017fd21155280a2a190e99ddd75",
+  "extracted_at": "2026-05-16T00:25:44.314663Z"
+}

@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0071",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the start of the supply contract if this is shorter; (b) detailed data according to the time of use for any day, week, month and year. The data referred to in point (a) of the second subparagraph shall correspond to the intervals for which frequent billing information has been produced. The data referred to in point (b) of the second subparagraph shall be made available to the final customer via the internet or the meter interface for the period of at least the previous 24 months or the period since the start of the supply contract if this is shorter. 3. Independently of whether smart meters have been installed, Member States: (a) shall require that, to the extent that information on the energy billing and historical consumption of final customers is available, it be made available, at the request of the final customer, to an energy service provider designated by the final customer; (b) shall ensure that final customers are offered the option of electronic billing information and bills and that they receive, on request, a clear and understandable explanation of how their bill was derived, especially where bills are not based on actual consumption; (c) shall ensure that appropriate information is made available with the bill to provide final customers with a comprehensive account of current energy costs, in accordance with Annex VIII; L 231/52 EN Official Journal of the European Union 20.9.2023 (d) may lay down that, at the request of the final customer, the information contained in those bills shall not be considered to constitute a request for payment. In such cases, Member States shall ensure that suppliers of energy sources offer flexible arrangements for actual payments; (e) shall require that information and estimates for energy costs are provided to consumers on demand in a timely manner and in an easily understandable format enabling consumers to compare deals on a like-for-like basis. Article 18 Billing and consumption information for heating, cooling and domestic hot water 1. Where meters or heat cost allocators are installed, Member States shall ensure that billing and consumption information is reliable, accurate and based on actual consumption or heat cost allocator readings, in accordance with Annex IX, points 1 and 2 for all final users. That obligation may, where a Member State so provides, save in the case of sub-metered consumption based on heat cost allocators under Article 15, be fulfilled by a system of regular self-reading by the final customer or final user whereby they communicate readings from their meter. Only where the final customer or final user has not provided a meter reading for a given billing interval shall billing be based on estimated consumption or a flat rate. 2. Member States shall: (a) require that, if information on the energy billing and historical consumption or heat cost allocator readings of final users is available, it be made available upon request from the final user, to an energy service provider designated by the final user; (b) ensure that final customers are offered the option of electronic billing information and bills; (c) ensure",
+  "token_count": 511,
+  "text_sha": "8d856026134938a3a01b30c8b35518f6bb42dff4d1015aad966e2818ff531a91",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

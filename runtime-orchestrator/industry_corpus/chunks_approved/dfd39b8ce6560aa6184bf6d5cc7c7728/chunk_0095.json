@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0095",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "States shall notify the coefficient that they use to the Commission along with the calculation methodology and underlying data in those updates and subsequent plans. 7. By 25 December 2026 and every four years thereafter, the Commission shall revise the default coefficients on the basis of observed data. Those revisions shall be carried out taking into account its effects on Union law such as Directive 2009/125/EC and Regulation (EU) 2017/1369. CHAPTER VII FINAL PROVISIONS Article 32 Penalties Member States shall lay down the rules on penalties applicable to infringements of national provisions adopted pursuant to this Directive and shall take all measures necessary to ensure that they are implemented. The penalties provided for shall be effective, proportionate and dissuasive. Member States shall by 11 October 2025notify the Commission of those rules and of those measures and shall notify it without delay of any subsequent amendment affecting them. Article 33 Delegated acts 1. The Commission is empowered to adopt delegated acts in accordance with Article 34 to review the harmonised efficiency reference values laid down in Regulation (EU) 2015/2402. 2. The Commission is empowered to adopt delegated acts in accordance with Article 34 to amend this Directive by adapting to technical progress the values, calculation methods, default primary energy coefficients and the requirements referred to in Article 31 and in Annexes II, III, V, VIII to XII, and XIV. 3. The Commission is empowered to adopt delegated acts in accordance with Article 34 to supplement this Directive by establishing, after having consulted the relevant stakeholders, a common Union scheme for rating the sustainability of data centres located in its territory. The Commission shall adopt the first such delegated act by 31 December 2023. The common Union scheme shall establish the definition of data centre sustainability indicators and shall set out the key performance indicators and the methodology to measure them. Article 34 Exercise of the delegation 1. The power to adopt delegated acts is conferred on the Commission subject to the conditions laid down in this Article. 2. The power to adopt delegated acts referred to in Article 33 shall be conferred on the Commission for a period of five years from 10 October 2023. The Commission shall draw up a report in respect of the delegation of power not later than nine months before the end of the five-year period. The delegation of power shall be tacitly extended for periods of an identical duration, unless the European Parliament or the Council opposes such extension not later than three months before the end of each period. L 231/72 EN Official Journal of the European Union 20.9.2023 3. The delegation of power referred to in Article 33 may be revoked at any time by the European Parliament or by the Council. A decision to revoke shall put an end to the delegation of the power specified in that decision. It shall take effect the day following the publication of the decision in the Official Journal of the European Union or at a later date specified therein. It shall not affect the validity of any",
+  "token_count": 512,
+  "text_sha": "78df63e5c7f2c36f01e1fc1c28b729e4a974d6e071a1a5157171a3bc67dfcdbc",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

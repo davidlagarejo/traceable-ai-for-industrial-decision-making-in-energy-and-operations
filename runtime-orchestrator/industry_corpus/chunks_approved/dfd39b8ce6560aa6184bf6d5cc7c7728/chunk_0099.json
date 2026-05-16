@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0099",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "adopt in the field covered by this Directive. Article 37 Amendment to Regulation (EU) 2023/955 In Article 2 of Regulation (EU) 2023/955, point (1) is replaced by the following: ‘(1) “energy poverty” means energy poverty as defined in Article 2, point (52), of Directive (EU) 2023/1791 of the European Parliament and of the Council (*). _____________ (*) Directive (EU) 2023/1791 of the European Parliament and of the Council of 13 September 2023 on energy efficiency and amending Regulation (EU) 2023/955 (OJ L 231, 20.9.2023, p. 1).’. Article 38 Repeal Directive 2012/27/EU, as amended by the acts listed in Part A of Annex XVI is repealed with effect from 12 October 2025, without prejudice to the obligations of the Member States relating to the time-limits for the transposition into national law of the Directives set out in Part B of Annex XVI. References to the repealed Directive shall be construed as references to this Directive and shall be read in accordance with the correlation table in Annex XVII. 20.9.2023 EN Official Journal of the European Union L 231/75 Article 39 Entry into force and application This Directive shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union. Articles 13, 14, 15, 16, 17, 18, 19 and 20 and Annexes II, VIII, IX, XII, XIII and XIV shall apply from 12 October 2025. Article 37 shall apply from 30 June 2024. Article 40 Addressees This Directive is addressed to the Member States. Done at Strasbourg, 13 September 2023. For the European Parliament For the Council The President The President R. METSOLA J. M. ALBARES BUENO L 231/76 EN Official Journal of the European Union 20.9.2023 ANNEX I NATIONAL CONTRIBUTIONS TO THE UNION’S ENERGY EFFCIENCY TARGETS IN 2030 IN FINAL ENERGY CONSUMPTION AND/OR PRIMARY ENERGY CONSUMPTION 1. The level of national contributions is calculated on the basis of the indicative formula: FEC ¼ C ð1 – TargetÞ FEC C2030 EU B2030 PEC ¼ C ð1 – TargetÞ PEC C2030 EU B2030 Where C is a correction factor, Target is the level of national-specific ambition and FEC PEC is the 2020 EU B2030 B2030 EU Reference Scenario used as a baseline for 2030. 2. The following indicative formula represents the objective criteria reflecting the factors listed in Article 4(3), points (d) (i) to (iv), each used for defining the level of national-specific ambition in % (Target) and having the same weight in the formula (0,25): (a) early action dependent contribution (‘F ’); early-action (b) GDP-per-capita dependent contribution (‘F ’); wealth (c) energy intensity dependent contribution (‘F ’); intensity (d) cost-effective energy savings potential contribution (‘F ’). potential 3. F shall be calculated for each Member State as the product of its amount of energy savings and the early-action improvement in the energy intensity that each Member State achieved. The amount of energy savings for each Member State shall be calculated on the basis of the reduction of energy consumption (in toe) to the Union’s reduction of energy consumption between the three-year average for the",
+  "token_count": 511,
+  "text_sha": "0086b1c6a7f362a7f6ea65530dcee407203d3bd27e4f1e3611e7817584e82c55",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

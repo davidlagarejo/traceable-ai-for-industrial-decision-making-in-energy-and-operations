@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0009",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "and calculated using the 2007 EU Reference Scenario projections for 2030 as a baseline. The change in the Eurostat energy balance calculation methodology and improvements in subsequent modelling projections call for a change of the baseline. Thus, using the same approach to define the target, namely by comparing it to the future baseline projections, the ambition of the Union’s 2030 energy efficiency target is set compared to the 2020 EU Reference Scenario projections for 2030 reflecting national contributions from the national energy and climate plans. With that updated baseline, the Union will need to further increase its energy efficiency ambition by at least 11,7 % in 2030 compared to the level of efforts under the 2020 EU Reference Scenario. The new way of expressing the level of ambition for the Union’s targets does not affect the actual level of efforts needed and corresponds to a reduction of 40,5 % for primary energy consumption and 38 % for final energy consumption when compared to the 2007 EU Reference Scenario projections for 2030. (29) The methodology for calculation of primary energy consumption and final energy consumption is aligned with the new Eurostat methodology, but the indicators used for the purpose of this Directive have a different scope, in that they exclude ambient energy and include energy consumption in international aviation for the targets in primary energy consumption and final energy consumption. The use of new indicators also implies that any changes in energy consumption of blast furnaces are now only reflected in primary energy consumption. (30) The need for the Union to improve its energy efficiency should be expressed in primary energy consumption and final energy consumption, to be achieved in 2030, indicating an additional level of efforts required when compared to the measures in place or planned measures in the national energy and climate plans. The 2020 EU Reference Scenario projects 864 Mtoe of final energy consumption and 1 124 Mtoe of primary energy consumption to be reached in 2030 (excluding ambient energy and including international aviation). An additional reduction of 11,7 % results in 763 Mtoe and 992,5 Mtoe in 2030. Compared to 2005 levels, it means that final energy consumption in the Union should be reduced by approximately 25 % and primary energy consumption should be reduced by approximately 34 %. There are no binding targets at Member State level in the 2020 and 2030 perspectives, and Member States should establish their contributions to the achievement of the Union’s energy efficiency target taking (17) Regulation (EU) 2021/783 of the European Parliament and of the Council of 29 April 2021 establishing a Programme for the Environment and Climate Action (LIFE), and repealing Regulation (EU) No 1293/2013 (OJ L 172, 17.5.2021, p. 53). 20.9.2023 EN Official Journal of the European Union L 231/7 into account the formula provided for in this Directive. Member States should be free to set their national objectives based either on primary energy consumption or final energy consumption or primary energy savings or final energy savings, or on energy intensity. This Directive amends the way in which Member",
+  "token_count": 511,
+  "text_sha": "e486594ada19a80193d0bdefeded0a695a58a219c8040cf53b097d4bd668862b",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0100",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "savings and the early-action improvement in the energy intensity that each Member State achieved. The amount of energy savings for each Member State shall be calculated on the basis of the reduction of energy consumption (in toe) to the Union’s reduction of energy consumption between the three-year average for the period 2007-2009 and the three-year average for the period 2017-2019. The improvement in the energy intensity for each Member State shall be calculated on the basis of the reduction of energy intensity (in toe/EUR) to the Union’s reduction of energy intensity between the three-year average for the period 2007-2009 and the three-year average for the period 2017-2019. 4. F shall be calculated for each Member State on the basis of its three-year average Eurostat's real GDP per capita wealth index to the Union’s three-year average over the 2017-2019 period, expressed in Purchasing power parities (PPPs). 5. F shall be calculated for each Member State on the basis of its three-year average final energy intensity (FEC or intensity PEC per real GDP in PPPs) index to the Union’s three-year average over 2017-2019 period. 6. F shall be calculated for each Member State on the basis of the final or primary energy savings under the potential PRIMES MIX 55 % scenario for 2030. The savings are expressed in relation to 2020 EU Reference Scenario projections for 2030. 7. For each criteria provided in point 2(a) to (d), a lower and upper limit shall be applied. The level of ambition for factors F F and F shall be capped at 50 % and 150 % of the Union average level of ambition under a wealth intensity potential given factor. The level of ambition for factor F shall be capped at 50 % and 100 % of the Union average level early-action of ambition. 8. The source of the input data used to calculate the factors is Eurostat unless stated otherwise. 20.9.2023 EN Official Journal of the European Union L 231/77 9. F shall be calculated as the weighted sum of all four factors (F . F F and F ). The target shall total early-action wealth intensity potential be then calculated as the product of the total factor F and the Union target. total 10. The Commission shall calculate a primary and final energy correction factor C which shall be applied to adjust the EU, sum of the formula results for all national contributions to the respective Union targets in 2030. The factor C is EU identical for all Member States. L 231/78 EN Official Journal of the European Union 20.9.2023 ANNEX II GENERAL PRINCIPLES FOR THE CALCULATION OF ELECTRICITY FROM COGENERATION Part I General principles Values used for calculation of electricity from cogeneration shall be determined on the basis of the expected or actual operation of the unit under normal conditions of use. For micro-cogeneration units the calculation may be based on certified values. (1) Electricity production from cogeneration shall be considered equal to total annual electricity production of the unit measured at the outlet of the main generators if the following conditions are",
+  "token_count": 512,
+  "text_sha": "b5c9cad1d18b56703f0d8bd965d9cd8cc9976a95f70f322c1048733d9a61b250",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

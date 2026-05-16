@@ -149,6 +149,13 @@ def _write_candidate_yaml(candidate, corpus_dir: Path) -> Path:
         license_str = "vendor_whitepaper"
         abstract = (getattr(candidate, "abstract", "") or "")[:240]
         notes = f"Auto-discovered vendor whitepaper from {publisher}. {abstract}"
+    elif publisher == "openalex":
+        license_str = "open_access"
+        doi = getattr(candidate, "doi", "")
+        oa = getattr(candidate, "oa_status", "")
+        abstract = (getattr(candidate, "abstract", "") or "")[:240]
+        notes = (f"Citation-resolved via OpenAlex (DOI: {doi}, OA: {oa}). "
+                 f"Abstract: {abstract}")
     elif publisher == "arxiv":
         license_str = "open_access"
         cats = getattr(candidate, "categories", ())

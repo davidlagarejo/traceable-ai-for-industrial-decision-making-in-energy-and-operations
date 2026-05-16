@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6634109c::chunk_0084",
+  "source_id": "eu_industrial_emissions_directive",
+  "source_sha": "6634109cf847ee2a9b8d3df12b85b563",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02010L0075-20110106",
+  "asset_families": [
+    "manufacturing_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "20 30 (1 ) part of fugitive emissions. 2 Publication rotogravure 75 10 15 (> 25) 3 Other rotogravure, flexography, 15—25 100 25 (1 ) Threshold for rotary screen rotary screen printing, laminating printing on textile and on card­ or varnishing units (> 15) rotary > 25 100 20 board. screen printing on textile/cardboard > 30 (1 ) 100 20 (> 30) 4 Surface cleaning using compounds 1—5 20 (1 ) 15 (1 ) Limit value refers to mass of specified in Article 59(5). compounds in mg/Nm3 , and not > 5 20 (1 ) 10 to total carbon. (> 1) 5 Other surface cleaning 2—10 75 (1 ) 20 (1 ) (1 ) Installations which demonstrate to the competent authority that the (> 2) > 10 75 (1 ) 15 (1 ) average organic solvent content of all cleaning material used does not exceed 30 % by weight are exempt from application of these values.",
+  "token_count": 156,
+  "text_sha": "6d85d13868d398e4a7710c45ca67cc85cb331d44cbd49ddc939b8b371498b84e",
+  "extracted_at": "2026-05-16T00:25:38.752989Z"
+}

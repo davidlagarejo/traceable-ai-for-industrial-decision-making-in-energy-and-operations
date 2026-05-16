@@ -1,0 +1,11 @@
+source_id: openalex_w4285585432
+title: "Co-optimized machine-learned manifold models for large eddy simulation of turbulent combustion"
+url: https://doi.org/10.1016/j.combustflame.2022.112286
+license: open_access
+publisher: openalex
+version: "2022-07-15"
+added_at: "2026-05-16T00:26:03.263952Z"
+added_by: system_verified
+notes: "Citation-resolved via OpenAlex (DOI: 10.1016/j.combustflame.2022.112286, OA: hybrid). Abstract: Many modeling approaches in large eddy simulation (LES) of turbulent combustion employ a projection of the thermochemical state onto a low-dimensional manifold within state space to re"
+asset_families:
+  - _shared

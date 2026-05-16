@@ -1,0 +1,11 @@
+source_id: irs_publication_535_business_expenses
+title: "IRS Publication 535 — Business Expenses (energy efficiency context)"
+url: https://www.irs.gov/pub/irs-pdf/p535.pdf
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:44.323266Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: federal-tax."
+asset_families:
+  - _shared

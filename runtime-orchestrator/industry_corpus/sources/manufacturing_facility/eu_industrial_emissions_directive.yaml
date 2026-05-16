@@ -1,0 +1,12 @@
+source_id: eu_industrial_emissions_directive
+title: "EU Industrial Emissions Directive (IED 2010/75 consolidated)"
+url: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02010L0075-20110106
+license: public_domain_government
+publisher: state_intl_government
+version: "2026-05-15"
+added_at: "2026-05-16T00:25:33.809677Z"
+added_by: system_verified
+notes: "Government source. Jurisdiction: eu."
+asset_families:
+  - manufacturing_facility
+  - _shared

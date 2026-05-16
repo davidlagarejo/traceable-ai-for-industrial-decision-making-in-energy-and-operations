@@ -1,0 +1,14 @@
+{
+  "chunk_id": "814b64df::chunk_0010",
+  "source_id": "nyc_ll84_benchmarking",
+  "source_sha": "814b64df0257c7140c1922f2c84a0ae1",
+  "source_url": "https://www.nyc.gov/assets/buildings/local_laws/ll84of2009.pdf",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "vote at the meeting of the New York City Council on December 9, 2009: 50 for, 0 against, 0 not voting. Was signed by the Mayor on December 28, 2009 Was returned to the City Clerk on December 28, 2009 JEFFREY D. FRIEDLANDER, Acting Corporation Counsel. 10",
+  "token_count": 47,
+  "text_sha": "5009c8a9972797ce09c94afe01a42fa53759bcb695fdaf57b5b3891cf46e57f2",
+  "extracted_at": "2026-05-16T00:25:20.369259Z"
+}

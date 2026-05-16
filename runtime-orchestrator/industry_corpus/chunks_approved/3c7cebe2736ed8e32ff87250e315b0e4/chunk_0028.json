@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3c7cebe2::chunk_0028",
+  "source_id": "nyc_ll97_emissions_limits",
+  "source_sha": "3c7cebe2736ed8e32ff87250e315b0e4",
+  "source_url": "https://www.nyc.gov/assets/buildings/local_laws/ll97of2019.pdf",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "to be filed with the Secretary of State contains the correct text of the local law passed by the New York City Council, presented to the Mayor and neither approved nor disapproved within thirty days thereafter. STEVEN LOUIS, Acting Corporation Counsel. 22",
+  "token_count": 42,
+  "text_sha": "4f6ca2d8b61f61913677dac4eecc8b85aac33ed5a822612a287bc1dbd97987d4",
+  "extracted_at": "2026-05-16T00:25:19.926847Z"
+}

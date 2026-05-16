@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0083",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "2045, a system using at least 75 % renewable energy, 75 % waste heat or 75 % renewable energy and waste heat; (f) from 1 January 2050, a system using only renewable energy, only waste heat, or only a combination of renewable energy and waste heat. 2. Member States may also choose, as an alternative to the criteria set out in paragraph 1 of this Article, sustainability performance criteria based on the amount of GHG emissions from the district heating and cooling system per unit of heat or cold delivered to the customers, taking into consideration measures implemented to fulfil the obligation pursuant to Article 24(4) of Directive (EU) 2018/2001. When choosing those criteria, an efficient district heating and cooling system shall have the following maximum amount of GHG emissions per unit of heat or cold delivered to the customers: (a) until 31 December 2025: 200 grams/kWh; (b) from 1 January 2026: 150 grams/kWh; (c) from 1 January 2035: 100 grams/kWh; (d) from 1 January 2045: 50 grams/kWh; (e) from 1 January 2050: 0 grams/kWh. L 231/62 EN Official Journal of the European Union 20.9.2023 3. Member States may choose to apply the criteria of GHG emissions per unit of heat or cold for any given period referred to in paragraph 2, points (a) to (e), of this Article. If they choose to do so, they shall notify the Commission by 11 January 2024 for the period referred to in paragraph 2, point (a), of this Article and at least six months before the beginning of the relevant periods referred to in paragraph 2, points (b) to (e), of this Article. Such a notification shall include the measures implemented to fulfil the obligation pursuant to Article 24(4) of Directive (EU) 2018/2001 if they have not already been notified in the latest update of their national energy and climate plan. 4. In order for a district heating and cooling system to qualify as efficient, Member States shall ensure that where it is built or its supply units are substantially refurbished, the district heating or cooling system meet the criteria set out in paragraph 1 or 2 applicable at the time when it starts or continues its operation after the refurbishment. In addition, Member States shall ensure that when a district heating and cooling system is built or its supply units are substantially refurbished: (a) there is no increase in the use of fossil fuels other than natural gas in existing heat sources compared to the annual consumption averaged over the previous three calendar years of full operation before refurbishment; and (b) any new heat sources in that system do not use fossil fuels, except natural gas, if built or substantially refurbished until 2030. 5. Member States shall ensure that as from 1 January 2025, and every five years thereafter, operators of all existing district heating and cooling systems with a total heat and cold output exceeding 5 MW and which do not meet the criteria set out in paragraph 1, points (b) to (e), prepare a plan to ensure more efficient consumption",
+  "token_count": 511,
+  "text_sha": "dec6423be0977ab1c0ea4a81476f6bdf55bbbabef2d55adeac0a1d5894b73d1e",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}

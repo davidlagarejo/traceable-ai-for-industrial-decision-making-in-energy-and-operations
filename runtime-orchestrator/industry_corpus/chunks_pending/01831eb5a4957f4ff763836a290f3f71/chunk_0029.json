@@ -1,0 +1,14 @@
+{
+  "chunk_id": "01831eb5::chunk_0029",
+  "source_id": "openalex_w1591272405",
+  "source_sha": "01831eb5a4957f4ff763836a290f3f71",
+  "source_url": "https://www.osti.gov/servlets/purl/1031393",
+  "asset_families": [
+    "_shared"
+  ],
+  "page": 1,
+  "text": "www.nrel.gov NREL is a national laboratory of the U.S. Department of Energy Office of Energy Efficiency and Renewable Energy Operated by the Alliance for Sustainable Energy, LLC NREL/BK-7A40-52785 • December 2011 Printed with a renewable-source ink on paper containing at least 50% wastepaper, including 10% post consumer waste.",
+  "token_count": 48,
+  "text_sha": "f64839faf11c2bf17d70ca8bfccc9711e1789c18d200654c21dd9bf0f184269a",
+  "extracted_at": "2026-05-16T00:25:57.749896Z"
+}

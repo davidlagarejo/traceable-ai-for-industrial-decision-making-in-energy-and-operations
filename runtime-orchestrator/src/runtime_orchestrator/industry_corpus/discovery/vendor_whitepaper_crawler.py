@@ -200,10 +200,58 @@ _VENDOR_DOMAIN: dict[str, list[str]] = {
 }
 
 
+def _brave_search(query: str, *, max_results: int = 10) -> list[dict[str, str]]:
+    """Use Brave Search API if BRAVE_SEARCH_API_KEY is set.
+
+    Free tier: 2,000 queries/month, 1 qps. Much more reliable than DDG for
+    structured queries (site:, filetype:) and no anti-bot interference.
+
+    Get a key: https://api.search.brave.com/
+    """
+    import os, urllib.error, urllib.parse, urllib.request
+    key = os.environ.get("BRAVE_SEARCH_API_KEY", "").strip()
+    if not key:
+        return []
+    url = (
+        "https://api.search.brave.com/res/v1/web/search"
+        f"?q={urllib.parse.quote(query)}&count={max_results}"
+    )
+    req = urllib.request.Request(url, headers={
+        "Accept": "application/json",
+        "X-Subscription-Token": key,
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            import json as _json
+            data = _json.loads(r.read())
+    except Exception:
+        return []
+    out: list[dict[str, str]] = []
+    for item in (data.get("web", {}).get("results", []) or [])[:max_results]:
+        out.append({
+            "url":     item.get("url", ""),
+            "title":   item.get("title", ""),
+            "snippet": item.get("description", ""),
+        })
+    return out
+
+
+_DDG_LAST_CALL_TS: float = 0.0
+_DDG_MIN_INTERVAL_S: float = 4.0   # be polite — DDG rate-limits aggressively
+
+
 def _ddg_pdf_search(vendor_domains: list[str], topic: str, *, max_results: int = 10) -> list[dict[str, str]]:
     """Search DuckDuckGo for PDFs limited to vendor domains.
-    Returns [{url, title, snippet}]. Reuses the company_web_scraper logic.
+    Returns [{url, title, snippet}]. Throttled to one call every ~4s to
+    reduce anti-bot retaliation. Empty result on failure.
     """
+    import time
+    global _DDG_LAST_CALL_TS
+    # Throttle
+    elapsed = time.time() - _DDG_LAST_CALL_TS
+    if elapsed < _DDG_MIN_INTERVAL_S:
+        time.sleep(_DDG_MIN_INTERVAL_S - elapsed)
+    _DDG_LAST_CALL_TS = time.time()
     try:
         from runtime_orchestrator.discovery_fetchers.company_web_scraper import _ddg_search
     except Exception:
@@ -212,6 +260,18 @@ def _ddg_pdf_search(vendor_domains: list[str], topic: str, *, max_results: int =
     query = f"({domain_filter}) {topic} filetype:pdf"
     hits = _ddg_search(query, limit=max_results)
     return hits
+
+
+def _vendor_pdf_search(vendor_domains: list[str], topic: str,
+                       *, max_results: int = 10) -> list[dict[str, str]]:
+    """Try Brave first (more reliable), fall back to DDG."""
+    brave_hits = _brave_search(
+        f"site:{' OR site:'.join(vendor_domains)} {topic} filetype:pdf",
+        max_results=max_results,
+    )
+    if brave_hits:
+        return brave_hits
+    return _ddg_pdf_search(vendor_domains, topic, max_results=max_results)
 
 
 _VENDOR_TOPICS_BY_FAMILY = {
@@ -252,7 +312,7 @@ def discover_vendor_whitepapers(
     for topic in topics:
         if len(out) >= max_pdfs:
             break
-        hits = _ddg_pdf_search(domains, topic, max_results=max_pdfs * 2)
+        hits = _vendor_pdf_search(domains, topic, max_results=max_pdfs * 2)
         for h in hits:
             url = (h.get("url") or "").strip()
             if not url or not _PDF_HREF.search(url):

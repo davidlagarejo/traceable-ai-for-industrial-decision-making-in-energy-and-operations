@@ -1,0 +1,18 @@
+{
+  "chunk_id": "dfd39b8c::chunk_0101",
+  "source_id": "eu_eed_2023_1791",
+  "source_sha": "dfd39b8ce6560aa6184bf6d5cc7c7728",
+  "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023L1791",
+  "asset_families": [
+    "manufacturing_facility",
+    "commercial_building",
+    "datacenter",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "operation of the unit under normal conditions of use. For micro-cogeneration units the calculation may be based on certified values. (1) Electricity production from cogeneration shall be considered equal to total annual electricity production of the unit measured at the outlet of the main generators if the following conditions are met: (a) in cogeneration units of types (2), (4), (5), (6), (7) and (8) as referred to in Part II with an annual overall efficiency set by Member States at a level of at least 75 %; (b) in cogeneration units of types (1) and (3) as referred to in Part II with an annual overall efficiency set by Member States at a level of at least 80 %. (2) In cogeneration units with an annual overall efficiency below the value referred to in point (1)(a), namely the cogeneration units of types (2), (4), (5), (6), (7), and (8) as referred to in Part II, or with an annual overall efficiency below the value referred to in point (1)(b), namely the cogeneration units of types (1) and (3) as referred to in Part II, electricity from cogeneration is calculated according to the following formula: E =H *C CHP CHP where: E is the amount of electricity from cogeneration; CHP C is the power-to-heat ratio; H is the amount of useful heat from cogeneration (calculated for this purpose as total heat production minus any CHP heat produced in separate boilers or by live steam extraction from the steam generator before the turbine). The calculation of electricity from cogeneration shall be based on the actual power-to-heat ratio. If the actual power-to- heat ratio of a cogeneration unit is not known, the following default values may be used, in particular for statistical purposes, for units of types (1), (2), (3), (4) and (5) as referred to in Part II provided that the calculated cogeneration electricity is less or equal to total electricity production of the unit: Type of the unit Default power to heat ratio, C Combined cycle gas turbine with heat recovery 0,95 Steam back pressure turbine 0,45 Steam condensing extraction turbine 0,45 Gas turbine with heat recovery 0,55 Internal combustion engine 0,75 If Member States introduce default values for power-to-heat ratios for units of types (6), (7), (8), (9), (10) and (11) as referred to in Part II, such default values shall be published and shall be notified to the Commission. (3) If a share of the energy content of the fuel input to the cogeneration process is recovered in chemicals and recycled, that share can be subtracted from the fuel input before calculating the overall efficiency used in points (1) and (2). 20.9.2023 EN Official Journal of the European Union L 231/79 (4) Member States may determine the power-to-heat ratio as the ratio of electricity to useful heat when operating in cogeneration mode at a lower capacity using operational data of the specific unit. (5) Member States may use reporting periods other than annual reporting periods for the purpose of the calculations in accordance with points (1) and (2). Part II Cogeneration",
+  "token_count": 512,
+  "text_sha": "d4a6070cb3327b2842f9d9c328b57e483615ccb2409eac54c9f07e24301b0580",
+  "extracted_at": "2026-05-16T00:25:28.081877Z"
+}
