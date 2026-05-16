@@ -1,0 +1,40 @@
+{
+  "id": "auto_reg_40cfr0082_manufactur_reactive_steam_44ffd0ef",
+  "pattern_set": [
+    "reactive_power_exposure",
+    "steam_trap_failure"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.351753Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 1.0,
+  "combined_hypothesis": "\"nd/or loops to make the system more compact. Reducing the total length of the lines, however, is not permitted. The fixture system shall be powered by an electric motor, run at a speed not to exceed 2000 rpm, and for this test option, no sy\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "nd/or loops to make the system more compact. Reducing the total length of the lines, however, is not permitted. The fixture system shall be powered by an electric motor, run at a speed not to exceed 2000 rpm, and for this test option, no system warm-up or equivalent procedure may"
+    }
+  ],
+  "decision_implication": {
+    "action": "URGENT_COMPLIANCE",
+    "note": "Regulación contiene lenguaje mandatorio ().",
+    "has_mandate": true,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Incumplimiento o exposición regulatoria bajo Protection of Stratospheric Ozone (ODS/HFCs)",
+    "Posible cita o multa si la regulación es mandatoria"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "5d57ac2b5c3e0f8b"
+}

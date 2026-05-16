@@ -1,0 +1,74 @@
+{
+  "id": "auto_ctx_manufactur_boiler_boiler_retrofit_during_h_2a91f9a9",
+  "pattern_set": [
+    "boiler_degradation_plausibility"
+  ],
+  "proposal_method": "constraint_x_pattern",
+  "generated_at": "2026-05-16T16:33:44.362580Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.85,
+  "combined_hypothesis": "\"Heating systems shall maintain indoor design temperature of 68°F minimum during occupied hours\" [ashrae_90.1]",
+  "strategic_risk": "Retrofit de boiler durante heating season en clima frío deja el facility sin calefacción.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "current_month",
+        "op": "in",
+        "value": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "field": "climate_zone",
+        "op": "in",
+        "value": [
+          "4A",
+          "4B",
+          "4C",
+          "5A",
+          "5B",
+          "6A",
+          "6B",
+          "7",
+          "8"
+        ]
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "ashrae_90.1",
+      "title": "ASHRAE_90.1",
+      "snippet_verbatim": "Heating systems shall maintain indoor design temperature of 68°F minimum during occupied hours",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "DEFER_TO_WINDOW",
+    "allowed_windows": [
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep"
+    ],
+    "alternative": "temporary_boiler_or_electric_resistance_backup",
+    "note": "Retrofit de boiler durante heating season en clima frío deja el facility sin calefacción."
+  },
+  "consequence_if_ignored": [
+    "Pérdida de calefacción durante retrofit",
+    "Productividad degradada",
+    "Posible damage por congelamiento de tuberías"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "08494d0f6c4f6cfd"
+}

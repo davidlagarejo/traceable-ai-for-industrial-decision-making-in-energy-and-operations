@@ -1,0 +1,41 @@
+{
+  "id": "auto_reg_40cfr0082_coldchain_defrost_door_refrigerant_cbe2479d",
+  "pattern_set": [
+    "defrost_profile",
+    "door_cycle_losses",
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.528570Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 1.0,
+  "combined_hypothesis": "\"0 Purpose and scope. § 82.31 Incorporation by reference. § 82.32 Definitions. § 82.34 Prohibitions and required practices. § 82.36 Approved refrigerant handling equipment. § 82.38 Approved independent standards testing organizations. § 82.4\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "0 Purpose and scope. § 82.31 Incorporation by reference. § 82.32 Definitions. § 82.34 Prohibitions and required practices. § 82.36 Approved refrigerant handling equipment. § 82.38 Approved independent standards testing organizations. § 82.40 Technician training and certification."
+    }
+  ],
+  "decision_implication": {
+    "action": "URGENT_COMPLIANCE",
+    "note": "Regulación contiene lenguaje mandatorio ().",
+    "has_mandate": true,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Incumplimiento o exposición regulatoria bajo Protection of Stratospheric Ozone (ODS/HFCs)",
+    "Posible cita o multa si la regulación es mandatoria"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "stable_signature": "d576a547b939237a"
+}

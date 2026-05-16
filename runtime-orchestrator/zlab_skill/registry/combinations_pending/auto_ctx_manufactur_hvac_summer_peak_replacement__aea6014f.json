@@ -1,0 +1,82 @@
+{
+  "id": "auto_ctx_manufactur_hvac_summer_peak_replacement__aea6014f",
+  "pattern_set": [
+    "hvac_aging_high_load"
+  ],
+  "proposal_method": "constraint_x_pattern",
+  "generated_at": "2026-05-16T16:33:44.362583Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.85,
+  "combined_hypothesis": "\"Operative temperature ranges to maintain occupant comfort: 73-79°F (summer cooling season)\" [ashrae_55]",
+  "strategic_risk": "Reemplazo HVAC durante peak cooling season viola confort térmico ASHRAE 55 + dispara riesgo OSHA heat stress.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "current_month",
+        "op": "in",
+        "value": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "field": "climate_zone",
+        "op": "in",
+        "value": [
+          "1A",
+          "1B",
+          "2A",
+          "2B",
+          "3A",
+          "3B"
+        ]
+      },
+      {
+        "field": "occupancy_density",
+        "op": "ge",
+        "value": 0.5
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "ashrae_55",
+      "title": "ASHRAE_55",
+      "snippet_verbatim": "Operative temperature ranges to maintain occupant comfort: 73-79°F (summer cooling season)",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "29 cfr 1910.1000",
+      "title": "29 CFR 1910.1000",
+      "snippet_verbatim": "OSHA general duty clause requires protection from recognized heat-related hazards",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "DEFER_TO_WINDOW",
+    "allowed_windows": [
+      "Sep",
+      "Oct",
+      "Nov",
+      "Mar",
+      "Apr",
+      "May"
+    ],
+    "alternative": "provide_temporary_cooling_capacity_ge_design_load",
+    "note": "Reemplazo HVAC durante peak cooling season viola confort térmico ASHRAE 55 + dispara riesgo OSHA heat stress."
+  },
+  "consequence_if_ignored": [
+    "Indoor temperatures pueden exceder 90°F durante el reemplazo",
+    "ASHRAE 55 violation en operating logs",
+    "Posible cita OSHA bajo general duty clause si hay heat illness",
+    "Pérdida de productividad por confort degradado"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "1a80d3ca5a35896e"
+}

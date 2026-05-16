@@ -1,0 +1,80 @@
+{
+  "id": "auto_corpus_manufactur_boiler_steam_9b2152ab",
+  "pattern_set": [
+    "boiler_degradation_plausibility",
+    "steam_trap_failure"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:33:44.298266Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.5,
+  "combined_hypothesis": "\"steam traps fail in the open condition They constantly pass steam. The Napier formula (see further) is a common way to quantify this amount of steam loss.\" [steamloc_steam_traps_whitepaper::24145638::chunk_0003]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "24145638::chunk_0003",
+      "source_id": "steamloc_steam_traps_whitepaper",
+      "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+      "page": 1,
+      "verbatim": "steam traps fail in the open condition They constantly pass steam. The Napier formula (see further) is a common way to quantify this amount of steam loss. Although open failure unfortunately goes along with a lot of steam loss, at least the process can continue more or less in an acceptable way until the next shutdown to replace the trap. For most mechanical traps the position of rest is equivalent to open failure. After all, a closed failure results in a forced process stop, for which nobody wants to take credit for. It makes sense to build traps for open failure since the operator at least c",
+      "similarity": 0.6895
+    },
+    {
+      "chunk_id": "24145638::chunk_0005",
+      "source_id": "steamloc_steam_traps_whitepaper",
+      "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+      "page": 1,
+      "verbatim": "little over your closed failing traps, will even increase this phantom loss, which also might result in safety issues. At the end, it’s all about the fuel bill and additional greenhouse gasses to produce this phantom load. 3 Impact of failing traps for the next 30 years 3.1. Financial impact The total cost from failing traps is built from following actions and events: Check-ups / Spare parts / Replacement time / Energy loss / Production impact / Shutdown preparation / … And minor costs such as repeated actions from Purchasing / Warehouse / Accounting / … We highlight a few to give an idea of t",
+      "similarity": 0.6184
+    },
+    {
+      "chunk_id": "24145638::chunk_0006",
+      "source_id": "steamloc_steam_traps_whitepaper",
+      "source_url": "local://Steamloc-white-paper-Steam-Traps.pdf",
+      "page": 1,
+      "verbatim": "loss of 213.253 ton steam on 30 years, which represent an extra exhaust of about 28.575 ton GHG. “Natural gas fired boiler = 0.134 ton GHG/ton steam” University of Texas – Method for calculating CO2 Emissions – Ryan Reid – Aug 2010 Of course this impact should be corrected with the used combustion (fuel, coal, …) and the overall efficiency of the steam boiler installation. 7 Marc Froeyen March 2015 / SL801 Rev0 What you don’t know about steam traps 4 In fact, what are we doing (wrong)? Looking at the numerous brands of steam traps, their different working principles, the necessary actions and ",
+      "similarity": 0.6142
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 40 127",
+      "title": "Cfr 40 127",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "76e689cf8e91e0af"
+}

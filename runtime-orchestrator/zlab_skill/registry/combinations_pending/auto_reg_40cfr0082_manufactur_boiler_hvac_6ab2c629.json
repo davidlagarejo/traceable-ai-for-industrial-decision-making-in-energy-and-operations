@@ -1,0 +1,39 @@
+{
+  "id": "auto_reg_40cfr0082_manufactur_boiler_hvac_6ab2c629",
+  "pattern_set": [
+    "boiler_degradation_plausibility",
+    "hvac_aging_high_load"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.351611Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"roduction of synthetic fiber sheet, bromochloromethane used in the bromination of a styrenic polymer, and CFC-113 used in the production of high modulus polyethylene fiber. Process condenser means a condenser whose primary purpose is to rec\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "roduction of synthetic fiber sheet, bromochloromethane used in the bromination of a styrenic polymer, and CFC-113 used in the production of high modulus polyethylene fiber. Process condenser means a condenser whose primary purpose is to recover material as an integral part of a p"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Protection of Stratospheric Ozone (ODS/HFCs)"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "d28faeb8fc280540"
+}

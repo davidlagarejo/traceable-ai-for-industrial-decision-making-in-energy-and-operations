@@ -1,0 +1,39 @@
+{
+  "id": "auto_reg_40cfr0082_manufactur_compressed_refrigerant_1124bb5d",
+  "pattern_set": [
+    "compressed_air_leak_plausibility",
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.351850Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment testing organizations. § 82.161 Technic"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Protection of Stratospheric Ozone (ODS/HFCs)"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "a5d7fef6cb97667c"
+}

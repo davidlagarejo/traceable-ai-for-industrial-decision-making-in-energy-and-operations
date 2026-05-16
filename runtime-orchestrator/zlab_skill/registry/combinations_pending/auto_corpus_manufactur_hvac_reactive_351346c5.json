@@ -1,0 +1,80 @@
+{
+  "id": "auto_corpus_manufactur_hvac_reactive_351346c5",
+  "pattern_set": [
+    "hvac_aging_high_load",
+    "reactive_power_exposure"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:33:44.298599Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.4286,
+  "combined_hypothesis": "\"long as the surrounding communities are not yet electrified. Looking forward, however, if the broader system transitions along with this neighborhood, the entire distribution system could be faced with winter peaks that occur primarily in the early mornings.\" [lbnl_1862664::58f4a200::chunk_0024]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "58f4a200::chunk_0024",
+      "source_id": "lbnl_1862664",
+      "source_url": "https://www.osti.gov/servlets/purl/1862664",
+      "page": 1,
+      "verbatim": "long as the surrounding communities are not yet electrified. Looking forward, however, if the broader system transitions along with this neighborhood, the entire distribution system could be faced with winter peaks that occur primarily in the early mornings. This could be the case even with efficient electrification because the heat pumps’ backup electric resistance heaters are most likely to kick on during the coldest hours. If peaks occur in the early mornings, PV would not be able to shift the load in a meaningful way. This type of scenario would have implications for the relative value of ",
+      "similarity": 0.411
+    },
+    {
+      "chunk_id": "58f4a200::chunk_0020",
+      "source_id": "lbnl_1862664",
+      "source_url": "https://www.osti.gov/servlets/purl/1862664",
+      "page": 1,
+      "verbatim": "peak pricing period) is unaffected by the HEMS and the battery because there are no load-shifting opportunities available to mitigate these peaks: The battery has not yet had a chance to recharge after discharging earlier in the day during the peak pricing period. Table 4 shows the community average site electric load and total site electricity consumed during the peak price period for each scenario. Comparing the baseline to the standard energy-efficiency retrofit in scenario 1, there is a slight increase in the average power and total energy use during 24 This report is available at no cost ",
+      "similarity": 0.4081
+    },
+    {
+      "chunk_id": "58f4a200::chunk_0014",
+      "source_id": "lbnl_1862664",
+      "source_url": "https://www.osti.gov/servlets/purl/1862664",
+      "page": 1,
+      "verbatim": "scenario, only energy efficiency, so equipment is upgraded with cost- optimal replacements (i.e., more efficient versions that use the same fuel type). The community- wide energy use and average monthly utility bills are shown in Figure 9 and Figure 10, respectively. The notable difference from the pre-retrofit baseline in Figure 7 is the roughly 15% decrease in energy use over the winter months, largely due to more efficient heating equipment. The average monthly utility bills likewise decrease during the winter months as a result of the retrofits, while the summer bills are much less affecte",
+      "similarity": 0.4049
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 40 127",
+      "title": "Cfr 40 127",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "8646ea5e21082142"
+}

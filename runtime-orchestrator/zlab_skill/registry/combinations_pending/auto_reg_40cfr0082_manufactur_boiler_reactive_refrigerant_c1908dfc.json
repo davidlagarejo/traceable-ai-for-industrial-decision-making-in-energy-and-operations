@@ -1,0 +1,40 @@
+{
+  "id": "auto_reg_40cfr0082_manufactur_boiler_reactive_refrigerant_c1908dfc",
+  "pattern_set": [
+    "boiler_degradation_plausibility",
+    "reactive_power_exposure",
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.351956Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that are not directly involved ( i.e., they "
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Protection of Stratospheric Ozone (ODS/HFCs)"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "619cc8235bbe6a64"
+}

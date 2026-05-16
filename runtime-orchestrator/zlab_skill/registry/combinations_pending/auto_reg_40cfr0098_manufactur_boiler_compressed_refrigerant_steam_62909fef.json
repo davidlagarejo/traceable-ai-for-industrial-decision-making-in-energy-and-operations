@@ -1,0 +1,41 @@
+{
+  "id": "auto_reg_40cfr0098_manufactur_boiler_compressed_refrigerant_steam_62909fef",
+  "pattern_set": [
+    "boiler_degradation_plausibility",
+    "compressed_air_leak_plausibility",
+    "refrigerant_integrity",
+    "steam_trap_failure"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.339951Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"us. Blowdown mean the act of emptying or depressuring a vessel. This may also refer to the discarded material such as blowdown water from a boiler or cooling tower. Blowdown vent stack emissions mean natural gas and/or CO 2 released due to \" [us_federal_40_cfr_0098]",
+  "strategic_risk": "Los patterns están co-mencionados en Mandatory Greenhouse Gas Reporting. Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0098",
+      "title": "Mandatory Greenhouse Gas Reporting",
+      "url": "https://www.ecfr.gov/current/title-40/part-98",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "us. Blowdown mean the act of emptying or depressuring a vessel. This may also refer to the discarded material such as blowdown water from a boiler or cooling tower. Blowdown vent stack emissions mean natural gas and/or CO 2 released due to maintenance and/or blowdown operations i"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Mandatory Greenhouse Gas Reporting"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "2fce763e675c13b7"
+}

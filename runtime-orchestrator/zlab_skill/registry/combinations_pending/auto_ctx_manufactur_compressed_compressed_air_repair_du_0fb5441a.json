@@ -1,0 +1,46 @@
+{
+  "id": "auto_ctx_manufactur_compressed_compressed_air_repair_du_0fb5441a",
+  "pattern_set": [
+    "compressed_air_leak_plausibility"
+  ],
+  "proposal_method": "constraint_x_pattern",
+  "generated_at": "2026-05-16T16:33:44.362565Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.85,
+  "combined_hypothesis": "\"Compressed air system audits should be performed during scheduled downtime to avoid production disruption\" [doe_amo]",
+  "strategic_risk": "Reparación de compressed air durante operación continua requiere capacidad redundante — sin ella, todo el plant para.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "production_pattern",
+        "op": "eq",
+        "value": "continuous_24_7"
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "doe_amo",
+      "title": "DOE_AMO",
+      "snippet_verbatim": "Compressed air system audits should be performed during scheduled downtime to avoid production disruption",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "ALTERNATIVE_VIABLE",
+    "alternative": "install_redundant_compressor_first_then_repair",
+    "note": "Reparación de compressed air durante operación continua requiere capacidad redundante — sin ella, todo el plant para."
+  },
+  "consequence_if_ignored": [
+    "Detención total del plant",
+    "Pérdidas significativas de producción",
+    "Stress térmico en compresores activos cubriendo demanda"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "cc4507cba94485c9"
+}

@@ -182,8 +182,21 @@ def propose_combinations(
         except Exception as exc:
             method_counts["regulatory_comention_error"] = str(exc)[:120]
 
-    # ── Strategies 3-6 will be added in subsequent phases ──
-    # strategy_context.propose_from_context_matrix(...)
+    # ── Strategy 3: constraint × pattern matrix (HVAC summer, etc.) ──
+    if "constraint_x_pattern" in enabled:
+        try:
+            from .strategy_context import propose_from_context_matrix
+            cands = propose_from_context_matrix(
+                asset_family=asset_family,
+                active_patterns=active_patterns,
+                max_candidates=max_per_strategy,
+            )
+            method_counts["constraint_x_pattern"] = len(cands)
+            all_candidates.extend(cands)
+        except Exception as exc:
+            method_counts["constraint_x_pattern_error"] = str(exc)[:120]
+
+    # ── Strategies 4-6 will be added in subsequent phases ──
     # strategy_compliance.propose_from_compliance_violations(...)
     # strategy_comfort.propose_from_comfort_windows(...)
     # strategy_invest_trap.propose_from_investment_traps(...)

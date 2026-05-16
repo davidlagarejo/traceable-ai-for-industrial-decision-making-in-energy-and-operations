@@ -1,0 +1,39 @@
+{
+  "id": "auto_reg_40cfr0122_manufactur_boiler_steam_a2d58706",
+  "pattern_set": [
+    "boiler_degradation_plausibility",
+    "steam_trap_failure"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:33:44.321872Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"porting for the base/neutral fraction in the Once-Through Cooling Water, Fly Ash and Bottom Ash Transport Water process wastestreams of the Steam Electric Power Plant industrial category. This revision continues that suspension.] [ 1 ] ( r \" [us_federal_40_cfr_0122]",
+  "strategic_risk": "Los patterns están co-mencionados en EPA NPDES Permitting. Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0122",
+      "title": "EPA NPDES Permitting",
+      "url": "https://www.ecfr.gov/current/title-40/part-122",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "porting for the base/neutral fraction in the Once-Through Cooling Water, Fly Ash and Bottom Ash Transport Water process wastestreams of the Steam Electric Power Plant industrial category. This revision continues that suspension.] [ 1 ] ( r ) Application requirements for facilitie"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de EPA NPDES Permitting"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "4dd2fcc2916ec0fb"
+}

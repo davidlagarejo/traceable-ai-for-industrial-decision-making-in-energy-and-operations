@@ -1,0 +1,51 @@
+{
+  "id": "auto_ctx_manufactur_reactive_electrical_shutdown_duri_a9673fd2",
+  "pattern_set": [
+    "reactive_power_exposure"
+  ],
+  "proposal_method": "constraint_x_pattern",
+  "generated_at": "2026-05-16T16:33:44.362572Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.85,
+  "combined_hypothesis": "\"Establishment of an electrically safe work condition shall include lockout/tagout procedures\" [nfpa 70e]",
+  "strategic_risk": "Electrical work durante run requiere LOTO completo (NFPA 70E) — si no se planea, riesgo arc flash + producción detenida no planificada.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "production_active",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "nfpa 70e",
+      "title": "NFPA 70E",
+      "snippet_verbatim": "Establishment of an electrically safe work condition shall include lockout/tagout procedures",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "DEFER_TO_WINDOW",
+    "allowed_windows": [
+      "scheduled_maintenance_window",
+      "weekend",
+      "holiday"
+    ],
+    "alternative": "schedule_PM_window_with_advance_notice",
+    "note": "Electrical work durante run requiere LOTO completo (NFPA 70E) — si no se planea, riesgo arc flash + producción detenida no planificada."
+  },
+  "consequence_if_ignored": [
+    "Arc flash incidents possible (NFPA 70E violation)",
+    "Unplanned production downtime",
+    "Posible muerte/lesión seria si LOTO falla"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "54ea22fd314dff9b"
+}

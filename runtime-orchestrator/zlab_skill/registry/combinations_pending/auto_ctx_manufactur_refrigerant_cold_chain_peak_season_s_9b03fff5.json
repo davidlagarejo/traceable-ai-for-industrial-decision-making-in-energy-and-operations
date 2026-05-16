@@ -1,0 +1,68 @@
+{
+  "id": "auto_ctx_manufactur_refrigerant_cold_chain_peak_season_s_9b03fff5",
+  "pattern_set": [
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "constraint_x_pattern",
+  "generated_at": "2026-05-16T16:33:44.362576Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.85,
+  "combined_hypothesis": "\"The owner or operator of refrigeration equipment with a charge of more than 50 lbs of refrigerant must repair leaks\" [40 cfr 82]",
+  "strategic_risk": "Reparación de refrigeración mayor durante peak holiday/inventory season → pérdidas de producto.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "cold_chain_facility"
+      },
+      {
+        "field": "current_month",
+        "op": "in",
+        "value": [
+          11,
+          12,
+          1
+        ]
+      },
+      {
+        "field": "inventory_utilization",
+        "op": "ge",
+        "value": 0.7
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "40 cfr 82",
+      "title": "40 CFR 82",
+      "snippet_verbatim": "The owner or operator of refrigeration equipment with a charge of more than 50 lbs of refrigerant must repair leaks",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "DEFER_TO_WINDOW",
+    "allowed_windows": [
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Sep",
+      "Oct"
+    ],
+    "alternative": "rent_alternative_cold_storage_capacity",
+    "note": "Reparación de refrigeración mayor durante peak holiday/inventory season → pérdidas de producto."
+  },
+  "consequence_if_ignored": [
+    "Pérdidas catastróficas de inventario perecedero",
+    "Insurance claims expuestas",
+    "Disrupción supply-chain del cliente"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "097ccf25f3697b37"
+}
