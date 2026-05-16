@@ -39,7 +39,9 @@ class Motor054Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_049", "motor_051", "motor_052", "motor_053"]
+        # motor_012 added (V10 P3): we need facility_prior.target_definition
+        # to attach industry_evidence per combination from the corpus.
+        return ["motor_012", "motor_049", "motor_051", "motor_052", "motor_053"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         m51 = dict(inputs.get("motor_051", {}) or {})
@@ -195,6 +197,52 @@ class Motor054Adapter(BaseMotorAdapter):
         skill_admissible_combination_review_register = _apply_curator_decisions(
             skill_admissible_combination_review_register
         )
+
+        # V10 P3 — DECORATE every active combination with industry evidence
+        # so downstream (motor_015 output, motor_019 narrator, motor_033 TAD)
+        # can cite the corpus + regulatory basis as justification. Cero LLM.
+        try:
+            from runtime_orchestrator.industry_corpus.evidence_wire import (
+                evidence_for_combination as _evid_combo,
+            )
+            _af = ""
+            try:
+                m12 = inputs.get("motor_012", {}) if isinstance(inputs.get("motor_012"), dict) else {}
+                _fp = m12.get("facility_prior", {}) if isinstance(m12, dict) else {}
+                _td = _fp.get("target_definition") or {}
+                _af = (_td.get("target_type") if isinstance(_td, dict) else None) or ""
+            except Exception:
+                _af = ""
+            for entry in skill_combination_activation_register or []:
+                if not isinstance(entry, dict):
+                    continue
+                # Build a combo dict for the wire — minimum is pattern_ids
+                combo_dict = {
+                    "id": entry.get("combination_id") or entry.get("id"),
+                    "pattern_ids": list(entry.get("pattern_ids") or []),
+                    "combined_hypothesis": str(entry.get("combined_hypothesis") or
+                                               entry.get("hypothesis") or ""),
+                }
+                if not combo_dict["pattern_ids"] or not _af:
+                    entry["industry_evidence"] = {
+                        "corpus_citations": [], "regulatory_basis": [],
+                        "support_score": 0.0, "note": "skipped (no patterns or asset_family)",
+                    }
+                    continue
+                try:
+                    b = _evid_combo(combo_dict, _af, k_per_pattern=2,
+                                    min_similarity=0.30, max_total_citations=6)
+                    entry["industry_evidence"] = b.to_dict()
+                except Exception as exc:
+                    entry["industry_evidence"] = {
+                        "corpus_citations": [], "regulatory_basis": [],
+                        "support_score": 0.0,
+                        "note": f"evidence_wire_error: {type(exc).__name__}",
+                    }
+        except ImportError:
+            # evidence_wire not available — combinations stay un-decorated,
+            # downstream motors still work.
+            pass
         skill_expanded_tad_action_register = build_registry_tad_action_register(
             combination_review_register=skill_combination_review_register,
             skill_pattern_activation_register=full_skill_pattern_activation_register,

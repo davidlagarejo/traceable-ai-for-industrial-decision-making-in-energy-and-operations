@@ -441,6 +441,53 @@ class Motor033Adapter(BaseMotorAdapter):
                 "decision_unlock": _decision_unlock(rec),
             })
 
+        # V10 P3 — INDUSTRY/REGULATORY EVIDENCE BUMP for VoI scoring.
+        # For each scored case, query the corpus + regulatory_corpus for
+        # supporting context. Add a bonus to voi_score proportional to:
+        #   · mean corpus similarity   (signal: someone published about this)
+        #   · regulatory_mandate_count (signal: a rule mandates investigating it)
+        # This is Phase 0-safe: the bonus is BOUNDED (≤ 0.25 total), TRACEABLE
+        # (we attach `industry_evidence` to each item), and DOES NOT replace
+        # the base VoI — only nudges TAD priority when external evidence aligns.
+        try:
+            from runtime_orchestrator.industry_corpus.evidence_wire import (
+                evidence_for_pattern as _evid_for_pattern,
+                decorate_tad_priority as _decorate_tad,
+            )
+            # Asset family lookup (same pattern as motor_019)
+            _af = ""
+            try:
+                m12_in = inputs.get("motor_012", {}) if isinstance(inputs.get("motor_012"), dict) else {}
+                _fp = m12_in.get("facility_prior", {}) if isinstance(m12_in, dict) else {}
+                _td = _fp.get("target_definition") or {}
+                _af = (_td.get("target_type") if isinstance(_td, dict) else None) or ""
+            except Exception:
+                _af = ""
+            if _af:
+                for item in scored:
+                    query = item.get("case_name", "") or item.get("claim_family", "")
+                    if not query:
+                        continue
+                    try:
+                        bundle = _evid_for_pattern(query, _af, k=2, min_similarity=0.30)
+                        decorated = _decorate_tad(
+                            item["voi_score"], bundle=bundle,
+                            weight_corpus=0.15, weight_regulatory=0.10,
+                        )
+                        item["voi_score_original"] = decorated["original"]
+                        item["voi_score"] = decorated["decorated"]
+                        item["industry_evidence"] = {
+                            "corpus_citation_count":    bundle.tad_signals.get("corpus_citation_count", 0),
+                            "regulatory_basis_count":   bundle.tad_signals.get("regulatory_basis_count", 0),
+                            "regulatory_mandate_count": bundle.tad_signals.get("regulatory_mandate_count", 0),
+                            "tad_bonus":                decorated["bonus"],
+                            "breakdown":                decorated["breakdown"],
+                        }
+                    except Exception:
+                        item["industry_evidence"] = {"error": "evidence_unavailable"}
+        except ImportError:
+            pass  # evidence_wire missing → TAD continues unmodified
+
         scored.sort(key=lambda x: x["voi_score"], reverse=True)
 
         # ── Step 2: Build TAD action plan ──────────────────────────────────────
@@ -464,6 +511,7 @@ class Motor033Adapter(BaseMotorAdapter):
                 "action_family":    action_family,
                 "recommended_posture": posture,
                 "voi_score":        item["voi_score"],
+                "voi_score_original": item.get("voi_score_original", item["voi_score"]),
                 "effort_tier":      item["effort_tier"],
                 "downside_profile": downside,
                 "irreversibility_profile": irreversibility,
@@ -475,6 +523,8 @@ class Motor033Adapter(BaseMotorAdapter):
                 "epistemic_gap":    item["gap_size"],
                 "no_go_condition":  _no_go_condition(rec, posture),
                 "sequencing_note":  vq_entry.get("data_source_needed", "") or item["validation_requirement"][:100],
+                # V10 P3 — corpus + regulatory evidence supporting this action
+                "industry_evidence": item.get("industry_evidence") or {},
             })
 
         # ── Step 3: Blocking conflict resolution paths ─────────────────────────

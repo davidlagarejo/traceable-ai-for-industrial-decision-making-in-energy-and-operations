@@ -3779,6 +3779,37 @@ class Motor012Adapter(BaseMotorAdapter):
             "real_discovery_summary": real_discovery_summary,
         }
 
+        # V10 P3 — auto-attach regulatory applicability bundle for this
+        # asset_family. Comes from regulatory_corpus/applicability/<family>.json
+        # (built by applicability_mapper). Cero LLM, cero side-effects.
+        # Phase 0 inscribed: este bundle es REFERENCIA citable, no decisión.
+        try:
+            from runtime_orchestrator.industry_corpus.evidence_wire import (
+                regulatory_applicability_for as _reg_for,
+            )
+            _af = (target_definition or {}).get("target_type") or ""
+            if _af:
+                _regs = _reg_for(_af, max_entries=20)
+                facility_prior["regulatory_applicability_bundle"] = {
+                    "asset_family":  _af,
+                    "regulations": [
+                        {
+                            "citation":             r.citation,
+                            "title":                r.title,
+                            "has_text_in_corpus":   r.has_text_in_corpus,
+                            "regulation_source_id": r.regulation_source_id,
+                            "mention_count":        r.mention_count_in_corpus,
+                        }
+                        for r in _regs
+                    ],
+                    "total":         len(_regs),
+                    "with_fulltext": sum(1 for r in _regs if r.has_text_in_corpus),
+                }
+        except Exception:
+            facility_prior["regulatory_applicability_bundle"] = {
+                "asset_family": "", "regulations": [], "total": 0, "with_fulltext": 0,
+            }
+
         return {
             "facility_prior": facility_prior,
             "facility_prior_id": facility_prior["facility_prior_id"],
