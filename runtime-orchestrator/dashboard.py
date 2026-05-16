@@ -18781,13 +18781,18 @@ def main():
     parser = argparse.ArgumentParser(description="ZLab OTF — Monitor")
     parser.add_argument("--port", type=int, default=7474)
     parser.add_argument("--open", action="store_true", dest="auto_open")
+    parser.add_argument("--open-path", default="/curar",
+                        help="Path to open in browser when --open is set "
+                             "(default: /curar, la página simplificada con "
+                             "3 columnas y bullets)")
     args = parser.parse_args()
 
     os.chdir(_HERE)
     if args.auto_open:
+        target = f"http://localhost:{args.port}{args.open_path}"
         def _open():
             time.sleep(1.2)
-            subprocess.Popen(["open", f"http://localhost:{args.port}"])
+            subprocess.Popen(["open", target])
         threading.Thread(target=_open, daemon=True).start()
 
     print(f"ZLab OTF Monitor → http://localhost:{args.port}")
