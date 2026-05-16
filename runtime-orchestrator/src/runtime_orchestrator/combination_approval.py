@@ -112,19 +112,47 @@ def _scan_dir(directory: Path) -> list[dict[str, Any]]:
 
 
 def _summarize(payload: dict[str, Any]) -> dict[str, Any]:
-    """Compact projection for the dashboard list view."""
+    """Compact projection for the dashboard list view.
+
+    V10 P4: handles both legacy combinations (pattern_ids plural) and
+    auto-proposed combinations (pattern_set singular). Surfaces
+    proposal_method + decision_implication so the dashboard can group
+    candidates by source.
+    """
+    # V10 P4: pattern_set (auto-proposed) OR pattern_ids (legacy hand-curated)
+    patterns = (payload.get("pattern_set")
+                or payload.get("pattern_ids")
+                or [])
+    patterns = list(patterns) if isinstance(patterns, (list, tuple)) else []
+    # V10 P4: decision_implication is a dict; surface its .action for filtering
+    impl = payload.get("decision_implication") or {}
+    if isinstance(impl, dict):
+        tad_action = impl.get("action") or payload.get("tad_action", "")
+    else:
+        tad_action = payload.get("tad_action", "")
     return {
         "combination_id": payload.get("id", ""),
-        "name": payload.get("name", ""),
+        "name": payload.get("name", "") or payload.get("id", ""),
         "version": payload.get("version", ""),
-        "pattern_ids": list(payload.get("pattern_ids", []) or []),
-        "pattern_count": len(payload.get("pattern_ids", []) or []),
-        "tad_action": payload.get("tad_action", ""),
-        "combined_hypothesis": str(payload.get("combined_hypothesis") or "")[:240],
-        "strategic_risk": str(payload.get("strategic_risk") or "")[:240],
+        "pattern_ids": patterns,
+        "pattern_count": len(patterns),
+        "tad_action": tad_action,
+        # V10 P4 fields surfaced for dashboard grouping/filtering
+        "proposal_method": payload.get("proposal_method", ""),
+        "generated_by": payload.get("generated_by", ""),
+        "generated_at": payload.get("generated_at", ""),
+        "confidence_score": payload.get("confidence_score", 0.0),
+        "decision_implication": impl,
+        "context_predicates": payload.get("context_predicates") or {},
+        "corpus_citation_count": len(payload.get("corpus_citations") or []),
+        "regulatory_basis_count": len(payload.get("regulatory_basis") or []),
+        "consequence_if_ignored": payload.get("consequence_if_ignored") or [],
+        # Legacy fields (kept for backward compat)
+        "combined_hypothesis": str(payload.get("combined_hypothesis") or "")[:280],
+        "strategic_risk": str(payload.get("strategic_risk") or "")[:280],
         "minimum_evidence_count": len(payload.get("minimum_evidence", []) or []),
-        "proposed_at": payload.get("__proposed_at__", ""),
-        "proposed_by": payload.get("__proposed_by__", ""),
+        "proposed_at": payload.get("__proposed_at__", "") or payload.get("generated_at", ""),
+        "proposed_by": payload.get("__proposed_by__", "") or payload.get("generated_by", ""),
         "rejected_at": payload.get("__rejected_at__", ""),
         "rejected_by": payload.get("__rejected_by__", ""),
         "rejection_reason": payload.get("__rejection_reason__", ""),
