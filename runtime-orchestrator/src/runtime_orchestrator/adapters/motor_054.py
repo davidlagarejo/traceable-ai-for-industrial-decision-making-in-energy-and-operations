@@ -336,6 +336,11 @@ class Motor054Adapter(BaseMotorAdapter):
                         "confidence_score":      _c.get("confidence_score", 0.0),
                     }
                     skill_combination_activation_register.append(_entry)
+                    # V10 P4: también añadir al review register (para curación)
+                    # y al admissible_review register (que es el que el dashboard
+                    # /curar lee). Esto hace que las V10 P4 aparezcan en la UI.
+                    skill_combination_review_register.append(_entry)
+                    skill_admissible_combination_review_register.append(_entry)
         except ImportError:
             pass
         except Exception as _exc:
