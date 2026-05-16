@@ -16454,17 +16454,24 @@ function escapeHtml(s) {
     ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
 }
 
+let hideInsufficientCases = true;   // V10 P5: oculta por defecto
+
 async function loadCases() {
-  // Reuse /api/live to find runs with PDFs. Falls back to listing all runs
-  // in run-registry via a thin helper.
+  // V10 P5: incluye quality assessment. Por defecto oculta tier=insufficient
+  // y not_viable. Toggle con hideInsufficientCases.
   try {
-    const r = await fetch("/api/curation/cases");
+    const q = hideInsufficientCases ? "?hide_insufficient=1" : "";
+    const r = await fetch("/api/curation/cases" + q);
     const data = await r.json();
     renderCases(data.cases || []);
   } catch (e) {
-    // Fallback: ask run-status with no arg to learn latest, build minimal list
     $("cases").innerHTML = '<div class="empty">No se pudieron cargar los casos</div>';
   }
+}
+
+function toggleHideInsufficient() {
+  hideInsufficientCases = !hideInsufficientCases;
+  loadCases();
 }
 
 let currentCaseId = "";
@@ -16472,11 +16479,26 @@ let casePollingInterval = null;
 
 function renderCases(cases) {
   const el = $("cases");
+  // V10 P5 — header con toggle hide insufficient
+  const toggleLabel = hideInsufficientCases
+    ? "🟢🟡 Solo viables · click para ver todos"
+    : "Todos los casos · click para ocultar 🔴";
+  const headerHTML = `<div style="padding:8px 14px;border-bottom:1px solid #e4e4e7;background:#fafafa;">
+    <button onclick="toggleHideInsufficient()"
+            style="background:#fff;border:1px solid #d4d4d8;padding:5px 10px;
+                   border-radius:5px;cursor:pointer;font-size:11px;width:100%;
+                   color:#52525b;font-weight:600;">
+      ${toggleLabel}
+    </button>
+  </div>`;
   if (!cases.length) {
-    el.innerHTML = '<div class="empty">No hay casos definidos.</div>';
+    el.innerHTML = headerHTML + '<div class="empty">' +
+      (hideInsufficientCases
+        ? 'Ningún caso tiene evidencia suficiente. Click el botón de arriba para ver todos.'
+        : 'No hay casos definidos.') + '</div>';
     return;
   }
-  el.innerHTML = cases.map(c => {
+  el.innerHTML = headerHTML + cases.map(c => {
     const klass = (c.case_id === currentCaseId) ? "casebox active" : "casebox";
     const state = c.run_state || "idle";
     const hasRun = c.run_state === "completed" && c.run_id;
@@ -16490,9 +16512,40 @@ function renderCases(cases) {
       ? `<div class="casemeta" style="color:#991b1b;">⚠ ${escapeHtml(c.error)}</div>`
       : "";
     const stateLabel = state === "idle" ? "sin correr aún" : state;
+
+    // V10 P5 — quality badge
+    const qLabel = c.quality_label || "—";
+    const qScore = c.quality_score || 0;
+    const tierColor = ({
+      verified:     "#dcfce7",
+      partial:      "#fef3c7",
+      insufficient: "#fee2e2",
+      not_viable:   "#f4f4f5",
+    })[c.quality_tier] || "#f4f4f5";
+    const tierTextColor = ({
+      verified:     "#166534",
+      partial:      "#92400e",
+      insufficient: "#991b1b",
+      not_viable:   "#71717a",
+    })[c.quality_tier] || "#71717a";
+
+    // V10 P5 — evidence meter
+    const evidBits = [];
+    if (c.active_patterns_count) evidBits.push(`${c.active_patterns_count} patterns`);
+    if (c.v10p4_activations_count) evidBits.push(`${c.v10p4_activations_count} combos V10`);
+    if (c.corpus_citations_count) evidBits.push(`${c.corpus_citations_count} cites`);
+    if (c.regulatory_basis_count) evidBits.push(`${c.regulatory_basis_count} regs`);
+    const evidLine = evidBits.length
+      ? `<div class="casemeta" style="font-size:10px;color:#64748b;margin-top:2px;">${evidBits.join(' · ')}</div>`
+      : "";
+
     return `<div class="${klass}">
       <div class="caselabel" onclick="selectCaseById('${escapeHtml(c.case_id)}')">${escapeHtml(c.label)}</div>
       <div class="casemeta">${escapeHtml(c.asset_family)}</div>
+      <div style="display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;background:${tierColor};color:${tierTextColor};margin-top:4px;letter-spacing:.02em;">
+        ${escapeHtml(qLabel)} · ${qScore}/100
+      </div>
+      ${evidLine}
       <div class="caserow">
         <button class="${btnClass}" onclick="runCase('${escapeHtml(c.case_id)}')"
                 ${isRunning || inputsMissing ? "disabled" : ""}>
@@ -17494,14 +17547,27 @@ def log_page():
 
 @app.route("/api/curation/cases")
 def api_curation_cases():
-    """List the canonical curation cases (input files + pipeline mapping).
+    """List canonical curation cases + V10 P5 pre-flight quality assessment.
 
-    Each case shows whether it has a recent run with PDF. Curator clicks
-    the case → either selects existing latest run OR clicks "▶ Correr"
-    which invokes /api/curation/run-case.
+    Each case is scored by the case_quality_assessor based on existing
+    evidence in the run-registry + artifact-store. Cases are SORTED so
+    🟢 verified appear first, 🟡 partial next, 🔴 insufficient last.
+
+    Query params:
+      hide_insufficient=1  → drop tier=insufficient + not_viable from response
     """
     if not _curation_available:
         return jsonify({"error": "curation_layer unavailable"}), 503
+
+    # V10 P5: pre-flight quality assessment
+    try:
+        from runtime_orchestrator.case_quality_assessor import assess_all_cases
+        assessments = {a.case_id: a for a in assess_all_cases(_CURATION_CANONICAL_CASES)}
+    except Exception:
+        assessments = {}
+
+    hide_insufficient = (request.args.get("hide_insufficient") or "").lower() in ("1","true","yes")
+
     cases: list[dict] = []
     for spec in _CURATION_CANONICAL_CASES:
         case = dict(spec)
@@ -17512,7 +17578,36 @@ def api_curation_cases():
         case["error"]     = state.get("error", "")
         case["started_at"] = state.get("started_at", "")
         case["ended_at"]   = state.get("ended_at", "")
+
+        # V10 P5 — quality fields
+        assess = assessments.get(spec["case_id"])
+        if assess:
+            case["quality_tier"]              = assess.quality_tier
+            case["quality_score"]             = assess.quality_score
+            case["quality_label"]             = assess.quality_label
+            case["latest_run_id"]             = assess.latest_run_id
+            case["latest_delivery_state"]     = assess.latest_delivery_state
+            case["latest_publication_mode"]   = assess.latest_publication_mode
+            case["active_patterns_count"]     = assess.active_patterns_count
+            case["v10p4_activations_count"]   = assess.v10p4_activations_count
+            case["corpus_citations_count"]    = assess.corpus_citations_count
+            case["regulatory_basis_count"]    = assess.regulatory_basis_count
+            case["quality_reasons"]           = list(assess.reasons or [])
+        else:
+            case["quality_tier"]  = "not_assessed"
+            case["quality_score"] = 0
+            case["quality_label"] = "—"
+
+        # Optionally hide weak ones
+        if hide_insufficient and case.get("quality_tier") in ("insufficient", "not_viable"):
+            continue
         cases.append(case)
+
+    # Sort by quality DESC (verified first, then partial, etc.)
+    tier_rank = {"verified": 0, "partial": 1, "insufficient": 2,
+                 "not_viable": 3, "not_assessed": 4}
+    cases.sort(key=lambda c: (tier_rank.get(c.get("quality_tier",""), 9),
+                              -int(c.get("quality_score", 0) or 0)))
     return jsonify({"cases": cases})
 
 
