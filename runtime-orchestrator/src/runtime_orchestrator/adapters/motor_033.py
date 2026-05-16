@@ -405,7 +405,11 @@ class Motor033Adapter(BaseMotorAdapter):
 
     @property
     def input_motor_ids(self) -> list[str]:
-        return ["motor_014", "motor_015", "motor_034", "motor_012", "motor_038", "motor_040", "motor_041", "motor_042", "motor_043", "motor_044", "motor_045", "motor_046"]
+        # V10 P4: motor_054 added so TAD can read activated proposed combinations
+        # and emit DEFER_TO_WINDOW / BLOCK_COMPLIANCE / INVESTIGATE_FIRST actions.
+        return ["motor_014", "motor_015", "motor_034", "motor_012", "motor_038",
+                "motor_040", "motor_041", "motor_042", "motor_043", "motor_044",
+                "motor_045", "motor_046", "motor_054"]
 
     def _run_impl(self, inputs: dict[str, Any]) -> dict[str, Any]:
         m14 = inputs.get("motor_014", {})
@@ -526,6 +530,88 @@ class Motor033Adapter(BaseMotorAdapter):
                 # V10 P3 — corpus + regulatory evidence supporting this action
                 "industry_evidence": item.get("industry_evidence") or {},
             })
+
+        # ── V10 P4: TAD actions from proposed combinations activated by predicate ──
+        # Para cada combination activada por motor_054 con decision_implication,
+        # emite un TAD action específico. Aquí es donde el framework dice
+        # "DEFER hasta otoño", "BLOCK por compliance", etc.
+        try:
+            m54 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054"), dict) else {}
+            activation_register = m54.get("skill_combination_activation_register", []) or []
+            for combo in activation_register:
+                if not isinstance(combo, dict):
+                    continue
+                if combo.get("candidate_origin") != "framework_auto_proposed_pending":
+                    continue
+                impl = combo.get("decision_implication") or {}
+                action_code = (impl.get("action") or "").upper().strip()
+                if not action_code:
+                    continue
+                # Mapping V10 P4: action → TAD priority + posture
+                rank_bump = {
+                    "BLOCK_COMPLIANCE":     0,    # top priority
+                    "URGENT_COMPLIANCE":    0,    # top priority
+                    "DEFER_TO_WINDOW":      max(1, len(tad_action_plan) // 2),
+                    "INVESTIGATE_FIRST":    max(1, len(tad_action_plan) // 3),
+                    "ALTERNATIVE_VIABLE":   max(1, len(tad_action_plan) // 3),
+                    "INVESTIGATE_TOGETHER": max(1, len(tad_action_plan) // 2),
+                }.get(action_code, len(tad_action_plan))
+                posture_map = {
+                    "BLOCK_COMPLIANCE":     "no_go_compliance_violation",
+                    "URGENT_COMPLIANCE":    "act_now_compliance_deadline",
+                    "DEFER_TO_WINDOW":      "defer_to_seasonal_window",
+                    "INVESTIGATE_FIRST":    "evidence_blocker",
+                    "ALTERNATIVE_VIABLE":   "reconsider_design",
+                    "INVESTIGATE_TOGETHER": "joint_investigation",
+                }
+                title_map = {
+                    "BLOCK_COMPLIANCE":     "🛑 BLOQUEAR: ",
+                    "URGENT_COMPLIANCE":    "⚠ URGENTE COMPLIANCE: ",
+                    "DEFER_TO_WINDOW":      "📅 DIFERIR A VENTANA: ",
+                    "INVESTIGATE_FIRST":    "🔍 INVESTIGAR PRIMERO: ",
+                    "ALTERNATIVE_VIABLE":   "🔄 ALTERNATIVA VIABLE: ",
+                    "INVESTIGATE_TOGETHER": "🔗 INVESTIGAR JUNTOS: ",
+                }
+                action_title = title_map.get(action_code, "") + combo.get("combination_id", "")[:60]
+                windows = impl.get("allowed_windows") or []
+                evidence_needed = impl.get("alternative") or impl.get("note", "")[:120]
+                tad_action_plan.append({
+                    "rank":             1 + rank_bump,
+                    "case_id":          combo.get("combination_id"),
+                    "case_name":        combo.get("combined_hypothesis", "")[:80],
+                    "action_title":     action_title[:120],
+                    "action_family":    "compliance" if "COMPLIANCE" in action_code else "operational_window",
+                    "recommended_posture": posture_map.get(action_code, "defer"),
+                    "voi_score":        float(combo.get("confidence_score") or 0.85),
+                    "voi_score_original": float(combo.get("confidence_score") or 0.85),
+                    "effort_tier":      "immediate" if action_code in ("BLOCK_COMPLIANCE","URGENT_COMPLIANCE") else "high",
+                    "downside_profile": "compliance_exposure" if "COMPLIANCE" in action_code else "operational_impact",
+                    "irreversibility_profile": "reversible_if_caught_early",
+                    "burden_level":     "do_not_proceed" if action_code == "BLOCK_COMPLIANCE" else "validation_first",
+                    "decision_unlock":  "Apply allowed_window OR alternative_compliant" if windows else "Verify alternative path",
+                    "evidence_needed":  evidence_needed[:160],
+                    "claim_family":     "regulatory_compliance" if "COMPLIANCE" in action_code else "operational_window",
+                    "plausibility":     float(combo.get("confidence_score") or 0.85),
+                    "epistemic_gap":    0.0,
+                    "no_go_condition":  ", ".join(combo.get("consequence_if_ignored") or [])[:200],
+                    "sequencing_note":  f"Windows: {windows}" if windows else evidence_needed[:120],
+                    "industry_evidence": {
+                        "corpus_citation_count":  len(combo.get("industry_evidence",{}).get("corpus_citations",[])),
+                        "regulatory_basis_count": len(combo.get("industry_evidence",{}).get("regulatory_basis",[])),
+                    },
+                    # V10 P4 explicit fields
+                    "v10p4_decision_action":     action_code,
+                    "v10p4_proposal_method":     combo.get("proposal_method"),
+                    "v10p4_allowed_windows":     windows,
+                    "v10p4_alternative":         impl.get("alternative", ""),
+                    "v10p4_consequence_if_ignored": combo.get("consequence_if_ignored", []),
+                })
+            # Re-sort by rank ascending (lower rank = higher priority)
+            tad_action_plan.sort(key=lambda a: a.get("rank", 999))
+        except Exception as _exc:
+            import sys
+            print(f"[motor_033] V10P4 TAD wire skipped: {type(_exc).__name__}: {_exc}",
+                  file=sys.stderr)
 
         # ── Step 3: Blocking conflict resolution paths ─────────────────────────
         blocking_paths = []

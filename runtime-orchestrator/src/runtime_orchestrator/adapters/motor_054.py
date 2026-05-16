@@ -243,6 +243,107 @@ class Motor054Adapter(BaseMotorAdapter):
             # evidence_wire not available — combinations stay un-decorated,
             # downstream motors still work.
             pass
+
+        # ── V10 P4 — PROPOSED COMBINATIONS evaluation + activation ──
+        # Carga las candidates en combinations_pending/, evalúa sus
+        # context_predicates contra el caso real, y activa SOLO las que
+        # matchean. Las activadas se añaden al skill_combination_activation_register
+        # con su industry_evidence ya embebido (corpus_citations + reg_basis).
+        try:
+            import json as _json
+            from pathlib import Path as _Path
+            import datetime as _dt
+            from runtime_orchestrator.combination_proposer.predicate_evaluator import (
+                filter_pending_by_predicates as _filter_pending,
+            )
+            # Resolve asset_family (V10 P4 block, independent scope)
+            _m12_p4 = inputs.get("motor_012", {}) if isinstance(inputs.get("motor_012"), dict) else {}
+            _fp_p4  = _m12_p4.get("facility_prior", {}) if isinstance(_m12_p4, dict) else {}
+            _td_p4  = _fp_p4.get("target_definition") or {}
+            _af_p4  = ((_td_p4.get("target_type") if isinstance(_td_p4, dict) else None)
+                       or _fp_p4.get("asset_family") or _fp_p4.get("asset_type") or "").strip()
+            _m28_p4 = inputs.get("motor_028", {}) if isinstance(inputs.get("motor_028"), dict) else {}
+            _rd_p4  = _m28_p4.get("real_discovery_bundle", {}) if isinstance(_m28_p4, dict) else {}
+
+            # motor_054.py = …/src/runtime_orchestrator/adapters/motor_054.py
+            # parents[0]=adapters, [1]=runtime_orchestrator, [2]=src, [3]=runtime-orchestrator
+            _pdir = _Path(__file__).resolve().parents[3] / "zlab_skill" / "registry" / "combinations_pending"
+            if _pdir.exists() and _af_p4:
+                _all_pending = []
+                for _jp in _pdir.glob("*.json"):
+                    try:
+                        _all_pending.append(_json.loads(_jp.read_text(encoding="utf-8")))
+                    except Exception:
+                        continue
+                # Filter by asset_family (combination's asset_families includes
+                # this family OR is empty/wildcard)
+                _af_filter = [
+                    c for c in _all_pending
+                    if (not c.get("asset_families")) or
+                       _af_p4 in (c.get("asset_families") or [])
+                ]
+                # Filter by context_predicates against the real case
+                _matching, _ = _filter_pending(
+                    _af_filter,
+                    facility_prior=_fp_p4,
+                    real_discovery=_rd_p4,
+                    current_date=_dt.datetime.utcnow(),
+                )
+                # Filtra por patterns activos: la combination debe tener al menos
+                # un pattern del set activo
+                _active_set = set(skill_active_pattern_ids or [])
+                _activated = []
+                for _c in _matching:
+                    _pset = set(_c.get("pattern_set") or _c.get("pattern_ids") or [])
+                    if _pset and _pset & _active_set:
+                        _activated.append(_c)
+
+                # Append activated proposed_combinations al register existente.
+                # NO se mezclan con las approved en combinations/; se marcan
+                # explícitamente con candidate_origin = "framework_auto_proposed_pending"
+                for _c in _activated:
+                    _entry = {
+                        "combination_id":        _c.get("id"),
+                        "combination_name":      _c.get("id"),
+                        "pattern_ids":           list(_c.get("pattern_set") or []),
+                        "activation_state":      "ACTIVATED",
+                        "combined_hypothesis":   _c.get("combined_hypothesis", ""),
+                        "strategic_risk":        _c.get("strategic_risk", ""),
+                        "minimum_evidence":      [],
+                        "financial_exposure":    [],
+                        "tad_action":            _c.get("decision_implication", {}),
+                        "prohibited_claims":     [],
+                        "allowed_language":      [],
+                        "source_basis":          _c.get("regulatory_basis", []),
+                        "evidence_state_ceiling": "decision_grade",
+                        "adjudication_required": False,
+                        "validator_state":       "framework_proposed_pending_review",
+                        "matched_anti_triggers": [],
+                        "candidate_origin":      "framework_auto_proposed_pending",
+                        "preconditions_declared": _c.get("context_predicates", {}),
+                        "preconditions_state":   "matched_current_case",
+                        "preconditions_unbounded": False,
+                        # V10 P3 industry_evidence
+                        "industry_evidence":     {
+                            "corpus_citations":  _c.get("corpus_citations", []),
+                            "regulatory_basis":  _c.get("regulatory_basis", []),
+                            "support_score":     _c.get("confidence_score", 0.0),
+                        },
+                        # V10 P4 fields
+                        "proposal_method":       _c.get("proposal_method", ""),
+                        "decision_implication":  _c.get("decision_implication", {}),
+                        "consequence_if_ignored": _c.get("consequence_if_ignored", []),
+                        "confidence_score":      _c.get("confidence_score", 0.0),
+                    }
+                    skill_combination_activation_register.append(_entry)
+        except ImportError:
+            pass
+        except Exception as _exc:
+            # Never let the proposer break the pipeline — log via stderr
+            import sys
+            print(f"[motor_054] V10P4 proposer activation skipped: {type(_exc).__name__}: {_exc}",
+                  file=sys.stderr)
+
         skill_expanded_tad_action_register = build_registry_tad_action_register(
             combination_review_register=skill_combination_review_register,
             skill_pattern_activation_register=full_skill_pattern_activation_register,
