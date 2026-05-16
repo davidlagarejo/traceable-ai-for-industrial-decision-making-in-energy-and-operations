@@ -10032,7 +10032,13 @@ def api_serve_pdf(pdf_path: str):
     full = Path("/" + pdf_path)
     if not full.exists() or full.suffix.lower() != ".pdf":
         return jsonify({"error": "no encontrado"}), 404
-    return send_file(str(full), mimetype="application/pdf")
+    # ?download=1 → force browser download (Content-Disposition: attachment)
+    force_dl = (request.args.get("download") or "").lower() in ("1", "true", "yes")
+    return send_file(
+        str(full), mimetype="application/pdf",
+        as_attachment=force_dl,
+        download_name=full.name,
+    )
 
 
 @app.route("/api/open-pdf/<path:pdf_path>")
@@ -10704,6 +10710,7 @@ setInterval(_zlabUpdateReviewCounts, 30000);
         <button class="lang-btn active" id="pdf-lang-en" onclick="selectPdfLanguage('en')">EN</button>
         <button class="lang-btn" id="pdf-lang-es" onclick="selectPdfLanguage('es')">ES</button>
       </div>
+      <button class="btn-ext" id="btn-dl" onclick="downloadPdf()" style="display:none">⬇ Descargar</button>
       <button class="btn-ext" id="btn-ext" onclick="openPdfExt()" style="display:none">Abrir ↗</button>
     </div>
   </div>
@@ -13926,6 +13933,7 @@ function renderPdf(pdf, placeholderText='Sin reporte aún', variants={}){
   const frame=document.getElementById('pdf-frame');
   const ph=document.getElementById('pdf-ph');
   const ext=document.getElementById('btn-ext');
+  const dl=document.getElementById('btn-dl');
   currentPdfVariants=variants||{};
   if(currentPdfLanguage && !currentPdfVariants[currentPdfLanguage]){
     currentPdfLanguage=currentPdfVariants.en?'en':(Object.keys(currentPdfVariants)[0]||'en');
@@ -13939,6 +13947,7 @@ function renderPdf(pdf, placeholderText='Sin reporte aún', variants={}){
     frame.style.display='none';
     ph.style.display='flex';
     ext.style.display='none';
+    if(dl) dl.style.display='none';
     document.getElementById('pdf-title').textContent='Reporte generado';
     document.getElementById('pdf-title').className='pdf-empty';
     document.getElementById('pdf-sub').textContent=placeholderText;
@@ -13953,6 +13962,7 @@ function renderPdf(pdf, placeholderText='Sin reporte aún', variants={}){
   frame.src=`/api/serve-pdf/${activePdf.path.replace(/^\//,'')}`;
   frame.style.display='block'; frame.style.flex='1';
   ph.style.display='none'; ext.style.display='inline-block';
+  if(dl) dl.style.display='inline-block';
 }
 function selectPdfLanguage(language){
   if(!currentPdfVariants || !currentPdfVariants[language])return;
@@ -13961,6 +13971,18 @@ function selectPdfLanguage(language){
   renderPdf(liveData?.pdf||null,pdfPlaceholderFor(liveData||{}),currentPdfVariants);
 }
 function openPdfExt(){if(currentPdfPath)fetch('/api/open-pdf/'+currentPdfPath.replace(/^\//,''));}
+function downloadPdf(){
+  if(!currentPdfPath)return;
+  // Build URL with ?download=1 so backend sends Content-Disposition: attachment.
+  // Using a transient <a download> element triggers the browser save dialog.
+  const url='/api/serve-pdf/'+currentPdfPath.replace(/^\//,'')+'?download=1';
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=currentPdfPath.split('/').pop()||'reporte.pdf';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>a.remove(),100);
+}
 
 // ── Modal ──────────────────────────────────────────────────────
 function correr(){openModal('run');}
@@ -16355,6 +16377,12 @@ section.pdfpane .empty{flex:1;display:flex;align-items:center;justify-content:ce
         <button class="zoom-btn" onclick="changeZoom(-0.15)">−</button>
         <span id="zoom-label">100%</span>
         <button class="zoom-btn" onclick="changeZoom(+0.15)">+</button>
+        <button class="zoom-btn" id="curar-dl-btn" onclick="curarDownloadPdf()"
+                style="display:none;margin-left:10px;padding:4px 10px;
+                       background:#16a34a;color:#fff;border:0;border-radius:4px;
+                       font-weight:600;cursor:pointer;font-size:11px;">
+          ⬇ Descargar PDF
+        </button>
       </div>
     </div>
     <div class="empty" id="pdf-empty">Selecciona un caso para previsualizar el PDF.</div>
@@ -16856,6 +16884,21 @@ function changeZoom(delta) {
   if (pdfDoc) rerenderAllPages();
 }
 
+function curarDownloadPdf() {
+  // Trigger PDF download via the backend with ?download=1 so the browser
+  // gets Content-Disposition: attachment and shows its save dialog.
+  const url = window._curarPdfUrl || "";
+  if (!url) { alert("Aún no hay PDF para descargar."); return; }
+  const sep = url.includes("?") ? "&" : "?";
+  const dlUrl = url + sep + "download=1";
+  const a = document.createElement("a");
+  a.href = dlUrl;
+  a.download = window._curarPdfBasename || "reporte.pdf";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => a.remove(), 100);
+}
+
 async function loadPdf() {
   const area = $("pdf-render-area");
   area.innerHTML = "";
@@ -16876,13 +16919,19 @@ async function loadPdf() {
   }
   const data = await r.json();
   currentPdfPath = data.pdf_path || "";
+  // Stash the pdf_url and basename so curarDownloadPdf() can use them
+  window._curarPdfUrl = data.pdf_url || "";
+  window._curarPdfBasename = data.pdf_basename || "reporte.pdf";
   if (!currentPdfPath) {
     $("pdf-empty").style.display = "flex";
     area.style.display = "none";
+    const dlBtn = $("curar-dl-btn"); if (dlBtn) dlBtn.style.display = "none";
     return;
   }
   $("pdfhead-label").textContent = (data.pdf_basename || "PDF") + " · " + (data.language || "");
   $("pdf-empty").style.display = "none";
+  // Show download button now that we have a PDF
+  const dlBtn = $("curar-dl-btn"); if (dlBtn) dlBtn.style.display = "inline-block";
   // Hide any prior iframe fallback
   const iframeOld = $("pdf-iframe-fallback");
   if (iframeOld) iframeOld.style.display = "none";
@@ -17770,7 +17819,13 @@ def api_curation_run_pdf_file():
         return jsonify({"error": "PDF outside output/"}), 403
     if not abs_pdf.exists():
         return jsonify({"error": "PDF not on disk"}), 404
-    return send_file(str(abs_pdf), mimetype="application/pdf")
+    # ?download=1 → force browser download instead of inline view
+    force_dl = (request.args.get("download") or "").lower() in ("1", "true", "yes")
+    return send_file(
+        str(abs_pdf), mimetype="application/pdf",
+        as_attachment=force_dl,
+        download_name=abs_pdf.name,
+    )
 
 
 _REVISAR_PAGE_HTML = """<!doctype html>

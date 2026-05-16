@@ -1,0 +1,56 @@
+[
+  {
+    "decision_id": "efec0376-b47d-4c6e-85e1-21601749ba85",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-tenant-operator-boundary-unresolved-value-boundary-leakage-owner-operator::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "08ed016e-94e8-4f61-956e-04251a2c1f83",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-tenant-operator-boundary-unresolved-value-boundary-leakage-owner-operator::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "c5f2b6cc-7b55-47e3-a5a8-1ecfed2d5ff7",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-tenant-operator-boundary-unresolved-value-boundary-leakage-owner-operator::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "2564681f-8829-44b8-9a28-d1c9ce2fcac5",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-tenant-operator-boundary-unresolved-value-boundary-leakage-owner-operator::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "6ffadf86-dfa1-435a-8d72-38c990865667",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-tenant-operator-boundary-unresolved::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "7367c525-8fa1-48f6-89be-62460d8f0e32",
+    "run_id": "run:a3c0175af2874392",
+    "combination_id": "latent::hvac-schedule-drift-value-boundary-leakage-owner-operator::family-commercial-building-solar-unknown-ops-unknown-tariff-demand-sensitive-tariff-boundary-owner-operator-split-service-unknown",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  }
+]

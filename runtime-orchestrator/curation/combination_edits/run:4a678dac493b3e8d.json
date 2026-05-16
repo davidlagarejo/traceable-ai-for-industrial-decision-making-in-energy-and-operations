@@ -1,0 +1,20 @@
+[
+  {
+    "decision_id": "3e1e0458-078b-490d-a84a-58fd4fd318ff",
+    "run_id": "run:4a678dac493b3e8d",
+    "combination_id": "office_after_hours_phantom_load_combo",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  },
+  {
+    "decision_id": "4b4ca1ab-08f8-44b9-9d60-22b37054d866",
+    "run_id": "run:4a678dac493b3e8d",
+    "combination_id": "office_after_hours_phantom_load_combo",
+    "decision": "reject",
+    "modify_instruction": "",
+    "curator": "anonymous",
+    "metadata": {}
+  }
+]
