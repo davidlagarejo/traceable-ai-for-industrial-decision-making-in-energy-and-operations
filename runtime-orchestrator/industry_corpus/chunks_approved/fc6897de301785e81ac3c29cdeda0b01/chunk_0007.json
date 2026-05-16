@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0007",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39 5.3 BlendPATH Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42 5.4 Example Python Script . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43 6 Case Study . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45 7 Technical Support. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47 7.0.1 Known Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51 Appendix A . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 A.1 Default Sectionalizing Valve Installed Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 A.2 Default Meter Installed Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 A.3 Default In-Line Inspection Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "2525cb47311d2bf5bd2654660c75107e3eebfaf7bd3f7ef58a2990582b46a769",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

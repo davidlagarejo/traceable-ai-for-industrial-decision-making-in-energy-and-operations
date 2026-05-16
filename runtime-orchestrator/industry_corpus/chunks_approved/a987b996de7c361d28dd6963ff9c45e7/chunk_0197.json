@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0197",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "molar volume of gas (0.0240 m 3 /g-mole at 68 °F and 1 atm). Δt m = Length of time interval m (minutes). Each time interval in the FTIR sampling period must be less than or equal to 60 minutes (for example an 8 hour sampling period would consist of at least 8 time intervals). 1/10 3 = Conversion factor (1 kilogram/1,000 grams). k = Fluorinated GHG by-product gas. s = Stack system. N = Total number of time intervals m in sampling period. m = Time interval. ( A ) If a fluorinated GHG is consumed during the sampling period, but emissions are not detected, use one-half of the field detection limit you determined for that fluorinated GHG according to § 98.94(j)(2) for the value of “X ism ” in equation I-17 to this section. ( B ) If a fluorinated GHG is consumed during the sampling period and detected intermittently during the sampling period, use the detected concentration for the value of “X ism ” in equation I-17 to this section when available and use one-half of the field detection limit you determined for that fluorinated GHG according to § 98.94(j)(2) for the value of “X ism ” when the fluorinated GHG is not detected. ( C ) If an expected or possible by-product, as listed in table I-17 to this subpart, is detected intermittently during the sampling period, use the measured concentration for “X ksm ” in equation I-18 to this section when available and use one-half of the field detection limit you determined for that fluorinated GHG according to § 98.94(j)(2) for the value of “X ksm ” when the fluorinated GHG is not detected. ( D ) If a fluorinated GHG is not consumed during the sampling period and is an expected by-product gas as listed in table I-17 to this subpart and is not detected during the sampling period, use one-half of the field detection limit you determined for that fluorinated GHG according to § 98.94(j)(2) for the value of “X ksm ” in equation I-18 to this section. ( E ) If a fluorinated GHG is not consumed during the sampling period and is a possible by-product gas as listed in table I-17 to this subpart, and is not detected during the sampling period, then assume zero emissions for that fluorinated GHG for the tested stack system. ( iii ) You must calculate a fab-specific emission factor for each fluorinated GHG input gas consumed (in kg of fluorinated GHG emitted per kg of input gas i consumed) in the tools that vent to stack systems, as applicable, using equations I-19A and I-19B to this section or equations I-19A and I-19C to this section. Use equation I-19A to this section to calculate the controlled emissions for each carbon-containing fluorinated GHG that would result during the sampling period if the utilization rate for the input gas were equal to 0.2 (E imax,f ). If Σ s E i,s (the total measured emissions of the fluorinated GHG across all stack systems, calculated based on the results of",
+  "token_count": 511,
+  "text_sha": "5d850e2a74f79575578ffe6bc3285200c47428db171eb48556e04e3eeaceca56",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

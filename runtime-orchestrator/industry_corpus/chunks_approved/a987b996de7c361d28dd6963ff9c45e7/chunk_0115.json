@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0115",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "conditions in paragraph (b)(4)(iv)(A)(1) of this section or if the conditions in paragraph (b)(4)(iv)(A)(2) of this section are met. ( 1 ) At least one of the units meets the requirements of paragraphs (b)(4)(ii)(A) through (b)(4)(ii)(C) of this section, and the CEMS installed at the common stack (or duct) meet the requirements of paragraphs (b)(4)(ii)(D) through (b)(4)(ii)(F) of this section. ( 2 ) At least one of the units and the monitors installed at the common stack or duct meet the requirements of paragraph (b)(4)(iii) of this section. ( B ) The combined effluent gas streams from a process or manufacturing unit and a stationary fuel combustion unit are vented through a monitored common stack or duct. In this case, Tier 4 shall be used if the combustion unit and the monitors installed at the common stack or duct meet the applicability criteria specified in paragraph (b)(4)(iv)(A)( 1 ) , or (b)(4)(iv)(A)( 2 ) of this section. ( C ) The combined effluent gas streams from two or more manufacturing or process units are vented through a common stack or duct. In this case, if any of the units is required by an applicable subpart of this part to use Tier 4, the CO 2 mass emissions may be monitored at each individual unit, or the combined CO 2 mass emissions may be monitored at the common stack or duct. However, if it is not feasible to monitor the individual units, the combined CO 2 mass emissions shall be monitored at the common stack or duct. ( 5 ) The Tier 4 Calculation Methodology shall be used: ( i ) Starting on January 1, 2010, for a unit that is required to report CO 2 mass emissions beginning on that date, if all of the monitors needed to measure CO 2 mass emissions have been installed and certified by that date. ( ii ) No later than January 1, 2011, for a unit that is required to report CO 2 mass emissions beginning on January 1, 2010, if all of the monitors needed to measure CO 2 mass emissions have not been installed and certified by January 1, 2010. In this case, you may use Tier 2 or Tier 3 to report GHG emissions for 2010. However, if the required CEMS are certified some time in 2010, you need not wait until January 1, 2011 to begin using Tier 4. Rather, you may switch from Tier 2 or Tier 3 to Tier 4 as soon as CEMS certification testing is successfully completed. If this reporting option is chosen, you must document the change in CO 2 calculation methodology in the Monitoring Plan required under § 98.3(g)(5) and in the GHG emissions report under § 98.3(c) . Data recorded by the CEMS during a certification test period in 2010 may be used for reporting under this part, provided that the following two conditions are met: ( A ) The certification tests are passed in sequence, with no test failures. ( B ) No unscheduled maintenance or repair of the CEMS is performed",
+  "token_count": 511,
+  "text_sha": "bf194892b29e8d3f9e72e52d3da6bfc723d0e16af4d2a6069cf8c0e351bd925a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

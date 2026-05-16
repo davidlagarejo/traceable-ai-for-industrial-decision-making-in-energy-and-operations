@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0744",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "area containing waste and for which the methane flux rate b is greater than 70 g/m 2 /d 0.10 a Where a landfill is located in a state that does not have an intermediate or interim cover requirement, the landfill must have soil cover of 12 inches or greater in order to use an oxidation fraction of 0.25 or 0.35. b Methane flux rate (in grams per square meter per day; g/m 2 /d) is the mass flow rate of methane per unit area at the bottom of the surface soil prior to any oxidation and is calculated as follows: For equation HH-5 to § 98.343 , or for equation TT-6 to § 98.463 , MF = K × G CH4 /SArea For equation HH-6 to § 98.343 , For equation HH-7 to § 98.343 , For equation HH-8 to § 98.343 , Where: MF = Methane flux rate from the landfill in the reporting year (grams per square meter per day, g/m 2 /d). K = unit conversion factor = 10 6 /365 (g/metric ton per days/year) or 10 6 /366 for a leap year. SArea = The surface area of the landfill containing waste at the beginning of the reporting year (square meters, m 2 ). G CH4 = Modeled methane generation rate in reporting year from equation HH-1 to § 98.343 or equation TT-1 to § 98.463 , as applicable, except for application with equation HH-6 to § 98.343 (metric tons CH 4 ). For application with equation HH-6 to § 98.343 , the greater of the modeled methane generation rate in reporting year from equation HH-1 to § 98.343 or equation TT-1 to § 98.463 , as applicable, and the quantity of recovered CH 4 from equation HH-4 to § 98.343 (metric tons CH 4 ). CE = Collection efficiency estimated at landfill, taking into account system coverage, operation, measurement practices, and cover system materials from table HH-3 to this subpart. If area by soil cover type information is not available, use applicable default value for CE4 in table HH-3 to this subpart for all areas under active influence of the collection system. C = Number of landfill gas collection systems operated at the landfill. X = Number of landfill gas measurement locations associated with landfill gas collection system “c”. N = Number of landfill gas measurement locations (associated with a destruction device or gas sent off-site). If a single monitoring location is used to monitor volumetric flow and CH 4 concentration of the recovered gas sent to one or multiple destruction devices, then N = 1. Note that N = Σ c =1 C [Σ x =1 X [1]]. R x,c = Quantity of recovered CH 4 from equation HH-4 to § 98.343 for the x th measurement location for landfill gas collection system “c” (metric tons CH 4 ). R n = Quantity of recovered CH 4 from equation HH-4 to § 98.343 for the n th measurement location (metric tons CH 4 ). f Rec,c = Fraction of hours the landfill gas collection system “c”",
+  "token_count": 512,
+  "text_sha": "b7ddc45f74561a1efa5a6387cb29eff0fea3217210064c8676ced1442634f22d",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

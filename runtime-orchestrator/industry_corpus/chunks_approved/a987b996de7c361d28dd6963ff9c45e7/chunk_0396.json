@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0396",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "test point, you must use the emissions factor (determined in Equation V-1 of this section), the destruction efficiency (determined in paragraph (d) of this section), the annual nitric acid production (determined in paragraph (i) of this section), and the abatement utilization factor (determined in paragraph (e) of this section), according to Equation V-3c of this section: where: E N 2 Ot = Annual N 2 O mass emissions from nitric acid train “t” according to this Equation V-3c (metric tons). EF N2O,t = N 2 O emissions factor for nitric acid train “t” (lb N 2 O/ton nitric acid produced). P t = Annual nitric acid produced from nitric acid train “t” (ton acid produced, 100 percent acid basis). DF N = Destruction efficiency of N 2 O abatement technology “N” (decimal fraction of N 2 O removed from vent stream). AF N = Abatement utilization factor of N 2 O abatement technology “N” (decimal fraction of time that abatement technology “N” is operating). FC N = Fraction control factor of N 2 O abatement technology “N” (decimal fraction of total emissions from nitric acid train “t” that are sent to abatement technology “N”). 2205 = Conversion factor (lb/metric ton). N = Number of different N 2 O abatement technologies with a fraction control factor. ( 4 ) If nitric acid train “t” does not exhaust to any N 2 O abatement technology after the test point, you must use the emissions factor (determined in Equation V-1 of this section), and the annual nitric acid production (determined in paragraph (i) of this section) according to Equation V-3b of this section: where: E N 2 Ot = Annual N 2 O mass emissions from nitric acid train “t” according to this Equation V-3d (metric tons). EF N 2 Ot = Average site-specific N 2 O emissions factor for nitric acid train ”t” (lb N 2 O/ton acid produced, 100 percent acid basis). P t = Annual nitric acid production from nitric acid train “t” (ton acid produced, 100 percent acid basis). 2205 = Conversion factor (lb/metric ton). ( h ) You must determine the annual nitric acid production emissions combined from all nitric acid trains at your facility using Equation V-4 of this section: Where: N 2 O = Annual process N 2 O emissions from nitric acid production facility (metric tons). E N 2 Ot = N 2 O mass emissions per year for nitric acid train “t” (metric tons). m = Number of nitric acid trains. ( i ) You must determine the total annual amount of nitric acid produced on each nitric acid train “t” (tons acid produced, 100 percent acid basis), according to § 98.224(f) . [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 66466 , Oct. 28, 2010; 78 FR 71959 , Nov. 29, 2013; 81 FR 89260 , Dec. 9, 2016] § 98.224 Monitoring and QA/QC requirements. ( a ) You must conduct a new performance test according to a test plan as specified in paragraphs (a)(1) through (3) of this section.",
+  "token_count": 512,
+  "text_sha": "ac29374444ed906b746650729722482702d70875c7059ece76cd819ad985cd6b",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

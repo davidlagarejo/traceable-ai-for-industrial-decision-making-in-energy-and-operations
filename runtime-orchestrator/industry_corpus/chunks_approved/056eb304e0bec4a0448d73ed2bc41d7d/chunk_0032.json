@@ -1,0 +1,15 @@
+{
+  "chunk_id": "056eb304::chunk_0032",
+  "source_id": "doe_osti_3031192",
+  "source_sha": "056eb304e0bec4a0448d73ed2bc41d7d",
+  "source_url": "https://www.osti.gov/servlets/purl/3031192",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "HBURC to INL for R&D Sprung, J.L.; D.J. Ammerman; N.L. Breivik; R.J. Dukart; F.L. Kanipe; J.A. Koski; G.S. Mills; K.S. Neuhauser; H.D. Radloff; R.F. Weiner; H.R. Yoshimura 2000. Reexamination of Spent Fuel Shipment Risk Estimates. NUREG/CR-6672. March 2000. Available online: https://ww2.nrc.gov/reading-rm/doc-collections/nuregs/contract/cr6672/index. DOE/EIS-0203-SA-10 31 April 2026",
+  "token_count": 45,
+  "text_sha": "708d9da27d0edc34363bad70fdfb8d8419a0aed88c194eb8064d3cb333b8d30b",
+  "extracted_at": "2026-05-16T00:13:22.550385Z"
+}

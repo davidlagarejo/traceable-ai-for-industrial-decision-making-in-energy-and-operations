@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fdbacf6b::chunk_0052",
+  "source_id": "doe_osti_3029675",
+  "source_sha": "fdbacf6b4fdf41780ad3929d82f5b78d",
+  "source_url": "https://www.osti.gov/servlets/purl/3029675",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "National Laboratory of the Rockies is a national laboratory of 303-275-3000 • www.nlr.gov the U.S. Department of Energy, Office of Critical Minerals and Energy Innovation, operated under Contract No. DE-AC36-08GO28308. The National Laboratory of the Rockies prints on paper that contains recycled content. NLR/BR-2C00-99402 • April 2026",
+  "token_count": 47,
+  "text_sha": "7fe28892d9cbe1f392ac766d7298e0f72ef0ad603dbcf830247e438d5204d074",
+  "extracted_at": "2026-05-16T00:00:24.340221Z"
+}

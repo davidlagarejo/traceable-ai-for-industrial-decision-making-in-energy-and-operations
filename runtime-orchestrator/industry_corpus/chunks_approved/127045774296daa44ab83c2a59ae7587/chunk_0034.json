@@ -1,0 +1,14 @@
+{
+  "chunk_id": "12704577::chunk_0034",
+  "source_id": "doe_osti_2572467",
+  "source_sha": "127045774296daa44ab83c2a59ae7587",
+  "source_url": "https://www.osti.gov/servlets/purl/2572467",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "number concentration of WT cultures over the course of the 8-day pond culture growth. N=3, error bars = stdev. 48 0.75 0.70 0.65 m F v/ F 0.60 0.55 0.50 0 2 4 6 8 10 Time, days Figure 3-19. Maximum photochemical quantum yields of photosystem II (Fv/Fm) of WT cultures over the course of the 8-day pond culture growth. Cultures were dark adapted for 30 min. N=3, error bars = stdev. 1.8 1.6 1.4 1.2 ) L g/ 1.0 ( s s 0.8 a m o 0.6 Bi 0.4 0.2 0.0 0 2 4 6 8 10 Time, days Figure 3-20. Biomass of WT cultures over the course of the 8-day pond culture growth. Biomass was quantified after lyophilization for 48 h. N=3, error bars = stdev. 49 1.4 Average 1.2 Maximum 1 - d e 1.0 at r h 0.8 wt o g r 0.6 c cifi e 0.4 p S 0.2 0.0 O D 7 5 0 C ell s/ ml C hl a/ ml s s ( g/ L/ ) C ( m g/ L ) m a O P Bi o N Figure 3-21. Maximum and global specific growth rates WT cultures over the course of the 8-day pond culture growth. Specific growth rates were calculated as ln(y1- y0/x1-x0). N=3, error bars = stdev. 10.0 9.5 9.0 H 8.5 p 8.0 7.5 Col 1 vs pH2 Col 1 vs pH3 Col 1 vs pH4 7.0 0 2 4 6 8 Time, days Figure 3-22. pH of WT cultures over the course of the 8-day pond culture growth. 2, 3 and 4 denote separate ponds used for culturing. 50 30 C) o e ( 25 ur at er p m e 20 T Col 1 vs Temp2 15 Col 1 vs Temp3 Col 1 vs Temp4 0 2 4 6 8 Time, days Figure 3-23. Temperature (°C) of WT cultures over the course of the 8-day pond culture growth. 2, 3 and 4 denote separate ponds used for culturing. 5.0 4.5 n 4.0 e g y x O d 3.5 e v ol s s Di 3.0 2.5 Col 1 vs DO2 Col 1 vs DO3 Col 1 vs DO4 2.0 0 2 4 6 8 Time, days Figure 3-24. Dissolved oxygen of WT cultures over the course of the 8-day pond culture growth. 2, 3 and 4 denote separate ponds used for culturing. 51 Figure 3-25. Schematic design of the algae cultivation on fermenter off gas. Figure 3-26. Algae cultivation at New Belgium Brewing. Left: day 0; Right: day 7 Figure 3-27. The growth of wild-type N. oceanica (strain CCAP 849/10) in 500 mL flasks at NBB. Treatment: fermentation off-gas; Reference: Pure CO . 2 52 Subtask 3.4: Engineering process modeling Milestone 3.4.1: Set baseline cost and sustainability metrics for system and process performance with respect to energy and mass balance using at least two integrated potential conceptual integrations of CO delivery and biomass productivity 2 improvements. One of the main previously identified gaps in terms of data for the assessment work was the need",
+  "token_count": 510,
+  "text_sha": "9be8acb797a79689c3a6513562794c7f3d72a448f0a4258a25b7227066f5991d",
+  "extracted_at": "2026-05-16T00:01:00.749235Z"
+}

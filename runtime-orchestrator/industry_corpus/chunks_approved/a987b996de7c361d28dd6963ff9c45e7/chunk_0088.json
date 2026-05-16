@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0088",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "100-Year Time Horizon Name CAS No. Chemical formula Global warming potential (100 yr.) Chemical-Specific GWPs Carbon dioxide 124-38-9 CO 2 1 Methane 74-82-8 CH 4 a d 28 Nitrous oxide 10024-97-2 N 2 O a d 265 Fully Fluorinated GHGs Sulfur hexafluoride 2551-62-4 SF 6 a d 23,500 Trifluoromethyl sulphur pentafluoride 373-80-8 SF 5 CF 3 d 17,400 Nitrogen trifluoride 7783-54-2 NF 3 d 16,100 PFC-14 (Perfluoromethane) 75-73-0 CF 4 a d 6,630 PFC-116 (Perfluoroethane) 76-16-4 C 2 F 6 a d 11,100 PFC-218 (Perfluoropropane) 76-19-7 C 3 F 8 a d 8,900 Perfluorocyclopropane 931-91-9 c-C 3 F 6 d 9,200 PFC-3-1-10 (Perfluorobutane) 355-25-9 C 4 F 10 a d 9,200 PFC-318 (Perfluorocyclobutane) 115-25-3 c-C 4 F 8 a d 9,540 Perfluorotetrahydrofuran 773-14-8 c-C 4 F 8 O e 13,900 PFC-4-1-12 (Perfluoropentane) 678-26-2 C 5 F 12 a d 8,550 PFC-5-1-14 (Perfluorohexane, FC-72) 355-42-0 C 6 F 14 a d 7,910 PFC-6-1-12 335-57-9 C 7 F 16 ; CF 3 (CF 2 ) 5 CF 3 b 7,820 PFC-7-1-18 307-34-6 C 8 F 18 ; CF 3 (CF 2 ) 6 CF 3 b 7,620 PFC-9-1-18 306-94-5 C 10 F 18 d 7,190 PFPMIE (HT-70) NA CF 3 OCF(CF 3 )CF 2 OCF 2 OCF 3 d 9,710 Perfluorodecalin (cis) 60433-11-6 Z-C 10 F 18 b d 7,240 Perfluorodecalin (trans) 60433-12-7 E-C 10 F 18 b d 6,290 Perfluorotriethylamine 359-70-6 N(C 2 F 5 ) 3 e 10,300 Perfluorotripropylamine 338-83-0 N(CF 2 CF 2 CF 3 ) 3 e 9,030 Perfluorotributylamine 311-89-7 N(CF 2 CF 2 CF 2 CF 3 ) 3 e 8,490 Perfluorotripentylamine 338-84-1 N(CF 2 CF 2 CF 2 CF 2 CF 3 ) 3 e 7,260 Saturated Hydrofluorocarbons (HFCs) With Two or Fewer Carbon-Hydrogen Bonds (4s,5s)-1,1,2,2,3,3,4,5-octafluorocyclopentane 158389-18-5 trans-cyc (-CF2CF2CF2CHFCHF-) e 258 HFC-23 75-46-7 CHF 3 a d 12,400 HFC-32 75-10-5 CH 2 F 2 a d 677 HFC-125 354-33-6 C 2 HF 5 a d 3,170 HFC-134 359-35-3 C 2 H 2 F 4 a d 1,120 HFC-134a 811-97-2 CH 2 FCF 3 a d 1,300 HFC-227ca 2252-84-8 CF 3 CF 2 CHF 2 b 2,640 HFC-227ea 431-89-0 C 3 HF 7 a d 3,350 HFC-236cb 677-56-5 CH 2 FCF 2 CF 3 d 1,210 HFC-236ea 431-63-0 CHF 2 CHFCF 3 d 1,330 HFC-236fa 690-39-1 C 3 H 2 F 6 a d 8,060 HFC-329p 375-17-7 CHF 2 CF 2 CF 2 CF 3 b 2360 HFC-43-10mee 138495-42-8 CF 3 CFHCFHCF 2 CF 3 a d 1,650 Saturated Hydrofluorocarbons (HFCs) With Three or More Carbon-Hydrogen Bonds 1,1,2,2,3,3-hexafluorocyclopentane 123768-18-3 cyc (-CF 2 CF 2 CF 2 CH 2 CH 2 -) e 120 1,1,2,2,3,3,4-heptafluorocyclopentane 15290-77-4 cyc (-CF 2 CF 2 CF 2 CHFCH 2 -) e 231 HFC-41 593-53-3 CH 3 F a d 116 HFC-143 430-66-0 C 2 H 3 F 3 a d 328 HFC-143a 420-46-2 C 2 H 3 F 3 a d 4,800 HFC-152 624-72-6 CH 2 FCH 2 F d 16 HFC-152a 75-37-6 CH 3 CHF 2 a d 138 HFC-161 353-36-6 CH 3 CH 2 F d 4 HFC-245ca 679-86-7 C 3 H",
+  "token_count": 512,
+  "text_sha": "1e3d482420ad2425ac23e1c281f816dc0ec288f2778932f46fba654bdd49ffca",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

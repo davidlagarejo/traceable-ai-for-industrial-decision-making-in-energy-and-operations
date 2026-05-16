@@ -1,0 +1,15 @@
+{
+  "chunk_id": "77b23de8::chunk_0042",
+  "source_id": "doe_osti_3015900",
+  "source_sha": "77b23de87db41c88fc805040a0a2510f",
+  "source_url": "https://www.osti.gov/servlets/purl/3015900",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Brook Energy Hampden ME 9 139,023 Global Partners Portland ME 12 662,619 Irving Oil Searsport ME 14 1,352,000 Sprague Energy Searsport ME 12 887,736 Irving Oil Portsmouth NH 20 551,826 Sprague Energy Newington (River Road) NH 29 1,122,283 Global Partners East Providence RI 10 959,730 Global Partners Providence RI 4 480,000 Inland Fuel Terminal Tiverton RI 9 619,048 Sprague Energy East Providence RI 10 917,334 Sprague Energy Providence RI 5 458,102 Global Partners Burlington VT 15 423,000 52 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 95,
+  "text_sha": "2eaa5a0bdcd4b0736cf42f6610f6f21af3bb6fa1a9353a510ab010a11cae36cf",
+  "extracted_at": "2026-05-16T00:07:30.475251Z"
+}

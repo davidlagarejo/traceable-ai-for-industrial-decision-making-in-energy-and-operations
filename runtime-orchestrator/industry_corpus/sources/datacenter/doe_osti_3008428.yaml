@@ -1,0 +1,11 @@
+source_id: doe_osti_3008428
+title: "Clean Water Production in Cooling Towers"
+url: https://www.osti.gov/servlets/purl/3008428
+license: public_domain
+publisher: doe_osti
+version: "2025-09-30"
+added_at: "2026-05-16T00:00:01.346688Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 01 COAL, LIGNITE, AND PEAT, 03 NATURAL GAS, 15 GEOTHERMAL ENERGY, 20 FOSSIL-FUELED POWER PLANTS, 42 ENGINEERING"
+asset_families:
+  - datacenter

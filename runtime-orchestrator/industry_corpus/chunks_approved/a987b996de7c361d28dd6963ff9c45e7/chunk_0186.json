@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0186",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "= Factor accounting for fluorinated heat transfer fluid emissions, estimated as 10 percent of total annual production process emissions at a semiconductor facility. Set equal to 1.1 when equation I-4 to this section is used to calculate total annual production process emissions from semiconductor manufacturing. Set equal to 1 when equation I-4 to this section is used to calculate total annual production process emissions from MEMS, LCD, or PV manufacturing. E i = Annual production process emissions of gas i for threshold applicability purposes (metric tons CO 2 e), as calculated in equations I-1a, I-1b, I-2a, I-2b, or I-3 to this section. i = Emitted gas. ( b ) You must calculate annual manufacturing capacity of a facility using equation I-5 to this section. Where: S = 100 percent of annual manufacturing capacity of a facility (m 2 ). W X = Maximum substrate starts of fab f in month x (m 2 per month). x = Month. [ 75 FR 74818 , Dec. 1, 2010, as amended at 77 FR 10380 , Feb. 22, 2012; 78 FR 68202 , Nov. 13, 2013; 89 FR 31905 , Apr. 25, 2024] § 98.92 GHGs to report. ( a ) You must report emissions of fluorinated GHGs (as defined in § 98.6 ), N 2 O, and fluorinated heat transfer fluids (as defined in § 98.6 ). The fluorinated GHGs and fluorinated heat transfer fluids that are emitted from electronics manufacturing production processes include, but are not limited to, those listed in table I-21 to this subpart. You must individually report, as appropriate: ( 1 ) Fluorinated GHGs emitted. ( 2 ) - ( 3 ) [Reserved] ( 4 ) N 2 O emitted from chemical vapor deposition and other electronics manufacturing processes. ( 5 ) Emissions of fluorinated heat transfer fluids. ( 6 ) All fluorinated GHGs and N 2 O consumed. ( b ) CO 2 , CH 4 , and N 2 O combustion emissions from each stationary combustion unit. You must calculate and report these emissions under subpart C of this part (General Stationary Fuel Combustion Sources) by following the requirements of subpart C of this part . [ 75 FR 74818 , Dec. 1, 2010, as amended at 77 FR 10380 , Feb. 22, 2012; 78 FR 68202 , Nov. 13, 2013; 89 FR 31907 , Apr. 25, 2024] § 98.93 Calculating GHG emissions. ( a ) You must calculate total annual emissions of each fluorinated GHG emitted by electronics manufacturing production processes from each fab (as defined in § 98.98 ) at your facility, including each input gas and each by-product gas. You must use either default gas utilization rates and by-product formations rates according to the procedures in paragraph (a)(1) , (2) , (6) , or (7) of this section, as appropriate, or the stack test method according to paragraph (i) of this section, to calculate emissions of each input gas and each by-product gas. ( 1 ) If you manufacture semiconductors, you must adhere to the procedures in paragraphs (a)(1)(i) through (iii) of",
+  "token_count": 509,
+  "text_sha": "4836031eea7d7b80406d4ca1f2a82ad1adc609c56cec0050b92089a925950d83",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

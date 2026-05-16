@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0121",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "is CaCO 3 and the targeted acid gas species is SO 2 ). MW CO2 = Molecular weight of carbon dioxide (44). MW S = Molecular weight of sorbent (100 if calcium carbonate). 0.91 = Conversion factor from short tons to metric tons. ( 2 ) The total annual CO 2 mass emissions reported for the unit shall include the CO 2 emissions from the combustion process and the CO 2 emissions from the sorbent. ( e ) Biogenic CO 2 emissions from combustion of biomass with other fuels. Use the applicable procedures of this paragraph (e) to estimate biogenic CO 2 emissions from units that combust a combination of biomass and fossil fuels ( i.e., either co-fired or blended fuels). Separate reporting of biogenic CO 2 emissions from the combined combustion of biomass and fossil fuels is required for those biomass fuels listed in table C-1 to this subpart, MSW, and tires. In addition, when a biomass fuel that is not listed in table C-1 to this subpart is combusted in a unit that has a maximum rated heat input greater than 250 mmBtu/hr, if the biomass fuel accounts for 10% or more of the annual heat input to the unit, and if the unit does not use CEMS to quantify its annual CO 2 mass emissions, then, pursuant to paragraph (b)(3)(iii) of this section, Tier 3 must be used to determine the carbon content of the biomass fuel and to calculate the biogenic CO 2 emissions from combustion of the fuel. Notwithstanding these requirements, in accordance with § 98.3(c)(12) , separate reporting of biogenic CO 2 emissions is optional for the 2010 reporting year for units subject to subpart D of this part and for units that use the CO 2 mass emissions calculation methodologies in part 75 of this chapter , pursuant to paragraph (a)(5) of this section. However, if the owner or operator opts to report biogenic CO 2 emissions separately for these units, the appropriate method(s) in this paragraph (e) shall be used. ( 1 ) You may use equation C-1 to this section to calculate the annual CO 2 mass emissions from the combustion of the biomass fuels listed in table C-1 to this subpart, in a unit of any size, including units equipped with a CO 2 CEMS, except when the use of Tier 2 is required as specified in paragraph (b)(1)(iv) of this section. Determine the quantity of biomass combusted using one of the following procedures in this paragraph (e)(1) , as appropriate, and document the selected procedures in the Monitoring Plan under § 98.3(g) : ( i ) Company records. ( ii ) The procedures in paragraph (e)(4) of this section. ( iii ) The best available information for premixed fuels that contain biomass and fossil fuels ( e.g., liquid fuel mixtures containing biodiesel). ( 2 ) You may use the procedures of this paragraph if the following three conditions are met: First, a CO 2 CEMS (or a surrogate O 2 monitor) and a stack gas flow rate monitor are used to",
+  "token_count": 512,
+  "text_sha": "67c413fb690283834ab84ac7feb1c85420f2ca150acc8b45f6edef5be8c83953",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

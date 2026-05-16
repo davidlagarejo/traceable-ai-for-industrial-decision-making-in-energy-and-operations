@@ -1,0 +1,14 @@
+{
+  "chunk_id": "988f9181::chunk_0024",
+  "source_id": "doe_osti_3362875",
+  "source_sha": "988f9181696b601f54ce86811f60c735",
+  "source_url": "https://www.osti.gov/servlets/purl/3362875",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "33 Sandia National Laboratories is a multimission laboratory managed and operated by National Technology & Engineering Solutions of Sandia LLC, a wholly owned subsidiary of Honeywell International Inc. for the U.S. Department of Energy’s National Nuclear Security Administration under contract DE-NA0003525.",
+  "token_count": 41,
+  "text_sha": "365f7c8bd06bf5ba93552d8886cec871b6e635fd71e3ea6981e6b876a2ec7d3a",
+  "extracted_at": "2026-05-16T00:07:11.575940Z"
+}

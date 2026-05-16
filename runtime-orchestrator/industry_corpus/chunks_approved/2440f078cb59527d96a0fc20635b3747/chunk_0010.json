@@ -1,0 +1,14 @@
+{
+  "chunk_id": "2440f078::chunk_0010",
+  "source_id": "doe_osti_2584245",
+  "source_sha": "2440f078cb59527d96a0fc20635b3747",
+  "source_url": "https://www.osti.gov/servlets/purl/2584245",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "0 0 .mhOm 2 0 0 [ ecn 1 0 0 adepm 0 i Screen – reference G ravure / R 2R Sp ray / ec C ell resistan ce at 1 A /cm 2 and 400 b ar [m O hm .cm 2 ] nat EIS lo w freq uen cy Zreal intercept @ 1 A /cm 2 an d 400 bar [m O h m .cm 2] sise EIS high frequ ency Zreal in tercep t @ 1A /cm 2 an d 400 bar [m O h m .cm 2] R EIS Ch arge transfer resistan ce @ 1A /cm 2 an d 400 bar [m O h m .cm 2] Goal: W hich sam ple w ill lead to a higher current density in a IV curve? Results: This graph show s the IV curve m easured at 400 bar. 1. A higher current density can be reached w hen sprayed electrodes are used. 2. A slightly higher current density, com pared to the reference, can be reached w hen only 1 sprayed GDE is used. 3. The use of rod coated GDEs did lead to a low er current density com pared to the reference. Conclusion and discussion: ● The spayed electrodes perform the best in a IV curve. Probably due to a low er charge transfer resistance. ● The m axim um current density w hen only 1 sprayed GDE is used is only slightly higher com pared to the reference. Probably because the charge transfer resistance is low er than the reference but higher than the fully sprayed M EA’s. Goal: W hich deposition m ethod will lead to the highest active area? Results: This graph shows the active area of the anode and cathode. 1. A higher active area can be reached by using sprayed GDE. 2. The M EA with a rod coated sam ple with catalyst type 2 had a higher cathode active area. 3. The active area on the anode is higher in every different sam ple com pared to the anode. Conclusion and discussion: ● Spray coating seem s to be the best deposition m ethod to achieve the best active area. ● The resistance of the reference M EA and the M EA with rod coated GDE’s (catalyst type 2) are sim ilar. But the active area of the cathode is higher with the rod coated sam ple. Is it due to the deposition m ethod or som ething else? ● The active area on the anode is higher in every different sam ple com pared to the anode. Probably due to the com pression step. (a) (b) (c) Task 4: Specification of a manufacturing Line (HyET + NREL) Using its experience with R2R equipment and fabrication of MEA materials and based on its work and results in Tasks 1 and 2, NREL will assist HyET in the design and specification of a manufacturing line for the high-volume production of its MEAs. NREL will specifically provide inputs relative to electrode coating and quality inspection devices and integration.",
+  "token_count": 509,
+  "text_sha": "dc9a2a88e0d4645e42a70f7b2e644c7ad976921eae6309a9b44b1339f243d822",
+  "extracted_at": "2026-05-15T23:58:26.462209Z"
+}

@@ -1,0 +1,11 @@
+source_id: us_federal_10_cfr_0433
+title: "DOE Energy Efficiency Standards — New Federal Commercial"
+url: https://www.ecfr.gov/current/title-10/part-433
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:09.411077Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 52 §-marked sections. 56,797 chars."
+asset_families:
+  - commercial_building

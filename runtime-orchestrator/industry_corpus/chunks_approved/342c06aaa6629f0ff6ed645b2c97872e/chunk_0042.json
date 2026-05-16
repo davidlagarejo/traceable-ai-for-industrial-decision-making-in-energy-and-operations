@@ -1,0 +1,14 @@
+{
+  "chunk_id": "342c06aa::chunk_0042",
+  "source_id": "doe_osti_3028166",
+  "source_sha": "342c06aaa6629f0ff6ed645b2c97872e",
+  "source_url": "https://www.osti.gov/servlets/purl/3028166",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Attila; Nyborg, Rolf and Drageset, Audun, Assessment of Erosion-Corrosion as Possible Failure Mechanism of Reboiler at Technology Centre Mongstad (November 14, 2022). Proceedings of the 16th Greenhouse Gas Control Technologies Conference (GHGT- 16) 23-24 Oct, 2022. ION Clean Energy 43",
+  "token_count": 40,
+  "text_sha": "0606a43fc68a1b0fc5359836a2b0f57839e5cdf5743d4a0e3a73e1f5e8a3daed",
+  "extracted_at": "2026-05-15T23:55:03.014068Z"
+}

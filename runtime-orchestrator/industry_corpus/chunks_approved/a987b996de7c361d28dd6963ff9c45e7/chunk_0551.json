@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0551",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "segments, a different name or ID may be used for a single dehydrator for each location it operates at in a given year. ( ii ) Dehydrator feed natural gas flow rate, in million standard cubic feet per day. ( iii ) Dehydrator feed natural gas water content, in pounds per million standard cubic feet. ( iv ) Dehydrator outlet natural gas water content, in pounds per million standard cubic feet. ( v ) Dehydrator absorbent circulation pump type ( e.g. , natural gas pneumatic, air pneumatic, or electric). ( vi ) Dehydrator absorbent circulation rate, in gallons per minute. ( vii ) Type of absorbent ( e.g. , triethylene glycol (TEG), diethylene glycol (DEG), or ethylene glycol (EG)). ( viii ) Whether stripping gas is used in dehydrator. ( ix ) Whether a flash tank separator is used in dehydrator. ( x ) Total time the dehydrator is operating during the year, in hours. ( xi ) Temperature of the wet natural gas at the absorber inlet, in degrees Fahrenheit. ( xii ) Pressure of the wet natural gas at the absorber inlet, in pounds per square inch gauge. ( xiii ) Mole fraction of CH 4 in wet natural gas. ( xiv ) Mole fraction of CO 2 in wet natural gas. ( xv ) Well-pad ID (for the onshore petroleum and natural gas production industry segment only) or gathering and boosting site ID (for the onshore petroleum and natural gas gathering and boosting industry segment only). ( xvi ) If a flash tank separator is used in the dehydrator, then you must report the information specified in paragraphs (e)(1)(xvi)(A) through (F) of this section for the emissions from the flash tank vent, as applicable. If flash tank emissions were routed to a regenerator firebox/fire tubes, then you must also report the information specified in paragraphs (e)(1)(xvi)(G) through (I) of this section for the combusted emissions from the flash tank vent. ( A ) Whether any flash gas emissions are vented directly to the atmosphere, routed to a flare, routed to the regenerator firebox/fire tubes, routed to a vapor recovery system, used as stripping gas, or any combination. ( B ) Annual CO 2 emissions, in metric tons CO 2 , from the flash tank when not routed to a flare or regenerator firebox/fire tubes, calculated according to § 98.233(e)(1) and, if applicable, (e)(4). ( C ) Annual CH 4 emissions, in metric tons CH 4 , from the flash tank when not routed to a flare or regenerator firebox/fire tubes, calculated according to § 98.233(e)(1) and, if applicable, (e)(4). ( D ) Annual CO 2 emissions, in metric tons CO 2 , that resulted from routing flash gas to a regenerator firebox/fire tubes, calculated according to § 98.233(e)(5) . ( E ) Annual CH 4 emissions, in metric tons CH 4 , that resulted from routing flash gas to a regenerator firebox/fire tubes, calculated according to § 98.233(e)(5) . ( F ) Annual N 2 O emissions, in metric tons N 2 O, that resulted",
+  "token_count": 508,
+  "text_sha": "5777b391c8914b4a25de0a66d4dcf56d3ef6d11753501c67661606f7adb117f0",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

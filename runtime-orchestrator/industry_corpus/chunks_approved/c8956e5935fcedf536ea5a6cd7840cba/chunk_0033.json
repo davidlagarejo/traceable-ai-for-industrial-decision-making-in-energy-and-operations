@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c8956e59::chunk_0033",
+  "source_id": "doe_osti_2586884",
+  "source_sha": "c8956e5935fcedf536ea5a6cd7840cba",
+  "source_url": "https://www.osti.gov/servlets/purl/2586884",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "period is 10,000 kg. Total Energy Used=5×2.5=12.5 kWh Energy Consumption per kg=12.5/10,000=0.00125 kWh/kg Thus, the energy consumption is 0.00125 kWh/kg (or 1.25 Wh/kg). Taking into account the practical operation considerations and inefficiency and onboard power consumption, a fact 2 was used. Hence the energy consumption is 0.0025 kWh/kg. 42",
+  "token_count": 49,
+  "text_sha": "1b7449b7c3ddec08054e4089684db20ed005743050f54bcedbfe640dc7bc09c7",
+  "extracted_at": "2026-05-16T00:07:02.543104Z"
+}

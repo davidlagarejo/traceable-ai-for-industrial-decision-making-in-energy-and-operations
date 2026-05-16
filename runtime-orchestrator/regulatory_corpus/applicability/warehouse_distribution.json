@@ -1,0 +1,243 @@
+{
+  "ran_at": "2026-05-16T00:16:06.957873Z",
+  "asset_family": "warehouse_distribution",
+  "regulations": [
+    {
+      "citation": "1362-1998",
+      "title": "1362-1998",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2574895"
+      ],
+      "sample_snippets": [
+        "ation technology – system definition – concept of operations (ConOps) document. IEEE Std 1362-1998. http://dx.doi.org/10.1109/IEEESTD.1998.89424. Final Technical Report 57/57",
+        "ation technology – system definition – concept of operations (ConOps) document. IEEE Std 1362-1998. http://dx.doi.org/10.1109/IEEESTD.1998.89424. Final Technical Report 57/57",
+        "ation technology – system definition – concept of operations (ConOps) document. IEEE Std 1362-1998. http://dx.doi.org/10.1109/IEEESTD.1998.89424. Final Technical Report 57/57"
+      ]
+    },
+    {
+      "citation": "energy independence and security act",
+      "title": "Energy Independence And Security Act",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "_shared",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2524558",
+        "doe_osti_3362642"
+      ],
+      "sample_snippets": [
+        "................................................. 4 Figure 4. RFS comparison of Energy Independence and Security Act renewable volume obligation and RIN volumes. ..................................",
+        "................................................. 4 Figure 4. RFS comparison of Energy Independence and Security Act renewable volume obligation and RIN volumes. ..................................",
+        "d. The RFS originated with the Energy Policy Act of 2005 and expanded under the Energy Independence and Security Act of 2007 (U.S. Congress 2007). The RFS established biofuels volumes increasing a"
+      ]
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "tions or phrases (eg: suggestions#fillExample\" class=\"example badge badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 sugges",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\"",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\""
+      ]
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_29_cfr_1910",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "eCFR :: 29 CFR Part 1910 -- Occupational Safety and Health Standards { \"imports\": { \"application\": \"/ass",
+        "Content - Details URL https://www.ecfr.gov/current/title-29/part-1910 Citation 29 CFR Part 1910 Agency Occupational Safety and Health Administration, Department of Labor Part",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 29 CFR Part 1910 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 29 1911",
+      "title": "Cfr 29 1911",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "), 1-2012 ( 77 FR 3912 ), 08-2020 ( 85 FR 58393 ), or 07-2025 ( 90 FR 27878 ); 29 CFR part 1911 ; and 5 U.S.C. 553 , as applicable. Source: 39 FR 23502 , June 27, 1974, unless",
+        "), 1-2012 ( 77 FR 3912 ), 08-2020 ( 85 FR 58393 ), or 07-2025 ( 90 FR 27878 ); 29 CFR part 1911 ; and 5 U.S.C. 553 , as applicable. Source: 39 FR 23502 , June 27, 1974, unless",
+        "0.1000 , Tables Z-1, Z-2 and Z-3 also issued under 5 U.S.C. 553 , but not under 29 CFR part 1911 except for the arsenic (organic compounds), benzene, cotton dust, and chromium"
+      ]
+    },
+    {
+      "citation": "90.1",
+      "title": "90.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013233",
+        "doe_osti_3013235"
+      ],
+      "sample_snippets": [
+        "uminaire purpose decorative directional ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for determining the lighting power density allowance for",
+        "ative LED Directional Luminaire Purpose ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for determining the lighting power density (LPD) allowanc"
+      ]
+    },
+    {
+      "citation": "title 24",
+      "title": "California Building Standards Code (Title 24 CCR)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013233"
+      ],
+      "sample_snippets": [
+        "rtly through automated lighting control systems, to be compliant to the state’s Title 24 Building Energy Efficiency Standards (2016 version, Part 6—Energy Code). The Li"
+      ]
+    },
+    {
+      "citation": "12100",
+      "title": "12100",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_3014572"
+      ],
+      "sample_snippets": [
+        "Applicable Standards. A preliminary risk analysis and reduction methodology per ISO 12100 was completed. One result of the analysis was identification of pressurized hou"
+      ]
+    },
+    {
+      "citation": "cfr 49 172.101",
+      "title": "Cfr 49 172.101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp"
+      ]
+    },
+    {
+      "citation": "cfr 40 1090",
+      "title": "Cfr 40 1090",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362642"
+      ],
+      "sample_snippets": [
+        "us model year 2001 and newer: www.experian.com/automotive/auto-vehicle-data. 13 40 CFR Part 1090: www.federalregister.gov/documents/2024/02/29/2024-04023/request-from-states-fo"
+      ]
+    },
+    {
+      "citation": "26262",
+      "title": "26262",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2524558"
+      ],
+      "sample_snippets": [
+        "ing smoothness, and accuracy. Compliance was verified for SAE J2910, FMVSS 305, ISO 26262, and IEC 61580. PTC testing identified areas for improvement, particularly in h"
+      ]
+    },
+    {
+      "citation": "61580",
+      "title": "61580",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2524558"
+      ],
+      "sample_snippets": [
+        "and accuracy. Compliance was verified for SAE J2910, FMVSS 305, ISO 26262, and IEC 61580. PTC testing identified areas for improvement, particularly in high-voltage fus"
+      ]
+    },
+    {
+      "citation": "cfr 2 220",
+      "title": "Cfr 2 220",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2574895"
+      ],
+      "sample_snippets": [
+        "ost applicable: Cost Principles for Educational Institutions OMB Circular A-21 (2 CFR Part 220), http://www.whitehouse.gov/omb/circulars_a021_2004/ Final Technical Report 54/"
+      ]
+    }
+  ],
+  "total": 13,
+  "with_text": 1
+}

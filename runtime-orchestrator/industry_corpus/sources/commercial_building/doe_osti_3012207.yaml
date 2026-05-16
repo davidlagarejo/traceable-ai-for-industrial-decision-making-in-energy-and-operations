@@ -1,0 +1,11 @@
+source_id: doe_osti_3012207
+title: "Optimal Co-Design of Integrated Thermal-Electrical Networks and Control Systems for Grid-interactive Efficient District (GED) Energy Systems"
+url: https://www.osti.gov/servlets/purl/3012207
+license: public_domain
+publisher: doe_osti
+version: "2026-01-08"
+added_at: "2026-05-16T00:04:16.687008Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 25 ENERGY STORAGE, 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, 42 ENGINEERING"
+asset_families:
+  - commercial_building

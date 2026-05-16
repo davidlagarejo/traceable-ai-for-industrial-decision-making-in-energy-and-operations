@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6eb0cd49::chunk_0065",
+  "source_id": "doe_osti_3020102",
+  "source_sha": "6eb0cd4950a8ba64c53ff000b9f435b7",
+  "source_url": "https://www.osti.gov/servlets/purl/3020102",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "with CFP and FT technologies. The MFSPs for these six RD pathways range from $3.47 to $4.65 per DGE. Analyzing the MFSP breakdowns for these RD pathways reveals that each technology has distinct cost drivers. In the HEFA pathway, C-1",
+  "token_count": 40,
+  "text_sha": "f0ccb587032365e1671b9f319aabe68aaf913e209610059fc00c934aa1fcd53e",
+  "extracted_at": "2026-05-16T00:12:57.485296Z"
+}

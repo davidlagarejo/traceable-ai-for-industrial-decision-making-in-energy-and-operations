@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0039",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "a planned process unit shutdown between November 29 of the year during which the change in GWPs is published in the Federal Register as a final rulemaking and April 1 of the year after the year during which the change in GWPs is published, include a justification of why the equipment could not be obtained and installed during that shutdown. ( F ) A description of the specific actions the facility will take to obtain and install the equipment as soon as reasonably feasible and the expected date by which the equipment will be installed and operating. ( iii ) Approval criteria. To obtain approval, the owner or operator must demonstrate to the Administrator's satisfaction that it is not reasonably feasible to acquire, install, and operate a required piece of monitoring equipment by April 1 of the year after the year during which the change in GWPs is published in the Federal Register as a final rulemaking. The use of best available methods under this paragraph (l) will not be approved beyond December 31 of the year after the year during which the change in GWPs is published. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 39758 , July 12, 2010; 75 FR 57685 , Sept. 22, 2010; 75 FR 74816 , Dec. 1, 2010; 75 FR 79134 , Dec. 17, 2010; 75 FR 81344 , Dec. 27, 2010; 76 FR 14818 , Mar. 18, 2011; 76 FR 53065 , Aug. 25, 2011; 76 FR 73899 , Nov. 29, 2011; 77 FR 51488 , Aug. 24, 2012; 78 FR 71946 , Nov. 29, 2013; 79 FR 63779 , Oct. 24, 2014; 79 FR 73777 , Dec. 11, 2014; 79 FR 77391 , Dec. 24, 2014; 81 FR 89249 , Dec. 9, 2016; 89 FR 31890 , Apr. 25, 2024; 89 FR 91164 , Nov. 18, 2024; 90 FR 13088 , Mar. 20, 2025; 90 FR 21227 , May 19, 2025; 91 FR 9718 , Feb. 27, 2026] § 98.4 Authorization and responsibilities of the designated representative. ( a ) General. Except as provided under paragraph (f) of this section, each facility, and each supplier, that is subject to this part, shall have one and only one designated representative, who shall be responsible for certifying, signing, and submitting GHG emissions reports and any other submissions for such facility and supplier respectively to the Administrator under this part. If the facility is required under any other part of title 40 of the Code of Federal Regulations to submit to the Administrator any other emission report that is subject to any requirement in 40 CFR part 75 , the same individual shall be the designated representative responsible for certifying, signing, and submitting the GHG emissions reports and all such other emissions reports under this part. ( b ) Authorization of a designated representative. The designated representative of the facility or supplier shall be an individual selected by an agreement binding on the owners and operators of such facility or supplier and shall act in accordance with the certification statement in",
+  "token_count": 512,
+  "text_sha": "977f4f08564ff6a23c8f8c3d696c8f5b8926d9b3ab03244e8db50961553cd096",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

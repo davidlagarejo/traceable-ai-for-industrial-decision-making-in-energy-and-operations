@@ -1,0 +1,14 @@
+{
+  "chunk_id": "334f2671::chunk_0031",
+  "source_id": "doe_osti_3003183",
+  "source_sha": "334f26719fc39370da1903a47554bb51",
+  "source_url": "https://www.osti.gov/servlets/purl/3003183",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "of Energy (DOE). 2025. “OpenStudio”. Commercial Buildings Analysis Tools” [Online] Available at https://www.energy.gov/eere/buildings/articles/openstudio U.S. Energy Information Administration (EIA). 2025. “2018 Commercial Buildings Energy Consumption Survey final results.” Commercial Building Energy Consumption Survey (CBECS). [Online] Available at https://www.eia.gov/consumption/commercial/ Packages of DER Technologies for Demonstrating Demand Flexibility at Community Scale | 39",
+  "token_count": 50,
+  "text_sha": "2fa474b1a7671d4bf81f1336a40f6dbcd28d05f00fd1d3dcc0398d6d4ac2cedc",
+  "extracted_at": "2026-05-16T00:05:19.135325Z"
+}

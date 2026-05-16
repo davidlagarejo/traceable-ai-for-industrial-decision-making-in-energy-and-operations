@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0637",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "FR 31929 , Apr. 25, 2024] § 98.251 Reporting threshold. You must report GHG emissions under this subpart if your facility contains a petroleum refineries process and the facility meets the requirements of either § 98.2(a)(1) or (a)(2) . § 98.252 GHGs to report. You must report: ( a ) CO 2 , CH 4 , and N 2 O combustion emissions from stationary combustion units and from each flare. Calculate and report the emissions from stationary combustion units under subpart C of this part (General Stationary Fuel Combustion Sources) by following the requirements of subpart C, except for emissions from combustion of fuel gas. For CO 2 emissions from combustion of fuel gas, use either Equation C-5 in subpart C of this part or the Tier 4 methodology in subpart C of this part , unless either of the conditions in paragraphs (a)(1) or (2) of this section are met, in which case use either Equations C-1 or C-2a in subpart C of this part . For CH 4 and N 2 O emissions from combustion of fuel gas, use the applicable procedures in § 98.33(c) for the same tier methodology that was used for calculating CO 2 emissions. (Use the default CH 4 and N 2 O emission factors for “Fuel Gas” in Table C-2 of this part. For Tier 3, use either the default high heat value for fuel gas in Table C-1 of subpart C of this part or a calculated HHV, as allowed in Equation C-8 of subpart C of this part .) You may aggregate units, monitor common stacks, or monitor common (fuel) pipes as provided in § 98.36(c) when calculating and reporting emissions from stationary combustion units. Calculate and report the emissions from flares under this subpart. ( 1 ) The annual average fuel gas flow rate in the fuel gas line to the combustion unit, prior to any split to individual burners or ports, does not exceed 345 standard cubic feet per minute at 60 °F and 14.7 pounds per square inch absolute and either of the conditions in paragraph (a)(1)(i) or (ii) of this section exist. Calculate the annual average flow rate using company records assuming total flow is evenly distributed over 525,600 minutes per year. ( i ) A flow meter is not installed at any point in the line supplying fuel gas or an upstream common pipe. ( ii ) The fuel gas line contains only vapors from loading or unloading, waste or wastewater handling, and remediation activities that are combusted in a thermal oxidizer or thermal incinerator. ( 2 ) The combustion unit has a maximum rated heat input capacity of less than 30 mmBtu/hr and either of the following conditions exist: ( i ) A flow meter is not installed at any point in the line supplying fuel gas or an upstream common pipe; or ( ii ) The fuel gas line contains only vapors from loading or unloading, waste or wastewater handling, and remediation activities that are combusted in a thermal oxidizer or thermal incinerator. (",
+  "token_count": 510,
+  "text_sha": "fe9907b3b868ad49b6e1813439215a7177e38a7b47744ce17441544058c1fac4",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

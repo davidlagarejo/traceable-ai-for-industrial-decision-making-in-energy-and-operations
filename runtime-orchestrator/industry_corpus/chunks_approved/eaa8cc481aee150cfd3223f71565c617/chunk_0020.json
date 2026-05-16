@@ -1,0 +1,15 @@
+{
+  "chunk_id": "eaa8cc48::chunk_0020",
+  "source_id": "doe_osti_3011852",
+  "source_sha": "eaa8cc481aee150cfd3223f71565c617",
+  "source_url": "https://www.osti.gov/servlets/purl/3011852",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "of data points used in the regression R-squared value Measure that assesses how well regression fits to the data Data Age Average year the data for the regressions is from Notes Brief note on additional information 20 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 48,
+  "text_sha": "76f3962cfe9d379964762a90979a23757bca5bdf58c0f3085ba6940d0e59a663",
+  "extracted_at": "2026-05-16T00:04:16.683874Z"
+}

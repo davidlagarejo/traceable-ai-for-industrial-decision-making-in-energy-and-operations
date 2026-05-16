@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0003",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "their pipeline network for hydrogen before proceeding with detailed pipeline materials testing and pipeline inspections. BlendPATH consists of multiple modules to simulate, assess, and modify existing natural gas transmission pipeline network designs to be compatible with hydrogen as a blend or pure stream. The tool employs an open-source gas network hydraulic model to simulate existing, user-specified transmission pipeline networks, and it applies ASME B31.12 to assess the pipe segments within these networks for compatibility with hydrogen and to modify the networks to achieve compatibility where the existing infrastructure is inadequate. Users can specify ASME B31.12 design options for pipeline assessment and can select from multiple methods for pipeline modification. This report details the functionalities of BlendPATH Version 2.0 and demonstrates an example of applying Blend- PATH to a case study. Potential and intended users of this framework include natural gas pipeline developers and operators and researchers at both public and private institutions. BlendPATH is publicly available at https: //github.com/NREL/BlendPATH. vi This report is available at no cost from NREL at www.nrel.gov/publications Table of Contents Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . iv List of Acronyms and Abbreviations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . v Executive Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vi 1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 2 Model Description . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.1 Pipeline Network Hydraulic Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.1.1 Physical Modeling of Pipes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.1.2 Compressor Stations . . . .",
+  "token_count": 512,
+  "text_sha": "0583b7629ad14f04a0f903db34030809bddfe90bf5e1114ed202dbf1ef71c4a5",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

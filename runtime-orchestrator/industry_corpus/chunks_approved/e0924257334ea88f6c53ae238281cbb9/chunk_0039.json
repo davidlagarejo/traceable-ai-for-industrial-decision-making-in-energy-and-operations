@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e0924257::chunk_0039",
+  "source_id": "doe_osti_2572624",
+  "source_sha": "e0924257334ea88f6c53ae238281cbb9",
+  "source_url": "https://www.osti.gov/servlets/purl/2572624",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "https://doi.org/10.1016/j.jfoodeng.2014.01.001. TAPPI Forming Handsheets for Physical Test of Pulp - T 205. In TAPPI Test Methods (1992 - 1993); TAPPI Press, Atlanta, 1992; Vol. T-205, om-88. Wilhelmsson, B.; Stenstrom, S. [1995] Heat and Mass Transfer Coefficients in Computer Simulation of Paper Drying. Dry. Technol. 1995, 13 (4), 959–975. https://doi.org/10.1080/07373939508916993. 64",
+  "token_count": 50,
+  "text_sha": "d18c0a03935de604c5390a8db1240882de48bcc92ca3d4ce2db86c5b1c7af7ef",
+  "extracted_at": "2026-05-15T23:59:45.748881Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9bc74c15::chunk_0037",
+  "source_id": "doe_osti_2999533",
+  "source_sha": "9bc74c156a2e165a3660dbbcc96b9c63",
+  "source_url": "https://www.osti.gov/servlets/purl/2999533",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "T. Hawkins, and M. Wang, Life cycle greenhouse gas emissions and cost of marine transport with conventional fuels and methanol. Energy Conversion and Management: X, 2025. 27: p. 101116 DOI: https://doi.org/10.1016/j.ecmx.2025.101116. (10) IPCC. 2014. IPCC Fifth Assessment Report (AR5). Cambridge University Press. Available from: https://www.ipcc.ch/assessment-report/ar5/. 66 | Page Energy Systems and Infrastructure Analysis Argonne National Laboratory 9700 South Cass Avenue Lemont, IL 60439 www.anl.gov Argonne National Laboratory is a U.S. Department of Energy laboratory managed by UChicago Argonne, LLC",
+  "token_count": 79,
+  "text_sha": "25909f0a7fe43f3e219a48217b41d143aa44d169f3aad7985cb420b14bdac9d2",
+  "extracted_at": "2026-05-15T23:54:59.267794Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "70a60901::chunk_0004",
+  "source_id": "doe_osti_2583521",
+  "source_sha": "70a609017f86d9e1615cdda79bb262c6",
+  "source_url": "https://www.osti.gov/servlets/purl/2583521",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . iv Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . v List of Acronyms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vi Executive Summary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vii 1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 Vulcan Test Platform Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3 Data Center Power System . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4 Power Flow Management System . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 5 Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 5.1 Scenario 1: Utility Demand Response . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 5.2 Scenario 2: Utility Outage, Islanded Operation, and Grid Reconnection . . . . . . . . . . . . 14 6 Conclusion . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "94eec879869b48e5e98106c2b2d43041788764be6505c6fa6801f71623c8bf24",
+  "extracted_at": "2026-05-16T00:02:16.046005Z"
+}

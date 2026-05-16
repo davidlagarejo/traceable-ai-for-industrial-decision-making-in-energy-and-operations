@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a11b7413::chunk_0034",
+  "source_id": "doe_osti_2588997",
+  "source_sha": "a11b7413b86019a03f4a814a942a9a17",
+  "source_url": "https://www.osti.gov/servlets/purl/2588997",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Spring CAV HEDS vs. CAV baseline 38.6% 96.8% 42.3% 63.7% 99.4% 59.1% VAV HEDS vs. VAV baseline 41.9% 100% 51.9% 97.0% 78.0% 56.3% VAV HEDS vs. CAV baseline 71.5% 100% 79.5% 99.1% 86.4% 81.9% 34 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 46,
+  "text_sha": "b828f3181e1738f93bb5ad3c6d7775ee6cbe730598bd795ec1e2027c9184054c",
+  "extracted_at": "2026-05-16T00:04:41.912872Z"
+}

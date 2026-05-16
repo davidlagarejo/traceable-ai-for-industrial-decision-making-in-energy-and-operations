@@ -1,0 +1,14 @@
+{
+  "chunk_id": "0085d8be::chunk_0075",
+  "source_id": "doe_osti_2572016",
+  "source_sha": "0085d8bed4ccfcd3f77152aae401d1c9",
+  "source_url": "https://www.osti.gov/servlets/purl/2572016",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Waste Forms Vitreous State Laboratory for Supplemental Low Activity Waste Treatment Final Report, VSL-22R5150-1, Rev. 2 Figure 5.23. Normalized heat flows as a function of curing time up to 120 hrs for grout samples selected for Phase 4 testing. F-25",
+  "token_count": 40,
+  "text_sha": "6eb317c262285a799d3bf50fd14b71bfb8f9fa17b3200e3fe7aa7d6010a4ab02",
+  "extracted_at": "2026-05-15T23:56:41.416982Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0149",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "2 mass emissions from MSW combustion, in metric tons. ( xi ) When ASTM methods D7459-08 and D6866-16 (both incorporated by reference, see § 98.7 ) are used in accordance with § 98.34(e) to determine the biogenic portion of the annual CO 2 emissions from a unit that co-fires biogenic fuels (or partly-biogenic fuels, including tires) and non-biogenic fuels, you shall report the results of each quarterly sample analysis, expressed as a decimal fraction ( e.g., if the biogenic fraction of the CO 2 emissions is 30 percent, report 0.30). ( 3 ) Within 30 days of receipt of a written request from the Administrator, you shall submit explanations of the following: ( i ) An explanation of how company records are used to quantify fuel consumption, if the Tier 1 or Tier 2 Calculation Methodology is used to calculate CO 2 emissions. ( ii ) An explanation of how company records are used to quantify fuel consumption, if solid fuel is combusted and the Tier 3 Calculation Methodology is used to calculate CO 2 emissions. ( iii ) An explanation of how sorbent usage is quantified. ( iv ) An explanation of how company records are used to quantify fossil fuel consumption in units that uses CEMS to quantify CO 2 emissions and combusts both fossil fuel and biomass. ( v ) An explanation of how company records are used to measure steam production, when it is used to calculate CO 2 mass emissions under § 98.33(a)(2)(iii) or to quantify solid fuel usage under § 98.33(c)(3) . ( 4 ) Within 30 days of receipt of a written request from the Administrator, you shall submit the verification data and information described in paragraphs (e)(2)(iii) , (e)(2)(v) , and (e)(2)(vii) of this section. ( f ) Each stationary fuel combustion source (e.g., individual unit, aggregation of units, common pipe, or common stack) subject to reporting under paragraph (b) or (c) of this section must indicate if both of the following two conditions are met: ( 1 ) The stationary fuel combustion source contains at least one combustion unit connected to a fuel-fired electric generator owned or operated by an entity that is subject to regulation of customer billing rates by the public utility commission (excluding generators that are connected to combustion units that are subject to subpart D of this part ). ( 2 ) The stationary fuel combustion source is located at a facility for which the sum of the nameplate capacities for all electric generators specified in paragraph (f)(1) of this section is greater than or equal to 1 megawatt electric output. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79151 , Dec. 17, 2010; 78 FR 71950 , Nov. 29, 2013; 79 FR 63782 , Oct. 24, 2014; 81 FR 89251 , Dec. 9, 2016; 89 FR 31902 , Apr. 25, 2024; 89 FR 42220 , May 14, 2024] § 98.37 Records that must be retained. In addition to the requirements of § 98.3(g) , you must retain: ( a ) The applicable records",
+  "token_count": 512,
+  "text_sha": "f3772be1a1e6584604b92861ef4dd87b884ec61278f31b75030b2cf440aaabb1",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

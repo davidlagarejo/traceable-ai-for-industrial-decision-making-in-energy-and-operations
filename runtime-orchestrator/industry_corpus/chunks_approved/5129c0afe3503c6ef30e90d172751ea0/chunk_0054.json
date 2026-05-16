@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0054",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "> Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 93 Questions/ Comments www.NETL.DOE.gov @NETL_DOE @NETL_DOE @NationalEnergyTechnologyLaboratory CONTACT: John Brewer Brandon Seedorf and Nicholas Messina Strategic Systems and Analysis Keylogic Systems under DOE Contract John.Brewer@netl.doe.gov DE-FE-89243323CFE000075",
+  "token_count": 42,
+  "text_sha": "019a316f45af984f0a4e95c3ad36927763a5d5de5a60db8f0220927870ec6432",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

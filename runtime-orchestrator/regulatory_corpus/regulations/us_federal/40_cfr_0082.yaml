@@ -1,0 +1,12 @@
+source_id: us_federal_40_cfr_0082
+title: "Protection of Stratospheric Ozone (ODS/HFCs)"
+url: https://www.ecfr.gov/current/title-40/part-82
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:05.833087Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 600 §-marked sections. 1,347,207 chars."
+asset_families:
+  - cold_chain_facility
+  - _shared

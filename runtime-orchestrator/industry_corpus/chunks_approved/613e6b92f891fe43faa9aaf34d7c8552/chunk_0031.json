@@ -1,0 +1,14 @@
+{
+  "chunk_id": "613e6b92::chunk_0031",
+  "source_id": "doe_osti_2588551",
+  "source_sha": "613e6b92f891fe43faa9aaf34d7c8552",
+  "source_url": "https://www.osti.gov/servlets/purl/2588551",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "at no cost from NREL at www.nrel.gov/publications. Figure A-6. Distribution of maximum daily peak demand for January for selected building types, with 25th and 75th percentiles labeled. Note that some outliers have been removed for concision. 44 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 48,
+  "text_sha": "7de11a10cbc812aabc1a497d1440e15807cbee0db5d0bbb72e4a459845ab68c8",
+  "extracted_at": "2026-05-16T00:05:31.753342Z"
+}

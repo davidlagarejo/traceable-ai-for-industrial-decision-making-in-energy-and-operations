@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0650",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "of delayed coking unit vessel (feet). H outage = Typical distance from the top of the delayed coking unit vessel to the top of the coke bed ( i.e., coke drum outage) at the end of the coking cycle (feet) from company records or engineering estimates. D = Diameter of delayed coking unit vessel (feet). ( 2 ) Determine the typical mass of water in the delayed coking unit vessel at the end of the cooling cycle prior to venting to the atmosphere using equation Y-18b to this section. Where: M water = Mass of water in the delayed coking unit vessel at the end of the cooling cycle just prior to atmospheric venting or draining (metric tons/cycle). r water = Density of water at average temperature of the delayed coking unit vessel at the end of the cooling cycle just prior to atmospheric venting (metric tons per cubic feet; mt/ft 3 ). Use the default value of 0.0270 mt/ft 3 . H water = Typical distance from the bottom of the coking unit vessel to the top of the water level at the end of the cooling cycle just prior to atmospheric venting or draining (feet) from company records or engineering estimates. f coke = Fraction of the coke-filled bed that is covered by water at the end of the cooling cycle just prior to atmospheric venting or draining. Use 1 if the water fully covers coke-filled portion of the coke drum. M coke = Typical dry mass of coke in the delayed coking unit vessel at the end of the coking cycle (metric tons/cycle) as determined in paragraph (i)(1) of this section. r particle = Particle density of coke (metric tons per cubic feet; mt/ft 3 ). Use the default value of 0.0382 mt/ft 3 . D = Diameter of delayed coking unit vessel (feet). ( 3 ) Determine the average temperature of the delayed coking unit vessel when the drum is first vented to the atmosphere using either Equation Y-18c or Y-18d of this section, as appropriate, based on the measurement system available. Where: T initial = Average temperature of the delayed coking unit vessel when the drum is first vented to the atmosphere ( °F). T overhead = Temperature of the delayed coking unit vessel overhead line measured as near the coking unit vessel as practical just prior to venting to the atmosphere. If the temperature of the delayed coking unit vessel overhead line is less than 216 °F, use T overhead = 216 °F. T bottom = Temperature of the delayed coking unit vessel near the bottom of the coke bed. If the temperature at the bottom of the coke bed is less than 212 °F, use T bottom = 212 °F. Where: T initial = Average temperature of the delayed coking unit vessel when the drum is first vented to the atmosphere ( °F). P overhead = Pressure of the delayed coking unit vessel just prior to opening the atmospheric vent (pounds per square inch gauge, psig). ( 4 ) Determine the typical",
+  "token_count": 509,
+  "text_sha": "b9bba0b9acf127522ac8eeab617d894bdb9c51811dedbe09ecc4557fb0957d48",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

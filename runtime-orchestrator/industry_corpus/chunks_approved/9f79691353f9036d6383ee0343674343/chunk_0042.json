@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9f796913::chunk_0042",
+  "source_id": "doe_osti_3030826",
+  "source_sha": "9f79691353f9036d6383ee0343674343",
+  "source_url": "https://www.osti.gov/servlets/purl/3030826",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "of Geothermal Exploration on a Deep Sea Island.” In Proceedings of the 42nd Workshop on Geothermal Reservoir Engineering. Stanford, California. Stanford University. https://pangea.stanford.edu/ERE/pdf/IGAstandard/SGW/2017/Wilmarth.pdf. 37 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 40,
+  "text_sha": "837e4c98ae1e01bd5a4b0729f00d7ea539cce211fba79f21b39184bb7ec68996",
+  "extracted_at": "2026-05-15T23:55:14.377580Z"
+}

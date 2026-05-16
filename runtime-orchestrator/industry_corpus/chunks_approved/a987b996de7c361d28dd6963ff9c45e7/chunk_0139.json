@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0139",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "which must use a CH 4 emission factor determined in accordance with § 98.233(z)(4) , you must also report: ( i ) Type of equipment ( i.e. , two-stroke lean-burn reciprocating internal combustion engine, four-stroke lean-burn reciprocating internal combustion engine, four-stroke rich-burn reciprocating internal combustion engine, or gas turbine). ( ii ) Method by which the CH 4 emission factor was determined: performance test, manufacturer data, or default emission factor. ( iii ) Value of the CH 4 emission factor. ( c ) Reporting alternatives for units using the four Tiers. You may use any of the applicable reporting alternatives of this paragraph to simplify the unit-level reporting required under paragraph (b) of this section: ( 1 ) Aggregation of units. If a facility contains two or more units (e.g., boilers or combustion turbines), each of which has a maximum rated heat input capacity of 250 mmBtu/hr or less, you may report the combined GHG emissions for the group of units in lieu of reporting GHG emissions from the individual units, provided that the use of Tier 4 is not required or elected for any of the units and the units use the same tier for any common fuels combusted. If this option is selected, the following information shall be reported instead of the information in paragraph (b) of this section: ( i ) Group ID number, beginning with the prefix “GP”. ( ii ) [Reserved] ( iii ) Cumulative maximum rated heat input capacity of the group (mmBtu/hr). The cumulative maximum rated heat input capacity shall be determined as the sum of the maximum rated heat input capacities for all units in the group, excluding units less than 10 (mmBtu/hr). ( iv ) The highest maximum rated heat input capacity of any unit in the group (mmBtu/hr). ( v ) Each type of fuel combusted in the group of units during the reporting year. ( vi ) Annual CO 2 mass emissions and annual CH 4 , and N 2 O mass emissions, aggregated for each type of fuel combusted in the group of units during the report year, expressed in metric tons of each gas and in metric tons of CO 2 e. If any of the units burn biomass, report also the annual CO 2 emissions from combustion of all biomass fuels combined, expressed in metric tons. ( vii ) The methodology ( i.e., tier) used to calculate the CO 2 mass emissions for each type of fuel combusted in the units ( i.e., Tier 1, Tier 2, or Tier 3). ( viii ) The methodology start date, for each fuel type. ( ix ) The methodology end date, for each fuel type. ( x ) The calculated CO 2 mass emissions (if any) from sorbent expressed in metric tons. ( xi ) If applicable, the plant code (as defined in § 98.6 ). ( xii ) For natural gas-fired reciprocating internal combustion engines or gas turbines at facilities subject to subpart W of this part , which must use a CH 4 emission factor",
+  "token_count": 508,
+  "text_sha": "61491bc5d17b40c79f8327fa86c993ced08b2fc3847e24dc2ccca2da7738a790",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

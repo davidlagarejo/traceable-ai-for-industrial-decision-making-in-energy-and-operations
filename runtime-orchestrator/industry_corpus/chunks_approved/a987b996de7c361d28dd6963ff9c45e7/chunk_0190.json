@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0190",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "use a utilization rate (U ij ) of 0.2 ( i.e., a 1-U ij of 0.8) and by-product formation rates of 0.15 for CF 4 and 0.05 for C 2 F 6 and use equations I-8A and I-8B to this section. ( 7 ) If your fab employs hydrocarbon-fuel-based combustion emissions control systems (HC fuel CECS), including, but not limited to, abatement systems as defined at § 98.98 , that were purchased and installed on or after January 1, 2025, to control emissions from tools that use either NF 3 in remote plasma cleaning processes or F 2 as an input gas in any process type or sub-type, you must calculate the amount CF 4 produced within and emitted from such systems using equation I-9 to this section using default utilization and by-product formation rates as shown in table I-3 or I-4 to this subpart. A HC fuel CECS is assumed not to form CF 4 from F 2 if the electronics manufacturer can certify that the rate of conversion from F 2 to CF 4 is &lt;0.1% for that HC fuel CECS. Where: EAB CF4 = Emissions of CF 4 from HC fuel CECS when direct reaction between hydrocarbon fuel and F 2 is not certified not to occur by the emissions control system manufacturer or electronics manufacturer, kg. C F2,j = Amount of F 2 consumed for process type or sub-type j, as calculated in equation I-13 to this section, on a fab basis (kg). U F2,j = Process utilization rate for F 2 for process type or sub-type j (expressed as a decimal fraction). a F2,j = Within process sub-type or process type j, fraction of F 2 used in process tools with HC fuel CECS that are not certified not to form CF 4 , on a fab basis, where the numerator is the number of tools that are equipped with HC fuel CECS that are not certified not to form CF 4 that use F 2 in process type j and the denominator is the total number of tools in the fab that use F 2 in process type j (expressed as a decimal fraction). UT F2,j = The average uptime factor of all HC fuel CECS connected to process tools in the fab using F 2 in process sub-type or process type j (expressed as a decimal fraction). AB CF4,F2 = Mass fraction of F 2 in process exhaust gas that is converted into CF 4 by direct reaction with hydrocarbon fuel in a HC fuel CECS. The default value of AB CF4,F2 = 0.116. C NF3,RPC = Amount of NF 3 consumed in remote plasma cleaning processes, as calculated in equation I-13 to this section, on a fab basis (kg). B F2,NF3 = By-product formation rate of F 2 created as a by-product per amount of NF 3 (kg) consumed in remote plasma cleaning processes (kg). a NF3,RPC = Within remote plasma cleaning processes, fraction of NF 3 used in process tools with HC fuel CECS that are not certified not to form CF 4",
+  "token_count": 512,
+  "text_sha": "15b2da138c52f0aba70895cdd70c8c4fc54cd41b34f87bacef1b0b85a6115d7e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

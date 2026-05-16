@@ -1,0 +1,11 @@
+source_id: doe_osti_2583498
+title: "HyBlend Collaborative Research Partnership (CRADA Final Report)"
+url: https://www.osti.gov/servlets/purl/2583498
+license: public_domain
+publisher: doe_osti
+version: "2025-07-25"
+added_at: "2026-05-16T00:12:37.073518Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 08 HYDROGEN, CRADA, decarbonization of natural gas network, hydrogen blending in natural gas, life cycle analysis"
+asset_families:
+  - infrastructure_node

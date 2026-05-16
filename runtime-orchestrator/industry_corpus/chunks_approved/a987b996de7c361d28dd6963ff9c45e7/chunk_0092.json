@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0092",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "F 4 ; CF 3 CF = CH 2 b 0.31 HFC-1234ze(E) 1645-83-6 C 3 H 2 F 4 ; trans-CF 3 CH = CHF b 0.97 HFC-1234ze(Z) 29118-25-0 C 3 H 2 F 4 ; cis-CF 3 CH = CHF; CF 3 CH = CHF b 0.29 HFC-1243zf; TFP 677-21-4 C 3 H 3 F 3 , CF 3 CH = CH 2 b 0.12 (Z)-HFC-1336 692-49-9 CF 3 CH = CHCF 3 (Z) b 1.58 HFO-1336mzz(E) 66711-86-2 (E)-CF 3 CH = CHCF 3 e 18 HFC-1345zfc 374-27-6 C 2 F 5 CH = CH 2 b 0.09 HFO-1123 359-11-5 CHF=CF 2 e 0.005 HFO-1438ezy(E) 14149-41-8 (E)-(CF 3 ) 2 CFCH = CHF e 8.2 HFO-1447fz 355-08-8 CF 3 (CF 2 ) 2 CH = CH 2 e 0.24 Capstone 42-U 19430-93-4 C 6 H 3 F 9 , CF 3 (CF 2 ) 3 CH = CH 2 b 0.16 Capstone 62-U 25291-17-2 C 8 H 3 F 13 , CF 3 (CF 2 ) 5 CH = CH 2 b 0.11 Capstone 82-U 21652-58-4 C 10 H 3 F 17 , CF 3 (CF 2 ) 7 CH = CH 2 b 0.09 (e)-1-chloro-2-fluoroethene 460-16-2 (E)-CHCl = CHF e 0.004 3,3,3-trifluoro-2-(trifluoromethyl)prop-1-ene 382-10-5 (CF 3 ) 2 C = CH 2 e 0.38 Non-Cyclic, Unsaturated CFCs CFC-1112 598-88-9 CClF=CClF e 0.13 CFC-1112a 79-35-6 CCl 2 =CF 2 e 0.021 Non-Cyclic, Unsaturated Halogenated Ethers PMVE; HFE-216 1187-93-5 CF 3 OCF = CF 2 b 0.17 Fluoroxene 406-90-6 CF 3 CH 2 OCH = CH 2 b 0.05 Methyl-perfluoroheptene-ethers N/A CH 3 OC 7 F 13 e 15 Non-Cyclic, Unsaturated Halogenated Esters Ethenyl 2,2,2-trifluoroacetate 433-28-3 CF 3 COOCH=CH 2 e 0.008 Prop-2-enyl 2,2,2-trifluoroacetate 383-67-5 CF 3 COOCH 2 CH=CH 2 e 0.007 Cyclic, Unsaturated HFCs and PFCs PFC C-1418 559-40-0 c-C 5 F 8 d 2 Hexafluorocyclobutene 697-11-0 cyc (-CF=CFCF 2 CF 2 -) e 126 1,3,3,4,4,5,5-heptafluorocyclopentene 1892-03-1 cyc (-CF 2 CF 2 CF 2 CF=CH-) e 45 1,3,3,4,4-pentafluorocyclobutene 374-31-2 cyc (-CH=CFCF 2 CF 2 -) e 92 3,3,4,4-tetrafluorocyclobutene 2714-38-7 cyc (-CH=CHCF 2 CF 2 -) e 26 Fluorinated Aldehydes 3,3,3-Trifluoro-propanal 460-40-2 CF 3 CH 2 CHO b 0.01 Fluorinated Ketones Novec 1230 (perfluoro (2-methyl-3-pentanone)) 756-13-8 CF 3 CF 2 C(O)CF (CF3) 2 b 0.1 1,1,1-trifluoropropan-2-one 421-50-1 CF 3 COCH 3 e 0.09 1,1,1-trifluorobutan-2-one 381-88-4 CF 3 COCH 2 CH 3 e 0.095 Fluorotelomer Alcohols 3,3,4,4,5,5,6,6,7,7,7-Undecafluoroheptan-1-ol 185689-57-0 CF 3 (CF 2 ) 4 CH 2 CH 2 OH b 0.43 3,3,3-Trifluoropropan-1-ol 2240-88-2 CF 3 CH 2 CH 2 OH b 0.35 3,3,4,4,5,5,6,6,7,7,8,8,9,9,9-Pentadecafluorononan-1-ol 755-02-2 CF 3 (CF 2 ) 6 CH 2 CH 2 OH b 0.33 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,11-Nonadecafluoroundecan-1-ol 87017-97-8 CF 3 (CF 2 ) 8 CH 2 CH 2 OH b 0.19 Fluorinated GHGs With Carbon-Iodine Bond(s) Trifluoroiodomethane 2314-97-8 CF 3 I b 0.4 Remaining Fluorinated GHGs with Chemical-Specific GWPs Dibromodifluoromethane (Halon 1202) 75-61-6 CBr 2 F 2 b 231 2-Bromo-2-chloro-1,1,1-trifluoroethane (Halon-2311/Halothane) 151-67-7 CHBrClCF 3 b 41 Heptafluoroisobutyronitrile 42532-60-5 (CF 3 ) 2 CFCN e 2,750 Carbonyl fluoride 353-50-4 COF 2 e 0.14 Fluorinated GHG group f Global warming potential (100 yr.) Default",
+  "token_count": 512,
+  "text_sha": "43b51d51007f9e73aaa960d83ff815cff25fccbe369495ba2a11e04e1d250bbf",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

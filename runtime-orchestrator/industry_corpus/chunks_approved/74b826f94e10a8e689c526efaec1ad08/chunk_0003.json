@@ -1,0 +1,14 @@
+{
+  "chunk_id": "74b826f9::chunk_0003",
+  "source_id": "doe_osti_2586497",
+  "source_sha": "74b826f94e10a8e689c526efaec1ad08",
+  "source_url": "https://www.osti.gov/servlets/purl/2586497",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . 12 3.3 State of AI/ML . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 4 Analysis 15 4.1 Successful and Unsuccessful Collaborations . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 4.1.1 Case Study: Xopt [10] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 4.1.2 Case Study: WarpX [2, 23, 9]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 4.1.3 Case Study: EPICS [8] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 5 General Collaboration Models 17 5.1 Option 1: Institution-home Leadership . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 5.2 Option 2: Non-profit Home . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 5.3 Option 3: Project Promotion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 6 Conclusion 18 List of Tables 1 Collaboration components used in this taxonomy . . . . . . . . . . . . . . . . . . . . . . . . . 13 2 Executive Summary Accelerators increasingly use artificial intelligence (AI) and machine learning (ML) software and workflows foravarietyoftasks,fromoptimizationtofaultdetectionandrecovery. Efficientandsustainableapplication of these technologies necessitates specialized and facility-specific infrastructure commitments. Accelerator facilities also introduce unique radiation and security hazards, placing additional demands on operational infrastructure. Theseneedsfurtherescalatetheprioritizationofeffectivecollaborationmodelsandassociated funding mechanisms and legal frameworks. We present an assessment of AI/ML in the accelerator technology ecosystem in the U.S., with an em- phasis on funding mechanisms, partnership frameworks with universities and industry, as well as legal and securityprotections. Weexamineexistingmultilateralcollaborationsandtechnologyinitiatives,anddevelop prescriptionsforthesuccessfuldevelopmentandmaintenanceofsuchentities. Wepresentrecommendations to enable long-term growth of AI/ML technologies requiring collaborative frameworks and formal licensing or security agreements. Lastly, we explore collaboration models in use across other scientific program offices and technical",
+  "token_count": 509,
+  "text_sha": "1550a5e0aa3fc591f8769ec7190a7f6e91878cb73c6b1fef9db9a092824976d9",
+  "extracted_at": "2026-05-15T23:56:33.735736Z"
+}

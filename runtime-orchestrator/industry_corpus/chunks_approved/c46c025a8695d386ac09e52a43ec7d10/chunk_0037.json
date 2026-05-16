@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c46c025a::chunk_0037",
+  "source_id": "doe_osti_2583809",
+  "source_sha": "c46c025a8695d386ac09e52a43ec7d10",
+  "source_url": "https://www.osti.gov/servlets/purl/2583809",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "0 0 50 100 150 Figure 34. Power consumption vs. speed for both the fan and coolant pump. )W( rewop naF 250 200 150 100 50 0 0 50 100 150 Fan speed (%) )W( rewop pmuP Pump speed (%)",
+  "token_count": 40,
+  "text_sha": "d279f6f53138222d5eb4fb5bca5cdd1cbcb58a6c7123be1f4ac76d9b22f8ee6b",
+  "extracted_at": "2026-05-16T00:02:20.239737Z"
+}

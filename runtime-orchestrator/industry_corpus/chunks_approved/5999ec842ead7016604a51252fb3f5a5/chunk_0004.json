@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5999ec84::chunk_0004",
+  "source_id": "doe_osti_3218390",
+  "source_sha": "5999ec842ead7016604a51252fb3f5a5",
+  "source_url": "https://www.osti.gov/servlets/purl/3218390",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "phase,and frequency Fault with variable phase connection and impedance Test setup 2 Test setup 2 V I (islanding test) IBR IBR1 IBR1 I IBR2 Duplicate IBR Load 13 System strength test (SCR step-down) System strength test V V (SCR step-down) S IBR I IBR Z IBR • SCR = 10; X/R = 6 • P = 1 pu; Q = 0, initially • Step SCR down to each of the following values: 10, 5, 3, 1.5, 1.2 (Start with 20? Go to lower SCR, perhaps with reduced P?) – Apply 3-phase bolted 4-cycle fault just before each SCR change. SCR transition occurs at fault clearing time (some question order of events and timing) – Repeat with two-phase-to-ground, ≤50% pos seq voltage, 6-cycle fault Started from • Criteria: ERCOT test – P and Q well controlled – Plant shall not trip nor reduce P or V below 0.95 p.u. (outside fault period) for more than 1 second at any SCR level – Anything on power quality? NREL | 14 Unbalance step-up test Unbalance step-up test V V S IBR I IBR Z IBR • SCR = 10; X/R = 6 • P = 1 pu; Q = 0, initially (consider adjusting) • Step negative-sequence voltage of source up from 0 to 0.01, 0.02, 0.03, etc until IBR negative sequence current (I2) stops changing. – Allow system to reach steady state after each step – Repeat at P = 0.5 pu, -0.5 pu, -1 pu Not in other • Criteria: industry tests – When V is non-zero, the negative sequence voltage the IBR bus, Do we need S2 VI , shall be less than V . it? BR2 S2 – Informative: Record V and I at each step. IBR2 IBR2 NREL | 15 Fault test (informative) Fault test (informative) V V S IBR I IBR Z IBR • SCR = 10; X/R = 6 • P per table; Q = 0, initially • Apply fault shown in table for 6 cycles. Allow transient to subside. – Repeat for each line in table Not in other • Criteria: industry tests – No pass-fail criteria are provided Do we need – Informative: For tests 1-4, record P, Q, and V . For tests 5-8, record IBR it? IBR pos and neg seq current magnitudes and angles as well as V and IBR1 V . IBR2 Scenario IBR Active Power Set Point Fault Type Fault Impedance 1 1.0 p.u. discharging 3 phase to ground 0.02 p.u., resistive 2 0.5 p.u. discharging 3 phase to ground 0.02 p.u., resistive 3 1.0 p.u. charging 3 phase to ground 0.02 p.u., resistive 4 0.5 p.u. charging 3 phase to ground 0.02 p.u., resistive 5 1.0 p.u. discharging 2 phase to ground 0 6 0.5 p.u. discharging 2 phase to ground 0 7 1.0 p.u. charging 2 phase to ground 0 8 0.5 p.u. charging 2 phase to ground 0 NREL | 16 Frequency change and inertial response test Frequency change and inertial response test n o ita iv e d y c n e u )zH",
+  "token_count": 508,
+  "text_sha": "76812bd3e28e028fb795ee99840b50922b5c71e55cdeff7fa0b0cec9fe4b9ab0",
+  "extracted_at": "2026-05-16T00:11:14.895141Z"
+}

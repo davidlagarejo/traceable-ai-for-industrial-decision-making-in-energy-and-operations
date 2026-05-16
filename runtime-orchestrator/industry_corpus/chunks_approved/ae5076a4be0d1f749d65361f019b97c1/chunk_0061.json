@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ae5076a4::chunk_0061",
+  "source_id": "doe_osti_3021565",
+  "source_sha": "ae5076a4be0d1f749d65361f019b97c1",
+  "source_url": "https://www.osti.gov/servlets/purl/3021565",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "a structure built from halves”, Presented at HG2016, Argonne National Lab, July 2016. 82. A. Degiovanni, W. Wuensch, J. Giner-Navarro, “Comparison of the conditioning of high gradient accelerating structures”, Phys. Rev. Accel. Beams 19, 032001 (2016). Page 46 of 55",
+  "token_count": 40,
+  "text_sha": "4e7d51f936b6f852b5eb236107ac30fd5c5a0f9faa1e0fc8c16fcb1e90d8b9fb",
+  "extracted_at": "2026-05-15T23:59:01.424350Z"
+}

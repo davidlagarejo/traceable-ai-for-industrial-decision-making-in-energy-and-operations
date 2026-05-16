@@ -1,0 +1,15 @@
+{
+  "chunk_id": "6f66cf3f::chunk_0040",
+  "source_id": "doe_osti_3362642",
+  "source_sha": "6f66cf3fc6a5a02f52d0bfd64a5b45d7",
+  "source_url": "https://www.osti.gov/servlets/purl/3362642",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "renewable diesel Cellulosic Equivalence 283,259 283,259 heating oil value application required Renewable n/a 880,960,893 880,960,893 114,700,322 114,700,322 compressed natural gas Renewable n/a 82,642,184 82,642,184 liquefied natural gas Renewable n/a 9,820,158 9,820,158 natural gas 53 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 50,
+  "text_sha": "c4e6b7ec16f85fcdd2906c5fcc675bac530faa78e07b240c55c28a30d70c4ffc",
+  "extracted_at": "2026-05-16T00:07:07.171627Z"
+}

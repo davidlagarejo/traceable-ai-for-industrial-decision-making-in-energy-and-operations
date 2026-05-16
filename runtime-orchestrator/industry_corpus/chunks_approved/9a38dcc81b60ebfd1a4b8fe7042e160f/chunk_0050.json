@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9a38dcc8::chunk_0050",
+  "source_id": "doe_osti_3017565",
+  "source_sha": "9a38dcc81b60ebfd1a4b8fe7042e160f",
+  "source_url": "https://www.osti.gov/servlets/purl/3017565",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "B. H., Zierer, J. J., Torrey, D., Rallabandi, V., Crall, D., Pazinski, A., Mohamed, M., Sibbach, A. W., “Magnetic Gap Cooling Scheme For Permanent Magnet Electric Machines”, US Patent Application Serial Number 18/085,962, Dec. 21, 2022. 73 14. PRODUCTS 74",
+  "token_count": 40,
+  "text_sha": "88be47d6a605801749560a2c06030e1312020b821f7b51f048bc3c47e70c6730",
+  "extracted_at": "2026-05-16T00:12:46.953842Z"
+}

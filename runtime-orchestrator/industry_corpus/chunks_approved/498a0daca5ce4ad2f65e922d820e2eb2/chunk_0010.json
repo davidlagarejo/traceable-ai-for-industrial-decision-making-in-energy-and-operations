@@ -1,0 +1,14 @@
+{
+  "chunk_id": "498a0dac::chunk_0010",
+  "source_id": "doe_osti_3014718",
+  "source_sha": "498a0daca5ce4ad2f65e922d820e2eb2",
+  "source_url": "https://www.osti.gov/servlets/purl/3014718",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "H O costs, especially with unproven technology. Based on 2 2 these learnings, future work will be focused on pivoting the Perlumi technologies to address alternate use cases. The program was invaluable in supporting the innovation team through these early stages of technology development.",
+  "token_count": 44,
+  "text_sha": "750b8f231f974f8e665c5af460c05b79ae795c2d3705d027cfd5cd54d2fc80a6",
+  "extracted_at": "2026-05-15T23:59:39.220106Z"
+}

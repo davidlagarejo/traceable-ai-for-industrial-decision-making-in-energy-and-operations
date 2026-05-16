@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0114",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "regardless of unit size. ( 4 ) The Tier 4 Calculation Methodology: ( i ) May be used for a unit of any size, combusting any type of fuel. Tier 4 may also be used for any group of stationary fuel combustion units, process units, or manufacturing units that share a common stack or duct. ( ii ) Shall be used if the unit meets all six of the conditions specified in paragraphs (b)(4)(ii)(A) through (b)(4)(ii)(F) of this section: ( A ) The unit has a maximum rated heat input capacity greater than 250 mmBtu/hr, or if the unit combusts municipal solid waste and has a maximum rated input capacity greater than 600 tons per day of MSW. ( B ) The unit combusts solid fossil fuel or MSW as the primary fuel. ( C ) The unit has operated for more than 1,000 hours in any calendar year since 2005. ( D ) The unit has installed CEMS that are required either by an applicable Federal or State regulation or the unit's operating permit. ( E ) The installed CEMS include a gas monitor of any kind or a stack gas volumetric flow rate monitor, or both and the monitors have been certified, either in accordance with the requirements of part 75 of this chapter , part 60 of this chapter , or an applicable State continuous monitoring program. ( F ) The installed gas or stack gas volumetric flow rate monitors are required, either by an applicable Federal or State regulation or by the unit's operating permit, to undergo periodic quality assurance testing in accordance with either appendix B to part 75 of this chapter , appendix F to part 60 of this chapter , or an applicable State continuous monitoring program. ( iii ) Shall be used for a unit with a maximum rated heat input capacity of 250 mmBtu/hr or less and for a unit that combusts municipal solid waste with a maximum rated input capacity of 600 tons of MSW per day or less, if the unit meets all of the following three conditions: ( A ) The unit has both a stack gas volumetric flow rate monitor and a CO 2 concentration monitor. ( B ) The unit meets the conditions specified in paragraphs (b)(4)(ii)(B) through (b)(4)(ii)(D) of this section. ( C ) The CO 2 and stack gas volumetric flow rate monitors meet the conditions specified in paragraphs (b)(4)(ii)(E) and (b)(4)(ii)(F) of this section. ( iv ) May apply to common stack or duct configurations where: ( A ) The combined effluent gas streams from two or more stationary fuel combustion units are vented through a monitored common stack or duct. In this case, Tier 4 shall be used if all of the conditions in paragraph (b)(4)(iv)(A)(1) of this section or if the conditions in paragraph (b)(4)(iv)(A)(2) of this section are met. ( 1 ) At least one of the units meets the requirements of paragraphs (b)(4)(ii)(A) through (b)(4)(ii)(C) of this section, and the CEMS installed at the common stack (or duct) meet",
+  "token_count": 510,
+  "text_sha": "325c2030604d26081f7ad92adee0149a2aba3db55273ab90a708e1a908516b6c",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

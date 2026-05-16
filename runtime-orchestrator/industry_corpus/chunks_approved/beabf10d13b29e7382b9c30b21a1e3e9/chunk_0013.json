@@ -1,0 +1,15 @@
+{
+  "chunk_id": "beabf10d::chunk_0013",
+  "source_id": "doe_osti_3030828",
+  "source_sha": "beabf10d13b29e7382b9c30b21a1e3e9",
+  "source_url": "https://www.osti.gov/servlets/purl/3030828",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "10 EVs per charging point. Figure.Publiclyaccessiblelight-dutyvehiclechargingpointsbypowerratingand region, 2015–2021 Graphs: International Energy Agency (2022) • Bloomberg2040 projections: 30–40 EVs per public Figure. Projected EV charger trends by region, 2020–2040 charger and 100–300 EVs per ultra-fast charger. Graphs:BloombergNewEnergyFinance(2022) Source: Joshi andGokhale-Welch, 2022 National Laboratory of the Rockies | 40",
+  "token_count": 47,
+  "text_sha": "0efd648adb78f8860e5570ef6edf381bb9a22821e52d67b99805c378f8a9f194",
+  "extracted_at": "2026-05-15T23:59:10.428479Z"
+}

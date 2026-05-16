@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e1908d30::chunk_0010",
+  "source_id": "doe_osti_3002176",
+  "source_sha": "e1908d3076767a4426fe8494675a3ada",
+  "source_url": "https://www.osti.gov/servlets/purl/3002176",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "in reducing building operating costs and supporting load shifting. RBC provides a simple, low-complexity pathway for near-term deployment, while MPC demonstrates the added value of predictive, optimization-based strategies for long-term grid-interactive buildings. The recommended future work includes experimental validation of the DCHX TES system under real-world 16 conditions, MPC development to multi-objective optimization (reducing operation cost, improving thermal comfort and reducing peak gird load), and integration with distributed energy generation and utility demand response programs. ACKNOWLEDGMENTS The authors acknowledge support provided by the U.S. Department of Energy’s Building Technologies Research and Integration Center (BTRIC) Technical Collaboration Program, and the industrial partner, Active Energy Systems Inc. REFERENCES [1] Energy Information Administration U. The Annual Energy Outlook explores long-term energy trends in the United States n.d. [2] Thermal Storage for HVAC - Shift Thermal n.d. https://shiftthermal.com/thermal-storage/ (accessed August 28, 2025). [3] Qiao Y, Chen D, Sun QZ, Tian G, Wang W. Unveiling stealthy man-in-the-middle cyber-attacks on energy performance in grid-interactive smart buildings. Energy Convers Manag 2024;319:118949. https://doi.org/10.1016/J.ENCONMAN.2024.118949. [4] Stewart M. Surface production operations: volume IV: pumps and compressors. Gulf Professional Publishing，2018; 2018. [5] Hydeman M, Gillespie KL, Dexter AL. Tools and techniques to calibrate electric chiller component models. ASHRAE Trans 2002;108 PART 1:733–41. 17",
+  "token_count": 202,
+  "text_sha": "a7a7f74c014b8b02fcce56ccf79693287c4e1ecf171f7ef8ebc2c9aa0cda193b",
+  "extracted_at": "2026-05-16T00:04:44.859316Z"
+}

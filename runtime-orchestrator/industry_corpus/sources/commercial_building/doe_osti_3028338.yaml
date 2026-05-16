@@ -1,0 +1,11 @@
+source_id: doe_osti_3028338
+title: "Empirical Comparison of Machine Learning Approaches for Black-Box Modeling of Power Conversion System Dynamics"
+url: https://www.osti.gov/servlets/purl/3028338
+license: public_domain
+publisher: doe_osti
+version: "2026-04-02"
+added_at: "2026-05-16T00:05:24.496091Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 30 DIRECT ENERGY CONVERSION, CNN, GRU, LSTM, machine learning"
+asset_families:
+  - commercial_building

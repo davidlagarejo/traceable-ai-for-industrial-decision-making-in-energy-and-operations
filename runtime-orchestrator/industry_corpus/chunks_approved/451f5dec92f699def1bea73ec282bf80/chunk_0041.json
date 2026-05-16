@@ -1,0 +1,14 @@
+{
+  "chunk_id": "451f5dec::chunk_0041",
+  "source_id": "doe_osti_3018017",
+  "source_sha": "451f5dec92f699def1bea73ec282bf80",
+  "source_url": "https://www.osti.gov/servlets/purl/3018017",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "htgnertS Avg ILSS Strength (MPa) – Carbon SMC 19.0 20.0 15.0 7.3 10.0 5.0 0.0 Plate thickness 3mm Plate thickness 6mm Figure 104. ILSS for Glass-SMC for 3 mm and 6 mm plate thickness Table 18. Interlaminar shear strength for 3 mm and 6 mm plate thickness glass-SMC Glass SMC Specimen Avg flex strength (MPa) STD Dev Plate thickness 3mm 7.3 3.1 Plate thickness 6mm 19.0 0.7 87 )aPM( htgnertS Avg ILSS Strength (MPa)- Glass SMC ` Loading direction Interlaminar failure Carbon SMC- 3mm samples Loading direction Interlaminar Figure 105. Carbon SMC - ILSS failure modes of 3 mm and 6 mm plates Carbon SMC- 6mm samples failure 88",
+  "token_count": 109,
+  "text_sha": "7f424bded893a0a4c435d3e2639424ac8fd8e3f67a676135bae0da1b769dbe10",
+  "extracted_at": "2026-05-15T23:58:10.093357Z"
+}

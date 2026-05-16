@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4a23e17e::chunk_0021",
+  "source_id": "doe_osti_2589170",
+  "source_sha": "4a23e17e4fd3b2eb4696cd7c07f312e9",
+  "source_url": "https://www.osti.gov/servlets/purl/2589170",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "78.6% 79.4% with electric backup + Light Touch Envelope Upgrade 13: Ultra high efficiency heat pump with electric backup + Light Touch Envelope + 70.2% 68.6% Full Appliance Electrification with Efficiency 25 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 43,
+  "text_sha": "e6f476babc3cf0f4b9bc53907a46abacfca8de98d3936aa30e520c74d087bce9",
+  "extracted_at": "2026-05-16T00:04:14.634342Z"
+}

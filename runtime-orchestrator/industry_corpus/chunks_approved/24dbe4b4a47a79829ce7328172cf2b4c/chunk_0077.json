@@ -1,0 +1,14 @@
+{
+  "chunk_id": "24dbe4b4::chunk_0077",
+  "source_id": "doe_osti_2998538",
+  "source_sha": "24dbe4b4a47a79829ce7328172cf2b4c",
+  "source_url": "https://www.osti.gov/servlets/purl/2998538",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "It is recommended that as far as practical large pre-assembled units (PAUs) be used to minimize the need for site fabrication and integration. The vent stack is likely to be pre-fabricated in multiple sections and erected on site using mobile cranes. Page98 of158",
+  "token_count": 43,
+  "text_sha": "4630b9bb893c15adb66e632ffc0be199bfaf7dc10869fc66d3fefdabfcc49f00",
+  "extracted_at": "2026-05-15T23:55:33.123841Z"
+}

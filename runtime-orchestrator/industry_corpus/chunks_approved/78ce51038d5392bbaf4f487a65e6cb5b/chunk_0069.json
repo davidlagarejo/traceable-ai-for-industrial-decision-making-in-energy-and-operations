@@ -1,0 +1,15 @@
+{
+  "chunk_id": "78ce5103::chunk_0069",
+  "source_id": "doe_osti_3001074",
+  "source_sha": "78ce51038d5392bbaf4f487a65e6cb5b",
+  "source_url": "https://www.osti.gov/servlets/purl/3001074",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "of revenue earned through the lease or sale of DC services and electricity sales in the case of nuclear reactors. It should be noted that in this analysis the economic impact model treats the power plant output the same as the production of electricity for grid purposes. If",
+  "token_count": 48,
+  "text_sha": "df3b76b207eced525dfd2b04e891eeabad4c2ba0258917297d74c28e6250ad94",
+  "extracted_at": "2026-05-16T00:04:58.119201Z"
+}

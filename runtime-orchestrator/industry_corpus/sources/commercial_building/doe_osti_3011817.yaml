@@ -1,0 +1,11 @@
+source_id: doe_osti_3011817
+title: "Sumner County Field Validation: An Assessment of Thermal Energy Storage in Municipal Buildings in Mixed-Humid Climates"
+url: https://www.osti.gov/servlets/purl/3011817
+license: public_domain
+publisher: doe_osti
+version: "2025-09-30"
+added_at: "2026-05-16T00:04:05.579293Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, building envelope storage, field demonstration, PCM, phase change materials"
+asset_families:
+  - commercial_building

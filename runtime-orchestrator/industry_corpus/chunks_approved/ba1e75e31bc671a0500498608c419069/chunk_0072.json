@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ba1e75e3::chunk_0072",
+  "source_id": "doe_osti_3014158",
+  "source_sha": "ba1e75e31bc671a0500498608c419069",
+  "source_url": "https://www.osti.gov/servlets/purl/3014158",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "the E. coli analyzer provided sufficient information to overcome any sample size limitation and perform comparably to the same modeling approach with a larger sample size (Figure 5-36). However, the E. coli analyzer was not essential to the performance of the model. Due to the high cost of the system, it was decided to continue deployment without the additional analyzer. XGBoost using all available features (no feature selection) and a CDF approach to training and testing was selected for deployment. Figure 5-36. Training and Testing Log RMSE For Each Influent E. Coli Model and Dataset Permutation. The log removal predictions were much less variable (Figure 5-37, left). XGBoost models performed best and much better than the existing approach to log removal estimations (Figure 5-30), reducing the standard error four-fold. This is a clear indicator that log inactivation is not solely determined by disinfectant dose, and the majority of the variation from the mechanistic approach can be explained using available water quality data (Figure 5-37, right). An examination of the features important to the XGBoost model illustrate that nitrogen species are Integration of Data Driven Process Control for Maximizing Energy and Resource Efficiency in WRRFs 69",
+  "token_count": 195,
+  "text_sha": "2694a0f767c25f4609604b4dc38a6d7cdee5bc2b8ec94fd276f798fb6ad37f4e",
+  "extracted_at": "2026-05-16T00:13:18.902693Z"
+}

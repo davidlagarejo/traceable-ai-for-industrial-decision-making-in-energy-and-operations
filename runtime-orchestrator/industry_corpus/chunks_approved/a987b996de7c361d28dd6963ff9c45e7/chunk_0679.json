@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0679",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "98.33 ). ( 14 ) Annual average carbon content of the gaseous fuel (kg C per kg of fuel) (Equation C-5). ( 15 ) Annual average molecular weight of the gaseous fuel (kg/kg-mole) (Equation C-5). ( 16 ) Molar volume conversion factor at standard conditions, as defined in § 98.6 (scf per kg-mole) (Equation C-5). ( 17 ) Identify if you will use the default high heat value from Table C-1 of subpart C of this part , or actual HHV data (Equation C-8 of § 98.33 ). ( 18 ) High heat value of the fuel (mmBTU/tons) (Equation C-8). ( 19 ) High heat value of the fuel (mmBTU/gallons) (Equation C-8). ( 20 ) High heat value of the fuel (mmBTU/scf) (Equation C-8). ( 21 ) Mass of spent liquor solids combusted from each chemical recovery furnace located at a kraft or soda facility, in short tons in year, determined according to § 98.274(b) (tons/year) (Equation AA-1 of § 98.273 ). ( 22 ) Annual high heat value of the spent liquor solids from each chemical recovery furnace located at a kraft or soda facility determined according to § 98.274(b) (mmBtu per kilogram) (Equation AA-1). ( 23 ) Annual high heat value of the spent liquor solids from each chemical recovery combustion unit located at a sulfite or stand-alone semichemical facility, determined according to § 98.274(b) (mmBtu per kilogram) (Equation AA-1). ( 24 ) Mass of the spent liquor solids combusted in short tons per year determined according to § 98.274(b) (tons/year) (Equation AA-2 of § 98.273 ). ( 25 ) Annual carbon content of the spent liquor solids, determined according to § 98.274(b) (percent by weight, expressed as a decimal fraction (e.g., 95% = 0.95)) (Equation AA-2). ( 26 ) Make-up quantity of CaCO 3 used for the reporting year (metric tons/year) (Equation AA-3 of § 98.273 ). ( 27 ) Make-up quantity of Na 2 CO 3 used for the reporting year metric tons/year) (Equation AA-3). [ 74 FR 56374 , Oct. 30, 2009, as amended at 79 FR 63798 , Oct. 24, 2014; 89 FR 31932 , Apr. 25, 2024] § 98.278 Definitions. All terms used in this subpart have the same meaning given in the Clean Air Act and subpart A of this part . Table AA-1 to Subpart AA of Part 98—Kraft Pulping Liquor Emissions Factors for Biomass-Based CO 2 , CH 4 , and N 2 O Wood furnish Biomass-based emissions factors (kg/mmBtu HHV) a CO 2 CH 4 N 2 O North American Softwood 94.4 0.0019 0.00042 North American Hardwood 93.7 0.0019 0.00042 Bagasse 95.5 0.0019 0.00042 Bamboo 93.7 0.0019 0.00042 Straw 95.1 0.0019 0.00042 a Includes emissions from both the recovery furnace and pulp mill lime kiln. [ 78 FR 71965 , Nov. 29, 2013] Table AA-2 to Subpart AA of Part 98—Kraft Lime Kiln and Calciner Emissions Factors for CH 4 and N 2 O Fuel Fossil fuel-based emissions factors (kg/mmBtu HHV) Kraft rotary lime kilns Kraft calciners a CH 4 N 2 O CH 4 N 2 O Residual Oil (any",
+  "token_count": 512,
+  "text_sha": "f633be809320362e91ea83024a436fdb9660632fddf2daf47501795b6113b74b",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0026",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "from data found on: S&P Global 451 Research (Dec. 31, 2025) 56 Proposed Generating Capacity Regional Breakout CAISO = California Independent System Operator WECC = Western Electric Coordinating Council SPP = Southwest Power Pool ERCOT = Electric Reliability Council of Texas MISO = Midwest Independent System Operator ISO-NE = Independent System Operator New England NYISO = New York Independent System Operator PJM = Pennsylvania, New Jersey, Maryland Interconnection SERC = Southeastern Electric Reliability Council Derived from data found on: S&P Global Market Intelligence and NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 57 Status of Proposed Nameplate Capacity: CAISO 12 Known fuel groups included in “Other”: coal, biomass gas, biomass waste, biomass wood, geothermal, oil, waste heat ) W 10 G ( y 62.72 GW total t ic a 8 p a C e t a 6 lp e m a N 4 d e s o p o 2 r P e e r r r e e r r r e e e r r r e e r r e r r r e r r e e e r g r e a e g r e a e g r r e a e g r e a g e a e g a e g g g e a r o o h s h t O lo S t a W a r o o h s h t O lo S t a W a r o o h s o h s h t O lo S t a W a r o o h s h t O lo S a r o h t O lo S t a W a r o lo S t a W a r o a r o a r o t a W t n t n t f n t n t t t t t S y O S y O S y f O O S y O S y S y S y S y S y g g g g g g g g g r r r r r r r r r e e e e e e e e e n n n n n n n n n E E E E E E E E E 2026 2027 2028 2029 2030 2031 2032 2033 2034 2035 Proposed Online Year and Type Announced Early Development Advanced Development Under Construction Derived from data found on: S&P Global Market Intelligence: Screener > Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 58 Status of Proposed Creditable Capacity: CAISO 10 9 ) W G 8 ( y 48.88 GW total t ic 7 a p a 6 C e lb 5 a t id 4 e r C d 3 e s o p 2 o r P 1 e e r r r e e r r r e e e r r r e e r r e r r r e r r e e e r g r",
+  "token_count": 512,
+  "text_sha": "80b4f08c981c38ad448eef44125a0fd950fa15b006334efa891d7e59bb78c37c",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

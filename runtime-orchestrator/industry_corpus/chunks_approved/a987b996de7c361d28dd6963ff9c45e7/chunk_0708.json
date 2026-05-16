@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0708",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "part because emissions from source categories described in Tables A-3, A-4 or A-5 of subpart A of this part , or from stationary combustion ( subpart C of this part ), is not required to report emissions under this subpart unless the coal mine liberates 36,500,000 actual cubic feet (acf) or more of methane per year from its ventilation system. [ 75 FR 39763 , July 12, 2010, as amended at 76 FR 73901 , Nov. 29, 2011; 78 FR 71966 , Nov. 29, 2013] § 98.323 Calculating GHG emissions. ( a ) For each ventilation shaft, vent hole, or centralized point into which CH 4 from multiple shafts and/or vent holes are collected, you must calculate the quarterly CH 4 liberated from the ventilation system using Equation FF-1 of this section. You must measure CH 4 content, flow rate, temperature, pressure, and moisture content of the gas using the procedures outlined in § 98.324 . Where: CH 4V = Quarterly CH 4 liberated from a ventilation monitoring point (metric tons CH 4 ). V = Volumetric flow rate for the quarter (acfm) based on sampling or a flow rate meter. If a flow rate meter is used and the meter automatically corrects to standard temperature and pressure, then use scfm and replace “520°R/T × P/1 atm” with “1”. MCF = Moisture correction factor for the measurement period, volumetric basis. = 1 when V and C are measured on a dry basis or if both are measured on a wet basis. = 1-(f H2O ) when V is measured on a wet basis and C is measured on a dry basis. = 1/[1-(f H2O )] when V is measured on a dry basis and C is measured on a wet basis. (f H2O ) = Moisture content of the CH 4 emitted during the measurement period, volumetric basis (cubic feet water per cubic feet emitted gas). C = CH 4 concentration of ventilation gas for the quarter (%). n = The number of days in the quarter where active ventilation of mining operations is taking place at the monitoring point. To obtain the number of days in the quarter, divide the total number of hours in the quarter where active ventilation is taking place by 24 hours per day. 0.0423 = Density of CH 4 at 520 °R (60 °F) and 1 atm (lb/scf). 520 °R = 520 degrees Rankine. T = Temperature at which flow is measured (°R) for the quarter. P = Absolute pressure at which flow is measured (atm) for the quarter. The annual average barometric pressure from the nearest NOAA weather service station may be used as a default. 1,440 = Conversion factor (min/day). 0.454/1,000 = Conversion factor (metric ton/lb). ( 1 ) The quarterly periods are: ( i ) January 1-March 31. ( ii ) April 1-June 30. ( iii ) July 1-September 30. ( iv ) October 1-December 31. ( 2 ) Values of V, C, T, P, and, if applicable, (f H2O ), must be based on measurements taken at least once",
+  "token_count": 509,
+  "text_sha": "32a831d956d4d7c385b3b0bc9d1632f7229dc35c2b5cebc43ada4542e1f8a8a7",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

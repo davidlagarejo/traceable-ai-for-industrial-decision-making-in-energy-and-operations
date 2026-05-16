@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0201",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "calculated using equation I-24D to this section. d kif = Fraction of fluorinated GHG by-product k generated from input gas i destroyed or removed when fed into abatement systems by process tools in fab f that are included in the stack testing option, as calculated in equation I-24B to this section (expressed as decimal fraction). f = Fab. i = Fluorinated GHG input gas. k = Fluorinated GHG by-product. ( vii ) When using the stack testing method described in this paragraph (i) , you must calculate abatement system uptime on a fab basis using equation I-23 to this section. When calculating abatement system uptime for use in equation I-19 and I-20 to this section, you must evaluate the variables “Tdpf” and “UTpf” for the sampling period instead of the reporting year. Where: UT f = The average uptime factor for all abatement systems in fab f (expressed as a decimal fraction). The average uptime factor may be set to one (1) if all the abatement systems in fab f are interlocked with all the tools feeding the abatement systems such that no gas can flow to the tools if the abatement systems are not in operational mode. Td pf = The total time, in minutes, that abatement system p, connected to process tool(s) in fab f, is not in operational mode as defined in § 98.98 . If your fab uses redundant abatement systems, you may account for Tdpf as specified in § 98.94(f)(4)(vi) . UT pf = Total time, in minutes per year, in which the tool(s) connected at any point during the year to abatement system p, in fab f could be in operation. For determining the amount of tool operating time, you may assume that tools that were installed for the whole of the year were operated for 525,600 minutes per year. For tools that were installed or uninstalled during the year, you must prorate the operating time to account for the days in which the tool was not installed; treat any partial day that a tool was installed as a full day (1,440 minutes) of tool operation. For an abatement system that has more than one connected tool, the tool operating time is 525,600 minutes per year if there was at least one tool installed at all times throughout the year. If you have tools that are idle with no gas flow through the tool, you may calculate total tool time using the actual time that gas is flowing through the tool. f = Fab. p = Abatement system. ( viii ) When using the stack testing option described in this paragraph (i) and when using more than one DRE for the same input gas i or by-product gas k, you must calculate the weighted-average fraction of each fluorinated input gas i and each fluorinated by-product gas k that has more than one DRE and that is destroyed or removed in abatement systems for each fab f, as applicable, by using equation I-24A to this section (for input gases) and equation I-24B to this",
+  "token_count": 509,
+  "text_sha": "4f5a07b4391b57b07cfc7fc51ba8b07944cb00542a4eba2bf52d3e1f32fb090e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

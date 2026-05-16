@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0101",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the unit. In this case, report GHG emissions from combustion of all fuels listed in Table C-1 of this subpart. ( d ) You are not required to report GHG emissions from pilot lights. A pilot light is a small auxiliary flame that ignites the burner of a combustion device when the control valve opens. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79140 , Dec. 17, 2010] § 98.31 Reporting threshold. You must report GHG emissions under this subpart if your facility contains one or more stationary fuel combustion sources and the facility meets the applicability requirements of either §§ 98.2(a)(1) , 98.2(a)(2) , or 98.2(a)(3) . § 98.32 GHGs to report. You must report CO 2 , CH 4 , and N 2 O mass emissions from each stationary fuel combustion unit, except as otherwise indicated in this subpart. [ 75 FR 79140 , Dec. 17, 2010] § 98.33 Calculating GHG emissions. You must calculate CO 2 emissions according to paragraph (a) of this section, and calculate CH 4 and N 2 O emissions according to paragraph (c) of this section. ( a ) CO 2 emissions from fuel combustion. Calculate CO 2 mass emissions by using one of the four calculation methodologies in paragraphs (a)(1) through (a)(4) of this section, subject to the applicable conditions, requirements, and restrictions set forth in paragraph (b) of this section. Alternatively, for units that meet the conditions of paragraph (a)(5) of this section, you may use CO 2 mass emissions calculation methods from part 75 of this chapter , as described in paragraph (a)(5) of this section. For units that combust both biomass and fossil fuels, you must calculate and report CO 2 emissions from the combustion of biomass separately using the methods in paragraph (e) of this section, except as otherwise provided in paragraphs (a)(5)(iv) and (e) of this section and in § 98.36(d) . ( 1 ) Tier 1 Calculation Methodology. Calculate the annual CO 2 mass emissions for each type of fuel by using Equation C-1, C-1a, or C-1b of this section (as applicable). ( i ) Use Equation C-1 except when natural gas billing records are used to quantify fuel usage and gas consumption is expressed in units of therms or million Btu. In that case, use Equation C-1a or C-1b, as applicable. where: CO 2 = Annual CO 2 mass emissions for the specific fuel type (metric tons). Fuel = Mass or volume of fuel combusted per year, from company records as defined in § 98.6 (express mass in short tons for solid fuel, volume in standard cubic feet for gaseous fuel, and volume in gallons for liquid fuel). HHV = Default high heat value of the fuel, from Table C-1 of this subpart (mmBtu per mass or mmBtu per volume, as applicable). EF = Fuel-specific default CO 2 emission factor, from Table C-1 of this subpart (kg CO 2 /mmBtu). 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( ii ) If natural gas consumption",
+  "token_count": 509,
+  "text_sha": "54cfc305cf05276735e6a286de57f1329e5757a77a5dfa43b462f67c99e4f587",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

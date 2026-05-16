@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ab01f6de::chunk_0032",
+  "source_id": "doe_osti_3007891",
+  "source_sha": "ab01f6de3932801bcfaf10a690dd253b",
+  "source_url": "https://www.osti.gov/servlets/purl/3007891",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "in Table C.R5, where potential regions of collocation are significantly limited all throughout the county. Though limited, it seems the most viable technology is actually the water-cooled SMR, due primarily to the relaxed slope criteria in the south and some portions of Central Routt County. 97",
+  "token_count": 46,
+  "text_sha": "93213bb6f87f20aea1418405ccb0b6303737047e4ccaf2d7e16ab207b2b9d53c",
+  "extracted_at": "2026-05-16T00:02:07.125749Z"
+}

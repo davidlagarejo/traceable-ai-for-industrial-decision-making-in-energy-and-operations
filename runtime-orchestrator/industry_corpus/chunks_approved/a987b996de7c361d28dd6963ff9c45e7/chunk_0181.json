@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0181",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "wt-fraction. ( 8 ) Annual facility CKD not recycled to the kiln(s), tons. ( b ) If a CEMS is not used to measure CO 2 emissions, then you must report the information listed in this paragraph (b) for each kiln: ( 1 ) Kiln identification number. ( 2 ) [Reserved] ( 3 ) Annual cement production at the facility. ( 4 ) Number of kilns and number of operating kilns. ( 5 ) - ( 6 ) [Reserved] ( 7 ) Method used to determine non-calcined CaO and non-calcined MgO in clinker. ( 8 ) [Reserved] ( 9 ) Method used to determine non-calcined CaO and non-calcined MgO in CKD. ( 10 ) [Reserved] ( 11 ) Quarterly kiln-specific CKD CO 2 emission factors for each kiln (metric tons CO 2 /metric ton CKD produced). ( 12 ) [Reserved] ( 13 ) Name of raw kiln feed or raw material. ( 14 ) Number of times missing data procedures were used to determine the following information: ( i ) Clinker production (number of months). ( ii ) Carbonate contents of clinker (number of months). ( iii ) Non-calcined content of clinker (number of months). ( iv ) CKD not recycled to kiln (number of quarters). ( v ) Non-calcined content of CKD (number of quarters) ( vi ) Organic carbon contents of raw materials (number of times). ( vii ) Raw material consumption (number of months). ( 15 ) Method used to determine the monthly clinker production from each kiln. ( 16 ) Annual clinker production (metric tons). ( 17 ) Annual average clinker CO 2 emission factor for the facility, averaged across all kilns (metric tons CO 2 /metric ton clinker produced). ( 18 ) Annual average CKD CO 2 emission factor for the facility, averaged across all kilns (metric tons CO 2 /metric ton CKD produced). ( 19 ) Annual arithmetic average of total CaO content of clinker at the facility, wt-fraction. ( 20 ) Annual arithmetic average of non-calcined CaO content of clinker at the facility, wt-fraction. ( 21 ) Annual arithmetic average of total MgO content of clinker at the facility, wt-fraction. ( 22 ) Annual arithmetic average of non-calcined MgO content of clinker at the facility, wt-fraction. ( 23 ) Annual arithmetic average of total CaO content of CKD not recycled to the kiln(s) at the facility, wt-fraction. ( 24 ) Annual arithmetic average of non-calcined CaO content of CKD not recycled to the kiln(s) at the facility, wt-fraction. ( 25 ) Annual arithmetic average of total MgO content of CKD not recycled to the kiln(s) at the facility, wt-fraction. ( 26 ) Annual arithmetic average of non-calcined MgO content of CKD not recycled to the kiln(s) at the facility, wt-fraction. ( 27 ) Annual facility CKD not recycled to the kiln(s), tons. ( 28 ) The amount of raw kiln feed consumed annually at the facility, tons (dry basis). [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 66461 , Oct. 28, 2010; 78 FR 71953 , Nov. 29, 2013;",
+  "token_count": 511,
+  "text_sha": "2958e803edf0eb1370211165802b31882edc6d912218486dd4ffd53aa7f51015",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0122",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "biomass and fossil fuels ( e.g., liquid fuel mixtures containing biodiesel). ( 2 ) You may use the procedures of this paragraph if the following three conditions are met: First, a CO 2 CEMS (or a surrogate O 2 monitor) and a stack gas flow rate monitor are used to determine the annual CO 2 mass emissions (either according to part 75 of this chapter , the Tier 4 Calculation Methodology, or the alternative calculation methodology specified in paragraph (a)(5)(iii) of this section); second, neither MSW nor tires is combusted in the unit during the reporting year; and third, the CO 2 emissions consist solely of combustion products ( i.e., no process or sorbent emissions included). ( i ) For each operating hour, use Equation C-12 of this section to determine the volume of CO 2 emitted. Where: V CO2h = Hourly volume of CO 2 emitted (scf). (%CO 2 ) h = Hourly average CO 2 concentration, measured by the CO 2 concentration monitor, or, if applicable, calculated from the hourly average O 2 concentration (%CO 2 ). Q h = Hourly average stack gas volumetric flow rate, measured by the stack gas volumetric flow rate monitor (scfh). t h = Source operating time (decimal fraction of the hour during which the source combusts fuel, i.e., 1.0 for a full operating hour, 0.5 for 30 minutes of operation, etc.). 100 = Conversion factor from percent to a decimal fraction. ( ii ) Sum all of the hourly V CO2h values for the reporting year, to obtain V total , the total annual volume of CO 2 emitted. ( iii ) Calculate the annual volume of CO 2 emitted from fossil fuel combustion using Equation C-13 of this section. If two or more types of fossil fuel are combusted during the year, perform a separate calculation with Equation C-13 of this section for each fuel and sum the results. Where: V ff = Annual volume of CO 2 emitted from combustion of a particular fossil fuel (scf). Fuel = Total quantity of the fossil fuel combusted in the reporting year, from company records, as defined in § 98.6 (lb for solid fuel, gallons for liquid fuel, and scf for gaseous fuel). F c = Fuel-specific carbon based F-factor, either a default value from Table 1 in section 3.3.5 of appendix F to part 75 of this chapter , or a site-specific value determined under section 3.3.6 of appendix F to part 75 (scf CO 2 /mmBtu). HHV = High heat value of the fossil fuel, from fuel sampling and analysis (annual average value in Btu/lb for solid fuel, Btu/gal for liquid fuel and Btu/scf for gaseous fuel, sampled as specified (e.g., monthly, quarterly, semi-annually, or by lot) in § 98.34(a)(2) ). The average HHV shall be calculated according to the requirements of paragraph (a)(2)(ii) of this section. 10 6 = Conversion factor, Btu per mmBtu. ( iv ) Subtract V ff from V total to obtain V bio , the annual volume of CO 2 from the combustion of biomass. ( v",
+  "token_count": 512,
+  "text_sha": "b8520af571fcf2dbfa4aa22d402f4de0ece0beebf1f523300e167eec05a77685",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0006",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "This report is available at no cost from NREL at www.nrel.gov/publications 4 Getting Started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29 5 Model Usage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 5.1 Case Study Setup Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 5.1.1 Network Design File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 5.1.2 Default Inputs File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 5.1.3 Financial Parameters File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 5.1.4 Cost Overrides Directory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 5.2 Importing and Using BlendPATH . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36 5.2.1 Creating a BlendPATH_scenario . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37 5.2.2 Pipeline Modifications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38 5.2.3 Result Files . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39 5.3 BlendPATH Limitations . . . .",
+  "token_count": 512,
+  "text_sha": "6cb043c6a1e5f4b09668d9a446c2b3f34a4a52b7cfffa65a5fd8e389d5ec0b55",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

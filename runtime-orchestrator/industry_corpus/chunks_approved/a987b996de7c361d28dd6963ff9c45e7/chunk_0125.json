@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0125",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "cannot be determined solely from the information in the electronic emissions reports under § 75.64 of this chapter ( e.g., in cases where a unit uses CEMS in combination with multiple F-factors, a worst-case F-factor, or a prorated F-factor to report heat input rather than reporting heat input based on fuel type), use the best available information (as described in §§ 98.33(c)(4)(ii)(C) and (c)(4)(ii)(D) ) to determine (HI) A . CO 2 = 0.001 * (HI) A * EF (Eq. C-15a) where: CO 2 = Annual CO 2 mass emissions from the combustion of a particular type of biomass fuel listed in Table C-1 (metric tons) (HI) A = Annual heat input from the biomass fuel, obtained, where feasible, from the electronic emissions reports required under § 75.64 of this chapter . Where this is not feasible use best available information, as described in §§ 98.33(c)(4)(ii)(C) and (c)(4)(ii)(D) (mmBtu) EF = CO 2 emission factor for the biomass fuel, from Table C-1 (kg CO 2 /mmBtu) 0.001 = Conversion factor from kg to metric tons [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79140 , Dec. 17, 2010; 78 FR 71950 , Nov. 29, 2013; 81 FR 89251 , Dec. 9, 2016; 89 FR 31900 , Apr. 25, 2024; 89 FR 42220 , May 14, 2024] § 98.34 Monitoring and QA/QC requirements. The CO 2 mass emissions data for stationary fuel combustion sources shall be monitored as follows: ( a ) For the Tier 2 Calculation Methodology: ( 1 ) All fuel samples shall be taken at a location in the fuel handling system that provides a sample representative of the fuel combusted. The fuel sampling and analysis may be performed by either the owner or operator or the supplier of the fuel. ( 2 ) The minimum required frequency of the HHV sampling and analysis for each type of fuel or fuel mixture (blend) is specified in this paragraph. When the specified frequency for a particular fuel or blend is based on a specified time period ( e.g., week, month, quarter, or half-year), fuel sampling and analysis is required only for those time periods in which the fuel or blend is combusted. The owner or operator may perform fuel sampling and analysis more often than the minimum required frequency, in order to obtain a more representative annual average HHV. ( i ) For natural gas, semiannual sampling and analysis is required ( i.e., twice in a calendar year, with consecutive samples taken at least four months apart). ( ii ) For coal and fuel oil, and for any other solid or liquid fuel that is delivered in lots, analysis of at least one representative sample from each fuel lot is required. For fuel oil, as an alternative to sampling each fuel lot, a sample may be taken upon each addition of oil to the unit's storage tank. Flow proportional sampling, continuous drip sampling, or daily manual oil sampling may also be used, in lieu of sampling each fuel lot. If the daily manual oil",
+  "token_count": 510,
+  "text_sha": "6d435814c275307ab7aea96cd2d0355505c3d456213d6647ef756ec0d3c25544",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

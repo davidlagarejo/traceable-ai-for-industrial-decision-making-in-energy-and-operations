@@ -1,0 +1,11 @@
+source_id: us_federal_49_cfr_0195
+title: "PHMSA — Hazardous Liquid Pipeline Safety"
+url: https://www.ecfr.gov/current/title-49/part-195
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:23.733631Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 701 §-marked sections. 361,729 chars."
+asset_families:
+  - infrastructure_node

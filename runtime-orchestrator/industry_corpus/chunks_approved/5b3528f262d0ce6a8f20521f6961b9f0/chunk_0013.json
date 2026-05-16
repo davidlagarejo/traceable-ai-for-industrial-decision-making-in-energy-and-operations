@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5b3528f2::chunk_0013",
+  "source_id": "doe_osti_3015290",
+  "source_sha": "5b3528f262d0ce6a8f20521f6961b9f0",
+  "source_url": "https://www.osti.gov/servlets/purl/3015290",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "3 (2023): 793-804. Bhattacharya, Arnab, Soumya Vasisht, Veronica Adetola, Sen Huang, Himanshu Sharma, and Draguna L. Vrabie. \"Control co-design of commercial building chiller plant using Bayesian o References 14 PNNL-38619 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov References 15",
+  "token_count": 48,
+  "text_sha": "ba2febd80a96ec98d1f0cade9a42569d9eb980e092e04661542a40d36ab80499",
+  "extracted_at": "2026-05-16T00:04:37.395216Z"
+}

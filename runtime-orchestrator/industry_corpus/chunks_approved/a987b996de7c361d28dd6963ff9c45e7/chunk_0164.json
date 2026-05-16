@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0164",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "98.2(a)(1) or (a)(2) . § 98.62 GHGs to report. You must report: ( a ) Perfluoromethane (CF 4 ), and perfluoroethane (C 2 F 6 ) emissions from anode effects in all prebake and Søderberg electrolysis cells. ( b ) CO 2 emissions from anode consumption during electrolysis in all prebake and Søderberg electrolysis cells. ( c ) CO 2 emissions from on-site anode baking. ( d ) You must report under subpart C of this part (General Stationary Fuel Combustion Sources) the emissions of CO 2 , N 2 O, and CH 4 emissions from each stationary fuel combustion unit by following the requirements of subpart C. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79155 , Dec. 17, 2010] § 98.63 Calculating GHG emissions. ( a ) The annual value of each PFC compound (CF 4 , C 2 F 6 ) shall be estimated from the sum of monthly values using Equation F-1 of this section: Where: E PFC = Annual emissions of each PFC compound from aluminum production (metric tons PFC). E m = Emissions of the individual PFC compound from aluminum production for the month “m” (metric tons PFC). ( b ) Use Equation F-2 of this section to estimate CF 4 emissions from anode effect duration or Equation F-3 of this section to estimate CF 4 emissions from overvoltage, and use Equation F-4 of this section to estimate C 2 F 6 emissions from anode effects from each prebake and Søderberg electrolysis cell. Where: E CF4 = Monthly CF 4 emissions from aluminum production (metric tons CF 4 ). S CF4 = The slope coefficient ((kg CF 4 /metric ton Al)/(AE-Mins/cell-day)). AEM = The anode effect minutes per cell-day (AE-Mins/cell-day). MP = Metal production (metric tons Al), where AEM and MP are calculated monthly. Where: E CF4 = Monthly CF 4 emissions from aluminum production (metric tons CF 4 ). EF CF4 = The overvoltage emission factor (kg CF 4 /metric ton Al). MP = Metal production (metric tons Al), where MP is calculated monthly. Where: E C2F6 = Monthly C 2 F 6 emissions from aluminum production (metric tons C 2 F 6 ). E CF4 = CF 4 emissions from aluminum production (kg CF 4 ). F C2F6/CF4 = The weight fraction of C 2 F 6 /CF 4 (kg C 2 F 6 /kg CF 4 ). 0.001 = Conversion factor from kg to metric tons, where E CF4 is calculated monthly. ( c ) You must calculate and report the annual process CO 2 emissions from anode consumption during electrolysis and anode baking of prebake cells using either the procedures in paragraph (d) of this section, the procedures in paragraphs (e) and (f) of this section, or the procedures in paragraph (g) of this section. ( d ) Calculate and report under this subpart the process CO 2 emissions by operating and maintaining CEMS according to the Tier 4 Calculation Methodology in § 98.33(a)(4) and all associated requirements for Tier 4 in subpart C of this part",
+  "token_count": 512,
+  "text_sha": "609aec94ec2f56fbf74f62bae8be463ce2ad2a78fd2a00065a7aedf2c566610e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ab01f6de::chunk_0027",
+  "source_id": "doe_osti_3007891",
+  "source_sha": "ab01f6de3932801bcfaf10a690dd253b",
+  "source_url": "https://www.osti.gov/servlets/purl/3007891",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Nestled in the midst of the Rocky Mountains, the vast majority of Routt County exceeds the slope criteria for LWR technology. On its own this criterion makes siting prohibitively difficult. Routt County also has several parks and national forests that dominate its north and eastern boundaries, a sizeable landslide hazard in its center, and a regional airport in the west. While the reduced slope restriction in Table C.R2 does allow for some suitability near Routt County’s southern boundary, most of the rest of the area is not suitable for water-cooled SMR development. Even the removal of the water requirements for dry-cooled SMRs in Table C.R3 only allows for siting in some sparse regions to the north. Even then, the lower tolerance for slope required for this technology mitigates the potential improvements to viability. While many regions in this analysis see significant improvements in viability as siting constraints are relaxed, this is not the case in Routt County due primarily to the fact that the most restrictive criteria do not change between technology configurations. While Table C.R4 does show a much greater potential for data center siting in Routt County, the landslide risk still precludes the greater portion of the center of the area. The overall impact of these various constraints are evident in the collocation analysis in Table C.R5, where potential regions of collocation are significantly limited all throughout the county. Though limited, it seems the most viable technology is actually the water-cooled SMR, due primarily to the relaxed slope criteria in the south and some portions of Central Routt County. 97",
+  "token_count": 262,
+  "text_sha": "839e107c06a770412c2ae99c58ee655a84fe5e447e7d348080532489b3611f28",
+  "extracted_at": "2026-05-16T00:02:07.125749Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "18c928b6::chunk_0032",
+  "source_id": "doe_osti_3015048",
+  "source_sha": "18c928b6da551a199dc82508e7eba5ab",
+  "source_url": "https://www.osti.gov/servlets/purl/3015048",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "recognition,5687–5695. Ying, C., A. Klein, E. Christiansen, E. Real, K. Murphy, and F. Hutter. 2019. “Nas-bench-101: Towards reproducible neural architecture search.” InInternationaOl conference on machine learning,7105–7114. PMLR. R P 26 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 47,
+  "text_sha": "c7771140abdb5a98196c2fdf9163f9ecb9e78beab600ed9009639fa7ea150db6",
+  "extracted_at": "2026-05-16T00:02:13.437561Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0154",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "w = ((100 − M)/100)*HHV d where HHV w = wet basis HHV, M = moisture content (percent) and HHV d = dry basis HHV from Table C-1. [ 78 FR 71950 , Nov. 29, 2013, as amended at 81 FR 89252 , Dec. 9, 2016] Table C-2 to Subpart C of Part 98—Default CH 4 and N 2 O Emission Factors for Various Types of Fuel Fuel type Default CH 4 emission factor (kg CH 4 /mmBtu) Default N 2 O emission factor (kg N 2 O/mmBtu) Coal and Coke (All fuel types in Table C-1) 1.1 × 10 −02 1.6 × 10 −03 Natural Gas 1 1.0 × 10− 03 1.0 × 10− 04 Petroleum Products (All fuel types in Table C-1) 3.0 × 10 −03 6.0 × 10 −04 Fuel Gas 3.0 × 10 −03 6.0 × 10 −04 Other Fuels—Solid 3.2 × 10 −02 4.2 × 10 −03 Blast Furnace Gas 2.2 × 10 −05 1.0 × 10 −04 Coke Oven Gas 4.8 × 10 −04 1.0 × 10 −04 Biomass Fuels—Solid (All fuel types in Table C-1, except wood and wood residuals) 3.2 × 10 −02 4.2 × 10 −03 Wood and wood residuals 7.2 × 10 −03 3.6 × 10 −03 Biomass Fuels—Gaseous (All fuel types in Table C-1) 3.2 × 10 −03 6.3 × 10 −04 Biomass Fuels—Liquid (All fuel types in Table C-1) 1.1 × 10 −03 1.1 × 10 −04 Note: Those employing this table are assumed to fall under the IPCC definitions of the “Energy Industry” or “Manufacturing Industries and Construction”. In all fuels except for coal the values for these two categories are identical. For coal combustion, those who fall within the IPCC “Energy Industry” category may employ a value of 1g of CH 4 /mmBtu. 1 Reporters subject to subpart W of this part may only use the default CH 4 emission factor for natural gas-fired combustion units that are not reciprocating internal combustion engines or gas turbines. For natural gas-fired reciprocating internal combustion engines or gas turbines, at facilities subject to subpart W of this part , reporters must use a CH 4 emission factor determined in accordance with § 98.233(z)(4) . [ 78 FR 71952 , Nov. 29, 2013, as amended at 81 FR 89252 , Dec. 9, 2016; 89 FR 42220 , May 14, 2024] Subpart D—Electricity Generation § 98.40 Definition of the source category. ( a ) The electricity generation source category comprises electricity generating units that are subject to the requirements of the Acid Rain Program and any other electricity generating units that are required to monitor and report to EPA CO 2 mass emissions year-round according to 40 CFR part 75 . ( b ) This source category does not include portable equipment, emergency equipment, or emergency generators, as defined in § 98.6 . [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79155 , Dec. 17, 2010] § 98.41 Reporting threshold. You must report GHG emissions under this subpart if your facility contains one or more electricity generating units",
+  "token_count": 512,
+  "text_sha": "da157709d92a3319cd1bf3c2bfefb29ce88238740f3996493f4da2afd14eba0a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

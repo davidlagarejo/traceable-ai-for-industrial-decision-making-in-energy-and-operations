@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c1bdb60a::chunk_0050",
+  "source_id": "doe_osti_3027597",
+  "source_sha": "c1bdb60a75e4167533be52c0447f6689",
+  "source_url": "https://www.osti.gov/servlets/purl/3027597",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "inverted perovskite solar cells. Nat Photonics (2024) doi:10.1038/s41566-024- 01542-8. 160. Jiang, Q. et al. Highly efficient bifacial single-junction perovskite solar cells. Joule 7, 1543–1555 (2023). 161. Oyelade, O. V. et al. Pressure-Assisted Fabrication of Perovskite Solar Cells. Sci Rep 10, 7183 (2020). 52/52",
+  "token_count": 43,
+  "text_sha": "f87e3a13b86931c3cead26db60c694349d793b33693c085f2bfcc893ee8bb659",
+  "extracted_at": "2026-05-15T23:57:07.945864Z"
+}

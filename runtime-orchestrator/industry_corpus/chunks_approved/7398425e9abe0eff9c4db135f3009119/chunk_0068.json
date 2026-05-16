@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7398425e::chunk_0068",
+  "source_id": "doe_osti_3012135",
+  "source_sha": "7398425e9abe0eff9c4db135f3009119",
+  "source_url": "https://www.osti.gov/servlets/purl/3012135",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "motor operates in the regenerative/braking mode. The brake chopper and control boards are shown in Figure 7. The brake chopper board also has LEM current sensor. (a) (b) Figure 7: (a) Brake chopper gate-driver board, Si IGBT module, and LEM current sensor, and (b) control board 98",
+  "token_count": 47,
+  "text_sha": "227a59c08be523476e33753316b397a55f4abd842db1c124622c6776dbc86b20",
+  "extracted_at": "2026-05-16T00:01:59.042007Z"
+}

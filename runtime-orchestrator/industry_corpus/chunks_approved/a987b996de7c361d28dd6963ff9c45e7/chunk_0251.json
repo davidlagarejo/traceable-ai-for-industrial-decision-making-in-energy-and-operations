@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0251",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "BCF 4 NA 0.21 0.073 0.020 0.038 0.21 0.045 0.035 0.0072 0.034 0.11 NA BC 2 F 6 0.041 NA 0.040 0.0065 0.0064 0.18 0.030 0.038 0.0017 0.025 0.083 NA BC 4 F 6 0.0015 NA 0.00010 NA 0.0010 NA 0.00083 NA NA NA NA NA BC 4 F 8 0.0051 NA 0.00061 NA 0.0070 NA NA NA NA NA NA NA BC 3 F 8 NA NA NA NA NA NA NA NA NA NA 0.00012 NA BC 5 F 8 NA NA NA NA NA NA NA NA NA NA NA NA BCHF 3 0.0056 NA NA 0.033 0.0049 0.012 0.029 0.0065 0.0012 0.019 0.0069 NA BCH 2 F 2 0.014 NA 0.0026 NA 0.0023 NA 0.0014 0.00086 0.000020 0.000030 NA NA BCH 3 F 0.00057 NA 0.12 NA NA 0.00073 NA NA 0.0082 NA NA NA Chamber Cleaning In situ plasma cleaning 1-U i NA NA NA NA NA NA NA 0.20 NA NA NA NA BCF 4 NA NA NA NA NA NA NA 0.037 NA NA NA NA BC 2 F 6 NA NA NA NA NA NA NA NA NA NA NA NA BC 3 F 8 NA NA NA NA NA NA NA NA NA NA NA NA Remote plasma cleaning 1-U i NA NA NA NA NA 0.063 NA 0.018 NA NA NA NA BCF 4 NA NA NA NA NA NA NA 0.038 NA NA NA NA BC 2 F 6 NA NA NA NA NA NA NA NA NA NA NA NA BC 3 F 8 NA NA NA NA NA NA NA NA NA NA NA NA BCHF 3 NA NA NA NA NA NA NA 0.000059 NA NA NA NA BCH 2 F 2 NA NA NA NA NA NA NA 0.0016 NA NA NA NA BCH 3 F NA NA NA NA NA NA NA 0.0028 NA NA NA NA In situ thermal cleaning 1-U i NA NA NA NA NA NA NA 0.28 NA NA NA NA BCF 4 NA NA NA NA NA NA NA 0.010 NA NA NA NA BC 2 F 6 NA NA NA NA NA NA NA NA NA NA NA NA BC 3 F 8 NA NA NA NA NA NA NA NA NA NA NA NA [ 89 FR 31923 , Apr. 25, 2024] Table I-21 to Subpart I of Part 98—Examples of Fluorinated GHGs Used by the Electronics Industry Table I-21 to Subpart I of Part 98—Examples of Fluorinated GHGs Used by the Electronics Industry Product type Fluorinated GHGs used during manufacture Electronics CF 4 , C 2 F 6 , C 3 F 8 , c-C 4 F 8 , c-C 4 F 8 O, C 4 F 6 , C 5 F 8 , CHF 3 , CH 2 F 2 , NF 3 , SF 6 , and fluorinated HTFs (CF 3 -(O-CF(CF 3 )-CF 2 )n-(O-CF 2 )m-O-CF 3 , C n F 2n+2 , C n F 2n+1 (O)C m F 2m+1 , C n F 2n O, (C n F 2n+1 ) 3N ).",
+  "token_count": 512,
+  "text_sha": "282ab4dfe9a8e58d4da7ebe0d86c8e01e99da0a6c8456a6455e1bf417e866aec",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

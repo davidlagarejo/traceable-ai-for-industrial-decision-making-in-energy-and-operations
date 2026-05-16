@@ -1,0 +1,14 @@
+{
+  "chunk_id": "74b826f9::chunk_0030",
+  "source_id": "doe_osti_2586497",
+  "source_sha": "74b826f94e10a8e689c526efaec1ad08",
+  "source_url": "https://www.osti.gov/servlets/purl/2586497",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "new exascale computing platform for beamˆa€“plasma simulations”. In: Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detec- tors and Associated Equipment 909 (2018). 3rd European Advanced Accelerator Concepts workshop (EAAC2017), pp. 476–479. issn: 0168-9002. doi: https://doi.org/10.1016/j.nima.2018.01.035. url: https://www.sciencedirect.com/science/article/pii/S0168900218300524. 19",
+  "token_count": 42,
+  "text_sha": "733bb29b7253313b727f3a491d709d2ef5d648939d9f8b3a90c724eca785af5d",
+  "extracted_at": "2026-05-15T23:56:33.735736Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3017565
+title: "Novel Modular Heat Engines with sCO<sub>2</sub> Bottoming Cycle Utilizing Advanced Oil-Free Turbomachinery"
+url: https://www.osti.gov/servlets/purl/3017565
+license: public_domain
+publisher: doe_osti
+version: "2026-02-11"
+added_at: "2026-05-16T00:12:40.507727Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 03 NATURAL GAS, 20 FOSSIL-FUELED POWER PLANTS, Brayton Power Cycle, Oil-Free, sCO2"
+asset_families:
+  - infrastructure_node

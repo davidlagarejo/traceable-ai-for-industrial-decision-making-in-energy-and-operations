@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0820",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the information required by § 98.3(c) of subpart A of this part , the annual report shall contain the following information, as applicable: ( a ) If you use Equation PP-1 of this subpart, report the following information for each mass flow meter or CO 2 stream that delivers CO 2 to containers: ( 1 ) Annual mass in metric tons of CO 2 . ( 2 ) Quarterly mass in metric tons of CO 2 . ( 3 ) Quarterly concentration of the CO 2 stream. ( 4 ) The standard used to measure CO 2 concentration. ( 5 ) The location of the flow meter in your process chain in relation to the points of CO 2 stream capture, dehydration, compression, and other processing. ( b ) If you use Equation PP-2 of this subpart, report the following information for each volumetric flow meter or CO 2 stream that delivers CO 2 to containers: ( 1 ) Annual mass in metric tons of CO 2 . ( 2 ) Quarterly volume in standard cubic meters of CO 2 . ( 3 ) Quarterly concentration of the CO 2 stream in volume or weight percent. ( 4 ) Report density as follows: ( i ) Quarterly density of the CO 2 stream in metric tons per standard cubic meter if you report the concentration of the CO 2 stream in paragraph (b)(3) of this section in weight percent. ( ii ) Quarterly density of CO 2 in metric tons per standard cubic meter if you report the concentration of the CO 2 stream in paragraph (b)(3) of this section in volume percent. ( 5 ) The method used to measure density. ( 6 ) The standard used to measure CO 2 concentration. ( 7 ) The location of the flow meter in your process chain in relation to the points of CO 2 stream capture, dehydration, compression, and other processing. ( c ) For the aggregated annual mass of CO 2 emissions calculated using Equation PP-3a or PP-3b, report the following: ( 1 ) If you use Equation PP-3a of this subpart, report the annual CO 2 mass in metric tons from all flow meters and CO 2 streams that deliver CO 2 to containers. ( 2 ) If you use Equation PP-3b of this subpart, report: ( i ) The total annual CO 2 mass through main flow meter(s) in metric tons. ( ii ) The total annual CO 2 mass through subsequent flow meter(s) in metric tons. ( iii ) The total annual CO 2 mass supplied in metric tons. ( iv ) The location of each flow meter in relation to the point of segregation. ( d ) If you use Equation PP-4 of this subpart, report at the corporate level the annual mass of CO 2 in metric tons in all CO 2 containers that are imported or exported. ( e ) Each reporter shall report the following information: ( 1 ) The type of equipment used to measure the total flow of the CO 2 stream",
+  "token_count": 512,
+  "text_sha": "97f090d066aa1bd5b3eda12afa330198abd8cb96afe264df86ddaf9f33e98376",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

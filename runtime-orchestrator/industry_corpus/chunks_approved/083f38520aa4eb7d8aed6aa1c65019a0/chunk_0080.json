@@ -1,0 +1,14 @@
+{
+  "chunk_id": "083f3852::chunk_0080",
+  "source_id": "doe_osti_3098116",
+  "source_sha": "083f38520aa4eb7d8aed6aa1c65019a0",
+  "source_url": "https://www.osti.gov/servlets/purl/3098116",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "and processes (for access to prices and responding to price signals), and how should these costs be recovered? (f) How should these systems and processes (for access to prices and responding to price signals) be managed and overseen (e.g., utility administration or third-party administration)?” 77",
+  "token_count": 45,
+  "text_sha": "c3464ff8a26ceb1f7aec08a281e2e014f4d6e4411939f78311eb09e1b6eed5da",
+  "extracted_at": "2026-05-16T00:00:34.069054Z"
+}

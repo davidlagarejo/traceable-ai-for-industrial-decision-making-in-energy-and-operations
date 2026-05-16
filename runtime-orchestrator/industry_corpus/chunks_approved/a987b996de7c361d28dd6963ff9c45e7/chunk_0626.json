@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0626",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "kg). If you measure mass, the term (MW p ) i,n /MVC is replaced with “1”. (CC gp ) i,n = Average carbon content of gaseous product i, including streams containing CO 2 recovered for sale or use in another process, for month “n” (kg C per kg of product). (MW p ) i,n = Molecular weight of gaseous product i in month “n” (kg/kg-mole). j = Number of feedstocks. k = Number of products. ( ii ) Liquid feedstocks and products. Use Equation X-2 of this section to calculate the net carbon input or output from liquid feedstocks and products. Note that the result will be a negative value if there are no liquid feedstocks in the process but there are liquid products. Where: C l = Annual net contribution to calculated emissions from carbon in liquid materials, including liquid organic wastes (kg/yr). (F lf ) i,n = Volume or mass of liquid feedstock i introduced in month “n” (gallons or kg). (CC lf ) i,n = Average carbon content of liquid feedstock i for month “n” (kg C per gallon or kg of feedstock). (P lp ) i,n = Volume or mass of liquid product i produced in month “n” (gallons or kg). (CC lp ) i,n = Average carbon content of liquid product i, including organic liquid wastes, for month “n” (kg C per gallon or kg of product). j = Number of feedstocks. k = Number of products. ( iii ) Solid feedstocks and products. Use Equation X-3 of this section to calculate the net annual carbon input or output from solid feedstocks and products. Note that the result will be a negative value if there are no solid feedstocks in the process but there are solid products. Where: C s = Annual net contribution to calculated emissions from carbon in solid materials (kg/yr). (F sf ) i,n = Mass of solid feedstock i introduced in month “n” (kg). (CC sf ) i,n = Average carbon content of solid feedstock i for month “n” (kg C per kg of feedstock). (P sp ) i,n = Mass of solid product i produced in month “n” (kg). (CC sp ) i,n = Average carbon content of solid product i in month “n” (kg C per kg of product). j = Number of feedstocks. k = Number of products. ( iv ) Annual emissions. Use the results from Equations X-1 through X-3 of this section, as applicable, in Equation X-4 of this section to calculate annual CO 2 emissions. Where: CO 2 = Annual CO 2 mass emissions from process operations and process off-gas combustion (metric tons/year). 0.001 = Conversion factor from kg to metric tons. 44 = Molecular weight of CO 2 (kg/kg-mole). 12 = Atomic weight of carbon (C) (kg/kg-mole). ( d ) Optional combustion methodology for ethylene production processes. For each ethylene production process, calculate GHG emissions from combustion units that burn fuel that contains any off-gas from the ethylene process as specified in paragraphs (d)(1) through (d)(5) of this section. ( 1 )",
+  "token_count": 508,
+  "text_sha": "2f0404ebdce18f682be6be94f24e7aaf5d33ded1e1449901d94b8069b6f1200d",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

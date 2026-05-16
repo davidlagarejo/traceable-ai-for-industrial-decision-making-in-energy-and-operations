@@ -1,0 +1,14 @@
+{
+  "chunk_id": "552cecc0::chunk_0026",
+  "source_id": "doe_osti_3030033",
+  "source_sha": "552cecc094be82c8136fe231ca76b7f5",
+  "source_url": "https://www.osti.gov/servlets/purl/3030033",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "[12] EIA, “Nearly 5% of U.S. households did not use space heating in 2020, especially in warm regions,” Mar. 2023. [Online]. Available: https://www.eia.gov/todayinenergy/detail.php?id=55760#:~:text=…%20households,equip ment%20than%20space%2Dheating%20equipment. 29 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 41,
+  "text_sha": "9261d2aa49140913fef46807eba81b8086b54b04779b35541858b6b3c484cdf1",
+  "extracted_at": "2026-05-16T00:04:12.169147Z"
+}

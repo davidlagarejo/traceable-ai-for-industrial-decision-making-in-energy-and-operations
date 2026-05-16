@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0014",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "of the Booster Cycle Figure 14 and 15 show the horizontal and vertical tunes evolved during the earlypartoftheBoostercycleinanormalintensitybeam(7.5×1011 protons) and in a high intensity beam (13×1011 protons), respectively. The methods of test macro-particle tracking and tune calculation can be seen above, in §4.5. 28 4.74 4.72 11 11 13 10 0.5 9 10 0.5 4.7 11 11 13 10 2.0 9 10 2.0 e4.68 11 11 n 11 10 0.5 7.5 10 0.5 u4.66 11 11 T 11 10 2.0 7.5 10 2.0 4.64 la t4.62 n o 4.6 z ir4.58 o H4.56 4.54 4.52 4.5 0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 Time [msec] 4.9 11 11 13 10 0.5 9 10 0.5 4.85 11 11 13 10 2.0 9 10 2.0 4.8 11 11 e 11 10 0.5 7.5 10 0.5 n 11 11 u4.75 11 10 2.0 7.5 10 2.0 T la 4.7 c it r4.65 e V 4.6 4.55 4.5 0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 Time [msec] Figure 12: Horizontal tunes (upper sub-figure) and vertical tunes (lower sub- figure) developed in beams with four different intensities. The green, brown, blue and red curves correspond to proton beam intensities of 7.5 × 1011, 9×1011, 11×1011 and 13×1011 at the end of a 300µsec multi-turn injection period. Theblackcurveisthetune-settingduringandafterBoosterinjection. 29 Figure 13: The evolution of the particle distribution of a high intensity beam (13 × 1011) in phase space during earlier Booster cycle. The purple, blue, green, yellow, brown and red dots represent the phase space distributions at the times (counting from beginning of injection) 1.2msec, 7.2msec, 8.4msec, 9.6msec, 11msec and 12msec, respectively. 30 4.85 4.8 e 4.75 n u 4.7 T 4.65 l a t 4.6 n o4.55 z i 4.5 r o H4.45 0.5 1.5 2.5 4.4 1.0 2.0 3.0 4.35 0 2 4 6 8 10 12 14 16 18 20 Time [msec] 5 4.95 4.9 e n4.85 u 4.8 T 4.75 l a 4.7 c i t4.65 r e 4.6 V 4.55 0.5 1.5 2.5 4.5 1.0 2.0 3.0 4.45 0 2 4 6 8 10 12 14 16 18 20 Time [msec] Figure14: Horizontalandverticaltunesinanormalintensitybeam(7.5×1011 protons) during the early part of the Booster cycle. The six colored curves are the tunes obtained from simulations of six test macro-particles initially located at 0.5σ, 1σ, 1.5σ 2σ, 2.5σ and 3σ from the beam center, respectively. The black curves are the set-tunes during the Booster operation. 31 4.85 4.8 e 4.75 n u 4.7 T 4.65 l a t 4.6 n o4.55 z i 4.5 r o H4.45 0.5 1.5 2.5 4.4 1.0 2.0 3.0 4.35 0 2 4 6 8 10 12 14 16 18 20 Time [msec] 5 4.95 4.9 e n4.85 u 4.8 T 4.75 l a 4.7 c i t4.65 r e 4.6 V 4.55 0.5 1.5 2.5 4.5 1.0 2.0 3.0 4.45 0 2 4 6 8 10 12 14 16 18 20 Time [msec] Figure 15: Horizontal and vertical tunes in a high intensity beam (13×1011 protons) during the early",
+  "token_count": 508,
+  "text_sha": "16ca25e335a2ca09cd0440a70420c040fac7b26ce765a3f54158b70c94de85a1",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

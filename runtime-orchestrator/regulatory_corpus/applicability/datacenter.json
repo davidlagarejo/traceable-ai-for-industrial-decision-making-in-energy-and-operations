@@ -1,0 +1,813 @@
+{
+  "ran_at": "2026-05-16T00:16:06.960712Z",
+  "asset_family": "datacenter",
+  "regulations": [
+    {
+      "citation": "cfr 10 71.47",
+      "title": "Cfr 10 71.47",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        ".................... 1 1.1 Background on the Limit of 10 mrem/hr at 2 meters in 10 CFR 71.47 .................. 2 2.0 Prior Assumptions for Maximally Exposed Individuals ..",
+        "t) from the vehicle2 be increased to 50, 100, or 200 mrem/hr for microreactors. 10 CFR 71.47 Subpart E contains the U.S. Nuclear Regulatory Commission (NRC) package approva",
+        ". Nuclear Regulatory Commission (NRC) package approval standards, which include 10 CFR 71.47, “External"
+      ]
+    },
+    {
+      "citation": "1547-2018",
+      "title": "1547-2018",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2574820",
+        "doe_osti_2583521",
+        "doe_osti_3019724",
+        "doe_osti_3031084"
+      ],
+      "sample_snippets": [
+        "omLakesideDistri- butionCompanyshows: • State regulations stated enforcement of IEEE 1547-2018 in 2022, with estimated 238 MW ofDERswidecorrectride-throughsettings • Atotalof",
+        "istributed Energy Resources with Associated Electric Power Systems Interfaces,\" IEEE Std 1547-2018 (Revision of IEEE Std 1547- 2003), pp. 1-138, 2018. [10] J. Cohen, L. Shwisberg",
+        "al and Electronics Engineers (IEEE) open standards, such as IEEE 2030.7 [2] and IEEE 1547-2018 [3]; and it interfaces with/controls power hardware, such as BESS, generators,"
+      ]
+    },
+    {
+      "citation": "2022",
+      "title": "2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 8,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "-through per IEEE Std overvoltage/ undervoltage events, 1547 and IEEE Std 2800. IEEE 2022a including autonomous Test relay coordination logic and voltage support and pro",
+        "quency disturbance response Test DER and load ride-through tolerance under fast IEEE 2022a (NERC incident driven) against defined trip curves (e.g., grid events, distinc",
+        "-Hz deviation). support from both grid- services capability following and grid- IEEE 2022a forming DERs. 17 This report is available at no cost from the National Laborat"
+      ]
+    },
+    {
+      "citation": "2800",
+      "title": "2800",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013288",
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "riven) and ride-through per IEEE Std overvoltage/ undervoltage events, 1547 and IEEE Std 2800. IEEE 2022a including autonomous Test relay coordination logic and voltage supp",
+        "ction responses. fault ride-through. Integrates with NERC fault scenarios using IEEE Std 2800, IEEE Std 1547, and grid- forming control modes Grid underfrequency/ Simulate f",
+        ". Reflects capabilities defined in the grid-forming white paper (NERC 2015) and IEEE Std 2800 Grid impedance change Simulate short-circuit ratio drop IEEE 2022a Emulates gen"
+      ]
+    },
+    {
+      "citation": "2018",
+      "title": "2018",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "ined in the Institute for Electrical and Electronics Engineers (IEEE) Std 1547 (IEEE 2018), such as autonomous frequency response, voltage support, and disturbance ride-",
+        "e. grid-forming inverter disturbance response Validate disconnection thresholds IEEE 2018 behavior under (NERC incident driven) and ride-through per IEEE Std overvoltage",
+        "grid- forming control modes Grid underfrequency/ Simulate frequency excursions IEEE 2018 Tests DER and large overfrequency across a 57- to 63-Hz range. load frequency d"
+      ]
+    },
+    {
+      "citation": "2030.7",
+      "title": "2030.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583521",
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "nstitute of Electrical and Electronics Engineers (IEEE) open standards, such as IEEE 2030.7 [2] and IEEE 1547-2018 [3]; and it interfaces with/controls power hardware, suc",
+        "tion to be executed. The design of the PFMS is based on open standards, such as IEEE 2030.7 and IEEE 1547-2018; and it uses standard communication inter- faces, such as Mo",
+        "rom the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications. • IEEE Std 2030.7 (IEEE 2017): defines functional specifications and interoperability requirement"
+      ]
+    },
+    {
+      "citation": "47",
+      "title": "47",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013288"
+      ],
+      "sample_snippets": [
+        "nient per- Calculator unitizing Unbalance unb_rms Compute voltage unbalance per ANSI 47 Calculation The following subsections are dedicated to discussing the approach",
+        "omputes voltage unbalance from a set of 3 voltage magnitudes in accordance with ANSI 47, which is commonly applied to protective relays and contactors used in industri",
+        "delay. Enable bypass volt. unbalance? Boolean Phase voltage unbalance element (ANSI 47 Bypass volt. unbalance pickup pu definition); will open the bypass switch if th"
+      ]
+    },
+    {
+      "citation": "title 24",
+      "title": "California Building Standards Code (Title 24 CCR)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3030036",
+        "doe_osti_3098116"
+      ],
+      "sample_snippets": [
+        "ol requirements are consolidated in California Code of Energy Code Regulations, Title 24, Section 110.12, which “includes the requirement for OpenADR certification or t",
+        "ol requirements are consolidated in California Code of Energy Code Regulations, Title 24, Section 110.12, which “includes the requirement for OpenADR certification or t",
+        "lidates demand response control requirements in California Code of Regulations, Title 24, Section 110.12, which includes the requirement for OpenADR certification or th"
+      ]
+    },
+    {
+      "citation": "cfr 10 71",
+      "title": "Cfr 10 71",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "written guidelines provided to the carrier for maintaining 1 The regulations in 10 CFR Part 71 use the terminology of “radiation level” with the units of mrem/hr and mSv/hr b",
+        "rnational standards for radiation safety during transport. According to the NRC 10 CFR Part 71 Statements of Consideration (NRC 1987), this limit was implemented to reduce ra",
+        "ign No microreactor designs have yet been approved under the NRC regulations in 10 CFR Part 71 for transportation; therefore, details about package design are speculative at"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.47(b)",
+      "title": "Cfr 10 71.47(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "urrent 10 mrem/hr (0.1 mSv/hr) limit at 2 meters (6.6 feet) from the vehicle in 10 CFR 71.47(b). The need to modify packaging to be within practical weight and size limits for",
+        "ate” are used somewhat interchangeably and refer to the dose equivalent rate. 2 10 CFR 71.47(b)(3) states “at any point 2 meters (80 in) from the outer lateral surfaces of the",
+        "approval standards under of the exclusive use radiation dose rate limits are in 10 CFR 71.47(b). 1.1 Background on the Limit of 10 mrem/hr at 2 meters in 10 CFR 71.47 The orig"
+      ]
+    },
+    {
+      "citation": "1547",
+      "title": "1547",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583521",
+        "doe_osti_3019724",
+        "doe_osti_3031084"
+      ],
+      "sample_snippets": [
+        "Associated Electric Power Systems Interfaces,\" IEEE Std 1547-2018 (Revision of IEEE Std 1547- 2003), pp. 1-138, 2018. [10] J. Cohen, L. Shwisberg and M. Dyson, \"How Virtual",
+        "s. In this study, we adopted the thresholds and time du- ration as specified in IEEE 1547. We adopt an open transition approach [9] to transition the power system from o",
+        "Increasingly, most original equipment manufacturers now provide factory-tested, IEEE Std 1547-compliant BESS models that are ready for integration with simulation platforms."
+      ]
+    },
+    {
+      "citation": "title 24 6",
+      "title": "Title 24 6",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3098116"
+      ],
+      "sample_snippets": [
+        "or address load management include the following Joint Appendices (JA) to 2019 Title 24 Part 6 “Building Energy Efficiency Standards Rulemaking”: (1) JA-3 Time Dependent Valu",
+        "or address load management include the following Joint Appendices (JA) to 2019 Title 24 Part 6 “Building Energy Efficiency Standards Rulemaking”: (1) JA-3 Time Dependent Valu",
+        "or address load management include the following Joint Appendices (JA) to 2019 Title 24 Part 6 “Building Energy Efficiency Standards Rulemaking”: (1) JA-3 Time Dependent Valu"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.71",
+      "title": "Cfr 10 71.71",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ation certificates of compliance often conservatively analyze the package under 10 CFR 71.71, “Normal conditions of transport,” to meet the dose rate limits in 10 CFR 71.47",
+        "normally incident to transportation, while 10 CFR 71.51 defines that under the 10 CFR 71.71 “normal conditions of transport,” the package (among other requirements) has no",
+        "normally incident to transportation, while 10 CFR 71.51 defines that under the 10 CFR 71.71 “normal conditions of transport,” the package (among other requirements) has no"
+      ]
+    },
+    {
+      "citation": "2030.7-2017",
+      "title": "2030.7-2017",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583521",
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "stems, 2025. [2] “Ieee standard for the specification of microgrid controllers,”IEEE Std 2030.7-2017, pp. 1–43, 2018.DOI: 10.1109/IEEESTD.2018.8340204. [3] “Ieee standard for inter",
+        "250662.1250665. Institute of Electrical and Electronics Engineers (IEEE). 2017. IEEE 2030.7-2017 – IEEE Standard for the Specification of Microgrid Controllers. Piscataway, New",
+        "250662.1250665. Institute of Electrical and Electronics Engineers (IEEE). 2017. IEEE 2030.7-2017 – IEEE Standard for the Specification of Microgrid Controllers. Piscataway, New"
+      ]
+    },
+    {
+      "citation": "2017",
+      "title": "2017",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "Laboratory of the Rockies (NLR) at www.nlr.gov/publications. • IEEE Std 2030.7 (IEEE 2017): defines functional specifications and interoperability requirements for micro",
+        "r interconnection approval Demand flexibility and Reduce X% load for Y hours on IEEE 2017 Tests distinct demand curtailment (demand the grid signal. flexibility strategi",
+        "with demand response use cases DER and load cycling Simulate SCADA coordinated IEEE 2017 Validates end-to-end coordination control of DERs (BESS, gensets, DER control l"
+      ]
+    },
+    {
+      "citation": "cfr 49 173.441",
+      "title": "Cfr 49 173.441",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "evel is limited under U.S. Department of Transportation (DOT) regulations under 49 CFR 173.441. International standards for both package approval and in transit radiation lev",
+        ") at 2 m (6.6 ft) from the conveyance contained in DOT and NRC regulations (see 49 CFR 173.441 and 10 CFR 71.47), making it possible to create a larger exclusion zone if high"
+      ]
+    },
+    {
+      "citation": "cfr 49 173.403",
+      "title": "Cfr 49 173.403",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "Microreactors are expected to be transported as “exclusive use,” as defined in 49 CFR 173.403. Exclusive use refers to the sole control by a single consignor of a conveyance",
+        "and Highway Route Controlled Quantities of Radioactive Materials as Defined in 49 CFR 173.403. Commercial Vehicle Safety Alliance. Washington, DC. DOE. 2002. Final Environme"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.51",
+      "title": "Cfr 10 71.51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "pared for transport under conditions normally incident to transportation, while 10 CFR 71.51 defines that under the 10 CFR 71.71 “normal conditions of transport,” the packa",
+        "transport under conditions normally incident to transportation, while 10 CFR 71.51 defines that under the 10 CFR 71.71 “normal conditions of transport,” the packa"
+      ]
+    },
+    {
+      "citation": "cfr 49 107",
+      "title": "Cfr 49 107",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "or offer radioactive material for transport comply with the DOT regulations in 49 CFR Part 107, the DOT Hazardous Materials Regulations in 49 CFR Parts 171–180, and the DOT F",
+        "eral Regulations. Available at https://www.govinfo.gov/app/collection/cfr/2024/ 49 CFR Part 107. 2024. “Hazardous Materials Program Procedures.” Code of Federal Regulations. A"
+      ]
+    },
+    {
+      "citation": "cfr 10 73",
+      "title": "Cfr 10 73",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "om transit because of an elevated threat condition. NRC security regulations in 10 CFR Part 73 require the identification of safe havens for highway transport of SNF. A micro",
+        "ral Regulations. Available at https://www.govinfo.gov/app/collection/cfr/2025/. 10 CFR Part 73. 2025. “Physical Protection of Plants and Materials.” Code of Federal Regulatio"
+      ]
+    },
+    {
+      "citation": "cfr 10 20.1201(a)",
+      "title": "Cfr 10 20.1201(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "pational exposure limits for radiation workers, i.e., 5 rem/year (0.05 Sv/year; 10 CFR 20.1201(a)(1)(i)). The location of the truck driver would be approximately 5 meters (16 fe",
+        "upational exposure limits for radiation workers, i.e., 5 rem/year (50 mSv/year; 10 CFR 20.1201(a)(1)(i)). Because of the weight of the microreactor, a heavy haul truck would lik"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1096(b)",
+      "title": "Cfr 29 1910.1096(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ckage will be deemed a restricted area, i.e., limit of 5 rem/year (50 mSv/year; 29 CFR 1910.1096(b)(1)). Realistic inspection times and exposure distances are 1 hour and 1 meter (",
+        "ckage will be deemed a restricted area, i.e., limit of 5 rem/year (50 mSv/year; 29 CFR 1910.1096(b)(1)). Realistic inspection times and exposure distances are 1 hour and 1 meter ("
+      ]
+    },
+    {
+      "citation": "6.1",
+      "title": "6.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "(6.6 feet) radially from the package surface at the axial center. The 1977 ANS/ANSI 6.1.1 fluence-to-dose rate conversion factors were used to convert the MAVRIC calcu",
+        "ndividual is expected to be at that location. Based on NRC (2020), the 1977 ANS/ANSI 6.1.1 fluence-to-dose rate conversion factors are used to convert the MAVRIC calcul"
+      ]
+    },
+    {
+      "citation": "202",
+      "title": "202",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "d islanded states, and cyber-physical system integration • ASHRAE Guideline 13 (ASHRAE 2024): standardizes the design, documentation, specification, and integration of bu",
+        "cyber-physical system integration • ASHRAE Guideline 13 (ASHRAE 2024): standardizes the design, documentation, specification, and integration of bu"
+      ]
+    },
+    {
+      "citation": "61215",
+      "title": "61215",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "ayers due to the various • Test performance: Select PV modules that have passed IEC 61215 ambient Temperature coefficients of expansion of different module temperature c",
+        "- weather [68] C. B. Jones, B. Hamzavy, W. B. Hobbs, C. Libby, and O. Lavrova, “IEC 61215 Qualification Tests vs Outdoor Performance using Module Level In Situ I-V Curve"
+      ]
+    },
+    {
+      "citation": "15",
+      "title": "15",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "ection Association, Standard for Water Spray Fixed Systems for Fire Protection, NFPA 15. [162] R. Bhat, Y. Mohammadi Darestani, A. Shafieezadeh, A. P. Meliopoulos, and",
+        "Association, Standard for Water Spray Fixed Systems for Fire Protection, NFPA 15. [162] R. Bhat, Y. Mohammadi Darestani, A. Shafieezadeh, A. P. Meliopoulos, and"
+      ]
+    },
+    {
+      "citation": "cfr 10 100",
+      "title": "Cfr 10 100",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3007891"
+      ],
+      "sample_snippets": [
+        "............................................ 166 iii ABBREVIATIONS AND ACRONYMS 10 CFR 100 Title 10 to the Code of Federal Regulations, Part 100 CONUS contiguous Unites S",
+        "ation zone as defined in Title 10 to the Code of Federal Regulations, Part 100 (10 CFR 100). There is also well-defined US Nuclear Regulatory Commission (NRC) guidance [5"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.47(a)",
+      "title": "Cfr 10 71.47(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ge approval under both non-exclusive use and exclusive use transport scenarios. 10 CFR 71.47(a) specifies radiation level limits for packages of radioactive material anticipat"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.5",
+      "title": "Cfr 10 71.5",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "credited as part of the NRC transportation package approval. NRC regulations in 10 CFR 71.5 require that licensees who ship radioactive material or offer radioactive mater"
+      ]
+    },
+    {
+      "citation": "cfr 49 2",
+      "title": "Cfr 49 2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "oactive materials (>3000 A ) and would need to meet the routing requirements in 49 CFR 2 Part 397. This requires transport to be conducted using interstates, beltways a"
+      ]
+    },
+    {
+      "citation": "cfr 49 385.415(b)",
+      "title": "Cfr 49 385.415(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "way would also likely be subject to a CVSA Level VI inspection (CVSA 2024) [see 49 CFR 385.415(b)]. This inspection would also be considered as a potential compensatory measure"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1096",
+      "title": "Cfr 29 1910.1096",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ral Regulations. Available at https://www.govinfo.gov/app/collection/cfr/2025/. 29 CFR Part 1910.1096. 2024. “Ionizing Radiation.” Code of Federal Regulations. Available at https://"
+      ]
+    },
+    {
+      "citation": "cfr 49 385",
+      "title": "Cfr 49 385",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ral Regulations. Available at https://www.govinfo.gov/app/collection/cfr/2024/. 49 CFR Part 385. 2024. “Safety Fitness Procedures.” Code of Federal Regulations. Available at h"
+      ]
+    },
+    {
+      "citation": "cfr 49 397",
+      "title": "Cfr 49 397",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019896"
+      ],
+      "sample_snippets": [
+        "ral Regulations. Available at https://www.govinfo.gov/app/collection/cfr/2024/. 49 CFR Part 397. 2024. “Transportation of Hazardous Materials; Driving and Parking Rules.” Avai"
+      ]
+    },
+    {
+      "citation": "2800-2022",
+      "title": "2800-2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        ".org/ieee/2004/11300/ https://ieeexplore.ieee.org/document/9707753. ———. 2022a. IEEE 2800-2022 – IEEE Standard for Interconnection and Interoperability of Inverter-Based Reso"
+      ]
+    },
+    {
+      "citation": "1547-2003",
+      "title": "1547-2003",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583521"
+      ],
+      "sample_snippets": [
+        "h associated electric power systems interfaces,”IEEE Std 1547-2018 (Revision of IEEE Std 1547-2003), pp. 1–138, 2018.DOI: 10.1109/IEEESTD.2018.8332112. [4] K. Prabakar, “Testing"
+      ]
+    },
+    {
+      "citation": "2025",
+      "title": "2025",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "EMT domain simulations (in a controller-hardware-in-the-loop [CHIL] framework [IEEE 2025]) with the inclusion of the data center and grid-side controls. In this regard,"
+      ]
+    },
+    {
+      "citation": "2021",
+      "title": "2021",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "NERC operational coordination guidance Inrush current Simulate energization of IEEE 2021 Verifies the data center characterization transformers. power system and Measur"
+      ]
+    },
+    {
+      "citation": "519-2022",
+      "title": "519-2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "scataway, New Jersey. https://ieeexplore.ieee.org/document/9762253. ———. 2022b. IEEE 519-2022 – IEEE Standard for Harmonic Control in Electric Power Systems. Piscataway, New"
+      ]
+    },
+    {
+      "citation": "2004-2025",
+      "title": "2004-2025",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3019724"
+      ],
+      "sample_snippets": [
+        "iscataway, New Jersey. https://ieeexplore.ieee.org/document/9984140. ———. 2025. IEEE 2004-2025 – IEEE Recommended Practice for Hardware-in-the-Loop (HIL) Simulation-Based Tes"
+      ]
+    },
+    {
+      "citation": "855",
+      "title": "855",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "ssociation, Standard for the Installation of Stationary Energy Storage Systems, NFPA 855, 2026. [127] L. Souto et al., “Power system resilience to floods: Modeling, imp"
+      ]
+    },
+    {
+      "citation": "62933-5-2",
+      "title": "62933-5-2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "Lightning and Grounding Safety Requirements in Grid-Integrated EES Systems Per IEC 62933-5-2,” in 2024 IEEE International Communications Energy Conference (INTELEC), Aug. 2"
+      ]
+    },
+    {
+      "citation": "850",
+      "title": "850",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "Electric Generating Plants and High Voltage Direct Current Converter Stations, NFPA 850. [161] National Fire Protection Association, Standard for Water Spray Fixed Sys"
+      ]
+    },
+    {
+      "citation": "780",
+      "title": "780",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028594"
+      ],
+      "sample_snippets": [
+        "ion Association, Standard for the Installation of Lightning Protection Systems, NFPA 780. [165] D. Dong, “Protecting Substations from Lightning,” North American Clean E"
+      ]
+    },
+    {
+      "citation": "cfr 40 152",
+      "title": "Cfr 40 152",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_2556933"
+      ],
+      "sample_snippets": [
+        "pment. Lawrence Livermore National Laboratory 29 LLNL-TR-2004679 References [1]“40 CFR Part 152 - Pesticide Regulation and Classification Procedures.” Federal Register :: Requ"
+      ]
+    },
+    {
+      "citation": "62.2",
+      "title": "62.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3030036"
+      ],
+      "sample_snippets": [
+        "Administration (OHSA) 10 and 30, Lead Paint Certified Renovator (and renewal), ASHRAE 62.2 Ventilation, Duct & Envelope Testing and Zone Pressure Diagnostics, Combustion"
+      ]
+    },
+    {
+      "citation": "519",
+      "title": "519",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013288"
+      ],
+      "sample_snippets": [
+        "onics and is, in some circumstances, a cost-effective option for complying with IEEE 519 harmonic limits [83] (most utilities require compliance with these limits as pa"
+      ]
+    }
+  ],
+  "total": 47,
+  "with_text": 0
+}

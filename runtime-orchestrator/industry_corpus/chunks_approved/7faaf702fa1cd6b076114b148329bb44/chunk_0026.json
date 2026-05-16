@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7faaf702::chunk_0026",
+  "source_id": "doe_osti_3000825",
+  "source_sha": "7faaf702fa1cd6b076114b148329bb44",
+  "source_url": "https://www.osti.gov/servlets/purl/3000825",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Journal of Applied Mechanics, 13(10), p.2150115. 15. POKKALLA, D.K., 2020. ISOGEOMETRIC SHAPE OPTIMIZATION OF AUXETICS WITH PRESCRIBED NONLINEAR DEFORMATION. 16. Seta, B., Brander, M., Mollah, M., NLN, V., Pokkalla, D., Kim, P. and Spangenberg, J., 2022. MODELLING OF ADDITIVE MANUFACTURING–COMPRESSION MOLDING PROCESS USING COMPUTATIONAL FLUID DYNAMICS. Oak Ridge National Lab.(ORNL), Oak Ridge, TN (United States). 17. Seta, B., Mollah, M., NLN, V., Pokkalla, D., Kim, P., Hassen, A. and Spangenberg, J., 2022. MODELLING FIBER ORIENTATION DURING ADDITIVE MANUFACTURING 42 | P age COMPRESSION MOLDING PROCESSES. Oak Ridge National Lab.(ORNL), Oak Ridge, TN (United States). 18. Pokkalla, D.K., Kumar, V., Jo, E., Hassen, A.A., Cakmak, E., Alwekar, S., Kunc, V., Vaidya, U., Baid, H.K. and Kim, S., 2022, April. Anisotropic mechanical properties of polymer composites from a hybrid additive manufacturing-compression molding process using x-ray computer tomography. In Nondestructive Characterization and Monitoring of Advanced Materials, Aerospace, Civil Infrastructure, and Transportation XVI (Vol. 12047, pp. 319-328). SPIE. 19. D.K. Pokkalla, N. Garg, M Paramanathan, V. Kumar, M.L. Rencheck, P. Nandwana, V. Kunc, A.A. Hassen, Seokpum Kim, Design optimization of lightweight automotive seatback through additive manufacturing compression overmolding of metal polymer composites, Composite Structures 349- 350 (2024) 118504. 43 | P age",
+  "token_count": 198,
+  "text_sha": "d81c7f85918320b03f0b05870fd82777e121f84103d3931d8d7271ba3c98e085",
+  "extracted_at": "2026-05-15T23:57:58.928530Z"
+}

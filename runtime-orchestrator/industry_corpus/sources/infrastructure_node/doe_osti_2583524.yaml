@@ -1,0 +1,11 @@
+source_id: doe_osti_2583524
+title: "Blending Pipeline Analysis Tool for Hydrogen (BlendPATH) Documentation and User Manual"
+url: https://www.osti.gov/servlets/purl/2583524
+license: public_domain
+publisher: doe_osti
+version: "2025-07-28"
+added_at: "2026-05-16T00:12:20.198898Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 08 HYDROGEN, hydrogen, hydrogen blending, natural gas, open source"
+asset_families:
+  - infrastructure_node

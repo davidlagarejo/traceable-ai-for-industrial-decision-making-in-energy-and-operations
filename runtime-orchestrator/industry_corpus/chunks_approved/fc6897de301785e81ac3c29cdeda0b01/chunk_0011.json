@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0011",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ". . . . . . . 40 Table 23. Modified Network Design Sheet in the Results File . . . . . . . . . . . . . . . . . . . . . . . . . . 41 Table 24. Compressor Design Sheet in the Results File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42 Table 25. Pressure Profile Sheet in the Results File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42 Table 26. Demand Error Sheet in the Results File . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43 Table 27. Wang et al. (2018) Modified Case Study Segmented Pipeline Network Design . . . . . . . . . . . 45 Table 28. Wang et al. (2018) Modified Case Study Boundary Conditions . . . . . . . . . . . . . . . . . . . . 45 x This report is available at no cost from NREL at www.nrel.gov/publications Table 29. Modified Wang et al. (2018) Case Study LCOT for a Hydrogen Blend Ratio of 50% vol. in Pipeline Gas and the ASME B31.12 No Fracture Criterion Option . . . . . . . . . . . . . . . . . . . . . . . . . . 46 Table 30. Modified Pipeline Design Results When Applying the Direct Replacement Method for a Hydro- gen Blend Ratio of 50% vol. in Pipeline Gas and ASME B31.12 No Fracture Criterion Option . . . . . . 46 Table 31. Modified Pipeline Design Results When Applying the Parallel Looping Method for a Hydrogen Blend Ratio of 50% vol. in Pipeline Gas and ASME B31.12 No Fracture Criterion Option . . . . . . . . 46 Table 32. Modified Pipeline Design Results When Applying the Additional Compressors Method for a Hy- drogen Blend Ratio of 50% vol. in Pipeline Gas and ASME B31.12 No Fracture Criterion Option . . . . 46 Table A.1. Default BlendPATH values for Sectionalizing Valve Installed Costs (American Gas Association et al. 2019; Potts 2024) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 Table A.2. Default BlendPATH Values for In-Line Inspection Costs (ICF International 2016; Potts 2024) . . . 54 xi This report is available at no cost from NREL at www.nrel.gov/publications 1 Introduction There is increasing interest from natural gas transmission pipeline operators, researchers,",
+  "token_count": 511,
+  "text_sha": "d8ced90542f94a5d7d0eae454487ed40fcac62c7b1be1f3194ac6247017ef86e",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

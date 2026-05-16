@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0881",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "plugged and abandoned unless otherwise required by the appropriate regulatory authority. ( 3 ) You must notify the Administrator of your intent to cease reporting and provide a copy of the CO 2 -EOR project termination documentation. ( c ) If you previously met the source category definition for subpart UU of this part for your CO 2 -EOR project and then began using CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 ) as a method of quantifying geologic sequestration of CO 2 in association with CO 2 -EOR operations during a reporting year, you must report under subpart UU of this part for the portion of the year before you began using CSA/ANSI ISO 27916:19 and report under subpart VV for the portion of the year after you began using CSA/ANSI ISO 27916:19. § 98.482 GHGs to report. You must report the following from Clause 8 of CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 ): ( a ) The mass of CO 2 received by the CO 2 -EOR project. ( b ) The mass of CO 2 loss from the CO 2 -EOR project operations. ( c ) The mass of native CO 2 produced and captured. ( d ) The mass of CO 2 produced and sent off-site. ( e ) The mass of CO 2 loss from the EOR complex. ( f ) The mass of CO 2 stored in association with CO 2 -EOR. § 98.483 Calculating CO 2 geologic sequestration. You must calculate CO 2 sequestered using the following quantification principles from Clause 8.2 of CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 ). ( a ) You must calculate the mass of CO 2 stored in association with CO 2 -EOR ( m stored ) in the reporting year by subtracting the mass of CO 2 loss from operations and the mass of CO 2 loss from the EOR complex from the total mass of CO 2 input (as specified in equation 1 to this paragraph (a) ). Equation 1 to paragraph (a) m stored = m input − m loss operations − m loss EOR complex Where: m stored = The annual quantity of associated storage in metric tons of CO 2 mass. m input = The total mass of CO 2 m received by the EOR project plus m native (see Clause 8.3 of CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 ) and paragraph (c) of this section), metric tons. Native CO 2 produced and captured in the CO 2 -EOR project ( m native ) can be quantified and included in m input . m loss operations = The total mass of CO 2 loss from project operations (see Clauses 8.4.1 through 8.4.5 of CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 ) and paragraph (d) of this section), metric tons. m loss EOR complex = The total mass of CO 2 loss from the EOR complex (see Clause 8.4.6 of CSA/ANSI ISO 27916:19 (incorporated by reference, see § 98.7 )),",
+  "token_count": 508,
+  "text_sha": "5effba321d1e6b7391a5cfafc8a9d57fff257a30272bbcbf39e63ee6654de985",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

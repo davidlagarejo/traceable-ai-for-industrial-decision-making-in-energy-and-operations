@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7faaf702::chunk_0034",
+  "source_id": "doe_osti_3000825",
+  "source_sha": "7faaf702fa1cd6b076114b148329bb44",
+  "source_url": "https://www.osti.gov/servlets/purl/3000825",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "D.K. Pokkalla, N. Garg, M Paramanathan, V. Kumar, M.L. Rencheck, P. Nandwana, V. Kunc, A.A. Hassen, Seokpum Kim, Design optimization of lightweight automotive seatback through additive manufacturing compression overmolding of metal polymer composites, Composite Structures 349- 350 (2024) 118504. 43 | P age",
+  "token_count": 43,
+  "text_sha": "f3a84f6070dbac4ac53e2ef2d0d1acb97ff743746e622d0ba9a21730b3348c7c",
+  "extracted_at": "2026-05-15T23:57:58.928530Z"
+}

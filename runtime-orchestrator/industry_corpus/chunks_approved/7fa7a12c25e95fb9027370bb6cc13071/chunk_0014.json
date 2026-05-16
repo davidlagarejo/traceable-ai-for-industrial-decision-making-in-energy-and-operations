@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7fa7a12c::chunk_0014",
+  "source_id": "doe_osti_3021664",
+  "source_sha": "7fa7a12c25e95fb9027370bb6cc13071",
+  "source_url": "https://www.osti.gov/servlets/purl/3021664",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "N., Kumar A., Fygenson D. K., and Winfree E., Design and characterizaQon of programmable DNA nanotubes, Journal of the American Chemical Society, 126(50):16344–16352, 12 2004 hhps://pubs.acs.org/doi/10.1021/ja044319l 15. Guareschi, M. M., Enriching architectures for biosensing and motor-filament systems through the programmability of DNA, Caltech, (2025) hhps:// resolver.caltech.edu/CaltechTHESIS:05052025-211734908 Page 17 of 2",
+  "token_count": 50,
+  "text_sha": "f1430d189372bf2a807912601803daeff857f8810b5ab779aa41bfb451ab200e",
+  "extracted_at": "2026-05-15T23:59:18.736128Z"
+}

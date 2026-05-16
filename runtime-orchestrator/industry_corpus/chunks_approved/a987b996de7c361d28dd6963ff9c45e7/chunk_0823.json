@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0823",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": ") Heat excluding CHP. For each applicable energy source specified in paragraphs (i)(2)(i) through (vii) of this section, report the annual quantity of heat, steam, or other forms of thermal energy sourced from on-site or through a contractual mechanism for dedicated off-site generation, in megajoules (MJ). If the on-site heat source is natural gas, oil, or coal, also indicate whether flue gas is also captured by the DAC process unit. ( i ) Solar. ( ii ) Geothermal. ( iii ) Natural gas. ( iv ) Oil. ( v ) Coal. ( vi ) Nuclear. ( vii ) Other. ( 3 ) CHP— ( i ) Electricity from CHP. If electricity from CHP is sourced from on-site or through a contractual mechanism for dedicated off-site generation, for each applicable energy source specified in paragraphs (i)(3)(i)(A) through (G) of this section, report the annual quantity consumed, in MWh. If the on-site electricity source for CHP is natural gas, oil, or coal, also indicate whether flue gas is also captured by the DAC process unit. ( A ) Non-hydropower renewable sources including solar, wind, geothermal and tidal. ( B ) Hydropower. ( C ) Natural gas. ( D ) Oil. ( E ) Coal. ( F ) Nuclear. ( G ) Other. ( ii ) Heat from CHP. For each applicable energy source specified in paragraphs (i)(3)(ii)(A) through (G) of this section, report the quantity of heat, steam, or other forms of thermal energy from CHP sourced from on-site or through a contractual mechanism for dedicated off-site generation, in MJ. If the on-site heat source is natural gas, oil, or coal, also indicate whether flue gas is also captured by the DAC process unit. ( A ) Solar. ( B ) Geothermal. ( C ) Natural gas. ( D ) Oil. ( E ) Coal. ( F ) Nuclear. ( G ) Other. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79171 , Dec. 17, 2010; 78 FR 71977 , Nov. 29, 2013; 80 FR 64660 , Oct. 23, 2015; 89 FR 31943 , Apr. 25, 2024] § 98.427 Records that must be retained. In addition to the records required by § 98.3(g) of subpart A of this part , you must retain the records specified in paragraphs (a) through (c) of this section, as applicable. ( a ) The owner or operator of a facility containing production process units or DAC process units must retain quarterly records of captured or transferred CO 2 streams and composition. ( b ) The owner or operator of a CO 2 production well facility must maintain quarterly records of the mass flow or volumetric flow of the extracted or transferred CO 2 stream and concentration and density if volumetric flow meters are used. ( c ) Importers or exporters of CO 2 must retain annual records of the mass flow, volumetric flow, and mass of CO 2 imported or exported. ( d ) Facilities subject to § 98.426(h) must retain records of CO 2 in metric tons that is transferred",
+  "token_count": 510,
+  "text_sha": "52a489a7f40fa7a984513a1c2214dae14a43f04fc3753b82814524c8db8eb757",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0248",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the Stack Test Method [ 78 FR 68232 , Nov. 13, 2013] Table I-15 to Subpart I of Part 98—Default Emission Factors (1-U ij ) for Gas Utilization Rates (U ij ) and By-Product Formation Rates (B ijk ) for MEMS Manufacturing for Use With the Stack Test Method [ 78 FR 68233 , Nov. 13, 2013] Table I-16 to Subpart I of Part 98—Default Emission Destruction or Removal Efficiency (DRE) Factors for Electronics Manufacturing Table I-16 to Subpart I of Part 98—Default Emission Destruction or Removal Efficiency (DRE) Factors for Electronics Manufacturing Manufacturing type/process type/gas Default DRE (%) MEMS, LCDs, and PV Manufacturing 60 Semiconductor Manufacturing: CF 4 87 CH 3 F 98 CHF 3 97 CH 2 F 2 98 C 4 F 8 93 C 4 F 8 O 93 C 5 F 8 97 C 4 F 6 95 C 3 F 8 98 C 2 HF 5 97 C 2 F 6 98 SF 6 95 NF 3 96 All other carbon-based fluorinated GHGs used in Semiconductor Manufacturing 60 N 2 O Processes CVD and all other N 2 O-using processes 60 [ 89 FR 31922 , Apr. 25, 2024] Table I-17 to Subpart I of Part 98—Expected and Possible By-Products for Electronics Manufacturing For each stack system for which you use the “stack test method” to calculate annual emissions, you must measure the following: If emissions are detected intermittently, use the following procedures: If emissions are not detected, use the following procedures: Expected By-products: CF 4 C 2 F 6 CHF 3 CH 2 F 2 CH 3 F Use the measured concentration for “X ksm ” in Equation I-18 when available and use one-half of the field detection limit you determined for the fluorinated GHG according to § 98.94(j)(2) for the value of “X ksm ” when the fluorinated GHG is not detected Use one-half of the field detection limit you determined for the fluorinated GHG according to § 98.94(j)(2) for the value of “X ksm ” in Equation I-18. Possible By-products: C 3 F 8 C 4 F 6 c-C 4 F 8 C 5 F 8 Use the measured concentration for “X ksm ” in Equation I-18 when available and use one-half of the field detection limit you determined for the fluorinated GHG according to § 98.94(j)(2) for the value of “X ksm ” when the fluorinated GHG is not detected Assume zero emissions for that fluorinated GHG for the tested stack system. [ 78 FR 68234 , Nov. 13, 2013] Table I-18 to Subpart I of Part 98—Default Factors for Gamma (γ i,p and γ k,i,p ) for Semiconductor Manufacturing and for MEMS and PV Manufacturing Under Certain Conditions * for Use With the Stack Testing Method Table I-18 to Subpart I of Part 98—Default Factors for Gamma (g i,p and g k,i,p ) for Semiconductor Manufacturing and for MEMS and PV Manufacturing Under Certain Conditions * for Use With the Stack Testing Method Process type In-situ thermal or in-situ plasma cleaning Remote plasma cleaning Gas CF 4 C 2 F 6",
+  "token_count": 512,
+  "text_sha": "d976269026be24a6b5a84e875ea099a9059f5be9b4d695f8a3ed7c8fce0ba0ae",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

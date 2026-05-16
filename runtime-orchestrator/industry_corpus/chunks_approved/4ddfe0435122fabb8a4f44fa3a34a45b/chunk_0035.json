@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4ddfe043::chunk_0035",
+  "source_id": "doe_osti_2567121",
+  "source_sha": "4ddfe0435122fabb8a4f44fa3a34a45b",
+  "source_url": "https://www.osti.gov/servlets/purl/2567121",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "for its own particular use, and it shall be deemed that Buyer has done so, at its sole discretion and risk. Variation in environment changes in procedures of use, or extrapolation of data may cause unsatisfactory results. ITW cannot guarantee that color will conform to sample, if provided.",
+  "token_count": 48,
+  "text_sha": "192a835f4c733a0fc60a16f410e75d4ce95e87df7ff30ddb3f634f9777201d97",
+  "extracted_at": "2026-05-15T23:56:32.264905Z"
+}

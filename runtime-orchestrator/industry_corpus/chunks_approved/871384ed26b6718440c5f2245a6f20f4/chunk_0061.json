@@ -1,0 +1,14 @@
+{
+  "chunk_id": "871384ed::chunk_0061",
+  "source_id": "doe_osti_3025504",
+  "source_sha": "871384ed26b6718440c5f2245a6f20f4",
+  "source_url": "https://www.osti.gov/servlets/purl/3025504",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "facility  Located in Lemont, IL, about 25 miles (40 km) southwest of Chicago, IL (USA)  Conducts basic and applied research in dozens of fields  Unique suite of leading-edge and rare scientific user facilities CONTACT Argonne National Laboratory 9700 South Cass Avenue Lemont, IL 60439 630-252-2000",
+  "token_count": 48,
+  "text_sha": "df4f0aa1dc40b508f789794907153c52027226f23503ba930eae1097a1381ff8",
+  "extracted_at": "2026-05-16T00:05:36.831705Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0005",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . 15 2.3.2 Parallel Looping Method . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 2.3.3 Additional Compressors Method . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 2.4 Pipeline Cost Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 2.4.1 New Pipe Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 2.4.2 Compressor Station Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20 2.4.3 Sectionalizing Valve and Meter Station Modification Costs . . . . . . . . . . . . . . . . . . 24 2.4.4 In-Line Inspection Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25 2.4.5 Overrides . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25 2.5 ProFAST . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25 3 Disclaimer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28 vii This report is available at no cost from NREL at www.nrel.gov/publications 4 Getting Started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "37728b4669677ec24a760bc84bb2ebf528d6aecce566dae8e5912bda92dae5d3",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

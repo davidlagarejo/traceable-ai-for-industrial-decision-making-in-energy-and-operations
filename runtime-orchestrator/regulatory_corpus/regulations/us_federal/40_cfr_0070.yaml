@@ -1,0 +1,12 @@
+source_id: us_federal_40_cfr_0070
+title: "State Operating Permits (Title V)"
+url: https://www.ecfr.gov/current/title-40/part-70
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:03.873351Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 157 §-marked sections. 274,404 chars."
+asset_families:
+  - manufacturing_facility
+  - infrastructure_node

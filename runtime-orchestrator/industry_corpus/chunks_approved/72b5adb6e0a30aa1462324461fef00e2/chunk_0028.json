@@ -1,0 +1,14 @@
+{
+  "chunk_id": "72b5adb6::chunk_0028",
+  "source_id": "doe_osti_2999833",
+  "source_sha": "72b5adb6e0a30aa1462324461fef00e2",
+  "source_url": "https://www.osti.gov/servlets/purl/2999833",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "in instrumented sharp indentation, Acta Materialia 49(19) (2001) 3899- 3918. [9] G. Cheng, F. Zhang, A. Ruimi, D.P. Field, X. Sun, Quantifying the effects of tempering on individual phase properties of DP980 steel with nanoindentation, Materials Science and Engineering: A 667 (2016) 240-249. 39",
+  "token_count": 44,
+  "text_sha": "db79e90d5466b28dcb75234419111f0cf8c15db11fae9ad2813b9dfb026f10e7",
+  "extracted_at": "2026-05-15T23:59:29.138405Z"
+}

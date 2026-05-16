@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0128",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "value of (EF) B , along with the total mass or volume of the blend combusted during the reporting year, to determine the annual CO 2 mass emissions from combustion of the blend. where: (EF) B = Heat-weighted CO 2 emission factor for the blend (kg CO 2 /mmBtu) (HHV) i = Default high heat value for fuel “i” in the blend, from Table C-1 (mmBtu per mass or volume) (%Fuel) i = Estimated mass or volume percentage of fuel “i” (mass % or volume %, as applicable, expressed as a decimal fraction; e.g., 25% = 0.25) (EF) i = Default CO 2 emission factor for fuel “i” from Table C-1 (mmBtu per mass or volume) (HHV) B = Annual average high heat value for the blend, calculated according to § 98.33(a)(2)(ii) (mmBtu per mass or volume) ( iii ) Note that for the case described in paragraph (a)(3)(ii) of this section, if measured HHV values for the individual fuels in the blend or for the blend itself are not routinely received at the minimum frequency prescribed in paragraph (a)(2) of this section (or at a greater frequency), and if the unit qualifies to use Tier 1, calculate (HHV) B *, the heat-weighted default HHV for the blend, using Equation C-17 of this section. Then, use Equation C-16 of this section, replacing the term (HHV) B with (HHV) B * in the denominator, to determine the heat-weighted CO 2 emission factor for the blend. Finally, substitute into Equation C-1 of this subpart, the calculated values of (HHV) B * and (EF) B , along with the total mass or volume of the blend combusted during the reporting year, to determine the annual CO 2 mass emissions from combustion of the blend. where: (HHV) B * = Heat-weighted default high heat value for the blend (mmBtu per mass or Volume) (HHV) i = Default high heat value for fuel “i” in the blend, from Table C-1 (mmBtu per mass or volume) (%Fuel) i = Estimated mass or volume percentage of fuel “i” in the blend (mass % or volume %, as applicable, expressed as a decimal fraction) ( iv ) If the fuel blend described in paragraph (a)(3)(ii) of this section consists of a mixture of fuel(s) listed in Table C-1 of this subpart and one or more fuels not listed in Table C-1, calculate CO 2 and other GHG emissions only for the Table C-1 fuel(s), using the best available estimate of the mass or volume percentage(s) of the Table C-1 fuel(s) in the blend. In this case, Tier 1 shall be used, with the following modifications to Equations C-17 and C-1, to account for the fact that not all of the fuels in the blend are listed in Table C-1: ( A ) In Equation C-17, apply the term (Fuel) i only to the Table C-1 fuels. For each Table C-1 fuel, (Fuel) i will be the estimated mass or volume percentage of the fuel in the blend, divided by the sum of the mass or volume percentages",
+  "token_count": 509,
+  "text_sha": "399a3a3e9f7ce14dce3292c0f5c55186d4db57b1983858746f67876ba28a1b6a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

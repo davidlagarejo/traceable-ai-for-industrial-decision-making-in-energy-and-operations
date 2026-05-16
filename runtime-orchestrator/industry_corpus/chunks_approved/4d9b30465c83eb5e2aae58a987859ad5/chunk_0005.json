@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4d9b3046::chunk_0005",
+  "source_id": "doe_osti_3030029",
+  "source_sha": "4d9b30465c83eb5e2aae58a987859ad5",
+  "source_url": "https://www.osti.gov/servlets/purl/3030029",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Zoom to show granularity Full network National Laboratory of the Rockies | 19 Case Study Case Study Conducted simulation analysis using a distribution grid model in Georgia, consisting of two distribution feeders, with more than 1000 load nodes, three normally closed sectionalizing switches and two normally opened tie-switches. Cumulative percentage-duration of energization metric Equitable Baseline Improvement Customer Type Restoration (%- (%-hours) (%) hours) Critical loads 750 1713 128.40 Service-providing 1022 1935 89.33 customers No-service-providing 1013 1528 50.84 customers Other noncritical 750 963 28.40 customers K. Utkarsh, F. Ding, J. Dugan, “DER-aware, equitable service restoration for enhanced grid resilience and mitigated social impact,” Applied Energy, under review. National Laboratory of the Rockies | 20 Case Study Case Study The results of social benefit, which is defined as the increase in supplied power compared to a base case weighted by social vulnerability. ′ 𝛽 = 𝑃 − 𝑃 ∙ 𝑆 𝑖 𝑖 𝑖 𝑖 K. Utkarsh, F. Ding, J. Dugan, “DER-aware, equitable service restoration for enhanced grid resilience and mitigated social impact,” Applied Energy, under review. National Laboratory of the Rockies | 21 Thank you! Thank you! NLR/PR-5D00-93520 Fei.Ding@nlr.gov This work was authoredby the National Laboratory of the Rockies for the U.S. Department of Energy (DOE), operated under Contract No. DE-AC36-08GO28308. Funding provided by U.S. Department of Energy Office of Energy Efficiency and Renewable Energy Solar Energy Technologies Office. The views expressed in the article do not necessarily represent the views of the DOE or the U.S. Government. The U.S. Government retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes.",
+  "token_count": 291,
+  "text_sha": "8d4a6772b5a65c9b47f8e9f11c9172d01cf3c63d10142adb438af889ddae6b55",
+  "extracted_at": "2026-05-16T00:11:06.064086Z"
+}

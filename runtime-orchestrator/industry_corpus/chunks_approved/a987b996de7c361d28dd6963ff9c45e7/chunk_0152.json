@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0152",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "you will use the default high heat value from table C-1 to this subpart, or actual high heat value data (equation C-8 to § 98.33 ). ( 26 ) High heat value of each solid fuel (mmBtu/tons) (equation C-8 to § 98.33 ). ( 27 ) High heat value of each liquid fuel (mmBtu/gallon) (equation C-8 to § 98.33 ). ( 28 ) High heat value of each gaseous fuel (mmBtu/scf) (equation C-8 to § 98.33 ). ( 29 ) Cumulative annual heat input from combustion of each fuel (mmBtu) (equation C-10 to § 98.33 ). ( 30 ) Total quantity of each solid fossil fuel combusted in the reporting year, as defined in § 98.6 (pounds) (equation C-13 to § 98.33 ). ( 31 ) Total quantity of each liquid fossil fuel combusted in the reporting year, as defined in § 98.6 (gallons) (equation C-13 to § 98.33 ). ( 32 ) Total quantity of each gaseous fossil fuel combusted in the reporting year, as defined in § 98.6 (scf) (equation C-13 to § 98.33 ). ( 33 ) High heat value of the each solid fossil fuel (Btu/lb) (equation C-13 to § 98.33 ). ( 34 ) High heat value of the each liquid fossil fuel (Btu/gallons) (equation C-13 to § 98.33 ). ( 35 ) High heat value of the each gaseous fossil fuel (Btu/scf) (equation C-13 to § 98.33 ). ( 36 ) Fuel-specific carbon based F-factor per fuel (scf CO 2 /mmBtu) (equation C-13 to § 98.33 ). ( 37 ) Moisture content used to calculate the wood and wood residuals wet basis HHV (percent), if applicable (equations C-1 and C-8 to § 98.33 ). [ 79 FR 63783 , Oct. 24, 2014, as amended at 81 FR 89252 , Dec. 9, 2016; 89 FR 31903 , Apr. 25, 2024] § 98.38 Definitions. All terms used in this subpart have the same meaning given in the Clean Air Act and subpart A of this part . Table C-1 to Subpart C of Part 98—Default CO 2 Emission Factors and High Heat Values for Various Types of Fuel Default CO 2 Emission Factors and High Heat Values for Various Types of Fuel Fuel type Default high heat value Default CO 2 emission factor Coal and coke mmBtu/short ton kg CO 2 /mmBtu Anthracite 25.09 103.69 Bituminous 24.93 93.28 Subbituminous 17.25 97.17 Lignite 14.21 97.72 Coal Coke 24.80 113.67 Mixed (Commercial sector) 21.39 94.27 Mixed (Industrial coking) 26.28 93.90 Mixed (Industrial sector) 22.35 94.67 Mixed (Electric Power sector) 19.73 95.52 Natural gas mmBtu/scf kg CO 2 /mmBtu (Weighted U.S. Average) 1.026 × 10 −3 53.06 Petroleum products—liquid mmBtu/gallon kg CO 2 /mmBtu Distillate Fuel Oil No. 1 0.139 73.25 Distillate Fuel Oil No. 2 0.138 73.96 Distillate Fuel Oil No. 4 0.146 75.04 Residual Fuel Oil No. 5 0.140 72.93 Residual Fuel Oil No. 6 0.150 75.10 Used Oil 0.138 74.00 Kerosene 0.135 75.20 Liquefied petroleum gases (LPG) 1 0.092 61.71 Propane 1 0.091 62.87 Propylene 2 0.091 67.77 Ethane 1 0.068 59.60 Ethanol 0.084 68.44 Ethylene 2 0.058",
+  "token_count": 512,
+  "text_sha": "1b2d1954ef44d30335eb6f740001a833702ea15bd271cfe07f9782267ff7b82e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

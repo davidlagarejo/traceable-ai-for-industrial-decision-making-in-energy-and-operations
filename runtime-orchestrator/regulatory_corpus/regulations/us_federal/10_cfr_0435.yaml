@@ -1,0 +1,11 @@
+source_id: us_federal_10_cfr_0435
+title: "DOE Energy Code — New Federal Low-Rise Residential"
+url: https://www.ecfr.gov/current/title-10/part-435
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:11.166256Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 57 §-marked sections. 63,865 chars."
+asset_families:
+  - commercial_building

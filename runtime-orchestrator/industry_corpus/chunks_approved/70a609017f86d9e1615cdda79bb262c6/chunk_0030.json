@@ -1,0 +1,14 @@
+{
+  "chunk_id": "70a60901::chunk_0030",
+  "source_id": "doe_osti_2583521",
+  "source_sha": "70a609017f86d9e1615cdda79bb262c6",
+  "source_url": "https://www.osti.gov/servlets/purl/2583521",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "C. McParland, “Openadr open source toolkit: Developing open source software for the smart grid,” in2011 IEEE power and energy society general meeting, IEEE, 2011, pp. 1–7. 23 This report is available at no cost from the National Renewable Energy Laboratory (NREL) at www.nrel.gov/publications",
+  "token_count": 43,
+  "text_sha": "c72a1f5fd608e2d65950ed9fc33a52999aae076880382e305703f656e6d62045",
+  "extracted_at": "2026-05-16T00:02:16.046005Z"
+}

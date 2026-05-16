@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0604",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": ") If the well is not a representative well, Well ID number of the representative well used to derive the CH 4 emission rate used to calculate CH 4 emissions for this well. ( vii ) If the well is a representative well, report the information specified in paragraphs (dd)(1)(vi)(A) through (D) of this section. ( A ) Average mud rate (MR r in equation W-41 to § 98.233 ), in gallons per minute. You may delay reporting of this data element if you indicate in the annual report that one or more wells to which the calculated CH 4 emissions rate for the representative well (ER s,CH4,r in equation W-42 to § 98.233 ) is applied is a wildcat well or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the average mud rate, in gallons per minute. ( B ) Average concentration of natural gas in the drilling mud (X n in equation W-41 to § 98.233 ), in parts per million. You may delay reporting of this data element if you indicate in the annual report that the well is a wildcat well or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the average concentration of natural gas in the drilling mud in parts per million. ( C ) Measured mole fraction for CH 4 in natural gas entrained in the drilling mud (GHG CH4 in equation W-41 to § 98.233 ). You may delay reporting of this data element if you indicate in the annual report that the well is a wildcat well or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the measured mole fraction for CH 4 in natural gas entrained in the drilling mud. ( D ) Calculated CH 4 emissions rate in standard cubic feet per minute (ER s,CH4,r in equation W-42 to § 98.233 ). You may delay reporting of this data element if you indicate in the annual report that that one or more wells to which the calculated CH 4 emissions rate for the representative well (ER s,CH4,r in equation W-42 to § 98.233 ) is applied is a wildcat or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the calculated CH 4 emissions rate in standard cubic feet per minute. ( viii ) Annual CH 4 emissions, in metric tons CH 4 , from well drilling mud degassing, calculated according to § 98.233(dd)(1) . ( 2 ) For each well for which you used Calculation Method 2 to calculate natural gas emissions from mud degassing, report the information specified in paragraphs (dd)(2)(i) through (iv) of this section. ( i ) Well ID number. ( ii ) Total number of drilling",
+  "token_count": 509,
+  "text_sha": "9d23209d3479b60d87f2d2bf913231e6222f773763c8581e7f81b2c143e964a5",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

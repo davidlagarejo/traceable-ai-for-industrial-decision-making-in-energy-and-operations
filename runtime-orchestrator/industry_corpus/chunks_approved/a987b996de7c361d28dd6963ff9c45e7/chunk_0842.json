@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0842",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "redelivered to another facility without being injected into your well in each quarter. ( 4 ) The net mass of CO 2 received (in metric tons) annually. ( 5 ) The standard or method used to calculate each value in paragraphs (b)(1) , (b)(2) , and (b)(3) of this section. ( 6 ) The number of times in the reporting year for which substitute data procedures were used to calculate values reported in paragraphs (b)(1) and (b)(2) of this section. ( c ) If you use more than one receiving flow meter, report the total net mass of CO 2 received (metric tons) through all flow meters annually. ( d ) The source of the CO 2 received according to the following categories: ( 1 ) CO 2 production wells. ( 2 ) Electric generating unit. ( 3 ) Ethanol plant. ( 4 ) Pulp and paper mill. ( 5 ) Natural gas processing. ( 6 ) Gasification operations. ( 7 ) Other anthropogenic source. ( 8 ) Discontinued enhanced oil and gas recovery project. ( 9 ) Unknown. ( e ) Report the date that you began collecting data for calculating total amount sequestered according to § 98.448(a)(7) of this subpart . ( f ) Report the following. If the date specified in paragraph (e) of this section is during the reporting year for this annual report, report the following starting on the date specified in paragraph (e) of this section. ( 1 ) For each injection flow meter (mass or volumetric), report: ( i ) The mass of CO 2 injected (metric tons) annually. ( ii ) The CO 2 concentration in flow (volume or weight percent CO 2 expressed as a decimal fraction) in each quarter. ( iii ) If a volumetric flow meter is used, the volumetric flow rate at standard conditions (in standard cubic meters) in each quarter. ( iv ) If a mass flow meter is used, the mass flow rate (in metric tons) in each quarter. ( v ) A numerical identifier for the flow meter. ( vi ) Whether the flow meter is mass or volumetric. ( vii ) The standard used to calculate each value in paragraphs (f)(1)(ii) through (f)(1)(iv) of this section. ( viii ) The number of times in the reporting year for which substitute data procedures were used to calculate values reported in paragraphs (f)(1)(ii) through (f)(1)(iv) of this section. ( ix ) The location of the flow meter. ( 2 ) The total CO 2 injected (metric tons) in the reporting year as calculated in Equation RR-6 of this subpart. ( 3 ) For CO 2 emissions from equipment leaks and vented emissions of CO 2 , report the following: ( i ) The mass of CO 2 emitted (in metric tons) annually from equipment leaks and vented emissions of CO 2 from equipment located on the surface between the flow meter used to measure injection quantity and the injection wellhead. ( ii ) The mass of CO 2 emitted (in metric tons) annually from equipment leaks",
+  "token_count": 510,
+  "text_sha": "1ea5dbb55183f24158ea085a5698491b1fa89cafa5f984305d6f776b2f16330a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

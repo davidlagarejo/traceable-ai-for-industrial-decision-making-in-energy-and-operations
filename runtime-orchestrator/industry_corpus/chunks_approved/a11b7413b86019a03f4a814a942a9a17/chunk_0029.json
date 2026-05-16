@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a11b7413::chunk_0029",
+  "source_id": "doe_osti_2588997",
+  "source_sha": "a11b7413b86019a03f4a814a942a9a17",
+  "source_url": "https://www.osti.gov/servlets/purl/2588997",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "and 59% and 56% during the spring evaluation. The results from this study indicated that replacing a conventional CAV system with a VAV system configuration with HEDS could reduce the chiller power consumption by approximately 72%, 100% and 80% during summer, winter and spring measurement periods, respectively. The gas consumption for reheat was reduced by 99% in summer, 86% in winter and 82% in spring. Although measurements were not performed prior to installation of the HEDS at the Timken Museum for direct comparison, these results are consistent with energy cost reductions that the museum experienced following the installation of the HEDS, which provides additional validation of the performance. These results clearly indicate consistent and significant energy savings due to the HEDS operation in a wide variety of conditions at the Timken Museum, and the energy recovery and HVAC optimization aspects of the HEDS technology can be expected to provide benefits for a variety of facility types and in a variety of climates. It is recommended that future evaluations be conducted in other operating scenarios to quantify the benefits in different climates and building types. These results highlight the benefits of the HEDS energy recovery system and the need for HVAC equipment to be furnished with factory installed, tuned, tested and commissioned HVAC optimization code. The HEDS use of the HVAC optimization system and the thermal flywheel code allows the “High Efficiency Dehumidification System” to save significant amounts of energy throughout the year, even when dehumidification is not required. Table 14. Measured energy savings of HEDS relative to baseline operating modes Operating Mode Chiller electrical load savings Reheat energy (natural gas) savings Comparison Summer Winter Spring Summer Winter Spring CAV HEDS vs. CAV baseline 38.6% 96.8% 42.3% 63.7% 99.4% 59.1% VAV HEDS vs. VAV baseline 41.9% 100% 51.9% 97.0% 78.0% 56.3% VAV HEDS vs. CAV baseline 71.5% 100% 79.5% 99.1% 86.4% 81.9% 34 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 323,
+  "text_sha": "5258ded75272d8a37d3d2eaa2be16bc069f0e186f1d926d41edad24df9e38133",
+  "extracted_at": "2026-05-16T00:04:41.912872Z"
+}

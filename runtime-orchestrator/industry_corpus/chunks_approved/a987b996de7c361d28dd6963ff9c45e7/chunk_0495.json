@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0495",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "CH 4 or CO 2 ) emissions from all reciprocating compressors, at standard conditions, in cubic feet. Count = Total number of reciprocating compressors with rod packing emissions vented directly to the atmosphere. E s,i,p = Annual volumetric GHG i (either CH 4 or CO 2 ) emissions for reciprocating compressor p, at standard conditions, in cubic feet, calculated using equation W-29E to this section. ( iv ) For all reciprocating compressors at an onshore petroleum and natural gas production facility or an onshore petroleum and natural gas gathering and boosting facility for which paragraph (p)(10)(i) of this section does not apply, you must calculate rod packing vent emissions from each reciprocating compressor using equation W-29E to this section. Reciprocating compressor rod packing emissions that are routed to a flare, combustion, or vapor recovery system are not required to be determined under this paragraph (p) . Where: E s,i,p = Annual volumetric GHG i (either CH 4 or CO 2 ) emissions for reciprocating compressor p, at standard conditions, in cubic feet. EF s,p = Emission factor for reciprocating compressor p, in standard cubic feet per year. Use 2.13 × 10 5 standard cubic feet per year per compressor for CH 4 and 1.18 × 10 4 standard cubic feet per year per compressor for CO 2 at 60 °F and 14.7 psia. T p = Total time reciprocating compressor p was in operating mode, for which E s,i,p , is being calculated in the reporting year, in hours. T total = Total hours per year. Use 8784 in leap years and use 8760 in all other years. GHG i,p = Mole fraction of GHG (either CH 4 or CO 2 ) in the vent gas for reciprocating compressor p in operating mode; use the appropriate gas compositions in paragraph (u)(2) of this section. GHG EF = Mole fraction of GHG (either CH 4 or CO 2 ) used in the determination of EF s,p . Use 0.98 for CH 4 and 0.02 for CO 2 . ( 11 ) Method for converting from volumetric to mass emissions. You must calculate both CH 4 and CO 2 mass emissions from volumetric emissions using calculations in paragraph (v) of this section. ( q ) Equipment leak surveys. For the components identified in paragraphs (q)(1)(i) through (iii) and (v) of this section, you must conduct equipment leak surveys using the leak detection methods specified in paragraphs (q)(1)(i) through (iii) and (v) of this section. For the components identified in paragraph (q)(1)(iv) and (vi) of this section, you may elect to conduct equipment leak surveys, and if you elect to conduct surveys, you must use a leak detection method specified in paragraph (q)(1)(iv) and (vi) of this section. This paragraph (q) applies to components in streams with gas content greater than 10 percent CH 4 plus CO 2 by weight. Components in streams with gas content less than or equal to 10 percent CH 4 plus CO 2 by weight are exempt from the requirements of this paragraph (q) and do",
+  "token_count": 508,
+  "text_sha": "4e5fe6b07e84390177f11fdc76ca8afc28b6731779fc7868c19bc6808001e98a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

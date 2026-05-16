@@ -1,0 +1,14 @@
+{
+  "chunk_id": "482612a1::chunk_0027",
+  "source_id": "doe_osti_3031067",
+  "source_sha": "482612a1ac88091174c8a6c1552978cd",
+  "source_url": "https://www.osti.gov/servlets/purl/3031067",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "(IRIS),” INPO 19-002, Revision 1, Institute of Nuclear Power Operations. [5] Lane, J. C. 2015. “NRC Operating Experience (OpE) Programs.” Office of Nuclear Regulatory Research, SPAR Workshop Public Meeting, July 14–15, 2015. http://pbadupws.nrc.gov/docs/ML1518/ML15189A345.pdf. [6] Nuclear Energy Institute. 2013. “Regulatory Assessment Performance Indicator Guideline.” NEI 99-02, Revision 7, Nuclear Energy Institute. https://www.nrc.gov/docs/ML1326/ML13261A116.pdf. [7] Ma, Z., T. E. Wierman, and K. J. Kvarfordt. 2021. “Industry-Average Performance for Components and Initiating Events at U.S. Commercial Nuclear Power Plants: 2020 Update,” INL/EXT-21-65055, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/AvgPerf/AvgPara2020.pdf. [8] Eide, S. A., T. E. Wierman, C. D. Gentillon, D. M. Rasmuson, and C. L. Atwood. 2007. “Industry- Average Performance for Components and Initiating Events at U.S. Commercial Nuclear Power Plants.” NUREG/CR-6928, U.S. Nuclear Regulatory Commission. https://www.nrc.gov/docs/ML0706/ML070650650.pdf. [9] Ma, Z. 2022. “Enhanced Component Performance Study: Motor-Operated Valves 1998-2020,” INL/RPT-22-66600, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/CompPerf/mov- 2020.pdf. [10] Ma, Z. 2019. “Enhanced Component Performance Study: Motor-Operated Valves 1998-2018,” INL/EXT-19-54611, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/CompPerf/mov- 2018.pdf. [11] Schroeder, J. A. 2018. “Enhanced Component Performance Study: Motor-Operated Valves 1998- 2016,” INL/LTD-17-44123, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/CompPerf/mov-2016.pdf. [12] Atwood, C. L., et al. 2003. “Handbook of Parameter Estimation for Probabilistic Risk Assessment.” NUREG/CR-6823, U.S. Nuclear Regulatory Commission. https://www.nrc.gov/docs/ML0329/ML032900131.pdf. [13] Ma, Z, T. Liu, N. Johnson, and J.W. Merickle. 2025. “Enhanced Component Performance Study: Emergency Diesel Generators 1998–2024,” INL/RPT-25-86864, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/CompPerf/edg-2024.pdf. 52",
+  "token_count": 218,
+  "text_sha": "e254c3fd7799a90291d4a816feb441e8f6dc05f8897ea28da4b6ef24abd91bcd",
+  "extracted_at": "2026-05-15T23:59:07.157232Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0428",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "calculate CH 4 , CO 2 , and N 2 O emissions for the flare stack as specified in paragraph (n) of this section and report emissions from the flare as specified in § 98.236(n) . If any AGR vents or NRU vents are routed through an engine ( e.g., permeate from a membrane or de-adsorbed gas from a pressure swing adsorber used as fuel supplement) ( i.e., routed to combustion), you must calculate CH 4 , CO 2 , and N 2 O emissions as specified in subpart C of this part or as specified in paragraph (z) of this section, as applicable. ( 1 ) Calculation Method 1 . If you operate and maintain a continuous emissions monitoring system (CEMS) that has both a CO 2 concentration monitor and volumetric flow rate monitor, you must calculate CO 2 emissions under this subpart by following the Tier 4 Calculation Method and all associated calculation, quality assurance, reporting, and recordkeeping requirements for Tier 4 in subpart C of this part (General Stationary Fuel Combustion Sources). Alternatively, you may follow the manufacturer's instructions or industry standard practice. If a CO 2 concentration monitor and volumetric flow rate monitor are not available, you may elect to install a CO 2 concentration monitor and a volumetric flow rate monitor that comply with all of the requirements specified for the Tier 4 Calculation Method in subpart C of this part (General Stationary Fuel Combustion Sources). ( 2 ) Calculation Method 2 . Except as specified in paragraph (d)(4) of this section, for CO 2 emissions, if a CEMS is not available but a vent meter is installed, use the CO 2 composition and annual volume of vent gas to calculate emissions using equation W-3 to this section. Except as specified in paragraph (d)(4) of this section, for CH 4 emissions, if a vent meter is installed, including the volumetric flow rate monitor on a CEMS for CO 2 , use the CH 4 composition and annual volume of vent gas to calculate emissions using equation W-3 to this section. Where: E a,i = Annual total volumetric GHGi (either CO 2 or CH 4 ) emissions at actual conditions, in cubic feet per year. V a = Total annual volume of vent gas flowing out of the AGR or NRU in cubic feet per year at actual conditions as determined by flow meter using methods set forth in § 98.234(b) . Alternatively, you may follow the manufacturer's instructions or industry standard practice for calibration of the vent meter. Vol i = Annual average volumetric fraction of GHGi (either CO 2 or CH 4 ) content in vent gas flowing out of the AGR or NRU as determined in paragraph (d)(7) of this section. ( 3 ) Calculation Method 3 . If a CEMS for CO 2 or a vent meter is not installed, you may use the inlet and/or outlet gas flow rate of the AGR or NRU to calculate emissions for CH 4 and CO 2 using equation W-4A, W-4B, or W-4C to this",
+  "token_count": 510,
+  "text_sha": "95f73a2a21c0ffd2b8a1ecd01f514316dcea518a608962ffa94ce4242590979d",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

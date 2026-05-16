@@ -1,0 +1,14 @@
+{
+  "chunk_id": "1878cb6a::chunk_0018",
+  "source_id": "doe_osti_3016985",
+  "source_sha": "1878cb6aac6f5ab0d5d0eb42d8f7c962",
+  "source_url": "https://www.osti.gov/servlets/purl/3016985",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "90 406.4 20.0 367 321 46.0 12.5% Sticks 15.0 367 315 52.0 14.2% Sticks 2 pass: ASL-ASL-AFL-GDC total EEA width 367 um 25.0 367 316 51.0 13.9% Sticks 20.0 367 311 56.0 15.3% Sticks 90 381 15.0 367 309 58.0 15.8% Sticks 3.0 367 311 56.0 15.3% Sticks 19",
+  "token_count": 49,
+  "text_sha": "5246ae489ae6a743bb37aa3597f182639a13a0bb9ccb11c1d8ee948876431e5d",
+  "extracted_at": "2026-05-15T23:58:34.047625Z"
+}

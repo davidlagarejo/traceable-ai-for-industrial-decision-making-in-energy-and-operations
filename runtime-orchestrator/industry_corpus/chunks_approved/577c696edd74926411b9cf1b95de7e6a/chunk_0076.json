@@ -1,0 +1,14 @@
+{
+  "chunk_id": "577c696e::chunk_0076",
+  "source_id": "doe_osti_2587978",
+  "source_sha": "577c696edd74926411b9cf1b95de7e6a",
+  "source_url": "https://www.osti.gov/servlets/purl/2587978",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Learning (GOTL). Supervised None Classification Difficult: Easy: Scikit-learn Fault Diagnosis techniques: linear involves SVM, stochastic obtaining gradient descent, labeled fault random forest data classification Predictive Stochastic Difficult: Easy: Scikit-learn Maintenance None techniques, e.g., Hid- involves den Markov Models equipment life cycle data",
+  "token_count": 42,
+  "text_sha": "a765b051bf12da2e8af4d6aca2ef9f88091204ec44b76cf02a31135c2ad7bc54",
+  "extracted_at": "2026-05-16T00:05:05.533531Z"
+}

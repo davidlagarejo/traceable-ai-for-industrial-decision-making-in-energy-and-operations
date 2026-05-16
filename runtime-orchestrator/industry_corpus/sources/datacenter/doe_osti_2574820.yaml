@@ -1,0 +1,11 @@
+source_id: doe_osti_2574820
+title: "Connecting Minds: AI Use Cases to Bridge Power Systems and Large Language Models for Practical Applications"
+url: https://www.osti.gov/servlets/purl/2574820
+license: public_domain
+publisher: doe_osti
+version: "2025-05-31"
+added_at: "2026-05-16T00:00:42.831935Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, 97 MATHEMATICS AND COMPUTING, artificial intelligence, asset management, electrical power distribution"
+asset_families:
+  - datacenter

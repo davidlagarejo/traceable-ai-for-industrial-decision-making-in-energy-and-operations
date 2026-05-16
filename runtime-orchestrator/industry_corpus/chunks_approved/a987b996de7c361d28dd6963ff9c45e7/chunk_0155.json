@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0155",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "equipment, or emergency generators, as defined in § 98.6 . [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79155 , Dec. 17, 2010] § 98.41 Reporting threshold. You must report GHG emissions under this subpart if your facility contains one or more electricity generating units and the facility meets the requirements of § 98.2(a)(1) . § 98.42 GHGs to report. ( a ) For each electricity generating unit that is subject to the requirements of the Acid Rain Program or is otherwise required to monitor and report to EPA CO 2 emissions year-round according to 40 CFR part 75 , you must report under this subpart the annual mass emissions of CO 2 , N 2 O, and CH 4 by following the requirements of this subpart. ( b ) For each electricity generating unit that is not subject to the Acid Rain Program or otherwise required to monitor and report to EPA CO 2 emissions year-round according to 40 CFR part 75 , you must report under subpart C of this part (General Stationary Fuel Combustion Sources) the emissions of CO 2 , CH 4 , and N 2 O by following the requirements of subpart C. ( c ) For each stationary fuel combustion unit that does not generate electricity, you must report under subpart C of this part (General Stationary Fuel Combustion Sources) the emissions of CO 2 , CH 4 , and N 2 O by following the requirements of subpart C of this part . § 98.43 Calculating GHG emissions. ( a ) Except as provided in paragraph (b) of this section, continue to monitor and report CO 2 mass emissions as required under § 75.13 or section 2.3 of appendix G to 40 CFR part 75, and § 75.64 . Calculate CO 2 , CH 4 , and N 2 O emissions as follows: ( 1 ) Convert the cumulative annual CO 2 mass emissions reported in the fourth quarter electronic data report required under § 75.64 from units of short tons to metric tons. To convert tons to metric tons, divide by 1.1023. ( 2 ) Calculate and report annual CH 4 and N 2 O mass emissions under this subpart by following the applicable method specified in § 98.33(c) . ( b ) Calculate and report biogenic CO 2 emissions under this subpart by following the applicable methods specified in § 98.33(e) . The CO 2 emissions (excluding biogenic CO 2 ) for units subject to this subpart that are reported under §§ 98.3(c)(4)(i) and (c)(4)(iii)(B) shall be calculated by subtracting the biogenic CO 2 mass emissions calculated according to § 98.33(e) from the cumulative annual CO 2 mass emissions from paragraph (a)(1) of this section. Separate calculation and reporting of biogenic CO 2 emissions is optional only for the 2010 reporting year pursuant to § 98.3(c)(12) and required every year thereafter. [ 75 FR 79155 , Dec. 17, 2010] § 98.44 Monitoring and QA/QC requirements. Follow the applicable quality assurance procedures for CO 2 emissions in appendices",
+  "token_count": 511,
+  "text_sha": "251f18e4b0c1ab097c5b10553438536b9c13dd61dbbdbf0d812991f20e047038",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

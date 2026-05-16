@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0816",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "CO 2 density determination for CO 2 stream u in quarter p (metric tons per standard cubic meter) if CO 2 , p is measured as volume % CO 2 , or density of CO 2 stream u (metric tons per standard cubic meter) if CO 2,p is measured as weight % CO 2 . p = Quarter of the year. u = CO 2 stream that delivers to containers. ( 3 ) To aggregate data, sum the mass of CO 2 supplied in containers delivered by all CO 2 streams in accordance with Equation PP-3a of this section. where: CO 2 = Annual mass of CO 2 (metric tons) supplied in containers delivered by all CO 2 streams. CO 2,u = Annual mass of CO 2 (metric tons) supplied in containers delivered by CO 2 stream u. u = CO 2 stream that delivers to containers. ( c ) Importers or exporters that import or export CO 2 in containers shall calculate the total mass of CO 2 imported or exported in metric tons based on summing the mass in each CO 2 container using weigh bills, scales, or load cells according to Equation PP-4 of this section. where: CO 2 = Annual mass of CO 2 (metric tons). Q = Annual mass in all CO 2 containers imported or exported during the reporting year (metric tons). [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79169 , Dec. 17, 2010; 78 FR 71977 , Nov. 29, 2013; 89 FR 31943 , Apr. 25, 2024] § 98.424 Monitoring and QA/QC requirements. ( a ) Determination of quantity. ( 1 ) Reporters following the procedures in § 98.423(a) shall determine quantity using a flow meter or meters located in accordance with this paragraph. ( i ) If the CO 2 stream is segregated such that only a portion is captured for commercial application or for injection, you must locate the flow meter according to the following: ( A ) For reporters following the procedures in § 98.423(a)(3)(i) , you must locate the flow meter(s) after the point of segregation. ( B ) For reporters following the procedures in paragraph (a)(3)(ii) of § 98.423 , you must locate the main flow meter(s) on the captured CO 2 stream(s) prior to the point of segregation and the subsequent flow meter(s) on the CO 2 stream(s) for on-site use after the point of segregation. You may only follow the procedures in paragraph (a)(3)(ii) of § 98.423 if the CO 2 stream(s) for on-site use is/are the only diversion(s) from the main, captured CO 2 stream(s) after the main flow meter location(s). ( ii ) Reporters that have a mass flow meter or volumetric flow meter installed to measure the flow of a CO 2 stream that meets the requirements of paragraph (a)(1)(i) of this section shall base calculations in § 98.423 of this subpart on the installed mass flow or volumetric flow meters. ( iii ) Reporters that do not have a mass flow meter or volumetric flow meter installed to",
+  "token_count": 512,
+  "text_sha": "7243e2e98e9879e38518ac098958c9398ec9e2707b9e894bad5815459a77d3c8",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

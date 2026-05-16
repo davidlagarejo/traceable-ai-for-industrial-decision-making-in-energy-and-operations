@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0148",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "value of each parameter was used in the emissions calculations. ( vii ) For the Tier 4 Calculation Methodology, keep records of: ( A ) Whether the CEMS certification and quality assurance procedures of part 75 of this chapter , part 60 of this chapter , or an applicable State continuous monitoring program were used. ( B ) The dates and results of the initial certification tests of the CEMS. ( C ) The dates and results of the major quality assurance tests performed on the CEMS during the reporting year, i.e., linearity checks, cylinder gas audits, and relative accuracy test audits (RATAs). ( viii ) If CO 2 emissions that are generated from acid gas scrubbing with sorbent injection are not captured using CEMS, report: ( A ) The total amount of sorbent used during the report year, in short tons. ( B ) The molecular weight of the sorbent. ( C ) The ratio (“R”) in Equation C-11 of this subpart. ( ix ) For units that combust both fossil fuel and biomass, when biogenic CO 2 is determined according to § 98.33(e)(2) , you shall report the following additional information, as applicable: ( A ) The annual volume of CO 2 emitted from the combustion of all fuels, i.e. , V total , in scf. ( B ) The annual volume of CO 2 emitted from the combustion of fossil fuels, i.e. , V ff , in scf. If more than one type of fossil fuel was combusted, report the combustion volume of CO 2 for each fuel separately as well as the total. ( C ) The annual volume of CO 2 emitted from the combustion of biomass, i.e. , V bio , in scf. ( D ) The carbon-based F-factor used in Equation C-13 of this subpart, for each type of fossil fuel combusted, in scf CO 2 per mmBtu. ( E ) The annual average HHV value used in Equation C-13 of this subpart, for each type of fossil fuel combusted, in Btu/lb, Btu/gal, or Btu/scf, as appropriate. ( F ) The total quantity of each type of fossil fuel combusted during the reporting year, in lb, gallons, or scf, as appropriate. ( G ) Annual biogenic CO 2 mass emissions, in metric tons. ( x ) When ASTM methods D7459-08 and D6866-16 (both incorporated by reference, see § 98.7 ) are used to determine the biogenic portion of the annual CO 2 emissions from MSW combustion, as described in § 98.34(d) , report: ( A ) The results of each quarterly sample analysis, expressed as a decimal fraction (e.g., if the biogenic fraction of the CO 2 emissions from MSW combustion is 30 percent, report 0.30). ( B ) The annual biogenic CO 2 mass emissions from MSW combustion, in metric tons. ( xi ) When ASTM methods D7459-08 and D6866-16 (both incorporated by reference, see § 98.7 ) are used in accordance with § 98.34(e) to determine the biogenic portion of the annual CO 2 emissions from a unit that co-fires biogenic",
+  "token_count": 510,
+  "text_sha": "1997ccc9bbaf6cd20d3dcb29d6c125c940ea025e6979e431d0d004c3ec6a42c7",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

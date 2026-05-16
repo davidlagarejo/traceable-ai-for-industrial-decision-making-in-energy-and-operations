@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0022",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "] ]r 4.4 ]r 4.4 m m 4.2 4.2 - m 4 200 g/cm2 - m 4 200 g/cm2 m 135 g/cm2 m 135 g/cm2 3.8 3.8 100 g/cm2 100 g/cm2 [ n o 3 3 . . 4 6 75 g/cm2 [ n o 3 3 . . 4 6 75 g/cm2 itc 3.2 itc 3.2 a a r 3 r 3 tx tx e 2.8 e 2.8 ta 2.6 ta 2.6 v2.4 v2.4 S 2.2 S 2.2 M M 2 2 R R .m 1.8 .m 1.8 r 1.6 N =11 1011 r 1.6 N =13 1011 o init o init n 1.4 n 1.4 0 1 2 3 4 5 6 7 8 0 1 2 3 4 5 6 7 8 -4 -4 p/p at injection [10 ] p/p at injection [10 ] Figure 27: Trend in vertical emittance of high intensity beams at extraction for varying initial ∆p/p with initial intensities of N = (7.5,9,11,13)×1011. init The purple, green, blue and red curves are the 2nd order polynomial fits of extraction data obtained from injections using charge exchange foil thickness of 75, 100, 135 and 200µg/cm2, respectively. 48 26 ]s 24 7.5 1011 - V e 22 9.0 1011 m [ n 20 11 1011 o itc 18 13 1011 a r 16 tx e ta 14 s12 10 0 1 2 3 4 5 6 7 8 p/p at injection (after foil) [10-4] 0.23 n o0.22 itc0.21 a r tx 0.2 e0.19 ta0.18 r 7.5 1011 o0.17 tc a0.16 9.0 1011 f g n 0.15 11 1011 ih c n0 0 . . 1 1 3 4 13 1011 u b0.12 0 1 2 3 4 5 6 7 8 p/p at injection (after foil) [10-4] 8 ]% [ s 7 7.5 1011 s o 6 9.0 1011 l m a 5 11 1011 e 4 b 13 1011 d 3 e ta 2 lu m 1 u c c 0 a 0 1 2 3 4 5 6 7 8 p/p at injection (after foil) [10-4] Figure 28: Trends in longitudinal emittance, bunching factor and accumu- lated beam loss at extraction for varying initial ∆p/p with initial intensities of N = (7.5,9,11,13)×1011. init 49 7 Summary and discussion Investigations into dynamics in the high intensity Booster beams have been performedusingcomputersimulationsincludingspacecharge,alliedtoknown parameters and features of the machine. The investigation is split into two major parts. The first covers beam injec- tion and the early stages of the Booster cycle where focus is to investigate the impact of higher Intensity, longer pulse length and charge exchange foil thickness in the effort of pushing for higher intensity into the Booster. The second part concerns modeling of the full Booster cycle with realistic oper- ational settings or run-time read-backs during the Booster operation. The aim here was to find the trends in changing beam properties through a full cycle by establishing quantitative relationships between parameters in the injected and extracted beams. These studies have essentially been based on the Booster as it presently oper- ates and",
+  "token_count": 509,
+  "text_sha": "adc28beed6911fc1034147e830a83a05d65f169898dfc8d7c46ef66dde1cda37",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

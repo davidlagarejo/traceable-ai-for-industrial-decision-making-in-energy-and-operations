@@ -1,0 +1,15 @@
+{
+  "chunk_id": "1e337ae2::chunk_0060",
+  "source_id": "doe_osti_2566414",
+  "source_sha": "1e337ae2a0de5ef2c1cefd65d9b7f1cd",
+  "source_url": "https://www.osti.gov/servlets/purl/2566414",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "performed under the auspices of the U.S. Department of Energy. Los Alamos National Laboratory strongly supports academic freedom and a researcher’s right to publish; as an institution, however, the Laboratory does not endorse the viewpoint of a publication or guarantee its technical correctness. 62 DCX STRATEGY",
+  "token_count": 46,
+  "text_sha": "c14df99d3ca874ed418a18386caa5f49fcf381c2027a707a34b71a24f0782904",
+  "extracted_at": "2026-05-16T00:07:48.693185Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0513",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "v ) GHG mole fraction in natural gas stored in the LNG storage industry segment. You may use either a default 95 percent methane and 1 percent carbon dioxide fraction for GHG mole fraction in natural gas or site specific engineering estimates based on best available data. ( vi ) GHG mole fraction in natural gas stored in the LNG import and export industry segment. For export facilities that receive gas from transmission pipelines, you may use either a default 95 percent methane and 1 percent carbon dioxide fraction for GHG mole fraction in natural gas or site specific engineering estimates based on best available data. ( vii ) GHG mole fraction in local distribution pipeline natural gas that passes through the facility for natural gas distribution facilities. You may use either a default 95 percent methane and 1 percent carbon dioxide fraction for GHG mole fraction in natural gas or site specific engineering estimates based on best available data. ( v ) GHG mass emissions. Calculate GHG mass emissions in metric tons by converting the GHG volumetric emissions at standard conditions into mass emissions using equation W-36 to this section. Where: Mass i = GHG i (either CH 4 , CO 2 , or N 2 O) mass emissions in metric tons. E s,i = GHG i (either CH 4 , CO 2 , or N 2 O) volumetric emissions at standard conditions, in cubic feet. ρ i = Density of GHG i . Use 0.0526 kg/ft 3 for CO 2 and N 2 O, and 0.0192 kg/ft 3 for CH 4 at 60 °F and 14.7 psia. ( w ) EOR injection pump blowdown. Calculate CO 2 pump blowdown emissions from each EOR injection pump system as follows: ( 1 ) Calculate the total injection pump system volume in cubic feet (including pipelines, manifolds and vessels) between isolation valves. ( 2 ) Retain logs of the number of blowdowns per calendar year. ( 3 ) Calculate the total annual CO 2 emissions from each EOR injection pump system using equation W-37 to this section: Where: Mass CO 2 = Annual EOR injection pump system emissions in metric tons from blowdowns. N = Number of blowdowns for the EOR injection pump system in the calendar year. V v = Total volume in cubic feet of EOR injection pump system chambers (including pipelines, manifolds and vessels) between isolation valves. R c = Density of critical phase EOR injection gas in kg/ft 3 . You may use an appropriate standard method published by a consensus-based standards organization if such a method exists or you may use an industry standard practice to determine density of super critical EOR injection gas. GHG CO 2 = Mass fraction of CO 2 in critical phase injection gas. 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( x ) EOR hydrocarbon liquids dissolved CO 2 . Calculate CO 2 emissions downstream of the storage tank from dissolved CO 2 in hydrocarbon liquids produced through EOR operations as follows: ( 1 ) Determine the",
+  "token_count": 511,
+  "text_sha": "c9c85b26a8c34af2e384170782f6f54d1b57486fbaf4ff9c98155c1127b69917",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

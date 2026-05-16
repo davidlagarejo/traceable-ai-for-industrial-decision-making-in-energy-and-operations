@@ -1,0 +1,15 @@
+{
+  "chunk_id": "85a309be::chunk_0099",
+  "source_id": "us_federal_40_cfr_0070",
+  "source_sha": "85a309bec40509f6f9511bb2fffc51a1",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-70",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Home Titles Search Recent Changes Corrections Reader Aids Using the eCFR Point-in-Time System Understanding the eCFR Government Policy and OFR Procedures Developer Resources Recent Site Updates Information About This Site Legal Status Privacy Accessibility FOIA No Fear Act Continuity Information My eCFR My Subscriptions Sign In / Sign Up",
+  "token_count": 49,
+  "text_sha": "e8ee4f698429790c8c2c7186d7e75a5bfa404d46cb22758f4a2c98811befde50",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

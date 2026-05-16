@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0045",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "9 649.97 649.97 – – – Conventional SUBTOTAL 23 1,040 1,040 35 1,499.21 1,499.21 – – – Solar 7 1,788 860.37 55 10,280.14 4,840.44 – – – Wind 9 1,966.2 527,21 11 10,279.9 2,494.48 – – – Hydro 5 798.7 487.21 – – – – – – Renewable SUBTOTAL 21 4,552.9 1,874.79 66 20,560.04 7,334.92 – – – Mechanical Storage – – – – – – – – – Battery/Non-battery Storage 9 1,650 1,525.5 47 8,720.45 8,148.79 – – – Storage SUBTOTAL 9 1,650 1,525.5 47 8,720.45 8,148.79 – – – Other 3 2,220 2,220 4 160 160 – – – Other SUBTOTAL 3 2,220 2,220 4 160 160 – – – Likely SUBTOTAL 56 9,462.9 6,660.29 152 30,939.7 17,142.92 – – – Derived from data found on: S&P Global Market Intelligence: Screener > Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 93 Questions/ Comments www.NETL.DOE.gov @NETL_DOE @NETL_DOE @NationalEnergyTechnologyLaboratory CONTACT: John Brewer Brandon Seedorf and Nicholas Messina Strategic Systems and Analysis Keylogic Systems under DOE Contract John.Brewer@netl.doe.gov DE-FE-89243323CFE000075",
+  "token_count": 175,
+  "text_sha": "ed8c9be6f5d76709ae5c72b307a4a9e3bf828bb6b51f3a4a227523c1f9e63487",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

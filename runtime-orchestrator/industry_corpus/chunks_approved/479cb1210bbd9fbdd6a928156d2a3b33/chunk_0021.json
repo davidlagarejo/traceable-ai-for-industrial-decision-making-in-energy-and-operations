@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0021",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Booster characteristics and param- eter behavior. 46 ]r 6 ]r 6 m 5.8 m 5.8 - m 5.6 200 g/cm2 - m 5.6 200 g/cm2 m 5.4 135 g/cm2 m 5.4 135 g/cm2 5.2 100 g/cm2 5.2 100 g/cm2 [ n 5 75 g/cm2 [ n 5 75 g/cm2 o 4.8 o 4.8 itc 4.6 itc 4.6 a a r 4.4 r 4.4 tx tx e 4.2 e 4.2 ta 4 ta 4 h3.8 h3.8 S 3.6 S 3.6 M 3.4 M 3.4 R 3.2 R 3.2 .m 3 .m 3 r 2.8 N =7.5 1011 r 2.8 N =9 1011 o init o init n 2.6 n 2.6 0 1 2 3 4 5 6 7 8 0 1 2 3 4 5 6 7 8 -4 -4 p/p at injection [10 ] p/p at injection [10 ] ]r 6 ]r 6 m 5.8 m 5.8 - m 5.6 200 g/cm2 - m 5.6 200 g/cm2 m 5.4 135 g/cm2 m 5.4 135 g/cm2 5.2 100 g/cm2 5.2 100 g/cm2 [ n 5 75 g/cm2 [ n 5 75 g/cm2 o 4.8 o 4.8 itc 4.6 itc 4.6 a a r tx 4.4 r tx 4.4 e 4.2 e 4.2 ta 4 ta 4 h3.8 h3.8 S 3.6 S 3.6 M 3.4 M 3.4 R 3.2 R 3.2 .m 3 .m 3 r 2.8 N =11 1011 r 2.8 N =13 1011 o init o init n 2.6 n 2.6 0 1 2 3 4 5 6 7 8 0 1 2 3 4 5 6 7 8 -4 -4 p/p at injection [10 ] p/p at injection [10 ] Figure 26: Trend in horizontal emittance of high intensity beams at extrac- tion for varying initial ∆p/p with initial intensities of N = (7.5,9,11,13)× init 1011. The purple, green, blue and red curves are the 2nd order polynomial fits of extraction data obtained from injections using foil thicknesses of 75, 100, 135 and 200µg/cm2 respectively. 47 ]r 4.4 ]r 4.4 m m 4.2 4.2 - m 4 200 g/cm2 - m 4 200 g/cm2 m 135 g/cm2 m 135 g/cm2 3.8 3.8 100 g/cm2 100 g/cm2 [ n o 3 3 . . 4 6 75 g/cm2 [ n o 3 3 . . 4 6 75 g/cm2 itc 3.2 itc 3.2 a a r 3 r 3 tx tx e 2.8 e 2.8 ta 2.6 ta 2.6 v2.4 v2.4 S 2.2 S 2.2 M M 2 2 R R .m 1.8 .m 1.8 r 1.6 N =7.5 1011 r 1.6 N =9 1011 o init o init n 1.4 n 1.4 0 1 2 3 4 5 6 7 8 0 1 2 3 4 5 6 7 8 -4 -4 p/p at injection [10 ] p/p at injection [10 ] ]r 4.4 ]r 4.4 m m 4.2 4.2 - m 4 200 g/cm2 - m 4 200 g/cm2 m 135 g/cm2 m 135 g/cm2 3.8 3.8 100 g/cm2 100 g/cm2 [ n o 3 3 . . 4 6 75 g/cm2 [ n o 3 3 . . 4",
+  "token_count": 512,
+  "text_sha": "11217f307122152640511302d0d4d7237e178fe65cdca97810e113f321c54b0f",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

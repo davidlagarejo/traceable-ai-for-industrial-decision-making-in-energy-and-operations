@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c18e3fad::chunk_0018",
+  "source_id": "doe_osti_3008428",
+  "source_sha": "c18e3fad9ebdf00ed9e9577f6f4240ea",
+  "source_url": "https://www.osti.gov/servlets/purl/3008428",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "customers can add the water recovery and plume mitigation system to reduce evaporation losses, eliminate visible plumes, and decrease reliance on external water sources. This is especially valuable in regions with high water prices or water scarcity, and in plants subject to plume or drift regulations.",
+  "token_count": 46,
+  "text_sha": "c2cc055cda877c994a9c3729571f51b3a3acfcffd97f0099eb5277b3df432823",
+  "extracted_at": "2026-05-16T00:00:09.618561Z"
+}

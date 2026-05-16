@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fa2a3a59::chunk_0006",
+  "source_id": "doe_osti_3023590",
+  "source_sha": "fa2a3a59709744f06cff20c8f19f4bee",
+  "source_url": "https://www.osti.gov/servlets/purl/3023590",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Wh kg⁻¹ At 60 mg cm⁻² cathode Energy density ~125 Wh L⁻¹ Projected Cost inputs (2025 USD): MnO₂ ~$5.6/kg; Zn ~$2.9/kg; electrolyte salts ~$0.5/kg; Zn-CNF ~$1e- 5/cm²; carbon cloth ~$1.9e-3/cm² (to be replaced by SS). Metric Value Units Direct materials 2.86 $/cell Labor + utilities 0.06 $/cell Overhead 0.73 $/cell Total (pre-yield) 3.64 $/cell Yield to finished cells 90 % Manufacturing cost (delivered) 25.7 $/kWh Energy per cell 176 Wh Implied $/Wh 0.025 $/Wh Key findings: (i) materials dominate cost; (ii) SS collectors + slurry coating lower cost ~40%; (iii) ≥1 GWh/yr scale projects $25–28/kWh; (iv) MnO₂ price sensitivity of ±10% shifts total cost by ~±4%. Appendix C. Meeting, Review, and Reporting Log TABLE 2 — Meeting and Review Schedule (2024–2025) Quarter Review Date Type / Host Primary Topics Key Decisions / Outcomes Y1 Q1 Jan 31, 2024 ARPA-E Review Lab setup; HEE Bi-salt HEE (UMD) definition; Zn-CNF approved for Task mechanics 1 execution Y1 Q2 Apr 25, 2024 DOE Workshop Commercial Adopt Vibrantz (WVU) MnO₂; ESW MnO₂ as baseline validation Y1 Q3 Aug 29, 2024 Quarterly Review Task 1 closure; Commit to dry- (WHP) α/β/γ MnO₂ compression for analysis Task 2 Y1 Q4 Nov 18, 2024 Year-End Review Thick cathode & Approval to study (UMD) electrolyte 17 mg cm⁻² for integration rechargeability Y2 Q1 Mar 5, 2025 Review (Yale) Dry-compression Validated crack- 30–160 mg cm⁻² free pellet fabrication Y2 Q2 Jun 23, 2025 Joint Review 250 mg cm⁻² 60 mg cm⁻² (WHP) cathode; cost selected for model <$30/kWh Y2 Q3 Aug 2025 Mid-Cycle Audit HE additive; Zn Shift to SO₄²⁻ HER suppression electrolyte for SS collectors Y2 Q4 (Q8) Oct 2, 2025 Final Review Pouch cells; T2M; Deliverables met; (WHP) <$30/kWh continuation proposed",
+  "token_count": 284,
+  "text_sha": "4c5dbf62b860636f5295273059c62eabeef399c797bc8410483bfd57420e620f",
+  "extracted_at": "2026-05-15T23:59:40.993812Z"
+}

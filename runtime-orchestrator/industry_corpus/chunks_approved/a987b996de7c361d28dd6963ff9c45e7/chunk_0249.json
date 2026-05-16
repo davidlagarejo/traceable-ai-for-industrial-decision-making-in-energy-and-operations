@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0249",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "of Part 98—Default Factors for Gamma (g i,p and g k,i,p ) for Semiconductor Manufacturing and for MEMS and PV Manufacturing Under Certain Conditions * for Use With the Stack Testing Method Process type In-situ thermal or in-situ plasma cleaning Remote plasma cleaning Gas CF 4 C 2 F 6 c-C 4 F 8 NF 3 SF 6 C 3 F 8 CF 4 NF 3 If manufacturing wafer sizes ≤200 mm AND manufacturing 300 mm (or greater) wafer sizes g i 13 9.3 4.7 14 11 NA NA 5.7 g CF4,i NA 23 6.7 63 8.7 NA NA 58 g C2F6,i NA NA NA NA 3.4 NA NA NA g CHF3,i NA NA NA NA NA NA NA 0.24 g CH2F2,i NA NA NA NA NA NA NA 111 g CH3F,i NA NA NA NA NA NA NA 33 If manufacturing ≤200 mm OR manufacturing 300 mm (or greater) wafer sizes g i (≤ 200 mm wafer size) 13 9.3 4.7 2.9 11 NA NA 1.4 g CF4,i (≤200 mm wafer size) NA 23 6.7 110 8.7 NA NA 36 g C2F6,i (≤200 mm wafer size) NA NA NA NA 3.4 NA NA NA g i (300 mm wafer size) NA NA NA 26 NA NA NA 10 g CF4,i (300 mm wafer size) NA NA NA 17 NA NA NA 80 g C2F6,i (300 mm wafer size) NA NA NA NA NA NA NA NA g CHF3,i (300 mm wafer size) NA NA NA NA NA NA NA 0.24 g CH2F2,i (300 mm wafer size) NA NA NA NA NA NA NA 111 g CH3F,i (300 mm wafer size) NA NA NA NA NA NA NA 33 * If you manufacture MEMS or PVs and use semiconductor tools and processes, you may use the corresponding g in this table. For all other tools and processes, a default g of 10 must be used. [ 89 FR 31922 , Apr. 25, 2024] Table I-19 to Subpart I of Part 98—Reference Emission Factors (1-U ij ) for Gas Utilization Rates (U ij ) and By-Product Formation Rates (B ijk ) for Semiconductor Manufacturing for 150 mm and 200 mm Wafer Sizes Table I-19 to Subpart I of Part 98—Reference Emission Factors (1-U ij ) for Gas Utilization Rates (U ij ) and By-Product Formation Rates (B ijk ) for Semiconductor Manufacturing for 150 mm and 200 mm Wafer Sizes Process type/sub-type Process gas i CF 4 C 2 F 6 CHF 3 CH 2 F 2 C 2 HF 5 CH 3 F C 3 F 8 C 4 F 8 NF 3 SF 6 C 4 F 6 C 5 F 8 C 4 F 8 O Etching/Wafer Cleaning 1-U i 0.73 0.46 0.31 0.37 0.064 0.66 NA 0.21 0.20 0.55 0.086 0.072 NA BCF 4 NA 0.20 0.10 0.031 0.077 NA NA 0.17 0.0040 0.023 0.0089 NA NA BC 2 F 6 0.029 NA NA NA NA NA NA 0.065 NA NA 0.045 0.014 NA BC 4 F 6 NA NA NA NA NA NA NA NA NA NA NA",
+  "token_count": 512,
+  "text_sha": "4dc1335873a34f9507a7b514d83d094456721159591033b78c3e7cc2e24f6a5f",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

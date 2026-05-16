@@ -1,0 +1,14 @@
+{
+  "chunk_id": "dfe94618::chunk_0022",
+  "source_id": "doe_osti_2583520",
+  "source_sha": "dfe9461894e3173518ee628fa72db592",
+  "source_url": "https://www.osti.gov/servlets/purl/2583520",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "National Renewable Energy Laboratory. n.d. “Drive Cycle Analysis Tool — DriveCAT | Transportation and Mobility Research | NREL.” Accessed May 3, 2022. https://www.nrel.gov/transportation/drive-cycle-tool/. Subject Inventions Listing: None. ROI #: None. 19 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 42,
+  "text_sha": "2e9bbec360b9b0cdb5facfb95693850d75b4fdab6dca8f470dfe5c6643e69a45",
+  "extracted_at": "2026-05-15T23:59:31.480368Z"
+}

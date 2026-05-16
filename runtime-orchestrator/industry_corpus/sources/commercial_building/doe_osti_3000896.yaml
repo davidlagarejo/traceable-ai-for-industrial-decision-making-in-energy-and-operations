@@ -1,0 +1,11 @@
+source_id: doe_osti_3000896
+title: "Optimizing Control for Efficient Load Shifting with Thermal Energy Storage in Existing HVAC Systems"
+url: https://www.osti.gov/servlets/purl/3000896
+license: public_domain
+publisher: doe_osti
+version: "2025-08-30"
+added_at: "2026-05-16T00:04:44.861823Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 99 GENERAL AND MISCELLANEOUS, HVAC, direct-contact heat exchanger (DCHX) based on thermal energy storage (TES) system, grid-interactive efficient buildings"
+asset_families:
+  - commercial_building

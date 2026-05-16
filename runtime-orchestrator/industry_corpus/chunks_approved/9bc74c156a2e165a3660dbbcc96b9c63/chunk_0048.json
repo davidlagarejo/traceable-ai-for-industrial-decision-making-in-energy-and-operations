@@ -1,0 +1,14 @@
+{
+  "chunk_id": "9bc74c15::chunk_0048",
+  "source_id": "doe_osti_2999533",
+  "source_sha": "9bc74c156a2e165a3660dbbcc96b9c63",
+  "source_url": "https://www.osti.gov/servlets/purl/2999533",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Cambridge University Press. Available from: https://www.ipcc.ch/assessment-report/ar5/. 66 | Page Energy Systems and Infrastructure Analysis Argonne National Laboratory 9700 South Cass Avenue Lemont, IL 60439 www.anl.gov Argonne National Laboratory is a U.S. Department of Energy laboratory managed by UChicago Argonne, LLC",
+  "token_count": 40,
+  "text_sha": "eee935c970bf994aabb1fcd70d66ff392cb5d382114cf7f33489439953a7f1eb",
+  "extracted_at": "2026-05-15T23:54:59.267794Z"
+}

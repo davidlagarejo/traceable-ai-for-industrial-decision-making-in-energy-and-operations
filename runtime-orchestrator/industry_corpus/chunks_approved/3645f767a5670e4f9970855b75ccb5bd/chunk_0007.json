@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3645f767::chunk_0007",
+  "source_id": "doe_osti_3022461",
+  "source_sha": "3645f767a5670e4f9970855b75ccb5bd",
+  "source_url": "https://www.osti.gov/servlets/purl/3022461",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 3.4.2 Income . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 3.5 Public Perception . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 4 Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 4.1 Pathway Forward . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 4.2 Looking Ahead . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 viii This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications List of Figures Figure 1. Legacy Devices Workshop Agenda . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 ix This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications 1 Introduction 1.1 Workshop Overview The goal of this workshop was to map legacy devices across the transportation, building, and power grid sectors to better understand the common challenges and opportunities for improving interoperability, scalability, and life cycle management of aging infrastructure. Legacy devices were defined as existing devices that remain operational but are outdated—whether superseded by newer models, lacking modern features like connectivity or remote control, or incompatible with contemporary systems. As sensors and controllers proliferate throughout building management systems, traffic networks, and power grids, the diverse ecosystem of devices creates significant challenges",
+  "token_count": 510,
+  "text_sha": "a610f0d8681fe3944e6c392773387846eef77b1a95599a84149c4adcf244cb7d",
+  "extracted_at": "2026-05-16T00:05:21.872368Z"
+}

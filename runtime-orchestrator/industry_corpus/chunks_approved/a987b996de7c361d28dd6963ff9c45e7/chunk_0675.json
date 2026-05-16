@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0675",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "emissions if the respective monitoring and QA/QC requirements described in § 98.34 are met. ( 2 ) Calculate CH 4 and N 2 O emissions from fuel combustion using direct measurement of fuels consumed, default or site-specific HHV, and default emissions factors and convert to metric tons of CO 2 equivalent according to the methodology for stationary combustion sources in § 98.33(c) ; use the default HHV listed in table C-1 to subpart C of this part and the default CH 4 and N 2 O emissions factors listed in table AA-2 to this subpart. ( 3 ) Biogenic CO 2 emissions from conversion of CaCO 3 to CaO are included in the biogenic CO 2 estimates calculated for the chemical recovery furnace in paragraph (a)(3) of this section. ( 4 ) Calculate biogenic CO 2 emissions from combustion of biomass with other fuels according to the applicable methodology for stationary combustion sources in § 98.33(e) . ( d ) For makeup chemical use, you must calculate CO 2 emissions by using direct or indirect measurement of the quantity of chemicals added and ratios of the molecular weights of CO 2 and the makeup chemicals, according to equation AA-3 to this section: Where: CO 2 = CO 2 mass emissions from makeup chemicals (kilograms/yr). M (CaCO 3 ) = Make-up quantity of CaCO 3 used for the reporting year (metric tons per year). M (NaCO 3 ) = Make-up quantity of Na 2 CO 3 used for the reporting year (metric tons per year). 44 = Molecular weight of CO 2 . 100 = Molecular weight of CaCO 3 . 105.99 = Molecular weight of Na 2 CO 3 . [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79166 , Dec. 17, 2010; 78 FR 71965 , Nov. 29, 2013; 81 FR 89264 , Dec. 9, 2016; 89 FR 31931 , Apr. 25, 2024] § 98.274 Monitoring and QA/QC requirements. ( a ) Each facility subject to this subpart must quality assure the GHG emissions data according to the applicable requirements in § 98.34 . All QA/QC data must be available for inspection upon request. ( b ) Fuel properties needed to perform the calculations in Equations AA-1 and AA-2 of this subpart must be determined according to paragraphs (b)(1) through (b)(3) of this section. ( 1 ) High heat values of black liquor must be determined no less than annually using T684 om-06 Gross Heating Value of Black Liquor, TAPPI (incorporated by reference, see § 98.7 ). If measurements are performed more frequently than annually, then the high heat value used in Equation AA-1 of this subpart must be based on the average of the representative measurements made during the year. ( 2 ) The annual mass of spent liquor solids must be determined using either of the methods specified in paragraph (b)(2)(i) or (b)(2)(ii) of this section. ( i ) Measure the mass of spent liquor solids annually (or more frequently) using T-650 om-05 Solids Content of Black Liquor, TAPPI (incorporated by",
+  "token_count": 509,
+  "text_sha": "b1323b59d7b5f3d1957f6330b53085a1993acb452119f59243cfb797145d0f8e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0430",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "over the time period covered by the simulation. Determine all other applicable parameters in paragraph (d)(4)(i) through (x) of this section by engineering estimate and process knowledge based on best available data and, if necessary, adjust parameters to represent the operating conditions over the time period covered by the simulation. Determine the number of simulations and associated time periods such that the simulations cover the entire reporting year ( i.e. , if you calculate emissions using one simulation, use representative parameters for the operating conditions over the calendar year; if you use periodic simulations to cover the calendar year, use parameters for the operating conditions over each corresponding appropriate portion of the calendar year). You may also use this method for CO 2 emissions from an AGR if a vent meter is installed but a CEMS is not, or for CH 4 emissions from an AGR if a vent meter is installed (including the volumetric flow rate monitor on a CEMS for CO 2 ), in which case you must determine the difference between the annual volume of vent gas measured by the vent meter and the simulated annual volume of vent gas according to paragraph (d)(9) of this section. ( i ) Natural gas feed temperature, pressure, and flow rate (must be measured). ( ii ) Acid gas content of feed natural gas (must be measured). ( iii ) Acid gas content of outlet natural gas. ( iv ) CH 4 content of feed natural gas (must be measured). ( v ) CH 4 content of outlet natural gas. ( vi ) For NRU, nitrogen content of feed natural gas (must be measured). ( vii ) For NRU, nitrogen content of outlet natural gas. ( viii ) Unit operating hours, excluding downtime for maintenance or standby. ( ix ) Exit temperature of natural gas. ( x ) For AGR, solvent type, pressure, temperature, circulation rate, and composition. ( 5 ) Flow rate of inlet or outlet . For Calculation Method 3, determine the gas flow rate of the inlet when using equation W-4A or W-4C to this section or the gas flow rate of the outlet when using equation W-4B or W-4C to this section for the natural gas stream of an AGR or NRU using a meter according to methods set forth in § 98.234(b) . If you do not have a continuous flow meter, either install a continuous flow meter or use an engineering calculation to determine the flow rate. ( 6 ) Composition of vent gas . For Calculation Method 2 or Calculation Method 3 when using equation W-4A or W-4B to this section, if a continuous gas analyzer is not available on the vent stack, either install a continuous gas analyzer or take quarterly gas samples from the vent gas stream for each quarter that the AGR or NRU is operating to determine Vol i in equation W-3 to this section or Vol EM,i in equation W-4A or W-4B to this section, according to the methods set forth in § 98.234(b) . ( 7 ) Composition",
+  "token_count": 511,
+  "text_sha": "bf2e7883f34b7da458050a1fbada48927df557d1bdeffee2103e7b8135e387e1",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

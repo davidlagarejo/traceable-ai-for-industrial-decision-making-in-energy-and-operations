@@ -1,0 +1,11 @@
+source_id: doe_osti_3016985
+title: "Roll-to-Roll Manufacturing of Solid Oxide Fuel Cells"
+url: https://www.osti.gov/servlets/purl/3016985
+license: public_domain
+publisher: doe_osti
+version: "2026-01-01"
+added_at: "2026-05-15T23:58:26.464569Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 30 DIRECT ENERGY CONVERSION, 42 ENGINEERING"
+asset_families:
+  - manufacturing_facility

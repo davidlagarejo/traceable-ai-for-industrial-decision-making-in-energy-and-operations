@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0147",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "once per fuel lot). ( C ) The carbon content and, if applicable, gas molecular weight values used in the emission calculations (including both valid and substitute data values). For each calendar month of the reporting year in which carbon content and, if applicable, molecular weight determination is required, report a value of each parameter. If multiple values of a parameter are obtained in a given month, report the arithmetic average value for the month. Express carbon content as a decimal fraction for solid fuels, kg C per gallon for liquid fuels, and kg C per kg of fuel for gaseous fuels. Express the gas molecular weights in units of kg per kg-mole. ( D ) The total number of valid carbon content determinations and, if applicable, molecular weight determinations made during the reporting year, for each fuel type. ( E ) The number of substitute data values used for carbon content and, if applicable, molecular weight used in the annual GHG emissions calculations. ( F ) The annual average HHV, when measured HHV data, rather than a default HHV from Table C-1 of this subpart, are used to calculate CH 4 and N 2 O emissions for a Tier 3 unit, in accordance with § 98.33(c)(1) . ( G ) The value of the molar volume constant (MVC) used in Equation C-5 (if applicable). ( v ) For the Tier 3 Calculation Methodology, keep records of the following: ( A ) For liquid and gaseous fuel combustion, the dates and results of the initial calibrations and periodic recalibrations of the required fuel flow meters. ( B ) For fuel oil combustion, the method from § 98.34(b) used to make tank drop measurements (if applicable). ( C ) The methods used to determine the carbon content and (if applicable) the molecular weight of each type of fuel combusted. ( D ) The methods used to calibrate the fuel flow meters). ( E ) The date on which each fuel sample was taken, except where fuel sampling data are received from the fuel supplier. In that case, keep records of the dates on which the results of the fuel analyses for carbon content and (if applicable) molecular weight are received. ( vi ) For the Tier 4 Calculation Methodology, report: ( A ) The total number of source operating hours in the reporting year. ( B ) The cumulative CO 2 mass emissions in each quarter of the reporting year, i.e., the sum of the hourly values calculated from Equation C-6 or C-7 of this subpart (as applicable), in metric tons. ( C ) For CO 2 concentration, stack gas flow rate, and (if applicable) stack gas moisture content, the percentage of source operating hours in which a substitute data value of each parameter was used in the emissions calculations. ( vii ) For the Tier 4 Calculation Methodology, keep records of: ( A ) Whether the CEMS certification and quality assurance procedures of part 75 of this chapter , part 60 of this chapter , or an applicable State",
+  "token_count": 509,
+  "text_sha": "b9c6275a8429d047d3cec8455606db2437dc01ac1c6d733cc21abb34c9483a96",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

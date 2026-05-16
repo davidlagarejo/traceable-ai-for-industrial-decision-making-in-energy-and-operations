@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0658",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "the CO 2 emissions for each flare (e.g., reference section and equation number). ( 6 ) If you use Equation Y-1a in § 98.253 , an indication of whether daily or weekly measurement periods are used, annual average carbon content of the flare gas (in kg carbon per kg flare gas), and, either the annual volume of flare gas combusted (in scf/year) and the annual average molecular weight (in kg/kg-mole), or the annual mass of flare gas combusted (in kg/yr). ( 7 ) If you use Equation Y-1b of § 98.253 , an indication of whether daily or weekly measurement periods are used, the annual volume of flare gas combusted (in scf/year), the annual average CO 2 concentration (volume or mole percent), the number of carbon containing compounds other than CO 2 in the flare gas stream, and for each of the carbon containing compounds other than CO 2 in the flare gas stream: ( i ) The annual average concentration of the compound (volume or mole percent). ( ii ) [Reserved] ( 8 ) If you use Equation Y-2 of this subpart, an indication of whether daily or weekly measurement periods are used, the annual volume of flare gas combusted (in million (MM) scf/year), the annual average higher heating value of the flare gas (in mmBtu/mmscf), and an indication of whether the annual volume of flare gas combusted and the annual average higher heating value of the flare gas were determined using standard conditions of 68 °F and 14.7 psia or 60 °F and 14.7 psia. ( 9 ) If you use Equation Y-3 of § 98.253 , the number of SSM events exceeding 500,000 scf/day. ( 10 ) The basis for the value of the fraction of carbon in the flare gas contributed by methane used in Equation Y-4 of § 98.253 . ( f ) For catalytic cracking units, traditional fluid coking units, and catalytic reforming units, owners and operators shall report: ( 1 ) The unit ID number (if applicable). ( 2 ) A description of the type of unit (fluid catalytic cracking unit, thermal catalytic cracking unit, traditional fluid coking unit, or catalytic reforming unit). ( 3 ) Maximum rated throughput of the unit, in bbl/stream day. ( 4 ) The calculated CO 2 , CH 4 , and N 2 O annual emissions for each unit, expressed in metric tons of each pollutant emitted. ( 5 ) A description of the method used to calculate the CO 2 emissions for each unit (e.g., reference section and equation number). ( 6 ) If you use a CEMS, the relevant information required under § 98.36 for the Tier 4 Calculation Methodology, the CO 2 annual emissions as measured by the CEMS (unadjusted to remove CO 2 combustion emissions associated with additional units, if present) and the process CO 2 emissions as calculated according to § 98.253(c)(1)(ii) . Report the CO 2 annual emissions associated with sources other than those from the coke burn-off in accordance with the applicable subpart ( e.g., subpart C of this part in the",
+  "token_count": 512,
+  "text_sha": "6ccb0f137378576d98d5f60fe7a45efbaec87f6bf151bad861caf3c7d12e293d",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

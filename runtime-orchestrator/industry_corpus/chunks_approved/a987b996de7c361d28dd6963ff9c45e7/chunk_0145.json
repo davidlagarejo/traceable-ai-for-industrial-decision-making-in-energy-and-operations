@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0145",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "with continuous monitoring systems in § 98.33(a)(5)(iii) to monitor heat input year-round according to part 75 of this chapter : ( A ) Each type of fuel combusted during the reporting year. ( B ) Methodology used to calculate the CO 2 mass emissions. ( C ) Methodology start date. ( D ) Methodology end date. ( E ) A code or flag to indicate that the heat input data is derived from CEMS measurements. ( F ) The total annual CO 2 emissions at each monitored location, expressed in metric tons of CO 2 e. ( G ) Annual heat input from each type of fuel listed in Table C-2 of this subpart that was combusted during the reporting year, expressed in mmBtu. ( H ) Annual CH 4 and N 2 O emissions at each monitored location, from each fuel type listed in Table C-2 of this subpart that was combusted during the reporting year (except as otherwise provided in § 98.33(c)(4)(ii)(B) ), expressed in metric tons CO 2 e. ( I ) Annual CO 2 mass emissions from the combustion of biomass, expressed in metric tons CO 2 e, except where the reporting provisions of §§ 98.3(c)(12)(i) through (c)(12)(iii) are implemented for the 2010 reporting year. ( J ) If applicable, the plant code (as defined in § 98.6 ). ( e ) Verification data. You must keep on file, in a format suitable for inspection and auditing, sufficient data to verify the reported GHG emissions. This data and information must, where indicated in this paragraph (e) , be included in the annual GHG emissions report. ( 1 ) The applicable verification data specified in this paragraph (e) are not required to be kept on file or reported for units that meet any one of the three following conditions: ( i ) Are subject to the Acid Rain Program. ( ii ) Use the alternative methods for units with continuous monitoring systems provided in § 98.33(a)(5) . ( iii ) Are not in the Acid Rain Program, but are required to monitor and report CO 2 mass emissions and heat input data year-round, in accordance with part 75 of this chapter . ( 2 ) For stationary combustion sources using the Tier 1, Tier 2, Tier 3, and Tier 4 Calculation Methodologies in § 98.33(a) to quantify CO 2 emissions, the following additional information shall be kept on file and included in the GHG emissions report, where indicated: ( i ) For the Tier 1 Calculation Methodology, report: ( A ) The total quantity of each type of fuel combusted in the unit or group of aggregated units (as applicable) during the reporting year, in short tons for solid fuels, gallons for liquid fuels and standard cubic feet for gaseous fuels, or, if applicable, therms or mmBtu for natural gas. ( B ) If applicable, the moisture content used to calculate the wood and wood residuals wet basis HHV for use in Equations C-1 and C-8 of this subpart, in percent. ( ii ) For",
+  "token_count": 508,
+  "text_sha": "b3eef49f0acbe739aac10a809cad17b319bb0ab2a763ca969dda8263b3d753ba",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

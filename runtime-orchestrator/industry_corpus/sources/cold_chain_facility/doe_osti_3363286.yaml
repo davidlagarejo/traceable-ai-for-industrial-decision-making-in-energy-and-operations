@@ -1,0 +1,11 @@
+source_id: doe_osti_3363286
+title: "Comparison of Commercial, State-of-the-Art, Fossil-Based Ammonia Production"
+url: https://www.osti.gov/servlets/purl/3363286
+license: public_domain
+publisher: doe_osti
+version: "2025-10-29"
+added_at: "2026-05-15T23:54:34.255382Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 03 NATURAL GAS, 08 HYDROGEN, 42 ENGINEERING, ammonia, ammonia production"
+asset_families:
+  - cold_chain_facility

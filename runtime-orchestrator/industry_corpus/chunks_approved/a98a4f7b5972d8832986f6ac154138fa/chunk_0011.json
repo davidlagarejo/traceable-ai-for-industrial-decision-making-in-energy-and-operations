@@ -1,0 +1,15 @@
+{
+  "chunk_id": "a98a4f7b::chunk_0011",
+  "source_id": "doe_osti_3017762",
+  "source_sha": "a98a4f7b5972d8832986f6ac154138fa",
+  "source_url": "https://www.osti.gov/servlets/purl/3017762",
+  "asset_families": [
+    "_shared",
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "approved a data center tariff for AEP Ohio, an electric utility, following proceedings at the PUC. PPUCO UCO, PPUCO UCO VA Virginia State Corporation Commission approved new rate class for large customers > 25 MW VVA SCCA SCC NC North Carolina is exploring large load issues through holding technical meetings. CCanary Mediaa nary Media, UUtility Divetility Dive TX Texas SB6 introduced several provisions, including mandatory emergency curtailment for large loads and TTX SB6X SB6 new rules regarding interconnection, cost-sharing, and co-location. CA California SB57 requires establishment of specific rate structures for data centers. CCA SB57A SB57 OR Oregon HB 3546 created a new rate class for large loads >20 MW and requires large loads to pay for OOR 3546 R 3546 transmission costs and a minimum amount of energy across contracts. IN Indiana Regulatory Commission ruled on a large load tariff joint settlement that requires data centers to RRenewable Eenergynewable Energy make long-term financial commitments, among other requirements. WWorld orld National Laboratory of the Rockies | 40 Disclaimer: These developments were captured at the time of publication and may have changed or evolved. Thank You www.nlr.gov NLR/PR-6A40-97168 This work was authoredby the National Laboratory of the Rockies for the U.S. Department of Energy (DOE), operated under Contract No. DE-AC36-08GO28308. Funding provided bythe U.S. Department of Energy Grid Deployment Office. The views expressed in the article do not necessarily represent the views of the DOE or the U.S. Government. The U.S. Government retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. Photo from Getty-181828180",
+  "token_count": 286,
+  "text_sha": "e0aff216f5ebe983ec6d354e16af6642cde96783c7bc1dd663c0ffe102605b41",
+  "extracted_at": "2026-05-16T00:02:35.452523Z"
+}

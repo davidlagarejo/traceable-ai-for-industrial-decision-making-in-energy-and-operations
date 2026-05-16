@@ -1,0 +1,14 @@
+{
+  "chunk_id": "18c928b6::chunk_0003",
+  "source_id": "doe_osti_3015048",
+  "source_sha": "18c928b6da551a199dc82508e7eba5ab",
+  "source_url": "https://www.osti.gov/servlets/purl/3015048",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": ". 12 7 An Energy Model for MLPs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 7.1 Interpretation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 8 The Energy-Loss Trade-off . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19 9 Conclusions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 O O R P iv This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. List of Figures Figure 1. (a) The energy consumption (left axis) and corresponding carbon emissions given the average F energy generation mix in the United States (right axis) incurred by training published AI models has in- creased dramatically over the last two decades, the so-called “Red AI Era.” The AI System Total Energy is an computed metric, which accounts for efficiency gains in hardware (shown in (b)) and data center PUE. Note the logarithmic scale on the vertical axes for both (a) and (b). To compile this data we used CPU DB (Danowitz et al. 2012), Intel, AMD, and NVIDIA manufacturer webs ites, and compiled ta- bles on Wikipedia to estimate J/FLOP using thermal design power (TDP) and published throughput (FLOP/s) or estimated it using instruction set, clock frequency, and core count. We incorporated im- O provements in PUE (Statista 2023b) and used the United States national average CO emissions per kWh 2 in 2021 (Agency 2024b). The number of parameters/FLOPs for each model are from (EpochAI 2023). . 2 Figure 2. Histograms (on logarithmic axes) showing the quantity and location of data filtered out for this analysis. The filters reject 241 runs, which is approximately 0.6% of the total number of runs. . . . . . . 8 Figure 3. (a) Illustrates the linear relationship between training set size and energy consumed per-epoch. (b) Shows the",
+  "token_count": 508,
+  "text_sha": "a7d9343d15103d92d53741032cf1485a32974ffdf8d8da2299b427286ce98a08",
+  "extracted_at": "2026-05-16T00:02:13.437561Z"
+}

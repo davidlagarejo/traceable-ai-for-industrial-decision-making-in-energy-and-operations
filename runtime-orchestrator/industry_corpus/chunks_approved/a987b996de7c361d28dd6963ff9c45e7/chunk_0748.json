@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0748",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "4 recovered for destruction using Equation II-4 of this section. A fully integrated system that directly reports CH 4 quantity requires only the summing of results of all monitoring periods for a given year. Where: R n = Annual quantity of CH 4 recovered from the nth anaerobic reactor, sludge digester, or lagoon (metric tons CH 4 /yr) n = Index for processes at the facility, used in Equation II-7. M = Total number of measurement periods in a year. Use M = 365 (M = 366 for leap years) for daily averaging of continuous monitoring, as provided in paragraph (c)(1) of this section. Use M = 52 for weekly sampling, as provided in paragraph (c)(2) of this section. m = Index for measurement period. V m = Cumulative volumetric flow for the measurement period in actual cubic feet (acf). If no biogas was recovered during a monitoring period, use zero. (K MC ) m = Moisture correction term for the measurement period, volumetric basis. = 1 when (V) m and (C CH4 ) m are measured on a dry basis or if both are measured on a wet basis. = 1−(f H2O ) m when (V) m is measured on a wet basis and (C CH4 ) m is measured on a dry basis. = 1/[1−(f H2O ) m ] when (V) m is measured on a dry basis and (C CH4 ) m is measured on a wet basis. (f H2O ) m = Average moisture content of biogas during the measurment period, volumetric basis, (cubic feet water per cubic feet biogas). (C CH4 ) m = Average CH 4 concentration of biogas during the measurement period, (volume %). 0.0423 = Density of CH 4 lb/cf at 520 °R or 60 °F and 1 atm. 520 °R = 520 degrees Rankine. T m = Average temperature at which flow is measured for the measurement period (°R). If the flow rate meter automatically corrects for temperature to 520° R, replace “520° R/T m ” with “1”. P m = Average pressure at which flow is measured for the measurement period (atm). If the flow rate meter automatically corrects for pressure to 1 atm, replace “P m /1” with “1”. 0.454/1,000 = Conversion factor (metric ton/lb). ( 2 ) If you do not continuously monitor CH 4 concentration according to paragraph (c)(1) of this section, you must determine the CH 4 concentration, temperature, pressure, and, if necessary, moisture content of the biogas that is collected and routed to a destruction device according to the requirements in paragraphs (c)(2)(i) through (c)(2)(ii) of this section and calculate the quantity of CH 4 recovered for destruction using Equation II-4 of this section. ( i ) Determine the CH 4 concentration in the biogas that is collected and routed to a destruction device in a location near or representative of the location of the gas flow meter at least once each calendar week; if only one measurement is made each calendar week, there must be least three days between measurements. For a given calendar week,",
+  "token_count": 511,
+  "text_sha": "0c54a955d168b0474b90df83ff7142b92cc57824efd20ccaf09abfdbc078f901",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

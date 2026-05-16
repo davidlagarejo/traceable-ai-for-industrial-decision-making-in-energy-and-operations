@@ -1,0 +1,3699 @@
+{
+  "ran_at": "2026-05-16T00:16:06.959184Z",
+  "asset_family": "infrastructure_node",
+  "regulations": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0060",
+      "mention_count_in_corpus": 60,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 60 -- Standards of Performance for New Stationary Sources { \"imports\": { \"applicat",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-60 Citation 40 CFR Part 60 Agency Environmental Protection Agency Part 60 Authority: 42 U.S.C. 7401 et seq",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 60 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "b31.12",
+      "title": "B31.12",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 55,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583498",
+        "doe_osti_2583524",
+        "doe_osti_3018256"
+      ],
+      "sample_snippets": [
+        "Canadian Standards Association/American National Standards Institute 2021), and ASME B31.12 (American Society of Mechanical Engineers 2023). Table 7 and Table 8 provide th",
+        "e aid of other projects, these design curves were approved in Code Case 220 for ASME B31.12; San Marchi et al., PVP2024-122529. o Implementation of the fatigue design curv",
+        ". 2024. “Technical basis for fatigue crack growth rules in gaseous hydrogen for ASME B31.12 Code Case 220 and for revision of ASME VIII-3 Code Case 2938-1.” Paper no. PVP2"
+      ]
+    },
+    {
+      "citation": "b31.8",
+      "title": "B31.8",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 46,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "8, Gas Transmission and Distribution Piping Systems, Issued November 20, 2018, (ASME B31.8); IBR approved for §§ 192.112(b) ; 192.619(a) ; 192.911(m) . ( 6 ) ASME B31.8S-",
+        "(ASME B31.8); IBR approved for §§ 192.112(b) ; 192.619(a) ; 192.911(m) . ( 6 ) ASME B31.8S-2018, Managing System Integrity of Gas Pipelines, Issued November 28, 2018, (A",
+        "8S-2018, Managing System Integrity of Gas Pipelines, Issued November 28, 2018, (ASME B31.8S); IBR approved for §§ 192.13(d) ; 192.714(c) and (d) ; 192.903 note to Potenti"
+      ]
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 40,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "rt VV Geologic Sequestration of Carbon Dioxide With Enhanced Oil Recovery Using ISO 27916 98.480 – 98.489 § 98.480 Definition of the source category. § 98.481 Reporting",
+        "o, Ontario Canada M9W 183; (800) 463-6727; https://shop.csa.ca . ( 1 ) CSA/ANSI ISO 27916:19, Carbon dioxide capture, transportation and geological storage—Carbon dioxid",
+        "ears: Geologic sequestration of carbon dioxide with enhanced oil recovery using ISO 27916 ( subpart VV of this part ). Coke calciners ( subpart WW of this part ). Calciu"
+      ]
+    },
+    {
+      "citation": "cfr 29 1911",
+      "title": "Cfr 29 1911",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 30,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "R 55355 ), 1-2012 ( 77 FR 3912 ), or 8-2020 ( 85 FR 58393 ), as applicable; and 29 CFR part 1911 , unless otherwise noted Sections 1926.58, 1926.59, 1926.60, and 1926.65 also i",
+        "tions 1926.58, 1926.59, 1926.60, and 1926.65 also issued under 5 U.S.C. 553 and 29 CFR part 1911 . Section 1926.61 also issued under 49 U.S.C. 1801-1819 and 5 U.S.C. 553 . See",
+        "R 55355 ), 1-2012 ( 77 FR 3912 ), or 8-2020 ( 85 FR 58393 ), as applicable; and 29 CFR part 1911 , unless otherwise noted Sections 1926.58, 1926.59, 1926.60, and 1926.65 also i"
+      ]
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 21,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0070",
+        "us_federal_40_cfr_0098",
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "tions or phrases (eg: suggestions#fillExample\" class=\"example badge badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 sugges",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\"",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\""
+      ]
+    },
+    {
+      "citation": "cfr 40 98",
+      "title": "Cfr 40 98",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0098",
+      "mention_count_in_corpus": 16,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 98 -- Mandatory Greenhouse Gas Reporting { \"imports\": { \"application\": \"/assets/ap",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-98 Citation 40 CFR Part 98 Agency Environmental Protection Agency Part 98 Authority: 42 U.S.C. 7401-7671q",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 98 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1020",
+      "title": "Cfr 29 1910.1020",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 16,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "st comply with the requirements concerning availability of records set forth in 29 CFR 1910.1020 . ( 8 ) Transfer of records. The employer must comply with the requirements con",
+        ") The employee's right of access to records under the Records Access standard ( 29 CFR 1910.1020 ). ( iii ) When a workplace change (such as modification of equipment, tasks, o",
+        "maintained and made available in accordance with the Records Access standard ( 29 CFR 1910.1020 ). ( 2 ) Objective data. ( i ) Where an employer uses objective data to satisfy"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.134",
+      "title": "Cfr 29 1910.134",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 13,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "o employees, the appropriate respirators specified in paragraph (d)(3)(i)(A) of 29 CFR 1910.134 . ( B ) Provide HEPA filters for powered and non-powered air-purifying respirat",
+        "o employees, the appropriate respirators specified in paragraph (d)(3)(i)(A) of 29 CFR 1910.134 . ( B ) Provide employees with a full facepiece respirator instead of a half ma",
+        "st as specified in appendix A of the Respiratory Protection standard located at 29 CFR 1910.134 . You must also receive from your employer proper training in the use of respir"
+      ]
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0063",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ganic Emissions by Extractive Fourier Transform Infrared (FTIR) Spectroscopy in 40 CFR part 63, Appendix A ; ( 2 ) ASTM D6348-03 Standard Test Method for Determination of Gas",
+        "tative) according to paragraph (k) of this section. If you select Method 320 of 40 CFR part 63, Appendix A to measure the concentration of each fluorinated GHG in the stack s",
+        "you must complete a method validation according to Section 13 of Method 320 of 40 CFR part 63, Appendix A for each FTIR system (hardware and software) and each tester (testi"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1200",
+      "title": "Cfr 29 1910.1200",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 11,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "r as to contain the MDA dusts, vapors, or liquids, except for the provisions of 29 CFR 1910.1200 and paragraph (e) of this section. ( 5 ) Except as provided in paragraph (a)(7)",
+        "least annually thereafter. ( ii ) In addition to the information required under 29 CFR 1910.1200 , the employer shall: ( A ) Provide an explanation of the contents of this sect",
+        "least annually thereafter. ( ii ) In addition to the information required under 29 CFR 1910.1200 , the employer shall: ( A ) Provide an explanation of the contents of this sect"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926",
+      "title": "Cfr 29 1926",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_29_cfr_1926",
+      "mention_count_in_corpus": 10,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "eCFR :: 29 CFR Part 1926 -- Safety and Health Regulations for Construction { \"imports\": { \"application\":",
+        "Content - Details URL https://www.ecfr.gov/current/title-29/part-1926 Citation 29 CFR Part 1926 Agency Occupational Safety and Health Administration, Department of Labor Part",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 29 CFR Part 1926 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "11660",
+      "title": "11660",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 10,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ition, May.01, 2013 (“ISO 27850:2013”), IBR approved for § 1926.1003(c) . ( 4 ) ISO 11660-1:2008(E), Cranes—Access, guards and restraints—Part 1: General, 2d ed., Feb. 1",
+        ", Cranes—Access, guards and restraints—Part 1: General, 2d ed., Feb. 15, 2008 (“ISO 11660-1:2008(E)”), IBR approved for § 1926.1423(c) . ( 5 ) ISO 11660-2:1994(E), Crane",
+        "Feb. 15, 2008 (“ISO 11660-1:2008(E)”), IBR approved for § 1926.1423(c) . ( 5 ) ISO 11660-2:1994(E), Cranes—Access, guards and restraints—Part 2: Mobile cranes, 1994 (“I"
+      ]
+    },
+    {
+      "citation": "cfr 40 75",
+      "title": "Cfr 40 75",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "quality assurance programs under appendix F to 40 CFR part 60 or appendix B to 40 CFR part 75, and other documents) provided that the elements required by paragraph (g)(5)(i",
+        "e Administrator any other emission report that is subject to any requirement in 40 CFR part 75 , the same individual shall be the designated representative responsible for ce",
+        "Electricity generation units that report CO 2 mass emissions year round through 40 CFR part 75 (subpart D). Adipic acid production ( subpart E of this part ). Aluminum produc"
+      ]
+    },
+    {
+      "citation": "cfr 30 550.302",
+      "title": "Cfr 30 550.302",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "es as identified by Bureau of Ocean Energy Management (BOEM) in compliance with 30 CFR 550.302 through 304 . ( 2 ) Other large release events. ( c ) For an onshore petroleum",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi"
+      ]
+    },
+    {
+      "citation": "516-2009",
+      "title": "516-2009",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "sient overvoltages on electric power transmission and distribution systems. See IEEE Std 516-2009, IEEE Guide for Maintenance Methods on Energized Power Lines, for methods of de",
+        "tronics Engineers' IEEE Guide for Maintenance Methods on Energized Power Lines, IEEE Std 516-2009. § 1926.958 Materials handling and storage. ( a ) General. Materials handling a",
+        "Table 1 lists the critical sparkover distances from that standard as listed in IEEE Std 516-2009, IEEE Guide for Maintenance Methods on Energized Power Lines. Table 1—Sparkover"
+      ]
+    },
+    {
+      "citation": "cfr 49 195",
+      "title": "Cfr 49 195",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_49_cfr_0195",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "R parts 146-149 , Water Carriers; 49 CFR parts 171-179 , Highways and Railways; 49 CFR part 195 , Pipelines; and 49 CFR parts 390-397 , Motor Carriers. ( b ) Motor vehicles or",
+        "eCFR :: 49 CFR Part 195 -- Transportation of Hazardous Liquids by Pipeline { \"imports\": { \"application\"",
+        "d Content - Details URL https://www.ecfr.gov/current/title-49/part-195 Citation 49 CFR Part 195 Agency Pipeline and Hazardous Materials Safety Administration, Department of Tr"
+      ]
+    },
+    {
+      "citation": "70",
+      "title": "70",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 8,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3018256",
+        "us_federal_29_cfr_1926",
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "tion, effective September 6, 2017, (NFPA 59); IBR approved for § 192.11 . ( 4 ) NFPA 70, National Electrical Code (NEC), 2023 edition, effective September 1, 2022; IBR",
+        "tion, effective September 6, 2017, (NFPA 59); IBR approved for § 192.11 . ( 4 ) NFPA 70, National Electrical Code (NEC), 2023 edition, effective September 1, 2022; IBR",
+        "rical equipment and wiring installed in compressor stations must conform to the NFPA 70 (incorporated by reference, see § 192.7 ), so far as that code is applicable. ["
+      ]
+    },
+    {
+      "citation": "1584",
+      "title": "1584",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 8,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "o, ON, CA. * This appendix refers to IEEE Std 1584-2002 with both amendments as IEEE Std 1584b-2011. The amount of heat energy calculated by any of the methods is approximat",
+        "ion) Y-C Y N Y-C Y-C N N 3 N 3 N 3 Doughty, Neal, and Floyd Y-C Y Y N N N N N N IEEE Std 1584b-2011 Y Y Y Y Y Y N N N ARCPRO Y N N Y N N Y Y 4 Y 4 Key: 1Φ: Single-phase arc",
+        "N N N N N IEEE Std 1584b-2011 Y Y Y Y Y Y N N N ARCPRO Y N N Y N N Y Y 4 Y 4 Key: 1Φ: Single-phase arc"
+      ]
+    },
+    {
+      "citation": "cfr 49 172.101",
+      "title": "Cfr 49 172.101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0070",
+        "us_federal_40_cfr_0098",
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp"
+      ]
+    },
+    {
+      "citation": "cfr 40 70",
+      "title": "Cfr 40 70",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0070",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 70 -- State Operating Permit Programs { \"imports\": { \"application\": \"/assets/appli",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-70 Citation 40 CFR Part 70 Agency Environmental Protection Agency Part 70 Authority: 42 U.S.C. 7401 , et s",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 70 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 49 192",
+      "title": "Cfr 49 192",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_49_cfr_0192",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "eCFR :: 49 CFR Part 192 -- Transportation of Natural and Other Gas by Pipeline: Minimum Federal Safety",
+        "d Content - Details URL https://www.ecfr.gov/current/title-49/part-192 Citation 49 CFR Part 192 Agency Pipeline and Hazardous Materials Safety Administration, Department of Tr",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 49 CFR Part 192 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "59",
+      "title": "59",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "dition, effective August 25, 2019, (NFPA 58); IBR approved for § 192.11 . ( 3 ) NFPA 59, Utility LP-Gas Plant Code, 2018 edition, effective September 6, 2017, (NFPA 59",
+        "NFPA 59, Utility LP-Gas Plant Code, 2018 edition, effective September 6, 2017, (NFPA 59); IBR approved for § 192.11 . ( 4 ) NFPA 70, National Electrical Code (NEC), 20",
+        "Utility LP-Gas Plant Code, 2018 edition, effective September 6, 2017, (NFPA 59); IBR approved for § 192.11 . ( 4 ) NFPA 70, National Electrical Code (NEC), 20"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.33",
+      "title": "Cfr 29 1910.33",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "r shall maintain this record for at least thirty (30) years, in accordance with 29 CFR 1910.33 . ( 5 ) Medical surveillance. ( i ) The employer shall establish and maintain a",
+        "ct to medical surveillance by paragraph (n) of this section, in accordance with 29 CFR 1910.33 . ( ii ) The record shall include at least the following information: ( A ) The",
+        "ained for the duration of employment plus thirty (30) years, in accordance with 29 CFR 1910.33 . ( iv ) A copy of the employee's medical removal and return to work status. ("
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65",
+      "title": "Cfr 29 1926.65",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rdous waste site, RCRA/TSDF, or emergency response operation in accordance with 29 CFR 1926.65 . It is noted that the legal requirements are set forth in the regulatory text",
+        "ining curriculum guidelines are for those operations specifically identified in 29 CFR 1926.65 as requiring training. Issues such as qualifications of instructors, training c",
+        "de the following topics or procedures: a. Regulatory knowledge. (1) A review of 29 CFR 1926.65 and the core elements of an occupational safety and health program. (2) The con"
+      ]
+    },
+    {
+      "citation": "cfr 1 51",
+      "title": "Cfr 1 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926",
+        "us_federal_40_cfr_0098",
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . All approved incorporation by reference material (IBR) is available for inspe",
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . To enforce any edition other than that specified in this section, the EPA mus",
+        "of the Director of the Federal Register in accordance with 5 U.S.C. 552(a) and 1 CFR part 51 . To enforce any edition other than that specified in this section, OSHA must p"
+      ]
+    },
+    {
+      "citation": "58",
+      "title": "58",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "on, effective August 31, 2020, (NFPA 30); IBR approved for § 192.735(b) . ( 2 ) NFPA 58, Liquefied Petroleum Gas Code, 2020 edition, effective August 25, 2019, (NFPA 5",
+        "FPA 58, Liquefied Petroleum Gas Code, 2020 edition, effective August 25, 2019, (NFPA 58); IBR approved for § 192.11 . ( 3 ) NFPA 59, Utility LP-Gas Plant Code, 2018 ed",
+        "o a natural gas distribution system must meet the requirements of this part and NFPA 58 or NFPA 59 (both incorporated by reference, see § 192.7 ), based on the scope a"
+      ]
+    },
+    {
+      "citation": "b30.5-2004",
+      "title": "B30.5-2004",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "sued Dec. 30, 2005 (“ASME B30.2-2005”), IBR approved for § 1926.1438(b) . ( 2 ) ASME B30.5-2004, Mobile and Locomotive Cranes, issued Sept. 27, 2004 (“ASME B30.5-2004”), IBR a",
+        ". ( 2 ) ASME B30.5-2004, Mobile and Locomotive Cranes, issued Sept. 27, 2004 (“ASME B30.5-2004”), IBR approved for §§ 1926.1414(b) ; 1926.1414(e) ; 1926.1433(b) . ( 3 ) ASME",
+        "on, as follows: ( 1 ) Option (1). Wire rope must comply with section 5-1.7.1 of ASME B30.5-2004 (incorporated by reference, see § 1926.6 ) except that section's paragraph (c)"
+      ]
+    },
+    {
+      "citation": "3471:2008",
+      "title": "3471:2008",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "+ 41 22 749 01 11; fax: + 41 22 733 34 30; Web site: http://www.iso.org/: ( 1 ) ISO 3471:2008(E), Earth-moving machinery—Roll-over protective structures—Laboratory tests and",
+        "s—Laboratory tests and performance requirements, Fourth Edition, Aug. 8, 2008 (“ISO 3471:2008”), IBR approved for §§ 1926.1001(c) and 1926.1002(c) . ( 2 ) ISO 5700:2013(E),",
+        "corporated by reference, see § 1926.6 ), or comply with the consensus standard (ISO 3471:2008) listed in paragraph (c) of this section. ( c ) Equipment manufactured on or af"
+      ]
+    },
+    {
+      "citation": "cfr 42 84",
+      "title": "Cfr 42 84",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ve equipment. ( i ) Employers must use only respirators approved by NIOSH under 42 CFR part 84 for protecting employees from dusts produced during abrasive-blasting operation",
+        "ntilation, or other means. The respirators used must be approved by NIOSH under 42 CFR part 84 for protection against the specific type of dust encountered. ( iv ) A respirat",
+        "an air-supplied respirator or other type of respirator approved by NIOSH under 42 CFR part 84 for the material being sprayed should be used by the operator. ( B ) Where down"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(q)",
+      "title": "Cfr 29 1926.65(Q)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ng requirements of 29 CFR 1926.65(e) ; 29 CFR 1926.65(p)(7) , (p)(8)(iii) ; and 29 CFR 1926.65(q)(6) , (q)(7) , and (q)(8) . These are generic guidelines and they are not presen",
+        "or safety and health. C. Emergency response training. Federal OSHA standards in 29 CFR 1926.65(q) are directed toward private sector emergency responders. Therefore, the guideli",
+        "eview of and demonstration of competency in performing the applicable skills of 29 CFR 1926.65(q) . (B) Hands-on experience with the U.S. Department of Transportation's Emergenc"
+      ]
+    },
+    {
+      "citation": "1048-2003",
+      "title": "1048-2003",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "nstitute of Electrical Engineers Guide for Protective Grounding of Power Lines, IEEE Std 1048-2003, contains guidelines for selecting and installing protective grounding equipmen",
+        "e employer will need to assume a value for the resistance of the worker's body. IEEE Std 1048-2003 states that “total body resistance is usually taken as 1000 Ω for determining .",
+        "nce of a worker's body can be substantially less than that value. For instance, IEEE Std 1048-2003 reports a minimum hand-to-hand resistance of 610 ohms and an internal body resi"
+      ]
+    },
+    {
+      "citation": "1584-2002",
+      "title": "1584-2002",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        ", September 28—30, 1998. 3. Guide for Performing Arc-Flash Hazard Calculations, IEEE Std 1584-2002, 1584a--2004 (Amendment 1 to IEEE Std 1584-2002), and 1584b-2011 (Amendment 2:",
+        "Arc-Flash Hazard Calculations, IEEE Std 1584-2002, 1584a--2004 (Amendment 1 to IEEE Std 1584-2002), and 1584b-2011 (Amendment 2: Changes to Clause 4 of IEEE Std 1584-2002). * 4.",
+        "t 1 to IEEE Std 1584-2002), and 1584b-2011 (Amendment 2: Changes to Clause 4 of IEEE Std 1584-2002). * 4. ARCPRO, a commercially available software program developed by Kinectric"
+      ]
+    },
+    {
+      "citation": "30",
+      "title": "30",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "ncy, Massachusetts 02169; phone: (800) 344-3555; website: www.nfpa.org/ . ( 1 ) NFPA 30, Flammable and Combustible Liquids Code, 2021 Edition, effective August 31, 202",
+        "ammable and Combustible Liquids Code, 2021 Edition, effective August 31, 2020, (NFPA 30); IBR approved for § 192.735(b) . ( 2 ) NFPA 58, Liquefied Petroleum Gas Code,",
+        "h Park, Quincy, MA 02169; phone: (800) 344-3555; website: www.nfpa.org/ . ( 1 ) NFPA 30, Flammable and Combustible Liquids Code, 2021 Edition, effective August 31, 202"
+      ]
+    },
+    {
+      "citation": "2",
+      "title": "2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3018256",
+        "doe_osti_3023854"
+      ],
+      "sample_snippets": [
+        "w of hydrogen safety codes and standards. For that purpose, we refer readers to NFPA 2 (National Fire Protection Association 2023), CSA- ANSI FC 1 (Canadian Standards",
+        "gen rail maintenance facilities, however, many requirements, including those in NFPA 2, could be reviewed to assess their applicability for larger systems in enclosed",
+        "osion. Ventilation requirements according to safety codes and standards such as NFPA 2 should be followed [29]. 4. Hot work procedures for hydrogen rail environments"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.40",
+      "title": "Cfr 40 80.40",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.27",
+      "title": "Cfr 40 80.27",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional blendst"
+      ]
+    },
+    {
+      "citation": "5700:2013",
+      "title": "5700:2013",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "08 (“ISO 3471:2008”), IBR approved for §§ 1926.1001(c) and 1926.1002(c) . ( 2 ) ISO 5700:2013(E), Tractors for agriculture and forestry—Roll-over protective structures—Stati",
+        "ures—Static test method and acceptance conditions, Fifth Edition, May 1, 2013 (“ISO 5700:2013”), IBR approved for § 1926.1002(c) . ( 3 ) ISO 27850:2013(E), Tractors for agri",
+        "corporated by reference, see § 1926.6 ), or comply with the consensus standard (ISO 5700:2013) listed in paragraph (c) of this section. ( c ) Equipment manufactured on or af"
+      ]
+    },
+    {
+      "citation": "27850:2013",
+      "title": "27850:2013",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "Edition, May 1, 2013 (“ISO 5700:2013”), IBR approved for § 1926.1002(c) . ( 3 ) ISO 27850:2013(E), Tractors for agriculture and forestry—Falling object protective structures—",
+        "res—Test procedures and performance requirements, First Edition, May.01, 2013 (“ISO 27850:2013”), IBR approved for § 1926.1003(c) . ( 4 ) ISO 11660-1:2008(E), Cranes—Access,",
+        "ncorporated by reference, see § 1926.6 ) or comply with the consensus standard (ISO 27850:2013) listed in paragraph (c) of this section. ( c ) Equipment manufactured on or af"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(e)",
+      "title": "Cfr 29 1926.65(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ing site-specific training curriculum used to meet the training requirements of 29 CFR 1926.65(e) ; 29 CFR 1926.65(p)(7) , (p)(8)(iii) ; and 29 CFR 1926.65(q)(6) , (q)(7) , and",
+        "ng. Minimum training course content for hazardous waste operations, required by 29 CFR 1926.65(e) , should include the following topics or procedures: a.",
+        "ng. Minimum training course content for hazardous waste operations, required by 29 CFR 1926.65(e) , should include the following topics or procedures: a. Regulatory knowledge. ("
+      ]
+    },
+    {
+      "citation": "cfr 40 763",
+      "title": "Cfr 40 763",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "a training course which meets the criteria of EPA's Model Accreditation Plan ( 40 CFR part 763 ) for supervisor, or its equivalent and, for Class III and Class IV work, who i",
+        "dust; and perimeter area monitoring showing that clearance levels contained in 40 CFR part 763 , subpt. E, of the EPA Asbestos in Schools Rule are met, or that perimeter area",
+        "Having a completed inspection conducted pursuant to the requirements of AHERA ( 40 CFR part 763, subpart E ) which demonstrates that the material is not ACM; or ( B ) Performi"
+      ]
+    },
+    {
+      "citation": "cfr 49 213",
+      "title": "Cfr 49 213",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rtation that is regulated pursuant to the Federal Railroad Administration under 49 CFR part 213 , and that comply with applicable Federal Railroad Administration requirements.",
+        "rtation that is regulated pursuant to the Federal Railroad Administration under 49 CFR part 213 and that comply with applicable Federal Railroad Administration requirements. §",
+        "rtation that is regulated pursuant to the Federal Railroad Administration under 49 CFR part 213 . ( xi ) The equipment for level position within the tolerances specified by th"
+      ]
+    },
+    {
+      "citation": "2800",
+      "title": "2800",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3218390"
+      ],
+      "sample_snippets": [
+        "Ride-through Refer to relevant interconnection standard, No Yes Capability e.g. IEEE 2800 or IEEE 1547 Performance During 5.5: Fault Test Some GFL comply Yes Symmetrical",
+        "Refer to relevant interconnection standard, Abnormal Frequency Ride- No - e.g. IEEE 2800 or IEEE 1547 through Capability Performance in Response to Yes, in subtransient",
+        "ded practice (less prescriptive than a standard) ▪ In parallel, an amendment to IEEE 2800 will remove barriers to GFM, leveraging UNIFI analysis Q3/Q4 Q4 2025/ Q1/Q2 Q2/"
+      ]
+    },
+    {
+      "citation": "cfr 49 1.97",
+      "title": "Cfr 49 1.97",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "Part 192 Authority: 30 U.S.C. 185(w)(3) , 49 U.S.C. 5103 , 60101 et. seq., and 49 CFR 1.97 . Source: 35 FR 13257 , Aug. 19, 1970, unless otherwise noted. Enhanced Content",
+        "STANDARDS Authority: 30 U.S.C. 185(w)(3) , 49 U.S.C. 5103 , 60101 et. seq., and 49 CFR 1.97 . Source: 35 FR 13257 , Aug. 19, 1970, unless otherwise noted. Editorial Note E",
+        "n Part 195 Authority: 30 U.S.C. 185(w)(3) , 49 U.S.C. 5103 , 60101 et seq., and 49 CFR 1.97 . Source: Amdt. 195-22, 46 FR 38360 , July 27, 1981, unless otherwise noted. En"
+      ]
+    },
+    {
+      "citation": "30-1969",
+      "title": "30-1969",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "r the Installation of Sprinkler Systems, IBR approved for § 1926.152(d) . ( 3 ) NFPA 30-1969, The Flammable and Combustible Liquids Code, IBR approved for § 1926.152(c) . (",
+        "with emergency venting and other devices, as required by chapters III and IV of NFPA 30-1969, The Flammable and Combustible Liquids Code. ( 7 ) Portable tanks, in excess of",
+        "with emergency venting and other devices, as required by chapters III and IV of NFPA 30-1969, The Flammable and Combustible Liquids Code. ( 7 ) Portable tanks, in excess of"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.59",
+      "title": "Cfr 29 1926.59",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "( F ) Training as required under paragraph (l)(1)(i) of this section regarding 29 CFR 1926.59 , Hazard Communication; training as required under paragraph (1)(2)(iii) of thi",
+        "ve been identified. In situations covered by the Hazard Communication Standard, 29 CFR 1926.59 , training required by that standard need not be duplicated. Note to ( c )(7).",
+        "oyer shall implement a hazard communication program meeting the requirements of 29 CFR 1926.59 as part of the employer's safety and program. Note to 1926.65 : The exemption f"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.60",
+      "title": "Cfr 29 1926.60",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ion's Emergency Response Guidebook (ERG) and familiarization with OSHA standard 29 CFR 1926.60 . (C) Review of the principles and practices for analyzing an incident to deter",
+        "ion addressing hazardous substance releases. Familiarization with OSHA standard 29 CFR 1926.60 . (C) Review of the principles and practices for analyzing an incident to deter",
+        "es of information addressing hazardous substance releases. Familiarization with 29 CFR 1926.60 . (C) Review of the principles and practices for analyzing an incident to deter"
+      ]
+    },
+    {
+      "citation": "cfr 40 763.92(a)",
+      "title": "Cfr 40 763.92(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ining of local education agency maintenance and custodial staff as set forth at 40 CFR 763.92(a)(2) . Such a course shall also include “hands-on” training and shall take at lea",
+        "ining of local education agency maintenance and custodial staff as set forth at 40 CFR 763.92(a)(2) . Such a course shall also include “hands-on” training and shall take at lea",
+        "ining of local education agency maintenance and custodial staff as set forth at 40 CFR 763.92(a)(1) . Such a course shall include available information concerning the locations"
+      ]
+    },
+    {
+      "citation": "1547",
+      "title": "1547",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3018766",
+        "doe_osti_3218390"
+      ],
+      "sample_snippets": [
+        "Refer to relevant interconnection standard, No Yes Capability e.g. IEEE 2800 or IEEE 1547 Performance During 5.5: Fault Test Some GFL comply Yes Symmetrical Faults (info",
+        "evant interconnection standard, Abnormal Frequency Ride- No - e.g. IEEE 2800 or IEEE 1547 through Capability Performance in Response to Yes, in subtransient 5.6: Respons",
+        "supported by the Bartolo and Adjuntas transformers. It assesses compliance with IEEE 1547 standards Figure 1. PV-Inverter Operation Regions [6]. The reactive power capab"
+      ]
+    },
+    {
+      "citation": "704",
+      "title": "704",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3020102"
+      ],
+      "sample_snippets": [
+        "2 can occur. permanent injury. a Using flammability and health information with NFPA 704 criteria (NFPA, 2010) b From a representative ULSD diesel fuel (Northern Tier E",
+        "olden, CO. https://doi.org/10.2172/766198. Accessed March 14, 2025. NFPA, 2010. NFPA 704. Available at: https://cameochemicals.noaa.gov/chemical/4860. Accessed April 1,",
+        "olden, CO. https://doi.org/10.2172/766198. Accessed March 14, 2025. NFPA, 2010. NFPA 704. Available at: https://cameochemicals.noaa.gov/chemical/4860. Accessed April 1,"
+      ]
+    },
+    {
+      "citation": "b16.40",
+      "title": "B16.40",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "Gas Shutoffs and Valves in Gas Distribution Systems, issued February 11, 2019, (ASME B16.40); IBR approved for appendix B to this part. ( 4 ) ASME/ANSI B31G-1991 (Reaffirm",
+        "ated by reference, see § 192.7 ). B. Other Listed Specifications for Components ASME B16.40, Manually Operated Thermoplastic Gas Shutoffs and Valves in Gas Distribution Sy",
+        "ated by reference, see § 192.7 ). B. Other Listed Specifications for Components ASME B16.40, Manually Operated Thermoplastic Gas Shutoffs and Valves in Gas Distribution Sy"
+      ]
+    },
+    {
+      "citation": "b36.10",
+      "title": "B36.10",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "5(b); 192.933(c) and (d); 192.935(b); 192.937(c); 192.939(a); 192.945(a). ( 7 ) ASME B36.10M-2018, Welded and Seamless Wrought Steel Pipe, Issued October 12, 2018, (ASME B",
+        "B36.10M-2018, Welded and Seamless Wrought Steel Pipe, Issued October 12, 2018, (ASME B36.10M); IBR approved for § 192.279 . ( 8 ) ASME Boiler &amp; Pressure Vessel Code, S",
+        "equivalent to the comparable size of Schedule 40 or heavier wall pipe listed in ASME B36.10M (incorporated by reference, see § 192.7 ). [Amdt. 192-135, 89 FR 33281 , Apr."
+      ]
+    },
+    {
+      "citation": "cfr 49 192.615",
+      "title": "Cfr 49 192.615",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "an operator of an offshore gathering line must comply with the requirements of 49 CFR 192.615 , effective as of October 4, 2022). ( c ) Type A lines. An operator of a Type A",
+        "a Type A regulated onshore gathering line must comply with the requirements of 49 CFR 192.615 , effective as of October 4, 2022). ( d ) Type B lines. An operator of a Type B",
+        "implement procedures for emergency plans in accordance with the requirements of 49 CFR 192.615 , effective as of October 4, 2022; ( v ) Develop and implement a written public"
+      ]
+    },
+    {
+      "citation": "cfr 40 257.2",
+      "title": "Cfr 40 257.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ace impoundment, injection well, or waste pile as those terms are defined under 40 CFR 257.2 . Landfill gas means gas produced as a result of anaerobic decomposition of was",
+        "land. An MSW landfill may also receive other types of RCRA Subtitle D wastes ( 40 CFR 257.2 ) such as commercial solid waste, nonhazardous sludge, conditionally exempt sma",
+        "uch as RCRA Subtitle D wastes (non-hazardous industrial solid waste, defined in 40 CFR 257.2 ), commercial solid wastes, or conditionally exempt small quantity generator wa"
+      ]
+    },
+    {
+      "citation": "b30.2-2005",
+      "title": "B30.2-2005",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "-882-1717; e-mail: infocentral@asme.org ; Web site: http://www.asme.org/: ( 1 ) ASME B30.2-2005, Overhead and Gantry Cranes (Top Running Bridge, Single or Multiple Girder, Top",
+        ", Single or Multiple Girder, Top Running Trolley Hoist), issued Dec. 30, 2005 (“ASME B30.2-2005”), IBR approved for § 1926.1438(b) . ( 2 ) ASME B30.5-2004, Mobile and Locomoti",
+        "quipment manufactured on or after September 19, 2001, the following sections of ASME B30.2-2005 (incorporated by reference, see § 1926.6 ) apply: 2-1.3.1; 2-1.3.2; 2-1.4.1; 2-"
+      ]
+    },
+    {
+      "citation": "b30.7-2001",
+      "title": "B30.7-2001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "-2004”), IBR approved for §§ 1926.1414(b) ; 1926.1414(e) ; 1926.1433(b) . ( 3 ) ASME B30.7-2001, Base-Mounted Drum Hoists, issued Jan. 21, 2002 (“ASME B30.7-2001”), IBR approv",
+        "33(b) . ( 3 ) ASME B30.7-2001, Base-Mounted Drum Hoists, issued Jan. 21, 2002 (“ASME B30.7-2001”), IBR approved for § 1926.1436(e) . ( 4 ) ASME B30.14-2004, Side Boom Tractors",
+        "ase mounted drum hoists must meet the requirements in the following sections of ASME B30.7-2001 (incorporated by reference, see § 1926.6 ): ( A ) Sections 7-1.1 (“Load ratings"
+      ]
+    },
+    {
+      "citation": "b30.14-2004",
+      "title": "B30.14-2004",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "sued Jan. 21, 2002 (“ASME B30.7-2001”), IBR approved for § 1926.1436(e) . ( 4 ) ASME B30.14-2004, Side Boom Tractors, issued Sept. 20, 2004 (“ASME B30.14-2004”), IBR approved f",
+        "6.1436(e) . ( 4 ) ASME B30.14-2004, Side Boom Tractors, issued Sept. 20, 2004 (“ASME B30.14-2004”), IBR approved for § 1926.1440(c) . ( 5 ) ASME Boiler and Pressure Vessel Code",
+        "ted on wheel or crawler tractors must meet all of the following requirements of ASME B30.14-2004 (incorporated by reference, see § 1926.6 ): ( 1 ) Section 14-1.1 (“Load Ratings"
+      ]
+    },
+    {
+      "citation": "251-1969",
+      "title": "251-1969",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "oors and Windows, Class E or F Openings, IBR approved for § 1926.152(b) . ( 5 ) NFPA 251-1969, Standard Methods of Fire Test of Building Construction and Material, IBR appro",
+        "t forth in Standard Methods of Fire Test of Building Construction and Material, NFPA 251-1969. ( ii ) Where an automatic extinguishing system is provided, the system shall b",
+        "d by the Standard Methods of Fire Tests of Building Construction and Materials, NFPA 251-1969. ( g ) Flammable means capable of being easily ignited, burning intensely, or h"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.133",
+      "title": "Cfr 29 1910.133",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "cal goggles; or ( iv ) Other appropriate protective equipment which comply with 29 CFR 1910.133 . ( 2 ) Removal and storage. ( i ) The employer shall ensure that, at the end o",
+        "s, vented goggles, or other appropriate protective equipment that complies with 29 CFR 1910.133 . ( 2 ) Removal and storage. ( i ) The employer shall assure that employees rem",
+        "s, vented goggles, or other appropriate protective equipment that complies with 29 CFR 1910.133 . ( 2 ) Removal and storage. ( i ) The employer shall assure that employees rem"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1020(h)",
+      "title": "Cfr 29 1910.1020(H)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "shall comply with the requirements concerning transfer of records set forth in 29 CFR 1910.1020(h) . ( p ) Observation of monitoring — ( 1 ) Employee observation. The employer sh",
+        "with any additional requirements involving the transfer of records set forth in 29 CFR 1910.1020(h) . ( o ) Observation of monitoring — ( 1 ) Employee observation. The employer sh",
+        "r must comply with the requirements concerning transfer of records set forth in 29 CFR 1910.1020(h) . ( o ) Competent person — ( 1 ) General. On all construction worksites covered"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(p)",
+      "title": "Cfr 29 1926.65(P)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "aining curriculum used to meet the training requirements of 29 CFR 1926.65(e) ; 29 CFR 1926.65(p)(7) , (p)(8)(iii) ; and 29 CFR 1926.65(q)(6) , (q)(7) , and (q)(8) . These are g",
+        "200 . (i) A review of medical surveillance programs meeting the requirements of 29 CFR 1926.65(p)(3) including the recognition of signs and symptoms of overexposure to hazardous",
+        "A review of decontamination programs and procedures meeting the requirements of 29 CFR 1926.65(p)(4) . (k) A review of an employer's requirements to implement a training program"
+      ]
+    },
+    {
+      "citation": "cfr 49 178",
+      "title": "Cfr 49 178",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rtment of Transportation specification identification requirements published in 49 CFR part 178 , Shipping Container Specifications. ( 3 ) Definition. As used",
+        "rtment of Transportation specification identification requirements published in 49 CFR part 178 , Shipping Container Specifications. ( 3 ) Definition. As used in this section,",
+        "ders used shall meet the Department of Transportation requirements published in 49 CFR part 178, subpart C , Specification for Cylinders. ( 3 ) No damaged or defective cylinde"
+      ]
+    },
+    {
+      "citation": "cfr 23 625.4",
+      "title": "Cfr 23 625.4",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "te Highway and Transportation Officials (AASHTO) and other organizations. ( See 23 CFR 625.4 ). Many of these incorporated provisions may be relevant to maintaining structu",
+        "Div. II, § 3.2.1 , 15th edition, 1992, which FHWA incorporates by reference in 23 CFR 625.4 ). FHWA also encourages compliance with AASHTO Specifications that the FHWA reg",
+        ", 15th edition, 1992, which FHWA incorporates by reference in 23 CFR 625.4 ). FHWA also encourages compliance with AASHTO Specifications that the FHWA reg"
+      ]
+    },
+    {
+      "citation": "70e-2012",
+      "title": "70E-2012",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ric Arc 1. Standard for Electrical Safety Requirements for Employee Workplaces, NFPA 70E-2012, Annex D, “Sample Calculation of Flash Protection Boundary.” 2. Doughty, T.E.,",
+        "V and Less 2 601 V to 15 kV 2 More than 15 kV 1Φ 3Φa 3Φb 1Φ 3Φa 3Φb 1Φ 3Φa 3Φb NFPA 70E-2012 Annex D (Lee equation) Y-C Y N Y-C Y-C N N 3 N 3 N 3 Doughty, Neal, and Floyd Y",
+        "g Arc-Flash Hazard Calculations. IEEE C2-2012, National Electrical Safety Code. NFPA 70E-2012, Standard for Electrical Safety in the Workplace. Subpart W—Rollover Protective"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1001",
+      "title": "Cfr 29 1910.1001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "cinnati, OH, 1977. pp. 239-1—239-21. 8.5. Asbestos, Code of Federal Regulations 29 CFR 1910.1001 . 1971. 8.6. Occupational Exposure to Asbestos, Tremolite, Anthophyllite, and A",
+        "e are detailed in the NIOSH Criteria Document or in the OSHA Asbestos Standards 29 CFR 1910.1001 and 29 CFR 1926.1101 and 29 CFR 1915.1001 . 2. Sampling Procedure 2.1. Equipmen",
+        "s, Information Circular 8751, 1977. 5.7. Asbestos, Code of Federal Regulations, 29 CFR 1910.1001 and 29 CFR 1926.58 . 5.8. National Emission Standards for Hazardous Air Polluta"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.51",
+      "title": "Cfr 29 1926.51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ipment is required, the employer shall provide change rooms in conformance with 29 CFR 1926.51 Where skin contact with chromium (VI) occurs, the employer shall provide washin",
+        "(VI) occurs, the employer shall provide washing facilities in conformance with 29 CFR 1926.51 . Eating and drinking areas provided by the employer shall also be in conforman",
+        "oms, handwashing facilities, showers, and lunchroom facilities that comply with 29 CFR 1926.51 . ( 2 ) Change rooms. The employer shall assure that change rooms are equipped"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.1153",
+      "title": "Cfr 29 1926.1153",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ional Medicine. This section means this respirable crystalline silica standard, 29 CFR 1926.1153 . ( c ) Specified exposure control methods. ( 1 ) For each employee engaged in",
+        "rs must ensure that laboratories use when performing an analysis required under 29 CFR 1926.1153 (d)(2)(v). Employers must ensure that such a laboratory: 1. Evaluates all sampl",
+        "medical surveillance provisions of the respirable crystalline silica standard ( 29 CFR 1926.1153 ). Appendix B is for informational and guidance purposes only and none of the s"
+      ]
+    },
+    {
+      "citation": "cfr 49 190.9",
+      "title": "Cfr 49 190.9",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "tions governing pipeline design, construction, operation, and maintenance under 49 CFR 190.9 ; ( 3 ) Pipelines on the Outer Continental Shelf upstream of the point at which",
+        "rator finds a longer separation distance is justified in a particular case (see 49 CFR § 190.9 ). ( 4 ) The endpoint of gathering, under section 2.2(a)(1)(D) of API RP 80, ma"
+      ]
+    },
+    {
+      "citation": "b31.8-2018",
+      "title": "B31.8-2018",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "es, 2004, (ASME/ANSI B31G); IBR approved for §§ 192.632(a) ; 192.712(b) . ( 5 ) ASME B31.8-2018, Gas Transmission and Distribution Piping Systems, Issued November 20, 2018, (A",
+        "1, issued November 1, 2019, (ASME B31.4); IBR approved for § 195.110(a) . ( 4 ) ASME B31.8-2018, Gas Transmission and Distribution Piping Systems, Issued November 20, 2018, (A"
+      ]
+    },
+    {
+      "citation": "cfr 49 190.206",
+      "title": "Cfr 49 190.206",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "ans and procedures may, after notice and opportunity for hearing as provided in 49 CFR 190.206 or the relevant State procedures, require the operator to amend its plans and p",
+        "ans and procedures may, after notice and opportunity for hearing as provided in 49 CFR 190.206 or the relevant State procedures, require the operator to amend its plans and p"
+      ]
+    },
+    {
+      "citation": "cfr 33 64",
+      "title": "Cfr 33 64",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192",
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "an 7 days after discovery, mark the location of the pipeline in accordance with 33 CFR part 64 at the ends of the pipeline segment and at intervals of not over 500 yards (457",
+        "an 7 days after discovery, mark the location of the pipeline in accordance with 33 CFR Part 64 at the ends of the pipeline segment and at intervals of not over 500 yards (457"
+      ]
+    },
+    {
+      "citation": "b.31",
+      "title": "B.31",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3018256"
+      ],
+      "sample_snippets": [
+        "e, stainless steel 304), the pressure experienced by the pipe, and the relevant ASME B.31 guidelines. As a result of the low pressure of the hydrogen and coolant systems",
+        "pressure experienced by the pipe, and the relevant ASME B.31 guidelines. As a result of the low pressure of the hydrogen and coolant systems"
+      ]
+    },
+    {
+      "citation": "cfr 40 136.3",
+      "title": "Cfr 40 136.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "er treated anaerobically using analytical methods for COD or BOD 5 specified in 40 CFR 136.3 Table 1B. For the purpose of determining concentrations of wastewater influent",
+        "er treated anaerobically using analytical methods for COD or BOD 5 specified in 40 CFR 136.3 Table 1B. For the purpose of determining concentrations of wastewater influent"
+      ]
+    },
+    {
+      "citation": "cfr 40 261",
+      "title": "Cfr 40 261",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "hazardous waste material if it meets the U.S. Environmental Protection Agency's 40 CFR part 261 requirements (See particularly § 261.21 ). All workers performing hazardous sub",
+        "hazardous waste material if it meets the U.S. Environmental Protection Agency's 40 CFR part 261 requirements (See particularly § 261.21 ). All workers performing hazardous sub"
+      ]
+    },
+    {
+      "citation": "1434",
+      "title": "1434",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589597"
+      ],
+      "sample_snippets": [
+        "esting of the SST in both steady-state and in 979-8-3503-5427-0/24/$31.00 ©2024 IEEE 1434 31616801.4202.34655ECCE/9011.01 :IOD | EEEI 4202© 00.13$/42/7-6067-3053-8-979 |",
+        "both steady-state and in 979-8-3503-5427-0/24/$31.00 ©2024 IEEE 1434 31616801.4202.34655ECCE/9011.01 :IOD | EEEI 4202© 00.13$/42/7-6067-3053-8-979 |"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.41",
+      "title": "Cfr 40 80.41",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , and summer RVP standards required under 40 CFR 80.27 or as specified by the s",
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , but which do not meet summer RVP standards required under 40 CFR 80.27 or as"
+      ]
+    },
+    {
+      "citation": "3170",
+      "title": "3170",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eva 20, Switzerland, + 41 22 749 01 11, http://www.iso.org/iso/home.htm . ( 1 ) ISO 3170: Petroleum liquids—Manual sampling—Third Edition 2004-02-01, IBR approved for §",
+        "xtures by Gas Chromatography (incorporated by reference, see § 98.7 ). ( xvii ) ISO 3170: Petroleum Liquids—Manual sampling—Third Edition (incorporated by reference, se"
+      ]
+    },
+    {
+      "citation": "3171",
+      "title": "3171",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "—Manual sampling—Third Edition 2004-02-01, IBR approved for § 98.164(b) . ( 2 ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition 1988-12-01, IBR a",
+        "nual sampling—Third Edition (incorporated by reference, see § 98.7 ). ( xviii ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition (incorporated by"
+      ]
+    },
+    {
+      "citation": "cfr 40 51",
+      "title": "Cfr 40 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed to assure the alignment of the quadrupole mass filter (see EPA Method 205 at 40 CFR part 51, appendix M as reference). The mass spectrometer must be chosen so that the mas",
+        "ng a gas dilution system that meets the requirements specified in Method 205 at 40 CFR part 51, appendix M ) with known HFC-23 concentrations that are in the same range (frac"
+      ]
+    },
+    {
+      "citation": "cfr 30 550",
+      "title": "Cfr 30 550",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through",
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.1572(c)",
+      "title": "Cfr 40 63.1572(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "e, calibrate, and maintain each gas flow meter according to the requirements in 40 CFR 63.1572(c) and the following requirements. ( 1 ) Locate the flow monitor at a site that pr",
+        "s composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications and requirements. ( h ) - ( i"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.346(i)",
+      "title": "Cfr 40 98.346(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "tor used in Equation TT-6 of this subpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12,",
+        "bpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12, 2010, as amended at 76 FR 73909 , No"
+      ]
+    },
+    {
+      "citation": "cfr 41 50",
+      "title": "Cfr 41 50",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "similar to those provided for under the Walsh-Healey Public Contracts Act under 41 CFR part 50-205 . § 1926.4 Rules of practice for administrative adjudications for enforceme",
+        "ntract.” The rules of the Secretary concerning these standards are published in 41 CFR part 50-204 , and express the Secretary of Labor's interpretation and application of se"
+      ]
+    },
+    {
+      "citation": "13-1969",
+      "title": "13-1969",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "and Use of Portable Fire Extinguishers, IBR approved for § 1926.150(c) . ( 2 ) NFPA 13-1969, Standard for the Installation of Sprinkler Systems, IBR approved for § 1926.15",
+        "lled in accordance with the Standard for the Installation of Sprinkler Systems, NFPA 13-1969. ( 4 ) At least one portable fire extinguisher having a rating of not less than"
+      ]
+    },
+    {
+      "citation": "385-1966",
+      "title": "385-1966",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "struction and Material, IBR approved for §§ 1926.152(b) and 1926.155(f) . ( 6 ) NFPA 385-1966, Standard for Tank Vehicles for Flammable and Combustible Liquids, IBR approved",
+        "for §§ 1926.152(b) and 1926.155(f) . ( 6 ) NFPA 385-1966, Standard for Tank Vehicles for Flammable and Combustible Liquids, IBR approved"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1030(d)",
+      "title": "Cfr 29 1910.1030(D)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "masks and eye protection (see “Occupational Exposure to Blood borne Pathogens”, 29 CFR 1910.1030(d)(3) ) ( 56 FR 64175 ). [",
+        "masks and eye protection (see “Occupational Exposure to Blood borne Pathogens”, 29 CFR 1910.1030(d)(3) ) ( 56 FR 64175 ). [ 44 FR 8577 , Feb. 9, 1979; 44 FR 20940 , Apr. 6, 1979,"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1051",
+      "title": "Cfr 29 1910.1051",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "de 7789-30-2 0.1 0.7 — Bromoform 75-25-2 0.5 5 X Butadiene (1,3-Butadiene); see 29 CFR 1910.1051 ; 29 CFR 1910.19(l) 106-99-0 STEL 1 ppm/5 ppm — Butanethiol; see Butyl mercapta",
+        "de 7789-30-2 0.1 0.7 — Bromoform 75-25-2 0.5 5 X Butadiene (1,3-Butadiene); see 29 CFR 1910.1051 ; 29 CFR 1910.19(l) 106-99-0 STEL 1 ppm/5 ppm — Butanethiol; see Butyl mercapta"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.19(l)",
+      "title": "Cfr 29 1910.19(L)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "7 — Bromoform 75-25-2 0.5 5 X Butadiene (1,3-Butadiene); see 29 CFR 1910.1051 ; 29 CFR 1910.19(l) 106-99-0 STEL 1 ppm/5 ppm — Butanethiol; see Butyl mercaptan 2-Butanone (Methyl",
+        "7 — Bromoform 75-25-2 0.5 5 X Butadiene (1,3-Butadiene); see 29 CFR 1910.1051 ; 29 CFR 1910.19(l) 106-99-0 STEL 1 ppm/5 ppm — Butanethiol; see Butyl mercaptan 2-Butanone (Methyl"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.103",
+      "title": "Cfr 29 1926.103",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "al hygienist or other technically-qualified source, and used in accordance with 29 CFR 1926.103 . ( vii ) Near each tank containing a liquid which may burn, irritate, or other",
+        "he selection, issuance, use, and care of respirators must be in accordance with 29 CFR 1926.103 . ( 3 ) Designated person. At least one designated person shall be on duty abov"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.12(b)",
+      "title": "Cfr 29 1910.12(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "application. ( 1 ) This section applies to all construction work as defined in 29 CFR 1910.12(b) , in which there is exposure to MDA, including but not limited to the following",
+        "application. This section regulates asbestos exposure in all work as defined in 29 CFR 1910.12(b) , including but not limited to the following: ( 1 ) Demolition or salvage of st"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.38",
+      "title": "Cfr 29 1910.38",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "evacuating affected employees as well as the applicable elements prescribed in 29 CFR 1910.38 and 29 CFR 1910.39 , “Emergency action plans” and “Fire prevention plans,” resp",
+        "R 1926.65(b)(4)(ii) . (4) Emergency response plan and procedures as outlined in 29 CFR 1910.38 and 29 CFR 1926.65(l) . (5) Adequate illumination. (6) Sanitation recommendatio"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.141(d)",
+      "title": "Cfr 29 1910.141(D)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ea. ( i ) Where feasible, shower facilities shall be provided which comply with 29 CFR 1910.141(d)(3) wherever the possibility of employee exposure to airborne levels of MDA in e",
+        "pment. ( B ) Shower area. Shower facilities shall be provided which comply with 29 CFR 1910.141(d)(3) , unless the employer can demonstrate that they are not feasible. The shower"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1200(h)",
+      "title": "Cfr 29 1910.1200(H)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "hall provide employees with information and training on MDA, in accordance with 29 CFR 1910.1200(h) , at the time of initial assignment and at least annually thereafter. ( ii ) In",
+        "The employer must provide information and training in accordance with the HCS ( 29 CFR 1910.1200(h) ); ( B ) The employer must provide initial training to each employee by the tim"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.51(f)",
+      "title": "Cfr 29 1926.51(F)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "handwashing facilities for use by employees exposed to lead in accordance with 29 CFR 1926.51(f) . ( ii ) Where showers are not provided the employer shall assure that employee",
+        "operations. ( i ) Showers shall be provided and shall meet the requirements of 29 CFR 1926.51(f)(4) . ( ii ) Change rooms shall be provided and shall meet the requirements of 2"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.134(d)",
+      "title": "Cfr 29 1910.134(D)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "requirements of 29 CFR 1926.62(f)(3) , including the requirements referenced in 29 CFR 1910.134(d)(3)(i)(A) of this chapter. Any respirator chosen must be approved by NIOSH under",
+        "aph (e)(1) of this section and the requirements for selection of respirators in 29 CFR 1910.134(d)(1)(iii) and (d)(3) with regard to exposure to respirable crystalline silica. ("
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.33",
+      "title": "Cfr 29 1926.33",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "This record shall be retained for the period specified and meet the criteria of 29 CFR 1926.33 . ( ii ) The record required in paragraph (f)(8)(i) of this section shall inclu",
+        "This record shall be retained for the period specified and meet the criteria of 29 CFR 1926.33 . ( ii ) The record required in paragraph (f)(8)(i) of this section shall inclu"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.141",
+      "title": "Cfr 29 1910.141",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ide of a contaminated area, they shall be provided and meet the requirements of 29 CFR 1910.141 . If temperature conditions prevent the effective use of water, then other effe",
+        "a contaminated area, they shall be provided and meet the requirements of 29 CFR 1910.141 . If temperature conditions prevent the effective use of water, then other effe"
+      ]
+    },
+    {
+      "citation": "472",
+      "title": "472",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "for their tasks. There are two National Fire Protection Association standards, NFPA 472—“Standard for Professional Competence of Responders to Hazardous Material Incid",
+        "mergency response organizations in developing their training program materials. NFPA 472 provides guidance on the skills and knowledge needed for first responder awaren"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.147",
+      "title": "Cfr 29 1910.147",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ard-communication standard ( 29 CFR 1910.1200 ) and lock-out-tag-out standard ( 29 CFR 1910.147 ). (8) Review of other applicable standards including but not limited to those",
+        "-1.15.; 2-2.2.2; 2-3.2.1.1. In addition, 2-3.5 applies, except in 2-3.5.1(b), “ 29 CFR 1910.147 ” is substituted for “ANSI Z244.1.” § 1926.1439 Dedicated pile drivers. ( a ) T"
+      ]
+    },
+    {
+      "citation": "70-1984",
+      "title": "70-1984",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rical installation is made in accordance with the National Electrical Code ANSI/NFPA 70-1984, exclusive of Formal Interpretations and Tentative Interim Amendments, it will",
+        "electrical installation is made in accordance with the National Electrical Code ANSI/NFPA 70-1984, exclusive of Formal Interpretations and Tentative Interim Amendments, it will"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.50",
+      "title": "Cfr 29 1926.50",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "s. In addition to the requirements set forth in subparts D and E of this part ( 29 CFR 1926.50-1926.107 ) to prevent exposure to harmful levels of atmospheric contaminants an",
+        "s. In addition to the requirements set forth in subparts D and E of this part ( 29 CFR 1926.50-1926.107 ) to prevent exposure to harmful levels of atmospheric contaminants an"
+      ]
+    },
+    {
+      "citation": "cfr 30 57.5067",
+      "title": "Cfr 30 57.5067",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "spheres other than gassy operations: ( A ) Shall comply with MSHA provisions in 30 CFR 57.5067 ; or ( B ) If purchased on or before July 15, 2019, may alternatively comply wi",
+        "spheres other than gassy operations: ( A ) Shall comply with MSHA provisions in 30 CFR 57.5067 ; or ( B ) If purchased on or before July 15, 2019, may alternatively comply wi"
+      ]
+    },
+    {
+      "citation": "cfr 30 32",
+      "title": "Cfr 30 32",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "on or before July 15, 2019, may alternatively comply with MSHA provisions under 30 CFR part 32 (revised",
+        "on or before July 15, 2019, may alternatively comply with MSHA provisions under 30 CFR part 32 (revised as of July 1, 1996) (formerly Schedule 24), or be demonstrated by the"
+      ]
+    },
+    {
+      "citation": "cfr 27 55",
+      "title": "Cfr 27 55",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "visions of the Bureau of Alcohol, Tobacco and Firearms regulations contained in 27 CFR part 55 , Commerce in Explosives. ( b ) Blasting caps, electric blasting caps, detonati",
+        "mit issued under authority of the Bureau of Alcohol, Tobacco and Firearms. (See 27 CFR part 55 ) ( c ) Blast area —The area in which explosives loading and blasting operation"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.32(f)",
+      "title": "Cfr 29 1926.32(F)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "authority to take prompt corrective measures to eliminate them, as specified in 29 CFR 1926.32(f) : in addition, for Class I and Class II work who is specially trained in a trai",
+        "issued under it to be in regulated areas. Competent person, in accordance with 29 CFR 1926.32(f) , means a person designated by the employer to act on the employer's behalf who"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1020(e)",
+      "title": "Cfr 29 1910.1020(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "A's Access to Employee Exposure and Medical Records (Records Access) standard ( 29 CFR 1910.1020(e) ). ( 2 ) Engineering and work practice controls. The employer must use engineer",
+        "A's Access to Employee Exposure and Medical Records (Records Access) standard ( 29 CFR 1910.1020(e) ). ( 2 ) Engineering and work practice controls. The employer must use engineer"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.57",
+      "title": "Cfr 29 1926.57",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        ", the employer shall comply with other OSHA standards, when applicable, such as 29 CFR 1926.57 (Ventilation), where abrasive blasting is conducted using crystalline silica-co",
+        "when applicable, such as 29 CFR 1926.57 (Ventilation), where abrasive blasting is conducted using crystalline silica-co"
+      ]
+    },
+    {
+      "citation": "cfr 49 214.7",
+      "title": "Cfr 49 214.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ailroad equipment that meets the definition of “roadway maintenance machine” in 49 CFR 214.7 and is used only for railroad track work. ( d ) All sections of this subpart CC",
+        "bpart that meets the definition of “roadway maintenance machine,” as defined in 49 CFR 214.7 , must comply with the requirements in this subpart, except as provided in para"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.7",
+      "title": "Cfr 29 1910.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "d, or accepted by a Nationally Recognized Testing Laboratory in accordance with 29 CFR 1910.7 . Jib stop (also referred to as a jib backstop), is the same type of device as",
+        "d, or accepted by a Nationally Recognized Testing Laboratory in accordance with 29 CFR 1910.7 . Qualified evaluator (not a third party) means a person employed by the signal"
+      ]
+    },
+    {
+      "citation": "cfr 49 214",
+      "title": "Cfr 49 214",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "h in § 1926.1434 do not apply if the employer is subject to the requirements of 49 CFR part 214 . ( 7 ) Other manufacturer guidance. The requirements to follow the manufacture",
+        "; or § 1926.1441 do not apply if the employer is subject to the requirements of 49 CFR part 214 . [ 85 FR 57122 , Sept. 15, 2020] § 1926.1443 Severability. Should a court of c"
+      ]
+    },
+    {
+      "citation": "b31.4",
+      "title": "B31.4",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "ids and Slurries: ASME Code for Pressure Piping, B31, issued November 1, 2019, (ASME B31.4); IBR approved for § 195.110(a) . ( 4 ) ASME B31.8-2018, Gas Transmission and D",
+        "vided for in a pipeline system's design. Sections 401, 402, 403.3, and 403.9 of ASME B31.4 (incorporated by reference, see § 195.3 ) must be followed to provide for expan"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.47",
+      "title": "Cfr 10 71.47",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3031192"
+      ],
+      "sample_snippets": [
+        "activities without accidents or other unexpected or unusual occurrences. 13 See 10 CFR 71.47, “External Radiation Standards for All Packages.” DOE/EIS-0203-SA-10 25 April 2"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.1124",
+      "title": "Cfr 29 1926.1124",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "by paragraph (k) of this standard. This standard means this beryllium standard, 29 CFR 1926.1124 . ( c ) Permissible Exposure Limits (PELs) — ( 1 ) Time-weighted average (TWA)"
+      ]
+    },
+    {
+      "citation": "b31.1",
+      "title": "B31.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3018256"
+      ],
+      "sample_snippets": [
+        "ssure drop through both the fuel cell modules and the coolant radiators. We use ASME B31.1 to determine the schedule of each pipe. Table 6. Coolant Pipe Descriptions, Flo"
+      ]
+    },
+    {
+      "citation": "cfr 40 61",
+      "title": "Cfr 40 61",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ing made to a control system listed in the standard, [see also those of USEPA ( 40 CFR 61, subpart M ). Thus, although the standard does not explicitly require the prepa"
+      ]
+    },
+    {
+      "citation": "neshap",
+      "title": "Neshap",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "26.58 . 5.8. National Emission Standards for Hazardous Air Pollutants; Asbestos NESHAP Revision, Federal Register, Vol. 55, No. 224, 20 November 1990, p. 48410. 5.9."
+      ]
+    },
+    {
+      "citation": "123",
+      "title": "123",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589169"
+      ],
+      "sample_snippets": [
+        "ers/Loads Voltage Capacitor LTC (kV) regulator bank IEEE 13 2.5 4.16 9 1 2 node IEEE 123 12 4.16 114 3 4 1 node IEEE 34 94 24.9 24 2 2 node EPRI J1 93.3 12.47 1384 8 5"
+      ]
+    },
+    {
+      "citation": "59a",
+      "title": "59A",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3028602"
+      ],
+      "sample_snippets": [
+        "n Database Spreadsheet,\" Sandia National Laboratories, SANDXXXX-2026, 2026. [6] NFPA 59A, Standard for the production, storage, and handling of Liquefied Natural Gas (L"
+      ]
+    },
+    {
+      "citation": "2800-2022",
+      "title": "2800-2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3218390"
+      ],
+      "sample_snippets": [
+        "rocedures; these can be leveraged for GFM IBR unit model validation. Annex G of IEEE 2800-2022 also includes recommendations for modeling IBR plants. 11 5Time-domain conformi"
+      ]
+    },
+    {
+      "citation": "14040",
+      "title": "14040",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3020102"
+      ],
+      "sample_snippets": [
+        "ne- 2 haul diesel locomotive emission standards. The LCA practice complies with ISO 14040 standards and uses Argonne R&D GREET (Greenhouse gases, Regulated Emissions, an"
+      ]
+    },
+    {
+      "citation": "cfr 40 3",
+      "title": "Cfr 40 3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070"
+      ],
+      "sample_snippets": [
+        "es that choose to receive electronic documents must satisfy the requirements of 40 CFR Part 3 —(Electronic reporting) in their program. [ 57 FR 32295 , July 21, 1992, as ame"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.761",
+      "title": "Cfr 40 63.761",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070"
+      ],
+      "sample_snippets": [
+        "as used in the introductory text of this definition, has the same meaning as in 40 CFR 63.761 . ( 1 ) A major source under section 112 of the Act, which is defined as: ( i )"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.43",
+      "title": "Cfr 40 60.43",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0060"
+      ],
+      "sample_snippets": [
+        "o Part 60 Provisions for an Alternative Method of Demonstrating Compliance With 40 CFR 60.43 for the Newton Power Station of Central Illinois Public Service Company Appendi"
+      ]
+    },
+    {
+      "citation": "b16.40-2019",
+      "title": "B16.40-2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "er 2004, (ASME/ANSI B16.5); IBR approved for §§ 192.147(a) ; 192.607(f) . ( 3 ) ASME B16.40-2019, Manually Operated Thermoplastic Gas Shutoffs and Valves in Gas Distribution Sy"
+      ]
+    },
+    {
+      "citation": "cfr 49 191",
+      "title": "Cfr 49 191",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "each of the following: ( 1 ) Review incidents that must be reported pursuant to 49 CFR part 191 to determine if control room actions contributed to the event and, if so, corre"
+      ]
+    },
+    {
+      "citation": "9712",
+      "title": "9712",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0192"
+      ],
+      "sample_snippets": [
+        "y the manufacturer or an independently assessed evaluation procedure similar to ISO 9712 (Sections: 5 Responsibilities; 6 Levels of Qualification; 7 Eligibility; and 10"
+      ]
+    },
+    {
+      "citation": "cfr 40 136",
+      "title": "Cfr 40 136",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ns the chemical oxygen demand as determined using methods specified pursuant to 40 CFR part 136 . Cogeneration unit means a unit that produces electrical energy and useful the"
+      ]
+    },
+    {
+      "citation": "cfr 40 262.34",
+      "title": "Cfr 40 262.34",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "mall quantity generators under 40 CFR 261.5 or are generators who qualify under 40 CFR 262.34 for exemptions from regulation under 40 CFR parts 264 , 265 and 270 (“excepted"
+      ]
+    },
+    {
+      "citation": "61882",
+      "title": "61882",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3023854"
+      ],
+      "sample_snippets": [
+        "Commission, Hazard and Operability Studies (HAZOP studies) – Application Guide, IEC 61882 Ed. 1.0 b:2001, Geneva, CH: International Electrotechnical Commission, 2001. [2"
+      ]
+    },
+    {
+      "citation": "109",
+      "title": "109",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589597"
+      ],
+      "sample_snippets": [
+        "D. Rogers, Toward an electromag- netic event resilient grid, Proceedings of the IEEE 109 (4) (2021) 315– 319. doi:10.1109/JPROC.2021.3062297. [2] J. Kappenman, Geomagne"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.58",
+      "title": "Cfr 40 60.58",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "f municipal solid waste combusted, calculated according to the procedures under 40 CFR 60.58b(j) . Mcf means thousand cubic feet. Methane conversion factor means the extent"
+      ]
+    },
+    {
+      "citation": "27916:2019",
+      "title": "27916:2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "8.489 . Note 1 to paragraph (e)(1): This standard is also available from ISO as ISO 27916:2019(E). ( 2 ) [Reserved] ( f ) The following material is available for purchase fro"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.7081(a)",
+      "title": "Cfr 40 63.7081(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ion of limestone, dolomite, shells or other calcareous substances as defined in 40 CFR 63.7081(a)(1) . ( b ) This source category includes all LMPs unless the LMP is located at"
+      ]
+    },
+    {
+      "citation": "cfr 49 191.3",
+      "title": "Cfr 49 191.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "near pipelines), emergency shutdowns including pipeline incidents as defined in 49 CFR 191.3 , and all other pipeline segments with a physical volume greater than or equal"
+      ]
+    },
+    {
+      "citation": "cfr 49 192.3",
+      "title": "Cfr 49 192.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed as such by the Pipeline and Hazardous Material Safety Administration (PHMSA) 49 CFR 192.3 . Drilling mud means a mixture of clays and additives with water, oil, or synth"
+      ]
+    },
+    {
+      "citation": "cfr 18 284.224",
+      "title": "Cfr 18 284.224",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "person identified as the owner or operator on blanket certificates issued under 18 CFR 284.224 . If an intrastate pipeline is not subject to section 311 of the Natural Gas Po"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.105",
+      "title": "Cfr 40 60.105",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "and maintain exhaust gas composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications a"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.36",
+      "title": "Cfr 40 98.36",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ric acid process line (metric tons) and the relevant information required under 40 CFR 98.36 (e)(2)(vi) for the Tier 4 Calculation Methodology. ( f ) If you do not use a CE"
+      ]
+    },
+    {
+      "citation": "cfr 21 184.1240",
+      "title": "Cfr 21 184.1240",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "the U.S. Food and Drug Administration food-grade specifications for CO 2 ( see 21 CFR 184.1240 ) and ASTM standard E1747-95 (Reapproved 2005) Standard Guide for Purity of Car"
+      ]
+    },
+    {
+      "citation": "21",
+      "title": "21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3025690"
+      ],
+      "sample_snippets": [
+        "ing AV fleets on public rights-of-way. An ATN system is formally defined in the ANSI/ASCE 21-21 Automated People Mover Standards. At its core, whether PRT, ATN, or ODT, the"
+      ]
+    },
+    {
+      "citation": "cfr 40 141",
+      "title": "Cfr 40 141",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "Environmental Protection Agency's National Primary Drinking Water Regulations ( 40 CFR part 141 ). ( b ) Nonpotable water. ( 1 ) Outlets for nonpotable water, such as water fo"
+      ]
+    },
+    {
+      "citation": "10a-1970",
+      "title": "10A-1970",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "lephone: 617-770-3000; fax: 617-770-0700; Web site: http://www.nfpa.org/: ( 1 ) NFPA 10A-1970, Maintenance and Use of Portable Fire Extinguishers, IBR approved for § 1926.15"
+      ]
+    },
+    {
+      "citation": "80-1970",
+      "title": "80-1970",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "Flammable and Combustible Liquids Code, IBR approved for § 1926.152(c) . ( 4 ) NFPA 80-1970, Standard for Fire Doors and Windows, Class E or F Openings, IBR approved for §"
+      ]
+    },
+    {
+      "citation": "cfr 41 1",
+      "title": "Cfr 41 1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "( a ) A contract for “construction” is one for nonpersonal service. See, e.g., 41 CFR 1-1.208 . Section 2(e) of the Service Contract Act of 1965 requires as a conditio"
+      ]
+    },
+    {
+      "citation": "cfr 29 1925",
+      "title": "Cfr 29 1925",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "se of “service employees,” that certain safety and health standards be met. See 29 CFR part 1925 , which contains the Department rules concerning these standards. Section 7 of"
+      ]
+    },
+    {
+      "citation": "cfr 10 20",
+      "title": "Cfr 10 20",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "he Nuclear Regulatory Commission's Standards for Protection Against Radiation ( 10 CFR part 20 ), relating to protection against occupational radiation exposure, shall apply."
+      ]
+    },
+    {
+      "citation": "91-1961",
+      "title": "91-1961",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "nd Exhaust Systems for Dust, Stock, and Vapor Removal or Conveying, Z33.1-1961 (NFPA 91-1961), and subpart S of this part . The blast nozzle shall be bonded and grounded to"
+      ]
+    },
+    {
+      "citation": "68-1954",
+      "title": "68-1954",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "set forth in the National Fire Protection Association Explosion Venting Guide. NFPA 68-1954. ( 3 ) Blast-cleaning enclosures. ( i ) Blast-cleaning enclosures shall be exha"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.134(i)",
+      "title": "Cfr 29 1910.134(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "s, and must meet the requirements for supplied-air quality and use specified in 29 CFR 1910.134(i) . ( 7 ) Operational procedures and general safety. Dust shall not be permitted"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.501",
+      "title": "Cfr 29 1910.501",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ble to construction work under this section are identical to those set forth at 29 CFR 1910.501 subpart U. [ 86 FR 61555 , Nov. 5, 2021] § 1926.59 Hazard communication. Note:"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.39",
+      "title": "Cfr 29 1910.39",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "d employees as well as the applicable elements prescribed in 29 CFR 1910.38 and 29 CFR 1910.39 , “Emergency action plans” and “Fire prevention plans,” respectively. ( 2 ) Ale"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.141(e)",
+      "title": "Cfr 29 1910.141(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rage facilities for protective clothing and street clothing, in accordance with 29 CFR 1910.141(e) . ( iii ) Equipment area. The equipment area shall be supplied with impermeable"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.33(a)",
+      "title": "Cfr 29 1910.33(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "es, designated representatives, and the Assistant Secretary, in accordance with 29 CFR 1910.33(a)-(e) and (g)-(i) . ( iii ) The employer, upon request, shall make employee medic"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1025(a)",
+      "title": "Cfr 29 1910.1025(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "uction work excluded from coverage in the general industry standard for lead by 29 CFR 1910.1025(a)(2) is covered by this standard. Construction work is defined as work for constr"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.21",
+      "title": "Cfr 29 1926.21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "of this section, regarding use of respirators; and training in accordance with 29 CFR 1926.21 , Safety training and education. ( 3 ) Basis of initial determination. ( i ) Ex"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.20",
+      "title": "Cfr 29 1910.20",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "icensed physician; and ( viii ) The employee's right of access to records under 29 CFR 1910.20 . ( 3 ) Access to information and training materials. ( i ) The employer shall"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.62(f)",
+      "title": "Cfr 29 1926.62(F)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "employer is required to select your respirator according to the requirements of 29 CFR 1926.62(f)(3) , including the requirements referenced in 29 CFR 1910.134(d)(3)(i)(A) of th"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.119",
+      "title": "Cfr 29 1910.119",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rdous chemicals as it pertains to construction work, follow the requirements in 29 CFR 1910.119 . [ 84 FR 21576 , May 14, 2019] § 1926.65 Hazardous waste operations and emerge"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.20(e)",
+      "title": "Cfr 29 1926.20(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ion more protective of employee safety and health shall apply without regard to 29 CFR 1926.20(e) . ( ii ) Hazardous substance clean-up operations within the scope of paragraphs"
+      ]
+    },
+    {
+      "citation": "cfr 40 270.1",
+      "title": "Cfr 40 270.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "nder RCRA, and required to have a permit or interim status from EPA pursuant to 40 CFR 270.1 or from a state agency pursuant to RCRA. (B) Employers who are not required to"
+      ]
+    },
+    {
+      "citation": "cfr 40 261.5",
+      "title": "Cfr 40 261.5",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "im status because they are conditionally exempt small quantity generators under 40 CFR 261.5 or are generators who qualify under 40 CFR 262.34 for exemptions from regulatio"
+      ]
+    },
+    {
+      "citation": "cfr 40 261.3",
+      "title": "Cfr 40 261.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ed. Hazardous waste means— ( A ) A waste or combination of wastes as defined in 40 CFR 261.3 , or ( B ) Those substances defined as hazardous wastes in 49 CFR 171.8 . Hazar"
+      ]
+    },
+    {
+      "citation": "cfr 49 171.8",
+      "title": "Cfr 49 171.8",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ined in 40 CFR 261.3 , or ( B ) Those substances defined as hazardous wastes in 49 CFR 171.8 . Hazardous waste operation means any operation conducted within the scope of t"
+      ]
+    },
+    {
+      "citation": "cfr 49 173.21",
+      "title": "Cfr 49 173.21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ent of Transportation regulations. Employers and their shippers should refer to 49 CFR 173.21 and 173.50 . ( 6 ) Laboratory waste packs. In addition to the requirements of p"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.51(i)",
+      "title": "Cfr 29 1926.51(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        ")(4) . ( ii ) Change rooms shall be provided and shall meet the requirements of 29 CFR 1926.51(i) . Change rooms shall consist of two separate change areas separated by the show"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.35",
+      "title": "Cfr 29 1926.35",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "such employees shall have completed the training requirements of the following: 29 CFR 1926.35 , 1926.59 , and 1926.103 , and other appropriate safety and health training mad"
+      ]
+    },
+    {
+      "citation": "1991",
+      "title": "1991",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "chemical protective clothing. The standards that have been adopted by include: NFPA 1991—Standard on Vapor-Protective Suits for Hazardous Chemical Emergencies (EPA Leve"
+      ]
+    },
+    {
+      "citation": "1992",
+      "title": "1992",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ive Suits for Hazardous Chemical Emergencies (EPA Level A Protective Clothing). NFPA 1992—Standard on Liquid Splash-Protective Suits for Hazardous Chemical Emergencies ("
+      ]
+    },
+    {
+      "citation": "1993",
+      "title": "1993",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ive Suits for Hazardous Chemical Emergencies (EPA Level B Protective Clothing). NFPA 1993—Standard on Liquid Splash-Protective Suits for Non-emergency, Non-flammable Haz"
+      ]
+    },
+    {
+      "citation": "471",
+      "title": "471",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "for Professional Competence of Responders to Hazardous Material Incidents” and NFPA 471—“Recommended Practice for Responding to Hazardous Material Incidents”, which ar"
+      ]
+    },
+    {
+      "citation": "cfr 40 264.1(g)",
+      "title": "Cfr 40 264.1(G)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "l efforts is sometimes acceptable to EPA and a permit exception is described in 40 CFR 264.1(g)(8) and 265.1(c)(11) . Appendix D to § 1926.65—References The following referenc"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(f)",
+      "title": "Cfr 29 1926.65(F)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ealth program. (2) The content of a medical surveillance program as outlined in 29 CFR 1926.65(f) . (3) The content of an effective site safety and health plan consistent with t"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(b)",
+      "title": "Cfr 29 1926.65(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "of an effective site safety and health plan consistent with the requirements of 29 CFR 1926.65(b)(4)(ii) . (4) Emergency response plan and procedures as outlined in 29 CFR 1910."
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.65(l)",
+      "title": "Cfr 29 1926.65(L)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        ". (4) Emergency response plan and procedures as outlined in 29 CFR 1910.38 and 29 CFR 1926.65(l) . (5) Adequate illumination. (6) Sanitation recommendation and equipment. (7) R"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.146",
+      "title": "Cfr 29 1910.146",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rature extremes. (5) Review and knowledge of confined space entry procedures in 29 CFR 1910.146 . (6) Work practices to minimize employee risk from site hazards. (7) Safe use"
+      ]
+    },
+    {
+      "citation": "cfr 40 311",
+      "title": "Cfr 40 311",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "rdous waste operations and emergency response are covered by the U.S. EPA under 40 CFR 311 , a regulation virtually identical to § 1926.65 . Since this is a non-mandatory"
+      ]
+    },
+    {
+      "citation": "86a-1969",
+      "title": "86A-1969",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "and combustible finishes shall conform to the Standard for Ovens and Furnaces, NFPA 86A-1969, where applicable and shall also conform with the following requirements of thi"
+      ]
+    },
+    {
+      "citation": "cfr 49 571",
+      "title": "Cfr 49 571",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "yees to be carried. ( 9 ) Seat belts and anchorages meeting the requirements of 49 CFR part 571 (Department of Transportation, Federal Motor Vehicle Safety Standards) shall be"
+      ]
+    },
+    {
+      "citation": "cfr 30 36",
+      "title": "Cfr 30 36",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "assy operations shall be either approved in accordance with the requirements of 30 CFR part 36 (formerly Schedule 31) by MSHA, or shall be demonstrated by the employer to be"
+      ]
+    },
+    {
+      "citation": "b20.1-2012",
+      "title": "B20.1-2012",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "E Guide on Terminology for Tools and Equipment to Be Used in Live Line Working. ASME B20.1-2012, Safety Standard for Conveyors and Related Equipment. ASTM D120-09, Standard Sp"
+      ]
+    },
+    {
+      "citation": "935-1989",
+      "title": "935-1989",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        ", Trimming, Repairing, Maintaining, and Removing Trees, and Cutting Brush. ANSI/IEEE Std 935-1989, IEEE Guide on Terminology for Tools and Equipment to Be Used in Live Line Work"
+      ]
+    },
+    {
+      "citation": "100-2000",
+      "title": "100-2000",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "s, and Reactors. IEEE Std 80-2000, Guide for Safety in AC Substation Grounding. IEEE Std 100-2000, The Authoritative Dictionary of IEEE Standards Terms Seventh Edition. IEEE Std"
+      ]
+    },
+    {
+      "citation": "524-2003",
+      "title": "524-2003",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "IEEE Std 516-2009, IEEE Guide for Maintenance Methods on Energized Power Lines. IEEE Std 524-2003, IEEE Guide to the Installation of Overhead Transmission Line Conductors. IEEE"
+      ]
+    },
+    {
+      "citation": "957-2005",
+      "title": "957-2005",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "-2003, IEEE Guide to the Installation of Overhead Transmission Line Conductors. IEEE Std 957-2005, IEEE Guide for Cleaning Insulators. IEEE Std 1048-2003, IEEE Guide for Protect"
+      ]
+    },
+    {
+      "citation": "1067-2005",
+      "title": "1067-2005",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "lators. IEEE Std 1048-2003, IEEE Guide for Protective Grounding of Power Lines. IEEE Std 1067-2005, IEEE Guide for In-Service Use, Care, Maintenance, and Testing of Conductive Cl"
+      ]
+    },
+    {
+      "citation": "1307-2004",
+      "title": "1307-2004",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ting of Conductive Clothing for Use on Voltages up to 765 kV AC and ±750 kV DC. IEEE Std 1307-2004, IEEE Standard for Fall Protection for Utility Work. IEEE Stds 1584-2002, 1584a"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.1001",
+      "title": "Cfr 29 1926.1001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "n 20 engine horsepower (other than rubber-tired loaders and dozers described in 29 CFR 1926.1001 ), used in operations such as landscaping, construction services, loading, digg"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.32",
+      "title": "Cfr 29 1926.32",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "the current workplace. Competent person means, in addition to the definition in 29 CFR 1926.32 (f) , one who is capable of identifying existing asbestos hazards in the workpl"
+      ]
+    },
+    {
+      "citation": "cfr 40 763.92",
+      "title": "Cfr 40 763.92",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ining of local education agency maintenance and custodial staff as set forth at 40 CFR 763.92 (a)(2) . Critical barrier means one or more layers of plastic sealed over all o"
+      ]
+    },
+    {
+      "citation": "cfr 40 763.86",
+      "title": "Cfr 40 763.86",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "sts shall include analysis of bulk samples collected in the manner described in 40 CFR 763.86 . The tests, evaluation and sample collection shall be conducted by an accredit"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.20",
+      "title": "Cfr 29 1926.20",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "required by subpart C, General Safety and Health Provisions for Construction ( 29 CFR 1926.20 through 1926.32 ). ( 2 ) Required inspections by the competent person. Section"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.1101",
+      "title": "Cfr 29 1926.1101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "NIOSH Criteria Document or in the OSHA Asbestos Standards 29 CFR 1910.1001 and 29 CFR 1926.1101 and 29 CFR 1915.1001 . 2. Sampling Procedure 2.1. Equipment for sampling (a) Tu"
+      ]
+    },
+    {
+      "citation": "cfr 29 1915.1001",
+      "title": "Cfr 29 1915.1001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ent or in the OSHA Asbestos Standards 29 CFR 1910.1001 and 29 CFR 1926.1101 and 29 CFR 1915.1001 . 2. Sampling Procedure 2.1. Equipment for sampling (a) Tube or cork borer samp"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.58",
+      "title": "Cfr 29 1926.58",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ar 8751, 1977. 5.7. Asbestos, Code of Federal Regulations, 29 CFR 1910.1001 and 29 CFR 1926.58 . 5.8. National Emission Standards for Hazardous Air Pollutants; Asbestos NESHA"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1200(c)",
+      "title": "Cfr 29 1910.1200(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "not apply to articles, as defined in the Hazard Communication standard (HCS) ( 29 CFR 1910.1200(c) ), that contain beryllium and that the employer does not process. ( 3 ) This st"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.353",
+      "title": "Cfr 29 1926.353",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "-containing materials shall be conducted in accordance with the requirements of 29 CFR 1926.353 and 29 CFR 1926.354 , where applicable. ( 3 ) Prohibitions. ( i ) High speed ab"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.354",
+      "title": "Cfr 29 1926.354",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "s shall be conducted in accordance with the requirements of 29 CFR 1926.353 and 29 CFR 1926.354 , where applicable. ( 3 ) Prohibitions. ( i ) High speed abrasive disc saws and"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1052",
+      "title": "Cfr 29 1910.1052",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "construction employment under this section are identical to those set forth at 29 CFR 1910.1052 . [ 62 FR 1619 , Jan. 10, 1997] § 1926.1153 Respirable crystalline silica. ( a"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.251",
+      "title": "Cfr 29 1926.251",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "k wedges or screws. ( r ) Rigging. In addition to following the requirements in 29 CFR 1926.251 and other requirements in this and other standards applicable to rigging, when"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.251(c)",
+      "title": "Cfr 29 1926.251(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "commercial_building",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1926"
+      ],
+      "sample_snippets": [
+        "ion. Note: Requirements for the protection of wire rope slings are contained in 29 CFR 1926.251(c)(9) . ( 3 ) When synthetic slings are used, the synthetic sling manufacturer's i"
+      ]
+    },
+    {
+      "citation": "cfr 49 211",
+      "title": "Cfr 49 211",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2502030"
+      ],
+      "sample_snippets": [
+        "ion Act, 49 U.S.C. 20701, et seq., 49 CFR Parts 223, 229, 230, 231, 232, 238. u 49 CFR Part 211 Subpart C. AN ACTION PLAN FOR RAIL ENERGY AND EMISSIONS INNOVATION 84 Equipment"
+      ]
+    },
+    {
+      "citation": "b31.4-2019",
+      "title": "B31.4-2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "(ASME/ANSI B31G); IBR approved for §§ 195.452(h) ; 195.587 ; 195.588(c) . ( 3 ) ASME B31.4-2019, Pipeline Transportation Systems for Liquids and Slurries: ASME Code for Pressu"
+      ]
+    },
+    {
+      "citation": "cfr 40 300.125(a)",
+      "title": "Cfr 40 300.125(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "se Center. The term “National Response Center” means the center described under 40 CFR 300.125(a) . ( 3 ) Safety data sheet. The term “safety data sheet” means a safety data she"
+      ]
+    },
+    {
+      "citation": "cfr 49 195.260",
+      "title": "Cfr 49 195.260",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "( i ) An operator of a gathering line must only comply with the requirements of 49 CFR 195.260 effective as of October 4, 2022, and need not comply with the other requirement"
+      ]
+    },
+    {
+      "citation": "cfr 49 195.402",
+      "title": "Cfr 49 195.402",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "us_federal_49_cfr_0195"
+      ],
+      "sample_snippets": [
+        "tion. An operator of a gathering line must only comply with the requirements of 49 CFR 195.402 effective as of October 4, 2022, and need not comply with the other requirement"
+      ]
+    }
+  ],
+  "total": 205,
+  "with_text": 7
+}

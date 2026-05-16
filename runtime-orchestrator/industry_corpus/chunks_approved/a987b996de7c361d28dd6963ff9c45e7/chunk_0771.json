@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0771",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "a biomass-based product, report the percent of the volume reported in paragraph (b)(2) of this section that is fossil fuel-based (excluding any denaturant that may be present in any ethanol product). ( 4 ) [Reserved] ( 5 ) For each product reported in paragraph (b)(2) of this section for which Calculation Method 2 in § 98.393(f)(2) used was used to determine an emissions factor, report: ( i ) The number of samples collected according to § 98.394(c) ( ii ) The sampling standard method used. ( iii ) The carbon share test results in percent mass. ( iv ) The standard method used to test carbon share. ( v ) The calculated CO 2 emissions factor in metric tons per barrel or per metric ton of product. ( 6 ) For each non-solid product reported in paragraph (b)(2) of this section for which Calculation Method 2 in § 98.393(f)(2) was used to determine an emissions factor, report: ( i ) The density test results in metric tons per barrel. ( ii ) The standard method used to test density. ( 7 ) The CO 2 emissions in metric tons that would result from the complete combustion or oxidation of each imported product reported in paragraph (b)(2) of this section, calculated according to § 98.393(a) . ( 8 ) The total sum of CO 2 emissions that would result from the complete combustion or oxidation of all imported products, calculated according to § 98.393(e) . ( c ) In addition to the information required by § 98.3(c) , each exporter shall report all of the following information at the corporate level: ( 1 ) [Reserved] ( 2 ) For each product listed in table MM-1 of subpart MM of this part , report the total annual quantity in metric tons or barrels. For natural gas liquids, quantity shall reflect the individual components of the product. ( 3 ) For each product reported in paragraph (c)(2) of this section that was produced by blending a fossil fuel-based product with a biomass-based product, report the percent of the volume reported in paragraph (c)(2) of this section that is fossil fuel-based (excluding any denaturant that may be present in any ethanol product). ( 4 ) [Reserved] ( 5 ) For each product reported in paragraph (c)(2) of this section for which Calculation Method 2 in § 98.393(f)(2) was used to determine an emissions factor, report: ( i ) The number of samples collected according to § 98.394(c) . ( ii ) The sampling standard method used. ( iii ) The carbon share test results in percent mass. ( iv ) The standard method used to test carbon share. ( v ) The calculated CO 2 emissions factor in metric tons CO 2 per barrel or per metric ton of product. ( 6 ) For each non-solid product reported in paragraph (c)(2) of this section for which Calculation Method 2 in § 98.393(f)(2) used was used to determine an emissions factor, report: ( i ) The density test results in metric tons per barrel.",
+  "token_count": 509,
+  "text_sha": "6de7d0f02890c72bf6618ffa0afcdc946f4c17f13494c36a2a011ed3bc4e033c",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

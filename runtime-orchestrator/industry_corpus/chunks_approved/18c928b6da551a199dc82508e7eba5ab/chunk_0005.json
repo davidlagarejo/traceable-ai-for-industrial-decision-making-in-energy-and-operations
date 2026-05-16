@@ -1,0 +1,14 @@
+{
+  "chunk_id": "18c928b6::chunk_0005",
+  "source_id": "doe_osti_3015048",
+  "source_sha": "18c928b6da551a199dc82508e7eba5ab",
+  "source_url": "https://www.osti.gov/servlets/purl/3015048",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "particular working set (from left to right: l, f, andb). The y-axis indicates the ratio of energy used to the minimum energy required to reach the isoline’s test loss level. Vertical lines indicate cache boundaries where the working set spills into a higher memory level. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 Figure 8. Histograms of isoline minima from the plots in Figure 7. The most energy efficient working set size is typically at or just beyond the point at which it fills a memory level. . . . . . . . . . . . . . . . . 21 v This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. List of Tables Table 1. Specifications of the HPC nodes used to generate BUTTER-E. . . . . . . . . . . . . . . . . . . . . 6 Table 2. CPU and GPU specifications.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 Table 3. Symbols Used . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 Table 4. Fitted model parameters over all CPU experiments and GPU all experiments. . . . . . . . . . . . . 17 F O O R P vi This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. F O Abstract Addressing the “Red-AI” trend of rising energy consumption by large-scale neural networks, this study investigates the measured energy consumption of training various fully connected neural network architectures. We introduce the BUTTER-E dataset, an augmentation to the BUTTER Empirical Deep Learning dataset, containing energy con- sumption and performance data from 41,129 individual experimental runs spanning 30,582 distinct configurations: 13 datasets, 20 sizes (trainable parameters), 8 “shapes”, and 14 depths on both CPUs and GPUs using node-level watt-meters. This dataset reveals the complex relationship between dataset size, network structure, and energy use. Our analysis uncovers a surprising, hardwaOre-mediated non-linear relationship between energy efficiency and net- work design, challenging the assumption that reducing the number of parameters or FLOPs is the best way to achieve greater energy efficiency. We propose a straightforward and effective energy model that accounts for network size, computing, and memory hierarchy. Highlighting the need for cache-considerate algorithm development, we sug- gest a codesign approach to energy efficient network, algorithm, and hardware design. This work contributes to the",
+  "token_count": 512,
+  "text_sha": "22c526415d816bf7eae994335e1f7a7e6ac8b4981981da3cd2251081c8519e8e",
+  "extracted_at": "2026-05-16T00:02:13.437561Z"
+}

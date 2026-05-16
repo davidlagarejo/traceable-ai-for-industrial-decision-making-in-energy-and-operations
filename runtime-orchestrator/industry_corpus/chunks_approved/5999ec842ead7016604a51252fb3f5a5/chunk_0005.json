@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5999ec84::chunk_0005",
+  "source_id": "doe_osti_3218390",
+  "source_sha": "5999ec842ead7016604a51252fb3f5a5",
+  "source_url": "https://www.osti.gov/servlets/purl/3218390",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "2 phase to ground 0 7 1.0 p.u. charging 2 phase to ground 0 8 0.5 p.u. charging 2 phase to ground 0 NREL | 16 Frequency change and inertial response test Frequency change and inertial response test n o ita iv e d y c n e u )zH ( la n im o n m 3 3 . . 0 0 0 - q e rF o rf Tests frequency ride-through (same for GFL) • SCR = 3; X/R = 6 0 .1 - • P = 0 pu; Q = 0, initially 0 1 3 4 10 15 20 25 Time (s) • Apply frequency profile at right Tests inertial response • Criteria: Same as ERCOT test. – P and Q well controlled Frequency per-unitized – V and f do not deviate from steady state levels for significant time – V settles to stable point when f is not ramping ).u .p ( re w – Equivalent inertia constant, H > 2.5 s. H = f *ΔE o p n e v ΔE – P settles according to its droop and deadband itc A p A re v - e e r v a e g n e t power settings when frequency is not ramping – Any oscillation shall be damped 0 0.5 Time (s) NREL | 17 Phase angle jump test Phase angle jump test V V S IBR I IBR Z IBR • SCR = 3; X/R = 6 • P = 1 pu, Q = 0, initially (consider adjusting) • Step voltage source (positive sequence) phase angle down 10°, then up 10°, then up 25°, then down 25° – Wait a few seconds for transient to settle after each step • Criteria: – For each 10° step: Basically same as ERCOT • ≥ 0.2 pu change in P (pos seq) in opposing direction test. Clarified V and P • Can be limited by current limit are positive sequence. • Response time <1 cycle to 90% of change in P – Any oscillation shall be damped NREL | 18 Small voltage step test Small voltage step test V V S IBR I IBR Z IBR • Zth = 0 • P = 1 pu, Q = 0, initially • Step voltage source magnitude down 3%, then up 3%, then up 3% more, then down 3% – Wait a few seconds for transient to settle after each step • Criteria: – For each voltage step: • Initial GFM response (first 6 cycles): Started from ERCOT – ≥ 0.03 pu change in Q in opposing direction test. Clarified criteria. » Response time <1 cycle to 90% of change in Q – Q does not return to pre-disturbance level within 6 cycles • Slower voltage control response (after 1st 6 cycles): Q should reach Qmax – Any oscillation shall be damped NREL | 19 Loss of grid connection Loss of grid connection V I IBR IBR1 IBR1 I IBR2 Duplicate • Load pf = 0.95 IBR Scenario Project BESS Duplicate BESS Load Load 1: discharging 0.3 pu discharging 0.1",
+  "token_count": 512,
+  "text_sha": "eb9e5f1b078ba84332b921ff9741a3b35eafa10b376f7ad2d8414c88855b6732",
+  "extracted_at": "2026-05-16T00:11:14.895141Z"
+}

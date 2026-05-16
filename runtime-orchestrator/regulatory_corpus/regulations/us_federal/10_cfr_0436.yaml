@@ -1,0 +1,12 @@
+source_id: us_federal_10_cfr_0436
+title: "Federal Energy Management & Planning Programs"
+url: https://www.ecfr.gov/current/title-10/part-436
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:11.902376Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 122 §-marked sections. 102,874 chars."
+asset_families:
+  - commercial_building
+  - _shared

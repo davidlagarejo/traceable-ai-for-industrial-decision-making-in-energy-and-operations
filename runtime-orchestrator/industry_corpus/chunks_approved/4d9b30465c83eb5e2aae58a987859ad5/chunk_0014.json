@@ -1,0 +1,14 @@
+{
+  "chunk_id": "4d9b3046::chunk_0014",
+  "source_id": "doe_osti_3030029",
+  "source_sha": "4d9b30465c83eb5e2aae58a987859ad5",
+  "source_url": "https://www.osti.gov/servlets/purl/3030029",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes.",
+  "token_count": 42,
+  "text_sha": "a71b64a769307184027ca17f402b743cac3111930a44a1d8062cba64d09c5c53",
+  "extracted_at": "2026-05-16T00:11:06.064086Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3003183
+title: "Packages of Distributed Energy Technologies Demonstrating Demand Flexibility at Community Scale"
+url: https://www.osti.gov/servlets/purl/3003183
+license: public_domain
+publisher: doe_osti
+version: "2025-09-29"
+added_at: "2026-05-16T00:05:05.541711Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION"
+asset_families:
+  - commercial_building

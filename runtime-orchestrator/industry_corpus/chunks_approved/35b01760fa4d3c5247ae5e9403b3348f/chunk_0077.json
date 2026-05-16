@@ -1,0 +1,14 @@
+{
+  "chunk_id": "35b01760::chunk_0077",
+  "source_id": "doe_osti_2569693",
+  "source_sha": "35b01760fa4d3c5247ae5e9403b3348f",
+  "source_url": "https://www.osti.gov/servlets/purl/2569693",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "for Cronbach’s alpha > 0.7, indicating a high inter-item reliability in the questionnaire responses (Bernstein & Nunnally, 1994). Standardized Cronbach’s alpha values for perceptions of visibility, safety and comfort, and preference were 0.81, 0.72, and 0.81, respectively, indicating a high level of reliability. Thus, 91",
+  "token_count": 45,
+  "text_sha": "1771103f8adecb3e07cc5f5da29af922a08cb0ba75c71cc6e12610d456093aa4",
+  "extracted_at": "2026-05-16T00:06:57.233163Z"
+}

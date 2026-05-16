@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c63a09da::chunk_0030",
+  "source_id": "doe_osti_2583498",
+  "source_sha": "c63a09dab7fef39cdeea78082e42884d",
+  "source_url": "https://www.osti.gov/servlets/purl/2583498",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Mark Chung. 2023. “Techno-economic Analysis of Blending Hydrogen into Natural Gas Transmission Networks.” Proceedings of 30 This report is available at no cost from NREL at www.nrel.gov/publications. the Pipeline Safety Research and Development Forum 2023, 31 Oct.–1 Nov. 2023, Crystal City, VA. [6] Todd Deutsch, Chris San Marchi, Kevin Simmons, Kevin Topolski, and Amgad Elgowainy. 2023. “Pipeline Blending CRADA – A HyBlend™ Project Overview.” NREL webinar, 26 Oct. 2023. www.energy.gov/eere/fuelcells/october-h2iq-hour-hyblend-initiative. [7] Jamie Kee, Evan Reznicek, Mark Chung, and Kevin Topolski. 2024. “BlendPATH (Blending Pipeline Analysis Tool for Hydrogen).” NREL Software No. SWR-24-10. [8] Kevin Topolski and Jamie Kee. 2024. “Pipeline Blending CRADA BlendPATH Webinar.” NREL webinar, 16 Jan. 2024. www.youtube.com/watch?v=yorvh7MfZps. [9] Kevin Topolski, Amgad Elgowainy, and Mark Chung. 2024. “HyBlend: Pipeline CRADA Cost and Emissions Analysis.” U.S. Department of Energy Hydrogen Program 2024 Annual Merit Review and Peer Evaluation Meeting, 6–9 May 2024, Arlington, VA. [10] Jamie Kee, Evan Reznicek, Kevin Topolski, and Mark Chung. n.d. Blending Pipeline Analysis Tool for Hydrogen (BlendPATH) Documentation and User Manual. Golden, CO: National Renewable Energy Laboratory. TBD. [11] Evan Reznicek, Kevin Topolski, Jamie Kee, Omar Guerra, and Mark Chung. n.d. “A techno-economic model to assess the feasibility and cost of repurposing natural gas transmission pipeline networks to accommodate hydrogen.” Journal article forthcoming. TASK 5: Program Management Subtask 5.1: NREL Program Management Will Provide Quarterly Reports. In addition to submitting quarterly reports that detailed project progress from all the national labs, the program management team engaged in several other project-supporting activities. They organized and executed monthly meetings to provide all CRADA partners progress updates that also featured topical, external guest speakers. They also conducted outreach, giving more than two dozen overview presentations to educate the community on the goals of this CRADA project. Subtask 5.2: NREL Program Management Will Provide a CRADA Final Report as per Article X of the Terms and Conditions. This report meets the CRADA final report deliverable to complete the requirement in accordance with Article X. Subject Inventions Listing: None ROI #: None 31 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 345,
+  "text_sha": "9c4f9b9884128d884d45f64bc6ddebbf3f594e7b9108d5dc75d6ce278475bb7f",
+  "extracted_at": "2026-05-16T00:12:40.503272Z"
+}

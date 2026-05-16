@@ -1,0 +1,14 @@
+{
+  "chunk_id": "80a27162::chunk_0044",
+  "source_id": "doe_osti_3016202",
+  "source_sha": "80a271627692fecdc85b2a530b427608",
+  "source_url": "https://www.osti.gov/servlets/purl/3016202",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "1 TPD CO capture and determine the funding Pilot-Scale Design 2 needed for the construction and testing of the DAC system. Susteon, with support from our commercial partners, will raise the necessary funding for this pilot-scale system. Technology Maturation Plan 9",
+  "token_count": 41,
+  "text_sha": "12366127bdc4920599c2b6f206fabac9cfebc5628b776a01bcacba9400bd4912",
+  "extracted_at": "2026-05-15T23:58:24.391423Z"
+}

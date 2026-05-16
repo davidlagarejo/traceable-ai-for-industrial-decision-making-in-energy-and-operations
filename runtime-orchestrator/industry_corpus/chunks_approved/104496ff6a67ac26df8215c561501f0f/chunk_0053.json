@@ -1,0 +1,14 @@
+{
+  "chunk_id": "104496ff::chunk_0053",
+  "source_id": "us_federal_10_cfr_0851",
+  "source_sha": "104496ff6a67ac26df8215c561501f0f",
+  "source_url": "https://www.ecfr.gov/current/title-10/part-851",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "2016; 83 FR 1292 , Jan. 11, 2018; 83 FR 66084 , Dec. 26, 2018; 85 FR 831 , Jan. 8, 2020; 86 FR 2956 , Jan. 14, 2021; 87 FR 1064 , Jan. 10, 2022; 88 FR 2194 , Jan. 13, 2023; 88 FR 41294 , June 26, 2023; 89 FR 1029 , Jan. 9, 2024; 89 FR 105407 , Dec. 27, 2024] {\"origins\":[{\"level\":\"part\",\"identifier\":\"851\",\"label_level\":\"Part 851\",\"hierarchy\":{\"title\":\"10\",\"chapter\":\"III\",\"part\":\"851\"},\"current\":true,\"authority\":[\"\\u003ca href=\\\"https://www.govinfo.gov/link/uscode/42/2201\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e42 U.S.C. 2201(i)(3)\\u003c/a\\u003e, (p); \\u003ca href=\\\"https://www.govinfo.gov/link/uscode/42/2282c\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e42 U.S.C. 2282c\\u003c/a\\u003e; \\u003ca href=\\\"https://www.govinfo.gov/link/uscode/42/5801\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e42 U.S.C. 5801\\u003c/a\\u003e \\u003cem\\u003eet seq.;\\u003c/em\\u003e \\u003ca href=\\\"https://www.govinfo.gov/link/uscode/42/7101\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e42 U.S.C. 7101\\u003c/a\\u003e \\u003cem\\u003eet seq.;\\u003c/em\\u003e \\u003ca href=\\\"https://www.govinfo.gov/link/uscode/50/2401\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e50 U.S.C. 2401\\u003c/a\\u003e \\u003cem\\u003eet seq.;\\u003c/em\\u003e \\u003ca href=\\\"https://www.govinfo.gov/link/uscode/28/2461\\\" class=\\\"usc external\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\"\\u003e28 U.S.C. 2461 note\\u003c/a\\u003e.\\n\"],\"source\":[\"\\u003ca href=\\\"https://www.federalregister.gov/citation/71-FR-6931\\\" class=\\\"fr-reference\\\" data-reference=\\\"71 FR 6931\\\"\\u003e71 FR 6931\\u003c/a\\u003e, Feb. 9, 2006, unless otherwise noted.\\n\"],\"link\":\"/current/title-10/part-851\",\"title\":\"Part 851\"}]} eCFR Content Pages Home Titles Search Recent Changes Corrections Reader Aids Using the eCFR Point-in-Time System Understanding the eCFR Government Policy and OFR Procedures Developer Resources Recent Site Updates Information About This Site Legal Status Privacy Accessibility FOIA No Fear Act Continuity Information My eCFR My Subscriptions Sign In / Sign Up",
+  "token_count": 193,
+  "text_sha": "2c3f9507fe9241bcbb01c4b7b8875cb8fecf133f4be490a1ca7d6759a54e4c9a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

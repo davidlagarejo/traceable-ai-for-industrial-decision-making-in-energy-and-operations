@@ -1,0 +1,14 @@
+{
+  "chunk_id": "037a5f4a::chunk_0004",
+  "source_id": "doe_osti_3028342",
+  "source_sha": "037a5f4a81c67c87d16bf0d742a78ceb",
+  "source_url": "https://www.osti.gov/servlets/purl/3028342",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Thank You Thank You www.nlr.gov NREL/PR-5T00-94090 This work was authoredby NREL for the U.S. Department of Energy (DOE), operated under Contract No. DE- AC36-08GO28308. The views expressed in the article do not necessarily represent the views of the DOE or the U.S. Government. The U.S. Government retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. Photo from Getty 181828180",
+  "token_count": 92,
+  "text_sha": "c7bc88332e0800cd9ba4c5c1b6720db76804f261784ccd62af6c2a7c6efb465a",
+  "extracted_at": "2026-05-16T00:11:10.854380Z"
+}

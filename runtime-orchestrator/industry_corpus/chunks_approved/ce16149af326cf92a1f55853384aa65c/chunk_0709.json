@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce16149a::chunk_0709",
+  "source_id": "us_federal_29_cfr_1926",
+  "source_sha": "ce16149af326cf92a1f55853384aa65c",
+  "source_url": "https://www.ecfr.gov/current/title-29/part-1926",
+  "asset_families": [
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "HEPA vacuum cleaner or other device used to prevent collapse of bag during removal shall run continually during the operation until it is completed at which time the bag shall be collapsed prior to removal of the bag from the pipe. ( 3 ) Where a separate waste bag is used along with a collection bag and discarded after one use, the collection bag may be reused if rinsed clean with amended water before reuse. ( iv ) Negative Pressure Glove Box Systems: Negative pressure glove boxes may be used to remove ACM or PACM from pipe runs with the following specifications and work practices. ( A ) Specifications: ( 1 ) Glove boxes shall be constructed with rigid sides and made from metal or other material which can withstand the weight of the ACM and PACM and water used during removal: ( 2 ) A negative pressure generator shall be used to create negative pressure in the system: ( 3 ) An air filtration unit shall be attached to the box: ( 4 ) The box shall be fitted with gloved apertures: ( 5 ) An aperture at the base of the box shall serve as a bagging outlet for waste ACM and water: ( 6 ) A back-up generator shall be present on site: ( 7 ) Waste bags shall consist of 6 mil thick plastic double-bagged before they are filled or plastic thicker than 6 mil. ( B ) Work practices: ( 1 ) At least two persons shall perform the removal: ( 2 ) The box shall be smoke-tested for leaks and any leaks sealed prior to each use. ( 3 ) Loose or damaged ACM adjacent to the box shall be wrapped and sealed in two layers of 6 mil plastic prior to the job, or otherwise made intact prior to the job. ( 4 ) A HEPA filtration system shall be used to maintain pressure barrier in box. ( v ) Water Spray Process System. A water spray process system may be used for removal of ACM and PACM from cold line piping if, employees carrying out such process have completed a 40-hour separate training course in its use, in addition to training required for employees performing Class I work. The system shall meet the following specifications and shall be performed by employees using the following work practices. ( A ) Specifications: ( 1 ) Piping shall be surrounded on 3 sides by rigid framing, ( 2 ) A 360 degree water spray, delivered through nozzles supplied by a high pressure separate water line, shall be formed around the piping. ( 3 ) The spray shall collide to form a fine aerosol which provides a liquid barrier between workers and the ACM and PACM. ( B ) Work Practices: ( 1 ) The system shall be run for at least 10 minutes before removal begins. ( 2 ) All removal shall take place within the water barrier. ( 3 ) The system shall be operated by at least three persons, one of whom",
+  "token_count": 509,
+  "text_sha": "e97958e886233b63dbbb734d0380c6f0f504857e9ccf37cdd52fb36881c9f10b",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "18c928b6::chunk_0038",
+  "source_id": "doe_osti_3015048",
+  "source_sha": "18c928b6da551a199dc82508e7eba5ab",
+  "source_url": "https://www.osti.gov/servlets/purl/3015048",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Christiansen, E. Real, K. Murphy, and F. Hutter. 2019. “Nas-bench-101: Towards reproducible neural architecture search.” InInternationaOl conference on machine learning,7105–7114. PMLR. R P 26 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications.",
+  "token_count": 41,
+  "text_sha": "5d416b70711274203ef7fba7e785137af237b8f6a695b05e40207c4c86ded0fe",
+  "extracted_at": "2026-05-16T00:02:13.437561Z"
+}

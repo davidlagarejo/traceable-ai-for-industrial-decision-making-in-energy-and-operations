@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0813",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": ", Dec. 9, 2016] Subpart PP—Suppliers of Carbon Dioxide § 98.420 Definition of the source category. ( a ) The carbon dioxide (CO 2 ) supplier source category consists of the following: ( 1 ) Facilities with production process units that capture a CO 2 stream for purposes of supplying CO 2 for commercial applications or that capture and maintain custody of a CO 2 stream in order to sequester or otherwise inject it underground. Capture refers to the initial separation and removal of CO 2 from a manufacturing process or any other process. ( 2 ) Facilities with CO 2 production wells that extract or produce a CO 2 stream for purposes of supplying CO 2 for commercial applications or that extract and maintain custody of a CO 2 stream in order to sequester or otherwise inject it underground. ( 3 ) Importers or exporters of bulk CO 2 . ( 4 ) Facilities with process units, including but not limited to direct air capture (DAC), that capture a CO 2 stream from ambient air for purposes of supplying CO 2 for commercial applications or that capture and maintain custody of a CO 2 stream in order to sequester or otherwise inject it underground. ( b ) This source category is focused on upstream supply. It does not cover: ( 1 ) Storage of CO 2 above ground or in geologic formations. ( 2 ) Use of CO 2 in enhanced oil and gas recovery. ( 3 ) Transportation or distribution of CO 2 . ( 4 ) Purification, compression, or processing of CO 2 . ( 5 ) On-site use of CO 2 captured on site. ( c ) This source category does not include CO 2 imported or exported in equipment, such as fire extinguishers. [ 74 FR 56374 , Oct. 30, 2009, as amended at 89 FR 31943 , Apr. 25, 2024] § 98.421 Reporting threshold. Any supplier of CO 2 who meets the requirements of § 98.2(a)(4) of subpart A of this part must report the mass of CO 2 captured, extracted, imported, or exported. § 98.422 GHGs to report. ( a ) Mass of CO 2 captured from production process units. ( b ) Mass of CO 2 extracted from CO 2 production wells. ( c ) Mass of CO 2 imported. ( d ) Mass of CO 2 exported. ( e ) Mass of CO 2 captured from DAC process units. ( 1 ) Mass of CO 2 captured from ambient air. ( 2 ) Mass of CO 2 captured from any on-site heat and/or electricity generation, where applicable. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 79169 , Dec. 17, 2010; 89 FR 31943 , Apr. 25, 2024] § 98.423 Calculating CO 2 supply. ( a ) Except as allowed in paragraph (b) of this section, calculate the annual mass of CO 2 captured, extracted, imported, or exported through each flow meter in accordance with the procedures specified in either paragraph (a)(1) or (a)(2) of this section.",
+  "token_count": 510,
+  "text_sha": "2b6b943a7a0438ef4014b857fc682438816df29b6e013850cfc64e44ddb60666",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0094",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "× 10 −4 Short tons Pounds (lbs) 2,000 Short tons Metric tons 0.90718 Metric tons Short tons 1.10231 Metric tons Kilograms (kg) 1,000 Cubic meters (m 3 ) Cubic feet (ft 3 ) 35.31467 Cubic feet (ft 3 ) Cubic meters (m 3 ) 0.028317 Gallons (liquid, US) Liters (l) 3.78541 Liters (l) Gallons (liquid, US) 0.26417 Barrels of Liquid Fuel (bbl) Cubic meters (m 3 ) 0.15891 Cubic meters (m 3 ) Barrels of Liquid Fuel (bbl) 6.289 Barrels of Liquid Fuel (bbl) Gallons (liquid, US) 42 Gallons (liquid, US) Barrels of Liquid Fuel (bbl) 0.023810 Gallons (liquid, US) Cubic meters (m 3 ) 0.0037854 Liters (l) Cubic meters (m 3 ) 0.001 Feet (ft) Meters (m) 0.3048 Meters (m) Feet (ft) 3.28084 Miles (mi) Kilometers (km) 1.60934 Kilometers (km) Miles (mi) 0.62137 Square feet (ft 2 ) Acres 2.29568 × 10 −5 Square meters (m 2 ) Acres 2.47105 × 10 −4 Square miles (mi 2 ) Square kilometers (km 2 ) 2.58999 Degrees Celsius (°C) Degrees Fahrenheit (°F) °C = ( 5 ⁄ 9 ) × (°F −32) Degrees Fahrenheit (°F) Degrees Celsius (°C) °F = ( 9 ⁄ 5 ) × °C + 32 Degrees Celsius (°C) Kelvin (K) K = °C + 273.15 Kelvin (K) Degrees Rankine (°R) 1.8 Joules Btu 9.47817 × 10 −4 Btu MMBtu 1 × 10 −6 Pascals (Pa) Inches of Mercury (in Hg) 2.95334 × 10 −4 Inches of Mercury (inHg) Pounds per square inch (psi) 0.49110 Pounds per square inch (psi) Inches of Mercury (in Hg) 2.03625 Table A-3 to Subpart A of Part 98—Source Category List for § 98.2 ( a )(1) Table A-3 to Subpart A of Part 98—Source Category List for § 98.2 (a) (1) Source Categories a Applicable in Reporting Year 2010 and Future Years: Electricity generation units that report CO 2 mass emissions year round through 40 CFR part 75 (subpart D). Adipic acid production ( subpart E of this part ). Aluminum production ( subpart F of this part ). Ammonia manufacturing ( subpart G of this part ). Cement production ( subpart H of this part ). HCFC-22 production ( subpart O of this part ). HFC-23 destruction processes that are not collocated with a HCFC-22 production facility and that destroy more than 2.14 metric tons of HFC-23 per year ( subpart O of this part ). Lime manufacturing ( subpart S of this part ). Nitric acid production ( subpart V of this part ). Petrochemical production ( subpart X of this part ). Petroleum refineries ( subpart Y of this part ). Phosphoric acid production ( subpart Z of this part ). Silicon carbide production ( subpart BB of this part ). Soda ash production ( subpart CC of this part ). Titanium dioxide production ( subpart EE of this part ). Municipal solid waste landfills that generate CH 4 in amounts equivalent to 25,000 metric tons CO 2 e or more per year, as determined according to subpart HH of this part . Manure management systems with combined CH",
+  "token_count": 510,
+  "text_sha": "21c3823b3c2803e0e5407230c4930f3e464eeda69f61321bc3047cf0d35f6435",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

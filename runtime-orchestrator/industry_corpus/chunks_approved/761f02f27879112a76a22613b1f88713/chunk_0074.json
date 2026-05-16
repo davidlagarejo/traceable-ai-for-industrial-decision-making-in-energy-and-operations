@@ -1,0 +1,14 @@
+{
+  "chunk_id": "761f02f2::chunk_0074",
+  "source_id": "doe_osti_3363286",
+  "source_sha": "761f02f27879112a76a22613b1f88713",
+  "source_url": "https://www.osti.gov/servlets/purl/3363286",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "the sulfur guard unit in 2 the flowsheet. Case 3 has the lowest sulfur dioxide emissions at 0.2 kg/106 kg NH due to this 3 case not needing supplemental natural gas, which bypasses the sulfur guard unit. Exhibit 4-5. Pollutant emissions 89",
+  "token_count": 42,
+  "text_sha": "0a7da1c7e03f0a017a0459864e4e3e0df38b1472bd368a9dfc71b7d8d904c09a",
+  "extracted_at": "2026-05-15T23:54:43.619157Z"
+}

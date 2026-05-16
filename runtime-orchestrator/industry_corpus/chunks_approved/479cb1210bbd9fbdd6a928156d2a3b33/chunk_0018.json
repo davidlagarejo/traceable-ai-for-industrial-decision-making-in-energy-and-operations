@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0018",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "[msec] 1.9 ] d a 1.85 13 10 11 , 300 sec, 100 g/cm 2 r m 1.8 11 10 11 , 300 sec, 100 g/cm 2 - m 1.75 9.0 10 11 , 300 sec, 100 g/cm 2 m 1.7 7.5 10 11 , 300 sec, 100 g/cm 2 [ 1.65 v 1.6 S 1.55 M R 1.5 . 1.45 m r 1.4 o n 1.35 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Time [msec] Figure 20: Horizontal (top sub-figure) and vertical emittance (bottom sub- figure) in beams with initial intensities of 7.5 × 1011, 9 × 1011 11 × 1011. 13×1011 protons shown by breen, brown, blue and red curves, respectively. 39 4.85 4.8 e n 4.75 u 4.7 T 4.65 l a t 4.6 n o 4.55 z 4.5 i r o 4.45 13 10 11 , 0.5 9 10 11 , 0.5 H 4.4 11 10 11 , 0.5 7.5 10 11 , 0.5 4.35 0 2 4 6 8 10 12 14 16 18 20 Time [msec] 5 4.95 e 4.9 n 4.85 u T 4.8 l a 4.75 c 4.7 i t r 4.65 e V 4.6 13 10 11 , 0.5 9 10 11 , 0.5 4.55 11 10 11 , 0.5 7.5 10 11 , 0.5 4.5 0 2 4 6 8 10 12 14 16 18 20 Time [msec] Figure21: Horizontalandverticaltunesevolvedin4differentintensitybeams (7.5×1011, 9×1011, 11×1011, 13×1011 protons) during the early part of the Booster cycle. The black curves are the set-tune during the booster operation. 40 Figure 22: Horizontal and vertical emittance developed from 12 different initialmomentumspreadintheinjectedBeamsofnormalintensity(7.5×1011 protons). 41 Figure 23: Horizontal and vertical emittance developed from 12 different initial momentum spread in the injected Beams of normal intensity (13×1011 protons). 42 1.8 1.6 0.5 10 -4 2.0 10 -4 3.5 10 -4 -4 -4 -4 r 1.4 1.0 10 2.5 10 4.0 10 o t c 1.2 1.5 10 -4 3.0 10 -4 4.5 10 -4 a F 1 g n 0.8 ih c n 0.6 u B 0.4 0.2 0 0 1 2 3 4 5 6 7 8 9 10 11 12 Time [msec] 0.35 -4 -4 -4 0.5 10 2.0 10 3.5 10 0.3 -4 -4 -4 1.0 10 2.5 10 4.0 10 0.25 -4 -4 -4 1.5 10 3.0 10 4.5 10 ] s - 0.2 V e [ 0.15 s 0.1 0.05 0 0 1 2 3 4 5 6 7 8 9 10 11 12 Time [msec] Figure 24: Bunching factor, longitudinal emittance and beam loss developed in the beams with 9 different initial momentum spread of (1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6)×10−4 of high beam intensity (13×1011 protons). 43 6 Property Trends in High Intensity Beams It would be helpful if quantitative relationships can be established between the injected and extracted beams. In this section, we explore the trends in beam properties during the evolution of high intensity beams through a full Booster cycle. The process has been to carry",
+  "token_count": 508,
+  "text_sha": "53fb6c2d58b960902124b8b16e892d00dcefee66cf95c200290e3e0105b4727b",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

@@ -1,0 +1,12 @@
+source_id: doe_osti_3017762
+title: "Data Centers Gap Analysis [Slides]"
+url: https://www.osti.gov/servlets/purl/3017762
+license: public_domain
+publisher: doe_osti
+version: "2026-02-05"
+added_at: "2026-05-16T00:02:32.264762Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 29 ENERGY PLANNING, POLICY, AND ECONOMY, 97 MATHEMATICS AND COMPUTING, data centers, large loads, speed to power"
+asset_families:
+  - _shared
+  - datacenter

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "70a60901::chunk_0005",
+  "source_id": "doe_osti_2583521",
+  "source_sha": "70a609017f86d9e1615cdda79bb262c6",
+  "source_url": "https://www.osti.gov/servlets/purl/2583521",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": ". . 13 5.2 Scenario 2: Utility Outage, Islanded Operation, and Grid Reconnection . . . . . . . . . . . . 14 6 Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 7 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23 List of Figures Figure 1. Vulcan test platform: a CHIL-based framework for the validation of Verrus’s data cen- ter power system operational sequences . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 Figure 2. Conceptual single-line diagram of the data center power system . . . . . . . . . . . . . . . 8 Figure 3. Scenario 1: Utility demand response simulation in Vulcan . . . . . . . . . . . . . . . . . . 14 Figure 4. Scenario 1: Utility demand response request for 35 MW of BESS discharge received (around t=304 s) and the response of the PFMS dispatch of the BESS units in less than 5 s. . . 15 Figure 5. Scenario 2, Step 1 and 2: Normal operation in grid-connected mode till t <180 sec- ond. Grid voltage drops from 230 kV to 2 kV, the PFMS executes then executes the islanding algorithm and transitions the power system from grid connected mode to islanded mode using BESS units provide the backup power by operating in GFM mode. . . . . . . . . . . . . . . . . . 17 Figure 6. Scenario 2, Step 3, 4 and 5: BESS units continue to provide back up power with de- crease in SOC. At t ∼940 second, when average SOC of BESS units reach below 50%, the re- quest to shed low priority/ interruptible workloads is sent to IT workload owner. Their action is simulated using a multiplier M=0.7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 Figure 7. Scenario 2, Step 5: Increase in estimated runtime on BESS due to 30 %reduction in load. 19 Figure 8. Scenario 2, Step 6: The BESS units reach the low SOC threshold of 15%, the PFMS bring generators online to support the load. . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "f6e3e09c98f7052d560584f54fa4bfd82ba3050910b3cee9f903b6e35dacb820",
+  "extracted_at": "2026-05-16T00:02:16.046005Z"
+}

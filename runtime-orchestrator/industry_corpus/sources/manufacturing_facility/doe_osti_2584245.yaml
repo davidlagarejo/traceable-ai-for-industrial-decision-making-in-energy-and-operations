@@ -1,0 +1,11 @@
+source_id: doe_osti_2584245
+title: "Membrane Electrode Assembly Manufacturing Automation Technology for the Electrochemical Compression of Hydrogen: Cooperative Research and Development (Final Report)"
+url: https://www.osti.gov/servlets/purl/2584245
+license: public_domain
+publisher: doe_osti
+version: "2025-08-12"
+added_at: "2026-05-15T23:58:24.396415Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 30 DIRECT ENERGY CONVERSION, CRADA, electrochemical hydrogen compression, H2@Scale, quality control"
+asset_families:
+  - manufacturing_facility

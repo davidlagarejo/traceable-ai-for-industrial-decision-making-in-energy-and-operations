@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ae0f94a1::chunk_0057",
+  "source_id": "doe_osti_3025690",
+  "source_sha": "ae0f94a12972e14f1bcec0537e9b923a",
+  "source_url": "https://www.osti.gov/servlets/purl/3025690",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "and Faizan Mir. 2026. Data for Autonomous Transportation Awareness: Data Exchange Use Cases, Standards, and Barriers. Los Angeles, CA: Center of Excellence on New Mobility and Automated Vehicles. www.mobilitycoe.org/project/data-for- autonomous-transportation-awareness-data/. 59 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 47,
+  "text_sha": "610621f2428beb4d16cd955412c15d15b2c8c5340a2cb0d1ed76fccfa88cc272",
+  "extracted_at": "2026-05-16T00:13:06.367189Z"
+}

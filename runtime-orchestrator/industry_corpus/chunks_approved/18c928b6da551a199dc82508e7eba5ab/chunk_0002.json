@@ -1,0 +1,14 @@
+{
+  "chunk_id": "18c928b6::chunk_0002",
+  "source_id": "doe_osti_3015048",
+  "source_sha": "18c928b6da551a199dc82508e7eba5ab",
+  "source_url": "https://www.osti.gov/servlets/purl/3015048",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "of the Rockies for the U.S. Department of Energy (DOE), operated under Contract No. DE-AC36-08GO28308. This work was supported by the Laboratory Directed Research and Development (LDRD) Program at NLR. The views expressed herein do not necessarily represent the views of the DOE or the U.S. Government. F This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nrel.gov/publications. U.S. Department of Energy (DOE) reports produced after 1991 and a growing number of pre-1991 documents are available free via www.OSTI.gov. Cover photos (clockwise from left): Josh Bauer, National Laboratory of the RockieOs 61725; Visualization from National Laboratory of the Rockies Insight Center; Getty-181828180; Agata Bogucka, National Laboratory of the Rockies 91683; Dennis Schroeder, National Laboratory of the Rockies 51331; Werner Slocum, National Laboratory of the Rockies 67842. The National Laboratory of the Rockies prints on paper that contains recycled content. O R P Table of Contents 1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 2 Related Work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3 Introducing the Butter-E Dataset . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 4 Data Quality and Processing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8 5 Aggregate Trends . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 F 6 Cache Effects . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 7 An Energy Model for MLPs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 509,
+  "text_sha": "117d9b0dd7fcb9644133fe54e8c57c7421cebd267152c00fad762843e02f1759",
+  "extracted_at": "2026-05-16T00:02:13.437561Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce16149a::chunk_0673",
+  "source_id": "us_federal_29_cfr_1926",
+  "source_sha": "ce16149af326cf92a1f55853384aa65c",
+  "source_url": "https://www.ecfr.gov/current/title-29/part-1926",
+  "asset_families": [
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "6 or Table 7. The calculation methods listed in Table 2 and the guidance provided in Table 3 will help employers do this. For example, employers can use IEEE Std 1584b-2011 to estimate the available heat energy (and to select appropriate protective equipment) for many specific conditions, including lower-voltage, phase-to-phase arc, and enclosed arc exposures. Table 6—Incident Heat Energy for Various Fault Currents, Clearing Times, and Voltages of 4.0 to 46.0 kV: Rubber Insulating Glove Exposures Involving Phase-to-Ground Arcs in Open Air Only * † ‡ Voltage range (kV) ** Fault current (kA) Maximum clearing time (cycles) 4 cal/cm 2 5 cal/cm 2 8 cal/cm 2 12 cal/cm 2 4.0 to 15.0 5 46 58 92 138 10 18 22 36 54 15 10 12 20 30 20 6 8 13 19 15.1 to 25.0 5 28 34 55 83 10 11 14 23 34 15 7 8 13 20 20 4 5 9 13 25.1 to 36.0 5 21 26 42 62 10 9 11 18 26 15 5 6 10 16 20 4 4 7 11 36.1 to 46.0 5 16 20 32 48 10 7 9 14 21 15 4 5 8 13 20 3 4 6 9 Notes: * This table is for open-air, phase-to-ground electric-arc exposures. It is not for phase-to-phase arcs or enclosed arcs (arc in a box). † The table assumes that the employee will be 380 mm (15 in.) from the electric arc. The table also assumes the arc length to be the sparkover distance for the maximum transient overvoltage of each voltage range (see Appendix B to this subpart), as follows: 4.0 to 15.0 kV 51 mm (2 in.) 15.1 to 25.0 kV 102 mm (4 in.) 25.1 to 36.0 kV 152 mm (6 in.) 36.1 to 46.0 kV 229 mm (9 in.) ‡ The Occupational Safety and Health Administration calculated the values in this table using the ARCPRO method listed in Table 2. ** The voltage range is the phase-to-phase system voltage. Table 7—Incident Heat Energy for Various Fault Currents, Clearing Times, and Voltages: Live-Line Tool Exposures Involving Phase-to-Ground Arcs in Open Air Only * † ‡ # Voltage range (kV) ** Fault current (kA) Maximum clearing time (cycles) 4 cal/cm 2 5 cal/cm 2 8 cal/cm 2 12 cal/cm 2 4.0 to 15.0 5 197 246 394 591 10 73 92 147 220 15 39 49 78 117 20 24 31 49 73 15.1 to 25.0 5 197 246 394 591 10 75 94 150 225 15 41 51 82 122 20 26 33 52 78 25.1 to 36.0 5 138 172 275 413 10 53 66 106 159 15 30 37 59 89 20 19 24 38 58 36.1 to 46.0 5 129 161 257 386 10 51 64 102 154 15 29 36 58 87 20 19 24 38 57 46.1 to 72.5 20 18 23 36 55 30 10 13 20 30 40 6 8 13 19 50 4 6 9 13 72.6 to 121.0 20 10 12 20 30 30 6 7 11 17 40 4 5",
+  "token_count": 512,
+  "text_sha": "38354c3e7a6b5c24ae92e7ff73ae32f89fb6a6e815b411d9b43efc33f19c620b",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

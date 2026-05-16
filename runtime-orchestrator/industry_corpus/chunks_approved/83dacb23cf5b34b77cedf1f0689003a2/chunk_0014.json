@@ -1,0 +1,15 @@
+{
+  "chunk_id": "83dacb23::chunk_0014",
+  "source_id": "doe_osti_3096216",
+  "source_sha": "83dacb23cf5b34b77cedf1f0689003a2",
+  "source_url": "https://www.osti.gov/servlets/purl/3096216",
+  "asset_families": [
+    "_shared",
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. Photo from Getty-181828180",
+  "token_count": 43,
+  "text_sha": "ec76ec1d2531eb801cd894452757d2c72d046731a373cad6f764bbb36a04a5ae",
+  "extracted_at": "2026-05-15T23:59:13.409869Z"
+}

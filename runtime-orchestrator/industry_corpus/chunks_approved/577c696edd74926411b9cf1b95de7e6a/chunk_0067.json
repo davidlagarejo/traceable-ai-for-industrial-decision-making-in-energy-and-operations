@@ -1,0 +1,14 @@
+{
+  "chunk_id": "577c696e::chunk_0067",
+  "source_id": "doe_osti_2587978",
+  "source_sha": "577c696edd74926411b9cf1b95de7e6a",
+  "source_url": "https://www.osti.gov/servlets/purl/2587978",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "model black box have computational developed; optimization complexity issues and Comfort solvers); implement can have poor constraints them as lookup convergence behaviors. specified tables. Trial and error with different types of solvers and different parameters settings will be needed. A simulation Reinforcement Easy Moderate; can be Difficulty of Implementation Data Preparation Use Case Candidate ML and ML Implementation Description Prerequisites Algorithms Processing and Testing Model-free model of the learning implemented in control building (can OpenAIGym. optimization be the same model as in baseline control- oriented modeling) or access to the actual building control knobs Transfer None Direct transfer; off- Easy Moderate to difficult Learning line schemes depending on off-line such as inductive vs. online transfer transfer, on-line learning. techniques such as Generalized Online Transfer Learning (GOTL). Supervised None Classification Difficult: Easy: Scikit-learn Fault Diagnosis techniques: linear involves SVM, stochastic obtaining gradient descent, labeled fault random forest data classification Predictive Stochastic Difficult: Easy: Scikit-learn Maintenance None techniques, e.g., Hid- involves den Markov Models equipment life cycle data",
+  "token_count": 166,
+  "text_sha": "1cfb45b7e6633a08dbdd5a5d98e9727ecee79319e342890fc65e955464a0d592",
+  "extracted_at": "2026-05-16T00:05:05.533531Z"
+}

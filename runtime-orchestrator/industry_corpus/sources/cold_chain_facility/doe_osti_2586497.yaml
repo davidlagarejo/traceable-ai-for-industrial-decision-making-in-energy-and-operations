@@ -1,0 +1,11 @@
+source_id: doe_osti_2586497
+title: "Modernizing Accelerator Responsiveness and Controls in Operations"
+url: https://www.osti.gov/servlets/purl/2586497
+license: public_domain
+publisher: doe_osti
+version: "2025-08-27"
+added_at: "2026-05-15T23:56:32.269121Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 43 PARTICLE ACCELERATORS"
+asset_families:
+  - cold_chain_facility

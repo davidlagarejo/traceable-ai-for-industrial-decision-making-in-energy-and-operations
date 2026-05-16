@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7a3e05f1::chunk_0063",
+  "source_id": "doe_osti_2524558",
+  "source_sha": "7a3e05f1d130c27234bcd92f6f7c1fc7",
+  "source_url": "https://www.osti.gov/servlets/purl/2524558",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "vehicle was then repackaged and sent back to PACCAR Technical Center with the goal of achieving 40 fault-free hours of continuous operation before being shipped to the demonstration site. Figure 26. Power Steering Figure 27. Fuel cell with repaired coolant pump 32 | Pa ge",
+  "token_count": 45,
+  "text_sha": "4697c3d09cf19a0e19f75410c55e4070093e0600a5bb78617d6db961a557d2b2",
+  "extracted_at": "2026-05-16T00:08:41.460742Z"
+}

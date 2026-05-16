@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0008",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . 52 A.3 Default In-Line Inspection Costs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53 viii This report is available at no cost from NREL at www.nrel.gov/publications List of Figures Figure 1. BlendPATH package code structure. Green boxes indicate user input, blue boxes indicate high- level modules within BlendPATH, yellow boxes indicate internal computations to BlendPATH, and or- ange boxes indicate model outputs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Figure 2. BlendPATH’s network algorithm to solve for pipeline pressures given a pipeline network repre- sentation as a structure of nodes, pipes, and compressor stations . . . . . . . . . . . . . . . . . . . . . . 11 Figure 3. BlendPATH hydraulic network model validation with the results highlighted in Bainier and Kurz (2019) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 Figure 4. Example demonstration of the approach taken in BlendPATH to segment a simple pipeline network 13 Figure 5. Example application of the direct replacement method to enable a pipe network to meet energy demand while accommodating hydrogen and satisfying ASME B31.12 design guidelines . . . . . . . . . 15 Figure 6. Example application of the parallel looping method to enable a pipe network to meet energy de- mand while accommodating hydrogen and satisfying ASME B31.12 design guidelines . . . . . . . . . . 17 Figure 7. Example application of the additional compressors method to enable a pipe network to meet energy demand while accommodating hydrogen and satisfying ASME B31.12 design guidelines . . . . . 18 Figure A.1. Default meter station modification cost data and linear regression (Kotter and Snarr 2001; Kotter and Stapler 2001) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53 List of Tables Table 1. Carbon Steel Pipeline Material Performance Factor,H (American Society of Mechanical Engi- f neers 2023) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "dc3327ea034f42e4ecf3583723d51e6c64cb01ac65a032879aab195f746b913f",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

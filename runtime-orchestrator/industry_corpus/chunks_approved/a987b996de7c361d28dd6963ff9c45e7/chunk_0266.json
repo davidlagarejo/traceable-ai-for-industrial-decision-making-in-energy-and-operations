@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0266",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "in paragraphs (d)(1) through (d)(3) of this section. ( 1 ) Annual process CO 2 emissions (in metric tons) from each EAF used for the production of any ferroalloy product identified in § 98.110 . ( 2 ) Annual process CH 4 emissions (in metric tons) from each EAF used for the production of any ferroalloy listed in Table K-1 of this subpart (metric tons). ( 3 ) Identification number of each EAF. ( e ) If a CEMS is not used to measure CO 2 process emissions, and the carbon mass balance procedure is used to determine CO 2 emissions according to the requirements in § 98.113(b) , then you must report the following information specified in paragraphs (e)(1) through (e)(7) of this section. ( 1 ) Annual process CO 2 emissions (in metric tons) from each EAF used for the production of any ferroalloy identified in § 98.110 (metric tons). ( 2 ) Annual process CH 4 emissions (in metric tons) from each EAF used for the production of any ferroalloy listed in Table K-1 of this subpart. ( 3 ) Identification number for each material. ( 4 ) - ( 5 ) [Reserved] ( 6 ) List the method used for the determination of carbon content for each material included for the calculation of annual process CO 2 emissions for each EAF ( e.g., supplier provided information, analyses of representative samples you collected). ( 7 ) If you use the missing data procedures in § 98.115(b) , you must report how monthly mass of carbon-containing inputs and outputs with missing data was determined and the number of months the missing data procedures were used. [ 74 FR 56374 , Oct. 30, 2009, as amended at 75 FR 66462 , Oct. 28, 2010; 78 FR 71954 , Nov. 29, 2013; 79 FR 63785 , Oct. 24, 2014] § 98.117 Records that must be retained. In addition to the records required by § 98.3(g) , you must retain the records specified in paragraphs (a) through (e) of this section for each EAF, as applicable. ( a ) If a CEMS is used to measure CO 2 emissions according to the requirements in § 98.113(a) , then you must retain under this subpart the records required for the Tier 4 Calculation Methodology in § 98.37 and the information specified in paragraphs (a)(1) through (a)(3) of this section. ( 1 ) Monthly EAF production quantity for each ferroalloy product (tons). ( 2 ) Number of EAF operating hours each month. ( 3 ) Number of EAF operating hours in a calendar year. ( b ) If the carbon mass balance procedure is used to determine CO 2 emissions according to the requirements in § 98.113(b)(2) , then you must retain records for the information specified in paragraphs (b)(1) through (b)(5) of this section. ( 1 ) Monthly EAF production quantity for each ferroalloy product (tons). ( 2 ) Number of EAF operating hours each month. ( 3 ) Number of EAF operating hours in a calendar year. ( 4 ) Monthly",
+  "token_count": 510,
+  "text_sha": "79a6d7c05435a054a01b6e531fa3a2733dc97aa8a272545ca24c98ccc476bfd5",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

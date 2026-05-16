@@ -1,0 +1,11 @@
+source_id: doe_osti_3104255
+title: "Conformable, Composite Tank for Liquid Hydrogen Storage in Heavy-duty Ground Transportation"
+url: https://www.osti.gov/servlets/purl/3104255
+license: public_domain
+publisher: doe_osti
+version: "2026-01-22"
+added_at: "2026-05-16T00:02:35.455993Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 08 HYDROGEN, 25 ENERGY STORAGE, 42 ENGINEERING, Composites, Carbon fiber, conformal tank, liquid Hydrogen, cryogenic, transport, heavy-duty, aviation"
+asset_families:
+  - datacenter

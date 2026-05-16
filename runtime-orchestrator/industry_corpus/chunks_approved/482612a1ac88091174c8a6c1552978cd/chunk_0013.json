@@ -1,0 +1,14 @@
+{
+  "chunk_id": "482612a1::chunk_0013",
+  "source_id": "doe_osti_3031067",
+  "source_sha": "482612a1ac88091174c8a6c1552978cd",
+  "source_url": "https://www.osti.gov/servlets/purl/3031067",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "12 100.0% 27 Table 5. Summary of low-demand MOV failure counts for the SO failure mode over time by system. Valve Valve Percent of System 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 Total Count Percent Failures AFW 579 8.5% 1 — — — — — — — — — 1 20.0% CCW 757 11.1% — — — — — — — — — — 0 0.0% CRD 25 0.4% — — — — — — — — — — 0 0.0% CSR 351 5.1% — — — — — — — — — — 0 0.0% CVC 13 0.2% — — — — — — — — — — 0 0.0% HPCI 290 4.2% — — — — — — — 1 — — 1 20.0% HPCS 35 0.5% — — — — — — — — — — 0 0.0% HPSI 1106 16.2% — — — — — — — — — — 0 0.0% ISO 14 0.2% — — — — — — — — — — 0 0.0% LPCS 208 3.0% — — — — — — — — — — 0 0.0% RCIC 347 5.1% — — — — — — — — — 1 1 20.0% RCS 109 1.6% — — — — — — — — — — 0 0.0% RHR 1969 28.8% 2 — — — — — — — — — 2 40.0% SWN 762 11.1% — — — — — — — — — — 0 0.0% SWS 259 3.8% — — — — — — — — — — 0 0.0% VSS 14 0.2% — — — — — — — — — — 0 0.0% Total 6838 100.0% 3 0 0 0 0 0 0 1 0 1 5 100.0% Table 6. Summary of high-demand MOV failure counts for the FTOC failure mode over time by system. Valve Valve Percent of System Total Count Percent 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 Failures AFW 98 9.1% 2 — — 2 2 — — — — 1 7 15.9% CCW 120 11.1% — — — — — — 1 — — — 1 2.3% CSR 11 1.0% 1 — — — — — — — — — 1 2.3% HPCI 25 2.3% — — 1 — — — — — — — 1 2.3% HPCS 18 1.7% — — — — — — 1 — — 1 2 4.5% HPSI 74 6.9% — — — — — — — — — — 0 0.0% ISO 6 0.6% — — — — — — — — — — 0 0.0% LPCS 27 2.5% — — — — — — — — — — 0 0.0% RCIC 33 3.1% — — — 1 — — — — — — 1 2.3% RCS 5 0.5% — — — — — — — — — — 0 0.0% RHR 299 27.7% 3 — 3 1 2 3 — 1 — 2 15 34.1% SWN 257 23.8% 3 — 1 — 1 1 2 2 — 2 12 27.3% SWS 105",
+  "token_count": 512,
+  "text_sha": "51277dfb69591e1633953dda5b0feb72cb321986818f74ad39530fffb2ca5776",
+  "extracted_at": "2026-05-15T23:59:07.157232Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0024",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Hyperscale (34.5 GW) Neocloud (0.25 GW) Powered Shell (11.06 GW) Reseller (1 GW) Retail (0.98 GW) Wholesale (85.5 GW) Derived from data found on: S&P Global 451 Research (Dec. 31, 2025) 52 Current Projects Projects proposed for entry into service after December 31, 2025 Category Number of Projects Total Utility Power (GW) Cloud 1 0.04 Crypto Mining 31 1.83 Hyperscale 453 34.52 Neocloud 2 0.25 Powered Shell 126 11.07 Reseller 2 1.00 Retail 46 0.98 Wholesale 789 85.52 TOTAL* 1,450 135.21 *Total Utility Power requirement is unknown for 296 projects Derived from data found on: S&P Global 451 Research (Dec. 31, 2025) 53 Status of Proposed U.S. Data Centers 20 ) W 18 135.21 GW total G ( 16 e p y 14 T d 12 n a 10 r a e 8 Y e 6 n i l n 4 O d 2 e s o p g e l l e d e d l l e e l l e g e l l e e l e e l e l e l e e l e g e d l r l e o r P n i n i M l a c s r e l e h S d i a t e R l a s e l o u o l C l a c s r e u o l c o l e h S d i a t e R l a s e l o l a c s r e l e h S d i a t e R l a s e l o n i n i M l a c s r e l e h S d i a t e R l a s e l o l a c s r e l e h S d l a s e l o l a c s r e l e h S d l a s e l o l e h S d l a s e l o l e h S d l a s e l o l a s e l o l e h S d l a s e l o n i n i M l a c s r e u o l c o l e h S d e l l e s e i a t e R l a s e l o o t p y e r e h W p y e N e r e h W p y e r e h W o t p y e r e h W p y e r e h W p y e r e h W e r e h W e r e h W h W e r e h W o t p y e N e r e R h W p H w H w H w p H w H w H w w w w p H w y y y r o o",
+  "token_count": 512,
+  "text_sha": "ec09906222e54130ad30ab0a8eb509285eea84bb4bc7df35eb49d7ee130f20f6",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

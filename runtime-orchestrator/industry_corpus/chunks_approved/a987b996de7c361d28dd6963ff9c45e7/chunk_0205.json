@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0205",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": ") For purposes of Equation I-12 of this subpart, you must estimate fab-wide gas-specific heel factors for each container type for each gas used, according to the procedures in paragraphs (b)(1) through (b)(5) of this section. This paragraph (b) does not apply to fluorinated GHGs or N 2 O that your fab uses in quantities of less than 50 kg in one reporting year and for which you calculate emissions as equal to consumption under § 98.93(a)(1) , (a)(2) , or (b) , or for any intermittent low-use fluorinated GHG for which you calculate emissions according to § 98.93(i)(4)(i) . ( 1 ) Base your fab-wide gas-specific heel factors on the trigger point for change out of a container for each container size and type for each gas used. Fab-wide gas-specific heel factors must be expressed as the ratio of the trigger point for change out, in terms of mass, to the initial mass in the container, as determined by paragraphs (b)(2) and (3) of this section. ( 2 ) The trigger points for change out you use to calculate fab-wide gas-specific heel factors in paragraph (b)(1) of this section must be determined by monitoring the mass or the pressure of your containers. If you monitor the pressure, convert the pressure to mass using the ideal gas law, as displayed in Equation I-25 of this subpart, with the appropriate Z value selected based upon the properties of the gas. Where: p = Absolute pressure of the gas (Pa). V = Volume of the gas container (m 3 ). Z = Compressibility factor. n = Amount of substance of the gas (moles). R = Gas constant (8.314 Joule/Kelvin mole). T = Absolute temperature (K). ( 3 ) The initial mass you use to calculate a fab-wide gas-specific heel factor in paragraph (b)(1) of this section may be based on the weight of the gas provided to you in gas supplier documents; however, you remain responsible for the accuracy of these masses and weights under this subpart. ( 4 ) If a container is changed in an exceptional circumstance, as specified in paragraphs (b)(4)(i) and (ii) of this section, you must weigh that container or measure the pressure of that container with a pressure gauge, in place of using a heel factor to determine the residual weight of gas. When using mass-based trigger points for change out, you must determine if an exceptional circumstance has occurred based on the net weight of gas in the container, excluding the tare weight of the container. ( i ) For containers with a maximum storage capacity of less than 9.08 kg (20 lbs) of gas, an exceptional circumstance is a change out point that differs by more than 50 percent from the trigger point for change out used to calculate your fab-wide gas-specific heel factor for that gas and container type. ( ii ) For all other containers, an exceptional circumstance is a change out point that differs by more than 20 percent from the trigger point for change out used to calculate your",
+  "token_count": 509,
+  "text_sha": "fc334caf9b4a79da8e36f54e235be70c00108e081502358d50b9fd08eadec4ef",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

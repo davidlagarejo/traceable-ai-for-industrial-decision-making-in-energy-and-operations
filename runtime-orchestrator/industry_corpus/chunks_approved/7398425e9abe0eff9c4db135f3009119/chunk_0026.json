@@ -1,0 +1,14 @@
+{
+  "chunk_id": "7398425e::chunk_0026",
+  "source_id": "doe_osti_3012135",
+  "source_sha": "7398425e9abe0eff9c4db135f3009119",
+  "source_url": "https://www.osti.gov/servlets/purl/3012135",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "R =382.5ohm/sq extrapolated from TLM measurement. IV characteristics of the device sh with L =10µm and 25µm are shown in Fig.8 and Fig.11. V was around -16V as GD T extrapolated from transfer IV curve (Fig.9 and Fig.12). Low V measurement was br carried out in pinch-off and V up to 200V (Fig.10 and Fig.13). I was 5.07µA/mm at ds g V =-200V and V =-20V. The I /I ratio was greater than 105. Finally, an additional ds gs on off high V measurement was conducted on the MISHEMT with L =15µm. V of over br GD br 900V was achieved using florinert during the measurement. 1.0 L V g g = s 2 = u fr m o m ; L 0 g V d= to 1 0 - u 2 m 0V ; Step=-4V 1 1 1E-5 0.8 Ron=4.78 ohm.mm 0.1 0.1 )m )m )m m s /A d ( I 0 0 0 . . . 6 4 2 )m m s /A d ( I 1 1 1 1 0 E E E E .0 - - - - 1 3 4 5 6 D G V r a a d te i s n c = c u u 1 r r r 0 r e e V n n t t 0 1 1 1 1 . E E E E 0 - - - - 1 3 4 5 6 eta G tn /n e m i r a r / u r A D c ( 1E-6 Ig=5.07u V A g / D G m s r = a m a - te @ i 2 n 0 c c V V u u d r r r s r e = e n 2 n t 0 t 0V eta G tn /n e m i r a r / u r A D c ( 0.0 1E-7 1E-7 1E-7 0 2 4 6 8 -20 -15 -10 -5 0 0 50 100 150 200 Vds (V) Vgs (V) Vds (V) Fig.8 Ids-Vds characteristic for Fig.9 Transfer IV for L =2µm, Fig.10 V measurement up to G br L =2µm, L =10µm. L =10µm. 200V for L =2µm, L =10µm. G GD GD G GD )m m s /A d ( I 1 0 0 0 0 0 . . . . . . 0 8 6 4 2 0 )m m s /A d ( I 1 1 1 1 0 E E E E . 0 0 - - - - .1 1 1 3 4 5 6 Vds=10V 1 0 0 1 1 1 1 E E E E . . 1 0 e ta G ) t m n /n e m i r a r / r u A D c ( 1 1 E E - - 5 6 1 1 E E - - 1E-7 1E 1E-7 0 50 100 150 200 1 E- 0 2 4 6 8 -20 -15 -10 -5 0 Vds (V) Vds (V) Vgs (V) Fig.11 Ids-Vds characteristic Fig.12 Transfer IV",
+  "token_count": 512,
+  "text_sha": "e437b61bce3f07e758d1805af5512de75a8595c2cc3f396cbc7776b42cbf12dd",
+  "extracted_at": "2026-05-16T00:01:59.042007Z"
+}

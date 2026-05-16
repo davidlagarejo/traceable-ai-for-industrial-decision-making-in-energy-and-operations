@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0685",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "and all associated requirements for Tier 4 in subpart C of this part (General Stationary Fuel Combustion Sources). ( b ) For each soda ash manufacturing line that is not subject to the requirements in paragraph (a) of this section, calculate and report the process CO 2 emissions from the soda ash manufacturing line by using the procedure in either paragraphs (b)(1) , (b)(2) , or (b)(3) of this section; and the combustion CO 2 emissions using the procedure in paragraph (b)(4) of this section. ( 1 ) Calculate and report under this subpart the combined process and combustion CO 2 emissions by operating and maintaining a CEMS to measure CO 2 emissions according to the Tier 4 Calculation Methodology specified in § 98.33(a)(4) and all associated requirements for Tier 4 in subpart C of this part (General Stationary Fuel Combustion Sources). ( 2 ) Use either Equation CC-1 or Equation CC-2 of this section to calculate annual CO 2 process emissions from each manufacturing line that calcines trona to produce soda ash: Where: E k = Annual CO 2 process emissions from each manufacturing line, k (metric tons). (IC T ) n = Inorganic carbon content (percent by weight, expressed as a decimal fraction) in trona input, from the carbon analysis results for month n. This represents the ratio of trona to trona ore. (IC sa ) n = Inorganic carbon content (percent by weight, expressed as a decimal fraction) in soda ash output, from the carbon analysis results for month n. This represents the purity of the soda ash produced. (T t ) n = Mass of trona input in month n (tons). (T sa ) n = Mass of soda ash output in month n (tons). 2000/2205 = Conversion factor to convert tons to metric tons. 0.097/1 = Ratio of ton of CO 2 emitted for each ton of trona. 0.138/1 = Ratio of ton of CO 2 emitted for each ton of soda ash produced. ( 3 ) Site-specific emission factor method. Use Equations CC-3, CC-4, and CC-5 of this section to determine annual CO 2 process emissions from manufacturing lines that use the liquid alkaline feedstock process to produce soda ash. You must conduct an annual performance test and measure CO 2 emissions and flow rates at all process vents from the mine water stripper/evaporator for each manufacturing line and calculate CO 2 emissions as described in paragraphs (b)(3)(i) through (b)(3)(iv) of this section. ( i ) During the performance test, you must measure the process vent flow from each process vent during the test and calculate the average rate for the test period in metric tons per hour. ( ii ) Using the test data, you must calculate the hourly CO 2 emission rate using Equation CC-3 of this section: Where: ER CO2 = CO 2 mass emission rate (metric tons/hour). C CO2 = Hourly CO 2 concentration (percent CO 2 ) as determined by § 98.294(c) . 10000 = Parts per million per percent 2.59 × 10 −9 = Conversion factor (pounds-mole/dscf/ppm). 44 = Pounds",
+  "token_count": 512,
+  "text_sha": "a59c8a8b73a20cfbb4e1939eefcdd6d2da164fbb97cce8b4ba5ceab740fb528f",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "70873b6f::chunk_0064",
+  "source_id": "doe_osti_2561324",
+  "source_sha": "70873b6f3086a5ef40235f34e108b6a8",
+  "source_url": "https://www.osti.gov/servlets/purl/2561324",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "$5.00 $6,227 $2.2 of energy Total (C) $75,217 $27.0 Total Operating and Maintenance Cost $115,049 $41.2 (A+B+C) 9.5 Life Cycle Analysis A life cycle analysis of the project has been done, considering cash flow throughout the life of the assets. Life cycle analysis and a summary of the techno-economic analysis is presented in Table 31. Table 31: Summary of Techno-Economic Analysis Particulars Units Amount Annual CO Capture mtpa 2.8 2 Total As Spent Capital Cost Mill US$ 776 Total operating and maintenance Cost excl. T&S cost Mill US$ 115 Life cycle cost of capture (LCoC), $/Tonne of CO 2 Capital Cost $/Tonne 20.5 Fixed Cost $/Tonne 13.8 Variable Cost $/Tonne 2.9 Fuel Cost $/Tonne 27.0 Attachment-7: Initial Engineering Design and Cost Estimate 29 DE-FE0031937 / 0008 Particulars Units Amount Total excl. T&S 64.3 Cost of CO T&S $/Tonne 10.0 2 Total Cost incl. T&S US$/Tonne 74.3 9.6 Sensitivity Analysis Total life cycle cost is primarily sensitive to fuel cost and capital cost. So, sensitivity analysis has been done of factors affecting capital, annual amortization rate, and fuel cost. Life cycle cost is plotted against each of the parameters and shown in Figure 6 to Figure 11. Cost is most sensitive to fuel cost, capital cost, return on equity, the interest cost, leverage ratio, and tax rate. Figure 6: Sensitivity of LCoC to Fuel Cost Figure 7: Sensitivity of LCoC to Capex Figure 8: Sensitivity of LCoC to Leverage Ratio (Debt Figure 9: Sensitivity of LCoC to Tax Rate as a percentage of Capex) Figure 10: Sensitivity of LCoC to Interest Figure 11: Sensitivity of LCoC to Return on Equity Attachment-7: Initial Engineering Design and Cost Estimate 30",
+  "token_count": 277,
+  "text_sha": "385115bc0617e3e1ab804ada971cbbcbf330a553f1746e5feda5057947aafad2",
+  "extracted_at": "2026-05-15T23:56:26.923683Z"
+}

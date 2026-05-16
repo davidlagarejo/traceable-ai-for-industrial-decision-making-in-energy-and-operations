@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ae0f94a1::chunk_0053",
+  "source_id": "doe_osti_3025690",
+  "source_sha": "ae0f94a12972e14f1bcec0537e9b923a",
+  "source_url": "https://www.osti.gov/servlets/purl/3025690",
+  "asset_families": [
+    "_shared",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "from Ten Early-Stage Deployments. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5400-76551. docs.nlr.gov/docs/fy20osti/76551.pdf. Young, Stanley, and J. Sam Lott. 2022. The Automated Mobility District Implementation Catalog, 2nd Edition: Safe and Efficient Automated Vehicle Fleet Operations for Public Mobility. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5400-83276. docs.nlr.gov/docs/fy22osti/83276.pdf. Young, Stanley, Joseph Fish, and Faizan Mir. 2026. Data for Autonomous Transportation Awareness: Data Exchange Use Cases, Standards, and Barriers. Los Angeles, CA: Center of Excellence on New Mobility and Automated Vehicles. www.mobilitycoe.org/project/data-for- autonomous-transportation-awareness-data/. 59 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 96,
+  "text_sha": "c92dd29ac4bfab3df91d39c7136e6b28b561f367b7a411a1eda3e2237db22a66",
+  "extracted_at": "2026-05-16T00:13:06.367189Z"
+}

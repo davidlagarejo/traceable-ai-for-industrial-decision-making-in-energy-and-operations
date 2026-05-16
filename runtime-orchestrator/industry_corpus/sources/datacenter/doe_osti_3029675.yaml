@@ -1,0 +1,11 @@
+source_id: doe_osti_3029675
+title: "Advanced Computing Annual Report 2025"
+url: https://www.osti.gov/servlets/purl/3029675
+license: public_domain
+publisher: doe_osti
+version: "2026-04-07"
+added_at: "2026-05-16T00:00:17.374932Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 97 MATHEMATICS AND COMPUTING, advanced computing"
+asset_families:
+  - datacenter

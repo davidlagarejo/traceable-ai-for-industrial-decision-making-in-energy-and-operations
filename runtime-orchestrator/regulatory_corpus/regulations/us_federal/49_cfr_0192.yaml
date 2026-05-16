@@ -1,0 +1,11 @@
+source_id: us_federal_49_cfr_0192
+title: "PHMSA — Natural Gas Pipeline Safety"
+url: https://www.ecfr.gov/current/title-49/part-192
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:22.327860Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 1406 §-marked sections. 683,207 chars."
+asset_families:
+  - infrastructure_node

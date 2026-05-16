@@ -1,0 +1,14 @@
+{
+  "chunk_id": "6eb0cd49::chunk_0057",
+  "source_id": "doe_osti_3020102",
+  "source_sha": "6eb0cd4950a8ba64c53ff000b9f435b7",
+  "source_url": "https://www.osti.gov/servlets/purl/3020102",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "We also studied RD production from woody biomass with CFP and FT technologies. The MFSPs for these six RD pathways range from $3.47 to $4.65 per DGE. Analyzing the MFSP breakdowns for these RD pathways reveals that each technology has distinct cost drivers. In the HEFA pathway, C-1",
+  "token_count": 48,
+  "text_sha": "06ce5dde3d7d92157d12bb47ec9d21ed4680b837c6c0b93b2c203ebd949dec7b",
+  "extracted_at": "2026-05-16T00:12:57.485296Z"
+}

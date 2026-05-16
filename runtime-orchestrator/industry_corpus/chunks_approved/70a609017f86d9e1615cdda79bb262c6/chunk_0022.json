@@ -1,0 +1,14 @@
+{
+  "chunk_id": "70a60901::chunk_0022",
+  "source_id": "doe_osti_2583521",
+  "source_sha": "70a609017f86d9e1615cdda79bb262c6",
+  "source_url": "https://www.osti.gov/servlets/purl/2583521",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "pp. 41–49, 2017. [6] J. Wilkes,Yet more Google compute cluster trace data, Google research blog, Posted at https://ai.googleblog. com/2020/04/yet-more-google-compute-cluster-trace.html., Mountain View, CA, USA, Apr. 2020. [7] V. Sakalkar, V. Kontorinis, D. Landhuis, S. Li, D. De Ronde, T. Blooming, A. Ramesh, J. Kennedy, C. Mal- one, J. Clidaras,et al., “Data center power oversubscription with a medium voltage power plane and priority- aware capping,” inProceedings of the Twenty-Fifth International Conference on Architectural Support for Programming Languages and Operating Systems, 2020, pp. 497–511. [8] Q. Wu, Q. Deng, L. Ganesh, C.-H. Hsu, Y. Jin, S. Kumar, B. Li, J. Meza, and Y. J. Song, “Dynamo: Face- book’s data center-wide power management system,”ACM SIGARCH Computer Architecture News, vol. 44, no. 3, pp. 469–480, 2016. [9] S. Chakraborty, M. T. Rana, and M. V. Salapaka, “Active synchronization of islanded microgrid using droop- controlled grid-forming inverters,” inIECON 2022–48th Annual Conference of the IEEE Industrial Electron- ics Society, IEEE, 2022, pp. 1–6. [10] C. McParland, “Openadr open source toolkit: Developing open source software for the smart grid,” in2011 IEEE power and energy society general meeting, IEEE, 2011, pp. 1–7. 23 This report is available at no cost from the National Renewable Energy Laboratory (NREL) at www.nrel.gov/publications",
+  "token_count": 200,
+  "text_sha": "d2e74cb644196373d221caaed689057aba110c62ea5dca95ce199c0c83f766ef",
+  "extracted_at": "2026-05-16T00:02:16.046005Z"
+}

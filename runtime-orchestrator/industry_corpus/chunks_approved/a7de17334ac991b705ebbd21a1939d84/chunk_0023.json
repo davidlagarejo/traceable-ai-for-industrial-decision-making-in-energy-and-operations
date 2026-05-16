@@ -1,0 +1,14 @@
+{
+  "chunk_id": "a7de1733::chunk_0023",
+  "source_id": "doe_osti_2556933",
+  "source_sha": "a7de17334ac991b705ebbd21a1939d84",
+  "source_url": "https://www.osti.gov/servlets/purl/2556933",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "Tanahashi, M. Lin, C. Lin. “An Overview of Gabrat Edge Disruption and Its New Extensions for Unbiased Quantification of Disruptive Camouflaging Patterns Using Randomization Technique.” bioRxiv, Cold Spring Harbor Laboratory, www.biorxiv.org/content/10.1101/2024.02.27.582325v1.full. [accessed 23 Mar. 2025] Lawrence Livermore National Laboratory 30 LLNL-TR-2004679",
+  "token_count": 41,
+  "text_sha": "e94c6dd4ee01e2806427058a490eaa1aba0d017a4913fc302d55da1ea1bee970",
+  "extracted_at": "2026-05-16T00:00:17.372265Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ce9c5e25::chunk_0084",
+  "source_id": "doe_osti_3363590",
+  "source_sha": "ce9c5e25178c0c47ab9d1b2b0eb09ca3",
+  "source_url": "https://www.osti.gov/servlets/purl/3363590",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Demand Global Unspecified 20 MMT Likely a net-zero scenario but not specified. Only Collins (2022) applies if hydrogen-powered aviation is available by 2035. Global Aspirational 43 MMT Highly ambitious scenario. By 2042, 100% of Air Transport Action Group new aircraft sold with between 101 and 210 (2021) seats are hydrogen-powered Global Net zero 13–17 MMT Uses aviation-specific demand curves for low- Oesingmann, Grimme, and pollution fuels to estimate cryogenic H2 demand Scheelhaase (2024) Global Net zero ~8 MMT Assuming 120 MJ/kg H2 IEA (2023) Global Net zero 44 MMT Assuming 120 MJ/kg H2 BNEF (2025) Global Economic 0 No new policy. Technology selection based on BNEF (2025) transition cost-competitiveness. Global/regional Baseline 8.3 MMT (global) Assuming 120 MJ/kg H2. Represents DNV’s DNV (2024) 3.2 MMT (North America) best-guess forecast with an estimated 2.2°C warming by 2100. United States Net zero 9.5 MMT Assuming 120 MJ/kg H2 BNEF (2025) United States Economic 0 No new policy. Technology selection based on BNEF (2025) transition cost-competitiveness. California Measured >0.073 MMT in 2045 (>200 Measured rollout scenario where eight in-state Chen et al. (2025) rollout MTPD) airports support H2-powered turboprops by 2035. Rotterdam The Low ~0.003 MMT (9.1-MTPD 40% turboprops, 20% turbofans replaced with Van Dijk et al. (2024) Hague Airport demand average) H2-powered aircraft Rotterdam The Mid demand ~0.008 MMT (21.5-MTPD 60% turboprops, 50% turbofans replaced with Van Dijk et al. (2024) Hague Airport average) H2-powered aircraft Rotterdam The High ~0.014 MMT (38.2 MTPD 90% turboprops, 90% turbofans replaced with Van Dijk et al. (2024) Hague Airport demand average) H2-powered aircraft Groningen Vision ~0.017 MMT (45.9 MTPD ~75% airline passengers take LH2-powered flight Stolwijk and Rooze (2025) Airport Eelde average) by 2050 87 This report is available at no cost from the National Laboratory of the Rockies at www.nlr.gov/publications.",
+  "token_count": 295,
+  "text_sha": "86032263f1ae78fc69ca7ba568be6573c56be15f7354cb317cf6c03d097c99fe",
+  "extracted_at": "2026-05-15T23:54:52.157178Z"
+}

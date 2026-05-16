@@ -1,0 +1,11 @@
+source_id: us_federal_40_cfr_0122
+title: "EPA NPDES Permitting"
+url: https://www.ecfr.gov/current/title-40/part-122
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:07.877470Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 495 §-marked sections. 533,011 chars."
+asset_families:
+  - manufacturing_facility

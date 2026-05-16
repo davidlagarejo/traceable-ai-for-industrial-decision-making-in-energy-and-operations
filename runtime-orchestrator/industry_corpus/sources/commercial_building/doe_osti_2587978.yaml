@@ -1,0 +1,11 @@
+source_id: doe_osti_2587978
+title: "Optimizing Facility Operations by Applying Machine Learning to the Army Reserve Enterprise Building Control System (Final Report)"
+url: https://www.osti.gov/servlets/purl/2587978
+license: public_domain
+publisher: doe_osti
+version: "2025-08-29"
+added_at: "2026-05-16T00:04:58.128333Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, 42 ENGINEERING, 97 MATHEMATICS AND COMPUTING, Artifical Intelligence, DoD Energy"
+asset_families:
+  - commercial_building

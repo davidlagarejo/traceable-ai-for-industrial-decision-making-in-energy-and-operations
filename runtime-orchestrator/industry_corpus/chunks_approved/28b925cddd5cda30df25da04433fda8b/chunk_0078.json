@@ -1,0 +1,14 @@
+{
+  "chunk_id": "28b925cd::chunk_0078",
+  "source_id": "doe_osti_2588600",
+  "source_sha": "28b925cddd5cda30df25da04433fda8b",
+  "source_url": "https://www.osti.gov/servlets/purl/2588600",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "the foundation is the static head of the salt inventory. The principal insulating material under the floor of the tank is either an expanded clay (Utelite) or an expanded glass (FoamGlas). Design information for both expanded clay and Utelite show allowable compressive stresses that are higher than the anticipated foundation loads, both at the perimeter of the tank and at the center of the tank. As a result, a number of commercial projects have adopted expanded clay as the sole foundation material due to its low cost, low thermal conductivity, and acceptable strength. However, in all of these projects, the expanded clay has not performed as expected. In particular, the particles of clay are prone to shifting and movement as the tank undergoes cyclic expansion and contraction cycles. The movement of the clay is due to two effects: • At the perimeter of the tank is an annular plate, which is thicker than the floor. The plate 1) transmits the concentrated weight of the roof, the wall, and the tank insulation down into the foundation, and 2) ensure that the displacements in bending are at acceptable levels. The annular plate also carries some of the static hydraulic loads from the salt inventory. However, the compressive loads just inside the perimeter of the plate must be matched by tensile loads just outside the perimeter of the plate. Expanded clay has only a limited capacity to transmit tensile loads. Further, periodic fill and drain cycles in the tank establish periodic tensile loads in the expanded clay. These two conditions cause the clay to move out, up, and away from the perimeter of the foundation. • Daily thermal cycles of the tank cause the annular plate to push the clay out from the perimeter as the tank expands, but the clay does not return to its original position as the tank contracts. As a result, the outer edge of the annular plate loses its vertical support. The plate has only a limited capability for accommodating bending loads, and the concentrated vertical load from Page 99 of 257",
+  "token_count": 344,
+  "text_sha": "8a00dd31abc0eb5ed733ed332363b44049843d332df1dc7f7abe3ec8d1c04645",
+  "extracted_at": "2026-05-15T23:57:16.607658Z"
+}

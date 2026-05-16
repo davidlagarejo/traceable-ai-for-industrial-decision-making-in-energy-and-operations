@@ -1,0 +1,14 @@
+{
+  "chunk_id": "dfe94618::chunk_0013",
+  "source_id": "doe_osti_2583520",
+  "source_sha": "dfe9461894e3173518ee628fa72db592",
+  "source_url": "https://www.osti.gov/servlets/purl/2583520",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "19-23 1996, pp. 313-327 2. Pratt, J., Terlip, D., Ainscough, C., Kurtz, J., Elogwainy, A., “H2FIRST Reference Station Design Task: Project Deliverable 2-2” Technical Report, April 2015 3. Sprik, S., Kurtz, J., Saur, G., Peters, M., “Performance of Existing Hydrogen Stations”, 2017 Fuel Cell Seminar and Energy Exposition, November 2017, presentation 4. Hydrogen Delivery Technical Team Roadmap 2017 https://www.energy.gov/eere/vehicles/articles/us-drive-hydrogen-delivery-technical-team- roadmap. 5. Post, Matthew, Daniel Leighton, Gabriela Bran-Anleu, Ethan S. Hecht, Steven Wiryadinata, Brian D. Ehrhart, and Tom Conboy. 2023. Turboexpander for Direct Cooling in Hydrogen Vehicle Fueling Infrastructure. Golden, CO: National Renewable Energy Laboratory. NREL/TP-5700-86669. https://www.nrel.gov/docs/fy24osti/86669.pdf. 6. Zhao, H., Burke, A., “Sustainable Hydrogen Fueling/DC Fast Charging Systems at California Highway Rest Stop Areas”, Institute of Transportation Studies, University of California, Davis, December 2016, Poster 7. Kurtz, J., Ma, Z., Hammond, S., Wipke, K., Cader, T., “Renewable Hydrogen for Carbon-Free Data Center”, 2017 Fuel Cell Seminar and Energy Exposition, November 2017, presentation 8. Zhang, Chen, Andrew Kotz, Kenneth Kelly, and Luke Rippelmeyer. 2021. “Development of Heavy-Duty Vehicle Representative Driving Cycles via Decision Tree Regression.” Transportation Research Part D: Transport and Environment 95 (May): 102843. https://doi.org/10.1016/j.trd.2021.102843. 9. National Renewable Energy Laboratory. n.d. “Drive Cycle Analysis Tool — DriveCAT | Transportation and Mobility Research | NREL.” Accessed May 3, 2022. https://www.nrel.gov/transportation/drive-cycle-tool/. Subject Inventions Listing: None. ROI #: None. 19 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 227,
+  "text_sha": "6d0b87ce43b4ace926c4ef8ee3b37725fb1cca19332bdd85426a8625df5dbae4",
+  "extracted_at": "2026-05-15T23:59:31.480368Z"
+}

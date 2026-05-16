@@ -1,0 +1,2778 @@
+{
+  "ran_at": "2026-05-16T00:16:06.961129Z",
+  "asset_family": "manufacturing_facility",
+  "regulations": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0060",
+      "mention_count_in_corpus": 60,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 60 -- Standards of Performance for New Stationary Sources { \"imports\": { \"applicat",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-60 Citation 40 CFR Part 60 Agency Environmental Protection Agency Part 60 Authority: 42 U.S.C. 7401 et seq",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 60 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 40 127",
+      "title": "Cfr 40 127",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 52,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ding, in all cases, subpart D to part 3) (Cross-Media Electronic Reporting) and 40 CFR part 127 (NPDES Electronic Reporting Requirements) are met for that submission. (Clean W",
+        "nd 40 CFR part 3 (including, in all cases, subpart D to part 3), § 122.22 , and 40 CFR part 127 . 40 CFR part 127 is not intended to undo existing requirements for electronic",
+        "including, in all cases, subpart D to part 3), § 122.22 , and 40 CFR part 127 . 40 CFR part 127 is not intended to undo existing requirements for electronic reporting. Prior t"
+      ]
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 40,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "rt VV Geologic Sequestration of Carbon Dioxide With Enhanced Oil Recovery Using ISO 27916 98.480 – 98.489 § 98.480 Definition of the source category. § 98.481 Reporting",
+        "o, Ontario Canada M9W 183; (800) 463-6727; https://shop.csa.ca . ( 1 ) CSA/ANSI ISO 27916:19, Carbon dioxide capture, transportation and geological storage—Carbon dioxid",
+        "ears: Geologic sequestration of carbon dioxide with enhanced oil recovery using ISO 27916 ( subpart VV of this part ). Coke calciners ( subpart WW of this part ). Calciu"
+      ]
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0063",
+      "mention_count_in_corpus": 32,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0063",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 63 -- National Emission Standards for Hazardous Air Pollutants for Source Categori",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-63 Citation 40 CFR Part 63 Agency Environmental Protection Agency Part 63 Authority: 42 U.S.C. 7401 et seq",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 63 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 25,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851",
+        "us_federal_29_cfr_1910",
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0063",
+        "us_federal_40_cfr_0070",
+        "us_federal_40_cfr_0098",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "tions or phrases (eg: suggestions#fillExample\" class=\"example badge badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 sugges",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\"",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\""
+      ]
+    },
+    {
+      "citation": "cfr 40 3",
+      "title": "Cfr 40 3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 22,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "es that choose to receive electronic documents must satisfy the requirements of 40 CFR Part 3 —(Electronic reporting) in their program. [ 57 FR 32295 , July 21, 1992, as ame",
+        "ents of this section, and shall ensure that all of the relevant requirements of 40 CFR part 3 (including, in all cases, subpart D to part 3) (Cross-Media Electronic Reportin",
+        "recipient, as defined in 40 CFR 127.2(b) , in compliance with this section and 40 CFR part 3 (including, in all cases, subpart D to part 3), § 122.22 , and 40 CFR part 127"
+      ]
+    },
+    {
+      "citation": "cfr 40 136",
+      "title": "Cfr 40 136",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 22,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "l dissolved (filterable) solids as determined by use of the method specified in 40 CFR part 136 . Toxic pollutant means any pollutant listed as toxic under section 307(a)(1) o",
+        "ted in accordance with sufficiently sensitive analytical methods approved under 40 CFR part 136 or required under 40 CFR chapter I , subchapter N or O. ( i ) For the purposes",
+        "ted in accordance with sufficiently sensitive analytical methods approved under 40 CFR part 136 or required under 40 CFR chapter I , subchapter N or O. ( i ) For the purposes"
+      ]
+    },
+    {
+      "citation": "cfr 40 98",
+      "title": "Cfr 40 98",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0098",
+      "mention_count_in_corpus": 16,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 98 -- Mandatory Greenhouse Gas Reporting { \"imports\": { \"application\": \"/assets/ap",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-98 Citation 40 CFR Part 98 Agency Environmental Protection Agency Part 98 Authority: 42 U.S.C. 7401-7671q",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 98 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 40 127.2(b)",
+      "title": "Cfr 40 127.2(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 14,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ly by the owner or operator to the Director or initial recipient, as defined in 40 CFR 127.2(b) , in compliance with this section and 40 CFR part 3 (including, in all cases, s",
+        "ly by the owner or operator to the Director or initial recipient, as defined in 40 CFR 127.2(b) , in compliance with this section and 40 CFR part 3 (including, in all cases, s",
+        "s treating domestic sewage) to the Director or initial recipient, as defined in 40 CFR 127.2(b) , in compliance with this section and 40 CFR part 3 (including, in all cases, s"
+      ]
+    },
+    {
+      "citation": "cfr 40 127.24(e)",
+      "title": "Cfr 40 127.24(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "alysis. ( C ) As of December 21, 2025 or an EPA-approved alternative date ( see 40 CFR 127.24(e) or (f) ), all certifications submitted in compliance with paragraphs (b)(15)(i)",
+        "ry five years. As of December 21, 2025 or an EPA-approved alternative date (see 40 CFR 127.24(e) or (f) ), all certifications submitted in compliance with this section must be",
+        "and 122.26 . As of December 21, 2025 or an EPA-approved alternative date ( see 40 CFR 127.24(e) or (f) ), all notices of intent submitted in compliance with this section must"
+      ]
+    },
+    {
+      "citation": "cfr 10 851",
+      "title": "Cfr 10 851",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_10_cfr_0851",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "eCFR :: 10 CFR Part 851 -- Worker Safety and Health Program { \"imports\": { \"application\": \"/assets/appl",
+        "d Content - Details URL https://www.ecfr.gov/current/title-10/part-851 Citation 10 CFR Part 851 Agency Department of Energy Part 851 Authority: 42 U.S.C. 2201(i)(3) , (p); 42",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 10 CFR Part 851 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 40 75",
+      "title": "Cfr 40 75",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "quality assurance programs under appendix F to 40 CFR part 60 or appendix B to 40 CFR part 75, and other documents) provided that the elements required by paragraph (g)(5)(i",
+        "e Administrator any other emission report that is subject to any requirement in 40 CFR part 75 , the same individual shall be the designated representative responsible for ce",
+        "Electricity generation units that report CO 2 mass emissions year round through 40 CFR part 75 (subpart D). Adipic acid production ( subpart E of this part ). Aluminum produc"
+      ]
+    },
+    {
+      "citation": "cfr 30 550.302",
+      "title": "Cfr 30 550.302",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "es as identified by Bureau of Ocean Energy Management (BOEM) in compliance with 30 CFR 550.302 through 304 . ( 2 ) Other large release events. ( c ) For an onshore petroleum",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi"
+      ]
+    },
+    {
+      "citation": "cfr 40 503",
+      "title": "Cfr 40 503",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 8,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "gnate any person subject to the standards for sewage sludge use and disposal in 40 CFR part 503 as a “treatment works treating domestic sewage,” where he or she finds that the",
+        "such designation is necessary to ensure that such person is in compliance with 40 CFR part 503 . TWTDS means “treatment works treating domestic sewage.” Upset is defined at §",
+        "st five years from the date the application is signed (or longer as required by 40 CFR part 503 ), applicants shall keep records of all data used to complete permit applicatio"
+      ]
+    },
+    {
+      "citation": "cfr 49 172.101",
+      "title": "Cfr 49 172.101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851",
+        "us_federal_29_cfr_1910",
+        "us_federal_40_cfr_0060",
+        "us_federal_40_cfr_0063",
+        "us_federal_40_cfr_0070",
+        "us_federal_40_cfr_0098",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp"
+      ]
+    },
+    {
+      "citation": "cfr 40 70",
+      "title": "Cfr 40 70",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0070",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 70 -- State Operating Permit Programs { \"imports\": { \"application\": \"/assets/appli",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-70 Citation 40 CFR Part 70 Agency Environmental Protection Agency Part 70 Authority: 42 U.S.C. 7401 , et s",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 70 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 40 61",
+      "title": "Cfr 40 61",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0063",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ements do? § 63.1092 What are the major differences between the requirements of 40 CFR part 61, subpart FF, and the waste requirements for ethylene production sources? Applic",
+        "ements do? § 63.1092 What are the major differences between the requirements of 40 CFR part 61, subpart FF, and the waste requirements for ethylene production sources? Applic",
+        "rt 63 Hazardous Air Pollutants Table 2 to Subpart XX of Part 63 Requirements of 40 CFR Part 61, Subpart FF, Not Included in the Requirements for This Subpart and Alternate Re"
+      ]
+    },
+    {
+      "citation": "cfr 40 125",
+      "title": "Cfr 40 125",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "iance means any mechanism or provision under section 301 or 316 of CWA or under 40 CFR part 125 , or in the applicable “effluent limitations guidelines” which allows modificat",
+        "public comment period under § 124.10 . A copy of the request as required under 40 CFR part 125, subpart H , shall be sent simultaneously to the appropriate State or interstat",
+        "usly to the appropriate State or interstate certifying agency as required under 40 CFR part 125 . (See § 124.65 for special procedures for section 316(a) thermal variances.) ("
+      ]
+    },
+    {
+      "citation": "cfr 40 412",
+      "title": "Cfr 40 412",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "the requirements specified in § 122.42(e) , including, for all CAFOs subject to 40 CFR part 412, subpart C or subpart D, the requirements of 40 CFR 412.4(c) , as applicable. (",
+        "and applicable effluent limitations and standards, including those specified in 40 CFR part 412 . When additional information is necessary to complete the notice of intent or",
+        "and applicable effluent limitations and standards, including those specified in 40 CFR part 412 . The nutrient management plan must, to the extent applicable: ( i ) Ensure ade"
+      ]
+    },
+    {
+      "citation": "cfr 40 403",
+      "title": "Cfr 40 403",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "of 1.0 mgd or more, or required to have an approved pretreatment program under 40 CFR part 403 . Not included are farm lands, domestic gardens or lands used for sludge manage",
+        "into the POTW subject to Pretreatment Standards under section 307(b) of CWA and 40 CFR part 403 . ( 2 ) ( i ) Submit a local program when required by and in accordance with 40",
+        "03 . ( 2 ) ( i ) Submit a local program when required by and in accordance with 40 CFR part 403 to assure compliance with pretreatment standards to the extent applicable under"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_29_cfr_1910",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851",
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "he ACGIH® TLVs® are lower (more protective) than permissible exposure limits in 29 CFR part 1910 for general industry, 29 CFR part 1915 for shipyards, and/or 29 CFR part 1926 f",
+        "eCFR :: 29 CFR Part 1910 -- Occupational Safety and Health Standards { \"imports\": { \"application\": \"/ass",
+        "Content - Details URL https://www.ecfr.gov/current/title-29/part-1910 Citation 29 CFR Part 1910 Agency Occupational Safety and Health Administration, Department of Labor Part"
+      ]
+    },
+    {
+      "citation": "cfr 40 122",
+      "title": "Cfr 40 122",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0122",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 122 -- EPA Administered Permit Programs: the National Pollutant Discharge Eliminati",
+        "d Content - Details URL https://www.ecfr.gov/current/title-40/part-122 Citation 40 CFR Part 122 Agency Environmental Protection Agency Part 122 Authority: The Clean Water Act,",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 122 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.40",
+      "title": "Cfr 40 80.40",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.27",
+      "title": "Cfr 40 80.27",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional blendst"
+      ]
+    },
+    {
+      "citation": "b31",
+      "title": "B31",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013369",
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ed July 1, 2015, IBR approved for appendix A, section 4, Pressure Safety. ( 2 ) ASME B31 codes for pressure piping as follows: ( i ) B31.1-2016, Power Piping, ASME Code",
+        "ual for Determining the Remaining Strength of Corroded Pipelines, Supplement to ASME B31 Code for Pressure Piping, issued October 24, 2012; IBR approved for appendix A,",
+        "ear Components (incorporated by reference, see § 851.27 ). ( 2 ) The applicable ASME B31 code for pressure piping as indicated in this paragraph; and or as indicated in"
+      ]
+    },
+    {
+      "citation": "200",
+      "title": "200",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3024717"
+      ],
+      "sample_snippets": [
+        "e 9. Average annual per dwelling unit percentage site energy savings by climate ASHRAE 2004 climate zone for applicable dwelling units only ..............................",
+        "e 9. Average annual per dwelling unit percentage site energy savings by climate ASHRAE 2004 climate zone for applicable dwelling units only In",
+        "e 9. Average annual per dwelling unit percentage site energy savings by climate ASHRAE 2004 climate zone for applicable dwelling units only In general, climate zones 4–7"
+      ]
+    },
+    {
+      "citation": "cfr 40 136.3",
+      "title": "Cfr 40 136.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "Grab samples that are not required to be analyzed immediately (see Table II at 40 CFR 136.3 (e) ) may be composited in the laboratory, provided that container, preservatio",
+        "container, preservation, and holding time requirements are met (see Table II at 40 CFR 136.3 (e) ) and that sample integrity is not compromised by compositing. ( ii ) Storm",
+        "er treated anaerobically using analytical methods for COD or BOD 5 specified in 40 CFR 136.3 Table 1B. For the purpose of determining concentrations of wastewater influent"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.9(r)",
+      "title": "Cfr 40 503.9(R)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ludge. If the applicant is a “person who prepares” sewage sludge, as defined at 40 CFR 503.9(r) , the applicant must",
+        "ludge. If the applicant is a “person who prepares” sewage sludge, as defined at 40 CFR 503.9(r) , the applicant must provide the following information: ( i ) If the applicant'",
+        "pplicant's facility is provided to another “person who prepares,” as defined at 40 CFR 503.9(r) , and the sewage sludge is not subject to paragraph (q)(8)(iv) of this section,"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.33(b)",
+      "title": "Cfr 40 503.33(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "sewage sludge; ( B ) Whether any of the vector attraction reduction options of 40 CFR 503.33(b)(1) through (b)(8) are met, and a description of any treatment processes used to",
+        "vegetation; ( H ) Whether either of the vector attraction reduction options of 40 CFR 503.33(b)(9) or (b)(10) is met at the site, and a description of any procedures employed",
+        "vegetation; ( H ) Whether either of the vector attraction reduction options of 40 CFR 503.33(b)(9) or (b)(10) is met at the site, and a description of any procedures employed"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(c)",
+      "title": "Cfr 40 125.92(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "andards for entrainment using a closed-cycle recirculating system as defined at 40 CFR 125.92(c) , the Director may reduce or waive some or all of the information required unde",
+        "andards for entrainment using a closed-cycle recirculating system as defined at 40 CFR 125.92(c) , the Director may reduce or waive some or all of the information required unde",
+        "f the technical feasibility of closed-cycle recirculating systems as defined at 40 CFR 125.92(c) , fine"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.94(e)",
+      "title": "Cfr 40 125.94(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "is section. Requests for and approvals of alternative requirements sought under 40 CFR 125.94(e)(2) or 125.98(b)(7) must be submitted with the permit application. ( E ) New uni",
+        "is section. Requests for and approvals of alternative requirements sought under 40 CFR 125.94(e)(2) or 125.98(b)(7) must be submitted with the permit application. ( E ) New uni",
+        "ermit application for the new unit. Requests for alternative requirements under 40 CFR 125.94(e)(2) or 125.98(b)(7) must be submitted with the permit application. If the total"
+      ]
+    },
+    {
+      "citation": "cfr 29 1911",
+      "title": "Cfr 29 1911",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "commercial_building",
+        "manufacturing_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "us_federal_29_cfr_1910"
+      ],
+      "sample_snippets": [
+        "), 1-2012 ( 77 FR 3912 ), 08-2020 ( 85 FR 58393 ), or 07-2025 ( 90 FR 27878 ); 29 CFR part 1911 ; and 5 U.S.C. 553 , as applicable. Source: 39 FR 23502 , June 27, 1974, unless",
+        "), 1-2012 ( 77 FR 3912 ), 08-2020 ( 85 FR 58393 ), or 07-2025 ( 90 FR 27878 ); 29 CFR part 1911 ; and 5 U.S.C. 553 , as applicable. Source: 39 FR 23502 , June 27, 1974, unless",
+        "0.1000 , Tables Z-1, Z-2 and Z-3 also issued under 5 U.S.C. 553 , but not under 29 CFR part 1911 except for the arsenic (organic compounds), benzene, cotton dust, and chromium"
+      ]
+    },
+    {
+      "citation": "10360",
+      "title": "10360",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3021565"
+      ],
+      "sample_snippets": [
+        "[μm] = 0.4 and a scanning probing error MPETHP [μm] = 1.2 / 59 [s] according to ISO 10360-2 and ISO 10360-4 respectively [18]. This study also considered the effects of",
+        "scanning probing error MPETHP [μm] = 1.2 / 59 [s] according to ISO 10360-2 and ISO 10360-4 respectively [18]. This study also considered the effects of various probe op",
+        "a scanning probing error MPETHP [μm] = 1.2 / 59 [s] according to ISO 10360-2 and ISO 10360-4 respectively [18]. This study also considered the effects of"
+      ]
+    },
+    {
+      "citation": "cfr 1 51",
+      "title": "Cfr 1 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851",
+        "us_federal_40_cfr_0098",
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "of the Director of the Federal Register in accordance with 5 U.S.C. 552(a) and 1 CFR part 51 . To enforce any edition other than that specified in this section, the U.S. De",
+        "approves this incorporation by reference in accordance with 5 U.S.C. 552(a) and 1 CFR part 51 . Copies may be obtained at EPA's Water Docket, 1200 Pennsylvania Avenue NW, Wa",
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . To enforce any edition other than that specified in this section, the EPA mus"
+      ]
+    },
+    {
+      "citation": "cfr 10 1003",
+      "title": "Cfr 10 1003",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ffice of Hearings and Appeals for review of the final notice in accordance with 10 CFR part 1003 . ( c ) If a contractor fails to submit a petition for review to the Office of",
+        "ffice of Hearings and Appeals for review of the final notice in accordance with 10 CFR part 1003 , within 30 calendar days from receipt of the final notice. ( b ) In order to e",
+        "ffice of Hearings and Appeals for review of the final notice in accordance with 10 CFR part 1003 , within 30 calendar days from receipt of the final notice. An administrative a"
+      ]
+    },
+    {
+      "citation": "neshap",
+      "title": "Neshap",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0063"
+      ],
+      "sample_snippets": [
+        "63 Requirements for Reports Table 44 to Subpart UUU of Part 63 Applicability of NESHAP General Provisions to Subpart UUU Appendix A to Subpart UUU of Part 63 Determin",
+        "ions apply to this subpart? Table 1 to Subpart AAAA of Part 63 Applicability of NESHAP General Provisions to Subpart AAAA",
+        "ions apply to this subpart? Table 1 to Subpart AAAA of Part 63 Applicability of NESHAP General Provisions to Subpart AAAA Subpart BBBB [Reserved] Subpart CCCC Nationa"
+      ]
+    },
+    {
+      "citation": "cfr 40 410",
+      "title": "Cfr 40 410",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ubcategory of the Textile Mills industry (subpart C—Low water use processing of 40 CFR part 410 ), and testing and reporting for the pesticide fraction in all other subcategor",
+        "ubcategory of the Textile Mills industry (Subpart C—Low water use processing of 40 CFR part 410 ), and testing and reporting for the pesticide fraction in all other subcategor",
+        "ubcategory of the Textile Mills industry (Subpart C—Low water use processing of 40 CFR part 410 ), and testing and reporting for the pesticide fraction in all other subcategor"
+      ]
+    },
+    {
+      "citation": "cfr 40 430",
+      "title": "Cfr 40 430",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "grade Sulfite subcategories (subparts J and U) of the Pulp and Paper industry ( 40 CFR part 430 ); testing and reporting for the base/neutral and pesticide fractions in the fo",
+        "grade Sulfite subcategories (subparts J and U) of the Pulp and Paper industry ( 40 CFR part 430 ); testing and reporting for the base/neutral and pesticide fractions in the fo",
+        "not test unless “reason to believe” it is discharged. 3 Subparts are defined in 40 CFR Part 430 . [ 48 FR 14153 , Apr. 1, 1983, as amended at 49 FR 38050 , Sept. 26, 1984; 50"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.94",
+      "title": "Cfr 40 125.94",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "intake structure for which a BTA determination for Impingement Mortality under 40 CFR 125.94 (c)(11) or (12) is requested. In addition, the owner or operator that chooses t",
+        "12) is requested. In addition, the owner or operator that chooses to comply via 40 CFR 125.94 (c)(5) or (6) must also submit an impingement technology performance optimizati",
+        "addition, the owner or operator that selects the BTA standards for new units at 40 CFR 125.94 (e)(2) as its route to compliance must submit information to demonstrate entrai"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.94(c)",
+      "title": "Cfr 40 125.94(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ization study as described below: ( i ) If the applicant chooses to comply with 40 CFR 125.94(c)(5) , subject to the flexibility for timing provided in 40 CFR 125.95(a)(2) , th",
+        "and all supporting calculations. ( ii ) If the applicant chooses to comply with 40 CFR 125.94(c)(6) , the impingement technology performance optimization study must include bio",
+        "to use reductions in flow or changes in operations to meet the requirements of 40 CFR 125.94(c) , descriptions of individual production processes and product lines, operating"
+      ]
+    },
+    {
+      "citation": "cfr 40 124.11",
+      "title": "Cfr 40 124.11",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "is granted, must follow the procedures applicable to draft permits set forth in 40 CFR 124.11 through 124.13 . The Director may establish, either by regulation or in the gen",
+        "is granted, must follow the procedures applicable to draft permits set forth in 40 CFR 124.11 through 124.13 . The Director may establish, either by regulation or in the gen",
+        "ing is held must follow the procedures applicable to draft permits set forth in 40 CFR 124.11 through 124.13 . The Director may establish, either by regulation or in the CAF"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.2",
+      "title": "Cfr 40 122.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "tion of the discharge with respect to waters of the United States as defined at 40 CFR 122.2 . ( B ) The size of the discharge; ( C ) The quantity and nature of the polluta",
+        "iv ) Which is not part of a Publicly Owned Treatment Works (POTW) as defined at 40 CFR 122.2 . ( 9 ) Outfall means a point source as defined by 40 CFR 122.2 at the point wh",
+        ") as defined at 40 CFR 122.2 . ( 9 ) Outfall means a point source as defined by 40 CFR 122.2 at the point where a municipal separate storm sewer discharges to waters of the"
+      ]
+    },
+    {
+      "citation": "cfr 40 257.2",
+      "title": "Cfr 40 257.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ace impoundment, injection well, or waste pile as those terms are defined under 40 CFR 257.2 . Landfill gas means gas produced as a result of anaerobic decomposition of was",
+        "land. An MSW landfill may also receive other types of RCRA Subtitle D wastes ( 40 CFR 257.2 ) such as commercial solid waste, nonhazardous sludge, conditionally exempt sma",
+        "uch as RCRA Subtitle D wastes (non-hazardous industrial solid waste, defined in 40 CFR 257.2 ), commercial solid wastes, or conditionally exempt small quantity generator wa"
+      ]
+    },
+    {
+      "citation": "70e",
+      "title": "70E",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "nal Electrical Code,” (2017) (incorporated by reference, see § 851.27 ). ( 14 ) NFPA 70E, “Standard for Electrical Safety in the Workplace,” (2015) (incorporated by ref",
+        "tric Code, (2017), issued August 4, 2016; IBR approved for § 851.23 ; and ( 2 ) NFPA 70E, Standard for Electrical Safety in the Workplace, (2015 edition), issued July 1"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.5(a)",
+      "title": "Cfr 10 851.5(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "pliers) that are indemnified by the Price-Anderson Act, 42 U.S.C. 2210(d) . See 10 CFR 851.5(a) . ( 2 ) DOE may seek contract fee reductions through the contract's Conditional",
+        "ry penalty that may be imposed for violations of requirements of this part. See 10 CFR 851.5(a) . Civil penalties are designed to emphasize the need for lasting remedial actio"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.5(b)",
+      "title": "Cfr 10 851.5(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ting officers will coordinate their efforts in compliance with the statute. See 10 CFR 851.5(b) . ( 3 ) For the same violation of a worker safety and health requirement",
+        "ting officers will coordinate their efforts in compliance with the statute. See 10 CFR 851.5(b) . ( 3 ) For the same violation of a worker safety and health requirement in thi"
+      ]
+    },
+    {
+      "citation": "b31.3",
+      "title": "B31.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013369"
+      ],
+      "sample_snippets": [
+        "ts the cost of the internal TES- HX, the pipe thickness was calculated based on ASME B31.3 guidelines [34]: 𝑃𝑝𝑖𝑝𝑒×𝑑𝑝𝑖𝑝𝑒 𝑡 = [ 2×𝑆×𝐸×𝑊+𝑌 ]+𝐶𝑅×𝑁𝑦 (8) 𝑝𝑖𝑝𝑒 0.875 where 𝑃 is",
+        "the internal TES- HX, the pipe thickness was calculated based on ASME B31.3 guidelines [34]: 𝑃𝑝𝑖𝑝𝑒×𝑑𝑝𝑖𝑝𝑒 𝑡 = [ 2×𝑆×𝐸×𝑊+𝑌 ]+𝐶𝑅×𝑁𝑦 (8) 𝑝𝑖𝑝𝑒 0.875 where 𝑃 is"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.685(b)",
+      "title": "Cfr 40 63.685(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0063"
+      ],
+      "sample_snippets": [
+        "rt 63 Tank Control Levels for Tanks at Existing Affected Sources as Required by 40 CFR 63.685(b)(1)(ii) Table 5 to Subpart DD of Part 63 Tank Control Levels for Tanks at New Af",
+        "of Part 63 Tank Control Levels for Tanks at New Affected Sources as Required by 40 CFR 63.685(b)(2) Subpart EE National Emission Standards for Magnetic Tape Manufacturing Opera"
+      ]
+    },
+    {
+      "citation": "14040",
+      "title": "14040",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3016202"
+      ],
+      "sample_snippets": [
+        "acity factor of 85% underwent a life-cycle analysis prepared in accordance with ISO 14040/14044 requirements and the NETL CO2U LCA Guidance Document as modified by the 4",
+        "this study is Susteon Inc. This LCA report has been prepared in accordance with ISO 14040/14044 requirements and with the NETL CO2U LCA Guidance Document as modified by"
+      ]
+    },
+    {
+      "citation": "2",
+      "title": "2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2583520"
+      ],
+      "sample_snippets": [
+        "ts (e.g., national fire protection association (NFPA) 2 setback distances). The NFPA 2 requirements are particularly problematic for LH2 storage. However, NFPA allows",
+        "(NFPA) 2 setback distances). The NFPA 2 requirements are particularly problematic for LH2 storage. However, NFPA allows"
+      ]
+    },
+    {
+      "citation": "cfr 33 159",
+      "title": "Cfr 33 159",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "septage, portable toilet pumpings, type III marine sanitation device pumpings ( 33 CFR part 159 ), and sewage sludge products. Sewage sludge does not include grit or",
+        "septage, portable toilet pumpings, type III marine sanitation device pumpings ( 33 CFR part 159 ), and sewage sludge products. Sewage sludge does not include grit or screening"
+      ]
+    },
+    {
+      "citation": "cfr 40 2",
+      "title": "Cfr 40 2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "Feb. 19, 1985] § 122.7 Confidentiality of information. ( a ) In accordance with 40 CFR part 2 , any information submitted to EPA pursuant to these regulations may be claimed",
+        "asserted, the information will be treated in accordance with the procedures in 40 CFR part 2 (Public Information). ( b ) Applicable to State programs, see § 123.25 . Claims"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.21(e)",
+      "title": "Cfr 40 122.21(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "e remaining EPA-approved methods that is sufficiently sensitive consistent with 40 CFR 122.21(e)(3)(i) . Where no other EPA-approved methods exist, the applicant should select",
+        "PA-approved methods exist, the applicant should select a method consistent with 40 CFR 122.21(e)(3)(ii) . ( ii ) When there is no analytical method that has been approved under"
+      ]
+    },
+    {
+      "citation": "cfr 40 412.4(c)",
+      "title": "Cfr 40 412.4(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "l CAFOs subject to 40 CFR part 412, subpart C or subpart D, the requirements of 40 CFR 412.4(c) , as applicable. ( 2 ) For concentrated aquatic animal production facilities: (",
+        "stewater required by paragraph (e)(1)(viii) of this section and, as applicable, 40 CFR 412.4(c) , must include the fields available for land application; field-specific rates"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.3(v)",
+      "title": "Cfr 40 403.3(V)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "(SIUs) and non-significant categorical industrial users (NSCIUs), as defined at 40 CFR 403.3(v) , including SIUs and NSCIUs that truck or haul waste, discharging to the POTW;",
+        "r more SIUs shall provide the following information for each SIU, as defined at 40 CFR 403.3(v) , that discharges to the POTW: ( A ) Name and mailing address; ( B ) Descriptio"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.13(b)",
+      "title": "Cfr 40 503.13(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "sewage sludge from the applicant's facility meets the ceiling concentrations in 40 CFR 503.13(b)(1) , the pollutant concentrations in § 503.13(b)(3) , the Class A pathogen requ",
+        "o apply bulk sewage sludge subject to the cumulative pollutant loading rates in 40 CFR 503.13(b)(2) to the site: ( A ) Whether the applicant has contacted the permitting author"
+      ]
+    },
+    {
+      "citation": "cfr 40 440",
+      "title": "Cfr 40 440",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ecious Metals Subcategory of the Ore Mining and Dressing industry (subpart B of 40 CFR part 440 ), and testing and reporting for all four fractions in all other subcategories",
+        "ecious Metals Subcategory of the Ore Mining and Dressing industry (subpart B of 40 CFR part 440 ), and testing and reporting for all four fractions in all other subcategories"
+      ]
+    },
+    {
+      "citation": "cfr 40 454",
+      "title": "Cfr 40 454",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ed Derivatives Subcategory (subpart F) of the Gum and Wood Chemicals industry ( 40 CFR part 454 ), and testing and reporting for the pesticide and base-neutral fractions in al",
+        "ed Derivatives Subcategory (subpart F) of the Gum and Wood Chemicals industry ( 40 CFR part 454 ), and testing and reporting for the pesticide and base/netural fractions in al"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92",
+      "title": "Cfr 40 125.92",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ity that withdraws greater than 125 mgd actual intake flow (AIF), as defined at 40 CFR 125.92 (a) , of water for cooling purposes must also submit to the Director for review",
+        "h and shellfish lost due to impingement mortality and entrainment as defined in 40 CFR 125.92 , for all life stages of each exposed species; ( ii ) Description of basis for"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(u)",
+      "title": "Cfr 40 125.92(U)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ies. The owner or operator of a new unit at an existing facility, as defined at 40 CFR 125.92(u) , must submit or update any information previously provided to the Director by",
+        "eviously subject to Part 125. The owner or operator of a new unit as defined at 40 CFR 125.92(u) at an existing facility not previously subject to part 125 of this chapter that"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(m)",
+      "title": "Cfr 40 125.92(M)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "r or operator of an existing facility, a list of fragile species, as defined at 40 CFR 125.92(m) , at the facility. The applicant need only identify those species not already i",
+        "applicant need only identify those species not already identified as fragile at 40 CFR 125.92(m) . New units at an existing facility are not required to resubmit this informati"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(j)",
+      "title": "Cfr 40 125.92(J)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "If the facility entraps fish or shellfish, a count of entrapment, as defined at 40 CFR 125.92(j) , as impingement mortality; and ( G ) The percent impingement mortality reflect",
+        "he facility entraps fish or shellfish, a count of the entrapment, as defined at 40 CFR 125.92(j) , as impingement mortality. ( C ) Flow reduction. If the demonstration relies i"
+      ]
+    },
+    {
+      "citation": "cfr 40 124.10",
+      "title": "Cfr 40 124.10",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "to comment and request a hearing that differs from the time period specified in 40 CFR 124.10 . The Director must respond to significant comments received during the comment",
+        "hearing on the proposed changes that differs from the time period specified in 40 CFR 124.10 . The Director must respond to all significant comments received during the com"
+      ]
+    },
+    {
+      "citation": "cfr 40 124.17",
+      "title": "Cfr 40 124.17",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "pond to significant comments received during the comment period, as provided in 40 CFR 124.17 , and, if necessary, require the CAFO owner or operator to revise the nutrient",
+        "d to all significant comments received during the comment period as provided in 40 CFR 124.17 , and require the CAFO owner or operator to further revise the nutrient managem"
+      ]
+    },
+    {
+      "citation": "cfr 40 110.6",
+      "title": "Cfr 40 110.6",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "of a reportable quantity for which notification is or was required pursuant to 40 CFR 110.6 at any time since November 16, 1987; or ( C ) Contributes to a violation of a w",
+        "a reportable quantity for which notification is or was required pursuant to 40 CFR 110.6 at any time since November 16, 1987; or ( C ) Contributes to a violation of a w"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.21",
+      "title": "Cfr 40 122.21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "18, 1992 shall submit a new application in accordance with the requirements of 40 CFR 122.21 and 40 CFR 122.26(c) (Form 1, Form 2F, and other applicable Forms) 180 days bef",
+        "18, 1992 shall submit a new application in accordance with the requirements of 40 CFR 122.21 and 40 CFR 122.26(c) (Form 1, Form 2F, and other applicable Forms) 180 days bef"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.26(c)",
+      "title": "Cfr 40 122.26(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "bmit a new application in accordance with the requirements of 40 CFR 122.21 and 40 CFR 122.26(c) (Form 1, Form 2F, and other applicable Forms) 180 days before the expiration of",
+        "bmit a new application in accordance with the requirements of 40 CFR 122.21 and 40 CFR 122.26(c) (Form 1, Form 2F, and other applicable Forms) 180 days before the expiration of"
+      ]
+    },
+    {
+      "citation": "cfr 40 35.2005(b)",
+      "title": "Cfr 40 35.2005(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "e system to account for storm water discharged to combined sewers as defined by 40 CFR 35.2005(b)(11) that is treated in a publicly owned treatment works. In municipalities in w",
+        ", rising ground waters, uncontaminated ground water infiltration (as defined at 40 CFR 35.2005(b)(20) ), uncontaminated pumped ground water, discharges from potable water source"
+      ]
+    },
+    {
+      "citation": "cfr 40 6",
+      "title": "Cfr 40 6",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "eq. and is subject to the environmental review provisions of NEPA as set out in 40 CFR part 6, subpart F . EPA will determine whether an Environmental Impact Statement (EIS)",
+        "ed under § 122.21(l) (special provisions for applications from new sources) and 40 CFR part 6, subpart F ; ( ii ) By an NPDES approved State is not a Federal action and ther"
+      ]
+    },
+    {
+      "citation": "cfr 40 124.19",
+      "title": "Cfr 40 124.19",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "rporation of the revised terms of the nutrient management plan into the permit, 40 CFR 124.19 specifies procedures for appeal of the permit decision. In addition to the proc",
+        "s for appeal of the permit decision. In addition to the procedures specified at 40 CFR 124.19 , a person must have submitted comments or participated in the public hearing i"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.44(i)",
+      "title": "Cfr 40 122.44(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "e remaining EPA-approved methods that is sufficiently sensitive consistent with 40 CFR 122.44(i)(1)(iv)(A) . Where no other EPA-approved methods exist, the Director should sele",
+        "EPA-approved methods exist, the Director should select a method consistent with 40 CFR 122.44(i)(1)(iv)(B) . ( B ) In the case of pollutants or pollutant parameters for which t"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.41",
+      "title": "Cfr 40 80.41",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , and summer RVP standards required under 40 CFR 80.27 or as specified by the s",
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , but which do not meet summer RVP standards required under 40 CFR 80.27 or as"
+      ]
+    },
+    {
+      "citation": "3170",
+      "title": "3170",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eva 20, Switzerland, + 41 22 749 01 11, http://www.iso.org/iso/home.htm . ( 1 ) ISO 3170: Petroleum liquids—Manual sampling—Third Edition 2004-02-01, IBR approved for §",
+        "xtures by Gas Chromatography (incorporated by reference, see § 98.7 ). ( xvii ) ISO 3170: Petroleum Liquids—Manual sampling—Third Edition (incorporated by reference, se"
+      ]
+    },
+    {
+      "citation": "3171",
+      "title": "3171",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "—Manual sampling—Third Edition 2004-02-01, IBR approved for § 98.164(b) . ( 2 ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition 1988-12-01, IBR a",
+        "nual sampling—Third Edition (incorporated by reference, see § 98.7 ). ( xviii ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition (incorporated by"
+      ]
+    },
+    {
+      "citation": "cfr 40 51",
+      "title": "Cfr 40 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed to assure the alignment of the quadrupole mass filter (see EPA Method 205 at 40 CFR part 51, appendix M as reference). The mass spectrometer must be chosen so that the mas",
+        "ng a gas dilution system that meets the requirements specified in Method 205 at 40 CFR part 51, appendix M ) with known HFC-23 concentrations that are in the same range (frac"
+      ]
+    },
+    {
+      "citation": "cfr 30 550",
+      "title": "Cfr 30 550",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through",
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.1572(c)",
+      "title": "Cfr 40 63.1572(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "e, calibrate, and maintain each gas flow meter according to the requirements in 40 CFR 63.1572(c) and the following requirements. ( 1 ) Locate the flow monitor at a site that pr",
+        "s composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications and requirements. ( h ) - ( i"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.346(i)",
+      "title": "Cfr 40 98.346(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "tor used in Equation TT-6 of this subpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12,",
+        "bpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12, 2010, as amended at 76 FR 73909 , No"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1096",
+      "title": "Cfr 29 1910.1096",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "Title 29 CFR , part 1910, “Occupational Safety and Health Standards,” excluding 29 CFR 1910.1096 , “Ionizing Radiation”; 29 CFR 1910.1000 , “Air Contaminants,” Tables Z-1 and Z"
+      ]
+    },
+    {
+      "citation": "9001",
+      "title": "9001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3021565"
+      ],
+      "sample_snippets": [
+        "-job training in clean room protocols or with clean-room certifications such as ISO 9001 clean room training. Clean-room training certifications are offered by organiza"
+      ]
+    },
+    {
+      "citation": "cfr 10 850",
+      "title": "Cfr 10 850",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "tration requirements for beryllium or beryllium compounds except as provided in 10 CFR part 850 , “Chronic Beryllium Disease Prevention Program.” [ 71 FR 6931 , Feb. 9, 2006,"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1000",
+      "title": "Cfr 29 1910.1000",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "afety and Health Standards,” excluding 29 CFR 1910.1096 , “Ionizing Radiation”; 29 CFR 1910.1000 , “Air Contaminants,” Tables Z-1 and Z-2, as they relate to beryllium and beryl"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.1024",
+      "title": "Cfr 29 1910.1024",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        ",” Tables Z-1 and Z-2, as they relate to beryllium and beryllium compounds; and 29 CFR 1910.1024 , “Beryllium.” ( 4 ) Title 29 CFR , part 1915, “Occupational Safety and Health"
+      ]
+    },
+    {
+      "citation": "cfr 29 1915.1024",
+      "title": "Cfr 29 1915.1024",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "“Occupational Safety and Health Standards for Shipyard Employment,” except for 29 CFR 1915.1024 , “Beryllium.” ( 5 ) Title 29 CFR , Part 1917, “Marine Terminals.” ( 6 ) Title"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926.1124",
+      "title": "Cfr 29 1926.1124",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "9 CFR , part 1926, “Safety and Health Regulations for Construction,” except for 29 CFR 1926.1124 , “Beryllium.” ( 8 ) Title 29 CFR , Part 1928, “Occupational Safety and Health"
+      ]
+    },
+    {
+      "citation": "cfr 29 1915",
+      "title": "Cfr 29 1915",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ive) than permissible exposure limits in 29 CFR part 1910 for general industry, 29 CFR part 1915 for shipyards, and/or 29 CFR part 1926 for construction. When the ACGIH® TLVs®"
+      ]
+    },
+    {
+      "citation": "cfr 29 1926",
+      "title": "Cfr 29 1926",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_29_cfr_1926",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "n 29 CFR part 1910 for general industry, 29 CFR part 1915 for shipyards, and/or 29 CFR part 1926 for construction. When the ACGIH® TLVs® are used as exposure limits, contractor"
+      ]
+    },
+    {
+      "citation": "70",
+      "title": "70",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "uincy, MA 02169. Telephone: 617-984-7423, or go to: http://www.nfpa.org . ( 1 ) NFPA 70, National Electric Code, (2017), issued August 4, 2016; IBR approved for § 851."
+      ]
+    },
+    {
+      "citation": "b31.8",
+      "title": "B31.8",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "m Integrity of Gas Pipelines, ASME Code for Pressure Piping, B31, Supplement to ASME B31.8, issued September 30, 2014; IBR approved for appendix A, Section 4, Pressure Sa"
+      ]
+    },
+    {
+      "citation": "cfr 10 712.38(b)",
+      "title": "Cfr 10 712.38(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "dical records and in the custody the designated psychologist in accordance with 10 CFR 712.38(b)(2) . ( 2 ) Access to these records must be provided in accordance with DOE regu"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.44",
+      "title": "Cfr 10 851.44",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "unity to challenge an FNOV is provided in administrative appeal provisions. See 10 CFR 851.44 . Any contractor that receives an FNOV may petition the Office of Hearings and"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.4(b)",
+      "title": "Cfr 10 851.4(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "nt of Fee Clause in the Department of Energy Acquisition Regulation (DEAR). See 10 CFR 851.4(b) ; 48 CFR parts 923 , 952 , 970 . Policies for contract fee reductions are not e"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.5(c)",
+      "title": "Cfr 10 851.5(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ir subcontractors and suppliers) or a contract fee reduction, but not both. See 10 CFR 851.5(c) . ( 4 ) A ceiling applies to civil penalties assessed on certain contractors sp"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.5(d)",
+      "title": "Cfr 10 851.5(D)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ed the total amount of fees paid by DOE to that entity in that fiscal year. See 10 CFR 851.5(d) . 2. Civil Penalty ( a ) A civil penalty is a monetary penalty that may be impo"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.7",
+      "title": "Cfr 10 851.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "aneously with the direction. It should be emphasized, however, that pursuant to 10 CFR 851.7 , interpretative ruling of a requirement of this part must be issued in accorda"
+      ]
+    },
+    {
+      "citation": "cfr 10 851.40",
+      "title": "Cfr 10 851.40",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0851"
+      ],
+      "sample_snippets": [
+        "ty and health requirements to provide complete and accurate information to DOE, 10 CFR 851.40 , can result in the full range of enforcement sanctions, depending upon the cir"
+      ]
+    },
+    {
+      "citation": "b31.1",
+      "title": "B31.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3013369"
+      ],
+      "sample_snippets": [
+        "for pressure vessels, while the internal heat exchanger piping was designed per ASME B31.1, consistent with established industry practices for high-temperature steam gene"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.685",
+      "title": "Cfr 40 63.685",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "cold_chain_facility",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0063"
+      ],
+      "sample_snippets": [
+        "rt 63 Tank Control Levels for Tanks at Existing Affected Sources as Required by 40 CFR 63.685( b )(1) Table 4 to Subpart DD of Part 63 Tank Control Levels for Tanks at Exist"
+      ]
+    },
+    {
+      "citation": "cfr 26 1",
+      "title": "Cfr 26 1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3016202"
+      ],
+      "sample_snippets": [
+        "ted States (U.S.) Internal Revenue Service (IRS) to satisfy the requirements of 26 CFR Part 1, Section 1.45Q-4. The taxpayer completing this study is Susteon Inc. This LCA r"
+      ]
+    },
+    {
+      "citation": "34001",
+      "title": "34001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3096216"
+      ],
+      "sample_snippets": [
+        "codes: • Household appliances, ±1–2 Hz • Continuous operations range • Motors, IEC 34001 • Deadbands • Variable speed drives, ±1–2 Hz • High- and low-frequency • Timing"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.761",
+      "title": "Cfr 40 63.761",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0070"
+      ],
+      "sample_snippets": [
+        "as used in the introductory text of this definition, has the same meaning as in 40 CFR 63.761 . ( 1 ) A major source under section 112 of the Act, which is defined as: ( i )"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.43",
+      "title": "Cfr 40 60.43",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0060"
+      ],
+      "sample_snippets": [
+        "o Part 60 Provisions for an Alternative Method of Demonstrating Compliance With 40 CFR 60.43 for the Newton Power Station of Central Illinois Public Service Company Appendi"
+      ]
+    },
+    {
+      "citation": "1977",
+      "title": "1977",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "ornl_1817423"
+      ],
+      "sample_snippets": [
+        "given that the gamma count rates are expected to be proportional to dose rates. ANSI/ANS 1977 flux-to-dose factors [6] were used to convert gamma flux into dose rates. Suffi"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.8(a)",
+      "title": "Cfr 40 403.8(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "practices.” Class I sludge management facility means any POTW identified under 40 CFR 403.8(a) as being required to have an approved pretreatment program (including such POTW"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.10(e)",
+      "title": "Cfr 40 403.10(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "n a State that has elected to assume local program responsibilities pursuant to 40 CFR 403.10(e) ) and any other treatment works treating domestic sewage classified as a Class"
+      ]
+    },
+    {
+      "citation": "cfr 40 116",
+      "title": "Cfr 40 116",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "32.2 of this chapter . Hazardous substance means any substance designated under 40 CFR part 116 pursuant to section 311 of CWA. Indian country means: ( 1 ) All land within the"
+      ]
+    },
+    {
+      "citation": "cfr 40 123.46(c)",
+      "title": "Cfr 40 123.46(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "o a “publicly owned treatment works.” Individual control strategy is defined at 40 CFR 123.46(c) . Interstate agency means an agency of two or more States established by or und"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.3",
+      "title": "Cfr 40 403.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "d permit” is not a “draft permit.” Publicly owned treatment works is defined at 40 CFR 403.3 . Recommencing discharger means a source which recommences discharge after term"
+      ]
+    },
+    {
+      "citation": "cfr 40 300",
+      "title": "Cfr 40 300",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "arge in compliance with the instructions of an On-Scene Coordinator pursuant to 40 CFR part 300 (The National Oil and Hazardous Substances Pollution Contingency Plan) or 33 CF"
+      ]
+    },
+    {
+      "citation": "cfr 33 153.10(e)",
+      "title": "Cfr 33 153.10(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "t 300 (The National Oil and Hazardous Substances Pollution Contingency Plan) or 33 CFR 153.10(e) (Pollution by Oil and Hazardous Substances). ( e ) Any introduction of pollutan"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.21(m)",
+      "title": "Cfr 40 122.21(M)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "0 ) An indication of whether the facility is requesting any of the variances at 40 CFR 122.21(m) , if known at the time of application. ( g ) Application requirements for exist"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.21(n)",
+      "title": "Cfr 40 122.21(N)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "nt is operating under or requesting to operate under a variance as specified at 40 CFR 122.21(n) , if known at the time of application. ( 2 ) Additional Information. All applic"
+      ]
+    },
+    {
+      "citation": "cfr 40 261",
+      "title": "Cfr 40 261",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "dicated pipe any wastes that are regulated as RCRA hazardous wastes pursuant to 40 CFR part 261 , the applicant must report the following: ( A ) The method by which the waste"
+      ]
+    },
+    {
+      "citation": "cfr 40 261.30(d)",
+      "title": "Cfr 40 261.30(D)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "hazardous wastes, unless the wastes are acute hazardous wastes as specified in 40 CFR 261.30(d) and 261.33(e) . ( 8 ) Combined sewer overflows. Each applicant with combined se"
+      ]
+    },
+    {
+      "citation": "cfr 40 6.600",
+      "title": "Cfr 40 6.600",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "te that the applicant must comply with the environmental review requirements of 40 CFR 6.600 through 6.607 . ( 4 ) Any interested party may challenge the Regional Administr"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.32(a)",
+      "title": "Cfr 40 503.32(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "owing information: ( A ) Whether the Class A pathogen reduction requirements in 40 CFR 503.32(a) or the Class B pathogen reduction requirements in 40 CFR 503.32(b) are met, and"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.32(b)",
+      "title": "Cfr 40 503.32(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "uirements in 40 CFR 503.32(a) or the Class B pathogen reduction requirements in 40 CFR 503.32(b) are met, and a description of any treatment processes used to reduce pathogens"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.12(g)",
+      "title": "Cfr 40 503.12(G)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ormation that the applicant is required to provide the receiving facility under 40 CFR 503.12(g) ; and ( E ) If the receiving facility places sewage sludge in bags or container"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.11",
+      "title": "Cfr 40 503.11",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ublic contact site, or a reclamation site, as such site types are defined under 40 CFR 503.11 ; ( G ) The type of vegetation grown on the site, if known, and the nitrogen re"
+      ]
+    },
+    {
+      "citation": "cfr 40 503.43",
+      "title": "Cfr 40 503.43",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "porting documentation; ( G ) The control efficiency for parameters regulated in 40 CFR 503.43 , as well as performance test results and supporting documentation; ( H ) Infor"
+      ]
+    },
+    {
+      "citation": "cfr 40 258",
+      "title": "Cfr 40 258",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ion, if known, indicating whether the MSWLF complies with criteria set forth in 40 CFR part 258 ; ( 13 ) Contractors. All applicants must provide the name, mailing address, te"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(k)",
+      "title": "Cfr 40 125.92(K)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "l existing facilities. The owner or operator of an existing facility defined at 40 CFR 125.92(k) must submit to the Director for review the information required under paragraph"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.98(i)",
+      "title": "Cfr 40 125.98(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "such additional information as the Director determines is necessary pursuant to 40 CFR 125.98(i) . ( D ) New units at existing facilities. The owner or operator of a new unit a"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.95(f)",
+      "title": "Cfr 40 125.95(F)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "be used to satisfy the permit application information requirement of paragraph 40 CFR 125.95(f) if included in the application. ( 5 ) Cooling Water System Data. The owner or o"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.95(a)",
+      "title": "Cfr 40 125.95(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ly with 40 CFR 125.94(c)(5) , subject to the flexibility for timing provided in 40 CFR 125.95(a)(2) , the impingement technology performance optimization study must include two"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(s)",
+      "title": "Cfr 40 125.92(S)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "impingement mortality achieved by the modified traveling screens as defined at 40 CFR 125.92(s) and demonstrating that the operation has been optimized to minimize impingement"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(n)",
+      "title": "Cfr 40 125.92(N)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ta should be interpreted using the definitions of impingement and entrapment at 40 CFR 125.92(n) and (j) , respectively. The estimated reductions in rate of impingement must be"
+      ]
+    },
+    {
+      "citation": "cfr 40 125.92(h)",
+      "title": "Cfr 40 125.92(H)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "plain how the data should be interpreted using the definition of entrainment at 40 CFR 125.92(h) . ( 8 ) Operational Status. The owner or operator of an existing facility must"
+      ]
+    },
+    {
+      "citation": "cfr 40 35",
+      "title": "Cfr 40 35",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "e for funding under title II, title III or title VI of the Clean Water Act. See 40 CFR part 35, subpart I, appendix A (b)H.2.j. ( 9 ) ( i ) On and after October 1, 1994, for"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.27(b)",
+      "title": "Cfr 40 122.27(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "rage facilities operated in connection with silvicultural activities defined in 40 CFR 122.27(b)(2)-(3) and Industry Groups 242 through 249; 26 (except 265 and 267), 28 (except"
+      ]
+    },
+    {
+      "citation": "cfr 40 434.11(1)",
+      "title": "Cfr 40 434.11(1)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "mining operations no longer meeting the definition of a reclamation area under 40 CFR 434.11(1) because the performance bond issued to the facility by the appropriate SMCRA au"
+      ]
+    },
+    {
+      "citation": "cfr 40 262.34",
+      "title": "Cfr 40 262.34",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ired to have a RCRA permit which is used for accumulating hazardous waste under 40 CFR 262.34 ); each well where fluids from the facility are injected underground; springs,"
+      ]
+    },
+    {
+      "citation": "cfr 40 117.21",
+      "title": "Cfr 40 117.21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "of a reportable quantity for which notification is or was required pursuant to 40 CFR 117.21 or 40 CFR 302.6 at anytime since November 16, 1987; or ( B ) Has had a discharg"
+      ]
+    },
+    {
+      "citation": "cfr 40 302.6",
+      "title": "Cfr 40 302.6",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "quantity for which notification is or was required pursuant to 40 CFR 117.21 or 40 CFR 302.6 at anytime since November 16, 1987; or ( B ) Has had a discharge of storm water"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.21(g)",
+      "title": "Cfr 40 122.21(G)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "his section, the applicant must collect a sample of effluent in accordance with 40 CFR 122.21(g)(7) and analyze it for the pollutant in accordance with analytical methods appro"
+      ]
+    },
+    {
+      "citation": "cfr 40 35.2005(20)",
+      "title": "Cfr 40 35.2005(20)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        ", rising ground waters, uncontaminated ground water infiltration (as defined at 40 CFR 35.2005(20) ) to separate storm sewers, uncontaminated pumped ground water, discharges from"
+      ]
+    },
+    {
+      "citation": "cfr 33 209.120",
+      "title": "Cfr 33 209.120",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ges of dredged or fill material which may require a CWA section 404 permit (See 33 CFR 209.120 and part 233 ). ( 2 ) Rock crushing and gravel washing facilities means facilit"
+      ]
+    },
+    {
+      "citation": "cfr 40 436",
+      "title": "Cfr 40 436",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "eans facilities which process crushed and broken stone, gravel, and riprap (See 40 CFR part 436, subpart B , including the effluent limitations guidelines). ( 3 ) Log sorting"
+      ]
+    },
+    {
+      "citation": "cfr 40 429",
+      "title": "Cfr 40 429",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ed on land where water is applied intentionally on the logs (wet decking). (See 40 CFR part 429, subpart I , including the effluent limitations guidelines). § 122.28 General p"
+      ]
+    },
+    {
+      "citation": "cfr 40 130.7",
+      "title": "Cfr 40 130.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ocation for the discharge prepared by the State and approved by EPA pursuant to 40 CFR 130.7 . ( 2 ) Attain or maintain a specified water quality through water quality rela"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.5(c)",
+      "title": "Cfr 40 403.5(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "Provide a written technical evaluation of the need to revise local limits under 40 CFR 403.5(c)(1) , following permit issuance or reissuance. ( 3 ) For POTWs which are “sludge"
+      ]
+    },
+    {
+      "citation": "cfr 40 132.2",
+      "title": "Cfr 40 132.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "issued to a facility that discharges into the Great Lakes System (as defined in 40 CFR 132.2 ), conditions promulgated by the State, Tribe, or EPA pursuant to 40 CFR part 1"
+      ]
+    },
+    {
+      "citation": "cfr 40 132",
+      "title": "Cfr 40 132",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "40 CFR 132.2 ), conditions promulgated by the State, Tribe, or EPA pursuant to 40 CFR part 132 . ( s ) Qualifying State, Tribal, or local programs. ( 1 ) For storm water disc"
+      ]
+    },
+    {
+      "citation": "cfr 36 800",
+      "title": "Cfr 36 800",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "66, 16 U.S.C. 470 et seq. section 106 of the Act and implementing regulations ( 36 CFR part 800 ) require the Regional Administrator, before issuing a license, to adopt measur"
+      ]
+    },
+    {
+      "citation": "cfr 50 402",
+      "title": "Cfr 50 402",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "Act, 16 U.S.C. 1531 et seq. section 7 of the Act and implementing regulations ( 50 CFR part 402 ) require the Regional Administrator to ensure, in consultation with the Secret"
+      ]
+    },
+    {
+      "citation": "cfr 15 930",
+      "title": "Cfr 15 930",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "16 U.S.C. 1451 et seq. section 307(c) of the Act and implementing regulations ( 15 CFR part 930 ) prohibit EPA from issuing a permit for an activity affecting land or water us"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.18(e)",
+      "title": "Cfr 40 403.18(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ions and Standards for sewage sludge use or disposal, see also § 122.44(c) ) or 40 CFR 403.18(e) (Pretreatment program). ( 8 ) ( i ) Net limits. Upon request of a permittee who"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.8(e)",
+      "title": "Cfr 40 403.8(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "ons, as provided in § 122.45(g)(1)(ii) . ( 9 ) Pretreatment. As necessary under 40 CFR 403.8(e) (compliance schedule for development of pretreatment program). ( 10 ) Failure t"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.11",
+      "title": "Cfr 40 403.11",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "retreatment program that has been approved in accordance with the procedures in 40 CFR 403.11 (or a modification thereto that has been approved in accordance with the proced"
+      ]
+    },
+    {
+      "citation": "cfr 40 403.18",
+      "title": "Cfr 40 403.18",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0122"
+      ],
+      "sample_snippets": [
+        "odification thereto that has been approved in accordance with the procedures in 40 CFR 403.18 ) as enforceable conditions of the POTW's permits. ( h ) Incorporate changes to"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.58",
+      "title": "Cfr 40 60.58",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "f municipal solid waste combusted, calculated according to the procedures under 40 CFR 60.58b(j) . Mcf means thousand cubic feet. Methane conversion factor means the extent"
+      ]
+    },
+    {
+      "citation": "27916:2019",
+      "title": "27916:2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "8.489 . Note 1 to paragraph (e)(1): This standard is also available from ISO as ISO 27916:2019(E). ( 2 ) [Reserved] ( f ) The following material is available for purchase fro"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.7081(a)",
+      "title": "Cfr 40 63.7081(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ion of limestone, dolomite, shells or other calcareous substances as defined in 40 CFR 63.7081(a)(1) . ( b ) This source category includes all LMPs unless the LMP is located at"
+      ]
+    },
+    {
+      "citation": "cfr 49 191.3",
+      "title": "Cfr 49 191.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "near pipelines), emergency shutdowns including pipeline incidents as defined in 49 CFR 191.3 , and all other pipeline segments with a physical volume greater than or equal"
+      ]
+    },
+    {
+      "citation": "cfr 49 192.3",
+      "title": "Cfr 49 192.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed as such by the Pipeline and Hazardous Material Safety Administration (PHMSA) 49 CFR 192.3 . Drilling mud means a mixture of clays and additives with water, oil, or synth"
+      ]
+    },
+    {
+      "citation": "cfr 18 284.224",
+      "title": "Cfr 18 284.224",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "person identified as the owner or operator on blanket certificates issued under 18 CFR 284.224 . If an intrastate pipeline is not subject to section 311 of the Natural Gas Po"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.105",
+      "title": "Cfr 40 60.105",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "and maintain exhaust gas composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications a"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.36",
+      "title": "Cfr 40 98.36",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ric acid process line (metric tons) and the relevant information required under 40 CFR 98.36 (e)(2)(vi) for the Tier 4 Calculation Methodology. ( f ) If you do not use a CE"
+      ]
+    },
+    {
+      "citation": "cfr 21 184.1240",
+      "title": "Cfr 21 184.1240",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "the U.S. Food and Drug Administration food-grade specifications for CO 2 ( see 21 CFR 184.1240 ) and ASTM standard E1747-95 (Reapproved 2005) Standard Guide for Purity of Car"
+      ]
+    }
+  ],
+  "total": 159,
+  "with_text": 8
+}

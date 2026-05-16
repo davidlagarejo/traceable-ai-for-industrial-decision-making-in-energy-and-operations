@@ -1,0 +1,11 @@
+source_id: doe_osti_3218390
+title: "UNIFI Specifications for GFM IBRs (V3) and Transitioning to an IEEE Standard"
+url: https://www.osti.gov/servlets/purl/3218390
+license: public_domain
+publisher: doe_osti
+version: "2026-04-24"
+added_at: "2026-05-16T00:11:12.414850Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 42 ENGINEERING, electromagnetic transient, frequency scanning"
+asset_families:
+  - infrastructure_node

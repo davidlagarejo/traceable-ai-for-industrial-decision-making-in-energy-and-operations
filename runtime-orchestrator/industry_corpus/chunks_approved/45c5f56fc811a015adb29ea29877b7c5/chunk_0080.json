@@ -1,0 +1,14 @@
+{
+  "chunk_id": "45c5f56f::chunk_0080",
+  "source_id": "doe_osti_3011525",
+  "source_sha": "45c5f56fc811a015adb29ea29877b7c5",
+  "source_url": "https://www.osti.gov/servlets/purl/3011525",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "November 2022. Prepared for the US Department of Energy, Office of Energy Efficiency and Renewable Energy Wind Energy Technology Office Advanced Wind R&D to Reduce Costs and Environmental Impact (DE-FOA-0001924) DE-EE0008734. Prepared by Western EcoSystems Technology, Inc. (WEST), Golden Valley, Minnesota. December 2024. WEST 17 January 2025 1162-FTR202510-EE0008734",
+  "token_count": 48,
+  "text_sha": "2061dec1fc195dc7ab0894cb6306887aac813011203d4b68faca4c454c18e2ca",
+  "extracted_at": "2026-05-16T00:01:11.783856Z"
+}

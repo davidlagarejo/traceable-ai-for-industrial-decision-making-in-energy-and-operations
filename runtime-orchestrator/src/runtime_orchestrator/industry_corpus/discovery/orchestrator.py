@@ -34,6 +34,27 @@ from .licensed_journal_discoverer import (
     discover_for_family as _licensed_discover,
     session_status as licensed_session_status,
 )
+from .vendor_whitepaper_crawler import (
+    VendorWhitepaperCandidate,
+    discover_vendor_whitepapers as _vendor_discover,
+    VENDOR_HUBS as _VENDOR_HUBS,
+)
+
+
+def _vendor_discover_for_family(asset_family: str, *, max_per_vendor: int = 3) -> list:
+    """Crawl every vendor whose hub.asset_families includes asset_family.
+
+    Returns a flat list of VendorWhitepaperCandidate.
+    """
+    out: list = []
+    for vendor_key, hubs in _VENDOR_HUBS.items():
+        if not any(asset_family in h.get("asset_families", []) for h in hubs):
+            continue
+        try:
+            out.extend(_vendor_discover(vendor_key, max_pdfs=max_per_vendor))
+        except Exception:
+            continue
+    return out
 
 
 def _candidates_for_family(
@@ -41,6 +62,7 @@ def _candidates_for_family(
     *,
     max_per_source: int,
     include_licensed: bool = False,
+    include_vendors: bool = True,
 ) -> list:
     """Aggregate candidates from all enabled discoverers for one family.
 
@@ -63,6 +85,11 @@ def _candidates_for_family(
         out.extend(_arxiv_discover(asset_family, max_candidates=max_per_source))
     except Exception:
         pass
+    if include_vendors:
+        try:
+            out.extend(_vendor_discover_for_family(asset_family, max_per_vendor=2))
+        except Exception:
+            pass
     if include_licensed:
         try:
             out.extend(_licensed_discover(asset_family, max_candidates=max_per_source))
@@ -116,8 +143,13 @@ def _write_candidate_yaml(candidate, corpus_dir: Path) -> Path:
     target = _yaml_path_for(corpus_dir, candidate)
     target.parent.mkdir(parents=True, exist_ok=True)
 
+    from ..manifest import VENDOR_TRUST_PUBLISHERS
     publisher = getattr(candidate, "publisher", "")
-    if publisher == "arxiv":
+    if publisher in VENDOR_TRUST_PUBLISHERS:
+        license_str = "vendor_whitepaper"
+        abstract = (getattr(candidate, "abstract", "") or "")[:240]
+        notes = f"Auto-discovered vendor whitepaper from {publisher}. {abstract}"
+    elif publisher == "arxiv":
         license_str = "open_access"
         cats = getattr(candidate, "categories", ())
         abstract = (getattr(candidate, "abstract", "") or "")[:240]

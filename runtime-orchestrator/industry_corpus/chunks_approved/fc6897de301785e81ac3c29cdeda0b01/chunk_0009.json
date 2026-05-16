@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0009",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "1. Carbon Steel Pipeline Material Performance Factor,H (American Society of Mechanical Engi- f neers 2023) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 Table 2. Design Factor,F (American Society of Mechanical Engineers 2023) . . . . . . . . . . . . . . . . 14 Table 3. Steel Pipe Material Costs Based on Weight (Savoy Piping Inc. 2022) . . . . . . . . . . . . . . . . 19 Table 4. New Pipeline CapEx Applied for Each Modification Method . . . . . . . . . . . . . . . . . . . . 20 ix This report is available at no cost from NREL at www.nrel.gov/publications Table 5. Regional Pipeline CapEx Component Correlation Parameters (Adapted from Brown, Reddi, and Elgowainy (2022)) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21 Table 6. Compressor Station CapEx Considered for Each Modification Method . . . . . . . . . . . . . . . 21 Table 7. Compressor Station Cost Coefficients (Adapted from Rui (2011)) . . . . . . . . . . . . . . . . . . 22 Table 8. ASME B31.12 Sectionalizing Valve Spacing Interval Requirements (American Society of Me- chanical Engineers 2023) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24 Table 9. Default Economic Parameters in ProFAST in the Absence of User-Supplied Parameters (Reznicek et al. 2024; Penev et al. 2024) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 Table 10. ProFAST Parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26 Table 11. BlendPATH Network Design File Inputs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31 Table 12. Network Design File—NODES . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "1e81935e355ca3a8bc3c05e5366100319a182abeddd77e9d7a42421d986ef88e",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

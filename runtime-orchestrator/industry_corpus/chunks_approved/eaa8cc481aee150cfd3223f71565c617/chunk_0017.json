@@ -1,0 +1,15 @@
+{
+  "chunk_id": "eaa8cc48::chunk_0017",
+  "source_id": "doe_osti_3011852",
+  "source_sha": "eaa8cc481aee150cfd3223f71565c617",
+  "source_url": "https://www.osti.gov/servlets/purl/3011852",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "technology/measure in new Installed Cost ($2023) - Mid construction using middle estimates of coefficients and intercept. Typical New Construction The typical cost to purchase and install the technology/measure in new Installed Cost ($2023) - High construction using high estimates of coefficients and intercept. 19 This report is available at no cost from NREL at www.nrel.gov/publications. Column Name Definition Typical Retrofit Installed Cost The typical cost to purchase and install the technology/measure as a ($2023) - Low retrofit using low estimates of coefficients and intercept. Typical Retrofit Installed Cost The typical cost to purchase and install the technology/measure as a ($2023) - Mid retrofit using middle estimates of coefficients and intercept. Typical Retrofit Installed Cost The typical cost to purchase and install the technology/measure as a ($2023) - High retrofit using high estimates of coefficients and intercept. Projection Year The year that the retail price data applies to Projection Scenario Projection scenario that the retail price data applies to Lifetime Expected average equipment lifetime List of factors that may lead to variation in the retail price and instillation Cost Variation Considerations cost of this technology/measure Source Diversity Number of different data sources used in regression Sample Size Number of data points used in the regression R-squared value Measure that assesses how well regression fits to the data Data Age Average year the data for the regressions is from Notes Brief note on additional information 20 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 245,
+  "text_sha": "cbcc9f90af16092beee4fd54173538a45db0db54e0d021378adf5899fea84dcc",
+  "extracted_at": "2026-05-16T00:04:16.683874Z"
+}

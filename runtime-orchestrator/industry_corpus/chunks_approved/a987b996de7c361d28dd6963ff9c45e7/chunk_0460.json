@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0460",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "4 and CO 2 annual emissions from compressor scrubber dump valve leakage as specified in paragraphs (k)(1) through (4) of this section. If emissions from compressor scrubber dump valve leakage are routed to a flare, you must calculate CH 4 , CO 2 , and N 2 O annual emissions as specified in paragraph (n) of this section and report emissions from the flare as specified in § 98.236(n) . ( 1 ) Except as specified in paragraph (k)(1)(iv) of this section, you must monitor the tank vapor vent stack annually for emissions using one of the methods specified in paragraphs (k)(1)(i) through (iii) of this section. ( i ) Use an optical gas imaging instrument according to methods set forth in § 98.234(a)(1) . ( ii ) Measure the tank vent directly using a flow meter or high volume sampler according to methods in § 98.234(b) or (d) for a duration of 5 minutes. ( iii ) Measure the tank vent using a calibrated bag according to methods in § 98.234(c) for a duration of 5 minutes or until the bag is full, whichever is shorter. ( iv ) You may annually monitor leakage through compressor scrubber dump valve(s) into the tank using an acoustic leak detection device according to methods set forth in § 98.234(a)(5) . ( 2 ) If the tank vapors from the vent stack are continuous for 5 minutes, or the optical gas imaging instrument or acoustic leak detection device detects a leak, then you must use one of the methods in either paragraph (k)(2)(i) or (ii) of this section. ( i ) Use a flow meter, such as a turbine meter, calibrated bag, or high volume sampler to estimate tank vapor volumes from the vent stack according to methods set forth in § 98.234(b) through (d) . If you do not have a continuous flow measurement device, you may install a flow measuring device on the tank vapor vent stack. If the vent is directly measured for five minutes under paragraph (k)(1)(ii) or (iii) of this section to detect continuous leakage, this serves as the measurement. ( ii ) Use an acoustic leak detection device on each scrubber dump valve connected to the tank according to the method set forth in § 98.234(a)(5) . ( 3 ) If a leaking dump valve is identified, the leak must be counted as having occurred since the beginning of the calendar year, or from the previous test that did not detect leaking in the same calendar year. If the leaking dump valve is fixed following leak detection, the leak duration will end upon being repaired. If a leaking dump valve is identified and not repaired, the leak must be counted as having occurred through the rest of the calendar year. ( 4 ) Use the requirements specified in paragraphs (k)(4)(i) and (ii) of this section to quantify annual emissions. ( i ) Use the appropriate gas composition in paragraph (u)(2)(iii) of this section. ( ii ) Calculate CH 4 and CO 2 volumetric and mass emissions at standard conditions",
+  "token_count": 512,
+  "text_sha": "a65d67263e86e30f11fce75caabde048e62a606224b1e98ac6663f065e2ae835",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

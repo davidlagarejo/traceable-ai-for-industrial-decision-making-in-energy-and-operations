@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0461",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "year. ( 4 ) Use the requirements specified in paragraphs (k)(4)(i) and (ii) of this section to quantify annual emissions. ( i ) Use the appropriate gas composition in paragraph (u)(2)(iii) of this section. ( ii ) Calculate CH 4 and CO 2 volumetric and mass emissions at standard conditions using calculations in paragraphs (t) , (u) , and (v) of this section, as applicable to the monitoring equipment used. ( l ) Well testing venting and flaring. Calculate CH 4 and CO 2 annual emissions from well testing venting as specified in paragraphs (l)(1) through (5) of this section. If emissions from well testing venting are routed to a flare, you must calculate CH 4 , CO 2 , and N 2 O annual emissions as specified in paragraph (n) of this section, report emissions from the flare as specified in § 98.236(n) , and report additional information specified in § 98.236(l) , as applicable. ( 1 ) Determine the gas to oil ratio (GOR) of the hydrocarbon production from oil well(s) tested. Determine the production rate from gas well(s) tested. ( 2 ) If GOR cannot be determined from your available data, then you must measure quantities reported in this section according to one of the procedures specified in paragraph (l)(2)(i) or (ii) of this section to determine GOR. ( i ) You may use an appropriate standard method published by a consensus-based standards organization if such a method exists. ( ii ) You may use an industry standard practice as described in § 98.234(b) . ( 3 ) Estimate venting emissions using equation W-17A to this section (for oil wells) or equation W-17B to this section (for gas wells) for each well tested during the reporting year. Where: E a,n = Annual volumetric natural gas emissions from well testing for each well being tested in cubic feet under actual conditions. GOR = Gas to oil ratio in cubic feet of gas per barrel of oil for each well being tested; oil here refers to hydrocarbon liquids produced of all API gravities. FR = Average annual flow rate in barrels of oil per day for the oil well being tested. PR = Average annual production rate in actual cubic feet per day for the gas well being tested. D = Number of days during the calendar year that the well is tested. ( 4 ) Calculate natural gas volumetric emissions at standard conditions using calculations in paragraph (t) of this section. ( 5 ) Calculate both CH 4 and CO 2 volumetric and mass emissions from natural gas volumetric emissions using calculations in paragraphs (u) and (v) of this section. ( m ) Associated gas venting and flaring. Calculate CH 4 and CO 2 annual emissions from associated gas venting not in conjunction with well testing (refer to paragraph (l) of this section) as specified in paragraphs (m)(1) through (3) of this section. If emissions from associated gas venting are routed to a flare, you must calculate CH 4 , CO 2 , and N 2 O annual emissions",
+  "token_count": 511,
+  "text_sha": "0665169765d72b228dee86193412e19450a01fcdd2273a2d1f1b30d20024cbf3",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

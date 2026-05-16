@@ -34,6 +34,8 @@ FEDERAL_AUTO_APPROVE_PUBLISHERS: frozenset[str] = frozenset({
     "energystar.gov", "osti.gov", "nist.gov",
     # ── Open-access scientific (CC-licensed) ──
     "arxiv", "arxiv.org", "doaj", "doaj.org",
+    # ── US federal regulations (eCFR API) ──
+    "ecfr", "ecfr.gov", "osha.gov",
     # ── Trusted industrial vendors (whitepapers, technical bulletins) ──
     # Steam / thermal systems:
     "steamloc",     "spirax sarco", "armstrong international", "watson mcdaniel",
@@ -133,6 +135,9 @@ class CorpusSource:
             if self.license in ("open_access", "cc_by", "public_domain"):
                 return self.added_by == "system_verified"
             return False
+        # Path 4: US federal regulations from eCFR (always public)
+        if self.license == "us_federal_regulation":
+            return self.added_by == "system_verified"
         # Path 1: federal / national labs
         if self.license != "public_domain":
             return False

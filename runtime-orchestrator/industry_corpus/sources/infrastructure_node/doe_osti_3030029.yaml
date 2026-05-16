@@ -1,0 +1,11 @@
+source_id: doe_osti_3030029
+title: "Data-Enhanced, Resilience-Oriented Community Microgrid Planning and Operations"
+url: https://www.osti.gov/servlets/purl/3030029
+license: public_domain
+publisher: doe_osti
+version: "2026-04-14"
+added_at: "2026-05-16T00:11:03.018841Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 97 MATHEMATICS AND COMPUTING, artificial intelligence, distribution grid operations"
+asset_families:
+  - infrastructure_node

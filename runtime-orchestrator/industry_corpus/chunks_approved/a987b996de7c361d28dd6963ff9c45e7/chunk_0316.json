@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0316",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "in Equation L-7 of this section. v = Number of fluorine-containing reactants fed into process i. ( 4 ) The mass of total fluorine in destroyed or recaptured streams containing fluorine-containing reactants, products, and by-products must be estimated at least monthly using Equation L-7 of this section unless you use the alternative approach provided in paragraph (b)(15) of this section. Where: F D = Total mass of fluorine in destroyed or recaptured streams from process i containing fluorine-containing reactants, products, and by-products over the period p. P j = Mass of the fluorine-containing product removed from process i in stream j and destroyed over the period p (calculated in Equation L-8 or L-9 of this section). B kj = Mass of fluorine-containing by-product k removed from process i in stream j and destroyed over the period p (calculated in Equation L-8 or L-9 of this section). B kl = Mass of fluorine-containing by-product k removed from process i in stream l and recaptured over the period p. R dj = Mass of fluorine-containing reactant d removed from process i in stream j and destroyed over the period p (calculated in Equation L-8 or L-9 of this section). MFF Rd = Mass fraction of fluorine in reactant d, calculated in Equation L-14 of this section. MFF P = Mass fraction of fluorine in the product, calculated in Equation L-15 of this section. MFF Bk = Mass fraction of fluorine in by-product k, calculated in Equation L-16 of this section. q = Number of streams destroyed in process i. x = Number of streams recaptured in process i. u = Number of fluorine-containing by-products generated in process i. v = Number of fluorine-containing reactants fed into process i. ( 5 ) The mass of each fluorinated GHG removed from process i in stream j and destroyed over the period p ( i.e., P j , B kj , or R dj , as applicable) must be estimated by applying the destruction efficiency (DE) of the device that has been demonstrated for the fluorinated GHG f to fluorinated GHG f using Equation L-8 of this section: Where: M FGHGfj = Mass of fluorinated GHG f removed from process i in stream j and destroyed over the period p. (This may be P j , B kj , or R dj , as applicable.) DE FGHGf = Destruction efficiency of the device that has been demonstrated for fluorinated GHG f in stream j (fraction). C FGHGfj = Concentration (mass fraction) of fluorinated GHG f in stream j removed from process i and fed into the destruction device over the period p. If this concentration is only a trace concentration, c F-GHGfj is equal to zero. S j = Mass removed in stream j from process i and fed into the destruction device over the period p (metric tons). ( 6 ) The mass of each fluorine-containing compound that is not a fluorinated GHG and that is removed from process i in stream j and destroyed over the period p ( i.e., P",
+  "token_count": 508,
+  "text_sha": "924c6c48193523b5016105137344936a09d16d9f5df9f96ccea02b802327c67f",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

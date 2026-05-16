@@ -1,0 +1,11 @@
+source_id: doe_osti_2583809
+title: "Next Generation Heat Transfer Fluids for Two-Phase Immersion Cooling of Data Centers"
+url: https://www.osti.gov/servlets/purl/2583809
+license: public_domain
+publisher: doe_osti
+version: "2025-04-01"
+added_at: "2026-05-16T00:02:16.049293Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, 42 ENGINEERING"
+asset_families:
+  - datacenter

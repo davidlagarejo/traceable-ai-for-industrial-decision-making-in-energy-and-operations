@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0016",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "11 r m 11 350 sec, 7.5 10 2 - m 11 400 sec, 7.5 10 m 1.9 1.8 [ v 1.7 S M 1.6 R 1.5 . m 1.4 r o n 1.3 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Time [msec] Figure 16: Horizontal and vertical emittance in a normal intensity beam (7.5×1011 protons). 34 2.2 ] d 2.1 300 sec, 13 10 11 a r m 2 350 sec, 13 10 11 - m 1.9 400 sec, 13 10 11 m 1.8 [ h 1.7 S 1.6 M 1.5 R . 1.4 m r o 1.3 n 1.2 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Time [msec] 2.2 ] d a 2.1 300 sec, 13 10 11 r m 11 350 sec, 13 10 2 - m 11 400 sec, 13 10 m 1.9 1.8 [ v 1.7 S M 1.6 R 1.5 . m 1.4 r o n 1.3 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Time [msec] Figure 17: Horizontal and vertical emittance in a high intensity beam (13× 1011 protons). 35 4.85 300 s, 0.5 4.8 e 300 s, 1.5 4.75 n 300 s, 3.0 u 4.7 T 350 s, 0.5 l a4.65 350 s, 1.5 t n 4.6 350 s, 3.0 o z4.55 400 s, 0.5 i r o 400 s, 1.5 4.5 H 400 s, 3.0 4.45 tune setting 4.4 0 2 4 6 8 10 12 14 16 18 20 Time [msec] 5 4.95 300 s, 0.5 300 s, 1.5 4.9 e 300 s, 3.0 n4.85 u 350 s, 0.5 T 4.8 350 s, 1.5 l a4.75 c 350 s, 3.0 4.7 i t r 400 s, 0.5 e4.65 V 400 s, 1.5 4.6 400 s, 3.0 4.55 tune setting 4.5 0 2 4 6 8 10 12 14 16 18 20 Time [msec] Figure 18: Comparisons of the horizontal and vertical tunes in a high in- tensity beam (13×1011 protons) during the early part of the Booster cycle. The red, blue and green curves are the tunes obtained from simulations of beams injected via a charge exchange foil of thickness is 100µg/cm2 with injection pulse lengths of 300µsec, 350µsec and 400µsec, respectively. The solid, dashed and dotted curves represent the tunes simulated by test macro- particles initially located at 0.5σ, 1σ and 3σ from the beam center, respec- tively. The black curves are the set-tunes during the Booster operation. 36 1.4 1.3 1.2 300 s,7.5 1011 300 s, 13 1011 r o 1.1 350 s,7.5 1011 350 s, 13 1011 tc 1 a F 0.9 400 s,7.5 1011 400 s, 13 1011 g 0.8 n 0.7 ih 0.6 c n 0.5 u 0.4 B 0.3 0.2 0.1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 Time [msec] 0.15 0.145 300 s,7.5 1011 300 s, 13 1011 0.14 350 s,7.5 1011 350 s, 13 1011 ]s - 0.135",
+  "token_count": 512,
+  "text_sha": "62091c98826ee3301ce825751703f6f91f855eba3c366612d5bc6c72c814a54b",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

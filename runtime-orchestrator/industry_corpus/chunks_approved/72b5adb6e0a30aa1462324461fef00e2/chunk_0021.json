@@ -1,0 +1,14 @@
+{
+  "chunk_id": "72b5adb6::chunk_0021",
+  "source_id": "doe_osti_2999833",
+  "source_sha": "72b5adb6e0a30aa1462324461fef00e2",
+  "source_url": "https://www.osti.gov/servlets/purl/2999833",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "study and an analytical model of particle distributions on post-necking deformation and failure mode in AA5754 aluminum alloy sheets, Int J Fracture 164(2) (2010) 167-183. [6] G. Cheng, K.S. Choi, X. Hu, X. Sun, Determining individual phase properties in a multi-phase Q&P steel using multi-scale indentation tests, Materials Science and Engineering: A 652 (2016) 384-395. [7] G. Cheng, K.S. Choi, X.H. Hu, X. Sun, Application of Nano-Indentation Test in Estimating Constituent Phase Properties for Microstructure-Based Modeling of Multiphase Steels, Sae Int J Engines 10(2) (2017) 405-412. [8] M. Dao, N. Chollacoop, K.J. Van Vliet, T.A. Venkatesh, S. Suresh, Computational modeling of the forward and reverse problems in instrumented sharp indentation, Acta Materialia 49(19) (2001) 3899- 3918. [9] G. Cheng, F. Zhang, A. Ruimi, D.P. Field, X. Sun, Quantifying the effects of tempering on individual phase properties of DP980 steel with nanoindentation, Materials Science and Engineering: A 667 (2016) 240-249. 39",
+  "token_count": 150,
+  "text_sha": "a6ee53529800a6a020fd83bcdd4f1012d1d2a3e63b02d8289e488c3ea9e25b05",
+  "extracted_at": "2026-05-15T23:59:29.138405Z"
+}

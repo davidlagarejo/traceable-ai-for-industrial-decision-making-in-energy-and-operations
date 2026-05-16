@@ -1,0 +1,14 @@
+{
+  "chunk_id": "e3b83648::chunk_0014",
+  "source_id": "doe_osti_3013860",
+  "source_sha": "e3b836485dcb14a827e2a3c14d0133cf",
+  "source_url": "https://www.osti.gov/servlets/purl/3013860",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "[8] JackJ.Dongarra,HansW.Meuer,andErichStrohmaier.1997.TOP500supercom- [16] WoongShin,VladyslavOles,AhmadMaroofKarimi,J.AustinEllis,andFeiyi putersites.Supercomputer13(1997),89–111. Wang.2021. Revealingpower,energyandthermaldynamicsofa200pfpre- [9] RyanE.Grant,MichaelLevenhagen,StephenL.Olivier,DavidDeBonis,KevinT. exascalesupercomputer. ProceedingsoftheInternationalConferenceforHigh Pedretti,andJamesH.Laros.2016.Standardizingpowermonitoringandcontrol PerformanceComputing,Networking,StorageandAnalysis(2021). atexascale.Computer49,10(2016),38–46. [17] JianSun,ZhimingGao,DavidGrant,KashifNawaz,PengtaoWang,Cheng-Min [10] MichaelKercherandGaryNew.2020.ASupercomputingCenterExperienceWith Yang,PhilipBoudreaux,StephenKowalski,andSheanHuff.2024.Energydataset CoolingControlDesign.InIEEEInternationalConferenceonClusterComputing ofFrontiersupercomputerforwasteheatrecovery.ScientificData11,1(2024), (CLUSTER).514–518. 1077. [11] VineetKumar,ScottGreenwood,WesBrewer,WesleyWilliams,DavidGrant, [18] OresteVilla,DanielR.Johnson,MikeOconnor,EvgenyBolotin,DavidNellans, andNathanParkison.2024.Thermo-FluidModelingFrameworkforSupercomputer JustinLuitjens,NikolaiSakharnykh,etal.2014.Scalingthepowerwall:apath DigitalTwins:Part1,DemonstrationatExascale.TechnicalReport.OakRidge toexascale.InProceedingsoftheInternationalConferenceforHighPerformance NationalLaboratory(ORNL),OakRidge,TN(UnitedStates). Computing,Networking,StorageandAnalysis.830–841. [12] RobertMcFarlane.2021.ASHRAEstandardsandpracticesfordatacenters.Data [19] P.Wangetal.2024. DistrictHeatingUtilizingWasteHeatofaDataCenter: CenterHandbook(2021),175–191. High-TemperatureHeatPumps.EnergyandBuildings315(2024),114327.",
+  "token_count": 40,
+  "text_sha": "6a874949935bc4c1be3369551d5b12a796159344e2b4060d19e3f386ea61bc91",
+  "extracted_at": "2026-05-16T00:00:14.043041Z"
+}

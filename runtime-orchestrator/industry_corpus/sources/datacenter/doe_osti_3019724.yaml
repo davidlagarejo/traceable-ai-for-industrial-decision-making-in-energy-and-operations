@@ -1,0 +1,11 @@
+source_id: doe_osti_3019724
+title: "Modeling Framework for Data Center"
+url: https://www.osti.gov/servlets/purl/3019724
+license: public_domain
+publisher: doe_osti
+version: "2026-02-13"
+added_at: "2026-05-16T00:00:09.622705Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 25 ENERGY STORAGE, 97 MATHEMATICS AND COMPUTING, ancillary services, automatic transfer switches, backup generation"
+asset_families:
+  - datacenter

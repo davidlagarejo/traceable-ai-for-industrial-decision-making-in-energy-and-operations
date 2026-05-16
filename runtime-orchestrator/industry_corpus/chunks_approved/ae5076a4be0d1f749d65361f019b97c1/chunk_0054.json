@@ -1,0 +1,14 @@
+{
+  "chunk_id": "ae5076a4::chunk_0054",
+  "source_id": "doe_osti_3021565",
+  "source_sha": "ae5076a4be0d1f749d65361f019b97c1",
+  "source_url": "https://www.osti.gov/servlets/purl/3021565",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "T. Argyropoulos, J. Giner-Navarro, “High-power test of a structure built from halves”, Presented at HG2016, Argonne National Lab, July 2016. 82. A. Degiovanni, W. Wuensch, J. Giner-Navarro, “Comparison of the conditioning of high gradient accelerating structures”, Phys. Rev. Accel. Beams 19, 032001 (2016). Page 46 of 55",
+  "token_count": 47,
+  "text_sha": "8bfa5b6440f142f541e76fb6c7176ebb79591764e301acaf786b71a54f379b20",
+  "extracted_at": "2026-05-15T23:59:01.424350Z"
+}

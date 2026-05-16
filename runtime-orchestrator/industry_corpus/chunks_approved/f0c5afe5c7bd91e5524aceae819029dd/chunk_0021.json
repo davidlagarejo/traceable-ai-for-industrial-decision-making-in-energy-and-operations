@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f0c5afe5::chunk_0021",
+  "source_id": "doe_osti_3006961",
+  "source_sha": "f0c5afe5c7bd91e5524aceae819029dd",
+  "source_url": "https://www.osti.gov/servlets/purl/3006961",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Management Information Systems for Federal Facilities.” https://www.energy.gov/femp/energy-management-information-systems-federal- facilities U.S. Department of Energy. 2022. Federal Metering Guidance. https://www.energy.gov/sites/default/files/2022-10/federal-metering-guidance-2022.pdf U.S. Transportation Security Administration. 2025. “What Can I Bring?” https://www.tsa.gov/travel/security-screening/whatcanibring/all 28 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov",
+  "token_count": 44,
+  "text_sha": "92c9e47273f1107203ecaf8e8addf41cc863701f8e6c8fd908e2c4ac4592a6e6",
+  "extracted_at": "2026-05-16T00:05:24.493517Z"
+}

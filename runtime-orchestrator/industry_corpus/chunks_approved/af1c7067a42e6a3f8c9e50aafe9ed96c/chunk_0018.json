@@ -1,0 +1,14 @@
+{
+  "chunk_id": "af1c7067::chunk_0018",
+  "source_id": "doe_osti_3005762",
+  "source_sha": "af1c7067a42e6a3f8c9e50aafe9ed96c",
+  "source_url": "https://www.osti.gov/servlets/purl/3005762",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "M. Kordell, and C.-M. Ko, Excited hadron channels in hadronization, EPJ Web Conf. 296, 13006 (2024). [28] R. J. Fries, J. Purcell, M. Kordell II, and C.-M. Ko, Excited Hadron Channels in Hadroniza- tion, PoS HardProbes2023, 132 (2024), arXiv:2308.15608 [nucl-th].",
+  "token_count": 40,
+  "text_sha": "ad70cc71e3a450ded9b62d1092f8ac8e5c239bb73538d86b1c0e488ecaca55f8",
+  "extracted_at": "2026-05-15T23:55:33.909952Z"
+}

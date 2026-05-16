@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3645f767::chunk_0004",
+  "source_id": "doe_osti_3022461",
+  "source_sha": "3645f767a5670e4f9970855b75ccb5bd",
+  "source_url": "https://www.osti.gov/servlets/purl/3022461",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . iv Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . v List of Acronyms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vi 1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.1 Workshop Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.2 Workshop Agenda . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.3 Summary of Workshop Presentations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 1.3.1 “Works in Theory”: Mobility Angle(Jibonananda Sanyal, NLR) . . . . . . . . . . . . . . 1 1.3.2 Legacy Device Experience in AI-Driven Smart Community Control for Accelerating PV Adoption and Enhancing Grid Resilience(Rajendra Adhikari, NLR) . . . . . . . . . . . . 2 1.3.3 Legacy Devices and Interoperability: Grid(Barry Mather, NLR) . . . . . . . . . . . . . . 3 1.3.4 Commercial Buildings Research Infrastructure and Behind-the-Meter Storage : Flexible and Modular Platforms for Building and Grid Research(Donald Price, NLR) . . . . . . . . . . 3 2 Legacy Devices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2.1 Building System Devices . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "0a9a5be884a408fa0e5d11d647946c608aa8e6cf3c1fbe2f671f8d3f9ddb7820",
+  "extracted_at": "2026-05-16T00:05:21.872368Z"
+}

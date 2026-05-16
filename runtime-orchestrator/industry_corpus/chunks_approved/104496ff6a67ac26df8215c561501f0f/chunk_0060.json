@@ -1,0 +1,14 @@
+{
+  "chunk_id": "104496ff::chunk_0060",
+  "source_id": "us_federal_10_cfr_0851",
+  "source_sha": "104496ff6a67ac26df8215c561501f0f",
+  "source_url": "https://www.ecfr.gov/current/title-10/part-851",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Corrections Reader Aids Using the eCFR Point-in-Time System Understanding the eCFR Government Policy and OFR Procedures Developer Resources Recent Site Updates Information About This Site Legal Status Privacy Accessibility FOIA No Fear Act Continuity Information My eCFR My Subscriptions Sign In / Sign Up",
+  "token_count": 44,
+  "text_sha": "16db753525d67eb9f362bacdcf9dd9af33ea0126bab120ce92ba3bb3db117ae9",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

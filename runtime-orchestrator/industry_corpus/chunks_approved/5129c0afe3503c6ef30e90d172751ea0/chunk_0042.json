@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0042",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "of Capacity Capacity of Capacity Capacity of Capacity Capacity Plants (MW) (MW) Plants (MW) (MW) Plants (MW) (MW) Combined Cycle – – – 22 10,080.9 10,080.9 – – – Natural Gas Non-CC 26 4,531.08 4,531.08 31 1.922.96 1,922.96 – – – Nuclear 3 1,800 1,800 1 50 50 – – – Conventional SUBTOTAL 29 6,331.08 6,331.08 54 12,053.86 12,053.86 – – – Solar 38 3,553.35 2,751.87 119 8,522.03 5,724.37 – – – Wind 3 761.1 185.94 3 2,846.5 483.91 – – – Hydro 32 292.94 275.05 10 13.46 9.15 – – – Renewable SUBTOTAL 73 4,607.39 3,212.86 54 11,381.99 6,217.42 – – – Mechanical Storage – – – – – – – – – Battery/Non-battery Storage 2 291.5 84.18 17 1,509.9 1,254.56 – – – Storage SUBTOTAL 2 291.5 84.18 17 1,509.9 1,254.56 – – – Other – – – – – – – – – Other SUBTOTAL – – – – – – – – – Likely SUBTOTAL 104 11,229.97 9,628.12 203 24,945.75 19,525.84 – – – Derived from data found on: S&P Global Market Intelligence: Screener > Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 89 Status of Proposed Nameplate Capacity: Non-CAISO WECC U.S. 20 Known fuel groups included in “Other”: geothermal ) W 18 G ( y 16 170.88 GW total t i c a 14 p a C 12 e t a 10 l p e 8 m a N 6 d e 4 s o p 2 o r P e C r e e r r r e C r e e r r e C r e r r r e C C r e r r e C r e e r r r e C e r e C e r r e r r r e r r g C a r r e a e g C a r r e a g C a r e a e g C C a r a e g C a r r e a e g C r e g C r a e g a e e g a a a r o G N e lc u o h s o h s h t O lo S t a W a r o G N e lc u o h s o h s h t O lo S a r o G N e lc u o h s h t O lo S t a W a r o G N G N e lc u o h s lo S t a W a r o G N e lc u o h s o h s h t O lo S t a W a r o G N o h s t a W a r o G N o h s lo S t a W a r o lo S t a W t a W a r o e lc u lo S t S y - n o N f f O n",
+  "token_count": 512,
+  "text_sha": "3f3a06e8b8e62cda10e220ee5894ea750b10a9fa24d6dc67e31fb8b78eac49ae",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

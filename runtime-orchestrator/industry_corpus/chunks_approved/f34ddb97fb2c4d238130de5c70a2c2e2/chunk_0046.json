@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f34ddb97::chunk_0046",
+  "source_id": "doe_osti_2574895",
+  "source_sha": "f34ddb97fb2c4d238130de5c70a2c2e2",
+  "source_url": "https://www.osti.gov/servlets/purl/2574895",
+  "asset_families": [
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Effects of Marine Renewable Energy Development Around the World. Report for Ocean Energy Systems (OES). DOI: 10.2172/1632878. [18] IEEE, 1998. IEEE guide for information technology – system definition – concept of operations (ConOps) document. IEEE Std 1362-1998. http://dx.doi.org/10.1109/IEEESTD.1998.89424. Final Technical Report 57/57",
+  "token_count": 42,
+  "text_sha": "a641b3e5aa023aeda2e85599bb81238c2942600be896b95296e1667e025b7609",
+  "extracted_at": "2026-05-16T00:09:15.349759Z"
+}

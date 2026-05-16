@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0102",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "C-1 of this subpart (mmBtu per mass or mmBtu per volume, as applicable). EF = Fuel-specific default CO 2 emission factor, from Table C-1 of this subpart (kg CO 2 /mmBtu). 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( ii ) If natural gas consumption is obtained from billing records and fuel usage is expressed in therms, use Equation C-1a. where: CO 2 = Annual CO 2 mass emissions from natural gas combustion (metric tons). Gas = Annual natural gas usage, from billing records (therms). EF = Fuel-specific default CO 2 emission factor for natural gas, from Table C-1 of this subpart (kg CO 2 /mmBtu). 0.1 = Conversion factor from therms to mmBtu 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( iii ) If natural gas consumption is obtained from billing records and fuel usage is expressed in mmBtu, use Equation C-1b. where: CO 2 = Annual CO 2 mass emissions from natural gas combustion (metric tons). Gas = Annual natural gas usage, from billing records (mmBtu). EF = Fuel-specific default CO 2 emission factor for natural gas, from Table C-1 of this subpart (kg CO 2 /mmBtu). 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( 2 ) Tier 2 Calculation Methodology. Calculate the annual CO 2 mass emissions for each type of fuel by using either Equation C2a or C2c of this section, as appropriate. ( i ) Equation C-2a of this section applies to any type of fuel listed in Table C-1 of the subpart, except for municipal solid waste (MSW). For MSW combustion, use Equation C-2c of this section. Where: CO 2 = Annual CO 2 mass emissions for a specific fuel type (metric tons). Fuel = Mass or volume of the fuel combusted during the year, from company records as defined in § 98.6 (express mass in short tons for solid fuel, volume in standard cubic feet for gaseous fuel, and volume in gallons for liquid fuel). HHV = Annual average high heat value of the fuel (mmBtu per mass or volume). The average HHV shall be calculated according to the requirements of paragraph (a)(2)(ii) of this section. EF = Fuel-specific default CO 2 emission factor, from Table C-1 of this subpart (kg CO 2 /mmBtu). 1 × 10 −3 = Conversion factor from kilograms to metric tons. ( ii ) The minimum required sampling frequency for determining the annual average HHV ( e.g., monthly, quarterly, semi-annually, or by lot) is specified in § 98.34 . The method for computing the annual average HHV is a function of unit size and how frequently you perform or receive from the fuel supplier the results of fuel sampling for HHV. The method is specified in paragraph (a)(2)(ii)(A) or (a)(2)(ii)(B) of this section, as applicable. ( A ) If the results of fuel sampling are received monthly or more frequently, then for each unit with a maximum rated heat input capacity greater than or equal to 100 mmBtu/hr (or for a",
+  "token_count": 508,
+  "text_sha": "e6f8593d99c1840aea90023bb42e05a56be3de18b924de6caf3c5bcf7b825167",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

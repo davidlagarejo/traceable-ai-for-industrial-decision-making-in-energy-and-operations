@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c46c025a::chunk_0026",
+  "source_id": "doe_osti_2583809",
+  "source_sha": "c46c025a8695d386ac09e52a43ec7d10",
+  "source_url": "https://www.osti.gov/servlets/purl/2583809",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "impact of varying condenser coolant inlet temperatures (𝑇 ) on PUE across 𝐶𝑁𝐷 𝑤,𝑖 different loads (𝑊 ) and ambient temperatures (T ). Figure 33 shows the corresponding fan and ℎ𝑒𝑎𝑡𝑒𝑟 amb pump power consumption for the data points in Figure 32. Overall, PUE improves as 𝑇 increases, 𝐶𝑁𝐷 𝑤,𝑖 which is most evident at the 5 kW load level. This improvement is a result of the reduction in fan and pump power consumption at higher 𝑇 , as demonstrated in Figure 33. 𝐶𝑁𝐷 𝑤,𝑖 The sensitivity of PUE to 𝑇 is greater at lower loads, particularly at an ambient temperature of 𝐶𝑁𝐷 𝑤,𝑖 17°C. At lower load levels, power consumption becomes more responsive to changes in 𝑇 . For 𝐶𝑁𝐷 𝑤,𝑖 instance, Figure 33 shows that power consumption varies more dramatically with changes in 𝑇 at 𝐶𝑁𝐷 𝑤,𝑖 2.5 kW compared with 5.0 kW. This trend diminishes as ambient temperatures (T ) increase. amb Figure 32. Impact of different condenser coolant inlet temperatures on PUE across various loads and ambient temperatures. Figure 33. Impact of different condenser coolant inlet temperatures on power consumptions across various loads and ambient temperatures. A.4. RELATIONSHIP BETWEEN POWER CONSUMPTION AND SPEED FOR BOTH THE FAN AND COOLANT PUMP 700 600 500 400 300 200 100 0 0 50 100 150 Figure 34. Power consumption vs. speed for both the fan and coolant pump. )W( rewop naF 250 200 150 100 50 0 0 50 100 150 Fan speed (%) )W( rewop pmuP Pump speed (%)",
+  "token_count": 251,
+  "text_sha": "1b6509724780591aeede76a87d927e07aa38e5a356ff5fbcf2b07d423d681fc7",
+  "extracted_at": "2026-05-16T00:02:20.239737Z"
+}

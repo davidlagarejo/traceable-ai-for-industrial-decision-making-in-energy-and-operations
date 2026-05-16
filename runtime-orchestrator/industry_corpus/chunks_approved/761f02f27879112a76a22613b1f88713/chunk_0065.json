@@ -1,0 +1,14 @@
+{
+  "chunk_id": "761f02f2::chunk_0065",
+  "source_id": "doe_osti_3363286",
+  "source_sha": "761f02f27879112a76a22613b1f88713",
+  "source_url": "https://www.osti.gov/servlets/purl/3363286",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "pollutant emissions for the three study cases. NOx emissions are limited by the use of low-NOx burners in the design. Sources of NOx emissions include the combustion of fuel gas components with air. Because NOx emissions are determined by assuming a target NOx emissions rate of 2.5 ppmv at 15 mol% O ; therefore, NOx emissions are 2 proportional to the flue gas flow rate. The NOx emissions are the lowest in Case 3 at 4.4 kg/106 kg NH due to lower flue gas volume. 3 The production of PM is a result of system inefficiencies and is not produced or emitted in a significant amount. The PM emissions are the lowest, and essentially negligible, in Case 2 due to the post-combustion CO capture system removing additional PM in the flue gas whereas there 2 are still PM emissions in Case 3 due to no capture system operating on the flue gas. The pipeline natural gas was assumed to contain no Hg or hydrochloric acid, resulting in zero stack emissions. SO emissions are relatively low across all three cases, due to the use of the sulfur guard unit in 2 the flowsheet. Case 3 has the lowest sulfur dioxide emissions at 0.2 kg/106 kg NH due to this 3 case not needing supplemental natural gas, which bypasses the sulfur guard unit. Exhibit 4-5. Pollutant emissions 89",
+  "token_count": 226,
+  "text_sha": "33e3d60cd918993b55755dae6b3eacb0cab481ff92f87d2dc292c5d022ffe79f",
+  "extracted_at": "2026-05-15T23:54:43.619157Z"
+}

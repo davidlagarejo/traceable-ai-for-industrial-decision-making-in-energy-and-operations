@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0144",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "Table C-2 that was combusted during the year (except as otherwise provided in § 98.33(c)(4)(ii)(B) ), expressed in mmBtu. ( v ) Identification of the Part 75 methodology used to determine the CO 2 mass emissions. ( vi ) Methodology start date. ( vii ) Methodology end date. ( viii ) Acid Rain Program indicator. ( ix ) Annual CO 2 mass emissions from the combustion of biomass, expressed in metric tons of CO 2 e, except where the reporting provisions of §§ 98.3(c)(12)(i) through (c)(12)(iii) are implemented for the 2010 reporting year. ( x ) If applicable, the plant code (as defined in § 98.6 ). ( 2 ) For units that use the alternative CO 2 mass emissions calculation methods provided in § 98.33(a)(5) , you shall report the following unit-level information: ( i ) Unit, stack, or pipe ID numbers. Use exact same unit, common stack, common pipe, or multiple stack identification numbers that represent the monitored locations ( e.g., 1, 2, CS001, MS1A, CP001, etc. ) that are reported under § 75.64 of this chapter . ( ii ) For units that use the alternative methods specified in § 98.33(a)(5)(i) and (ii) to monitor and report heat input data year-round according to appendix D to part 75 of this chapter or § 75.19 of this chapter : ( A ) Each type of fuel combusted in the unit during the reporting year. ( B ) The methodology used to calculate the CO 2 mass emissions for each fuel type. ( C ) Methodology start date. ( D ) Methodology end date. ( E ) A code or flag to indicate whether heat input is calculated according to appendix D to part 75 of this chapter or § 75.19 of this chapter . ( F ) Annual CO 2 emissions at each monitored location, across all fuel types, expressed in metric tons of CO 2 e. ( G ) Annual heat input from each type of fuel listed in Table C-2 of this subpart that was combusted during the reporting year, expressed in mmBtu. ( H ) Annual CH 4 and N 2 O emissions at each monitored location, from each fuel type listed in Table C-2 of this subpart that was combusted during the reporting year (except as otherwise provided in § 98.33(c)(4)(ii)(D) ), expressed in metric tons CO 2 e. ( I ) Annual CO 2 mass emissions from the combustion of biomass, expressed in metric tons CO 2 e, except where the reporting provisions of §§ 98.3(c)(12)(i) through (c)(12)(iii) are implemented for the 2010 reporting year. ( J ) If applicable, the plant code (as defined in § 98.6 ). ( iii ) For units with continuous monitoring systems that use the alternative method for units with continuous monitoring systems in § 98.33(a)(5)(iii) to monitor heat input year-round according to part 75 of this chapter : ( A ) Each type of fuel combusted during the reporting year. ( B ) Methodology used to calculate the CO 2 mass emissions. ( C ) Methodology start date.",
+  "token_count": 512,
+  "text_sha": "667d5586c95a462651d5c0590a9fea182281d403fd3b695e93df2c5071ad1d8a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

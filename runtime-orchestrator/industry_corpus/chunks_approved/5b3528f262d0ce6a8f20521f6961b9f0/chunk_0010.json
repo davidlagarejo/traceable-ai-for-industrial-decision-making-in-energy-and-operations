@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5b3528f2::chunk_0010",
+  "source_id": "doe_osti_3015290",
+  "source_sha": "5b3528f262d0ce6a8f20521f6961b9f0",
+  "source_url": "https://www.osti.gov/servlets/purl/3015290",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "systems. We plan to implement graphical user interfaces for enhanced workflow specification, enable seamless interfacing with cloud platforms and specialized optimization solvers, and conduct comprehensive user studies to validate practical applicability. Furthermore, we will investigate generating JSON stage definitions through human-in-the loop Large Language Model methods to further abstract co-design formulation from low-level code development. These enhancements will strengthen CAMEO’s position as a general-purpose computational framework for complex system optimization across diverse engineering disciplines. Conclusion 13 PNNL-38619 7.0 References Sharma, Himanshu, Wei Wang, Bowen Huang, Thiagarajan Ramachandran, and Veronica Adetola. \"Multi-objective control co-design using graph based optimization for offshore wind farm grid integration.\" In 2024 American Control Conference (ACC), pp. 2580-2585. IEEE, 2024. Yuh, Junku. \"Design and control of autonomous underwater robots: A survey.\" Autonomous Robots 8, no. 1 (2000): 7-24. Ramachandran, Thiagarajan, Soumya Vasisht, Aowabin Rahman, Arnab Bhattacharya, and Veronica Adetola. \"A computational framework for control co-design of resilient cyber–physical systems with applications to microgrids.\" IEEE Transactions on Control Systems Technology 32, no. 3 (2023): 793-804. Bhattacharya, Arnab, Soumya Vasisht, Veronica Adetola, Sen Huang, Himanshu Sharma, and Draguna L. Vrabie. \"Control co-design of commercial building chiller plant using Bayesian o References 14 PNNL-38619 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA 99354 1-888-375-PNNL (7665) www.pnnl.gov References 15",
+  "token_count": 212,
+  "text_sha": "986a5f42a1201acb83d27338ac3c70704db0d87798414233052024c582d01e5b",
+  "extracted_at": "2026-05-16T00:04:37.395216Z"
+}

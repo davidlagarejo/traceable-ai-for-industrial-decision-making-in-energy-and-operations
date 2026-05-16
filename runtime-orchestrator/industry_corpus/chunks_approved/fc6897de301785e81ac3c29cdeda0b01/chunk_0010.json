@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0010",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31 Table 12. Network Design File—NODES . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31 Table 13. Network Design File—PIPES . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31 Table 14. Network Design File—COMPRESSORS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32 Table 15. Network Design File—SUPPLY . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 Table 16. Network Design File—DEMAND . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 Table 17. Network Design File—COMPOSITION . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 Table 18. Parameters for BlendPATH_scenario . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35 Table 19. ProFAST Financial Parameters Options . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36 Table 20. Overrides Files Formatting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37 Table 21. Parameters for run_mod . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39 Table 22. Top-Level Summary Parameters in Results Sheet in the Results File . . . . . . . . . . . . . . . . . 40 Table 23. Modified Network Design Sheet in the Results File . . . . . . . . . . . . . . . . . . . . . . . . . . 41 Table 24. Compressor Design Sheet",
+  "token_count": 511,
+  "text_sha": "9ef895b27243dbeef843293268c58a3575655e541e22f6821141d4159950ce7d",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

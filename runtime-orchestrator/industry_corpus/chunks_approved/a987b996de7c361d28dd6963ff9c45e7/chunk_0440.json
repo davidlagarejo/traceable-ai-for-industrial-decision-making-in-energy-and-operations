@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0440",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "is impeded by liquids loading or closed to the flow-line by surface valves. SFR p = Average flow-line rate of gas for well, p, at standard conditions in cubic feet per hour. Use equation W-33 to this section to calculate the average flow-line rate at standard conditions. HR p,q = Hours that well, p, was left open to the atmosphere during each unloading event, q. 1.0 = Hours for average well to blowdown casing volume at shut-in pressure. q = Unloading event. Z p,q = If HRp,q is less than 1.0 then Zp,q is equal to 0. If HRp,q is greater than or equal to 1.0 then Zp,q is equal to 1. ( 3 ) Calculation Method 3. Calculate the total emissions for each sub-basin from well venting to the atmosphere for liquids unloading with plunger lift assist using equation W-9 to this section. Where: E s = Annual natural gas emissions for each well at standard conditions, s, in cubic feet per year. N p = Total number of unloading events in the monitoring period per well, p. 0.37×10 −3 = {3.14 (pi)/4}/{14.7*144} (psia converted to pounds per square feet). TD p = Tubing internal diameter for well, p, in inches. WD p = Tubing depth to plunger bumper or to the top of the fluid column for well, p, in feet. SP p = Flow-line pressure for well p in pounds per square inch absolute (psia), using engineering estimate based on best available data. SFR p = Average flow-line rate of gas for well, p, at standard conditions in cubic feet per hour. Use equation W-33 to this section to calculate the average flow-line rate at standard conditions. HR p,q = Hours that well, p, was left open to the atmosphere during each unloading event, q. 0.5 = Hours for average well to blowdown tubing volume at flow-line pressure. q = Unloading event. Z p,q = If HR p,q is less than 0.5 then Z p,q is equal to 0. If HR p,q is greater than or equal to 0.5 then Z p,q is equal to 1. ( 4 ) Volumetric and mass emissions . Calculate CH 4 and CO 2 volumetric and mass emissions from volumetric natural gas emissions using calculations in paragraphs (u) and (v) of this section. ( g ) Well venting during completions and workovers with hydraulic fracturing . Calculate annual volumetric natural gas emissions from gas well and oil well venting during completions and workovers involving hydraulic fracturing using equation W-10A or equation W-10B to this section. Equation W-10A to this section applies to well venting when the gas flowback rate is measured from a specified number of example completions or workovers in a sub-basin and well type combination and equation W-10B to this section applies when the gas flowback vent volume is measured for each completion or workover in a sub-basin and well type combination. Completion and workover activities are separated into two periods, an initial period when flowback is routed to open pits or tanks and a subsequent period",
+  "token_count": 508,
+  "text_sha": "a3961f8fbc5c2220429b67dd648a287d420431f47ce35b7cb348416bca7c57cb",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

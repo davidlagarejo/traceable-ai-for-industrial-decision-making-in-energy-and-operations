@@ -1,0 +1,14 @@
+{
+  "chunk_id": "dbc5426c::chunk_0022",
+  "source_id": "doe_osti_2583492",
+  "source_sha": "dbc5426c42a0ad5ec83e579bcf38d2bc",
+  "source_url": "https://www.osti.gov/servlets/purl/2583492",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Woods (2021). “Integrated thermal energy storage system for air conditioners with phase-change composites”. Presented at [International Refrigeration and Air Conditioning Conference]. West Lafayette, IN. Paper 2116. Subject Inventions Listing: None ROI#: None 30 This report is available at no cost from the National Renewable Energy Laboratory (NREL) at www.nrel.gov/publications.",
+  "token_count": 49,
+  "text_sha": "8b6cf246fb0015a4b0f55b37a34b0a244ff0fc3bc73f9c39de7d9c1cfab104d2",
+  "extracted_at": "2026-05-15T23:55:06.852608Z"
+}

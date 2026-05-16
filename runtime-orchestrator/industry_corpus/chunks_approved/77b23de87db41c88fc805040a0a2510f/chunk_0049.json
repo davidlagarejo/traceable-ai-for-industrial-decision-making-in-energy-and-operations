@@ -1,0 +1,15 @@
+{
+  "chunk_id": "77b23de8::chunk_0049",
+  "source_id": "doe_osti_3015900",
+  "source_sha": "77b23de87db41c88fc805040a0a2510f",
+  "source_url": "https://www.osti.gov/servlets/purl/3015900",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "Inland Fuel Terminal Tiverton RI 9 619,048 Sprague Energy East Providence RI 10 917,334 Sprague Energy Providence RI 5 458,102 Global Partners Burlington VT 15 423,000 52 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 44,
+  "text_sha": "ec7d5bcae70ac9fbd1734b34f034ca6d3a657bc1827a84b13c96908f8b540f27",
+  "extracted_at": "2026-05-16T00:07:30.475251Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0761",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "at digesters calculated using Equation JJ-12 of this section (metric tons CH 4 /yr). ( 1 ) For each digester, calculate the annual CH 4 flow to the combustion device (CH 4 C) using Equation JJ-6 of this section. A fully integrated system that directly reports the quantity of CH 4 flow to the digester combustion device requires only summing the results of all monitoring periods for a given year to obtain CH 4 C. Where: CH 4 C = CH 4 flow to digester combustion device (metric tons CH 4 /yr). V = Average annual volumetric flow rate, calculated in Equation JJ-7 of this subsection (cubic feet CH 4 /yr). C = Average annual CH 4 concentration of digester gas, calculated in Equation JJ-8 of this section (%, wet basis). 0.0423 = Density of CH 4 lb/scf (at 520 °R or 60 °F and 1 atm). T = Average annual temperature at which flow is measured, calculated in Equation JJ-9 of this section (°R). P = Average annual pressure at which flow is measured, calculated in Equation JJ-10 of this section (atm). ( 2 ) For each digester, calculate the average annual volumetric flow rate, CH 4 concentration of digester gas, temperature, and pressure at which flow are measured using Equations JJ-7 through JJ-10 of this section. Where: V = Average annual volumetric flow rate (cubic feet CH 4 /yr). OD = Operating days, number of days per year that that the digester was operating (days/yr). V n = Daily average volumetric flow rate for day n, as determined from daily monitoring as specified in § 98.364 (acfm). Where: C = Average annual CH 4 concentration of digester gas (%, wet basis). OD = Operating days, number of days per year that the digester was operating (days/yr). C n = Average daily CH 4 concentration of digester gas for day n, as determined from daily monitoring as specified in § 98.364 (%, wet basis). Where: T = Average annual temperature at which flow is measured (°R). OD = Operating days, number of days per year that the digester was operating (days/yr). T n = Temperature at which flow is measured for day n(°R). Where: P = Average annual pressure at which flow is measured (atm). OD = Operating days, number of days per year that the digester was operating (days/yr). P n = Pressure at which flow is measured for day n (atm). ( 3 ) For each digester, calculate the CH 4 destruction at the digester combustion device using Equation JJ-11 of this section. Where: CH 4 D = CH 4 destruction at digester combustion device (metric tons/yr). CH 4 C = Annual quantity of CH 4 flow to digester combustion device, as calculated in Equation JJ-6 of this section (metric tons CH 4 ). DE = CH 4 destruction efficiency from flaring or burning in engine (lesser of manufacturer's specified destruction efficiency and 0.99). If the gas is transported off-site for destruction, use DE = 1. OH = Number of hours combustion device is functioning in reporting year. Hours",
+  "token_count": 512,
+  "text_sha": "4419e3f71fe70740f558ec12c7fb71181b6c16e68d67716d491cd2885309126a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "e5b057d4::chunk_0326",
+  "source_id": "us_federal_40_cfr_0082",
+  "source_sha": "e5b057d41d47730bbdf6a5924570d977",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+  "asset_families": [
+    "cold_chain_facility",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "If the reading has drifted more than 0.001 g note the new balance reading and go to step 2. 4 . If the balance reading is flickering back and forth between two consecutive values choose the value that is displayed more often than the other. 5 . If the balance reading is flickering equally back and forth between two consecutive values choose the higher value. 12.11.4 Initial Adjustment 1 . Empty the sample pan Close the door. Select Range 1000 g 2 . Wait for a stable reading 3 . Record the reading with QC code IZC (initial zero check) 4 . Press the Tare button 5 . Record the reading in the logbook with QC code IZA (initial zero adjust) 6 . Place the 1,000 g working calibration weight on the balance pan 7 . Wait for a stable reading. 8 . Record the reading with QC code ICC (initial cal check) 9 . Press the Calibrate button 10 . Record the reading with QC code ICA (initial cal adjust) 11 . Remove the calibration weight. 12 . Wait for a stable reading. 13 . Record the reading with QC code IZC. 14 . If the zero reading exceeds ± 0.002 g, go to step 4. 15 . Place the 500 g calibration weight on the balance pan 16 . After a stable reading, record the reading with QC code C500. Do not adjust the balance. 17 . Add the 0.050 g weight to 500 g weight on the balance pan. 18 . After a stable reading, record the reading with QC code C0.05. Do not adjust the balance. 19 . Weigh reference object TEST1, record reading with QC code T1. 20 . Weigh the reference object TEST2, TEST3, etc. that is similar in weight to the samples that you will be weighing. Record with QC code T2, T3, etc. 12.11.5 Zero Check 1 . Empty the sample pan. Close the door. 2 . Wait for a stable reading 3 . Record the reading with QC code ZC 4 . If the ZC reading is less than or equal to the zero adjustment tolerance shown in Table 1, return to weighing and do not adjust the zero. If the ZC reading exceeded the zero adjustment tolerance, proceed with steps 5 through 7. 5 . Press the Tare button 6 . Record the reading in the logbook with QC code ZA. 7 . If the ZC reading exceeded the zero re-weigh tolerance, change the QC code recorded in step 3 from ZC to FZC. Then enter a QC code of FZ into the QC code column of all samples weights obtained after the last valid zero check. Re- weigh all of those samples, recording new data in new rows of the logbook. 12.11.6 Calibration Check 1 . First, follow procedures for Zero Check. If the ZC was within tolerance, tare the balance anyway ( i.e., follow steps 5 and 6 of the Zero Check method) 2 . Place the 1,000 g working calibration weight on the sample pan,",
+  "token_count": 508,
+  "text_sha": "79b84fde2cf0c1323e9a59b271acb6d3b3c95c6029f6312742c2cfa81d32f6bf",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

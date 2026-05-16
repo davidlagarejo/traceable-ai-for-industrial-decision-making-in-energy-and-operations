@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce16149a::chunk_0077",
+  "source_id": "us_federal_29_cfr_1926",
+  "source_sha": "ce16149af326cf92a1f55853384aa65c",
+  "source_url": "https://www.ecfr.gov/current/title-29/part-1926",
+  "asset_families": [
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "ft. to maintain required minimum velocities at following ratios (tank width (W)/tank length (L)). 1 2 0.0-0.09 0.1-0.24 0.25-0.49 0.5-0.99 1.0-2.0 Hood along one side or two parallel sides of tank when one hood is against a wall or baffle. 2 Also for a manifold along tank centerline. 3 50 50 60 75 90 100 75 75 90 110 130 150 100 100 125 150 175 200 150 150 190 225 260 300 Hood along one side or two parallel sides of free standing tank not against wall or baffle. 50 75 90 100 110 125 75 110 130 150 170 190 100 150 175 200 225 250 150 225 260 300 340 375 1 It is not practicable to ventilate across the long dimension of a tank whose ratio W / L exceeds 2.0. It is undesirable to do so when W / L exceeds 1.0. For circular tanks with lateral exhaust along up to 1 ⁄ 2 the circumference, use W / L = 1.0; for over one-half the circumference use W / L = 0.5. 2 Baffle is a vertical plate the same length as the tank, and with the top of the plate as high as the tank is wide. If the exhaust hood is on the side of a tank against a building wall or close to it, it is perfectly baffled. 3 Use W /2 as tank width in computing when manifold is along centerline, or when hoods are used on two parallel sides of a tank. Tank Width ( W ) means the effective width over which the hood must pull air to operate (for example, where the hood face is set back from the edge of the tank, this set back must be added in measuring tank width). The surface area of tanks can frequently be reduced and better control obtained (particularly on conveyorized systems) by using covers extending from the upper edges of the slots toward the center of the tank. ( 3 ) The vertical height of the receiving exhaust hood, including any baffle, shall not be less than one-quarter the width of the tank. ( 4 ) The supply airstream shall not be allowed to impinge on obstructions between it and the exhaust slot in such a manner as to significantly interfere with the performance of the exhaust hood. ( 5 ) Since most failure of push-pull systems result from excessive supply air volumes and pressures, methods of measuring and adjusting the supply air shall be provided. When satisfactory control has been achieved, the adjustable features of the hood shall be fixed so that they will not be altered. ( iv ) All tanks exhausted by means of hoods which project over the entire tank, and which do not conform to the definition of enclosing hoods, shall be considered to be overhead canopy hoods. The quantity of air in cubic feet per minute necessary to be exhausted through a canopy hood shall be not less than the product of the control velocity times the net area of all",
+  "token_count": 509,
+  "text_sha": "3dd7a73442864bcaed03c925e6594c7d17b981f48a3e6618eee895e61a7edb8f",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

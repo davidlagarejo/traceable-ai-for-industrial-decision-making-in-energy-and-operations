@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0231",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "current default utilization and by-product formation rates and destruction or removal efficiency values should be included in revised values. ( iii ) Whether new data are available that could expand the existing data set to include new gases, tools, or processes not included in the existing data set (i.e. gases, tools, or processes for which no data are currently available). ( 6 ) The Administrator will review the reports within 120 days and will notify you of a determination whether it is necessary to update any default utilization and by-product formation rates and/or destruction or removal efficiency values. If the Administrator determines it is necessary to update default utilization and by-product formation rates and/or destruction or removal efficiency values, you will then have 180 days from the date you receive notice of the determination to execute the data collection and analysis plan described in the report and submit those data to the Administrator. [ 75 FR 74818 , Dec. 1, 2010, as amended at 77 FR 10381 , Feb. 22, 2010; 78 FR 68215 , Nov. 13, 2013; 78 FR 71954 , Nov. 29, 2013; 79 FR 73785 , Dec. 11, 2014; 81 FR 9255 , Dec. 9, 2016; 89 FR 31915 , Apr. 25, 2024] § 98.97 Records that must be retained. In addition to the information required by § 98.3(g) , you must retain the following records: ( a ) All data used and copies of calculations made as part of estimating gas consumption and emissions, including all spreadsheets. ( b ) If you use HC fuel CECS purchased and installed on or after January 1, 2025, to control emissions from tools that use either NF 3 as an input gas in remote plasma cleaning processes or F 2 as an input gas in any process, and if you use a value less than 1 for either a F2,j or a NF3,RPC in equation I-9 to § 98.93 , certification and documentation that the model for each of the systems that you claim does not form CF 4 from F 2 has been tested and verified to produce less than 0.1% CF 4 from F 2 , and certification that the site maintenance plan includes the HC fuel CECS manufacturer's recommendations and specifications for installation, operation, and maintenance of those systems. If you are relying on your own testing to make the certification that the model produces less than 0.1% CF 4 from F 2 , the documentation must include the model tested, the method used to perform the testing ( e.g., EPA 430-R-10-003, modified to calculate the formation rate of CF 4 from F 2 rather than the DRE), complete documentation of the results of any initial and subsequent tests, and a final report similar to that specified in EPA 430-R-10-003 (incorporated by reference, see § 98.7 ), with appropriate adjustments to reflect the measurement of the formation rate of CF 4 from F 2 rather than the DRE. If you are relying on testing by the HC fuel CECS manufacturer to make the certification that the system",
+  "token_count": 511,
+  "text_sha": "77c2c8175374354f5d31af12a4a7122e4be94297a20dc3718da7201dd812e0df",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

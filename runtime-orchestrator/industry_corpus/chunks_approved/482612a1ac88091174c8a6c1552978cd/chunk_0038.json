@@ -1,0 +1,14 @@
+{
+  "chunk_id": "482612a1::chunk_0038",
+  "source_id": "doe_osti_3031067",
+  "source_sha": "482612a1ac88091174c8a6c1552978cd",
+  "source_url": "https://www.osti.gov/servlets/purl/3031067",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "2003. “Handbook of Parameter Estimation for Probabilistic Risk Assessment.” NUREG/CR-6823, U.S. Nuclear Regulatory Commission. https://www.nrc.gov/docs/ML0329/ML032900131.pdf. [13] Ma, Z, T. Liu, N. Johnson, and J.W. Merickle. 2025. “Enhanced Component Performance Study: Emergency Diesel Generators 1998–2024,” INL/RPT-25-86864, Idaho National Laboratory. https://nrcoe.inl.gov/publicdocs/CompPerf/edg-2024.pdf. 52",
+  "token_count": 40,
+  "text_sha": "e3f4716296853118e14686102bf744874b74edda039a315ae9786bd0d5a00b88",
+  "extracted_at": "2026-05-15T23:59:07.157232Z"
+}

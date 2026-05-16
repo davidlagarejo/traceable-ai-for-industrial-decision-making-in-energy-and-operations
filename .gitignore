@@ -43,3 +43,6 @@ runtime-orchestrator/pdf_cache/
 # We commit only: sources/, chunks_approved/, chunks_rejected/, embeddings/, index/
 runtime-orchestrator/industry_corpus/raw_pdfs/
 runtime-orchestrator/industry_corpus/extracted_text/
+runtime-orchestrator/regulatory_corpus/raw_xml/
+# Per-chunk embeddings are regenerable; we keep only consolidated index/vectors.npy
+runtime-orchestrator/industry_corpus/embeddings/

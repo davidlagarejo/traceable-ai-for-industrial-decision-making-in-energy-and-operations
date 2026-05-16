@@ -1,0 +1,14 @@
+{
+  "chunk_id": "94c83a98::chunk_0023",
+  "source_id": "doe_osti_3011817",
+  "source_sha": "94c83a98ec0e94f5e1d8eceeba6f9c92",
+  "source_url": "https://www.osti.gov/servlets/purl/3011817",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "U.S. Energy Information Administration. 2022. 2018 Commercial Buildings Energy Consumption Survey. Washington, D.C.: U.S. Department of Energy. Available at https://www.eia.gov/consumption/commercial/. U.S. Energy Information Administration. 2024. “Frequently Asked Questions (FAQs): How Much Energy Is Consumed in U.S. Buildings?” https://www.eia.gov/tools/faqs/faq.php?id=86&t=1. Wijesuriya, Sajith, Habib Arjmand Mazidi, Ravi Anant Kishore, and Chuck Booten. 2025. “Energy performance of an operational government building retrofitted with ceiling phase change material tiles in a mixed-humid climate.” Energy and Buildings. https://doi.org/10.1016/j.enbuild.2025.115313. 29 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 84,
+  "text_sha": "21a87861e69368a7adf6e88d07b8599f52c311f856cca28b0970170cd2ae108f",
+  "extracted_at": "2026-05-16T00:04:09.677332Z"
+}

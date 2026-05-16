@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5999ec84::chunk_0008",
+  "source_id": "doe_osti_3218390",
+  "source_sha": "5999ec842ead7016604a51252fb3f5a5",
+  "source_url": "https://www.osti.gov/servlets/purl/3218390",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "the first line of the email body, write: SUBSCRIBE <listserv name> <Your Name> • For example, “SUBSCRIBE STDS-IBRI-SG1 Andy Hoke” • You will get a confirmation email from listserv@listserv.ieee.org. It might go into your spam/junk folder. You must click on the confirmation link in the email to complete the signup. • IBRI WG listservs: • Main IBRI listserv: STDS-IBRI (used to communicate WG meeting dates, agendas, etc.) • Subgroup 1 (overall document): STDS-IBRI-SG1 • Subgroup 2 (Q-V control): STDS-IBRI-SG2 • Subgroup 3 (P-f control and RT): STDS-IBRI-SG3 • Subgroup 4 (Abnormal voltage RT): STDS-IBRI-SG4 • Subgroup 5 (Power quality): STDS-IBRI-SG5 • Subgroup 6 (Modeling, simulation, measurement): STDS-IBRI-SG6 • Subgroup 7 (Frequency domain methods): STDS-IBRI-SG7 • Grid-forming Task Force: STDS-IBRI-GFMTF ▪ Also send Andy a note if you sign up for SG6, SG7, or GFM TF 31 What Should UNIFI Specs Team Work on Next? What Should UNIFI Specs Team Work on Next? ▪ Fault response and recovery specs/test criteria? ▪ Time-domain tests/criteria for non-BESS GFM devices? ▪ Updated frequency-domain specs? ▪ Plant-level GFM specs/tests? ▪ Criteria/tests for GFM embedded with large loads? ▪ Criteria/tests for microgrid applications? ▪ Specifications related to short-term overcurrent capability? ▪ Standardized hardware tests? Commissioning tests? ▪ Nothing? (Just let IEEE take it from here?) ▪ …? 32 33 Thank you Thank you NLR/PR-5D00-98588 Visit the UNIFI website: unificonsortium.org This work was authoredby National Laboratory of the Rockies for the U.S. Department of Energy (DOE), operated under Contract No. DE-AC36-08GO28308. Funding provided bythe DOE Solar Energy Technologies Office. The views expressed in the article do not necessarily represent the views of the DOE or the U.S. Government. The U.S. Government retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. 33",
+  "token_count": 317,
+  "text_sha": "7a1b64dfbc8569eec4c92296742536867a0b98545d4c43436a8146b3c2ee8461",
+  "extracted_at": "2026-05-16T00:11:14.895141Z"
+}

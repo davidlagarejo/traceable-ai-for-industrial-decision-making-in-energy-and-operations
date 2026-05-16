@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0196",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "test method. For each stack system in the fab, measure the emissions of each fluorinated GHG from the stack system by conducting an emission test. In addition, measure the fab-specific consumption of each fluorinated GHG by the tools that are vented to the stack systems tested. Measure emissions and consumption of each fluorinated GHG as specified in § 98.94(j) . Develop fab-specific emission factors and calculate fab-level fluorinated GHG emissions using the procedures specified in paragraphs (i)(3)(i) through (viii) of this section. All emissions test data and procedures used in developing emission factors must be documented and recorded according to § 98.97 . ( i ) You must measure the fab-specific fluorinated GHG consumption of the tools that are vented to the stack systems during the emission test as specified in § 98.94(j)(3) . Calculate the consumption for each fluorinated GHG for the test period. ( ii ) You must calculate the emissions of each fluorinated GHG consumed as an input gas using equation I-17 to this section and each fluorinated GHG formed as a by-product gas using equation I-18 to this section and the procedures specified in paragraphs (i)(3)(ii)(A) through (E) of this section. If a stack system is comprised of multiple stacks, you must sum the emissions from each stack in the stack system when using equation I-17 or equation I-18 to this section. Where: E is = Total fluorinated GHG input gas i, emitted from stack system s, during the sampling period (kg). X ism = Average concentration of fluorinated GHG input gas i in stack system s, during the time interval m (ppbv). MW i = Molecular weight of fluorinated GHG input gas i (g/g-mole). Q s = Flow rate of the stack system s, during the sampling period (m 3 /min). SV = Standard molar volume of gas (0.0240 m 3 /g-mole at 68 °F and 1 atm). Δt m = Length of time interval m (minutes). Each time interval in the FTIR sampling period must be less than or equal to 60 minutes (for example an 8 hour sampling period would consist of at least 8 time intervals). 1/10 3 = Conversion factor (1 kilogram/1,000 grams). i = Fluorinated GHG input gas. s = Stack system. N = Total number of time intervals m in sampling period. m = Time interval. Where: E ks = Total fluorinated GHG by-product gas k, emitted from stack system s, during the sampling period (kg). X ks = Average concentration of fluorinated GHG by-product gas k in stack system s, during the time interval m (ppbv). MW k = Molecular weight of the fluorinated GHG by-product gas k (g/g-mole). Q s = Flow rate of the stack system s, during the sampling period (m 3 /min). SV = Standard molar volume of gas (0.0240 m 3 /g-mole at 68 °F and 1 atm). Δt m = Length of time interval m (minutes). Each time interval in the FTIR sampling period must be less than or equal to 60 minutes (for example an 8 hour sampling period would consist of",
+  "token_count": 511,
+  "text_sha": "8fdb3a35b698db757ba02855c1c001267e0664564279765ab1eaf70a700ae89c",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

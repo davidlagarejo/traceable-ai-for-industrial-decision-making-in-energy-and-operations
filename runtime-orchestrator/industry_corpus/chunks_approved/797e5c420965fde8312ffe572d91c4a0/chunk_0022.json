@@ -1,0 +1,14 @@
+{
+  "chunk_id": "797e5c42::chunk_0022",
+  "source_id": "doe_osti_3019724",
+  "source_sha": "797e5c420965fde8312ffe572d91c4a0",
+  "source_url": "https://www.osti.gov/servlets/purl/3019724",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "operations. to grid signals. Coordinated DER and load Simulate distributed resources Optimize grid support and cycling (BESS, UPS) cycling in resilience during disturbances coordination with load and load fluctuations. management. 28 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 48,
+  "text_sha": "d6f088577c6cccd110dbeb8ccca8e55538b0b012db113149efb839be871d0e3d",
+  "extracted_at": "2026-05-16T00:00:12.035062Z"
+}

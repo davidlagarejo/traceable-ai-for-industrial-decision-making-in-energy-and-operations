@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fc6897de::chunk_0052",
+  "source_id": "doe_osti_2583524",
+  "source_sha": "fc6897de301785e81ac3c29cdeda0b01",
+  "source_url": "https://www.osti.gov/servlets/purl/2583524",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "600 24,250 650 24,250 700 24,580 750 24,580 800 24,580 850 24,580 900 24,580 1000 24,580 1050 24,580 1100 24,580 1150 24,580 1200 24,580 1300 24,580 1400 24,580 1500 24,580 1600 24,580 1700 24,580 1800 24,580 54 This report is available at no cost from NREL at www.nrel.gov/publications",
+  "token_count": 48,
+  "text_sha": "9809a352adfcf29fa8d4e0716f4e0965a07153d5884c3fb72193f3a47545b240",
+  "extracted_at": "2026-05-16T00:12:26.258313Z"
+}

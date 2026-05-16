@@ -1,0 +1,12 @@
+source_id: doe_osti_3015900
+title: "Massachusetts and New England Sustainable Aviation Fuel Study"
+url: https://www.osti.gov/servlets/purl/3015900
+license: public_domain
+publisher: doe_osti
+version: "2026-01-28"
+added_at: "2026-05-16T00:07:24.195446Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 29 ENERGY PLANNING, POLICY, AND ECONOMY, 33 ADVANCED PROPULSION SYSTEMS, aviation, blending, Jet A"
+asset_families:
+  - _shared
+  - warehouse_distribution

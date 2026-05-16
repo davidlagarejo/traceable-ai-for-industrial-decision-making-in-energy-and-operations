@@ -1,0 +1,15 @@
+{
+  "chunk_id": "3ee4451d::chunk_0094",
+  "source_id": "us_federal_40_cfr_0063",
+  "source_sha": "3ee4451dcaab4f1f2e4cf8d8b4a1b7da",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-63",
+  "asset_families": [
+    "manufacturing_facility",
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Home Titles Search Recent Changes Corrections Reader Aids Using the eCFR Point-in-Time System Understanding the eCFR Government Policy and OFR Procedures Developer Resources Recent Site Updates Information About This Site Legal Status Privacy Accessibility FOIA No Fear Act Continuity Information My eCFR My Subscriptions Sign In / Sign Up",
+  "token_count": 49,
+  "text_sha": "e8ee4f698429790c8c2c7186d7e75a5bfa404d46cb22758f4a2c98811befde50",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,11 @@
+source_id: doe_osti_3021565
+title: "Manufacturing full-scale high gradient copper accelerators: Electron beam welding and allied processes"
+url: https://www.osti.gov/servlets/purl/3021565
+license: public_domain
+publisher: doe_osti
+version: "2026-03-02"
+added_at: "2026-05-15T23:58:40.960934Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 43 PARTICLE ACCELERATORS"
+asset_families:
+  - manufacturing_facility

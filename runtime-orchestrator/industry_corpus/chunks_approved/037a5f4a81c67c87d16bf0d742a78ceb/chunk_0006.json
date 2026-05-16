@@ -1,0 +1,14 @@
+{
+  "chunk_id": "037a5f4a::chunk_0006",
+  "source_id": "doe_osti_3028342",
+  "source_sha": "037a5f4a81c67c87d16bf0d742a78ceb",
+  "source_url": "https://www.osti.gov/servlets/purl/3028342",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "The U.S. Government retains and the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. Photo from Getty 181828180",
+  "token_count": 49,
+  "text_sha": "a0e17c2052b92beafae19ad5a3b27ce491e5d4f7999a82d3bc37d2ab4ef45bad",
+  "extracted_at": "2026-05-16T00:11:10.854380Z"
+}

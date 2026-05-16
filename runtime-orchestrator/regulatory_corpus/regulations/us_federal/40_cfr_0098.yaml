@@ -1,0 +1,13 @@
+source_id: us_federal_40_cfr_0098
+title: "Mandatory Greenhouse Gas Reporting"
+url: https://www.ecfr.gov/current/title-40/part-98
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:06.666539Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 3702 §-marked sections. 2,471,977 chars."
+asset_families:
+  - manufacturing_facility
+  - infrastructure_node
+  - _shared

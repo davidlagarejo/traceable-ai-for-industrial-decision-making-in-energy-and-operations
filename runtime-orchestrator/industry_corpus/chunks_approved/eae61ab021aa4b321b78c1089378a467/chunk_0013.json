@@ -1,0 +1,14 @@
+{
+  "chunk_id": "eae61ab0::chunk_0013",
+  "source_id": "doe_osti_3000896",
+  "source_sha": "eae61ab021aa4b321b78c1089378a467",
+  "source_url": "https://www.osti.gov/servlets/purl/3000896",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "energy performance in grid-interactive smart buildings. Energy Convers Manag 2024;319:118949. https://doi.org/10.1016/J.ENCONMAN.2024.118949. [4] Stewart M. Surface production operations: volume IV: pumps and compressors. Gulf Professional Publishing，2018; 2018. [5] Hydeman M, Gillespie KL, Dexter AL. Tools and techniques to calibrate electric chiller component models. ASHRAE Trans 2002;108 PART 1:733–41. 17",
+  "token_count": 48,
+  "text_sha": "54e18c5ce5715a72198ca90b0bd0547fa1b018cf2afe27f5cd5022cb3947d6d9",
+  "extracted_at": "2026-05-16T00:04:47.470505Z"
+}

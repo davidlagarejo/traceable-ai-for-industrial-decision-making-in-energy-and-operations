@@ -1,0 +1,11 @@
+source_id: doe_osti_3012135
+title: "PowerAmerica (Final Technical Report)"
+url: https://www.osti.gov/servlets/purl/3012135
+license: public_domain
+publisher: doe_osti
+version: "2026-01-06"
+added_at: "2026-05-16T00:01:40.389411Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 14 SOLAR ENERGY, 24 POWER TRANSMISSION AND DISTRIBUTION, 25 ENERGY STORAGE, 42 ENGINEERING, energy"
+asset_families:
+  - datacenter

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0141",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "CO 2 from fossil fuel combustion plus, if applicable, CO 2 from sorbent and/or process CO 2 ) and the annual CO 2 mass emissions from biomass combustion, each expressed in metric tons. ( ix ) An estimate of the heat input from each type of fuel listed in Table C-2 of this subpart that was combusted in the units sharing the common stack or duct during the report year. ( x ) For each type of fuel listed in Table C-2 of this subpart that was combusted during the report year in the units sharing the common stack or duct during the report year, the annual CH 4 and N 2 O mass emissions from the units sharing the common stack or duct, expressed in metric tons of each gas and in metric tons of CO 2 e. ( xi ) If applicable, the plant code (as defined in § 98.6 ). ( 3 ) Common pipe configurations. When two or more stationary combustion units at a facility combust the same type of liquid or gaseous fuel and the fuel is fed to the individual units through a common supply line or pipe, you may report the combined emissions from the units served by the common supply line, in lieu of separately reporting the GHG emissions from the individual units, provided that the total amount of fuel combusted by the units is accurately measured at the common pipe or supply line using a fuel flow meter, or, for natural gas, the amount of fuel combusted may be obtained from gas billing records. For Tier 3 applications, the flow meter shall be calibrated in accordance with § 98.34(b) . If a portion of the fuel measured (or obtained from gas billing records) at the main supply line is diverted to either: A flare; or another stationary fuel combustion unit (or units), including units that use a CO 2 mass emissions calculation method in part 75 of this chapter ; or a chemical or industrial process (where it is used as a raw material but not combusted), and the remainder of the fuel is distributed to a group of combustion units for which you elect to use the common pipe reporting option, you may use company records to subtract out the diverted portion of the fuel from the fuel measured (or obtained from gas billing records) at the main supply line prior to performing the GHG emissions calculations for the group of units using the common pipe option. If the diverted portion of the fuel is combusted, the GHG emissions from the diverted portion shall be accounted for in accordance with the applicable provisions of this part. When the common pipe option is selected, the applicable tier shall be used based on the maximum rated heat input capacity of the largest unit served by the common pipe configuration, except where the applicable tier is based on criteria other than unit size. For example, if the maximum rated heat input capacity of the largest unit is greater than 250 mmBtu/hr, Tier 3",
+  "token_count": 510,
+  "text_sha": "d4c01c4b9d2990d544913770bca1192cf22ca31ffb0dcdbdfddea8ad919fd918",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

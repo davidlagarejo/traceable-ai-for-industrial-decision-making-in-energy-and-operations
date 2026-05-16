@@ -1,0 +1,14 @@
+{
+  "chunk_id": "479cb121::chunk_0032",
+  "source_id": "doe_osti_2589755",
+  "source_sha": "479cb1210bbd9fbdd6a928156d2a3b33",
+  "source_url": "https://www.osti.gov/servlets/purl/2589755",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "sources at BNL”, Proceedings of Sci- ence, 25th International Spin Physics Symposium, Pos(SPIN2023)222, Durham, NC, USA (2023) [6] K. Zeno, Booster-AGS-pp Elog, Entry 2015 Feb 13, 13:34, BNL, (2015) [7] K. Zeno, Booster-AGS-pp Elog, Entry 2022 Apr 13, 17:15-17:19, BNL, (2022) 52",
+  "token_count": 42,
+  "text_sha": "acd446af6c15d7c5bdc2d5d6f70971f05303c14ab95c33dce177ab4d09c07a84",
+  "extracted_at": "2026-05-16T00:02:32.261451Z"
+}

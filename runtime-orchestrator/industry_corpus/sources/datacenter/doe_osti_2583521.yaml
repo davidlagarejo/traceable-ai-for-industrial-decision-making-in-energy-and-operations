@@ -1,0 +1,11 @@
+source_id: doe_osti_2583521
+title: "Vulcan Test Platform: Demonstrating the Data Center as a Flexible Grid Asset"
+url: https://www.osti.gov/servlets/purl/2583521
+license: public_domain
+publisher: doe_osti
+version: "2025-06-01"
+added_at: "2026-05-16T00:02:13.441828Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, 97 MATHEMATICS AND COMPUTING, data center, grid, power flow management system"
+asset_families:
+  - datacenter

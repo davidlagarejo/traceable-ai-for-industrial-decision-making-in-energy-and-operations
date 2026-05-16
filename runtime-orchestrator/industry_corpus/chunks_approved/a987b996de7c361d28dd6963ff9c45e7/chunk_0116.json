@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0116",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "during a certification test period in 2010 may be used for reporting under this part, provided that the following two conditions are met: ( A ) The certification tests are passed in sequence, with no test failures. ( B ) No unscheduled maintenance or repair of the CEMS is performed during the certification test period. ( iii ) No later than 180 days following the date on which a change is made that triggers Tier 4 applicability under paragraph (b)(4)(ii) or (b)(4)(iii) of this section ( e.g., a change in the primary fuel, manner of unit operation, or installed continuous monitoring equipment). ( 6 ) You may elect to use any applicable higher tier for one or more of the fuels combusted in a unit. For example, if a 100 mmBtu/hr unit combusts natural gas and distillate fuel oil, you may elect to use Tier 1 for natural gas and Tier 3 for the fuel oil, even though Tier 1 could have been used for both fuels. However, for units that use either the Tier 4 or the alternative calculation methodology specified in paragraph (a)(5)(iii) of this section, CO 2 emissions from the combustion of all fuels shall be based solely on CEMS measurements. ( c ) Calculation of CH 4 and N 2 O emissions from stationary combustion sources. You must calculate annual CH 4 and N 2 O mass emissions only for units that are required to report CO 2 emissions using the calculation methodologies of this subpart and for only those fuels that are listed in Table C-2 of this subpart. ( 1 ) Use Equation C-8 of this section to estimate CH 4 and N 2 O emissions for any fuels for which you use the Tier 1 or Tier 3 calculation methodologies for CO 2 , except when natural gas usage in units of therms or mmBtu is obtained from gas billing records. In that case, use Equation C-8a in paragraph (c)(1)(i) of this section or Equation C-8b in paragraph (c)(1)(ii) of this section (as applicable). For Equation C-8, use the same values for fuel consumption that you use for the Tier 1 or Tier 3 calculation. Where: CH 4 or N 2 O = Annual CH 4 or N 2 O emissions from the combustion of a particular type of fuel (metric tons). Fuel = Mass or volume of the fuel combusted, either from company records or directly measured by a fuel flow meter, as applicable (mass or volume per year). HHV = Default high heat value of the fuel from Table C-1 of this subpart; alternatively, for Tier 3, if actual HHV data are available for the reporting year, you may average these data using the procedures specified in paragraph (a)(2)(ii) of this section, and use the average value in Equation C-8 (mmBtu per mass or volume). EF = Fuel-specific default emission factor for CH 4 or N 2 O, from table C-2 to this subpart (kg CH 4 or N 2 O per mmBtu), except for natural gas-fired reciprocating internal",
+  "token_count": 508,
+  "text_sha": "f313418f0b18c3af8b430837f92833bbb1d3ba918049daceb90c0c5ecd328045",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

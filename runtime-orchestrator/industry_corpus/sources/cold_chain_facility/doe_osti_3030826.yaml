@@ -1,0 +1,11 @@
+source_id: doe_osti_3030826
+title: "Geologic Seawater Air Conditioning (GeoSWAC) System: Resource Assessment and Techno-Economic Evaluation in Puerto Rico"
+url: https://www.osti.gov/servlets/purl/3030826
+license: public_domain
+publisher: doe_osti
+version: "2026-04-17"
+added_at: "2026-05-15T23:55:09.726595Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 24 POWER TRANSMISSION AND DISTRIBUTION, 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, district cooling, GeoSWAC, seawater air conditioning (SWAC)"
+asset_families:
+  - cold_chain_facility

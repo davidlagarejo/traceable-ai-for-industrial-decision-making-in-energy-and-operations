@@ -1,0 +1,14 @@
+{
+  "chunk_id": "20017450::chunk_0004",
+  "source_id": "doe_osti_3028338",
+  "source_sha": "20017450a8a2cf18312a7047ff3f9120",
+  "source_url": "https://www.osti.gov/servlets/purl/3028338",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "to predict three time-series outputs given five time-series inputs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 Figure 3. True data vs. Prediction Currents for each phase obtained with the GRU model. . . . . . . . . . . 6 Figure 4. True data vs. Prediction Currents zoomed in a 300 ms window for each phase obtained with the GRU model. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 Figure 5. Train and test loss trends for the different ML models through 200 epochs. . . . . . . . . . . . . . 8 List of Tables Table 1. AC RMS Voltage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Table 2. AC RMS Current . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Table 3. Voltage and Current frequency . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Table 4. Summary of the performances for the different ML models in terms of train loss, test loss, and training time. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 vi This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications. 1 Introduction Inverters are indispensable in modern power-electronic systems, converting DC sources—such as photovoltaic pan- els, batteries, and fuel cells—into grid-compatible AC power. They must manage high-frequency switching events, which introduce switching losses and thermal stress on semiconductor devices, while also generating harmonics that can degrade power quality and efficiency (Chaturvedi et al. 2008). Accurate modeling of these devices is essential not only to predict performance but also to address real-time control challenges, including dynamic response to load changes and fault conditions (Zhu et",
+  "token_count": 508,
+  "text_sha": "915517247e53eaa5051999b497515f2851504abdd5546c00f6eee81b3fb5ee06",
+  "extracted_at": "2026-05-16T00:05:27.168107Z"
+}

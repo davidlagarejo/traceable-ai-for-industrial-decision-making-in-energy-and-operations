@@ -1,0 +1,11 @@
+source_id: doe_osti_3015048
+title: "Measuring the Energy Consumption and Efficiency of Deep Neural Networks: An Empirical Analysis and Design Recommendations"
+url: https://www.osti.gov/servlets/purl/3015048
+license: public_domain
+publisher: doe_osti
+version: "2026-01-01"
+added_at: "2026-05-16T00:02:07.129698Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 97 MATHEMATICS AND COMPUTING, artificial intelligence, deep learning, empirical, energy efficiency"
+asset_families:
+  - datacenter

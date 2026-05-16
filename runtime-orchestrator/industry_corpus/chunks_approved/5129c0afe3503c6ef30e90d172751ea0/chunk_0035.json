@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0035",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "Intelligence: Screener > Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 76 Current Progressing Capacity Projects Units proposed for entry into service after December 31, 2025 Advanced Development Construction Begun Completed General Status Number Nameplate Creditable Number Nameplate Creditable Number Nameplate Creditable of Capacity Capacity of Capacity Capacity of Capacity Capacity Plants (MW) (MW) Plants (MW) (MW) Plants (MW) (MW) Combined Cycle – – – – – – – – – Natural Gas Non-CC – – – 1 2.6 2.6 – – – Nuclear – – – – – – – – – Conventional SUBTOTAL – – – 1 2.6 2.6 – – – Solar 4 551 220.4 41 830.66 332.66 – – – Wind 2 229.5 39.02 6 2,441 341.05 – – – Hydro 1 6.3 3.09 – – – – – – Renewable SUBTOTAL 7 786.8 262.5 – – – – – – Mechanical Storage – – – – – – – – – Battery/Non-battery Storage – – – 11 185.5 98.32 – – – Storage SUBTOTAL – – – 11 185.5 98.32 – – – Other 2 21 21 – – – – – – Other SUBTOTAL 2 21 21 – – – – – – Likely SUBTOTAL 9 807.8 288.35 59 3,459.76 774.63 – – – Derived from data found on: S&P Global Market Intelligence: Screener > Energy & Utilities > Power Plant Units; NERC 2025 Summer Reliability Assessment (Dec. 31, 2025) 77 Status of Proposed Nameplate Capacity: PJM 8 Known fuel groups included in “Other”: distillate fuel oil and waste coal 7 ) W 66.37 GW total G ( y 6 t ic a p 5 a C e t a 4 lp e m a 3 N d e s 2 o p o r P 1 e C C e e r r r e C C r e e r r e C r e e r r e C C r e e r r C r e r r C e e r r g C C r r e a e g C C a r r a e g C a r r a e g C C a r r a e C a r e a C r r e a a r o G N G N o h s o h s h t O lo S t a W a r o G N G N e lc u o h s o h s lo S t a W a r o G N e lc u o h s o h s lo S t a W a r o G N G N e lc u o h s o h s lo S t a W G N e lc u o h s h t O lo S G N o h s o h s t a W lo S t S y - n o f f O n O t S y - n o N f f O n",
+  "token_count": 512,
+  "text_sha": "8b7edc5ee6fcb1786bffc0a905b7451d46d1368f628cbacc95a3eff7c8c1689e",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

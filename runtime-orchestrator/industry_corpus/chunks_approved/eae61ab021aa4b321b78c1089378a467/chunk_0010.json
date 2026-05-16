@@ -1,0 +1,14 @@
+{
+  "chunk_id": "eae61ab0::chunk_0010",
+  "source_id": "doe_osti_3000896",
+  "source_sha": "eae61ab021aa4b321b78c1089378a467",
+  "source_url": "https://www.osti.gov/servlets/purl/3000896",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "improving thermal comfort and reducing peak gird load), and integration with distributed energy generation and utility demand response programs. ACKNOWLEDGMENTS The authors acknowledge support provided by the U.S. Department of Energy’s Building Technologies Research and Integration Center (BTRIC) Technical Collaboration Program, and the industrial partner, Active Energy Systems Inc. REFERENCES [1] Energy Information Administration U. The Annual Energy Outlook explores long-term energy trends in the United States n.d. [2] Thermal Storage for HVAC - Shift Thermal n.d. https://shiftthermal.com/thermal-storage/ (accessed August 28, 2025). [3] Qiao Y, Chen D, Sun QZ, Tian G, Wang W. Unveiling stealthy man-in-the-middle cyber-attacks on energy performance in grid-interactive smart buildings. Energy Convers Manag 2024;319:118949. https://doi.org/10.1016/J.ENCONMAN.2024.118949. [4] Stewart M. Surface production operations: volume IV: pumps and compressors. Gulf Professional Publishing，2018; 2018. [5] Hydeman M, Gillespie KL, Dexter AL. Tools and techniques to calibrate electric chiller component models. ASHRAE Trans 2002;108 PART 1:733–41. 17",
+  "token_count": 146,
+  "text_sha": "2485ad96dfd3772f5bb98868a850cf4d69d7bf769c87b4b9b8134d7a33f694e1",
+  "extracted_at": "2026-05-16T00:04:47.470505Z"
+}

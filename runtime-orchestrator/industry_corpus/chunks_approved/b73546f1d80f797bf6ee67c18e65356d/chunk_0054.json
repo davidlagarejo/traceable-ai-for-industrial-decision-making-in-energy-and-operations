@@ -1,0 +1,14 @@
+{
+  "chunk_id": "b73546f1::chunk_0054",
+  "source_id": "doe_osti_3028636",
+  "source_sha": "b73546f1d80f797bf6ee67c18e65356d",
+  "source_url": "https://www.osti.gov/servlets/purl/3028636",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "Inc. Asus nuc product page. https://www.asus.com/us/content/nuc-overview/, 2025. Accessed: 2025-02-27. [74] Nvidia Inc. Nvidia jetson orin product page. https://www.nvidia.com/en-us/autonomous-machines/ embedded-systems/jetson-orin/, 2025. Accessed: 2025-02-27. [75] JaewonLee. BayesianRadiationImageReconstructionandUncertaintyQuantification. Dissertations&Theses University of California; ProQuest Dissertations & Theses Global, Berkeley, CA, 2024. [76] NvidiaInc. Nvidiadgxspark. https://www.nvidia.com/en-us/project-digits/,2025. Accessed: 2025-02-27.",
+  "token_count": 43,
+  "text_sha": "7f4d84d63c357dc4b58c4367c2364261d9810a6dcec1caab5cace57f2321f698",
+  "extracted_at": "2026-05-15T23:57:30.143176Z"
+}

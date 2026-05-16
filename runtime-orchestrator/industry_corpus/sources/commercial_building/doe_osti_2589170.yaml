@@ -1,0 +1,11 @@
+source_id: doe_osti_2589170
+title: "Residential Building Stock Characterization in Palm Beach County, Florida"
+url: https://www.osti.gov/servlets/purl/2589170
+license: public_domain
+publisher: doe_osti
+version: "2025-09-16"
+added_at: "2026-05-16T00:04:12.172105Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, bill-savings, building stock, electrification, emissions reduction"
+asset_families:
+  - commercial_building

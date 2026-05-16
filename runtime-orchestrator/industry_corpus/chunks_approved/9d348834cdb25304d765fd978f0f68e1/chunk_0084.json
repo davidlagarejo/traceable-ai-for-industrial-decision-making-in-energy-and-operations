@@ -1,0 +1,15 @@
+{
+  "chunk_id": "9d348834::chunk_0084",
+  "source_id": "doe_osti_3023194",
+  "source_sha": "9d348834cdb25304d765fd978f0f68e1",
+  "source_url": "https://www.osti.gov/servlets/purl/3023194",
+  "asset_families": [
+    "_shared",
+    "warehouse_distribution"
+  ],
+  "page": 1,
+  "text": "steps when strengthening supply chains. Figure H-1. China’s dominance of various parts of a Li-ion battery (2024) Source: Data from BloombergNEF (2024) Image by NLR 86 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 43,
+  "text_sha": "9ceccd83d4c7ec4f86302c3717d06f8c30f46fdc69397300f953fb2571a53985",
+  "extracted_at": "2026-05-16T00:07:19.094228Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "342c06aa::chunk_0031",
+  "source_id": "doe_osti_3028166",
+  "source_sha": "342c06aaa6629f0ff6ed645b2c97872e",
+  "source_url": "https://www.osti.gov/servlets/purl/3028166",
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "page": 1,
+  "text": "value is approximately 0.35 tonne CO /MWh-net and for the ION case 2 2 this value is approximately 0.37 tonne CO /MWh-net. 2 t ION Clean Energy 41 DE-FE0031950: FINAL PROJECT REPORT 12 Conclusion ION completed a 16-month campaign at its custom-built carbon capture facility known as the Enterprise Pilot. Over three different solvent campaigns, ION operated for over 7500 hours on a flue gas slipstream from a market-adaptive NGCC gas turbine (4-5.2% CO ). 2 The campaign began with 250 hours of parametric testing with MEA to baseline the system with an industry standard solvent. ION achieved capture efficiencies as high as 89% and captured 76 tCO 2 with MEA. ION performed 350 hours of parametric testing with its ICE-21™ solvent and this was followed by 817 hours of long-term testing. ION achieved capture efficiencies up to 99% with ICE-21™. ION performed over 2250 hours of parametric testing and nearly 4000 hours of long-term testing with ICE-31®, capturing ~2500 tCO . ION demonstrated capture efficiencies as high as 99.4% with 2 ICE-31®, at which point the outlet flue gas contains a lower concentration of CO than ambient air 2 (~400 ppm). ICE-31® demonstrated excellent solvent stability in the high-oxygen environment that results from the combustion of NGCC flue gas. This was further shown through the extremely low emissions of ICE-31®. Project Enterprise showcased the exceptional qualities of ION capture solvents and demonstrated ION’s deep understanding of amine-based carbon capture and ability to apply that knowledge in a functioning industrial setting. The results confirm and expand ION’s expectations that ICE-31® is an exceptional solvent for flue gases with high oxidative potential, such as NGCC facilities like LMEC. The results from the ENTP pilot further demonstrate the readiness of ICE-31® as a viable, commercially deployable carbon capture technology. ION Clean Energy 42 DE-FE0031950: FINAL PROJECT REPORT 13 References 1) Hume, Scott; Shah, Muhammad; Lombardo, Gerard and Kleppe, Eirik, Results from Cesar-1 Testing with Combined Heat and Power (CHP) Flue Gas at the CO Technology Centre 2 Mongstad, March 11, 2021. 2) Palencsár, Attila; Nyborg, Rolf and Drageset, Audun, Assessment of Erosion-Corrosion as Possible Failure Mechanism of Reboiler at Technology Centre Mongstad (November 14, 2022). Proceedings of the 16th Greenhouse Gas Control Technologies Conference (GHGT- 16) 23-24 Oct, 2022. ION Clean Energy 43",
+  "token_count": 381,
+  "text_sha": "9728f5c0477f77645e755b42ee10c4b1b4ccc30adf26d0683165560cdd86fb0c",
+  "extracted_at": "2026-05-15T23:55:03.014068Z"
+}

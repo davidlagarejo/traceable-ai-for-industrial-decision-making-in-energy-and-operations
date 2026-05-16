@@ -1,0 +1,12 @@
+source_id: us_federal_29_cfr_1926
+title: "OSHA — Construction Industry"
+url: https://www.ecfr.gov/current/title-29/part-1926
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:08.948665Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 1524 §-marked sections. 2,722,832 chars."
+asset_families:
+  - commercial_building
+  - infrastructure_node

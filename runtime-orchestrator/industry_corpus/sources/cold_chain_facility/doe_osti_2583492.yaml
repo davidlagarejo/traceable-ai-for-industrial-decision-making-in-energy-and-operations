@@ -1,0 +1,11 @@
+source_id: doe_osti_2583492
+title: "Thermal Energy Storage (TES) Modeling and Design (CRADA Final Report)"
+url: https://www.osti.gov/servlets/purl/2583492
+license: public_domain
+publisher: doe_osti
+version: "2025-06-06"
+added_at: "2026-05-15T23:55:03.018281Z"
+added_by: system_verified
+notes: "Auto-discovered via doe_osti API. Subjects: 32 ENERGY CONSERVATION, CONSUMPTION, AND UTILIZATION, composite phase change material, CRADA, electric grid challenges, high-efficiency air conditioner"
+asset_families:
+  - cold_chain_facility

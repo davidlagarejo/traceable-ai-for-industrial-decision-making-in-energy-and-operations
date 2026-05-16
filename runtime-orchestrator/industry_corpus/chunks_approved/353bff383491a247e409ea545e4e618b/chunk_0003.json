@@ -1,0 +1,14 @@
+{
+  "chunk_id": "353bff38::chunk_0003",
+  "source_id": "doe_osti_2574820",
+  "source_sha": "353bff383491a247e409ea545e4e618b",
+  "source_url": "https://www.osti.gov/servlets/purl/2574820",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": ". . . 4 2.1.2 TransformerArchitecture: TheEngineBehindModernLLMs . . . 4 2.1.3 HowLLMsLearn: FromRawTexttoSpecializedApplications . . . 5 2.1.4 KeyPracticalConsiderations . . . . . . . . . . . . . . . . . . . . . 6 2.2 PowerSystemDataCharacteristics: InsightsforLLMPractitioners . . . . . . 6 2.2.1 Safety-CriticalInfrastructurewithUniqueTerminology . . . . . . . 6 2.2.2 DocumentTypesandTheirCharacteristics . . . . . . . . . . . . . . 7 2.2.3 Multi-Timeframe,Multi-SystemInformation . . . . . . . . . . . . 7 2.3 KeyLLMCapabilitiesforPowerSystemApplications . . . . . . . . . . . . . 8 2.3.1 UnlockingInsightsfromOperationalDocuments . . . . . . . . . . 8 2.3.2 AutomatingStandardsInterpretationandCompliance . . . . . . . . 9 2.3.3 KnowledgeManagementandTransfer . . . . . . . . . . . . . . . . 9 3.0 ControlCenterOperationsandEventAnalysis . . . . . . . . . . . . . . . . . . . . . 10 3.1 IntelligentAlarmProcessingandRootCauseAnalysis . . . . . . . . . . . . . 10 Contents vi PNNL-38003 3.2 OperationsLogAnalysisandKnowledgeManagement . . . . . . . . . . . . . 11 3.3 EventReportGenerationandComplianceDocumentation . . . . . . . . . . . 12 3.4 SwitchingOrderCreationandValidation . . . . . . . . . . . . . . . . . . . . 13 3.5 ShiftTurnoverSummarization . . . . . . . . . . . . . . . . . . . . . . . . . . 14 4.0 AssetManagement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 4.1 IntelligentAnalysisofMaintenanceRecords . . . . . . . . . . . . . . . . . . 16 4.2 EquipmentManualandTechnicalDocumentIntelligence . . . . . . . . . . . 17 4.3 AutomatedProcessingofFieldWorkOrders . . . . . . . . . . . . . . . . . . 17 4.4 RegistrationandIntegrationofCustomer-ownedResources . . . . . . . . . . 18 4.5 IntelligentValidationofAssetManagementRecords . . . . . . . . . . . . . . 20 5.0 SystemPlanningandAnalytics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22 5.1 AcceleratedGeneratorInterconnectionStudies . . . . . . . . . . . . . . . . . 22 5.2 OutageReportMiningandReliabilityAnalysis . . . . . . . . . . . . . . . . . 23 5.3 EnhancedIntegratedResourcePlanning . . . . . . . . . . . . . . . . . . . . 24 5.4 TechnicalStandardsandComplianceNavigation . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "82f5c3b1e735cee8a572063b68485ea8228d69ac5ccc30b31e9854135de9a563",
+  "extracted_at": "2026-05-16T00:00:45.181478Z"
+}

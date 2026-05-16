@@ -1,0 +1,14 @@
+{
+  "chunk_id": "482612a1::chunk_0014",
+  "source_id": "doe_osti_3031067",
+  "source_sha": "482612a1ac88091174c8a6c1552978cd",
+  "source_url": "https://www.osti.gov/servlets/purl/3031067",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "— 1 2.3% RCS 5 0.5% — — — — — — — — — — 0 0.0% RHR 299 27.7% 3 — 3 1 2 3 — 1 — 2 15 34.1% SWN 257 23.8% 3 — 1 — 1 1 2 2 — 2 12 27.3% SWS 105 9.7% 1 1 — — 1 — 1 — — — 4 9.1% Total 1078 100.0% 10 1 5 4 6 4 5 3 0 6 44 100.0% Table 7. Summary of high-demand MOV failure counts for the FTOP failure mode over time by system. Valve Valve Percent of System 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 Total Count Percent Failures AFW 98 9.1% — — — — 1 — — — — — 1 16.7% 28 Valve Valve Percent of System 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 Total Count Percent Failures CCW 120 11.1% — — — — — — — — — — 0 0.0% CSR 11 1.0% — — — — — — — — — — 0 0.0% HPCI 25 2.3% — — — — — — — — — — 0 0.0% HPCS 18 1.7% — — — — — — — — — — 0 0.0% HPSI 74 6.9% — — — — — — — — — — 0 0.0% ISO 6 0.6% — — — — — — — — — — 0 0.0% LPCS 27 2.5% — — — — — — — — — — 0 0.0% RCIC 33 3.1% — — — — — — — — — — 0 0.0% RCS 5 0.5% — — — — — — — — — — 0 0.0% RHR 299 27.7% — — — — — — — 1 — — 1 16.7% SWN 257 23.8% — — — 2 — — — — — — 2 33.3% SWS 105 9.7% — — — — 1 — — 1 — — 2 33.3% Total 1078 100.0% 0 0 0 2 2 0 0 2 0 0 6 100.0% Table 8. Summary of high-demand MOV failure counts for the SO failure mode over time by system. Valve Valve Percent of System 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 Total Count Percent Failures AFW 98 9.1% — — — — — — — — — — 0 0.0% CCW 120 11.1% — — — — — — — — — — 0 0.0% CSR 11 1.0% — — — — — — — — — — 0 0.0% HPCI 25 2.3% — — — — — — — — — — 0 0.0% HPCS 18 1.7% 1 — — — — — — — — — 1 33.3% HPSI 74 6.9% — — — — — — — — — — 0 0.0% ISO 6 0.6% — — — — — — — — — — 0 0.0% LPCS 27 2.5% — — — — — — — — — — 0 0.0% RCIC 33 3.1% — — — — — — — — —",
+  "token_count": 512,
+  "text_sha": "a4f544fa3d5b99b50a77784f2e089c22b894c7ecf9166362c07545828d9b2b87",
+  "extracted_at": "2026-05-15T23:59:07.157232Z"
+}

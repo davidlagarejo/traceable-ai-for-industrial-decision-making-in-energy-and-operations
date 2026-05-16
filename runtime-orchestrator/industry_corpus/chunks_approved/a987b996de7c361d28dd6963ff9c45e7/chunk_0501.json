@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0501",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "where k equals 1.25 for the methods in § 98.234(a)(1) , (3) and (5) ; k equals 1.55 for the method in § 98.234(a)(2)(i) ; and k equals 1.27 for the method in § 98.234(a)(2)(ii) . GHG i = For onshore petroleum and natural gas production facilities and onshore petroleum and natural gas gathering and boosting facilities, concentration of GHG i , CH 4 or CO 2 , in produced natural gas as defined in paragraph (u)(2) of this section; for onshore natural gas processing facilities, concentration of GHG i , CH 4 or CO 2 , in the total hydrocarbon of the feed natural gas; for onshore natural gas transmission compression and underground natural gas storage, GHG i equals 0.975 for CH 4 and 1.1 × 10 −2 for CO 2 or concentration of GHG i , CH 4 or CO 2 , in the total hydrocarbon of the feed natural gas; for LNG storage and LNG import and export equipment, GHG i equals 1 for CH 4 and 0 for CO 2 ; and for natural gas distribution and onshore natural gas transmission pipeline, GHG i equals 1 for CH 4 and 1.1 × 10 −2 for CO 2 . T p,z = The total time the surveyed component “z,” component type “p,” was assumed to be leaking and operational, in hours. If one leak detection survey is conducted in the calendar year, assume the component was leaking for the entire calendar year. If multiple leak detection surveys are conducted in the calendar year, assume a component found leaking in the first survey was leaking since the beginning of the year until the date of the survey; assume a component found leaking in the last survey of the year was leaking from the preceding survey through the end of the year; assume a component found leaking in a survey between the first and last surveys of the year was leaking since the preceding survey until the date of the survey; and sum times for all leaking periods. For each leaking component, account for time the component was not operational ( i.e., not operating under pressure) using an engineering estimate based on best available data. ( i ) The leak detection surveys selected for use in equation W-30 to this section must be conducted during the calendar year as indicated in paragraph (q)(1)(vii) and (viii) of this section, as applicable. ( ii ) Calculate both CO 2 and CH 4 mass emissions using calculations in paragraph (v) of this section. ( iii ) Onshore petroleum and natural gas production facilities must, if available, use the facility-specific leaker emission factor calculated in accordance with paragraph (q)(4) of section or use the appropriate default whole gas leaker emission factors consistent with the well type, where components associated with gas wells are considered to be in gas service and components associated with oil wells are considered to be in oil service as listed in table W-2 to this subpart. ( iv ) Onshore petroleum and natural gas gathering and boosting facilities must, if available,",
+  "token_count": 512,
+  "text_sha": "ad5f1f4ca2f097d1536db0954624e3777bc1fd62c892d52fbac7fe87bb8d6fbb",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

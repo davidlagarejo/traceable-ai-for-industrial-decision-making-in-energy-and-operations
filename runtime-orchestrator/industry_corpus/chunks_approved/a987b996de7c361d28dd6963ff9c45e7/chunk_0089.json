@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0089",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "H 3 F 3 a d 328 HFC-143a 420-46-2 C 2 H 3 F 3 a d 4,800 HFC-152 624-72-6 CH 2 FCH 2 F d 16 HFC-152a 75-37-6 CH 3 CHF 2 a d 138 HFC-161 353-36-6 CH 3 CH 2 F d 4 HFC-245ca 679-86-7 C 3 H 3 F 5 a d 716 HFC-245cb 1814-88-6 CF 3 CF 2 CH 3 b 4,620 HFC-245ea 24270-66-4 CHF 2 CHFCHF 2 b 235 HFC-245eb 431-31-2 CH 2 FCHFCF 3 b 290 HFC-245fa 460-73-1 CHF 2 CH 2 CF 3 d 858 HFC-263fb 421-07-8 CH 3 CH 2 CF 3 b 76 HFC-272ca 420-45-1 CH 3 CF 2 CH 3 b 144 HFC-365mfc 406-58-6 CH 3 CF 2 CH 2 CF 3 d 804 Saturated Hydrofluoroethers (HFEs) and Hydrochlorofluoroethers (HCFEs) With One Carbon-Hydrogen Bond HFE-125 3822-68-2 CHF 2 OCF 3 d 12,400 HFE-227ea 2356-62-9 CF 3 CHFOCF 3 d 6,450 HFE-329mcc2 134769-21-4 CF 3 CF 2 OCF 2 CHF 2 d 3,070 HFE-329me3 428454-68-6 CF 3 CFHCF 2 OCF 3 b 4,550 1,1,1,2,2,3,3-Heptafluoro-3-(1,2,2,2-tetrafluoroethoxy)-propane 3330-15-2 CF 3 CF 2 CF 2 OCHFCF 3 b 6,490 Saturated HFEs and HCFEs With Two Carbon-Hydrogen Bonds HFE-134 (HG-00) 1691-17-4 CHF 2 OCHF 2 d 5,560 HFE-236ca 32778-11-3 CHF 2 OCF 2 CHF 2 b 4,240 HFE-236ca12 (HG-10) 78522-47-1 CHF 2 OCF 2 OCHF 2 d 5,350 HFE-236ea2 (Desflurane) 57041-67-5 CHF 2 OCHFCF 3 d 1,790 HFE-236fa 20193-67-3 CF 3 CH 2 OCF 3 d 979 HFE-338mcf2 156053-88-2 CF 3 CF 2 OCH 2 CF 3 d 929 HFE-338mmz1 26103-08-2 CHF 2 OCH(CF 3 ) 2 d 2,620 HFE-338pcc13 (HG-01) 188690-78-0 CHF 2 OCF 2 CF 2 OCHF 2 d 2,910 HFE-43-10pccc (H-Galden 1040x, HG-11) E1730133 CHF 2 OCF 2 OC 2 F 4 OCHF 2 d 2,820 HCFE-235ca2 (Enflurane) 13838-16-9 CHF 2 OCF 2 CHFCl b 583 HCFE-235da2 (Isoflurane) 26675-46-7 CHF 2 OCHClCF 3 d 491 HG-02 205367-61-9 HF 2 C-(OCF 2 CF 2 ) 2 -OCF 2 H b d 2,730 HG-03 173350-37-3 HF 2 C-(OCF 2 CF 2 ) 3 -OCF 2 H b d 2,850 HG-20 249932-25-0 HF 2 C-(OCF 2 ) 2 -OCF 2 H b 5,300 HG-21 249932-26-1 HF 2 C-OCF 2 CF 2 OCF 2 OCF 2 O-CF 2 H b 3,890 HG-30 188690-77-9 HF 2 C-(OCF 2 ) 3 -OCF 2 H b 7,330 1,1,3,3,4,4,6,6,7,7,9,9,10,10,12,12,13,13,15,15-eicosafluoro-2,5,8,11,14-Pentaoxapentadecane 173350-38-4 HCF 2 O(CF 2 CF 2 O) 4 CF 2 H b 3,630 1,1,2-Trifluoro-2-(trifluoromethoxy)-ethane 84011-06-3 CHF 2 CHFOCF 3 b 1,240 Trifluoro(fluoromethoxy)methane 2261-01-0 CH 2 FOCF 3 b 751 Saturated HFEs and HCFEs With Three or More Carbon-Hydrogen Bonds HFE-143a 421-14-7 CH 3 OCF 3 d 523 HFE-245cb2 22410-44-2 CH 3 OCF 2 CF 3 d 654 HFE-245fa1 84011-15-4 CHF 2 CH 2 OCF 3 d 828 HFE-245fa2 1885-48-9 CHF 2 OCH 2 CF 3 d 812 HFE-254cb1 425-88-7 CH 3 OCF 2 CHF 2 d 301 HFE-263fb2 460-43-5 CF 3 CH 2 OCH 3 d 1 HFE-263m1; R-E-143a 690-22-2 CF 3 OCH 2 CH 3 b 29 HFE-347mcc3 (HFE-7000) 375-03-1 CH 3 OCF 2 CF 2 CF 3 d 530 HFE-347mcf2 171182-95-9",
+  "token_count": 512,
+  "text_sha": "da8f19ea96dab85f12610d78e01f1197757278d71929e574778c62de0405b54e",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

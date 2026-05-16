@@ -1,0 +1,15 @@
+{
+  "chunk_id": "78ce5103::chunk_0066",
+  "source_id": "doe_osti_3001074",
+  "source_sha": "78ce51038d5392bbaf4f487a65e6cb5b",
+  "source_url": "https://www.osti.gov/servlets/purl/3001074",
+  "asset_families": [
+    "_shared",
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Because of the lower supply chain and community spending, the large nuclear reactor scenario yielded an operations labor income impact of $208 million in the urban setting and $146 million in the rural setting. The SMR configuration, because of lower staffing, had a total labor income impact of $174 million and $81 million in the urban and rural settings, respectively. See Figure 8-4 and Figure 8-5 for detailed labor income impact results for urban and rural DC and nuclear reactor locations. Figure 8-4. Urban labor income impacts. Preliminary Analysis of Nuclear-Powered Data Center Scenarios 84 August 31, 2025 Figure 8-5. Rural labor income impacts. 8.5 Value Added Impacts By using economic impact models, value added impacts can be quantified, providing a comprehensive view of the economic benefits associated with DCs and nuclear reactors. These value-added impacts are equivalent to the value of new production that occurs within the economy. Employee wages can be a large component of the value-added impact along with any activity that transforms an intermediate good, like raw materials, into a final good. In the case of an NPP, value is created by transforming nuclear fuel into usable electricity. Total value-added impacts for an urban setting range from $634 million for operations of a SMR to over $1 billion for the DC. The LR is expected to produce $664 million in value added. These numbers decrease by around 25% for the nuclear reactors if operating in a rural area. Operating a DC in a rural area reduces the value-added impact by 42%. As explained previously, it is likely that moving to a rural area would result in a reduction in the local supply chain that would be capable of supporting a DC. See Figure 8-6 and Figure 8-7 for detailed DC and nuclear reactor value-added impacts for urban and rural locations. Preliminary Analysis of Nuclear-Powered Data Center Scenarios August 31, 2025 85 Figure 8-6. Urban value-added impacts. Figure 8-7. Rural value-added impacts. 8.6 Output Impacts Output impacts are the equivalent of revenue earned through the lease or sale of DC services and electricity sales in the case of nuclear reactors. It should be noted that in this analysis the economic impact model treats the power plant output the same as the production of electricity for grid purposes. If",
+  "token_count": 381,
+  "text_sha": "40a3d6e1120058fa7a3fa665ecefca929372a4a47c91d7e834725697639ba8af",
+  "extracted_at": "2026-05-16T00:04:58.119201Z"
+}

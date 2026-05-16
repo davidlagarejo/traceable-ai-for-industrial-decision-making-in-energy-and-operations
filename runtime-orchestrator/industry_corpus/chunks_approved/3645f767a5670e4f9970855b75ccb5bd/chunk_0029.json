@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3645f767::chunk_0029",
+  "source_id": "doe_osti_3022461",
+  "source_sha": "3645f767a5670e4f9970855b75ccb5bd",
+  "source_url": "https://www.osti.gov/servlets/purl/3022461",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Wang. 2025. “YOLO-BS: a traffic sign detection algorithm based on YOLOv8.” Pub- lisher: Nature Publishing Group,Scientific Reports15, no. 1 (March 4, 2025): 7558.ISSN: 2045-2322, accessed October 17, 2025. https://doi.org/10.1038/s41598-025-88184-0. https://www.nature.com/articles/s41598-025- 88184-0. 19 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications",
+  "token_count": 49,
+  "text_sha": "8b70636cf038abe98e65101467aeed09ba5f4425a40c462d23c86f5877a268da",
+  "extracted_at": "2026-05-16T00:05:21.872368Z"
+}

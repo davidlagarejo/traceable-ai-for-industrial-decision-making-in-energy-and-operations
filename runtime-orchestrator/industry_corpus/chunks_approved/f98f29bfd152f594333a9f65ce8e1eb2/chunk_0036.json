@@ -1,0 +1,14 @@
+{
+  "chunk_id": "f98f29bf::chunk_0036",
+  "source_id": "doe_osti_3005568",
+  "source_sha": "f98f29bfd152f594333a9f65ce8e1eb2",
+  "source_url": "https://www.osti.gov/servlets/purl/3005568",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Electro Optical Systems NDE Non-Destructive Testing UTS Ultimate Tensile Strength RUS Resonant Ultrasound Spectroscopy XCT X-ray Computed Tomography PEG polyethylene glycol UNCLASSIFIED AMMT – 316H SS Los Alamos National Laboratory Page 7-1 Page left blank intentionally. UNCLASSIFIED AMMT – 316H SS Los Alamos National Laboratory Page 1",
+  "token_count": 47,
+  "text_sha": "5d3528659728029128c61d5b2212e98401b1124ea3ee5943b155f4945ccc1117",
+  "extracted_at": "2026-05-15T23:58:39.482962Z"
+}

@@ -1,0 +1,2491 @@
+{
+  "ran_at": "2026-05-16T00:16:06.958107Z",
+  "asset_family": "_shared",
+  "regulations": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0060",
+      "mention_count_in_corpus": 68,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        ", standard operating procedures, quality assurance programs under appendix F to 40 CFR part 60 or appendix B to 40 CFR part 75, and other documents) provided that the element",
+        "e during the performance test in conjunction with the applicable EPA methods in 40 CFR part 60 , appendices A-1 through A-4. Conduct three emissions test runs of 1 hour each.",
+        "oints for the test in accordance with Sections 11.2 and 11.3 of EPA Method 1 in 40 CFR part 60, Appendix A -1. A minimum of 40 non-reactive gas concentration measurements wil"
+      ]
+    },
+    {
+      "citation": "15-2022",
+      "title": "15-2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 61,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "s of either: 1. Supplement SB to UL 471 1 2 3 and listing 2 of this table or 2. ASHRAE 15-2022, 1 9 12 UL 60335-2-89, 1 2 8 and listing 4 of this table. 4. Retail Food Refrig",
+        "tand-alone units if and only if such equipment meets all requirements listed in ASHRAE 15-2022. 1 9 12 In cases where this listing 4 includes requirements different than thos",
+        "12 In cases where this listing 4 includes requirements different than those of ASHRAE 15-2022, the appliance would need to meet the requirements of this listing in addition"
+      ]
+    },
+    {
+      "citation": "cfr 40 82",
+      "title": "Cfr 40 82",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0082",
+      "mention_count_in_corpus": 50,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "actual emissions of such gases across were below the federal reporting and EPA 40 CFR Part 82: Protection of the United States and provide the EPA with data on which permitt",
+        "eCFR :: 40 CFR Part 82 -- Protection of Stratospheric Ozone { \"imports\": { \"application\": \"/assets/app",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-82 Citation 40 CFR Part 82 Agency Environmental Protection Agency Part 82 Authority: 42 U.S.C. 7414 , 7601"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_29_cfr_1910",
+      "mention_count_in_corpus": 41,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687",
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        ") Title 49 CFR Part 195 – Transportation of Hazardous Liquid by Pipelines Title 29 CFR Part 1910 and 1026 – OSHA (Occupational Safety and Health Act) Rules and Regulations Indu",
+        "as only. See additional comment 2. Additional Comments 1—Must conform with OSHA 29 CFR 1910 Subpart L Section 1910.160 of the U.S. Code. You should use clean agents in acc",
+        "Additional comments: 1—Must conform with relevant OSHA requirements, including 29 CFR 1910, Subpart L , Sections 1910.160 and 1910.162. 2—Per OSHA requirements, protectiv"
+      ]
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 40,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "rt VV Geologic Sequestration of Carbon Dioxide With Enhanced Oil Recovery Using ISO 27916 98.480 – 98.489 § 98.480 Definition of the source category. § 98.481 Reporting",
+        "o, Ontario Canada M9W 183; (800) 463-6727; https://shop.csa.ca . ( 1 ) CSA/ANSI ISO 27916:19, Carbon dioxide capture, transportation and geological storage—Carbon dioxid",
+        "ears: Geologic sequestration of carbon dioxide with enhanced oil recovery using ISO 27916 ( subpart VV of this part ). Coke calciners ( subpart WW of this part ). Calciu"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.94",
+      "title": "Cfr 29 1910.94",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 28,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "able OSHA requirements at 29 CFR part 1910 must be followed, including those at 29 CFR 1910.94 (ventilation), 1910.106 (flammable and combustible liquids), 1910.110 (storage",
+        "able OSHA requirements at 29 CFR part 1910 must be followed, including those at 29 CFR 1910.94 (ventilation) and 1910.106 (flammable and combustible liquids), 1910.110 (stora",
+        "able OSHA requirements at 29 CFR part 1910 must be followed, including those at 29 CFR 1910.94 (ventilation) and 1910.106 (flammable and combustible liquids), 1910.110 (stora"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.106",
+      "title": "Cfr 29 1910.106",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 28,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "drocarbon refrigerants through adherence to good manufacturing practices as per 29 CFR 1910.106 . If refrigerant levels in the air surrounding the equipment rise above one-fou",
+        "drocarbon refrigerants through adherence to good manufacturing practices as per 29 CFR 1910.106 . If refrigerant levels in the air surrounding the equipment rise above one-fou",
+        "flammable refrigerants through adherence to good manufacturing practices as per 29 CFR 1910.106 . If refrigerant levels in the air surrounding the equipment rise above one-fou"
+      ]
+    },
+    {
+      "citation": "cfr 40 98",
+      "title": "Cfr 40 98",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0098",
+      "mention_count_in_corpus": 17,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eCFR :: 40 CFR Part 98 -- Mandatory Greenhouse Gas Reporting { \"imports\": { \"application\": \"/assets/ap",
+        "ed Content - Details URL https://www.ecfr.gov/current/title-40/part-98 Citation 40 CFR Part 98 Agency Environmental Protection Agency Part 98 Authority: 42 U.S.C. 7401-7671q",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 40 CFR Part 98 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "34-2022",
+      "title": "34-2022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 17,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "es must be text of the refrigerant safety class of the refrigerant according to ASHRAE 34-2022, 1 9 10 11 in letters at least one-third the height of the diamond symbol. 5. V",
+        "hrae.org/technical-resources/bookstore/ashrae-refrigeration-resources . 10 ANSI/ASHRAE Standard 34-2022. Designation and Safety Classification of Refrigerants, copyright 2022. 11 ANSI",
+        "assification of Refrigerants, copyright 2022. 11 ANSI/ASHRAE Addendum a to ANSI/ASHRAE Standard 34-2022, Designation and Safety Classification of Refrigerants, ANSI-/ASHRAE-approved D"
+      ]
+    },
+    {
+      "citation": "2001",
+      "title": "2001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 16,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "an agents in accordance with the safety guidelines in the latest edition of the NFPA 2001 Standard for Clean Agent Fire Extinguishing Systems. 2—Per OSHA requirements, p",
+        "should be in accordance with the safety guidelines in the latest edition of the NFPA 2001 Standard for Clean Agent Fire Extinguishing Systems. Manufacturer has not appli",
+        "ts may result in failure to meet safety guidelines in the latest edition of the NFPA 2001 Standard for Clean Agent Fire Extinguishing Systems. Use of this agent should b"
+      ]
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0063",
+      "mention_count_in_corpus": 15,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ganic Emissions by Extractive Fourier Transform Infrared (FTIR) Spectroscopy in 40 CFR part 63, Appendix A ; ( 2 ) ASTM D6348-03 Standard Test Method for Determination of Gas",
+        "tative) according to paragraph (k) of this section. If you select Method 320 of 40 CFR part 63, Appendix A to measure the concentration of each fluorinated GHG in the stack s",
+        "you must complete a method validation according to Section 13 of Method 320 of 40 CFR part 63, Appendix A for each FTIR system (hardware and software) and each tester (testi"
+      ]
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436",
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "tions or phrases (eg: suggestions#fillExample\" class=\"example badge badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 sugges",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\"",
+        "stions#modal\" placeholder=\"Enter a search term or CFR reference (eg. fishing or 1 CFR 1.1)\" data-suggestions-target=\"nonModalInput\" name=\"cfr[reference]\" id=\"suggestion\""
+      ]
+    },
+    {
+      "citation": "cfr 1 51",
+      "title": "Cfr 1 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . To enforce any edition other than that specified in this section, the EPA mus",
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . All approved incorporation by reference (IBR) material is available for inspe",
+        "the approval of the Director of the Federal Register under 5 U.S.C. 552(a) and 1 CFR part 51 . You can obtain the material from the sources listed in paragraph (b) of this"
+      ]
+    },
+    {
+      "citation": "70",
+      "title": "70",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "l Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+        "l Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+        "l Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20"
+      ]
+    },
+    {
+      "citation": "30",
+      "title": "30",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "AISC 325-10 – Steel Construction Manual National Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 7",
+        "AISC 325-10 – Steel Construction Manual National Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 7",
+        "AISC 325-10 – Steel Construction Manual National Fire Protection Agency (NFPA) NFPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 7"
+      ]
+    },
+    {
+      "citation": "72",
+      "title": "72",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 12,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "FPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+        "FPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20",
+        "FPA 30 – Flammable and Combustible Liquid Code NFPA 70 – National Electric Code NFPA 72 – National Fire Alarm Code Page 20 of 20"
+      ]
+    },
+    {
+      "citation": "energy independence and security act",
+      "title": "Energy Independence And Security Act",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 11,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "doe_osti_3362642"
+      ],
+      "sample_snippets": [
+        "................................................. 4 Figure 4. RFS comparison of Energy Independence and Security Act renewable volume obligation and RIN volumes. ..................................",
+        "................................................. 4 Figure 4. RFS comparison of Energy Independence and Security Act renewable volume obligation and RIN volumes. ..................................",
+        "d. The RFS originated with the Energy Policy Act of 2005 and expanded under the Energy Independence and Security Act of 2007 (U.S. Congress 2007). The RFS established biofuels volumes increasing a"
+      ]
+    },
+    {
+      "citation": "cfr 40 75",
+      "title": "Cfr 40 75",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 10,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "quality assurance programs under appendix F to 40 CFR part 60 or appendix B to 40 CFR part 75, and other documents) provided that the elements required by paragraph (g)(5)(i",
+        "e Administrator any other emission report that is subject to any requirement in 40 CFR part 75 , the same individual shall be the designated representative responsible for ce",
+        "Electricity generation units that report CO 2 mass emissions year round through 40 CFR part 75 (subpart D). Adipic acid production ( subpart E of this part ). Aluminum produc"
+      ]
+    },
+    {
+      "citation": "cfr 30 550.302",
+      "title": "Cfr 30 550.302",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 9,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "es as identified by Bureau of Ocean Energy Management (BOEM) in compliance with 30 CFR 550.302 through 304 . ( 2 ) Other large release events. ( c ) For an onshore petroleum",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi",
+        "most recent monitoring and calculation methods published by BOEM referenced in 30 CFR 550.302 through 304 . ( 1 ) Offshore production facilities that report to BOEM's emissi"
+      ]
+    },
+    {
+      "citation": "14001",
+      "title": "14001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 7,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "actices that generated both solid and liquid waste streams. nREl’s EmS has been ISO 14001 certifed since 2011, and the laboratory maintained this certifcation in 2024. A",
+        "us during the summer. This the laboratory continues to meet the requirements of ISO 14001, which demonstrates the laboratory’s species has not been seen or surveyed at t",
+        "s certifed to the ISO 14001:2015 standard for environmental management systems. ISO 14001 is a globally recognized standard that defnes the structure of an organization’"
+      ]
+    },
+    {
+      "citation": "cfr 49 195",
+      "title": "Cfr 49 195",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_49_cfr_0195",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "sment. 6.1.3 Pipe Coating External coatings will be provided in accordance with 49 CFR 195, Subpart H, Corrosion Control. The exterior of the line pipe will be coated wit",
+        "ct. 6.8 HYDROSTATIC TESTING Hydrostatic testing will follow the requirements of 49 CFR 195, Subpart E ‐ Pressure Testing and ASME B31.4. Above ground and shop fabricated",
+        "AND AC MITIGATION 14.1 CORROSION CONTROL Corrosion control will be provided per 49 CFR Part 195,"
+      ]
+    },
+    {
+      "citation": "b31.4",
+      "title": "B31.4",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "ary, transitions between differing wall thicknesses are made in accordance with ASME B31.4 guidelines. Transitions at weld connections between pipe and fittings of unequa",
+        "s of unequal wall thickness will be made in accordance with Figure 434.8.6‐2 of ASME B31.4. All first connections to the pipeline shall be welded. The second connection,",
+        "ield fabricated in accordance with the provisions outlined in 49 CFR, Part 195, ASME B31.4, and Project Specification. Cold bends will not be bent more than 1.5 degrees p"
+      ]
+    },
+    {
+      "citation": "15-2019",
+      "title": "15-2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 6,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "e used in chillers if and only if such chiller meets all requirements listed in ASHRAE 15-2019. 1 2 4 In cases where this listing 1 includes requirements different than those",
+        "2 4 In cases where this listing 1 includes requirements different than those of ASHRAE 15-2019, the appliance must meet the requirements of this listing 1 in place of the req",
+        "ce must meet the requirements of this listing 1 in place of the requirements in ASHRAE 15-2019. Where similar requirements of ASHRAE 15-2019 and UL 60335-2-40 differ, the mor"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.40",
+      "title": "Cfr 40 80.40",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specifi",
+        "oline regulations promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.27",
+      "title": "Cfr 40 80.27",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Agency under 40 CFR 80.40 , but which meet summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional gasolin",
+        "Protection Agency under 40 CFR 80.40 or the summer RVP standards required under 40 CFR 80.27 or as specified by the state. Note: This category excludes conventional blendst"
+      ]
+    },
+    {
+      "citation": "cfr 21 2.125(e)",
+      "title": "Cfr 21 2.125(E)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "the U.S., the active moiety contained in the MDI must be listed as essential at 21 CFR 2.125(e) . Essential-Use Allowances means the privileges granted by § 82.4(n) to produce",
+        "the U.S., the active moiety contained in the MDI must be listed as essential at 21 CFR 2.125(e) . Essential-Use Allowances means the privileges granted by § 82.4(n) to produce",
+        "l, automotive and pesticide uses, ( 2 ) Except— ( i ) Medical devices listed in 21 CFR 2.125(e) ; ( ii ) Lubricants, coatings or cleaning fluids for electrical or electronic e"
+      ]
+    },
+    {
+      "citation": "10",
+      "title": "10",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 5,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "hould be used in accordance with the safety guidelines in the latest edition of NFPA 10, Standard for Portable Fire Extinguishers; 1 • In the case that 2-BTP is inhale",
+        "by sending it for halon recovery to a manufacturer operating in accordance with NFPA 10 and NFPA 12A standards, a fire equipment dealer operating in accordance with NF",
+        "10 and NFPA 12A standards, a fire equipment dealer operating in accordance with NFPA 10 and NFPA 12A standards or a recycler operating in accordance with NFPA 10 and N"
+      ]
+    },
+    {
+      "citation": "1547-2018",
+      "title": "1547-2018",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3020107",
+        "doe_osti_3031084"
+      ],
+      "sample_snippets": [
+        "9B, CSA C22.2, Canadian AFCI according to T.I.L. M-07 Grid Connection Standards IEEE 1547-2018, Rule 21, Rule 14 (HI) Emissions FCC Part 15 Class A INSTALLATION SPECIFICATION",
+        "9B, CSA C22.2, Canadian AFCI according to T.I.L. M-07 Grid Connection Standards IEEE 1547-2018, Rule 21, Rule 14 (HI) Emissions FCC Part 15 Class A INSTALLATION SPECIFICATION",
+        "#107.1, Safety Canadian AFCI according to T.I.L. M-07 Grid Connection Standards IEEE 1547-2018, Rule 21, Rule 14 (HI) Emissions FCC part 15 class A (1) For other regional set"
+      ]
+    },
+    {
+      "citation": "cfr 10 436",
+      "title": "Cfr 10 436",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_10_cfr_0436",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "eCFR :: 10 CFR Part 436 -- Federal Energy Management and Planning Programs { \"imports\": { \"application\"",
+        "d Content - Details URL https://www.ecfr.gov/current/title-10/part-436 Citation 10 CFR Part 436 Agency Department of Energy Part 436 Authority: 42 U.S.C. 7101 et seq.; 42 U.S.",
+        "Content - Display Options Subscribe Enhanced Content - Subscribe Subscribe to: 10 CFR Part 436 Via Email: --> Via RSS: --> --> Enhanced Content - Subscribe Timeline Enhanced"
+      ]
+    },
+    {
+      "citation": "2010",
+      "title": "2010",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "for whichever hydrofluorocarbon gas is employed, and the latest edition of the NFPA 2010 standard for Aerosol Extinguishing Systems. Sodium bicarbonate release in all s",
+        "should be in accordance with the safety guidelines in the latest edition of the NFPA 2010 standard for Aerosol Extinguishing Systems. For establishments filling, install",
+        "should be in accordance with the safety guidelines in the latest edition of the NFPA 2010 standard for Aerosol Extinguishing Systems. For establishments filling, install"
+      ]
+    },
+    {
+      "citation": "cfr 40 82.152",
+      "title": "Cfr 40 82.152",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "air conditioners in MVACs and MVAC-like appliances (as that term is defined in 40 CFR 82.152 ). ( b ) These regulations apply to any person performing service on a motor ve",
+        "se of storage, recycling, reclamation or transportation. 3.2 Recover. Reference 40 CFR 82.152 . 3.3 Recycle. Reference 40 CFR 82.152 . 3.4 Reclaim. Reference 40 CFR 82.152 .",
+        "r transportation. 3.2 Recover. Reference 40 CFR 82.152 . 3.3 Recycle. Reference 40 CFR 82.152 . 3.4 Reclaim. Reference 40 CFR 82.152 . 3.5 Standard Contaminated Refrigerant"
+      ]
+    },
+    {
+      "citation": "cfr 49 173.304",
+      "title": "Cfr 49 173.304",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "eed 80% of volume at 21.1 °C of its maximum rating as defined by DOT standards, 49 CFR 173.304 and American Society of Mechanical Engineers. 7 . 5 Hoses and Connections 7 . 5",
+        "cuments, U.S. Government Printing Office, Washington, D.C. 20402. DOT Standard, 49 CFR 173.304 —Shippers—General Requirements for Shipments and Packagings. 2 . 1 . 5 UL Publi",
+        "fill does not exceed 80% of the tank's rated volume at 21 °C per DOT Standard, 49 CFR 173.304 , and the American Society of Mechanical Engineers. 6.4 Additional Storage Tank"
+      ]
+    },
+    {
+      "citation": "34-2013",
+      "title": "34-2013",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        ". All references in this appendix are considered as part of this standard. ANSI/ASHRAE Standard 34-2013, Designation and Safety Classification of Refrigerants, with Addenda, American",
+        "mps (retrofit only) All refrigerants identified as flammability Class 3 in ANSI/ASHRAE Standard 34-2013 1 2 3 All refrigerants meeting the criteria for flammability Class 3 in ANSI/AS",
+        "13 1 2 3 All refrigerants meeting the criteria for flammability Class 3 in ANSI/ASHRAE Standard 34-2013. This includes, but is not limited to, refrigerant products sold under the name"
+      ]
+    },
+    {
+      "citation": "12a",
+      "title": "12A",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 4,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "t for halon recovery to a manufacturer operating in accordance with NFPA 10 and NFPA 12A standards, a fire equipment dealer operating in accordance with NFPA 10 and NFP",
+        "12A standards, a fire equipment dealer operating in accordance with NFPA 10 and NFPA 12A standards or a recycler operating in accordance with NFPA 10 and NFPA 12A stand",
+        "0 and NFPA 12A standards or a recycler operating in accordance with NFPA 10 and NFPA 12A standards. This provision does not apply to ancillary system devices such as el"
+      ]
+    },
+    {
+      "citation": "cfr 49 172.101",
+      "title": "Cfr 49 172.101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "commercial_building",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436",
+        "us_federal_40_cfr_0082",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp",
+        "badge-info\">1 CFR 1.1 suggestions#fillExample\" class=\"example badge badge-info\">49 CFR 172.101 suggestions#fillExample\" class=\"example badge badge-info\">Organization and Purp"
+      ]
+    },
+    {
+      "citation": "34",
+      "title": "34",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "lists acceptable test methods. These refrigerants are as referenced in the ANSI/ASHRAE Standard 34 with Addenda: 2.1.1 Single-Component Fluorocarbon Refrigerants: R-11, R-12, R-1",
+        "lists acceptable test methods. These refrigerants are as referenced in the ANSI/ASHRAE Standard 34 with Addenda: 2.1.1 Single-Component Fluorocarbon Refrigerants: R-11, R-12, R-1",
+        "nd vapor phase without special handling. Note: Flammable refrigerants which are ASHRAE 34 class 2L, 2, or 3 present additional safety challenges and require additional m"
+      ]
+    },
+    {
+      "citation": "cfr 40 2",
+      "title": "Cfr 40 2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "data they wish to have treated as confidential business information (CBI) under 40 CFR part 2, subpart B . Failure to assert a claim of confidentiality at the time of submis",
+        "an acceptability determination on a substitute to be published. Moreover, under 40 CFR part 2, subpart B , there are further instances in which confidentiality assertions ma",
+        "s information, proprietary blends) can be maintained as confidential subject to 40 CFR part 2, subpart B . ( d ) Joint submissions under other statutes. Information submitte"
+      ]
+    },
+    {
+      "citation": "cfr 40 257.2",
+      "title": "Cfr 40 257.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ace impoundment, injection well, or waste pile as those terms are defined under 40 CFR 257.2 . Landfill gas means gas produced as a result of anaerobic decomposition of was",
+        "land. An MSW landfill may also receive other types of RCRA Subtitle D wastes ( 40 CFR 257.2 ) such as commercial solid waste, nonhazardous sludge, conditionally exempt sma",
+        "uch as RCRA Subtitle D wastes (non-hazardous industrial solid waste, defined in 40 CFR 257.2 ), commercial solid wastes, or conditionally exempt small quantity generator wa"
+      ]
+    },
+    {
+      "citation": "cfr 40 51",
+      "title": "Cfr 40 51",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed to assure the alignment of the quadrupole mass filter (see EPA Method 205 at 40 CFR part 51, appendix M as reference). The mass spectrometer must be chosen so that the mas",
+        "ng a gas dilution system that meets the requirements specified in Method 205 at 40 CFR part 51, appendix M ) with known HFC-23 concentrations that are in the same range (frac",
+        "n and Manufacturing Act of 2020 that (2) larger appliances that are subject EPA 40 CFR Part 51: Requirements for are intended to reduce the use of HFCs in manufacturing to de"
+      ]
+    },
+    {
+      "citation": "14001:2015",
+      "title": "14001:2015",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "and control process, and efective and efcient end-of-life practices for waste. ISO 14001:2015 Certifcation nREl’s EmS is certifed to the ISO 14001:2015 standard for environm",
+        "practices for waste. ISO 14001:2015 Certifcation nREl’s EmS is certifed to the ISO 14001:2015 standard for environmental management systems. ISO 14001 is a globally recogniz",
+        "sments: NREL underwent a recertifcation assessment to verify conformance to the ISO 14001:2015 standard. A team of external auditors conducted the virtual assessment, includi"
+      ]
+    },
+    {
+      "citation": "60038",
+      "title": "60038",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "131. CH-1211 Geneva 20—Switzerland, 41 22 919 02 11, http://www.iec.ch . ( 1 ) IEC 60038, IEC Standard Voltages , Edition 7.0, 2009-06, into Appendix B3 to subpart F. (",
+        "stems shall include one or more of the utilization voltages shown in Table 1 of IEC 60038 (English version) (incorporated by reference, see § 82.168 ). 11.2 Data for Des",
+        "ons for Refrigerants , Air-Conditioning, Heating, and Refrigeration Institute • IEC 60038 IEC Standard Voltages , Edition 7.0, 2009-06 (English version) (incorporated by"
+      ]
+    },
+    {
+      "citation": "cfr 40 82.158(h)",
+      "title": "Cfr 40 82.158(H)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 3,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ments established for certified recycling and recovery equipment established at 40 CFR 82.158(h) . Attachment to Appendix B1 Particulate Used in Standard Contaminated Refrigera",
+        "ments established for certified recycling and recovery equipment established at 40 CFR 82.158(h) . Recommended nameplate voltages for 60 Hertz systems shall include one or more",
+        "ments established for certified recycling and recovery equipment established at 40 CFR 82.158(h) . Recommended nameplate voltages for 60 Hertz systems shall include one or more"
+      ]
+    },
+    {
+      "citation": "1547",
+      "title": "1547",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "datacenter"
+      ],
+      "evidence_sources": [
+        "doe_osti_3020107",
+        "doe_osti_3031084"
+      ],
+      "sample_snippets": [
+        "1741, UL 1998, CSA C22.2#107.1 Grid Connection Standards UL 1741SA, UL 1741SB, IEEE 1547, Rule 21, Rule 14 Emissions FCC Part 15, Class A L/HFRT, L/HVRT, VOLT-VAR, VOLT",
+        "Associated Electric Power Systems Interfaces,\" IEEE Std 1547-2018 (Revision of IEEE Std 1547- 2003), pp. 1-138, 2018. [10] J. Cohen, L. Shwisberg and M. Dyson, \"How Virtual"
+      ]
+    },
+    {
+      "citation": "cfr 48 15.602",
+      "title": "Cfr 48 15.602",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "agreement (including a lease-acquisition) without regard to the requirements of 48 CFR 15.602 and 15.602-2(a)(1) ; 48 CFR 15.603 ; and 48 CFR",
+        "agreement (including a lease-acquisition) without regard to the requirements of 48 CFR 15.602 and 15.602-2(a)(1) ; 48 CFR 15.603 ; and 48 CFR 15.607(a) , (a)(2) , (a)(3) , ("
+      ]
+    },
+    {
+      "citation": "cfr 48 15.603",
+      "title": "Cfr 48 15.603",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "ition) without regard to the requirements of 48 CFR 15.602 and 15.602-2(a)(1) ; 48 CFR 15.603 ; and 48 CFR",
+        "ition) without regard to the requirements of 48 CFR 15.602 and 15.602-2(a)(1) ; 48 CFR 15.603 ; and 48 CFR 15.607(a) , (a)(2) , (a)(3) , (a)(4) and (a)(5) . ( 2 ) Reject an"
+      ]
+    },
+    {
+      "citation": "cfr 40 61",
+      "title": "Cfr 40 61",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        ", Protection of the Environment, Part 61, Program activities were in compliance 40 CFR 61, Subpart H: Emissions of National Emission Standards for Hazardous Air Pollutan",
+        "irements. be followed when the release of any radiologically In accordance with 40 CFR 61, Subpart contaminated equipment or real property to another DOE H, NREL submitt"
+      ]
+    },
+    {
+      "citation": "b16.5",
+      "title": "B16.5",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "face construction with surface quality and physical dimensions as specified in ASME B16.5 for ASME Class 900 service, suitable for -50OF ambient temperature Mainline val",
+        "able 6-2. Table 6-2Fittings and Flanges Specification SPECIFICATION DESCRIPTION ASME B16.5 Pipe Flanges and Flanged Fittings ASME B16.9 Factory‐Made Wrought Buttwelding F"
+      ]
+    },
+    {
+      "citation": "cfr 40 136",
+      "title": "Cfr 40 136",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501",
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ns the chemical oxygen demand as determined using methods specified pursuant to 40 CFR part 136 . Cogeneration unit means a unit that produces electrical energy and useful the",
+        "ents of the Clean Water Act. EPA 40 CFR 133: Secondary Treatment Regulation EPA 40 CFR 136: Guidelines Establishing Test Procedures for the Analysis of Pollutants CDPHE 5"
+      ]
+    },
+    {
+      "citation": "cfr 40 136.3",
+      "title": "Cfr 40 136.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "er treated anaerobically using analytical methods for COD or BOD 5 specified in 40 CFR 136.3 Table 1B. For the purpose of determining concentrations of wastewater influent",
+        "er treated anaerobically using analytical methods for COD or BOD 5 specified in 40 CFR 136.3 Table 1B. For the purpose of determining concentrations of wastewater influent"
+      ]
+    },
+    {
+      "citation": "cfr 40 80.41",
+      "title": "Cfr 40 80.41",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , and summer RVP standards required under 40 CFR 80.27 or as specified by the s",
+        "promulgated by the U.S. Environmental Protection Agency under 40 CFR 80.40 and 40 CFR 80.41 , but which do not meet summer RVP standards required under 40 CFR 80.27 or as"
+      ]
+    },
+    {
+      "citation": "3170",
+      "title": "3170",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "eva 20, Switzerland, + 41 22 749 01 11, http://www.iso.org/iso/home.htm . ( 1 ) ISO 3170: Petroleum liquids—Manual sampling—Third Edition 2004-02-01, IBR approved for §",
+        "xtures by Gas Chromatography (incorporated by reference, see § 98.7 ). ( xvii ) ISO 3170: Petroleum Liquids—Manual sampling—Third Edition (incorporated by reference, se"
+      ]
+    },
+    {
+      "citation": "3171",
+      "title": "3171",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "—Manual sampling—Third Edition 2004-02-01, IBR approved for § 98.164(b) . ( 2 ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition 1988-12-01, IBR a",
+        "nual sampling—Third Edition (incorporated by reference, see § 98.7 ). ( xviii ) ISO 3171: Petroleum Liquids—Automatic pipeline sampling—Second Edition (incorporated by"
+      ]
+    },
+    {
+      "citation": "cfr 30 550",
+      "title": "Cfr 30 550",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through",
+        "acilities shall adhere to the monitoring and QA/QC requirements as set forth in 30 CFR part 550 . ( a ) You must use any of the methods described in paragraphs (a)(1) through"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.1572(c)",
+      "title": "Cfr 40 63.1572(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "e, calibrate, and maintain each gas flow meter according to the requirements in 40 CFR 63.1572(c) and the following requirements. ( 1 ) Locate the flow monitor at a site that pr",
+        "s composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications and requirements. ( h ) - ( i"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.346(i)",
+      "title": "Cfr 40 98.346(I)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "tor used in Equation TT-6 of this subpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12,",
+        "bpart. ( 3 ) All information required under 40 CFR 98.346(i)(1) through (7) and 40 CFR 98.346(i)(9) through (12) . [ 75 FR 39773 , July 12, 2010, as amended at 76 FR 73909 , No"
+      ]
+    },
+    {
+      "citation": "cfr 40 50",
+      "title": "Cfr 40 50",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "g more than 1 lb adverse efect. (0.45 kg) of any refrigerant. The inventory EPA 40 CFR Part 50: National Primary and On Oct. 1,",
+        "g more than 1 lb adverse efect. (0.45 kg) of any refrigerant. The inventory EPA 40 CFR Part 50: National Primary and On Oct. 1, 2021, the EPA implemented hydrofuorocarbon ide"
+      ]
+    },
+    {
+      "citation": "cfr 40 142",
+      "title": "Cfr 40 142",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "upplies. Under this act, the EPA has Drinking water at the Flatirons Campus EPA 40 CFR Part 142: National established allowable levels for contaminants in drinking exceeded dr",
+        "upplies. Under this act, the EPA has Drinking water at the Flatirons Campus EPA 40 CFR Part 142: National established allowable levels for contaminants in drinking exceeded dr"
+      ]
+    },
+    {
+      "citation": "cfr 40 129",
+      "title": "Cfr 40 129",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "n System Reporting delivered to Metro Water Recovery’s plant via conveyance EPA 40 CFR 129: Toxic Pollutant Efuent systems owned, operated, and regulated by numerous Stan",
+        "to Metro Water Recovery’s plant via conveyance EPA 40 CFR 129: Toxic Pollutant Efuent systems owned, operated, and regulated by numerous Stan"
+      ]
+    },
+    {
+      "citation": "cfr 40 130",
+      "title": "Cfr 40 130",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "owned, operated, and regulated by numerous Standards sanitation districts. EPA 40 CFR 130: Water Quality Planning Nondomestic wastewater discharges must comply and Manag",
+        "owned, operated, and regulated by numerous Standards sanitation districts. EPA 40 CFR 130: Water Quality Planning Nondomestic wastewater discharges must comply and Manag"
+      ]
+    },
+    {
+      "citation": "cfr 40 131",
+      "title": "Cfr 40 131",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "omply and Management with Metro Water Recovery rules and regulations, which EPA 40 CFR 131:",
+        "omply and Management with Metro Water Recovery rules and regulations, which EPA 40 CFR 131: Water Quality Standards incorporate requirements of the Clean Water Act. EPA 4"
+      ]
+    },
+    {
+      "citation": "cfr 36 79",
+      "title": "Cfr 36 79",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "reservation programs— obtained by DOE in 2023. The survey National Park Service 36 CFR 79: Curation commensurate with their mission and the",
+        "reservation programs— obtained by DOE in 2023. The survey National Park Service 36 CFR 79: Curation commensurate with their mission and the efects of their was conducted"
+      ]
+    },
+    {
+      "citation": "cfr 40 82.154(c)",
+      "title": "Cfr 40 82.154(C)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ion. Notwithstanding any other provisions of this subpart, the effectiveness of 40 CFR 82.154(c) , only as it applies to refrigerant contained in appliances without fully assem",
+        "ion. Notwithstanding any other provisions of this subpart, the effectiveness of 40 CFR 82.154(c) , only as it applies to refrigerant contained in appliances without fully assem"
+      ]
+    },
+    {
+      "citation": "63.2-1996",
+      "title": "63.2-1996",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "s, Inc., (ASHRAE), 1791 Tullie Circle NE., Atlanta, GA 30329, U.S.A. ( 1 ) ANSI/ASHRAE Standard 63.2-1996 (RA 2010), Method of Testing Liquid-Line Filter Drier Filtration Capability, Re",
+        "paration of Particulate Materials. To prepare the blend of contaminant per ANSI/ASHRAE Standard 63.2-1996 (RA 2010), first wet screen a quantity of coarse air cleaner dust on a 200-mesh"
+      ]
+    },
+    {
+      "citation": "63.2",
+      "title": "63.2",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ll consist of inert materials and shall comply with particulate requirements in ASHRAE Standard 63.2, “Method of Testing of Filtration Capacity of Refrigerant Liquid Line Filters a",
+        "ll consist of inert materials and shall comply with particulate requirements in ASHRAE Standard 63.2, “Method of Testing of Filtration Capacity of Refrigerant Liquid Line Filters a"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.101",
+      "title": "Cfr 29 1910.101",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "nt, such as regulations of the Occupational Safety and Health Administration at 29 CFR 1910.101 and the Department of Transportation's requirements at 49 CFR 171-179 . Require",
+        "nt, such as regulations of the Occupational Safety and Health Administration at 29 CFR 1910.101 and the Department of Transportation's requirements at 49 CFR 171-179 . CFC-12"
+      ]
+    },
+    {
+      "citation": "cfr 49 171",
+      "title": "Cfr 49 171",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ation at 29 CFR 1910.101 and the Department of Transportation's requirements at 49 CFR 171-179 . Requirements for handling, storage, and transportation of compressed gase",
+        "ation at 29 CFR 1910.101 and the Department of Transportation's requirements at 49 CFR 171-179 . CFC-12 Motor Vehicle Air Conditioning (New equipment only) Carbon dioxide"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.160",
+      "title": "Cfr 29 1910.160",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 2,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "Use of this agent should also conform to relevant OSHA requirements, including 29 CFR 1910.160 and 1910.162 . See notes 1 through 5 to this table. 2. Streaming 2-BTP Acceptab",
+        "fire suppression agents should conform to relevant OSHA requirements, including 29 CFR 1910.160 and 1910.162 . Note 3: Per OSHA requirements, protective gear (SCBA) should be"
+      ]
+    },
+    {
+      "citation": "cfr 10 71.47",
+      "title": "Cfr 10 71.47",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3031192"
+      ],
+      "sample_snippets": [
+        "activities without accidents or other unexpected or unusual occurrences. 13 See 10 CFR 71.47, “External Radiation Standards for All Packages.” DOE/EIS-0203-SA-10 25 April 2"
+      ]
+    },
+    {
+      "citation": "9001",
+      "title": "9001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3020107"
+      ],
+      "sample_snippets": [
+        "wer Producers due in low LID, reducing annual degradation and standards and are ISO 9001 certified to our innovative technology, product guaranteeing more power through"
+      ]
+    },
+    {
+      "citation": "cfr 48 9",
+      "title": "Cfr 48 9",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "the firm is not on the list of parties excluded from procurement programs under 48 CFR part 9, subpart 9.4 ; and ( 5 ) There is no other adverse information which warrants t"
+      ]
+    },
+    {
+      "citation": "cfr 48 15.607(a)",
+      "title": "Cfr 48 15.607(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "d to the requirements of 48 CFR 15.602 and 15.602-2(a)(1) ; 48 CFR 15.603 ; and 48 CFR 15.607(a) , (a)(2) , (a)(3) , (a)(4) and (a)(5) . ( 2 ) Reject an unsolicited proposal th"
+      ]
+    },
+    {
+      "citation": "cfr 48 17",
+      "title": "Cfr 48 17",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "n this section, the multiyear energy savings performance contract is subject to 48 CFR part 17, subpart 17.1 , including the requirement that the contracting officer establis"
+      ]
+    },
+    {
+      "citation": "cfr 48 49",
+      "title": "Cfr 48 49",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "us_federal_10_cfr_0436"
+      ],
+      "sample_snippets": [
+        "subject to the termination procedures of the Federal Acquisition Regulation in 48 CFR part 49 . ( b ) In the event an energy savings performance contract is terminated for t"
+      ]
+    },
+    {
+      "citation": "cfr 40 1090",
+      "title": "Cfr 40 1090",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "warehouse_distribution"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362642"
+      ],
+      "sample_snippets": [
+        "us model year 2001 and newer: www.experian.com/automotive/auto-vehicle-data. 13 40 CFR Part 1090: www.federalregister.gov/documents/2024/02/29/2024-04023/request-from-states-fo"
+      ]
+    },
+    {
+      "citation": "cfr 10 52",
+      "title": "Cfr 10 52",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "doe_osti_3001074"
+      ],
+      "sample_snippets": [
+        "ration capacity in the U.S. [13]. - Fermi America submitted its application for 10 CFR Part 52 combined licenses for four AP1000 (Fermi America Units 1 through 4) to be built"
+      ]
+    },
+    {
+      "citation": "cfr 10 50",
+      "title": "Cfr 10 50",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "commercial_building"
+      ],
+      "evidence_sources": [
+        "doe_osti_3001074"
+      ],
+      "sample_snippets": [
+        "ogrid configuration. In the U.S., the NRC General Design Criteria Criterion 17 (10 CFR Part 50, Appendix A Preliminary Analysis of Nuclear-Powered Data Center Scenarios Augus"
+      ]
+    },
+    {
+      "citation": "34001",
+      "title": "34001",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3096216"
+      ],
+      "sample_snippets": [
+        "codes: • Household appliances, ±1–2 Hz • Continuous operations range • Motors, IEC 34001 • Deadbands • Variable speed drives, ±1–2 Hz • High- and low-frequency • Timing"
+      ]
+    },
+    {
+      "citation": "cfr 40 70",
+      "title": "Cfr 40 70",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0070",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "permitting and emissions control recycling, and documentation requirements. EPA 40 CFR Part 70: State Operating Permit requirements. All facilities and individually Programs"
+      ]
+    },
+    {
+      "citation": "1977",
+      "title": "1977",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "ornl_1817423"
+      ],
+      "sample_snippets": [
+        "given that the gamma count rates are expected to be proportional to dose rates. ANSI/ANS 1977 flux-to-dose factors [6] were used to convert gamma flux into dose rates. Suffi"
+      ]
+    },
+    {
+      "citation": "15",
+      "title": "15",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "l occupancies as defined in the Safety Standard for Refrigeration Systems, ANSI/ASHRAE 15.” (g) Attach on the exterior of the shipping carton: “CAUTION—Risk of Fire or E"
+      ]
+    },
+    {
+      "citation": "b36.10",
+      "title": "B36.10",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "alculated wall thickness is very close to the standard wall thickness listed in ASME B36.10M, then standard wall thickness will be considered. 6.1.2 Fracture Control The p"
+      ]
+    },
+    {
+      "citation": "cfr 40 122",
+      "title": "Cfr 40 122",
+      "regulation_in_corpus": true,
+      "regulation_source_id": "us_federal_40_cfr_0122",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ated at the federal level under Clean Program activities were in compliance EPA 40 CFR 122: EPA Administered Permit Water Act, a U.S. federal law, and at the state level"
+      ]
+    },
+    {
+      "citation": "cfr 40 125",
+      "title": "Cfr 40 125",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "age disposal Requirements systems have been delegated to Jeferson County by EPA 40 CFR 125: Criteria and Standards CDPHE. for the National Pollutant Discharge Elimination"
+      ]
+    },
+    {
+      "citation": "cfr 40 127",
+      "title": "Cfr 40 127",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "nages wastewater at its treatment plant per federal and state requirements. EPA 40 CFR 127: National Pollutant Domestic and nondomestic wastewater fows are Discharge Elim"
+      ]
+    },
+    {
+      "citation": "cfr 36 800",
+      "title": "Cfr 36 800",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "or listed in the for the entire Camp George West Historic National Park Service 36 CFR 800: National Register of Historic Places. Cultural resources District. This survey"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.58",
+      "title": "Cfr 40 60.58",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "f municipal solid waste combusted, calculated according to the procedures under 40 CFR 60.58b(j) . Mcf means thousand cubic feet. Methane conversion factor means the extent"
+      ]
+    },
+    {
+      "citation": "27916:2019",
+      "title": "27916:2019",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "8.489 . Note 1 to paragraph (e)(1): This standard is also available from ISO as ISO 27916:2019(E). ( 2 ) [Reserved] ( f ) The following material is available for purchase fro"
+      ]
+    },
+    {
+      "citation": "cfr 40 63.7081(a)",
+      "title": "Cfr 40 63.7081(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ion of limestone, dolomite, shells or other calcareous substances as defined in 40 CFR 63.7081(a)(1) . ( b ) This source category includes all LMPs unless the LMP is located at"
+      ]
+    },
+    {
+      "citation": "cfr 49 191.3",
+      "title": "Cfr 49 191.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "near pipelines), emergency shutdowns including pipeline incidents as defined in 49 CFR 191.3 , and all other pipeline segments with a physical volume greater than or equal"
+      ]
+    },
+    {
+      "citation": "cfr 49 192.3",
+      "title": "Cfr 49 192.3",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ed as such by the Pipeline and Hazardous Material Safety Administration (PHMSA) 49 CFR 192.3 . Drilling mud means a mixture of clays and additives with water, oil, or synth"
+      ]
+    },
+    {
+      "citation": "cfr 18 284.224",
+      "title": "Cfr 18 284.224",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "person identified as the owner or operator on blanket certificates issued under 18 CFR 284.224 . If an intrastate pipeline is not subject to section 311 of the Natural Gas Po"
+      ]
+    },
+    {
+      "citation": "cfr 40 60.105",
+      "title": "Cfr 40 60.105",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "and maintain exhaust gas composition monitors according to the requirements in 40 CFR 60.105a(b)(2) or 40 CFR 63.1572(c) or according to the manufacturer's specifications a"
+      ]
+    },
+    {
+      "citation": "cfr 40 98.36",
+      "title": "Cfr 40 98.36",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "ric acid process line (metric tons) and the relevant information required under 40 CFR 98.36 (e)(2)(vi) for the Tier 4 Calculation Methodology. ( f ) If you do not use a CE"
+      ]
+    },
+    {
+      "citation": "cfr 21 184.1240",
+      "title": "Cfr 21 184.1240",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node",
+        "manufacturing_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0098"
+      ],
+      "sample_snippets": [
+        "the U.S. Food and Drug Administration food-grade specifications for CO 2 ( see 21 CFR 184.1240 ) and ASTM standard E1747-95 (Reapproved 2005) Standard Guide for Purity of Car"
+      ]
+    },
+    {
+      "citation": "21",
+      "title": "21",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_3025690"
+      ],
+      "sample_snippets": [
+        "ing AV fleets on public rights-of-way. An ATN system is formally defined in the ANSI/ASCE 21-21 Automated People Mover Standards. At its core, whether PRT, ATN, or ODT, the"
+      ]
+    },
+    {
+      "citation": "cfr 40 52",
+      "title": "Cfr 40 52",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "d to 60% of the baseline amount. HAP emissions for each individual facility EPA 40 CFR Part 52: Approval and were below the EPA reporting and Promulgation of Implementation P"
+      ]
+    },
+    {
+      "citation": "cfr 40 71",
+      "title": "Cfr 40 71",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ked and reported if the emissions exceed 27,557 classifed as minor sources. EPA 40 CFR Part 71: Federal Operating U.S. tons (25,000 metric tons [MT]) of carbon dioxide Permit"
+      ]
+    },
+    {
+      "citation": "cfr 40 141",
+      "title": "Cfr 40 141",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ing Water Act establishes minimum Program activities were not in compliance EPA 40 CFR Part 141: National Primary drinking water standards and monitoring requirements with req"
+      ]
+    },
+    {
+      "citation": "cfr 40 143",
+      "title": "Cfr 40 143",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "Control Division (WQCD) of CDPHE trihalomethanes during 2024. In response, EPA 40 CFR Part 143: National Secondary implements the federal Safe Drinking Water Act in CDPHE ele"
+      ]
+    },
+    {
+      "citation": "cfr 40 149",
+      "title": "Cfr 40 149",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ated by the EPA. sampling disinfectant byproducts from yearly to quarterly. EPA 40 CFR Part 149: Sole Source Aquifers All other monitored water quality CDPHE 5 CCR 1002-11: Co"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.26",
+      "title": "Cfr 40 122.26",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "al development projects to the maximum Periodic stormwater inspections were EPA 40 CFR 122.26: Storm Water Discharges extent technically feasible. Stormwater runof levels sh"
+      ]
+    },
+    {
+      "citation": "cfr 40 122.34",
+      "title": "Cfr 40 122.34",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ations where earth- refect predevelopment hydrology specifcally with regard EPA 40 CFR 122.34: Permit Requirements disturbing activities occurred. Inspections to runof rate,"
+      ]
+    },
+    {
+      "citation": "cfr 40 123",
+      "title": "Cfr 40 123",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "WQCD. Elimination System On-site septic systems are regulated by the WQCD. EPA 40 CFR 123: State Program Inspection and permitting of individual sewage disposal Requirem"
+      ]
+    },
+    {
+      "citation": "cfr 40 133",
+      "title": "Cfr 40 133",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "1: Water Quality Standards incorporate requirements of the Clean Water Act. EPA 40 CFR 133: Secondary Treatment Regulation EPA 40 CFR 136: Guidelines Establishing Test Pr"
+      ]
+    },
+    {
+      "citation": "cfr 40 355",
+      "title": "Cfr 40 355",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "materials management is regulated at Program activities were in compliance EPA 40 CFR 355: Emergency Planning and the federal level through Title III of the Superfund wi"
+      ]
+    },
+    {
+      "citation": "cfr 40 370",
+      "title": "Cfr 40 370",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "eauthorization Act, which is also Section 302 notifcation was not required. EPA 40 CFR 370: Hazardous Chemical known as the Emergency Planning and Community Reporting, Co"
+      ]
+    },
+    {
+      "citation": "cfr 40 372",
+      "title": "Cfr 40 372",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "deral, state, and local governments materials that required reporting under EPA 40 CFR 372: Toxic Chemical Release plan for emergencies involving hazardous substances. It"
+      ]
+    },
+    {
+      "citation": "cfr 40 260",
+      "title": "Cfr 40 260",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "Conservation and Recovery Act (RCRA) Program activities were in compliance EPA 40 CFR 260-273: Hazardous Waste established requirements for the management of with requir"
+      ]
+    },
+    {
+      "citation": "cfr 40 279",
+      "title": "Cfr 40 279",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "ous Waste established requirements for the management of with requirements. EPA 40 CFR 279: Standards for the regulated waste, including hazardous waste. In Colorado, App"
+      ]
+    },
+    {
+      "citation": "cfr 40 112",
+      "title": "Cfr 40 112",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "tion and response are regulated at the Program activities complied with all EPA 40 CFR Part 112: Oil Pollution federal level under the Oil Pollution Prevention Act and require"
+      ]
+    },
+    {
+      "citation": "cfr 33 230",
+      "title": "Cfr 33 230",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "federal agencies to analyze and disclose Program activities were in compliance 33 CFR 230 the potential environmental impacts of proposed federal with requirements. Proc"
+      ]
+    },
+    {
+      "citation": "cfr 50 17",
+      "title": "Cfr 50 17",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "required to abide by the Endangered Program activities were in compliance USFWS 50 CFR 17: Endangered and Species Act (ESA) to ensure their actions do not adversely with"
+      ]
+    },
+    {
+      "citation": "cfr 40 162",
+      "title": "Cfr 40 162",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "PA, a certifed applicator must be used. with other management methods, such EPA 40 CFR 162: State Registration of Under the Presidential Memorandum: Creating a Federal as"
+      ]
+    },
+    {
+      "citation": "cfr 40 171",
+      "title": "Cfr 40 171",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "nator Health Task Force was created to easement, STEP Campus, and Flatirons EPA 40 CFR 171: Certifcation of Pesticide develop the National Pollinator Health Strategy to e"
+      ]
+    },
+    {
+      "citation": "cfr 10 1022",
+      "title": "Cfr 10 1022",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "hip and take action to reduce the risk of food loss; minimize the impact of DOE 10 CFR 1022: Compliance with foods on human safety, health, and welfare; and restore Floodp"
+      ]
+    },
+    {
+      "citation": "cfr 36 60",
+      "title": "Cfr 36 60",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "under Sections 106 Program activities were in compliance National Park Service 36 CFR 60: National and 110 of the National Historic Preservation Act, which with require"
+      ]
+    },
+    {
+      "citation": "cfr 36 63",
+      "title": "Cfr 36 63",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_2589501"
+      ],
+      "sample_snippets": [
+        "olorado Ofce of NREL completed a historic resource survey National Park Service 36 CFR 63: Archaeology and Historic Preservation and the State of a 6.6-acre (2.7-hectare"
+      ]
+    },
+    {
+      "citation": "cfr 42 84",
+      "title": "Cfr 42 84",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "stems. In accordance with Department of Health and Human Services regulations ( 42 CFR Part 84 ), safety glasses and a NIOSH/CDC-approved N99 respirator are required for indi"
+      ]
+    },
+    {
+      "citation": "cfr 49 211",
+      "title": "Cfr 49 211",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "infrastructure_node"
+      ],
+      "evidence_sources": [
+        "doe_osti_2502030"
+      ],
+      "sample_snippets": [
+        "ion Act, 49 U.S.C. 20701, et seq., 49 CFR Parts 223, 229, 230, 231, 232, 238. u 49 CFR Part 211 Subpart C. AN ACTION PLAN FOR RAIL ENERGY AND EMISSIONS INNOVATION 84 Equipment"
+      ]
+    },
+    {
+      "citation": "b16.9",
+      "title": "B16.9",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "fication SPECIFICATION DESCRIPTION ASME B16.5 Pipe Flanges and Flanged Fittings ASME B16.9 Factory‐Made Wrought Buttwelding Fittings ASME B16.25 Butt‐welding Ends ASME B1"
+      ]
+    },
+    {
+      "citation": "b16.25",
+      "title": "B16.25",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "anges and Flanged Fittings ASME B16.9 Factory‐Made Wrought Buttwelding Fittings ASME B16.25 Butt‐welding Ends ASME B16.47 Large Diameter Steel Flanges MSS‐SP‐44 Steel Pipe"
+      ]
+    },
+    {
+      "citation": "b16.47",
+      "title": "B16.47",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "E B16.9 Factory‐Made Wrought Buttwelding Fittings ASME B16.25 Butt‐welding Ends ASME B16.47 Large Diameter Steel Flanges MSS‐SP‐44 Steel Pipeline Flanges MSS‐SP‐75 High St"
+      ]
+    },
+    {
+      "citation": "b16.49",
+      "title": "B16.49",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "entable fitting. 6.4.2 Induction Bends Induction bends shall be consistent with ASME B16.49 ‐ Factory–Made Wrought Steel Buttwelding Induction Bends for Transportation and"
+      ]
+    },
+    {
+      "citation": "cfr 49 195.134",
+      "title": "Cfr 49 195.134",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "doe_osti_3362687"
+      ],
+      "sample_snippets": [
+        "the overall SCADA system design and communications design. 12.1 LEAK DETECTION 49 CFR 195.134 requires leak detection that complies with the requirements in 195.444 for haza"
+      ]
+    },
+    {
+      "citation": "cfr 21 2.125",
+      "title": "Cfr 21 2.125",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "DIs produced with the transferred essential-use CFCs are listed as essential at 21 CFR 2.125 , and were approved by the Food and Drug Administration before December 31, 200"
+      ]
+    },
+    {
+      "citation": "100",
+      "title": "100",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "compatible lubricant referred to in 8.3.1, shall be polyalkylene glycol (PAG), ISO 100 such as UCLN or PAG ISO 46-55, such as Idemitsu or equivalent, which shall cont"
+      ]
+    },
+    {
+      "citation": "cfr 40 82.68(a)",
+      "title": "Cfr 40 82.68(A)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "such products must present proof of their commercial status in accordance with 40 CFR 82.68(a) or 82.68(c) .” ( f ) - ( g ) [Reserved] ( h ) Effective January 1, 1994, any pe"
+      ]
+    },
+    {
+      "citation": "cfr 48 1",
+      "title": "Cfr 48 1",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "that section. ( b ) For agencies subject to the Federal Acquisition Regulation, 48 CFR part 1 , amendment of the FAR, consistent with this subpart, shall satisfy the require"
+      ]
+    },
+    {
+      "citation": "34-1992",
+      "title": "34-1992",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        ", R22, R113, R114, R123, R134a, R500, R502, and R503, as referenced in the ANSI/ASHRAE Standard 34-1992, “Number Designation of Refrigerants” (American Society of Heating, Refrigerati"
+      ]
+    },
+    {
+      "citation": "41.7",
+      "title": "41.7",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ned in 3.7 and expressed in pounds per minute [kg/min] of flow and shall be per ASHRAE 41.7-84 “Procedure For Fluid Measurement Of Gases” or ASHRAE 41.8-89 “Standard Metho"
+      ]
+    },
+    {
+      "citation": "41.8",
+      "title": "41.8",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "w and shall be per ASHRAE 41.7-84 “Procedure For Fluid Measurement Of Gases” or ASHRAE 41.8-89 “Standard Method of Flow of Fluids—Liquids.” 9.3.1 For equipment using multi"
+      ]
+    },
+    {
+      "citation": "1963",
+      "title": "1963",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "t a temperature of 48.8 °C. Hose assemblies that UL recognized as having passed ANSI/UL 1963 requirements shall be accepted without testing. See 7.1.4. 4.6 Clearing Trapped"
+      ]
+    },
+    {
+      "citation": "cfr 40 720",
+      "title": "Cfr 40 720",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "duced or sold. Premanufacture Notice (PMN) Program has the meaning described in 40 CFR part 720, subpart A promulgated under the Toxic Substances Control Act, 15 U.S.C. 2601 e"
+      ]
+    },
+    {
+      "citation": "969-1991",
+      "title": "969-1991",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ng vehicle repair. e . In accordance with SAE J639, testing of labels must meet ANSI/UL 969-1991. f . Information on the previous refrigerant that cannot be covered by the new"
+      ]
+    },
+    {
+      "citation": "cfr 29 1910.160(b)",
+      "title": "Cfr 29 1910.160(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "ishing agent in fixed extinguishing systems where employees may be exposed. See 29 CFR 1910.160(b)(11) . Aerosols—Unacceptable Substitutes End-use Substitute Decision Comments So"
+      ]
+    },
+    {
+      "citation": "cfr 40 82.180(b)",
+      "title": "Cfr 40 82.180(B)",
+      "regulation_in_corpus": false,
+      "regulation_source_id": "",
+      "mention_count_in_corpus": 1,
+      "asset_families_inferred": [
+        "_shared",
+        "cold_chain_facility"
+      ],
+      "evidence_sources": [
+        "us_federal_40_cfr_0082"
+      ],
+      "sample_snippets": [
+        "e available and projected time for switching to other available substitutes.” ( 40 CFR 82.180(b)(3) ) Refrigerants—Substitutes Acceptable Subject to Use Conditions End-use Subs"
+      ]
+    }
+  ],
+  "total": 136,
+  "with_text": 9
+}

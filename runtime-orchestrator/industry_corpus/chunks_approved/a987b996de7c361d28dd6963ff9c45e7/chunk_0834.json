@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0834",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "CO 2 concentration measurement in flow for flow meter u in quarter p (wt. percent CO 2 , expressed as a decimal fraction). p = Quarter of the year. u = Flow meter. ( 2 ) If you use a volumetric flow meter to measure the flow of an injected CO 2 stream, you must calculate annually the total mass of CO 2 (in metric tons) in the CO 2 stream injected each year in metric tons by multiplying the volumetric flow at standard conditions by the CO 2 concentration in the flow and the density of CO 2 at standard conditions, according to Equation RR-5 of this section. Volumetric flow and concentration data measurements must be made in accordance with § 98.444 . where: CO 2,u = Annual CO 2 mass injected (metric tons) as measured by flow meter u. Q p,u = Quarterly volumetric flow rate measurement for flow meter u in quarter p at standard conditions (standard cubic meters per quarter). D = Density of CO 2 at standard conditions (metric tons per standard cubic meter): 0.0018682. C CO2,p,u = CO 2 concentration measurement in flow for flow meter u in quarter p (vol. percent CO 2 , expressed as a decimal fraction). p = Quarter of the year. u = Flow meter. ( 3 ) To aggregate injection data for all wells covered under this subpart, you must sum the mass of all CO 2 injected through all injection wells in accordance with the procedure specified in Equation RR-6 of this section. where: CO 2I = Total annual CO 2 mass injected (metric tons) through all injection wells. CO 2,u = Annual CO 2 mass injected (metric tons) as measured by flow meter u. u = Flow meter. ( d ) You must calculate the annual mass of CO 2 produced from oil or gas production wells or from other fluid wells for each separator that sends a stream of gas into a recycle or end use system in accordance with the procedures specified in paragraphs (d)(1) through (d)(3) of this section. You must account for any CO 2 that is produced and not processed through a separator. You must account only for wells that produce the CO 2 that was injected into the well or wells covered by this source category. ( 1 ) For each gas-liquid separator for which flow is measured using a mass flow meter, you must calculate annually the total mass of CO 2 produced from an oil or other fluid stream in metric tons that is separated from the fluid by multiplying the mass gas flow by the CO 2 concentration in the gas flow, according to Equation RR-7 of this section. You must collect these data quarterly. Mass flow and concentration data measurements must be made in accordance with § 98.444 . Where: CO 2,w = Annual CO 2 mass produced (metric tons) through separator w. Q p,w = Quarterly gas mass flow rate measurement for separator w in quarter p (metric tons). C CO2,p,w = Quarterly CO 2 concentration",
+  "token_count": 511,
+  "text_sha": "43c298d7b343a087f568925a670541b3ff7c70182def80bc149afb766ea48070",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "79b38f95::chunk_0029",
+  "source_id": "doe_osti_3002717",
+  "source_sha": "79b38f9524bfed7df4cdafa227ee17b6",
+  "source_url": "https://www.osti.gov/servlets/purl/3002717",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "105208, 2021, doi: https://doi.org/10.1016/j.resconrec.2020.105208. [11] Institute of Scrap Recycling Industries (ISRI), Inc., “ISRI SPECS: ISRI Scrap Specifications Circular.” Aug. 23, 2021. [Online]. Available: https://www.isri.org/recycling- commodities-old/scrap-specifications-circular 39 [12] M. Keller, “Ford F150,” presented at the EuroCarBody 2015, Bad Nauheim, Germany, Oct. 21, 2015. 40",
+  "token_count": 43,
+  "text_sha": "ed83bafae9097655b4aa58ec066f13d27d737b408c2faf5dd1a093accf5af264",
+  "extracted_at": "2026-05-15T23:59:38.602096Z"
+}

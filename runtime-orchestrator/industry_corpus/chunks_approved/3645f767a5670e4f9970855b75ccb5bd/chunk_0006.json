@@ -1,0 +1,14 @@
+{
+  "chunk_id": "3645f767::chunk_0006",
+  "source_id": "doe_osti_3022461",
+  "source_sha": "3645f767a5670e4f9970855b75ccb5bd",
+  "source_url": "https://www.osti.gov/servlets/purl/3022461",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . . . . . . . . . . . . . 10 2.3.1 Environmental Monitoring . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10 2.3.2 Traffic Monitoring . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 2.3.3 Traffic Control . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 2.3.4 Vehicles and Fleets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 3 Legacy Device Lifecycle. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.1 Supply Chain Issues . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.2 Equipment Degradation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.3 New Features . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13 3.4 Budget . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 3.4.1 Funding Cycles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 3.4.2 Income . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "87b7fda572e0d815c3f781a6ded756ffd61685d238c5f2bad2f6dd0d8304b69b",
+  "extracted_at": "2026-05-16T00:05:21.872368Z"
+}

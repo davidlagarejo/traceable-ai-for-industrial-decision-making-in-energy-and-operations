@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0018",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "5 9 1 5 9 1 5 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 Powder River Basin Northern Appalachia Illinois Basin Rocky Mountain Central Appalachia Gulf Lignite Lignite Other US Imports 2𝑥103 ∗ σ𝐼𝑚𝑝𝑙𝑖𝑒𝑑𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑆𝑡𝑜𝑐𝑘𝑝𝑖𝑙𝑒𝑡𝑜𝑛𝑛𝑎𝑔𝑒 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑃𝑢𝑟𝑐ℎ𝑎𝑠𝑒𝐻𝑒𝑎𝑡𝐶𝑜𝑛𝑡𝑒𝑛𝑡 𝑡 𝑡 𝐷𝑎𝑦𝑠 𝑜𝑓 𝐵𝑢𝑟𝑛[𝐷𝑜𝐵] = σ𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦 ∗ 𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦𝐹𝑎𝑐𝑡𝑜𝑟 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐻𝑒𝑎𝑡𝑅𝑎𝑡𝑒 ∗ ℎ𝑜𝑢𝑟𝑠 𝑡 𝑡 𝑡 𝑡 Derived from ABB Velocity Suite: Intelligent Query > Monthly Plant Estimated Coal Stockpile, Monthly Plant Coal Transactions & Costs, and Monthly Plant Production Costs – Plant View. Based on generator filings with EIA (Dec. 31, 2025) 46 U.S. Coal Stockpile Southwest Power Pool Inc SERC Reliability Corp s e lip k c o t S la o C y t ilit U ) B o D ( 1 1 2 2 3 3 4 4 5 0 5 0 5 0 5 0 5 0 0 0 0 0 0 0 0 0 s e lip k c o t S la o C y t ilit U ) B o D ( 1 1 2 2 3 0 5 0 5 0 50 0 0 0 0 0 d e ilp m I 1 0 -0 1 7 0 -0 1 1 0 -1 1 7 0 -1 1 1 0 -2 1 7 0 -2 1 1 0 -3 1 7 0 -3 1 1 0 -4 1 7 0 -4 1 1 0 -5",
+  "token_count": 512,
+  "text_sha": "6d59c8d5e89857969d7498d4166e64dcaa41df6ba9afcdd3bc40941ad4b8b08c",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

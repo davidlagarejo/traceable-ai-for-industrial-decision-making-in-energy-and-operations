@@ -1,0 +1,14 @@
+{
+  "chunk_id": "353bff38::chunk_0022",
+  "source_id": "doe_osti_2574820",
+  "source_sha": "353bff383491a247e409ea545e4e618b",
+  "source_url": "https://www.osti.gov/servlets/purl/2574820",
+  "asset_families": [
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "System Operator, Tech. Rep., 2024. [Online]. Available: https://cdn.misoenergy.org/MTEP24% 20Full%20Report658025.pdf. [40] Outage coordination. [Online]. Available: https://www.nerc.com/pa/stand/ reliability%20standards/iro-017-1.pdf. [41] Automatic underfrequency load shedding. [Online]. Available: https://www.nerc. com/pa/stand/reliability%20standards/prc-006-5.pdf. [42] Undervoltageloadshedding.[Online].Available:https://www.nerc.com/pa/Stand/ Reliability%20Standards/PRC-010-2.pdf. [43] A.Anderson,S.Datta,T.L.Vu,etal.,“Cloud-basedtestbedforadaptiveunder-frequency loadsheddingwithhighderpenetration,”in2024IEEEPower&EnergySocietyGeneral Meeting(PESGM),IEEE,2024,pp.1–5. REFERENCES 39 Pacific Northwest National Laboratory 902 Battelle Boulevard P.O. Box 999 Richland, WA99352 1-888-375-PNNL(7675) www.pnnl.gov",
+  "token_count": 48,
+  "text_sha": "91245f129402301639368b65bea600a5d763a513da3883468b7c755f5b13c888",
+  "extracted_at": "2026-05-16T00:00:45.181478Z"
+}

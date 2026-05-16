@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0560",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "workover using hydraulic fracturing, in barrels (“V p ” in equation W-12C to § 98.233 ). You may delay the reporting of this data element if you indicate in the annual report that the well is a wildcat well or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the volume of oil produced during the first 30 days of production after well completion or workover for the well. ( iv ) Whether the flow rate during the initial flowback period was determined using: ( A ) A recording flow meter (digital or analog) installed on the vent line, downstream of a separator. ( B ) A multiphase flow meter upstream of the separator. ( C ) Equation W-11A or W-11B to § 98.233 . ( v ) Whether the flow rate when sufficient quantities are present to enable separation was determined using: ( A ) A recording flow meter (digital or analog) installed on the vent line, downstream of a separator. ( B ) Equation W-11A or W-11B to § 98.233 . ( 6 ) If you used equation W-10B to § 98.233 to calculate annual volumetric total gas emissions, then you must report the information specified in paragraphs (g)(6)(i) through (iii) of this section. ( i ) Vented natural gas volume, in standard cubic feet (“FV s,p ” in equation W-10B to § 98.233 ). ( ii ) Flow rate at the beginning of the period of time when sufficient quantities of gas are present to enable separation, in standard cubic feet per hour (“FR p,i ” in equation W-10B to § 98.233 ). ( iii ) If a multiphase flowmeter was used to measure the flow rate during the initial flowback period, report the average flow rate measured by the multiphase flow meter from the initiation of flowback to the beginning of the period of time when sufficient quantities of gas present to enable separation in standard cubic feet per hour. ( 7 ) Annual gas emissions, in standard cubic feet (“E s,n ” in equation W-10A or W-10B to § 98.233 ). ( 8 ) Annual CO 2 emissions, in metric tons CO 2 . ( 9 ) Annual CH 4 emissions, in metric tons CH 4 . ( 10 ) Indicate whether natural gas emissions from completion(s) or workover(s) with hydraulic fracturing were routed to a flare and emissions are reported according to paragraph (n) of this section, and if so, provide the information specified in paragraphs (g)(10)(i) through (iv) of this section. ( i ) Indicate whether you calculated natural gas emissions routed to the flare using continuous parameter monitoring systems as specified in § 98.233(n)(3)(i) and (n)(3)(ii)(A) and continuous gas composition analyzers or sampling as specified in § 98.233(n)(4) , or you calculated natural gas emissions routed to the flare using the calculation methods in § 98.233(g) as specified in § 98.233(n)(3)(ii)(B) . ( ii ) Indicate whether natural gas emissions were routed to a flare",
+  "token_count": 509,
+  "text_sha": "93771941371b6ec1d1b33be5b2d923f323e398b8c4eb5ecf2122e3531510237b",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

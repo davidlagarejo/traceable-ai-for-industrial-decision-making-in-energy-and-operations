@@ -1,0 +1,14 @@
+{
+  "chunk_id": "94c83a98::chunk_0026",
+  "source_id": "doe_osti_3011817",
+  "source_sha": "94c83a98ec0e94f5e1d8eceeba6f9c92",
+  "source_url": "https://www.osti.gov/servlets/purl/3011817",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "Buildings?” https://www.eia.gov/tools/faqs/faq.php?id=86&t=1. Wijesuriya, Sajith, Habib Arjmand Mazidi, Ravi Anant Kishore, and Chuck Booten. 2025. “Energy performance of an operational government building retrofitted with ceiling phase change material tiles in a mixed-humid climate.” Energy and Buildings. https://doi.org/10.1016/j.enbuild.2025.115313. 29 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 48,
+  "text_sha": "0ea8b8d7f4d0305b3a7141dc4fadbd8a710e6586f01559bcdc89ba548e82d587",
+  "extracted_at": "2026-05-16T00:04:09.677332Z"
+}

@@ -1,0 +1,12 @@
+source_id: us_federal_40_cfr_0060
+title: "NSPS — Standards of Performance for New Stationary Sources"
+url: https://www.ecfr.gov/current/title-40/part-60
+license: us_federal_regulation
+publisher: ecfr
+version: "2026-05-15"
+added_at: "2026-05-15T22:42:00.215599Z"
+added_by: system_verified
+notes: "Auto-fetched from eCFR API. 1838 §-marked sections. 179,991 chars."
+asset_families:
+  - manufacturing_facility
+  - infrastructure_node

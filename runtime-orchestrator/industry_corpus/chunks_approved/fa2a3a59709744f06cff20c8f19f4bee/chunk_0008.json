@@ -1,0 +1,14 @@
+{
+  "chunk_id": "fa2a3a59::chunk_0008",
+  "source_id": "doe_osti_3023590",
+  "source_sha": "fa2a3a59709744f06cff20c8f19f4bee",
+  "source_url": "https://www.osti.gov/servlets/purl/3023590",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Review 250 mg cm⁻² 60 mg cm⁻² (WHP) cathode; cost selected for model <$30/kWh Y2 Q3 Aug 2025 Mid-Cycle Audit HE additive; Zn Shift to SO₄²⁻ HER suppression electrolyte for SS collectors Y2 Q4 (Q8) Oct 2, 2025 Final Review Pouch cells; T2M; Deliverables met; (WHP) <$30/kWh continuation proposed",
+  "token_count": 49,
+  "text_sha": "2d6943bad901f65890913be19ef400f4ece392e1b1ce03a9dc11c1cbb30ca1c6",
+  "extracted_at": "2026-05-15T23:59:40.993812Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce16149a::chunk_0567",
+  "source_id": "us_federal_29_cfr_1926",
+  "source_sha": "ce16149af326cf92a1f55853384aa65c",
+  "source_url": "https://www.ecfr.gov/current/title-29/part-1926",
+  "asset_families": [
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "48 51 89 144 189 229 269 299 309 319 319 50 58 94 164 209 249 279 309 329 Decompression Table No. 2 [Do not interpolate, use next higher value for conditions not computed] Working chamber pressure p.s.i.g. Working period hours Decompression data Stage No. Pressure reduc. p.s.i.g. Time in stage minutes Pressure reduc. rate Min/pound Total time decompress minutes From To 14 1 ⁄ 2 1 14 4 2 0.20 6 2 4 0 4 1.00 6 1 1 14 4 2 0.20 6 2 4 0 4 1.00 6 1 1 ⁄ 2 1 14 4 2 0.20 6 2 4 0 4 1.00 6 2 1 14 4 2 0.20 6 2 4 0 4 1.00 6 3 1 14 4 2 0.20 6 2 4 0 4 1.00 6 4 1 14 0 2 0.20 6 2 4 0 4 1.00 6 5 1 14 4 2 0.20 6 2 4 0 4 1.00 6 6 1 14 4 2 0.20 2 4 0 4 1.00 6 7 1 14 4 2 0.20 2 4 0 14 3.50 16 8 1 14 4 2 0.20 2 4 0 14 3.50 16 Over 8 1 14 4 2 0.20 2 4 0 30 7.50 32 16 1 ⁄ 2 1 16 4 3 0.20 2 4 0 4 1.00 7 1 1 16 4 3 0.20 7 2 4 0 4 1.00 7 1 1 ⁄ 2 1 16 4 3 0.20 2 4 0 4 1.00 7 2 1 16 4 3 0.20 2 4 0 4 1.00 7 3 1 16 4 3 0.20 2 4 0 4 1.00 7 4 1 14 4 3 0.20 2 4 0 4 1.00 7 5 1 14 4 3 0.20 7 2 4 0 4 3.50 17 6 1 14 4 3 0.20 2 4 0 30 7.50 33 7 1 14 4 3 0.20 2 4 0 45 11.25 48 8 1 14 4 3 0.20 2 4 0 45 11.25 48 Over 8 1 14 4 3 0.20 2 4 0 60 15.00 63 18 1 ⁄ 2 1 18 4 3 0.20 2 4 0 4 1.00 7 1 1 18 4 3 0.20 2 4 0 4 1.00 7 1 1 ⁄ 2 1 18 4 3 0.20 2 4 0 4 1.00 7 2 1 18 4 3 0.20 2 4 0 5 1.25 8 3 1 18 4 3 0.20 2 4 0 8 2.00 11 4 1 18 4 3 0.20 2 4 0 14 3.50 17 5 1 18 4 3 0.20 2 4 0 45 11.25 48 6 1 18 4 3 0.20 2 4 0 60 15.00 63 7 1 18 4 3 0.20 2 4 0 60 15.00 63 8 1 18 4 3 0.20 2 4 0 70 17.50 73 Over 8 1 18 4 3 0.20 2 4 0 84 21.00 87 20 1 ⁄ 2 1 20 4 3 0.20 2 4 0 4 1.00 7 1 1 20 4 3 0.20 2 4",
+  "token_count": 512,
+  "text_sha": "d3021d82a78d6ea74e429f83f58a04c5b52ee26dddb3d9189adffaae5ac6ef87",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

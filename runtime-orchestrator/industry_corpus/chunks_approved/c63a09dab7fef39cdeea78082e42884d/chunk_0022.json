@@ -1,0 +1,14 @@
+{
+  "chunk_id": "c63a09da::chunk_0022",
+  "source_id": "doe_osti_2583498",
+  "source_sha": "c63a09dab7fef39cdeea78082e42884d",
+  "source_url": "https://www.osti.gov/servlets/purl/2583498",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "methanation process that is highly exothermic, was considered as follows: 𝐶𝑂 +4𝐻 → 𝐶𝐻 +2𝐻 𝑂 (∆𝐻 = −165 𝑘𝐽/𝑚𝑜𝑙). 2 2 4 2 𝑐𝑎𝑡𝑎𝑙𝑦𝑠𝑡 ANL conducted TEA of SNG production using equipment and material balance from the engineering process model. Considering an electricity price of $0.03/kWh for the water electrolysis pathways, the SNG production cost was $27–$58/MMBtu-HHV, as shown in Figure 5, where the SNG production cost was compared with fossil NG and renewable natural gas (RNG) production costs. The range of RNG costs was based on data from a 2019 American Gas Foundation report [2]. ANL identified that the SNG production cost without potential tax credits was higher than the costs of fossil NG and RNG. Figure 5. SNG production cost with an electricity price of $0.03/kWh and comparison with fossil NG and RNG costs. Life cycle GHG emissions of SNG were evaluated using mass and energy balance information obtained from the engineering model, along with supply chain emissions data (e.g., grid electricity) from ANL’s GREET model. LCA results for fossil NG and RNG were obtained from GREET 2022 [3]. As depicted in Figure 6, SNG had the potential to significantly reduce life cycle GHG emissions, ranging from 8 to 32 kgCO e/MMBtu-HHV, resulting in a reduction of 2 52%–88% compared to fossil NG. More details of the TEA and LCA of the NG/H blend are 2 provided in a peer-reviewed publication by ANL [4]. 23 This report is available at no cost from NREL at www.nrel.gov/publications. )VHH-utBMM/$( tsoC saG S C N a 8 0 6 0 4 0 2 0 0 G c p ita o s l C $ 4 F o s s il N G F o s s il N G t e rro r b o s t a F S rs ix $ 1 8 O E C -H S O E C - H 2 re p re s e d O & ₂ e M n $ 3 2 $ 2 8 $ 2 7 A m m o n ia Iro n /S te e l E tO H -C O ₂ S N G S N G S N G -C O -C O ₂ ₂ E tO H N H Iro n / 3 -C O -C O S te e l 2 2 E le c tric ity p ric e : 3 ȼ /k W h -C O 2 (E le c tric ity p ric e : ) 3 ȼ /k W h t C O c o s ts a t d iffe re n t s c a le s , C 2 H P ro d u c tio n C o s t C O ₂ D O ₂ $ 5 8 A C -L S N G -C O ₂ D A C (L T ) -C O 2 tra n 2 P ro d T s u $ 3 1 D A C -H T S N G -C O ₂ D A C (H T ) -C",
+  "token_count": 512,
+  "text_sha": "61f0334ab47cd7c1aaf75c935c86b4614485d813cd4d56a8f03566a19cff30e7",
+  "extracted_at": "2026-05-16T00:12:40.503272Z"
+}

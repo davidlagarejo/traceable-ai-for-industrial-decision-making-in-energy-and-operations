@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0177",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "98.33(a)(4) and all associated requirements for Tier 4 in subpart C of this part (General Stationary Fuel Combustion Sources). ( d ) Calculate and report process and combustion CO 2 emissions separately using the procedures specified in paragraphs (d)(1) through (d)(4) of this section. ( 1 ) Calculate CO 2 process emissions from all kilns at the facility using equation H-1 to this section: Where: CO 2 CMF = Annual process emissions of CO 2 from cement manufacturing, metric tons. CO 2 Cli,m = Total annual emissions of CO 2 from clinker production from kiln m, metric tons. CO 2 rm,m = Total annual emissions of CO 2 from raw materials from kiln m, metric tons. k = Total number of kilns at a cement manufacturing facility. ( 2 ) CO 2 emissions from clinker production. Calculate CO 2 emissions from each kiln using Equations H-2 through H-5 of this section. Where: Cli, j = Quantity of clinker produced in month j from kiln m, tons. EF Cli,j = Kiln specific clinker emission factor for month j for kiln m, metric tons CO 2 /metric ton clinker computed as specified in Equation H-3 of this section. CKD, i = Cement kiln dust (CKD) not recycled to the kiln in quarter i from kiln m, tons. EF CKD,i = Kiln specific CKD emission factor for quarter i from kiln m, metric tons CO 2 /metric ton CKD computed as specified in Equation H-4 of this section. p = Number of months for clinker calculation, 12. r = Number of quarters for CKD calculation, 4. 2000/2205 = Conversion factor to convert tons to metric tons. ( i ) Kiln-Specific Clinker Emission Factor. ( A ) Calculate the kiln-specific clinker emission factor using Equation H-3 of this section. Where: Cli CaO = Monthly total CaO content of Clinker, wt-fraction. Cli ncCaO = Monthly non-calcined CaO content of Clinker, wt-fraction. MR CaO = Molecular-weight Ratio of CO 2 /CaO = 0.785. Cli MgO = Monthly total MgO content of Clinker, wt-fraction. Cli ncMgO = Monthly non-calcined MgO content of Clinker, wt-fraction. MR MgO = Molecular-weight Ratio of CO 2 /MgO = 1.092. ( B ) Non-calcined CaO is CaO that remains in the clinker in the form of CaCO 3 and CaO in the clinker that entered the kiln as a non-carbonate species. Non-calcined MgO is MgO that remains in the clinker in the form of MgCO 3 and MgO in the clinker that entered the kiln as a non-carbonate species. ( ii ) Kiln-Specific CKD Emission Factor. ( A ) Calculate the kiln-specific CKD emission factor for CKD not recycled to the kiln using Equation H-4 of this section. Where: CKD CaO = Quarterly total CaO content of CKD not recycled to the kiln, wt-fraction. CKD ncCaO = Quarterly non-calcined CaO content of CKD not recycled to the kiln, wt-fraction. MR CaO = Molecular-weight Ratio of CO 2 /CaO = 0.785. CKD MgO = Quarterly total MgO content of CKD not recycled to the kiln, wt-fraction. CKD ncMgO = Quarterly non-calcined",
+  "token_count": 508,
+  "text_sha": "34c5b7ce0828530e348dd86a011272d1d735eb923a583915852266fdaaf69c5a",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

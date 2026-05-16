@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0021",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "7 1 7 1 7 1 7 1 7 ilp m 0 -0 0 -0 0 -1 0 -1 0 -2 0 -2 0 -3 0 -3 0 -4 0 -4 0 -5 0 -5 0 -6 0 -6 0 -7 0 -7 0 -8 0 -8 0 -9 0 -9 0 -0 0 -0 0 -1 0 -1 0 -2 0 -2 0 -3 0 -3 0 -4 0 -4 0 -5 0 -5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 I 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 Midwest Reliability Organization 350 s e lip 300 k 250 c o t S 200 la o) B 150 Co yD 100 t ilit ( 50 U d e ilp m 1 0 -0 7 0 -0 1 0 -1 7 0 -1 1 0 -2 7 0 -2 1 0 -3 7 0 -3 1 0 -4 7 0 -4 1 0 -5 7 0 -5 1 0 -6 7 0 -6 1 0 -7 7 0 -7 1 0 -8 7 0 -8 1 0 -9 7 0 -9 1 0 -0 7 0 -0 1 0 -1 7 0 -1 1 0 -2 7 0 -2 1 0 -3 7 0 -3 1 0 -4 7 0 -4 1 0 -5 7 0 -5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 I 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2𝑥103 ∗ σ𝐼𝑚𝑝𝑙𝑖𝑒𝑑𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑆𝑡𝑜𝑐𝑘𝑝𝑖𝑙𝑒𝑡𝑜𝑛𝑛𝑎𝑔𝑒 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑃𝑢𝑟𝑐ℎ𝑎𝑠𝑒𝐻𝑒𝑎𝑡𝐶𝑜𝑛𝑡𝑒𝑛𝑡 𝑡 𝑡 𝐷𝑎𝑦𝑠 𝑜𝑓 𝐵𝑢𝑟𝑛[𝐷𝑜𝐵] = σ𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦 ∗ 𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦𝐹𝑎𝑐𝑡𝑜𝑟 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐻𝑒𝑎𝑡𝑅𝑎𝑡𝑒 ∗ ℎ𝑜𝑢𝑟𝑠 𝑡 𝑡 𝑡 𝑡 Derived from ABB Velocity Suite: Intelligent Query > Monthly Plant Estimated Coal Stockpile, Monthly Plant Coal Transactions & Costs, and Monthly Plant Production Costs – Plant View. Based on generator filings with EIA (Dec. 31, 2025) 48 U.S. Coal Stockpile (cont’d) • The graph of the Northeast Power Coordinating Council coal stockpile is to be understood as follows: Northeast Power Coordinating Council • Much of the coal in the region retired, 9,000 leaving only a few plants with ) 8,000 B reduced operations o D ( 7,000 s e • These plants have small",
+  "token_count": 512,
+  "text_sha": "d58d410ef5379ae93f8e5b186a097c0bc89975cf6f18f2a6f547aea6fa5c7446",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

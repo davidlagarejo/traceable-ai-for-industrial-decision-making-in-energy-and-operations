@@ -1,0 +1,14 @@
+{
+  "chunk_id": "20017450::chunk_0003",
+  "source_id": "doe_osti_3028338",
+  "source_sha": "20017450a8a2cf18312a7047ff3f9120",
+  "source_url": "https://www.osti.gov/servlets/purl/3028338",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": ". . . . . . . . . . . . . iv Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . v 1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 2 Inverters description and data acquisition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.1 Voltage Run . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2.2 Frequency Run . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 3 Machine Learning models and results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4 Conclusions. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11 List of Figures Figure 1. Experiment flowchart (Bennai et al. 2024). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 Figure 2. The Black Box ML model is trained to predict three time-series outputs given five time-series inputs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "token_count": 512,
+  "text_sha": "77ad551586e848ca951df9e28fe6623430019fa0e47d3d31f5e326d888f9e7cb",
+  "extracted_at": "2026-05-16T00:05:27.168107Z"
+}

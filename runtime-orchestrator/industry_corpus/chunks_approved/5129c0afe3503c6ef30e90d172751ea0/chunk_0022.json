@@ -1,0 +1,14 @@
+{
+  "chunk_id": "5129c0af::chunk_0022",
+  "source_id": "doe_osti_3363285",
+  "source_sha": "5129c0afe3503c6ef30e90d172751ea0",
+  "source_url": "https://www.osti.gov/servlets/purl/3363285",
+  "asset_families": [
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "of the Northeast Power Coordinating Council coal stockpile is to be understood as follows: Northeast Power Coordinating Council • Much of the coal in the region retired, 9,000 leaving only a few plants with ) 8,000 B reduced operations o D ( 7,000 s e • These plants have small stockpiles but lip 6,000 k c relatively smaller capacity and o t S 5,000 la generation, producing high DoB o C 4,000 y t • Some months report no or low heat ilit 3,000 U d rates and capacity factors, producing e 2,000 ilp m both errors and zero or near-zero DoB I 1,000 • The spikes in the chart are not due to 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 1 7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0 -0 -1 -1 -2 -2 -3 -3 -4 -4 -5 -5 -6 -6 -7 -7 -8 -8 -9 -9 -0 -0 -1 -1 -2 -2 -3 -3 -4 -4 -5 -5 dramatic stockpile fluctuations but 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 are a feature of reduced operations 2𝑥103 ∗ σ𝐼𝑚𝑝𝑙𝑖𝑒𝑑𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑆𝑡𝑜𝑐𝑘𝑝𝑖𝑙𝑒𝑡𝑜𝑛𝑛𝑎𝑔𝑒 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝑃𝑢𝑟𝑐ℎ𝑎𝑠𝑒𝐻𝑒𝑎𝑡𝐶𝑜𝑛𝑡𝑒𝑛𝑡 𝑡 𝑡 𝐷𝑎𝑦𝑠 𝑜𝑓 𝐵𝑢𝑟𝑛[𝐷𝑜𝐵] = σ𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦 ∗ 𝑆𝑒𝑎𝑠𝑜𝑛𝑎𝑙𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐶𝑎𝑝𝑎𝑐𝑖𝑡𝑦𝐹𝑎𝑐𝑡𝑜𝑟 ∗ 𝑅𝑒𝑔𝑖𝑜𝑛𝑎𝑙𝐶𝑜𝑎𝑙𝐹𝑙𝑒𝑒𝑡𝐻𝑒𝑎𝑡𝑅𝑎𝑡𝑒 ∗ ℎ𝑜𝑢𝑟𝑠 𝑡 𝑡 𝑡 𝑡 Derived from ABB Velocity Suite: Intelligent Query > Monthly Plant Estimated Coal Stockpile, Monthly Plant Coal Transactions & Costs, and Monthly Plant Production Costs – Plant View. Based on generator filings with EIA (Dec. 31, 2025) 49 NG Storage 4500 ) f 4000 c B ( e 3500 g a r o 3000 t S s a 2500 G l a r 2000 u t a N 1500 d e t 1000 a m i t 500 s E 0 East Region Midwest Region Mountain Region Pacific Region South Central Region Source: EIA Weekly Natural Gas Storage Report through January 1, 2025, http://ir.eia.gov/ngs/ngs.html (Dec. 31, 2025) 50 U.S. Petroleum Stockpiles 45,000 ) l B 40,000 B M M 35,000 ( s e l i 30,000 p k c o t 25,000 S t c u d 20,000 o r P m 15,000 u e l o 10,000 r t e P . S 5,000 . U 1 5 9 1 5 9 1 5 9 1 5 9 1 5 9 1 5 9",
+  "token_count": 512,
+  "text_sha": "a39101275fba67d0202e0369cf335c372e8dc789375eede6c1b2dc262014836a",
+  "extracted_at": "2026-05-16T00:12:20.193284Z"
+}

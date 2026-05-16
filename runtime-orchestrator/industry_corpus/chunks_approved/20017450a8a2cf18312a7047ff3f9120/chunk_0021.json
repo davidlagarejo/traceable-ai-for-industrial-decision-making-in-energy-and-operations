@@ -1,0 +1,14 @@
+{
+  "chunk_id": "20017450::chunk_0021",
+  "source_id": "doe_osti_3028338",
+  "source_sha": "20017450a8a2cf18312a7047ff3f9120",
+  "source_url": "https://www.osti.gov/servlets/purl/3028338",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "and Z. Wu. 2020. “Modeling of conduction and switching losses for IGBT and FWD based on SVPWM in automobile electric drives.”Applied Sciences10 (13): 4539. 11 This report is available at no cost from the National Laboratory of the Rockies (NLR) at www.nlr.gov/publications.",
+  "token_count": 42,
+  "text_sha": "de133a044273ba9f5ae6d19e6977cfa3bb1e454a6347296abdc51f75affc9933",
+  "extracted_at": "2026-05-16T00:05:27.168107Z"
+}

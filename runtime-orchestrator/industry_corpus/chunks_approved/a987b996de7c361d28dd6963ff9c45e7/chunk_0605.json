@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0605",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "to § 98.233(dd)(1) . ( 2 ) For each well for which you used Calculation Method 2 to calculate natural gas emissions from mud degassing, report the information specified in paragraphs (dd)(2)(i) through (iv) of this section. ( i ) Well ID number. ( ii ) Total number of drilling days (DD p in equation W-44 to § 98.233 ). ( iii ) The composition of the drilling mud: water-based, oil-based, or synthetic. ( iv ) Annual CH 4 emissions, in metric tons CH 4 , from drilling mud degassing, calculated according to § 98.233(dd)(2) . ( 3 ) For each well for which you used Calculation Method 3 to calculate natural gas emissions from mud degassing, report the information specified in paragraphs (dd)(3)(i) through (iv) of this section. ( i ) Well ID number. ( ii ) For the time periods you used Calculation Method 1 to calculate natural gas emissions from mud degassing, report the information specified in paragraphs (dd)(3)(ii)(A) through (G) of this section. ( A ) Approximate total depth below surface, in feet. ( B ) Target hydrocarbon-bearing stratigraphic formation to which the well is drilled. ( C ) Total time that drilling mud is circulated in the well (T r in equation W-41 to § 98.233 and T p in equation W-43 to § 98.233 ), in minutes, beginning with initial penetration of the first hydrocarbon-bearing zone until drilling mud ceases to be circulated in the wellbore. You may delay reporting of this data element for a representative well if you indicate in the annual report that that one or more wells to which the calculated CH 4 emissions rate for the representative well (ER s,CH4,r in equation W-42 to § 98.233 ) is applied is a wildcat well or delineation well. You may delay reporting of this data element for any well if you indicate in the annual report that the well is a wildcat well or delineation well. If you elect to delay reporting of this data element, you must report by the date specified in paragraph (cc) of this section the total time that drilling mud is circulated in the well, in minutes. ( D ) The composition of the drilling mud: water-based, oil-based, or synthetic. ( E ) If the well is not a representative well, Well ID number of the representative well used to derive the CH 4 emission rate used to calculate CH 4 emissions for this well. ( F ) If the well is a representative well, report the information specified in paragraphs (dd)(3)(ii)(F)( 1 ) through ( 4 ) of this section. ( 1 ) Average mud rate (MR r in equation W-41 to § 98.233 ), in gallons per minute. You may delay reporting of this data element if you indicate in the annual report that one or more wells to which the calculated CH 4 emissions rate for the representative well (ER s,CH4,r in equation W-42 to § 98.233 ) is applied is a wildcat well or delineation well. If you elect to delay reporting",
+  "token_count": 510,
+  "text_sha": "8ff6d25c32e2b77d878a959cf14fb3fd3c3b9045fd18957a9265e89cb1a2638d",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,15 @@
+{
+  "chunk_id": "a98a4f7b::chunk_0019",
+  "source_id": "doe_osti_3017762",
+  "source_sha": "a98a4f7b5972d8832986f6ac154138fa",
+  "source_url": "https://www.osti.gov/servlets/purl/3017762",
+  "asset_families": [
+    "_shared",
+    "datacenter"
+  ],
+  "page": 1,
+  "text": "the publisher, by accepting the article for publication, acknowledges that the U.S. Government retains a nonexclusive, paid-up, irrevocable, worldwide license to publish or reproduce the published form of this work, or allow others to do so, for U.S. Government purposes. Photo from Getty-181828180",
+  "token_count": 43,
+  "text_sha": "ec76ec1d2531eb801cd894452757d2c72d046731a373cad6f764bbb36a04a5ae",
+  "extracted_at": "2026-05-16T00:02:35.452523Z"
+}

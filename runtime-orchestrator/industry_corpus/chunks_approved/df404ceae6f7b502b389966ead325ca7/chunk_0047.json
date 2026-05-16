@@ -1,0 +1,14 @@
+{
+  "chunk_id": "df404cea::chunk_0047",
+  "source_id": "doe_osti_3012207",
+  "source_sha": "df404ceae6f7b502b389966ead325ca7",
+  "source_url": "https://www.osti.gov/servlets/purl/3012207",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "with particular characteristics. We additionally developed a framework for theoptimizationoftheoperationofthesesystemsusingMPC,whichwasimplementedona microgridmodelintheOpenIPSLModelicaLibrary. FutureworkcouldleverageotherML- based algorithms for optimal design or compare the operation of the systems using RL in- stead of MPC. Furthermore, additional variables such as stochastic generation sources (e.g., windandsolar)couldbeincludedintheoptimization. 81",
+  "token_count": 41,
+  "text_sha": "708d6b96aa04400782fd535ee3f2f44fd3c5719b7a20fb9febca52bebb3df039",
+  "extracted_at": "2026-05-16T00:04:35.561239Z"
+}

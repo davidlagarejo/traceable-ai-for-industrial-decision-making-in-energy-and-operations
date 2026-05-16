@@ -1,0 +1,15 @@
+{
+  "chunk_id": "ce16149a::chunk_0692",
+  "source_id": "us_federal_29_cfr_1926",
+  "source_sha": "ce16149af326cf92a1f55853384aa65c",
+  "source_url": "https://www.ecfr.gov/current/title-29/part-1926",
+  "asset_families": [
+    "commercial_building",
+    "infrastructure_node"
+  ],
+  "page": 1,
+  "text": "well, and multiple ladder sections, each ladder section not to exceed 50 feet (15.2 m) in length. Ladder sections shall be offset from adjacent sections, and landing platforms shall be provided at maximum intervals of 50 feet (15.2 m). ( 20 ) Cages for fixed ladders shall conform to all of the following: ( i ) Horizontal bands shall be fastened to the side rails of rail ladders, or directly to the structure, building, or equipment for individual-rung ladders; ( ii ) Vertical bars shall be on the inside of the horizontal bands and shall be fastened to them; ( iii ) Cages shall extend not less than 27 inches (68 cm), or more than 30 inches (76 cm) from the centerline of the step or rung (excluding the flare at the bottom of the cage), and shall not be less than 27 inches (68 cm) in width; ( iv ) The inside of the cage shall be clear of projections; ( v ) Horizontal bands shall be spaced not more than 4 feet (1.2 m) on center vertically; ( vi ) Vertical bars shall be spaced at intervals not more than 9 1 ⁄ 2 inches (24 cm) on center horizontally; ( vii ) The bottom of the cage shall be at a level not less than 7 feet (2.1 m) nor more than 8 feet (2.4 m) above the point of access to the bottom of the ladder. The bottom of the cage shall be flared not less than 4 inches (10 cm) all around within the distance between the bottom horizontal band and the next higher band; ( viii ) The top of the cage shall be a minimum of 42 inches (1.1 m) above the top of the platform, or the point of access at the top of the ladder, with provision for access to the platform or other point of access. ( 21 ) Wells for fixed ladders shall conform to all of the following: ( i ) They shall completely encircle the ladder; ( ii ) They shall be free of projections; ( iii ) Their inside face on the climbing side of the ladder shall extend not less than 27 inches (68 cm) nor more than 30 inches (76 cm) from the centerline of the step or rung; ( iv ) The inside clear width shall be at least 30 inches (76 cm); ( v ) The bottom of the wall on the access side shall start at a level not less than 7 feet (2.1 m) nor more than 8 feet (2.4 m) above the point of access to the bottom of the ladder. ( 22 ) Ladder safety devices, and related support systems, for fixed ladders shall conform to all of the following: ( i ) They shall be capable of withstanding without failure a drop test consisting of an 18-inch (41 cm) drop of a 500-pound (226 kg) weight; ( ii ) They shall permit the employee using the device to ascend or descend without continually having to hold, push",
+  "token_count": 510,
+  "text_sha": "342db36bcf0e937714a43745728a29c3726a3e80c0cd88cd83d473ce1c6e35d8",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "a987b996::chunk_0837",
+  "source_id": "us_federal_40_cfr_0098",
+  "source_sha": "a987b996de7c361d28dd6963ff9c45e7",
+  "source_url": "https://www.ecfr.gov/current/title-40/part-98",
+  "asset_families": [
+    "manufacturing_facility",
+    "infrastructure_node",
+    "_shared"
+  ],
+  "page": 1,
+  "text": "in subsurface geologic formations in the reporting year in accordance with the procedures specified in Equation RR-12 of this section. where: CO 2 = Total annual CO 2 mass sequestered in subsurface geologic formations (metric tons) at the facility in the reporting year. CO 2I = Total annual CO 2 mass injected (metric tons) in the well or group of wells covered by this source category in the reporting year. CO 2E = Total annual CO 2 mass emitted (metric tons) by surface leakage in the reporting year. CO 2FI = Total annual CO 2 mass emitted (metric tons) from equipment leaks and vented emissions of CO 2 from equipment located on the surface between the flow meter used to measure injection quantity and the injection wellhead, for which a calculation procedure is provided in subpart W of this part . [ 75 FR 75078 , Dec. 1, 2010, as amended at 76 FR 73906 , Nov. 29, 2011; 78 FR 71978 , Nov. 29, 2013] § 98.444 Monitoring and QA/QC requirements. ( a ) CO 2 received. ( 1 ) Except as provided in paragraph (a)(4) of this section, you must determine the quarterly flow rate of CO 2 received by pipeline by following the most appropriate of the following procedures: ( i ) You may measure flow rate at the receiving custody transfer meter prior to any subsequent processing operations at the facility and collect the flow rate quarterly. ( ii ) If you took ownership of the CO 2 in a commercial transaction, you may use the quarterly flow rate data from the sales contract if it is a one-time transaction or from invoices or manifests if it is an ongoing commercial transaction with discrete shipments. ( iii ) If you inject CO 2 received from a production process unit that is part of your facility, you may use the quarterly CO 2 flow rate that was measured at the equivalent of a custody transfer meter following procedures provided in subpart PP of this part . To be the equivalent of a custody transfer meter, a meter must measure the flow of CO 2 being transported to an injection well to the same degree of accuracy as a meter used for commercial transactions. ( 2 ) Except as provided in paragraph (a)(4) of this section, you must determine the quarterly mass or volume of contents in all containers if you receive CO 2 in containers by following the most appropriate of the following procedures: ( i ) You may measure the mass of contents of containers summed quarterly using weigh bills, scales, or load cells. ( ii ) You may determine the volume of the contents of containers summed quarterly. ( iii ) If you took ownership of the CO 2 in a commercial transaction, you may use the quarterly mass or volume of contents from the sales contract if it is a one-time transaction or from invoices or manifests if it is an ongoing commercial transaction with discrete shipments. ( 3 ) Except as provided in paragraph (a)(4)",
+  "token_count": 512,
+  "text_sha": "1b7b2ef0497f048892c7d9c5106257b4ec8a4e7e0dc0e3f6e588749bffd98643",
+  "extracted_at": "2026-05-15T22:42:23.735490Z"
+}

@@ -1,0 +1,14 @@
+{
+  "chunk_id": "451f5dec::chunk_0045",
+  "source_id": "doe_osti_3018017",
+  "source_sha": "451f5dec92f699def1bea73ec282bf80",
+  "source_url": "https://www.osti.gov/servlets/purl/3018017",
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "page": 1,
+  "text": "Plate thickness 6mm 19.0 0.7 87 )aPM( htgnertS Avg ILSS Strength (MPa)- Glass SMC ` Loading direction Interlaminar failure Carbon SMC- 3mm samples Loading direction Interlaminar Figure 105. Carbon SMC - ILSS failure modes of 3 mm and 6 mm plates Carbon SMC- 6mm samples failure 88",
+  "token_count": 47,
+  "text_sha": "7b8d7ea98a3b7d06a7e77c937122686a949bfba44466708554ccdfdf46189f12",
+  "extracted_at": "2026-05-15T23:58:10.093357Z"
+}

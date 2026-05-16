@@ -1,0 +1,14 @@
+{
+  "chunk_id": "613e6b92::chunk_0028",
+  "source_id": "doe_osti_2588551",
+  "source_sha": "613e6b92f891fe43faa9aaf34d7c8552",
+  "source_url": "https://www.osti.gov/servlets/purl/2588551",
+  "asset_families": [
+    "commercial_building"
+  ],
+  "page": 1,
+  "text": "U.S. Energy Information Administration, \"U.S. Energy Information Administration - EIA - Independent Statistics and Analysis.,\" [Online]. Available: https://www.eia.gov/totalenergy/data/browser/index.php?tbl=T07.06#/?f=A. [Accessed 22 May 2024]. [22] A. Parker, H. Horsey, M. Dahlhausen, M. Praprost, C. CaraDonna, A. LeBar and L. Klun, ComStock Reference Documentation: Version 1, NREL, Golden, CO, 2023. https://docs.nrel.gov/docs/fy23osti/83819.pdf 40 This report is available at no cost from NREL at www.nrel.gov/publications. Appendix A. Figure A-1. Site annual natural gas consumption of the ComStock baseline and the measure scenario by census division Figure A-2. Site annual natural gas consumption of the ComStock baseline and the measure scenario by building type 41 This report is available at no cost from NREL at www.nrel.gov/publications. Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure by census division 42 This report is available at no cost from NREL at www.nrel.gov/publications. Figure A-5. Distributions of mean electricity bills by climate zone, with 25th percentiles labeled (top and middle figures), and 75th percentiles labeled for Climate Zones 4B-8 (bottom figure). Note that some outliers have been removed for concision. 43 This report is available at no cost from NREL at www.nrel.gov/publications. Figure A-6. Distribution of maximum daily peak demand for January for selected building types, with 25th and 75th percentiles labeled. Note that some outliers have been removed for concision. 44 This report is available at no cost from NREL at www.nrel.gov/publications.",
+  "token_count": 245,
+  "text_sha": "06b3db9fda7d5fd9316b111284685d794e417e727f294575a43dab734d1ee6a5",
+  "extracted_at": "2026-05-16T00:05:31.753342Z"
+}
