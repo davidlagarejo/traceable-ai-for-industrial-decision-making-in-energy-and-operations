@@ -154,7 +154,7 @@ def propose_combinations(
     all_candidates: list[ProposedCombination] = []
     method_counts: dict[str, int] = {}
 
-    # ── Strategy 1: corpus co-occurrence (THIS PHASE — A.1) ──
+    # ── Strategy 1: corpus co-occurrence ──
     if "corpus_cooccurrence" in enabled:
         try:
             from .strategy_corpus import propose_from_corpus
@@ -168,8 +168,21 @@ def propose_combinations(
         except Exception as exc:
             method_counts["corpus_cooccurrence_error"] = str(exc)[:120]
 
-    # ── Strategies 2-6 will be added in subsequent phases ──
-    # strategy_regulatory.propose_from_regulations(...)
+    # ── Strategy 2: regulatory co-mention ──
+    if "regulatory_comention" in enabled:
+        try:
+            from .strategy_regulatory import propose_from_regulations
+            cands = propose_from_regulations(
+                asset_family=asset_family,
+                active_patterns=active_patterns,
+                max_candidates=max_per_strategy,
+            )
+            method_counts["regulatory_comention"] = len(cands)
+            all_candidates.extend(cands)
+        except Exception as exc:
+            method_counts["regulatory_comention_error"] = str(exc)[:120]
+
+    # ── Strategies 3-6 will be added in subsequent phases ──
     # strategy_context.propose_from_context_matrix(...)
     # strategy_compliance.propose_from_compliance_violations(...)
     # strategy_comfort.propose_from_comfort_windows(...)

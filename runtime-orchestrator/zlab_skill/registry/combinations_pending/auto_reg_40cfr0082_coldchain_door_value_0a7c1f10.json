@@ -1,0 +1,39 @@
+{
+  "id": "auto_reg_40cfr0082_coldchain_door_value_0a7c1f10",
+  "pattern_set": [
+    "door_cycle_losses",
+    "value_boundary_leakage_owner_operator"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:26:45.921925Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"ries are considered to be integral to the process if they are capable of and normally used for the purpose of recovering chemicals for fuel value ( i.e., net positive heating value), use, reuse or for sale for fuel value, use, or reuse. Pro\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "ries are considered to be integral to the process if they are capable of and normally used for the purpose of recovering chemicals for fuel value ( i.e., net positive heating value), use, reuse or for sale for fuel value, use, or reuse. Process vent means a vent from a process ve"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Protection of Stratospheric Ozone (ODS/HFCs)"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "stable_signature": "f1bc4cb51c584ae5"
+}

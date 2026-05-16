@@ -1,0 +1,81 @@
+{
+  "id": "auto_corpus_coldchain_compliance_refrigerant_value_c71dbe17",
+  "pattern_set": [
+    "compliance_vs_control_mismatch",
+    "refrigerant_integrity",
+    "value_boundary_leakage_owner_operator"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:26:45.892347Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.25,
+  "combined_hypothesis": "\"§ 82.166(p)(2) . ( j ) Definitions for the leak repair provisions in 82.156(i) . These definitions are not applicable to any other portion of subpart F other than 82.156(i) .\" [us_federal_40_cfr_0082::e5b057d4::chunk_0246]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "e5b057d4::chunk_0246",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "§ 82.166(p)(2) . ( j ) Definitions for the leak repair provisions in 82.156(i) . These definitions are not applicable to any other portion of subpart F other than 82.156(i) . Along with paragraph (i) of this section, the definitions in this section apply only until January 1, 2019. Appliance means, for the purposes of paragraph (i) of this section, any device which contains and uses a refrigerant and which is used for household or commercial purposes, including any air conditioner, refrigerator, chiller, or freezer. Commercial refrigeration means, for the purposes of paragraph (i) of this sect",
+      "similarity": 0.694
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0231",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "heat pumps; vending machines; self-contained commercial ice machines, very low temperature refrigeration equipment, and water coolers; and effective July 15, 2024, retail food refrigeration—refrigerated food processing and dispensing equipment; ( ix ) Isobutane (R-600a) in retail food refrigerators and freezers (stand-alone units only); household refrigerators, freezers, and combination refrigerators and freezers; and vending machines; ( x ) R-441A in retail food refrigerators and freezers (stand-alone units only); household refrigerators, freezers, and combination refrigerators and freezers; ",
+      "similarity": 0.6472
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0233",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "and the quantity of refrigerant purchased unless they are selling exempt substitutes (those substitutes used in the end-uses specified as exempt in paragraph (a)(1) of this section) or small cans of MVAC refrigerant in accordance with paragraph (c)(1)(ix) of this section. In instances where the buyer employs a person certified under § 82.161 or 40 CFR part 82, subpart B , the seller must keep the documentation provided by the buyer to demonstrate such employment. All records must be kept for three years. ( ii ) Electronic or paper copies of all records described in appendix E must be maintaine",
+      "similarity": 0.635
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "15-2022",
+      "title": "15-2022",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 82",
+      "title": "Cfr 40 82",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910.94",
+      "title": "Cfr 29 1910.94",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 29 1910.106",
+      "title": "Cfr 29 1910.106",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "stable_signature": "48057ce551e41c67"
+}

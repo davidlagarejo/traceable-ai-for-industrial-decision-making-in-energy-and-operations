@@ -1,0 +1,72 @@
+{
+  "id": "auto_corpus_coldchain_defrost_thermal_e78dc9be",
+  "pattern_set": [
+    "defrost_profile",
+    "thermal_boundary"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:26:45.891844Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.2,
+  "combined_hypothesis": "\"directed into the FB HX, which fluidized and heated the particles — air flow through the heater is necessary for the heater to heat up, and there were no bypass valves installed that would allow the air to be exhausted away from the FB HX until reaching the desired temperature.\" [doe_osti_3024210::9ada6011::chunk_0036]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "9ada6011::chunk_0036",
+      "source_id": "doe_osti_3024210",
+      "source_url": "https://www.osti.gov/servlets/purl/3024210",
+      "page": 1,
+      "verbatim": "directed into the FB HX, which fluidized and heated the particles — air flow through the heater is necessary for the heater to heat up, and there were no bypass valves installed that would allow the air to be exhausted away from the FB HX until reaching the desired temperature. In a way, this mimics the behavior of a real system startup, but it added complication to establishing uniform starting conditions. Particles flow through the bed were maintained during this warmup period. The inherent challenge of this system is to carefully balance the behavior between fluidization, which mixes bed me",
+      "similarity": 0.3818
+    },
+    {
+      "chunk_id": "9ada6011::chunk_0071",
+      "source_id": "doe_osti_3024210",
+      "source_url": "https://www.osti.gov/servlets/purl/3024210",
+      "page": 1,
+      "verbatim": "is 534,060 kg. This requires the desiccant dryer to operate for 2.834 h to fully fill the air inventory tank. The total electric power consumed in the preconditioning process is 2.834 MWh. This is an acceptable energy requirement, as the preconditioning process is only required to be performed once (in the initialization of the system). (a) Air preconditioning process (b) Air humidity maintenance process Figure 66. Moisture removal processes Based on the temperature range of process air passing through the desiccant shown in Table 16, the only applicable location to remove moisture from the ai",
+      "similarity": 0.2885
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "15-2022",
+      "title": "15-2022",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 82",
+      "title": "Cfr 40 82",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910.94",
+      "title": "Cfr 29 1910.94",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 29 1910.106",
+      "title": "Cfr 29 1910.106",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "stable_signature": "fcb1320e11fabec8"
+}

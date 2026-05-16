@@ -1,0 +1,80 @@
+{
+  "id": "auto_corpus_coldchain_compliance_defrost_3635aeb8",
+  "pattern_set": [
+    "compliance_vs_control_mismatch",
+    "defrost_profile"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:26:45.891593Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.2,
+  "combined_hypothesis": "\"obligations. An importer's contractual relationship with its supplier under which the supplier is required to accurately label, consistent with the requirements of this subpart, any products manufactured with a controlled substance that are supplied to the importer, or to certify to the importer whe\" [us_federal_40_cfr_0082::e5b057d4::chunk_0219]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "e5b057d4::chunk_0219",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "obligations. An importer's contractual relationship with its supplier under which the supplier is required to accurately label, consistent with the requirements of this subpart, any products manufactured with a controlled substance that are supplied to the importer, or to certify to the importer whether a product was or was not manufactured with a controlled substance is evidence of reasonable belief. § 82.118 Compliance by wholesalers, distributors and retailers. ( a ) Requirement of compliance by wholesalers, distributors and retailers. All wholesalers, distributors and retailers of products",
+      "similarity": 0.4124
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0447",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "the risk of fire and the steps to use flammable refrigerants safely. Room occupants should evacuate the space immediately following the accidental release of this refrigerant. Personnel commissioning, maintaining, repairing, decommissioning and disposing of appliances with this refrigerant should obtain training and follow practices consistent with Annex 101.DVT of UL 260355-2-89. 1 2 3 CAA section 608(c)(2) prohibits knowingly venting or otherwise knowingly releasing or disposing of substitute refrigerants in the course of maintaining, servicing, repairing or disposing of an appliance or indu",
+      "similarity": 0.3066
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0382",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "properly ventilated. Technicians and equipment manufacturers (a) On or near any evaporators that can be contacted by the consumer: “DANGER—Risk of Fire or Explosion. Flammable Refrigerant Used. Do Not Use Mechanical Devices To Defrost Refrigerator. Do Not Puncture Refrigerant Tubing.” (b) Near the machine compartment: “DANGER—Risk of Fire or Explosion. Flammable Refrigerant Used. To Be Repaired Only By Trained Service Personnel. Do Not Puncture Refrigerant Tubing.” (c) Near the machine compartment: “CAUTION—Risk of Fire or Explosion. Flammable Refrigerant Used. Consult Repair Manual/Owner's Gu",
+      "similarity": 0.3024
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "15-2022",
+      "title": "15-2022",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 82",
+      "title": "Cfr 40 82",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910",
+      "title": "Cfr 29 1910",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 29 1910.94",
+      "title": "Cfr 29 1910.94",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 29 1910.106",
+      "title": "Cfr 29 1910.106",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "cold_chain_facility"
+  ],
+  "stable_signature": "b9835348965c4d9b"
+}

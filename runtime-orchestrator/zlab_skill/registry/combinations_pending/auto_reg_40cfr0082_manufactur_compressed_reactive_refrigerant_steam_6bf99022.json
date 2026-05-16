@@ -1,0 +1,41 @@
+{
+  "id": "auto_reg_40cfr0082_manufactur_compressed_reactive_refrigerant_steam_6bf99022",
+  "pattern_set": [
+    "compressed_air_leak_plausibility",
+    "reactive_power_exposure",
+    "refrigerant_integrity",
+    "steam_trap_failure"
+  ],
+  "proposal_method": "regulatory_comention",
+  "generated_at": "2026-05-16T16:26:45.830161Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.7,
+  "combined_hypothesis": "\"io frequency plasma; ( 13 ) Microwave plasma; ( 14 ) Porous thermal reactor; ( 15 ) Gas phase catalytic de-halogenation; ( 16 ) Superheated steam reactor; or ( 17 ) Thermal reaction with methane. Difficult-to-monitor means the equipment pie\" [us_federal_40_cfr_0082]",
+  "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
+  "context_predicates": {},
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "us_federal_40_cfr_0082",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
+      "url": "https://www.ecfr.gov/current/title-40/part-82",
+      "has_text_in_corpus": true,
+      "snippet_verbatim": "io frequency plasma; ( 13 ) Microwave plasma; ( 14 ) Porous thermal reactor; ( 15 ) Gas phase catalytic de-halogenation; ( 16 ) Superheated steam reactor; or ( 17 ) Thermal reaction with methane. Difficult-to-monitor means the equipment piece may not be monitored without elevatin"
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "note": "Patterns co-mencionados en regulación; evidencia regulatoria respalda investigación conjunta.",
+    "has_mandate": false,
+    "has_deadline": false
+  },
+  "consequence_if_ignored": [
+    "Pérdida de contexto regulatorio relevante de Protection of Stratospheric Ozone (ODS/HFCs)"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "4d8b1c299c3b5b9d"
+}
