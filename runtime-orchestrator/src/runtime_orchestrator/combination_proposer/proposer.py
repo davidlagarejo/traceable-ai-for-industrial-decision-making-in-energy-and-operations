@@ -196,10 +196,47 @@ def propose_combinations(
         except Exception as exc:
             method_counts["constraint_x_pattern_error"] = str(exc)[:120]
 
-    # ── Strategies 4-6 will be added in subsequent phases ──
-    # strategy_compliance.propose_from_compliance_violations(...)
-    # strategy_comfort.propose_from_comfort_windows(...)
-    # strategy_invest_trap.propose_from_investment_traps(...)
+    # ── Strategy 4: compliance violations ──
+    if "compliance_violation" in enabled:
+        try:
+            from .strategy_compliance import propose_from_compliance_violations
+            cands = propose_from_compliance_violations(
+                asset_family=asset_family,
+                active_patterns=active_patterns,
+                max_candidates=max_per_strategy,
+            )
+            method_counts["compliance_violation"] = len(cands)
+            all_candidates.extend(cands)
+        except Exception as exc:
+            method_counts["compliance_violation_error"] = str(exc)[:120]
+
+    # ── Strategy 5: comfort/safety windows ──
+    if "comfort_safety_window" in enabled:
+        try:
+            from .strategy_comfort import propose_from_comfort_windows
+            cands = propose_from_comfort_windows(
+                asset_family=asset_family,
+                active_patterns=active_patterns,
+                max_candidates=max_per_strategy,
+            )
+            method_counts["comfort_safety_window"] = len(cands)
+            all_candidates.extend(cands)
+        except Exception as exc:
+            method_counts["comfort_safety_window_error"] = str(exc)[:120]
+
+    # ── Strategy 6: investment traps ──
+    if "investment_trap" in enabled:
+        try:
+            from .strategy_invest_trap import propose_from_investment_traps
+            cands = propose_from_investment_traps(
+                asset_family=asset_family,
+                active_patterns=active_patterns,
+                max_candidates=max_per_strategy,
+            )
+            method_counts["investment_trap"] = len(cands)
+            all_candidates.extend(cands)
+        except Exception as exc:
+            method_counts["investment_trap_error"] = str(exc)[:120]
 
     # Dedup against approved + rejected + pending already on disk
     seen = _existing_signatures()

@@ -1,0 +1,52 @@
+{
+  "id": "auto_trap_commercial_doe_efficiency_capex_trap_hvac_495d67be",
+  "pattern_set": [
+    "hvac_aging_high_load"
+  ],
+  "proposal_method": "investment_trap",
+  "generated_at": "2026-05-16T16:56:07.341978Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.88,
+  "combined_hypothesis": "\"DOE Energy Conservation Program reviews minimum efficiency standards every 6 years; SEER2 thresholds may increase further in next rulemaking cycle expected 2027-2029.\" [10 cfr 430]",
+  "strategic_risk": "DOE updates SEER2 minimum every 6 years; equipos cerca del mínimo se vuelven legacy rápido.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "commercial_building"
+      },
+      {
+        "field": "capex_proposed",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "10 cfr 430",
+      "title": "10 CFR 430",
+      "snippet_verbatim": "DOE Energy Conservation Program reviews minimum efficiency standards every 6 years; SEER2 thresholds may increase further in next rulemaking cycle expected 2027-2029.",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "alternative": "specify_at_least_2_SEER_points_above_current_minimum_to_future_proof",
+    "horizon_months": 24,
+    "note": "DOE updates SEER2 minimum every 6 years; equipos cerca del mínimo se vuelven legacy rápido."
+  },
+  "consequence_if_ignored": [
+    "Equipo CapEx-financiado puede quedar obsoleto en 24 meses",
+    "Retrofit/reemplazo prematuro forzado",
+    "Stranded asset risk financiero"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "commercial_building"
+  ],
+  "stable_signature": "371b01d1ac2913eb"
+}

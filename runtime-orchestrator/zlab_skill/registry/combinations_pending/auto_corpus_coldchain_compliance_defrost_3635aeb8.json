@@ -5,7 +5,7 @@
     "defrost_profile"
   ],
   "proposal_method": "corpus_cooccurrence",
-  "generated_at": "2026-05-16T16:26:45.891593Z",
+  "generated_at": "2026-05-16T16:56:07.426010Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.2,

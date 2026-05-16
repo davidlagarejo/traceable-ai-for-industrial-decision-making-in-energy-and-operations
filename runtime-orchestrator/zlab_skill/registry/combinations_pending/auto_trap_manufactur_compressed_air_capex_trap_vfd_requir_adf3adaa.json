@@ -1,0 +1,52 @@
+{
+  "id": "auto_trap_manufactur_compressed_air_capex_trap_vfd_requir_adf3adaa",
+  "pattern_set": [
+    "compressed_air_leak_plausibility"
+  ],
+  "proposal_method": "investment_trap",
+  "generated_at": "2026-05-16T16:56:07.259891Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.88,
+  "combined_hypothesis": "\"DOE Advanced Manufacturing Office best practice: variable-speed drive (VFD) compressors reduce energy consumption 20-35% in part-load applications with payback typically <2 years.\" [doe amo compressed air]",
+  "strategic_risk": "Industrial compressor sin VFD pierde 20-35% en sistemas con demanda variable; DOE AMO mostró ROI <2yr.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "manufacturing_facility"
+      },
+      {
+        "field": "capex_proposed",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "doe amo compressed air",
+      "title": "DOE AMO COMPRESSED AIR",
+      "snippet_verbatim": "DOE Advanced Manufacturing Office best practice: variable-speed drive (VFD) compressors reduce energy consumption 20-35% in part-load applications with payback typically <2 years.",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "alternative": "specify_VFD_compressor_or_multi-stage_sequencing_design",
+    "horizon_months": 12,
+    "note": "Industrial compressor sin VFD pierde 20-35% en sistemas con demanda variable; DOE AMO mostró ROI <2yr."
+  },
+  "consequence_if_ignored": [
+    "Equipo CapEx-financiado puede quedar obsoleto en 12 meses",
+    "Retrofit/reemplazo prematuro forzado",
+    "Stranded asset risk financiero"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "806e871f7e95d692"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "auto_comp_manufactur_natural_gas_ghg_reporting_threshold_not__098baf05",
+  "pattern_set": [
+    "process_heat_unbounded_duty"
+  ],
+  "proposal_method": "compliance_violation",
+  "generated_at": "2026-05-16T16:56:07.258613Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.95,
+  "combined_hypothesis": "\"Subpart C — Owners of facilities that emit ≥25,000 metric tons CO2e per year must report annually to EPA.\" [40 cfr 98]",
+  "strategic_risk": "Decisión 'expand_natural_gas_combustion_without_GHG_monitoring' violaría Mandatory Greenhouse Gas Reporting Rule. Alternativa compliant: include_continuous_GHG_monitoring_in_combustion_expansion_design.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "manufacturing_facility"
+      },
+      {
+        "field": "proposed_decision_class",
+        "op": "eq",
+        "value": "expand_natural_gas_combustion_without_GHG_monitoring"
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "40 cfr 98",
+      "title": "Mandatory Greenhouse Gas Reporting Rule",
+      "snippet_verbatim": "Subpart C — Owners of facilities that emit ≥25,000 metric tons CO2e per year must report annually to EPA.",
+      "has_text_in_corpus": true
+    }
+  ],
+  "decision_implication": {
+    "action": "BLOCK_COMPLIANCE",
+    "alternative": "include_continuous_GHG_monitoring_in_combustion_expansion_design",
+    "regulation_blocking": "40 cfr 98",
+    "note": "Mandatory Greenhouse Gas Reporting Rule"
+  },
+  "consequence_if_ignored": [
+    "Reporting obligation no cumplida → EPA enforcement",
+    "Posible Clean Air Act violation si CO2e ≥ 25,000 mt sin reportar"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "f28c87297fe23c14"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "auto_comp_commercial_r22_refrigerant_new_install_block_078679c5",
+  "pattern_set": [
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "compliance_violation",
+  "generated_at": "2026-05-16T16:56:07.341943Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.95,
+  "combined_hypothesis": "\"Section 605 — Effective January 1, 2010, no person may use any class II substance manufactured on or after this date for any purpose other than as a refrigerant in equipment that was manufactured prior to January 1, 2010.\" [40 cfr 82]",
+  "strategic_risk": "Decisión 'install_R22_or_R134a_refrigerant_system' violaría Protection of Stratospheric Ozone (ODS/HFCs phase-out). Alternativa compliant: use_R-404A_R-407A_R-448A_or_other_HFO_blends_per_EPA_SNAP.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "commercial_building"
+      },
+      {
+        "field": "proposed_decision_class",
+        "op": "eq",
+        "value": "install_R22_or_R134a_refrigerant_system"
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "40 cfr 82",
+      "title": "Protection of Stratospheric Ozone (ODS/HFCs phase-out)",
+      "snippet_verbatim": "Section 605 — Effective January 1, 2010, no person may use any class II substance manufactured on or after this date for any purpose other than as a refrigerant in equipment that was manufactured prior to January 1, 2010.",
+      "has_text_in_corpus": true
+    }
+  ],
+  "decision_implication": {
+    "action": "BLOCK_COMPLIANCE",
+    "alternative": "use_R-404A_R-407A_R-448A_or_other_HFO_blends_per_EPA_SNAP",
+    "regulation_blocking": "40 cfr 82",
+    "note": "Protection of Stratospheric Ozone (ODS/HFCs phase-out)"
+  },
+  "consequence_if_ignored": [
+    "EPA fine bajo Clean Air Act § 605",
+    "Equipo nuevo no se puede operar legalmente con R-22",
+    "Costo de retrofitting forzado dentro de 24 meses"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "commercial_building"
+  ],
+  "stable_signature": "d85695b8fd1cc0dd"
+}

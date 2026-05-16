@@ -1,17 +1,15 @@
 {
-  "id": "auto_reg_40cfr0098_manufactur_boiler_compressed_refrigerant_steam_62909fef",
+  "id": "auto_reg_40cfr0098_warehoused_value_warehouse_b7adf5d7",
   "pattern_set": [
-    "boiler_degradation_plausibility",
-    "compressed_air_leak_plausibility",
-    "refrigerant_integrity",
-    "steam_trap_failure"
+    "value_boundary_leakage_owner_operator",
+    "warehouse_mhe_charging_demand_peak"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:56:07.234240Z",
+  "generated_at": "2026-05-16T16:56:07.521663Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.7,
-  "combined_hypothesis": "\"us. Blowdown mean the act of emptying or depressuring a vessel. This may also refer to the discarded material such as blowdown water from a boiler or cooling tower. Blowdown vent stack emissions mean natural gas and/or CO 2 released due to \" [us_federal_40_cfr_0098]",
+  "combined_hypothesis": "\"s Designation ASTM D388-05 Standard Classification of Coals by Rank (incorporated by reference, see § 98.7 ). COD means the chemical oxygen demand as determined using methods specified pursuant to 40 CFR part 136 . Cogeneration unit means a\" [us_federal_40_cfr_0098]",
   "strategic_risk": "Los patterns están co-mencionados en Mandatory Greenhouse Gas Reporting. Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -21,7 +19,7 @@
       "title": "Mandatory Greenhouse Gas Reporting",
       "url": "https://www.ecfr.gov/current/title-40/part-98",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "us. Blowdown mean the act of emptying or depressuring a vessel. This may also refer to the discarded material such as blowdown water from a boiler or cooling tower. Blowdown vent stack emissions mean natural gas and/or CO 2 released due to maintenance and/or blowdown operations i"
+      "snippet_verbatim": "s Designation ASTM D388-05 Standard Classification of Coals by Rank (incorporated by reference, see § 98.7 ). COD means the chemical oxygen demand as determined using methods specified pursuant to 40 CFR part 136 . Cogeneration unit means a unit that produces electrical energy an"
     }
   ],
   "decision_implication": {
@@ -35,7 +33,7 @@
   ],
   "anti_triggers": [],
   "asset_families": [
-    "manufacturing_facility"
+    "warehouse_distribution"
   ],
-  "stable_signature": "2fce763e675c13b7"
+  "stable_signature": "5401324b452abc94"
 }

@@ -1,16 +1,16 @@
 {
-  "id": "auto_reg_40cfr0082_coldchain_door_thermal_value_cb13e699",
+  "id": "auto_reg_40cfr0082_commercial_boiler_hvac_refrigerant_5a6d0309",
   "pattern_set": [
-    "door_cycle_losses",
-    "thermal_boundary",
-    "value_boundary_leakage_owner_operator"
+    "boiler_degradation_plausibility",
+    "hvac_aging_high_load",
+    "refrigerant_integrity"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:26:45.922164Z",
+  "generated_at": "2026-05-16T16:56:07.331839Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.7,
-  "combined_hypothesis": "\"emical reaction with hydrogen and carbon dioxide; ( 12 ) Inductively coupled radio frequency plasma; ( 13 ) Microwave plasma; ( 14 ) Porous thermal reactor; ( 15 ) Gas phase catalytic de-halogenation; ( 16 ) Superheated steam reactor; or ( \" [us_federal_40_cfr_0082]",
+  "combined_hypothesis": "\"part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that\" [us_federal_40_cfr_0082]",
   "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -20,7 +20,7 @@
       "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
       "url": "https://www.ecfr.gov/current/title-40/part-82",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "emical reaction with hydrogen and carbon dioxide; ( 12 ) Inductively coupled radio frequency plasma; ( 13 ) Microwave plasma; ( 14 ) Porous thermal reactor; ( 15 ) Gas phase catalytic de-halogenation; ( 16 ) Superheated steam reactor; or ( 17 ) Thermal reaction with methane. Diff"
+      "snippet_verbatim": "part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that are not directly involved ( i.e., they "
     }
   ],
   "decision_implication": {
@@ -34,7 +34,7 @@
   ],
   "anti_triggers": [],
   "asset_families": [
-    "cold_chain_facility"
+    "commercial_building"
   ],
-  "stable_signature": "075763939e5000bf"
+  "stable_signature": "176a7672fdded582"
 }

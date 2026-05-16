@@ -1,0 +1,52 @@
+{
+  "id": "auto_trap_manufactur_fossil_boiler_capex_trap_decarboniza_81cb455f",
+  "pattern_set": [
+    "boiler_degradation_plausibility"
+  ],
+  "proposal_method": "investment_trap",
+  "generated_at": "2026-05-16T16:56:07.259885Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.88,
+  "combined_hypothesis": "\"EPA proposed GHG performance standards for fossil-fuel power plants and certain industrial sources; state-level building electrification mandates (NY, CA, MA) increasing.\" [40 cfr 98 + state climate laws]",
+  "strategic_risk": "Fossil-fuel boilers enfrentan creciente regulación de GHG; electric heat pump emerge como alternativa.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "manufacturing_facility"
+      },
+      {
+        "field": "capex_proposed",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "40 cfr 98 + state climate laws",
+      "title": "40 CFR 98 + STATE CLIMATE LAWS",
+      "snippet_verbatim": "EPA proposed GHG performance standards for fossil-fuel power plants and certain industrial sources; state-level building electrification mandates (NY, CA, MA) increasing.",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "alternative": "evaluate_industrial_heat_pump_or_electric_boiler_alternative_first",
+    "horizon_months": 36,
+    "note": "Fossil-fuel boilers enfrentan creciente regulación de GHG; electric heat pump emerge como alternativa."
+  },
+  "consequence_if_ignored": [
+    "Equipo CapEx-financiado puede quedar obsoleto en 36 meses",
+    "Retrofit/reemplazo prematuro forzado",
+    "Stranded asset risk financiero"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "4d03ff895c6140dd"
+}

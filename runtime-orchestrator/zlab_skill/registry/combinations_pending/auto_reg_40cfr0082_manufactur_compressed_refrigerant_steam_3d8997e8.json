@@ -1,16 +1,16 @@
 {
-  "id": "auto_reg_40cfr0082_manufactur_boiler_hvac_reactive_ece37081",
+  "id": "auto_reg_40cfr0082_manufactur_compressed_refrigerant_steam_3d8997e8",
   "pattern_set": [
-    "boiler_degradation_plausibility",
-    "hvac_aging_high_load",
-    "reactive_power_exposure"
+    "compressed_air_leak_plausibility",
+    "refrigerant_integrity",
+    "steam_trap_failure"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:33:44.351913Z",
+  "generated_at": "2026-05-16T16:56:07.246099Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.7,
-  "combined_hypothesis": "\"roduction of synthetic fiber sheet, bromochloromethane used in the bromination of a styrenic polymer, and CFC-113 used in the production of high modulus polyethylene fiber. Process condenser means a condenser whose primary purpose is to rec\" [us_federal_40_cfr_0082]",
+  "combined_hypothesis": "\"itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment\" [us_federal_40_cfr_0082]",
   "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -20,7 +20,7 @@
       "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
       "url": "https://www.ecfr.gov/current/title-40/part-82",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "roduction of synthetic fiber sheet, bromochloromethane used in the bromination of a styrenic polymer, and CFC-113 used in the production of high modulus polyethylene fiber. Process condenser means a condenser whose primary purpose is to recover material as an integral part of a p"
+      "snippet_verbatim": "itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment testing organizations. § 82.161 Technic"
     }
   ],
   "decision_implication": {
@@ -36,5 +36,5 @@
   "asset_families": [
     "manufacturing_facility"
   ],
-  "stable_signature": "ffea28d52d7d6a79"
+  "stable_signature": "76296abb8788e639"
 }

@@ -1,0 +1,51 @@
+{
+  "id": "auto_comp_manufactur_boiler_efficiency_below_doe_minimum_26936fdc",
+  "pattern_set": [
+    "boiler_degradation_plausibility"
+  ],
+  "proposal_method": "compliance_violation",
+  "generated_at": "2026-05-16T16:56:07.258607Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.95,
+  "combined_hypothesis": "\"Subpart E — Commercial packaged boilers must meet minimum thermal efficiency: gas-fired hot water 82-84%; oil-fired 84-86%; gas-fired steam ≥77%.\" [10 cfr 431]",
+  "strategic_risk": "Decisión 'install_boiler_below_commercial_minimum_efficiency' violaría DOE Commercial and Industrial Equipment Energy Conservation Standards. Alternativa compliant: specify_condensing_boiler_94pct_or_high_efficiency_82pct_plus.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "manufacturing_facility"
+      },
+      {
+        "field": "proposed_decision_class",
+        "op": "eq",
+        "value": "install_boiler_below_commercial_minimum_efficiency"
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "10 cfr 431",
+      "title": "DOE Commercial and Industrial Equipment Energy Conservation Standards",
+      "snippet_verbatim": "Subpart E — Commercial packaged boilers must meet minimum thermal efficiency: gas-fired hot water 82-84%; oil-fired 84-86%; gas-fired steam ≥77%.",
+      "has_text_in_corpus": true
+    }
+  ],
+  "decision_implication": {
+    "action": "BLOCK_COMPLIANCE",
+    "alternative": "specify_condensing_boiler_94pct_or_high_efficiency_82pct_plus",
+    "regulation_blocking": "10 cfr 431",
+    "note": "DOE Commercial and Industrial Equipment Energy Conservation Standards"
+  },
+  "consequence_if_ignored": [
+    "Equipo no cumple DOE Subpart E mandatory minimum efficiency",
+    "Imposibilidad de vender bajo Energy Star"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "ac9832ddf6f7e624"
+}

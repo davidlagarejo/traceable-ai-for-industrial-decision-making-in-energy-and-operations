@@ -4,7 +4,7 @@
     "compressed_air_leak_plausibility"
   ],
   "proposal_method": "constraint_x_pattern",
-  "generated_at": "2026-05-16T16:33:44.362565Z",
+  "generated_at": "2026-05-16T16:56:07.257723Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.85,

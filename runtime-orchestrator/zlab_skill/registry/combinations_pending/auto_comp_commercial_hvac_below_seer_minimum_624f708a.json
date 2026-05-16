@@ -1,0 +1,51 @@
+{
+  "id": "auto_comp_commercial_hvac_below_seer_minimum_624f708a",
+  "pattern_set": [
+    "hvac_aging_high_load"
+  ],
+  "proposal_method": "compliance_violation",
+  "generated_at": "2026-05-16T16:56:07.341956Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.95,
+  "combined_hypothesis": "\"Effective January 1, 2023: Split-system central air conditioners must meet SEER2 ≥14.3 (North) or ≥15.2 (South); residential heat pumps ≥15.2 SEER2.\" [10 cfr 430]",
+  "strategic_risk": "Decisión 'install_split_AC_below_current_SEER2_minimum' violaría DOE Residential Central AC Energy Conservation Standards. Alternativa compliant: specify_SEER2_minimum_or_higher_per_climate_region.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "commercial_building"
+      },
+      {
+        "field": "proposed_decision_class",
+        "op": "eq",
+        "value": "install_split_AC_below_current_SEER2_minimum"
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "10 cfr 430",
+      "title": "DOE Residential Central AC Energy Conservation Standards",
+      "snippet_verbatim": "Effective January 1, 2023: Split-system central air conditioners must meet SEER2 ≥14.3 (North) or ≥15.2 (South); residential heat pumps ≥15.2 SEER2.",
+      "has_text_in_corpus": true
+    }
+  ],
+  "decision_implication": {
+    "action": "BLOCK_COMPLIANCE",
+    "alternative": "specify_SEER2_minimum_or_higher_per_climate_region",
+    "regulation_blocking": "10 cfr 430",
+    "note": "DOE Residential Central AC Energy Conservation Standards"
+  },
+  "consequence_if_ignored": [
+    "Equipo no se puede vender legalmente desde 2023",
+    "Distribuidores rechazan order"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "commercial_building"
+  ],
+  "stable_signature": "461bff8ba4de1850"
+}

@@ -1,16 +1,16 @@
 {
-  "id": "auto_reg_40cfr0082_manufactur_boiler_reactive_steam_9f3ce9c2",
+  "id": "auto_reg_40cfr0082_manufactur_compressed_hvac_refrigerant_8c1d5203",
   "pattern_set": [
-    "boiler_degradation_plausibility",
-    "reactive_power_exposure",
-    "steam_trap_failure"
+    "compressed_air_leak_plausibility",
+    "hvac_aging_high_load",
+    "refrigerant_integrity"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:33:44.351978Z",
+  "generated_at": "2026-05-16T16:56:07.246034Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.7,
-  "combined_hypothesis": "\"part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that\" [us_federal_40_cfr_0082]",
+  "combined_hypothesis": "\"itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment\" [us_federal_40_cfr_0082]",
   "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -20,7 +20,7 @@
       "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
       "url": "https://www.ecfr.gov/current/title-40/part-82",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "part of the process. Ancillary activities are not considered a process or part of any process under § 82.25 . Ancillary activities include boilers and incinerators, chillers and refrigeration systems, and other equipment and activities that are not directly involved ( i.e., they "
+      "snippet_verbatim": "itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment testing organizations. § 82.161 Technic"
     }
   ],
   "decision_implication": {
@@ -36,5 +36,5 @@
   "asset_families": [
     "manufacturing_facility"
   ],
-  "stable_signature": "07077140f41050de"
+  "stable_signature": "587d8a5e3048582b"
 }

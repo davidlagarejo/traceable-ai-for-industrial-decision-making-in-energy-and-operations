@@ -5,7 +5,7 @@
     "reactive_power_exposure"
   ],
   "proposal_method": "corpus_cooccurrence",
-  "generated_at": "2026-05-16T16:33:44.298599Z",
+  "generated_at": "2026-05-16T16:56:07.195643Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.4286,

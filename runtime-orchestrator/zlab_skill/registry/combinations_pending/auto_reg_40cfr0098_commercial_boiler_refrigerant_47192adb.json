@@ -1,16 +1,15 @@
 {
-  "id": "auto_reg_40cfr0098_manufactur_compressed_refrigerant_steam_827833cb",
+  "id": "auto_reg_40cfr0098_commercial_boiler_refrigerant_47192adb",
   "pattern_set": [
-    "compressed_air_leak_plausibility",
-    "refrigerant_integrity",
-    "steam_trap_failure"
+    "boiler_degradation_plausibility",
+    "refrigerant_integrity"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:26:45.821373Z",
+  "generated_at": "2026-05-16T16:56:07.325714Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 1.0,
-  "combined_hypothesis": "\"provided that, if the list includes the operators of the facility or supplier and the owners with control of the facility or supplier, the failure to include any other owners shall not make the certificate of representation incomplete. ( 4 \" [us_federal_40_cfr_0098]",
+  "combined_hypothesis": "\"natural gas distribution industry segments, pipeline segments or event types must be grouped into the following eight categories: Pipeline integrity work ( e.g., the preparation work of modifying facilities, ongoing assessments, maintenance\" [us_federal_40_cfr_0098]",
   "strategic_risk": "Los patterns están co-mencionados en Mandatory Greenhouse Gas Reporting. Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -20,7 +19,7 @@
       "title": "Mandatory Greenhouse Gas Reporting",
       "url": "https://www.ecfr.gov/current/title-40/part-98",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "provided that, if the list includes the operators of the facility or supplier and the owners with control of the facility or supplier, the failure to include any other owners shall not make the certificate of representation incomplete. ( 4 ) The following certification statements"
+      "snippet_verbatim": "natural gas distribution industry segments, pipeline segments or event types must be grouped into the following eight categories: Pipeline integrity work ( e.g., the preparation work of modifying facilities, ongoing assessments, maintenance or mitigation), traditional operations "
     }
   ],
   "decision_implication": {
@@ -35,7 +34,7 @@
   ],
   "anti_triggers": [],
   "asset_families": [
-    "manufacturing_facility"
+    "commercial_building"
   ],
-  "stable_signature": "e98a8ee49d24d18a"
+  "stable_signature": "d8572d0eab7ff707"
 }

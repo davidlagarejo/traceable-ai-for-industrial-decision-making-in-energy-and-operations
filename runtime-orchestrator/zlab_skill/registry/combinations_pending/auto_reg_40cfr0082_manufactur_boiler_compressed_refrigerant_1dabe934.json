@@ -1,16 +1,16 @@
 {
-  "id": "auto_reg_40cfr0082_coldchain_defrost_door_value_2fc8707b",
+  "id": "auto_reg_40cfr0082_manufactur_boiler_compressed_refrigerant_1dabe934",
   "pattern_set": [
-    "defrost_profile",
-    "door_cycle_losses",
-    "value_boundary_leakage_owner_operator"
+    "boiler_degradation_plausibility",
+    "compressed_air_leak_plausibility",
+    "refrigerant_integrity"
   ],
   "proposal_method": "regulatory_comention",
-  "generated_at": "2026-05-16T16:26:45.922205Z",
+  "generated_at": "2026-05-16T16:56:07.246055Z",
   "generated_by": "framework_auto",
   "status": "pending_human_review",
   "confidence_score": 0.7,
-  "combined_hypothesis": "\"ries are considered to be integral to the process if they are capable of and normally used for the purpose of recovering chemicals for fuel value ( i.e., net positive heating value), use, reuse or for sale for fuel value, use, or reuse. Pro\" [us_federal_40_cfr_0082]",
+  "combined_hypothesis": "\"itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment\" [us_federal_40_cfr_0082]",
   "strategic_risk": "Los patterns están co-mencionados en Protection of Stratospheric Ozone (ODS/HFCs). Investigación conjunta requerida por contexto regulatorio.",
   "context_predicates": {},
   "corpus_citations": [],
@@ -20,7 +20,7 @@
       "title": "Protection of Stratospheric Ozone (ODS/HFCs)",
       "url": "https://www.ecfr.gov/current/title-40/part-82",
       "has_text_in_corpus": true,
-      "snippet_verbatim": "ries are considered to be integral to the process if they are capable of and normally used for the purpose of recovering chemicals for fuel value ( i.e., net positive heating value), use, reuse or for sale for fuel value, use, or reuse. Process vent means a vent from a process ve"
+      "snippet_verbatim": "itions. § 82.155 Safe disposal of appliances. § 82.156 Proper evacuation of refrigerant from appliances. § 82.157 Appliance maintenance and leak repair. § 82.158 Standards for recovery and/or recycling equipment. § 82.160 Approved equipment testing organizations. § 82.161 Technic"
     }
   ],
   "decision_implication": {
@@ -34,7 +34,7 @@
   ],
   "anti_triggers": [],
   "asset_families": [
-    "cold_chain_facility"
+    "manufacturing_facility"
   ],
-  "stable_signature": "ac2d9fb7e62afef0"
+  "stable_signature": "bfb8d25740a6e87a"
 }

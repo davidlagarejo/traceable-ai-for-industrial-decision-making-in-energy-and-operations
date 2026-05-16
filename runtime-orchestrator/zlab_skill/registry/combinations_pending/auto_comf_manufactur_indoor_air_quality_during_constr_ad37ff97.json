@@ -1,0 +1,51 @@
+{
+  "id": "auto_comf_manufactur_indoor_air_quality_during_constr_ad37ff97",
+  "pattern_set": [
+    "hvac_aging_high_load"
+  ],
+  "proposal_method": "comfort_safety_window",
+  "generated_at": "2026-05-16T16:56:07.259332Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.92,
+  "combined_hypothesis": "\"Construction or renovation activities shall be performed in a manner that minimizes occupant exposure to contaminants; outdoor air ventilation rates shall be maintained per Table 6-1.\" [ashrae 62.1]",
+  "strategic_risk": "Construction interna con ocupantes presentes requiere ASHRAE 62.1 ventilation maintenance.",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "occupancy_density",
+        "op": "ge",
+        "value": 0.4
+      },
+      {
+        "field": "indoor_construction_proposed",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "ashrae 62.1",
+      "title": "ASHRAE 62.1",
+      "snippet_verbatim": "Construction or renovation activities shall be performed in a manner that minimizes occupant exposure to contaminants; outdoor air ventilation rates shall be maintained per Table 6-1.",
+      "has_text_in_corpus": true
+    }
+  ],
+  "decision_implication": {
+    "action": "ALTERNATIVE_VIABLE",
+    "alternative": "phase_construction_with_negative_pressure_containment_or_after_hours",
+    "note": "Construction interna con ocupantes presentes requiere ASHRAE 62.1 ventilation maintenance."
+  },
+  "consequence_if_ignored": [
+    "IAQ degradation expone ocupantes a polvo/COV",
+    "Posible cita OSHA + reclamos de ocupantes",
+    "ASHRAE 62.1 violation en operating logs"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "ffb3cf834c8fa920"
+}

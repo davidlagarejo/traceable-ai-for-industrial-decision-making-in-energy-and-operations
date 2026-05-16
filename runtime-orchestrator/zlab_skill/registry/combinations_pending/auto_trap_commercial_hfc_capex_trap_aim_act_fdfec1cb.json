@@ -1,0 +1,52 @@
+{
+  "id": "auto_trap_commercial_hfc_capex_trap_aim_act_fdfec1cb",
+  "pattern_set": [
+    "refrigerant_integrity"
+  ],
+  "proposal_method": "investment_trap",
+  "generated_at": "2026-05-16T16:56:07.341974Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.88,
+  "combined_hypothesis": "\"AIM Act § 103 — Phase-down of HFC production and consumption from 100% (2020 baseline) to 15% by 2036. Sector bans starting in 2025 for new equipment manufacturing.\" [aim act 2020]",
+  "strategic_risk": "CapEx en equipo HFC quedará obsoleto por AIM Act phase-down (85% reduction by 2036).",
+  "context_predicates": {
+    "all": [
+      {
+        "field": "asset_family",
+        "op": "eq",
+        "value": "commercial_building"
+      },
+      {
+        "field": "capex_proposed",
+        "op": "eq",
+        "value": true
+      }
+    ]
+  },
+  "corpus_citations": [],
+  "regulatory_basis": [
+    {
+      "citation": "aim act 2020",
+      "title": "AIM ACT 2020",
+      "snippet_verbatim": "AIM Act § 103 — Phase-down of HFC production and consumption from 100% (2020 baseline) to 15% by 2036. Sector bans starting in 2025 for new equipment manufacturing.",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_FIRST",
+    "alternative": "specify_low_GWP_natural_refrigerant_NH3_CO2_or_HFO_at_design_stage",
+    "horizon_months": 18,
+    "note": "CapEx en equipo HFC quedará obsoleto por AIM Act phase-down (85% reduction by 2036)."
+  },
+  "consequence_if_ignored": [
+    "Equipo CapEx-financiado puede quedar obsoleto en 18 meses",
+    "Retrofit/reemplazo prematuro forzado",
+    "Stranded asset risk financiero"
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "commercial_building"
+  ],
+  "stable_signature": "9db0db96c35a1755"
+}
