@@ -1,0 +1,80 @@
+{
+  "id": "auto_corpus_manufactur_compressed_process_2b10d39c",
+  "pattern_set": [
+    "compressed_air_leak_plausibility",
+    "process_heat_unbounded_duty"
+  ],
+  "proposal_method": "corpus_cooccurrence",
+  "generated_at": "2026-05-16T16:11:11.762184Z",
+  "generated_by": "framework_auto",
+  "status": "pending_human_review",
+  "confidence_score": 0.3333,
+  "combined_hypothesis": "\"performed at normal operating characteristics and conditions will produce less reliable results, in which case the follow-up verification test shall be conducted at or near the normal operating pressure where practicable, and at or near the normal operating temperature where practicable.\" [us_federal_40_cfr_0082::e5b057d4::chunk_0240]",
+  "strategic_risk": "Los patterns aparecen co-mencionados en literatura técnica del sector — investigarlos en conjunto puede revelar una causa raíz compartida no evidente al verlos por separado.",
+  "context_predicates": {},
+  "corpus_citations": [
+    {
+      "chunk_id": "e5b057d4::chunk_0240",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "performed at normal operating characteristics and conditions will produce less reliable results, in which case the follow-up verification test shall be conducted at or near the normal operating pressure where practicable, and at or near the normal operating temperature where practicable. ( i ) If the owners or operators of industrial process refrigeration equipment takes the appliance off-line, or if the owners or operators of federally-owned commercial refrigeration or of federally-owned comfort cooling appliances who are granted additional time under paragraphs (i)(1) or (i)(5) of this secti",
+      "similarity": 0.4531
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0226",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "with a liquid phase saturation pressure between 170 psia and 355 psia at 104 °F. Examples include but are not limited to appliances using R-22, R-407A, R-407C, R-410A, and R-502. Industrial process refrigeration means complex customized appliances that are directly linked to the processes used in, for example, the chemical, pharmaceutical, petrochemical, and manufacturing industries. This sector also includes industrial ice machines, appliances used directly in the generation of electricity, and ice rinks. Where one appliance is used for both industrial process refrigeration and other applicat",
+      "similarity": 0.4431
+    },
+    {
+      "chunk_id": "e5b057d4::chunk_0239",
+      "source_id": "us_federal_40_cfr_0082",
+      "source_url": "https://www.ecfr.gov/current/title-40/part-82",
+      "page": 1,
+      "verbatim": "days (or 120 days, where an industrial process shutdown in accordance with paragraph (i)(2)(ii) of this section is required,) and in accordance with paragraph (i)(9) of this section, and that an extension in accordance with the requirements discussed in this paragraph apply, the owners or operators of the appliance must document all repair efforts, and notify EPA of the reason for the inability in accordance with § 82.166(n) within 30 days of making this determination. Owners or operators who obtain an extension pursuant to this section or elect to utilize the additional time provided in parag",
+      "similarity": 0.4323
+    }
+  ],
+  "regulatory_basis": [
+    {
+      "citation": "cfr 40 60",
+      "title": "Cfr 40 60",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 40 127",
+      "title": "Cfr 40 127",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "27916",
+      "title": "27916",
+      "has_text_in_corpus": false
+    },
+    {
+      "citation": "cfr 40 63",
+      "title": "Cfr 40 63",
+      "has_text_in_corpus": true
+    },
+    {
+      "citation": "cfr 1 1.1",
+      "title": "Cfr 1 1.1",
+      "has_text_in_corpus": false
+    }
+  ],
+  "decision_implication": {
+    "action": "INVESTIGATE_TOGETHER",
+    "note": "Patterns con co-ocurrencia significativa en corpus."
+  },
+  "consequence_if_ignored": [
+    "Análisis pattern-by-pattern puede no capturar la causa raíz compartida que la literatura sí reconoce."
+  ],
+  "anti_triggers": [],
+  "asset_families": [
+    "manufacturing_facility"
+  ],
+  "stable_signature": "09bca1e8586189d5"
+}
