@@ -16636,7 +16636,7 @@ async function runCase(caseId) {
   });
   const j = await r.json();
   if (j.ok) {
-    toast("Pipeline lanzado — esto toma ~90 segundos", "ok");
+    toast("Pipeline lanzado — toma ~2-3 minutos. Verás progreso en la sidebar.", "ok");
     currentCaseId = caseId;
     // Start polling cases until this one completes
     if (casePollingInterval) clearInterval(casePollingInterval);
@@ -17545,6 +17545,55 @@ def log_page():
     return render_template_string(_LOG_PAGE_HTML)
 
 
+def _reconcile_state_from_registry(case_id: str, pipeline_id: str) -> dict:
+    """V10 P5b — si _CURATION_RUN_STATE no tiene state (dashboard restart
+    pierde memory), reconciliar leyendo run-registry. Pipeline subprocess
+    actualiza el registry independientemente; el dashboard puede recuperar
+    el estado de runs ya completados.
+    """
+    from pathlib import Path
+    import json as _json
+    reg = _HERE / "run-registry"
+    if not reg.exists():
+        return {}
+    # Find latest run for this pipeline_id, prefer completed/warn over partial
+    by_status: dict[str, tuple[float, dict]] = {}
+    for path in reg.glob("run:*.json"):
+        try:
+            data = _json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if data.get("pipeline_id") != pipeline_id:
+            continue
+        mtime = path.stat().st_mtime
+        status = data.get("status", "")
+        cur = by_status.get(status)
+        if cur is None or mtime > cur[0]:
+            by_status[status] = (mtime, data)
+    # Prefer in this order
+    for s in ("completed", "warn", "partial", "running"):
+        if s in by_status:
+            _, run = by_status[s]
+            # Map registry status → curation run_state
+            curation_status = {
+                "completed": "completed",
+                "warn":      "completed",   # has artifacts, treat as done
+                "partial":   "completed",   # ran but didn't reach gate
+                "running":   "running",
+            }.get(s, "idle")
+            return {
+                "status":     curation_status,
+                "run_id":     run.get("run_id", ""),
+                "started_at": run.get("started_at", ""),
+                "ended_at":   run.get("completed_at", ""),
+                "error":      run.get("error", "") or "",
+                "log_tail":   "",
+                "_reconciled_from_registry": True,
+                "_registry_status": s,
+            }
+    return {}
+
+
 @app.route("/api/curation/cases")
 def api_curation_cases():
     """List canonical curation cases + V10 P5 pre-flight quality assessment.
@@ -17552,6 +17601,9 @@ def api_curation_cases():
     Each case is scored by the case_quality_assessor based on existing
     evidence in the run-registry + artifact-store. Cases are SORTED so
     🟢 verified appear first, 🟡 partial next, 🔴 insufficient last.
+
+    V10 P5b: reconcilia estado desde run-registry cuando
+    _CURATION_RUN_STATE está vacío (post dashboard restart).
 
     Query params:
       hide_insufficient=1  → drop tier=insufficient + not_viable from response
@@ -17573,11 +17625,19 @@ def api_curation_cases():
         case = dict(spec)
         case["inputs_available"] = _inputs_file_exists(spec["inputs_file"])
         state = _CURATION_RUN_STATE.get(spec["case_id"], {})
+        # V10 P5b — si no hay state en memoria, reconciliar desde registry
+        if not state or not state.get("run_id"):
+            reconciled = _reconcile_state_from_registry(spec["case_id"], spec["pipeline_id"])
+            if reconciled:
+                state = reconciled
+                # Cache para evitar re-escanear todo el registry en cada request
+                _CURATION_RUN_STATE[spec["case_id"]] = reconciled
         case["run_state"] = state.get("status", "idle")
         case["run_id"]    = state.get("run_id", "")
         case["error"]     = state.get("error", "")
         case["started_at"] = state.get("started_at", "")
         case["ended_at"]   = state.get("ended_at", "")
+        case["reconciled_from_registry"] = bool(state.get("_reconciled_from_registry"))
 
         # V10 P5 — quality fields
         assess = assessments.get(spec["case_id"])
