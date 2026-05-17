@@ -134,6 +134,16 @@ _SYSTEM = (
     "[eia_mer_sec2::1f486f3a::chunk_0001]). The tag is a single token — never split, never edit. "
     "Only OMIT citations if NONE of the provided facts are topically applicable to the section. "
     "If no industry_context_facts are provided, ignore this rule.\n"
+    "12. EPISTEMIC PROPORTIONALITY — your language MUST match the case's evidence_state. When "
+    "source_facts.case_evidence_state is provided, follow these tone rules STRICTLY:\n"
+    "   · 'exploratory_prior'       → 'podría', 'cabe explorar', 'aún sin evidencia'. NEVER 'es', 'corresponde'.\n"
+    "   · 'structural_hypothesis'   → 'sugiere', 'es plausible que', 'requiere validar'. NEVER affirm as fact.\n"
+    "   · 'bounded_peer_analysis'   → 'comparado con peers similares', 'dentro del rango observado de N=X peers'.\n"
+    "   · 'evidence_discrimination' → 'una medición decisiva podría confirmar', 'el estado actual es a discriminar'.\n"
+    "   · 'publish_bounded'         → 'dentro del rango X-Y', 'bajo el supuesto de Z'.\n"
+    "   · 'client_safe'             → 'es', 'aplica', 'corresponde' (afirmaciones verificables).\n"
+    "   Violating this rule (e.g. using 'es' under structural_hypothesis) is a Phase 0 violation. "
+    "   The framework will reject and re-prompt if detected.\n"
 )
 
 _FORBIDDEN_PHRASES = (
@@ -792,6 +802,10 @@ class Motor019Adapter(BaseMotorAdapter):
         tad_actions  = tad_prelim.get("tad_action_plan", [])
         tad_frontier = tad_prelim.get("decision_frontier", "")
         tad_deficit  = tad_prelim.get("information_deficit_score", None)
+
+        # V10 P7-E: case evidence state (Phase 0 §10 9-state ladder).
+        # Para la Regla 12 del system prompt: lenguaje proporcionado.
+        v10p7_evidence_metadata = tad_prelim.get("v10p7_evidence_metadata") or {}
         tad_blocking = tad_prelim.get("blocking_resolution_paths", [])
 
         # ── pipeline inputs (raw operator declarations) ───────────────────────
@@ -854,6 +868,13 @@ class Motor019Adapter(BaseMotorAdapter):
                 ctx = {**ctx, "public_context_facts": {
                     k: v for k, v in real_discovery.items() if v not in (None, "", [], {})
                 }}
+
+            # V10 P7-E: inject case_evidence_state so Regla 12 can enforce
+            # tone proportional to the ladder level.
+            if v10p7_evidence_metadata and "case_evidence_state" not in ctx:
+                ctx = {**ctx, "case_evidence_state": v10p7_evidence_metadata.get("case_evidence_state", ""),
+                       "case_evidence_rank": v10p7_evidence_metadata.get("case_evidence_rank", 0),
+                       "case_narrator_tone": v10p7_evidence_metadata.get("narrator_language_tone", "")}
 
             # V10 P0 — Industry corpus retrieval (BEHIND FEATURE FLAG).
             # Default OFF → motor_019 output is BIT-IDENTICAL to V9.

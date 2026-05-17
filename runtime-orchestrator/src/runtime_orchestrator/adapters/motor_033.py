@@ -531,6 +531,27 @@ class Motor033Adapter(BaseMotorAdapter):
                 "industry_evidence": item.get("industry_evidence") or {},
             })
 
+        # ── V10 P7-D: compute effective_evidence_state for the case ──
+        # Si el caso tiene state insuficiente, las acciones del TAD se
+        # REWRITE downstream para respetar la proporcionalidad epistémica.
+        # Phase 0 §10 ladder.
+        try:
+            from runtime_orchestrator.combination_proposer.effective_evidence_state import (
+                compute_effective_state,
+            )
+            _m12_p7 = inputs.get("motor_012", {}) if isinstance(inputs.get("motor_012"), dict) else {}
+            _m28_p7 = inputs.get("motor_028", {}) if isinstance(inputs.get("motor_028"), dict) else {}
+            _m14_p7 = inputs.get("motor_014", {}) if isinstance(inputs.get("motor_014"), dict) else {}
+            _m45_p7 = inputs.get("motor_045", {}) if isinstance(inputs.get("motor_045"), dict) else {}
+            _m54_p7 = inputs.get("motor_054", {}) if isinstance(inputs.get("motor_054"), dict) else {}
+            _case_evidence_state = compute_effective_state(
+                motor_012_output=_m12_p7, motor_028_output=_m28_p7,
+                motor_014_output=_m14_p7, motor_045_output=_m45_p7,
+                motor_054_output=_m54_p7,
+            )
+        except Exception:
+            _case_evidence_state = None
+
         # ── V10 P4: TAD actions from proposed combinations activated by predicate ──
         # Para cada combination activada por motor_054 con decision_implication,
         # emite un TAD action específico. Aquí es donde el framework dice
@@ -612,6 +633,78 @@ class Motor033Adapter(BaseMotorAdapter):
             import sys
             print(f"[motor_033] V10P4 TAD wire skipped: {type(_exc).__name__}: {_exc}",
                   file=sys.stderr)
+
+        # ── V10 P7-D: downgrade TAD postures por evidence state insuficiente ──
+        # Si el case_evidence_state es bajo, NINGUNA action puede ser ACT.
+        # Las re-escribimos a INVESTIGATE/GATHER respetando Phase 0.
+        if _case_evidence_state is not None:
+            try:
+                _case_rank = _case_evidence_state.rank
+                _case_state_name = _case_evidence_state.state
+                # Mapping state → posturas permitidas (max strength)
+                _posture_caps = {
+                    "exploratory_prior":       "gather_evidence_first",
+                    "structural_hypothesis":   "investigate_first",
+                    "bounded_peer_analysis":   "investigate_with_peers",
+                    "evidence_discrimination": "design_decisive_measurement",
+                    "publish_bounded":         "act_with_bounds",
+                    "client_safe":             "act",
+                }
+                _allowed_posture = _posture_caps.get(_case_state_name, "investigate_first")
+                _state_action_label = {
+                    "exploratory_prior":       "🔵 GATHER EVIDENCE: ",
+                    "structural_hypothesis":   "🟡 INVESTIGATE FIRST: ",
+                    "bounded_peer_analysis":   "🟠 PEER ANALYSIS: ",
+                    "evidence_discrimination": "🟢 DECISIVE MEASUREMENT: ",
+                }.get(_case_state_name, "")
+
+                _rewrite_count = 0
+                for action in tad_action_plan:
+                    orig_posture = action.get("recommended_posture", "")
+                    # Si la postura original es más fuerte que lo permitido por
+                    # el state, downgrade. ACT-type postures se vuelven INVESTIGATE.
+                    if _case_rank < 4:   # below publish_bounded
+                        downgrade_triggers = {
+                            "act_now_compliance_deadline",
+                            "no_go_compliance_violation",
+                            "act",
+                            "act_with_bounds",
+                        }
+                        if orig_posture in downgrade_triggers:
+                            action["v10p7_original_posture"] = orig_posture
+                            action["recommended_posture"] = _allowed_posture
+                            action["v10p7_evidence_downgrade_reason"] = (
+                                f"case evidence_state='{_case_state_name}' is below "
+                                f"publish_bounded; postura reescrita a {_allowed_posture}"
+                            )
+                            # Update action_title to reflect epistemic state
+                            if _state_action_label and not action.get("action_title","").startswith(_state_action_label):
+                                orig_title = action.get("action_title","")
+                                # Strip emoji prefix if present
+                                for prefix in ("🛑","⚠","📅","🔍","🔄","🔗"):
+                                    if orig_title.startswith(prefix):
+                                        orig_title = orig_title.split(" ", 1)[1] if " " in orig_title else orig_title
+                                        break
+                                action["action_title"] = (_state_action_label + orig_title)[:160]
+                            _rewrite_count += 1
+
+                # Surface case_evidence_state at the TAD level for downstream
+                # (motor_019 reads this for Regla 12 language proportioning)
+                _tad_evidence_metadata = {
+                    "case_evidence_state":      _case_state_name,
+                    "case_evidence_rank":       _case_rank,
+                    "max_allowed_posture":      _allowed_posture,
+                    "narrator_language_tone":   _case_evidence_state.narrator_language_tone,
+                    "upgrade_blockers":         list(_case_evidence_state.upgrade_blockers),
+                    "actions_downgraded":       _rewrite_count,
+                }
+            except Exception as _exc:
+                import sys
+                print(f"[motor_033] V10P7 downgrade skipped: {type(_exc).__name__}: {_exc}",
+                      file=sys.stderr)
+                _tad_evidence_metadata = None
+        else:
+            _tad_evidence_metadata = None
 
         # ── Step 3: Blocking conflict resolution paths ─────────────────────────
         blocking_paths = []
@@ -721,6 +814,8 @@ class Motor033Adapter(BaseMotorAdapter):
 
         tad_preliminary = {
             "tad_action_plan":           tad_action_plan,
+            # V10 P7-D — evidence state metadata for downstream (motor_019, dashboard)
+            "v10p7_evidence_metadata":   _tad_evidence_metadata,
             "blocking_resolution_paths": blocking_paths,
             "decision_frontier":         frontier,
             "information_deficit_score": deficit_score,
