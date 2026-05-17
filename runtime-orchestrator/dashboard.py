@@ -15981,6 +15981,28 @@ def api_curation_run_combinations():
             for pid in (w.get("contaminating_pattern_ids", []) or []):
                 contaminated_pattern_ids.add(str(pid).strip())
 
+    # V10 P7-B — compute effective_evidence_state for the case once
+    case_evidence_state = None
+    try:
+        from runtime_orchestrator.combination_proposer.effective_evidence_state import (
+            compute_effective_state, assess_combination_state,
+        )
+        m12_for_state = _curation_load_motor_output(run_id, "motor_012")
+        m28_for_state = _curation_load_motor_output(run_id, "motor_028")
+        m14_for_state = _curation_load_motor_output(run_id, "motor_014")
+        m45_for_state = _curation_load_motor_output(run_id, "motor_045")
+        m17_for_state = _curation_load_motor_output(run_id, "motor_017")
+        case_evidence_state = compute_effective_state(
+            motor_012_output=m12_for_state,
+            motor_028_output=m28_for_state,
+            motor_014_output=m14_for_state,
+            motor_045_output=m45_for_state,
+            motor_054_output=m054,
+            motor_017_output=m17_for_state,
+        )
+    except Exception:
+        case_evidence_state = None
+
     rows: list[dict] = []
     seen_signatures: set[tuple[str, ...]] = set()
     for combo in register:
@@ -16018,6 +16040,15 @@ def api_curation_run_combinations():
 
         existing = decisions_by_id.get(cid) or {}
         human = _humanize_combination(combo, contaminated_pattern_ids)
+
+        # V10 P7-B — effective_evidence_state per combination
+        evidence_state_info = {}
+        if case_evidence_state is not None:
+            try:
+                evidence_state_info = assess_combination_state(combo, case_evidence_state)
+            except Exception:
+                evidence_state_info = {}
+
         rows.append({
             "combination_id":     cid,
             "combination_name":   str(combo.get("combination_name", cid)),
@@ -16026,18 +16057,31 @@ def api_curation_run_combinations():
             "current_decision":   existing.get("decision", ""),
             "modify_instruction": existing.get("modify_instruction", ""),
             "curator":            existing.get("curator", ""),
-            # V-curation P-humanize-combos: bullets in plain Spanish.
             "human":              human,
             "is_contaminated":    human["is_contaminated"],
-            # V10 P4 surface fields for the UI to filter / badge
             "proposal_method":    combo.get("proposal_method", ""),
             "decision_implication": combo.get("decision_implication") or {},
             "is_framework_auto":  is_v10p4,
+            # V10 P7 — evidence state per combination
+            "effective_evidence_state": evidence_state_info.get("effective_evidence_state", ""),
+            "evidence_rank":           evidence_state_info.get("effective_evidence_rank", 0),
+            "evidence_action":         evidence_state_info.get("recommended_action", ""),
+            "evidence_upgrade_blockers": evidence_state_info.get("upgrade_blockers", []),
         })
     return jsonify({
         "run_id": run_id,
         "combinations": rows,
         "contaminated_pattern_ids": sorted(contaminated_pattern_ids),
+        # V10 P7 — case-level evidence state
+        "case_evidence_state": ({
+            "state":               case_evidence_state.state,
+            "rank":                case_evidence_state.rank,
+            "reasons":             list(case_evidence_state.reasons),
+            "upgradable_to":       case_evidence_state.upgradable_to,
+            "upgrade_blockers":    list(case_evidence_state.upgrade_blockers),
+            "recommended_action":  case_evidence_state.recommended_action,
+            "narrator_tone":       case_evidence_state.narrator_language_tone,
+        } if case_evidence_state else None),
     })
 
 
@@ -16805,11 +16849,47 @@ async function loadApprovals() {
     btn.style.display = "none";
   }
   const el = $("approvals");
+  // V10 P7 — Case-level evidence state banner
+  const ces = data.case_evidence_state;
+  let evidenceBanner = "";
+  if (ces) {
+    const stateConfig = {
+      exploratory_prior:       {emoji: "🔵", label: "Exploratoria", color: "#dbeafe", text: "#1e40af"},
+      structural_hypothesis:   {emoji: "🟡", label: "Hipotética",   color: "#fef3c7", text: "#92400e"},
+      bounded_peer_analysis:   {emoji: "🟠", label: "Con peers",    color: "#fed7aa", text: "#9a3412"},
+      evidence_discrimination: {emoji: "🟢", label: "Discriminatoria",color:"#bbf7d0",text:"#14532d"},
+      publish_bounded:         {emoji: "🟢", label: "Publicable bounded",color:"#86efac",text:"#14532d"},
+      client_safe:             {emoji: "✅", label: "Client-safe",  color: "#86efac", text: "#14532d"},
+    };
+    const cfg = stateConfig[ces.state] || {emoji:"⚪", label:"Sin clasificar", color:"#f4f4f5", text:"#52525b"};
+    const blockers = (ces.upgrade_blockers || []).slice(0,3).map(b =>
+      `<li style="margin:2px 0">${escapeHtml(b)}</li>`).join("");
+    evidenceBanner = `
+      <div style="background:${cfg.color};color:${cfg.text};border-left:4px solid ${cfg.text};
+                  padding:10px 14px;margin-bottom:14px;border-radius:6px;font-size:12.5px;">
+        <div style="font-weight:700;font-size:13px;margin-bottom:4px;">
+          ${cfg.emoji} Estado epistémico del caso: <span style="text-transform:uppercase;letter-spacing:.03em;">${cfg.label}</span>
+        </div>
+        <div style="margin-bottom:6px;">
+          <b>Lo que el framework PUEDE recomendar a este nivel:</b><br>
+          ${escapeHtml(ces.recommended_action || "")}
+        </div>
+        ${blockers ? `<div style="margin-top:6px;">
+          <b>Para subir a "${escapeHtml(ces.upgradable_to || "")}" necesitas:</b>
+          <ul style="margin:4px 0 0 16px;padding:0;">${blockers}</ul>
+        </div>` : ""}
+        <div style="margin-top:6px;font-size:11px;font-style:italic;opacity:.85;">
+          Sin esta evidencia, el framework te SUGIERE las combinaciones como hipótesis a investigar — no como acciones verificadas. Phase 0 OK.
+        </div>
+      </div>
+    `;
+  }
+
   if (!combos.length) {
-    el.innerHTML = '<div class="empty-block">Sin combinaciones activadas en este run.</div>';
+    el.innerHTML = evidenceBanner + '<div class="empty-block">Sin combinaciones activadas en este run.</div>';
     return;
   }
-  el.innerHTML = combos.map(c => {
+  el.innerHTML = evidenceBanner + combos.map(c => {
     const dec = c.current_decision || "";
     const decBadge = dec ? `<div class="decided decided-${dec}">${dec.toUpperCase()}</div>` : "";
     const h = c.human || {};
@@ -16823,14 +16903,73 @@ async function loadApprovals() {
       </div>`).join("");
     const modInstr = c.modify_instruction || "";
     const cardCls = c.is_contaminated ? "combo contaminated" : "combo";
-    const acceptLabel = c.is_contaminated ? "✅ Aceptar de todos modos" : "✅ Aceptar";
+
+    // V10 P7 — accept button label adapts to evidence state
+    const evState = c.effective_evidence_state || "";
+    let acceptLabel = "✅ Aceptar";
+    let acceptHint = "";
+    if (c.is_contaminated) {
+      acceptLabel = "✅ Aceptar de todos modos";
+    } else if (evState === "exploratory_prior") {
+      acceptLabel = "🔍 Aceptar como investigación";
+      acceptHint = "Sin evidencia del caso. Acepta para gatherar datos.";
+    } else if (evState === "structural_hypothesis") {
+      acceptLabel = "🟡 Aceptar como hipótesis";
+      acceptHint = "Plausible estructuralmente. Acepta para validar antes de actuar.";
+    } else if (evState === "bounded_peer_analysis") {
+      acceptLabel = "🟠 Aceptar con peers bounded";
+      acceptHint = "Comparativa con peers. Acepta con bounds explícitos.";
+    } else if (evState === "evidence_discrimination") {
+      acceptLabel = "🟢 Aceptar — diseñar medición decisiva";
+    } else if (evState === "publish_bounded" || evState === "client_safe") {
+      acceptLabel = "🟢 Aceptar — publicable";
+    }
+
+    // V10 P7 — per-combo state badge
+    const stateBadgeColor = {
+      exploratory_prior:       "#dbeafe",
+      structural_hypothesis:   "#fef3c7",
+      bounded_peer_analysis:   "#fed7aa",
+      evidence_discrimination: "#bbf7d0",
+      publish_bounded:         "#86efac",
+      client_safe:             "#86efac",
+    }[evState] || "#f4f4f5";
+    const stateBadgeText = {
+      exploratory_prior:       "#1e40af",
+      structural_hypothesis:   "#92400e",
+      bounded_peer_analysis:   "#9a3412",
+      evidence_discrimination: "#14532d",
+      publish_bounded:         "#14532d",
+      client_safe:             "#14532d",
+    }[evState] || "#52525b";
+    const evidenceLabel = {
+      exploratory_prior:       "🔵 Exploratoria",
+      structural_hypothesis:   "🟡 Hipótesis estructural",
+      bounded_peer_analysis:   "🟠 Análisis con peers",
+      evidence_discrimination: "🟢 Discriminatoria",
+      publish_bounded:         "🟢 Publicable bounded",
+      client_safe:             "✅ Client-safe",
+    }[evState] || "—";
+    const stateBadge = evState ? `
+      <div style="display:inline-block;background:${stateBadgeColor};color:${stateBadgeText};
+                  padding:3px 8px;border-radius:4px;font-size:10.5px;font-weight:700;
+                  letter-spacing:.03em;margin-right:6px;">
+        ${evidenceLabel}
+      </div>` : "";
+    const actionBadge = c.evidence_action ? `
+      <div style="font-size:11px;color:#52525b;font-style:italic;margin-top:4px;">
+        ${escapeHtml((c.evidence_action || "").split("—")[0])}
+      </div>` : "";
+
     return `
       <div class="${cardCls}" id="combo-${escapeHtml(c.combination_id)}">
         <h3>${escapeHtml(h.title || c.combination_name)}</h3>
-        ${decBadge}
+        ${stateBadge}${decBadge}
+        ${actionBadge}
         ${h.idea_central ? `<div class="idea"><strong>Qué dice esta combinación:</strong> ${escapeHtml(h.idea_central)}</div>` : ""}
         <div class="pattern-bullets">${bullets}</div>
         ${h.riesgo ? `<div class="riesgo"><b>Por qué importa:</b> ${escapeHtml(h.riesgo)}</div>` : ""}
+        ${acceptHint ? `<div style="font-size:11px;color:#92400e;background:#fef9c3;padding:6px 10px;border-radius:4px;margin:6px 0;"><b>Cómo aceptarla:</b> ${escapeHtml(acceptHint)}</div>` : ""}
         <div class="btnrow">
           <button class="btn btn-ok" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'accept')">${acceptLabel}</button>
           <button class="btn btn-no" onclick="decideCombo('${escapeHtml(c.combination_id)}', 'reject')">❌ Rechazar</button>
