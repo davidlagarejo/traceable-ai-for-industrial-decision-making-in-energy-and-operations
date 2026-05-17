@@ -16628,13 +16628,27 @@ async function applyDecisions() {
   }, 3500);
 }
 
+let _runCaseLocks = {};   // V10 P5c: previene doble-click client-side
+
 async function runCase(caseId) {
+  // V10 P5c: client-side dedup — si ya estamos esperando este case_id,
+  // no relanzar (evita race conditions cuando el polling aún no marca running)
+  if (_runCaseLocks[caseId]) {
+    toast("Ya hay un run de este caso en curso — espera a que termine.", "warn");
+    return;
+  }
+  _runCaseLocks[caseId] = true;
   const r = await fetch("/api/curation/run-case", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({case_id: caseId}),
   });
   const j = await r.json();
+  if (!j.ok && j.error === "already running") {
+    toast("Este caso ya está corriendo — espera a que termine.", "warn");
+    _runCaseLocks[caseId] = false;
+    return;
+  }
   if (j.ok) {
     toast("Pipeline lanzado — toma ~2-3 minutos. Verás progreso en la sidebar.", "ok");
     currentCaseId = caseId;
@@ -16648,6 +16662,7 @@ async function runCase(caseId) {
       if (c && (c.run_state === "completed" || c.run_state === "failed")) {
         clearInterval(casePollingInterval);
         casePollingInterval = null;
+        _runCaseLocks[caseId] = false;   // V10 P5c: liberar lock al completar
         if (c.run_state === "completed") {
           toast("Pipeline completado ✓", "ok");
           await selectCaseById(caseId);
@@ -17625,8 +17640,16 @@ def api_curation_cases():
         case = dict(spec)
         case["inputs_available"] = _inputs_file_exists(spec["inputs_file"])
         state = _CURATION_RUN_STATE.get(spec["case_id"], {})
-        # V10 P5b — si no hay state en memoria, reconciliar desde registry
-        if not state or not state.get("run_id"):
+        # V10 P5b — si no hay state en memoria, reconciliar desde registry.
+        # CRÍTICO: NUNCA pisar un state="running" — el subprocess está corriendo
+        # y aún no escribió al registry. Si pisamos con un registry viejo
+        # ("completed"), el dashboard miente y el usuario reclickea Correr
+        # → múltiples spawns concurrentes que se atascan unos a otros.
+        current_status = state.get("status", "")
+        if current_status == "running":
+            # Already running in-memory — DO NOT overwrite from registry
+            pass
+        elif not state or not state.get("run_id"):
             reconciled = _reconcile_state_from_registry(spec["case_id"], spec["pipeline_id"])
             if reconciled:
                 state = reconciled
