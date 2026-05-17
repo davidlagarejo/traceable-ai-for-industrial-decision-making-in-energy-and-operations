@@ -16001,11 +16001,17 @@ def api_curation_run_combinations():
         if is_latent:
             continue
 
-        # Dedup by pattern_set signature so visual duplicates collapse
+        # Dedup by pattern_set signature so visual duplicates collapse.
+        # V10 P5d: dedup APPLIES even to V10 P4 entries when they share the
+        # exact same pattern_set — múltiples strategies (corpus + regulatory
+        # + comfort) que coinciden en patterns aparecen visualmente como
+        # repetidos. El usuario reportó esto explícitamente.
+        # Estrategia: conservar la PRIMERA observation. Como el motor las
+        # añade en orden de prioridad (corpus → regulatory → compliance →
+        # comfort → invest_trap), la primera suele ser la más informativa.
         pset = combo.get("pattern_set") or combo.get("pattern_ids") or []
         sig = tuple(sorted(str(p) for p in pset))
-        if sig and sig in seen_signatures and not is_v10p4:
-            # V10 P4 combos NEVER get dedup'd (they carry distinct evidence)
+        if sig and sig in seen_signatures:
             continue
         if sig:
             seen_signatures.add(sig)

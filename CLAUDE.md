@@ -3,15 +3,66 @@
 > **Ancla constitucional para sesiones de Claude trabajando en este repo.**
 > Leer ENTERO antes de tocar código.
 
-**Última actualización: 2026-05-16 (V10 P4 ARRANCANDO — Combination Proposer multi-strategy)**
+**Última actualización: 2026-05-17 (V10 P7 ARRANCANDO — Evidence-Aware Curation + V10 P6 Proactive Crawler)**
 
 ---
 
-## 0. Doctrina actual: V10 P4 — Multi-strategy Combination Proposer
+## 0. Doctrina actual: V10 P5/P6/P7 — Curación sin evidencia + crawler proactivo
+
+V10 P0 → P5 entregadas:
+- **P0-P3**: industry corpus + regulatory layer + evidence wiring + motor_019 cita verbatim
+- **P4**: combination proposer multi-strategy (76 candidates auto-generados)
+- **P5**: case quality assessor + dashboard sort por evidencia + reconciliación registry
+- **P5b-P5c**: bug fixes (race condition spawn duplicado, dedup en /curar)
+
+### V10 P5d AHORA (1h) — Fix repetición de combinations
+El usuario reporta combinaciones repetidas en /curar. Cada V10 P4 entry se añadió a 3 registers (activation + review + admissible). Dedup post-fetch en `/api/curation/run-combinations` por `combination_id`, preferir entry con `industry_evidence` poblado.
+
+### V10 P7 PRÓXIMO (~3 días) — Evidence-Aware Combination Curation
+
+**PROBLEMA CONSTITUCIONAL:** hoy el framework rechaza/oculta combinaciones cuando el caso no tiene evidencia suficiente. Eso **viola Phase 0** correctamente entendida:
+
+> Phase 0 dice "no afirmar lo no evidenciado", NO "no recomendar sin evidencia".
+
+Phase 0 §10 define una **9-state support ladder** precisamente para que el framework pueda **recomendar a cualquier nivel** siempre que el lenguaje sea epistémicamente proporcionado:
+
+| State | Lo que el framework PUEDE hacer |
+|---|---|
+| `exploratory_prior` | Sugerir como hipótesis para gather_evidence |
+| `structural_hypothesis` | Recomendar como plausibilidad para investigate_first |
+| `bounded_peer_analysis` | Comparar con peers con bounds explícitos |
+| `evidence_discrimination` | Disjuntivas claras + mediciones decisivas |
+| `publish_bounded` | Decisiones con bounds (DEFER_TO_WINDOW, ALTERNATIVE) |
+| `client_safe` | ACT / ACT_WITH_WINDOW (acción admissible) |
+| `verified` | Resolución empírica + post-hoc |
+
+**Componentes V10 P7:**
+
+A. `effective_evidence_state.py` — calcula state real por combination
+B. `combination_approval.py` enhanced — nunca rechazar por falta de evidence; solo downgrade state
+C. `/curar` UI con badges + botones contextuales por state
+D. `motor_033` TAD reescribe acciones según state insuficiente
+E. `motor_019` Regla 12: lenguaje proporcionado al evidence_state
+
+### V10 P6 DESPUÉS (~2.5 días) — Crawler verdaderamente proactivo
+
+**PROBLEMA:** el "discoverer" actual NO es proactivo. Tiene keywords curadas a mano, corre solo por click, no detecta gaps, no aprende de rechazos.
+
+**Componentes V10 P6:**
+
+F. `coverage_gap_detector.py` — lee case_quality_assessor → identifica families débiles + patterns sin coverage
+G. `query_generator.py` — deriva queries desde pattern_spec.trigger_conditions (no keywords curadas)
+H. `coverage_scorer.py` — score pre/post discovery, marca strategies efectivas
+I. `proactive_corpus_discovery.py` — cron daily/weekly, ejecuta gap_detector → discoverers → scorer
+J. `rejection_feedback.py` — hook en /api/corpus/reject_chunk, blacklist domain after 3 rechazos
+
+---
+
+## 0.bis Doctrina V10 P4 (entregada) — Multi-strategy Combination Proposer
 
 V10 P0/P1/P2/P3 cerradas (industry corpus + regulatory layer + evidence wiring).
 
-**V10 P4 ahora:** construir un **proponente determinístico de combinaciones**. Hoy solo hay 4 combinations aprobadas a mano. El framework debería generar muchas (60-150 por familia) a partir de:
+**V10 P4 entregado:** proponente determinístico de combinaciones. Generó 76 candidates (vs 4 aprobadas históricas) usando 6 estrategias:
 
 - Co-ocurrencia en el corpus (sin LLM, cosine similarity)
 - Co-mención en regulaciones (regex)
